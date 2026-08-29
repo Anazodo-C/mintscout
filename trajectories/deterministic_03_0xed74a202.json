@@ -1,0 +1,177 @@
+{
+  "arm": "deterministic",
+  "drop": {
+    "chain": "robinhood",
+    "collection": "0xed74a2029ff2633f21260e097e451358c26a507d",
+    "start_time": 1787703300,
+    "cap": 2,
+    "mint_price_wei": 0,
+    "fixture_name": "UNDEADLINES"
+  },
+  "decision_cutoff_ts": 1787703300,
+  "tool_calls": [
+    {
+      "tool": "erc165_probe",
+      "input": {
+        "collection": "0xed74a2029ff2633f21260e097e451358c26a507d"
+      },
+      "output": {
+        "standard": "erc721",
+        "is_erc721": true,
+        "is_erc1155": false,
+        "answers_ownerof_and_balanceof": false,
+        "note": null
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "collection_stats",
+      "input": {
+        "collection": "0xed74a2029ff2633f21260e097e451358c26a507d"
+      },
+      "output": {
+        "max_supply": 6969,
+        "owner": "0x3f516269ace53af3b8de38360cf7843b8e6e258c",
+        "name": "UNDEADLINES",
+        "symbol": "UNDEADLINE",
+        "code_size": 20565,
+        "max_supply_sane": true,
+        "note": "total_supply is an OUTCOME and is not available at decision time."
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "metadata_fetch",
+      "input": {
+        "allow_network": false
+      },
+      "output": {
+        "present": true,
+        "name": "UNDEADLINE #1",
+        "description": "24x24 pixel PFP you have never seen. This artwork may or may not be notable.",
+        "n_attributes": 5,
+        "attribute_types": [
+          "TYPES",
+          "TOPS",
+          "HEADWEAR",
+          "STATE",
+          "WALLET"
+        ],
+        "has_image": true,
+        "image_is_on_chain": true,
+        "token_bound_account": true,
+        "token_uri": "data:application/json;base64,eyJuYW1lIjoiVU5ERUFETElORSAjMSIsImRlc2NyaXB0aW9uIjoiMjR4MjQgcGl4ZWwgUEZQIHlvdSBoYXZlIG5ldmV...",
+        "drop_uri": "ipfs://bafkreiccj6uw7y7ki2rtbo6mz4cgrn2w4dhhnst6uukxmxsjiivsodtqxq",
+        "on_chain_metadata": true,
+        "provenance": "on_chain",
+        "contract_uri_present": false
+      },
+      "ms": 0.1
+    },
+    {
+      "tool": "erc6551_probe",
+      "input": {},
+      "output": {
+        "token_bound_account": true,
+        "source": "metadata field"
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "economics",
+      "input": {},
+      "output": {
+        "mint_price_wei": 0,
+        "is_free": true,
+        "max_per_wallet": 2,
+        "fee_bps": 1000,
+        "restrict_fee_recipients": true,
+        "duration_hours": 48.0,
+        "starts_in_s": -11743,
+        "advance_notice_s": 0
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "drop_config_history",
+      "input": {},
+      "output": {
+        "n_revisions_before_cutoff": 2,
+        "distinct_prices": [
+          1200000000000000
+        ],
+        "price_flips": 0,
+        "revisions": [
+          {
+            "mint_price": 1200000000000000,
+            "start_time": 1787705100,
+            "end_time": 1787877900,
+            "max_per_wallet": 4,
+            "block_timestamp": 1787626666
+          },
+          {
+            "mint_price": 1200000000000000,
+            "start_time": 1787703300,
+            "end_time": 1787876100,
+            "max_per_wallet": 4,
+            "block_timestamp": 1787697803
+          }
+        ]
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "mint_velocity",
+      "input": {},
+      "output": {
+        "available": false,
+        "mints_per_min": null,
+        "reason": "decision point is at/before startTime; no mint has occurred yet. Outcome signal, not a feature."
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "deployer_history",
+      "input": {},
+      "output": {
+        "deployer": "0x3f516269ace53af3b8de38360cf7843b8e6e258c",
+        "known": false,
+        "prior_collections": 0,
+        "prior_high_value": 0,
+        "note": "no memory store attached"
+      },
+      "ms": 0.0
+    }
+  ],
+  "triage": {
+    "verdict": "MINT",
+    "score": 100,
+    "reasons": [
+      "supply 6969 in the plausible band",
+      "fully on-chain metadata (costly signal)",
+      "5 structured attributes",
+      "ERC-6551 token-bound account"
+    ],
+    "risk_flags": []
+  },
+  "verifier": null,
+  "action": {
+    "mode": "dry_run",
+    "wallets": 20,
+    "achievable": 40,
+    "gas_wei": 341763880920000
+  },
+  "outcome": {
+    "label": "high_value",
+    "label_detail": {
+      "fill_ratio": 1.0,
+      "fill_ok": true,
+      "unique_minters": 2734,
+      "minters_ok": true,
+      "secondary_transfers_48h": 6816,
+      "secondary_ok": true,
+      "label": "high_value"
+    },
+    "note": "outcome is NEVER visible to the agent; shown here only for post-hoc scoring."
+  }
+}

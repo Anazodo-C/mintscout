@@ -127,6 +127,9 @@ TOPIC_CREATOR_PAYOUT_UPDATED = topic(SIG_CREATOR_PAYOUT_UPDATED)
 TOPIC_UNIDENTIFIED_TOKEN_GATED = "0xcaeb4009c05208df426d15ff50b608287b05d21dee1f790552ea451a540a7be0"
 
 ZERO_ADDRESS = "0x" + "00" * 20
+# Arbitrary non-zero address used only as an argument when probing whether a
+# contract answers balanceOf(address). Never funded, never signed for.
+PROBE_ADDRESS = "0x000000000000000000000000000000000000dEaD"
 
 # --------------------------------------------------------------------------
 # Policy defaults (safety -- see README §Safety model)

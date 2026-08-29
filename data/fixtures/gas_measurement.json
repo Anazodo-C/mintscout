@@ -1,0 +1,12 @@
+{
+  "chain": "robinhood",
+  "n_receipts": 60,
+  "median_gas_used": 100254,
+  "median_effective_gas_price_wei": 170449000,
+  "median_fee_wei": 17545803270000,
+  "median_fee_eth": 1.754580327e-05,
+  "reverted_in_sample": 0,
+  "note": "Basis for the 'gas is not the value proposition' claim. Batching N mints saves roughly (N-1) x 21000 gas of intrinsic transaction overhead, which at this gas price is a fraction of a cent -- see CHANGELOG removed-experiment #1.",
+  "intrinsic_overhead_saved_per_extra_mint_eth": 3.579429e-06,
+  "batching_5_mints_saves_eth": 1.4317716e-05
+}

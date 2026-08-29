@@ -1,0 +1,60 @@
+"""Triage agent: evidence dossier -> strict-JSON verdict."""
+from __future__ import annotations
+
+import json
+import pathlib
+
+from . import llm
+
+PROMPTS = pathlib.Path(__file__).parent / "prompts"
+SYSTEM = (PROMPTS / "triage.md").read_text()
+BASELINE_SYSTEM = (PROMPTS / "single_prompt_baseline.md").read_text()
+
+VALID = {"MINT", "WATCH", "SKIP"}
+
+
+def _clean(d: dict) -> dict:
+    """Strip internal keys so the model sees only evidence."""
+    return {k: v for k, v in d.items() if not k.startswith("_")}
+
+
+def triage(dossier: dict, *, use_cache: bool = True,
+           model: str = llm.DEFAULT_MODEL) -> dict:
+    user = ("Evidence dossier:\n\n```json\n"
+            + json.dumps(_clean(dossier), indent=2, sort_keys=True)
+            + "\n```\n\nReturn your verdict as JSON.")
+    raw = llm.complete(SYSTEM, user, model=model, use_cache=use_cache)
+    try:
+        out = llm.parse_json(raw)
+    except ValueError:
+        return {"verdict": "SKIP", "score": 0,
+                "reasons": ["triage returned unparseable output"],
+                "evidence": [], "risk_flags": ["parse_error"], "_raw": raw[:500]}
+    v = str(out.get("verdict", "")).upper()
+    out["verdict"] = v if v in VALID else "SKIP"
+    out.setdefault("score", 0)
+    out.setdefault("reasons", [])
+    out.setdefault("evidence", [])
+    out.setdefault("risk_flags", [])
+    return out
+
+
+def single_prompt_baseline(rec_features: dict, *, use_cache: bool = True,
+                           model: str = llm.DEFAULT_MODEL) -> dict:
+    """Baseline B: one prompt, raw config, no tools, no memory, no verifier.
+
+    This isolates how much of the gain comes from agent ENGINEERING versus from
+    the model itself -- which is exactly what the scoring rubric asks.
+    """
+    user = ("Drop configuration:\n\n```json\n"
+            + json.dumps(rec_features, indent=2, sort_keys=True)
+            + "\n```\n\nReturn JSON.")
+    raw = llm.complete(BASELINE_SYSTEM, user, model=model, use_cache=use_cache,
+                       max_tokens=500)
+    try:
+        out = llm.parse_json(raw)
+    except ValueError:
+        return {"verdict": "SKIP", "score": 0, "reasons": ["unparseable"]}
+    v = str(out.get("verdict", "")).upper()
+    out["verdict"] = v if v in ("MINT", "SKIP") else "SKIP"
+    return out

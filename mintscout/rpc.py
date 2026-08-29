@@ -222,13 +222,37 @@ class RpcClient:
                 "This is the constraint that forces the log-derived replay harness.")
         return self.raw("eth_call", [{"to": to, "data": data}, block])
 
+    # Revert-ish JSON-RPC signatures. Anything NOT matching these is a transport
+    # or rate-limit failure and must NOT be reported as "the contract has no
+    # such value" -- see try_call.
+    _REVERT_HINTS = ("execution reverted", "revert", "invalid opcode",
+                     "out of gas", "call exception", "no data")
+
     def try_call(self, to: str, data: str) -> str | None:
-        """eth_call that returns None instead of raising on revert/absence."""
+        """eth_call returning None ONLY when the contract genuinely has no value.
+
+        This distinction matters more than it looks. The first version swallowed
+        every exception into None, so under concurrent load a rate-limited read
+        was indistinguishable from "this collection has no metadata" -- and 181
+        of 201 collections were recorded as metadata-less purely because the
+        static-read pass was hammering the RPC. A transient infrastructure
+        failure had turned into a fabricated feature value.
+
+        Now a revert returns None (a real absence) and a transport failure
+        raises, so the caller must decide what to do rather than silently
+        inheriting a wrong feature.
+        """
         try:
             r = self.call(to, data)
             return r if r and r != "0x" else None
-        except Exception:
-            return None
+        except RpcError as e:
+            if any(h in e.message.lower() for h in self._REVERT_HINTS):
+                return None
+            raise
+        except ArchiveStateError:
+            raise
+        except RuntimeError:
+            raise                    # retries exhausted: transport, not absence
 
     def get_block(self, number: int, full: bool = False) -> dict:
         return self.raw("eth_getBlockByNumber", [hex(number), full])

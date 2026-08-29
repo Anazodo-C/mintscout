@@ -1,0 +1,4392 @@
+[
+ {
+  "collection": "0x616d6785c15fdc7313907d6e79d6a348d845562c",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 20,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.039291917346417904,
+  "error": null,
+  "reasons": [],
+  "risk_flags": [
+   "no resolvable metadata (provenance=unavailable)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x6c092bb362f56fbffa6f0f69ec52e8962ed31e68",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 20,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.040209037251770496,
+  "error": null,
+  "reasons": [
+   "supply 5500 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=unavailable)",
+   "5 price flips before cutoff"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xbba57ae2bcf4fc9d5b55e461a61d868375494fc8",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.013416982255876064,
+  "error": null,
+  "reasons": [
+   "supply 5555 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x17eb63ec6e97254204218d59ce855be76b8b5485",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.011416967026889324,
+  "error": null,
+  "reasons": [
+   "supply 5555 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x7082fe511f1bbb8513fc5540e66753b352bb37e1",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.010624993592500687,
+  "error": null,
+  "reasons": [
+   "supply 10000 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x76e4458555e26898c638b15ecc796c420c372f73",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 20,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.02462498378008604,
+  "error": null,
+  "reasons": [],
+  "risk_flags": [
+   "no resolvable metadata (provenance=unavailable)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xcc18bee19082d1394922b52660e09197142faf14",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.03287498839199543,
+  "error": null,
+  "reasons": [
+   "supply 4096 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=unavailable)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x660b974a3b460db6667ff90cae04f3b01534377f",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.010624993592500687,
+  "error": null,
+  "reasons": [
+   "supply 3333 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x523d70cf865e184cea0ce8bee5500e26673d8d44",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.010499963536858559,
+  "error": null,
+  "reasons": [
+   "supply 5555 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x1cd7a6eb95f64c00c0adbffc5054405902724638",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.009665964171290398,
+  "error": null,
+  "reasons": [
+   "supply 5555 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x66ec9ec203ba54e7bdbdbf7005f85f09d24e3e79",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.02675002906471491,
+  "error": null,
+  "reasons": [
+   "supply 2222 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xc189e1a2209241753eafffe3d28ea3357988c996",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.01083302777260542,
+  "error": null,
+  "reasons": [
+   "supply 10000 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xc06c4d96d9c190a7d19f80765a26a46668404307",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.01008401159197092,
+  "error": null,
+  "reasons": [
+   "supply 5555 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xa175a71898c46302d5a01bd1ca0ffee01c456eab",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.0100000761449337,
+  "error": null,
+  "reasons": [
+   "supply 5555 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x7302ea2138b06da818224dbc7794ce450a2bd4e0",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.009916955605149269,
+  "error": null,
+  "reasons": [
+   "supply 5555 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x1253314d48a3e8dbf2ea5e7ae29b7bc4ad3eb5aa",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.010124989785254002,
+  "error": null,
+  "reasons": [
+   "supply 8888 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x13885012749a30c0bcbe3456169b74b00a55ca91",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.010124989785254002,
+  "error": null,
+  "reasons": [
+   "supply 2222 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x5cd8e01f0cd6166f76121e0d3569fca23f58ad96",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.01025001984089613,
+  "error": null,
+  "reasons": [
+   "supply 5555 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x142d52732ec7474a8d3fbfaea9e79f056c42c6a7",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.025916961021721363,
+  "error": null,
+  "reasons": [
+   "supply 1500 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=unavailable)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x8b59e8c7d9ad768316ff34c3c94cfcde9fe0262e",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.01008401159197092,
+  "error": null,
+  "reasons": [
+   "supply 11111 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xa08e8326bf75c8fa04cd6f2f6c892f5d1a48601e",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.043792068026959896,
+  "error": null,
+  "reasons": [
+   "supply 2222 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=unavailable)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x89b09edb006b9c23fdd16dcf888813868c3057a5",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 20,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.030083931051194668,
+  "error": null,
+  "reasons": [],
+  "risk_flags": [
+   "no resolvable metadata (provenance=unavailable)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xd0edc945a9b7ee890351eb12deec906ea23336d6",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.013082986697554588,
+  "error": null,
+  "reasons": [
+   "supply 5555 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x1b419cab0b21b6efd605e0de88451484fbce47dc",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.010833959095180035,
+  "error": null,
+  "reasons": [
+   "supply 5555 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xaafa859f9b5f0be82ef4afe5c4b735359ed9658f",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.010375049896538258,
+  "error": null,
+  "reasons": [
+   "supply 5555 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x3a6579827daeb43d119bb25b989d38e633e8d31d",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 20,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.03483297768980265,
+  "error": null,
+  "reasons": [],
+  "risk_flags": [
+   "no resolvable metadata (provenance=unavailable)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xacc34855296ba4b62ad8eddf517e7151028beb8f",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.02216699067503214,
+  "error": null,
+  "reasons": [
+   "supply 10000 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=unavailable)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xb5984e9fa034729f53a0b31f912a008079f3a34c",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.010750023648142815,
+  "error": null,
+  "reasons": [
+   "supply 5555 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x1a59e75f7e16d4e723c02fea908af5ccd54ab8e9",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 20,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.024707987904548645,
+  "error": null,
+  "reasons": [],
+  "risk_flags": [
+   "no resolvable metadata (provenance=unavailable)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x1e0d9d04628730075a53044aa460ccc34cec3ba2",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.021333107724785805,
+  "error": null,
+  "reasons": [
+   "supply 10000 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=unavailable)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x2a7affd7baf7c88fa8bf8b2dbdec5a94c0b8df0c",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 20,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.027583097107708454,
+  "error": null,
+  "reasons": [],
+  "risk_flags": [
+   "no resolvable metadata (provenance=unavailable)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x8c6c0ad776b40b7e3d45342ad4be073c479fbf74",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.024916953407227993,
+  "error": null,
+  "reasons": [
+   "supply 10000 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=unavailable)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xba7c0380adf64cdc3e5a54cf8d9ecd03ef4e96b1",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.026374938897788525,
+  "error": null,
+  "reasons": [
+   "supply 9999 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=unavailable)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x5e41977486e273fe26079047a237b0996f543482",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 20,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.02537504769861698,
+  "error": null,
+  "reasons": [],
+  "risk_flags": [
+   "no resolvable metadata (provenance=unavailable)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xc305ccaa25c3227e9949522c7de238ff38f6a2d8",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.025916029699146748,
+  "error": null,
+  "reasons": [
+   "supply 10000 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=unavailable)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xbaf7b3da9fe8803767cbdfb9bef08a1405f42608",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.010500079952180386,
+  "error": null,
+  "reasons": [
+   "supply 10000 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xf63c13703fcaca00a463e14833e80c2b41337ee3",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.010458054021000862,
+  "error": null,
+  "reasons": [
+   "supply 3333 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x3dc93d93d5db9e3c490678ef94a0eb35b3dc2de8",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.02587493509054184,
+  "error": null,
+  "reasons": [
+   "supply 5555 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=unavailable)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x7a6c026ad241d9ea4e591d9620a87160c2139ebe",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.010458985343575478,
+  "error": null,
+  "reasons": [
+   "supply 5555 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xaa14c8ff747c78a714c2dcc8f0d8439ac9550b6d",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.010209041647613049,
+  "error": null,
+  "reasons": [
+   "supply 8888 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x632c78c0dc8c24e8862736e829c8f7303846ac80",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.025333021767437458,
+  "error": null,
+  "reasons": [
+   "supply 11111 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=unavailable)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xf08cf4fbaa21c25a4334e788856ac6b4f0288bb1",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.024415901862084866,
+  "error": null,
+  "reasons": [
+   "supply 1000 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=unavailable)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x73eaa75c288565fd82815c5321d209780d5bceaf",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.010334071703255177,
+  "error": null,
+  "reasons": [
+   "supply 5555 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x3edc863e17534f23abc16a1acd8048ee0f3282bb",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.00995793379843235,
+  "error": null,
+  "reasons": [
+   "supply 4444 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x26653bdb33992663796a0a1ee91f5f38f63211e6",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "high_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.01029099803417921,
+  "error": null,
+  "reasons": [
+   "supply 9999 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x8d9a48f2c1f5d0df59e693eae90e50219e462005",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.009916024282574654,
+  "error": null,
+  "reasons": [
+   "supply 7777 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xfe2966d2c36ff612f78da503f6308b29584e694f",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.028540962375700474,
+  "error": null,
+  "reasons": [
+   "supply 4444 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=unavailable)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x7cddd52015ab82b101599f176db945cb3c8157bf",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.010207993909716606,
+  "error": null,
+  "reasons": [
+   "supply 5555 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x753e2d9b59f182990221c1c089d01d42c4f7659e",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.009916024282574654,
+  "error": null,
+  "reasons": [
+   "supply 5000 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x2dd5573a262aaadb9b7d50ac03cc84233102b71c",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.03450002986937761,
+  "error": null,
+  "reasons": [
+   "supply 5555 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x9f233971d60661c5c89e218ab04f63d0e344db89",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.027125002816319466,
+  "error": null,
+  "reasons": [
+   "supply 10000 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=unavailable)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xf6fc4e6819aab85dddef51b9c478d13e25779d93",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.0260830856859684,
+  "error": null,
+  "reasons": [
+   "supply 5555 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=unavailable)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xd1eaf6eaeb3599bb2d7d9dc74b7aec3d56da7461",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.04254095256328583,
+  "error": null,
+  "reasons": [
+   "supply 2500 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=unavailable)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x12cac0098346c887a6c7cfe0602b5511860dbd18",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.011124997399747372,
+  "error": null,
+  "reasons": [
+   "supply 10000 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x439ac2a04e51e40e406b88fdafdd36b4bdcec6f1",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.010207993909716606,
+  "error": null,
+  "reasons": [
+   "supply 4444 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x015a39349904d889a0ff40eb4b2a842195cc7684",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.009834067896008492,
+  "error": null,
+  "reasons": [
+   "supply 5555 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x6c8d4cf4f8c432daa01915cca96cd17713707252",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.02204196061939001,
+  "error": null,
+  "reasons": [
+   "supply 4000 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=unavailable)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xcd138acd03647f92c1689bcfd731a0b27f9fe128",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.009916955605149269,
+  "error": null,
+  "reasons": [
+   "supply 5555 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x0d89ae482668881b6a2765870cfbe8ee6fe8efb8",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.009875046089291573,
+  "error": null,
+  "reasons": [
+   "supply 10000 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x701fe0fe072eecdc1794fd03d8df68ce9cde4534",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.009958981536328793,
+  "error": null,
+  "reasons": [
+   "supply 5555 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x7035d01610fc554f0cb4ce39ea2967751cc5354d",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.022124964743852615,
+  "error": null,
+  "reasons": [
+   "supply 1000 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=unavailable)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x2764a4bee2d2676ad5d130e15bf68417d7d783c4",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.04145805723965168,
+  "error": null,
+  "reasons": [
+   "supply 10000 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=unavailable)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xd36b1fe190263f8fd9586cf4825638511c2f70fd",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 20,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.0249580480158329,
+  "error": null,
+  "reasons": [],
+  "risk_flags": [
+   "no resolvable metadata (provenance=unavailable)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x600fd813dc599d8ba8455977df44e26ae1e53d51",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.025834073312580585,
+  "error": null,
+  "reasons": [
+   "supply 10000 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=unavailable)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x83b6c490d8d90b86f8b3215fd46ea2374e073516",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.024709035642445087,
+  "error": null,
+  "reasons": [
+   "supply 6000 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=unavailable)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x682ff2daa68cffe51fb12714a5bd073deecd3706",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.025165965780615807,
+  "error": null,
+  "reasons": [
+   "supply 5555 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=unavailable)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x96e1a75bc663a1e20519186bce6521deac893a7e",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.01095794141292572,
+  "error": null,
+  "reasons": [
+   "supply 8888 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x6a1ace038becee161d890b0636325b4fe25b54c2",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.01058308407664299,
+  "error": null,
+  "reasons": [
+   "supply 333 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xb72c0612529017ca3cfde42784bc626217f75117",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.02687494270503521,
+  "error": null,
+  "reasons": [
+   "supply 5555 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=unavailable)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x2794c8994d702e988858e5628d643199b3105dc0",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.010584015399217606,
+  "error": null,
+  "reasons": [
+   "supply 10000 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x22f07a1260159f82da636cecd8a2a7e452a9fd93",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.01033395528793335,
+  "error": null,
+  "reasons": [
+   "supply 5555 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x35f72c3f57220ae60af82d28fe5b2fad2504bd95",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.01029099803417921,
+  "error": null,
+  "reasons": [
+   "supply 5555 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xf182378a891160b4b0ace8dfaab606034a6e617c",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.010165967978537083,
+  "error": null,
+  "reasons": [
+   "supply 10000 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xf885faf151e3362ad1634b7f2f5c43338746fbba",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "high_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.03758398815989494,
+  "error": null,
+  "reasons": [
+   "supply 10000 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=unavailable)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x810b1b8e7678ade521602678d4ce75fb9454cd52",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.010874937288463116,
+  "error": null,
+  "reasons": [
+   "supply 7486 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x2858c33801af570440bf9440380c36080a4e6b3f",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.010333023965358734,
+  "error": null,
+  "reasons": [
+   "supply 5555 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x7a9c92f01e1536364b3c2fc74fa20bd5ca6c6973",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.010292045772075653,
+  "error": null,
+  "reasons": [
+   "supply 5000 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xbf6ce3c920d6a8aa0fa37e83e140dcafe9e9054a",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.010332907550036907,
+  "error": null,
+  "reasons": [
+   "supply 10000 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xa55c6a4216a1c20e4f078b8863a7dc7c2f1e8f1f",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.009874929673969746,
+  "error": null,
+  "reasons": [
+   "supply 5555 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xda166a0e714cc33e1d9f9a83a5def805c8b8cabe",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.009541981853544712,
+  "error": null,
+  "reasons": [
+   "supply 5555 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x543de284cc3f09ec3f6e30a6113802c3cae543b9",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.022125081159174442,
+  "error": null,
+  "reasons": [
+   "supply 1000 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=unavailable)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x723597b4f18c5397a02d1357c7338720b2d9b68e",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.009750016033649445,
+  "error": null,
+  "reasons": [
+   "supply 5555 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xf3d5375335a156ca1dfad44316086b3481181af1",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.04133302718400955,
+  "error": null,
+  "reasons": [
+   "supply 4444 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=unavailable)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x1c614942e06bb3806ad3a09a8bb26940604557bc",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "high_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.02829195000231266,
+  "error": null,
+  "reasons": [
+   "supply 10000 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=unavailable)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xad521ca9fbb058ce2e890b1498efedfed805239b",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.010124989785254002,
+  "error": null,
+  "reasons": [
+   "supply 10000 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xb6434363a82d989693ee8d455d47df23e30aecd0",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.032625044696033,
+  "error": null,
+  "reasons": [
+   "supply 5555 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xf71b3670c0c5f722a235ca59bae0851f33f6662f",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.03045797348022461,
+  "error": null,
+  "reasons": [
+   "supply 1000 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=unavailable)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x0e7569cff164375a16fc089a75124442a3a26c6a",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 20,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.024582957848906517,
+  "error": null,
+  "reasons": [],
+  "risk_flags": [
+   "no resolvable metadata (provenance=unavailable)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xee6477ccea0200615ee71192b4764d048d603402",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.010624993592500687,
+  "error": null,
+  "reasons": [
+   "supply 6969 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x41ee5bf89eb6a02daf30344163ae1565e26af350",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 20,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.02450007013976574,
+  "error": null,
+  "reasons": [],
+  "risk_flags": [
+   "no resolvable metadata (provenance=unavailable)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x495721217bde9201daf4ddf3a9d675f2c74f1eaf",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.010207993909716606,
+  "error": null,
+  "reasons": [
+   "supply 1000 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xb3214603c4a44a3b9fa1233810f6a53700c0ecae",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.009749899618327618,
+  "error": null,
+  "reasons": [
+   "supply 7000 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xc71b86b7c9108bfa729162919168285b4aef7aa6",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.009875046089291573,
+  "error": null,
+  "reasons": [
+   "supply 5555 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x4e909b03f2ec0644a67ea8a9296e4def7ce56907",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.026667024940252304,
+  "error": null,
+  "reasons": [
+   "supply 6666 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=unavailable)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x276088ded1a646ed11bedf1de44e49076b554550",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.01008401159197092,
+  "error": null,
+  "reasons": [
+   "supply 5555 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x0d40a24a1ed75b771b66fda852619c38fc1de67f",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.010041985660791397,
+  "error": null,
+  "reasons": [
+   "supply 5555 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xa09b97c1215d418ed3adfe0b2fa730bdd98eed4b",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 20,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.02520799171179533,
+  "error": null,
+  "reasons": [],
+  "risk_flags": [
+   "no resolvable metadata (provenance=unavailable)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xdd86b4b13744b1c3fe3dc11ffda9e8e1d2d7b256",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 20,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.024124979972839355,
+  "error": null,
+  "reasons": [],
+  "risk_flags": [
+   "no resolvable metadata (provenance=unavailable)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x9ded291abc1473c87e46102755c3acd327472e21",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.010041985660791397,
+  "error": null,
+  "reasons": [
+   "supply 5555 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xec9f3b51cc6e762f5c51285bb239cc9e41a780cc",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.010082963854074478,
+  "error": null,
+  "reasons": [
+   "supply 5000 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xe2f5b59595c3d6f2c0ec0dc5c623aeed6307e068",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.009792041964828968,
+  "error": null,
+  "reasons": [
+   "supply 1727 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x9d838c2ba2f63926b5e8afa09b66af93c88c3f44",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.009792041964828968,
+  "error": null,
+  "reasons": [
+   "supply 5555 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xfaae2e9e54e8ecdc0c13eaf63583bea394c8d4fc",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.009834067896008492,
+  "error": null,
+  "reasons": [
+   "supply 5555 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x44650b08459ce70eb6ff5ef84099e7c33dd2a643",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.00958307646214962,
+  "error": null,
+  "reasons": [
+   "supply 4444 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xff224cb0e6b0f2be82cb5fcbd78db88f15825c6c",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.009874929673969746,
+  "error": null,
+  "reasons": [
+   "supply 5555 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x0b7982ca15ecc126d170772836849cf9c4042924",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.030499999411404133,
+  "error": null,
+  "reasons": [
+   "supply 5555 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=unavailable)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x616a54b63d3c6cbbe876d04db412a506ab9bfd89",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.009999959729611874,
+  "error": null,
+  "reasons": [
+   "supply 5555 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x626628ff24f9a4a962e33b6ca4d4e840fc2035a6",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.00995909795165062,
+  "error": null,
+  "reasons": [
+   "supply 5555 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x83fd520bf34f42bc121d49ddcbd8fe34c9be3210",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.034291064366698265,
+  "error": null,
+  "reasons": [
+   "supply 4444 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=unavailable)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x93b8eeea6034eac18980f493791a3e9fb9c4c9ae",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.010124989785254002,
+  "error": null,
+  "reasons": [
+   "supply 5555 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xd540a5693a6f581cad1328d20e2f5d62a0e64657",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.02579099964350462,
+  "error": null,
+  "reasons": [
+   "supply 1000 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=unavailable)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x281a6e01d1c73ea338d5dfc1cdf3b3ae3cee1834",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.024709035642445087,
+  "error": null,
+  "reasons": [
+   "supply 5555 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=unavailable)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x32e77f43180efa8d174aac66291a63b731095a41",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.027416972443461418,
+  "error": null,
+  "reasons": [
+   "supply 1000 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=unavailable)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x9c56970b7683980d876a96cd248f7dd50507bc9b",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.020499923266470432,
+  "error": null,
+  "reasons": [
+   "supply 5555 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=unavailable)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xcd1f111bfb53e86405d6f5114e42234c2795e0d3",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.010041985660791397,
+  "error": null,
+  "reasons": [
+   "supply 1000 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x5ebf2e0e1bfbaad13616bed682376c195fd03f5d",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.009916955605149269,
+  "error": null,
+  "reasons": [
+   "supply 10000 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x383ae1330aed038d1fdab304cab1e961a73e9ca0",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.009792041964828968,
+  "error": null,
+  "reasons": [
+   "supply 5555 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x4aa1724cd0245bd8e6755b2c5ede7aeb5e5a0d36",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.009917072020471096,
+  "error": null,
+  "reasons": [
+   "supply 5555 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xbdd1cdef339c030fceefc0e838bd522b5023ac9a",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "high_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.02887495793402195,
+  "error": null,
+  "reasons": [
+   "supply 444 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=unavailable)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x65c7f280718754fb12d3d788094ae58aefbd70c0",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.010041985660791397,
+  "error": null,
+  "reasons": [
+   "supply 10000 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x6ab75cf1009c15e4a431a1a7c37eefc4bf07e4f4",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.024999957531690598,
+  "error": null,
+  "reasons": [
+   "supply 555 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=unavailable)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x15c8eaa7de25e7cc03b6f950f90d10d4bf25c6fe",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.009874929673969746,
+  "error": null,
+  "reasons": [
+   "supply 5555 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xa21a9f8e856de766d4597a25ec854fad714b7f81",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.024833017960190773,
+  "error": null,
+  "reasons": [
+   "supply 10000 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=unavailable)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x4567dbdb02abb7f76e99740716affd75ae759ce3",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.03424996975809336,
+  "error": null,
+  "reasons": [
+   "supply 5555 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xf7ade6e679a1a62037cec816d3b12c962d605fdc",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.010458054021000862,
+  "error": null,
+  "reasons": [
+   "supply 10000 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x574a889b4b27eef5ce61ddcdd2a13f8e57157ed8",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.010082963854074478,
+  "error": null,
+  "reasons": [
+   "supply 5555 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x55710269e047e82422f811ab0b903888ea64f639",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.010584015399217606,
+  "error": null,
+  "reasons": [
+   "supply 5555 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xa512daf8b29cc4380757a3cb38233db43648d6d5",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.010458985343575478,
+  "error": null,
+  "reasons": [
+   "supply 9999 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x3ff9537587dd79c898b672c2e01fe2811da79a57",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.010750023648142815,
+  "error": null,
+  "reasons": [
+   "supply 5555 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x33c7cce6e19b4b10a99c64ea0759f7493a766973",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.01037493348121643,
+  "error": null,
+  "reasons": [
+   "supply 4444 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xcbf91316efaa1b551a2549360ecacb2a8a712119",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.021958956494927406,
+  "error": null,
+  "reasons": [
+   "supply 4444 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=unavailable)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x9f75551942056333d5d1429e9e5e2367a1d33edd",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.04199997056275606,
+  "error": null,
+  "reasons": [
+   "supply 6969 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=unavailable)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xfa2933f31c4fc7575105c179fcb723fd6627b128",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.010458054021000862,
+  "error": null,
+  "reasons": [
+   "supply 5555 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x2c623d23a842750cb89091d33c4d26c5d720a255",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.026582973077893257,
+  "error": null,
+  "reasons": [
+   "supply 10000 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=unavailable)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xa186199df64b93155fd4b0ad63619b588584178b",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 20,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.022209016606211662,
+  "error": null,
+  "reasons": [],
+  "risk_flags": [
+   "no resolvable metadata (provenance=unavailable)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x4d331cb42b00408095fc621ab546d2754e30eca8",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.020209001377224922,
+  "error": null,
+  "reasons": [
+   "supply 5499 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=unavailable)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x6441513c29d4163affdce9711d0d81f6f710a337",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.013082986697554588,
+  "error": null,
+  "reasons": [
+   "supply 10000 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xe34ac37517607180c3e7a45c3beb2cf2eb37e7af",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.029708025977015495,
+  "error": null,
+  "reasons": [
+   "supply 5555 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=unavailable)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xfb299a90d5f3d773eca6c168695beca43f63d566",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.010416959412395954,
+  "error": null,
+  "reasons": [
+   "supply 4200 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xb19173da6113f5bf56e1cbc1d8edec86dbf78205",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.010291929356753826,
+  "error": null,
+  "reasons": [
+   "supply 5555 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xb6181ae368965592a65a2de7a63f1c2743aad9cb",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "high_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.0290420139208436,
+  "error": null,
+  "reasons": [
+   "supply 3333 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=unavailable)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x46f50b3a99610ee675638d80296e1830f08c363c",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.026499968953430653,
+  "error": null,
+  "reasons": [
+   "supply 1774 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=unavailable)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x9f65a8ca7cb755370e406062d527ed567d72a6e8",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.012040953151881695,
+  "error": null,
+  "reasons": [
+   "supply 10000 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x000b0d4216f9263aa3aaaa3cf18093c773a28338",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.010416959412395954,
+  "error": null,
+  "reasons": [
+   "supply 5555 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xe4049711c16f5338eca63242b029c29d4647cd34",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.011584023013710976,
+  "error": null,
+  "reasons": [
+   "supply 5555 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x4247ea2d1ac22f9eb1866ed67d67e71dc926764c",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.010124989785254002,
+  "error": null,
+  "reasons": [
+   "supply 5555 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x151320b48f02f5c1b3b67ee07fddcf93007f11e8",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.030041090212762356,
+  "error": null,
+  "reasons": [
+   "supply 3000 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=unavailable)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x8fd6fd8f7a14164f944dfdcf61d23559d8bfd50f",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.029957969672977924,
+  "error": null,
+  "reasons": [
+   "supply 3333 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=unavailable)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x250dffa5ab2e1ffa41edae2af55b9fc623f70de2",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.010207993909716606,
+  "error": null,
+  "reasons": [
+   "supply 10000 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x20c3dca734a8b62a58c255dffb380a4dc94b8dfb",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 42,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.03529200330376625,
+  "error": null,
+  "reasons": [],
+  "risk_flags": [
+   "no attributes"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x2016ee8d4c5261031e090316efcdde09a0c71650",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.010666903108358383,
+  "error": null,
+  "reasons": [
+   "supply 5555 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x899c1caaaff5047a012e710121918f627c9b01cf",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.010334071703255177,
+  "error": null,
+  "reasons": [
+   "supply 5555 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x683c72051283e66e04a09696de5093115ba2ded8",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.010249903425574303,
+  "error": null,
+  "reasons": [
+   "supply 10000 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x48aa6f67e1fcac29090635ca35ee0120a69d3221",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.010167015716433525,
+  "error": null,
+  "reasons": [
+   "supply 5555 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xb71d374b42433056ab5debc890ceab7279eb176b",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.010291929356753826,
+  "error": null,
+  "reasons": [
+   "supply 10000 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xb2b5f96800ddd0843c22cc7a245e788574c94bb7",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.010416959412395954,
+  "error": null,
+  "reasons": [
+   "supply 5555 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x6ab7b5d246174e73e75f272f484d049e84bdaebf",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.030374969355762005,
+  "error": null,
+  "reasons": [
+   "supply 5555 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x841c72cd140bf8f4f603e6f47b9f4c6c9eab4451",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.01025001984089613,
+  "error": null,
+  "reasons": [
+   "supply 4000 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x563fdb54ab5e719958bdb1dc5c986aaf7800ea36",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.009792041964828968,
+  "error": null,
+  "reasons": [
+   "supply 10000 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x4c71e9101e01564bfae8ef34af199b12799e42c1",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.034667085856199265,
+  "error": null,
+  "reasons": [
+   "supply 1111 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=unavailable)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x9156b225f061cc3d0953013b44b094862e4ff833",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.0100000761449337,
+  "error": null,
+  "reasons": [
+   "supply 10000 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x4f410be8631f640d6b587febefa8f81a4974483b",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.009915907867252827,
+  "error": null,
+  "reasons": [
+   "supply 10000 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x3048b6c905bfac0d7753963503d24d517c2397ae",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.020749983377754688,
+  "error": null,
+  "reasons": [
+   "supply 1000 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=unavailable)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x84f8e595f013e4e83b659cd78ce83fa4079b4087",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.010167015716433525,
+  "error": null,
+  "reasons": [
+   "supply 9999 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xbbbb979d63530cc2a1047bb8424694cabcd97fdc",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.010082963854074478,
+  "error": null,
+  "reasons": [
+   "supply 10000 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xb155f8965948736b0e6cad74e9c09fccb252a8de",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.00966701190918684,
+  "error": null,
+  "reasons": [
+   "supply 10000 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x5727e4600dddbcd2aec260719e5e592b0ca37cd7",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.0100000761449337,
+  "error": null,
+  "reasons": [
+   "supply 5555 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xc9bf6da7c85cff498538cab988962879d3b8d2fc",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.0112500274553895,
+  "error": null,
+  "reasons": [
+   "supply 5555 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xdb000eb98cfffc81fd75ab255ba4ad6482928f6b",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.01954101026058197,
+  "error": null,
+  "reasons": [
+   "supply 1111 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=unavailable)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x79cf37c09f8bb53a276662a662605f167a5796f6",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.05491706542670727,
+  "error": null,
+  "reasons": [
+   "supply 5555 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x5f4bed10b48425049b40444221b04be11cac87f4",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.04537496715784073,
+  "error": null,
+  "reasons": [
+   "supply 10000 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=unavailable)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xb29e8c7d86a617cc6da444ecf0c31175a12cf904",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.0100000761449337,
+  "error": null,
+  "reasons": [
+   "supply 5555 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x855570ed1904e7ec24a523ed2b783b75702df2a4",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.025124987587332726,
+  "error": null,
+  "reasons": [
+   "supply 1000 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=unavailable)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xbba9ace3e607d07a4c2aca4c15e088cd3b0ff975",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.01920794602483511,
+  "error": null,
+  "reasons": [
+   "supply 10000 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=unavailable)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x678336425f87c9b40f171a26e2f316339394be04",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.009874929673969746,
+  "error": null,
+  "reasons": [
+   "supply 5555 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xb5e2e95863ab1abf367830c68b39ea98a252d499",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.01254095695912838,
+  "error": null,
+  "reasons": [
+   "supply 5555 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x42923bdcff004439500e34270ed86f76908eebf9",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.02174999099224806,
+  "error": null,
+  "reasons": [
+   "supply 10000 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=unavailable)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xe70af5dc32c8853dff13c3653b603cd9853fd305",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.01037493348121643,
+  "error": null,
+  "reasons": [
+   "supply 5555 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xeafd9b2c9c0d3b74b639da9d74090725b6a081b9",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.009875046089291573,
+  "error": null,
+  "reasons": [
+   "supply 5555 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x95ed6ba2cb95edba1ccd43953eaf330f20db6674",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 20,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.020124949514865875,
+  "error": null,
+  "reasons": [],
+  "risk_flags": [
+   "no resolvable metadata (provenance=unavailable)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x5d2223cab250b450aedb6b8066847116ecd0ad3f",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.020124949514865875,
+  "error": null,
+  "reasons": [
+   "supply 3333 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=unavailable)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xf6f074688994676357c63d030b9cef249a0cc6ac",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.010209041647613049,
+  "error": null,
+  "reasons": [
+   "supply 5555 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x3fbc331a3b9e1b9f476b14cd834f169362fef3a7",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.012583914212882519,
+  "error": null,
+  "reasons": [
+   "supply 7777 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x1ad2457cf6129d9438846482c03bd6ce021961e9",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.011042109690606594,
+  "error": null,
+  "reasons": [
+   "supply 5555 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x2b432e612439ee022065da908b5f45592fa8bbaf",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.009999959729611874,
+  "error": null,
+  "reasons": [
+   "supply 10000 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x24b515a3dcb467eba24218de7874c4ebd720b570",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 20,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.04595797508955002,
+  "error": null,
+  "reasons": [],
+  "risk_flags": [
+   "no resolvable metadata (provenance=unavailable)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x8c17fb435c72a99ba4e5fe639590d7b682def398",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.019708997569978237,
+  "error": null,
+  "reasons": [
+   "supply 1000 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=unavailable)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xdd2242ab9f8ea366f180729f06ac382e9d7e1fe0",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.0100000761449337,
+  "error": null,
+  "reasons": [
+   "supply 5555 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x5c2bf2686af928d058403da32bfcb190e5abf30c",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.025582965463399887,
+  "error": null,
+  "reasons": [
+   "supply 5555 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=unavailable)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x85dc779e691ab28434dc364e5e4f90b0c73a241c",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.0100000761449337,
+  "error": null,
+  "reasons": [
+   "supply 3333 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xfd2a370d35f83cae394fb25e56384378fe9a803c",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 20,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.02695806324481964,
+  "error": null,
+  "reasons": [],
+  "risk_flags": [
+   "no resolvable metadata (provenance=unavailable)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x57ad9ceeced0297c34172e4590cd135642d0d870",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.010207993909716606,
+  "error": null,
+  "reasons": [
+   "supply 10000 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xbe605f3b2f13b3a40bc354b7f319871443853ef6",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.009749899618327618,
+  "error": null,
+  "reasons": [
+   "supply 5555 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x5a76d09a18e14cd6d990ce12aaa97b778faf83c3",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.0112500274553895,
+  "error": null,
+  "reasons": [
+   "supply 5555 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xa6176ad8fe063680846ff15f45bab98c18036f36",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.009709037840366364,
+  "error": null,
+  "reasons": [
+   "supply 5555 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xe3bf09705dd425c73760366fc202a0681c20b1b5",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.009916024282574654,
+  "error": null,
+  "reasons": [
+   "supply 5555 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xed283ff2fe7a9b3a905a2d42e2b5cd2004e86e11",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.033958000130951405,
+  "error": null,
+  "reasons": [
+   "supply 10000 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xcc2a7c2c22958f5e136e9e240fa5fdbb12cf1ec7",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.03324996214359999,
+  "error": null,
+  "reasons": [
+   "supply 500 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=unavailable)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xef7c39039c3d961cfb8e441004f0dfb5744e90da",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.009750016033649445,
+  "error": null,
+  "reasons": [
+   "supply 5555 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x17d8166836d716a87ade6b782e79ed751bf3bbb7",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 30,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.009665964171290398,
+  "error": null,
+  "reasons": [
+   "supply 5555 in the plausible band"
+  ],
+  "risk_flags": [
+   "no resolvable metadata (provenance=absent)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xed74a2029ff2633f21260e097e451358c26a507d",
+  "chain": "robinhood",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "high_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 40,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.0660829246044159,
+  "error": null,
+  "reasons": [
+   "supply 6969 in the plausible band",
+   "fully on-chain metadata (costly signal)",
+   "5 structured attributes",
+   "ERC-6551 token-bound account"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ }
+]

@@ -1,0 +1,159 @@
+{
+  "arm": "baseline_mint_all",
+  "drop": {
+    "chain": "robinhood",
+    "collection": "0x616d6785c15fdc7313907d6e79d6a348d845562c",
+    "start_time": 1787827472,
+    "cap": 1,
+    "mint_price_wei": 0,
+    "fixture_name": null
+  },
+  "decision_cutoff_ts": 1787827472,
+  "tool_calls": [
+    {
+      "tool": "erc165_probe",
+      "input": {
+        "collection": "0x616d6785c15fdc7313907d6e79d6a348d845562c"
+      },
+      "output": {
+        "standard": "erc721",
+        "is_erc721": true,
+        "is_erc1155": false,
+        "answers_ownerof_and_balanceof": false,
+        "note": null
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "collection_stats",
+      "input": {
+        "collection": "0x616d6785c15fdc7313907d6e79d6a348d845562c"
+      },
+      "output": {
+        "max_supply": 1,
+        "owner": "0x0149ef656314a7b7df99a87381ea274744c6b8a7",
+        "name": "test",
+        "symbol": "test",
+        "code_size": 45,
+        "max_supply_sane": true,
+        "note": "total_supply is an OUTCOME and is not available at decision time."
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "metadata_fetch",
+      "input": {
+        "allow_network": false
+      },
+      "output": {
+        "present": false,
+        "name": null,
+        "description": null,
+        "n_attributes": 0,
+        "has_image": false,
+        "token_bound_account": false,
+        "token_uri": "",
+        "drop_uri": "ipfs://bafkreifmmcgxrtyz2mqkvxm46e5jjl2pa2ylanf2bwqz6htxb23fdtbz24",
+        "on_chain_metadata": false,
+        "provenance": "unavailable",
+        "contract_uri_present": false
+      },
+      "ms": 0.7
+    },
+    {
+      "tool": "erc6551_probe",
+      "input": {},
+      "output": {
+        "token_bound_account": false,
+        "source": "metadata field"
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "economics",
+      "input": {},
+      "output": {
+        "mint_price_wei": 0,
+        "is_free": true,
+        "max_per_wallet": 1,
+        "fee_bps": 1000,
+        "restrict_fee_recipients": true,
+        "duration_hours": 0.02,
+        "starts_in_s": 154,
+        "advance_notice_s": 154
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "drop_config_history",
+      "input": {},
+      "output": {
+        "n_revisions_before_cutoff": 1,
+        "distinct_prices": [
+          0
+        ],
+        "price_flips": 0,
+        "revisions": [
+          {
+            "mint_price": 0,
+            "start_time": 1787827472,
+            "end_time": 1787827532,
+            "max_per_wallet": 1,
+            "block_timestamp": 1787827318
+          }
+        ]
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "mint_velocity",
+      "input": {},
+      "output": {
+        "available": false,
+        "mints_per_min": null,
+        "reason": "decision point is at/before startTime; no mint has occurred yet. Outcome signal, not a feature."
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "deployer_history",
+      "input": {},
+      "output": {
+        "deployer": "0x0149ef656314a7b7df99a87381ea274744c6b8a7",
+        "known": false,
+        "prior_collections": 0,
+        "prior_high_value": 0,
+        "note": "no memory store attached"
+      },
+      "ms": 0.0
+    }
+  ],
+  "triage": {
+    "verdict": "MINT",
+    "score": 100,
+    "reasons": [
+      "drop is free; baseline mints every free drop"
+    ],
+    "risk_flags": []
+  },
+  "verifier": null,
+  "action": {
+    "mode": "dry_run",
+    "wallets": 1,
+    "achievable": 1,
+    "gas_wei": 17088194046000
+  },
+  "outcome": {
+    "label": "low_value",
+    "label_detail": {
+      "fill_ratio": 1.0,
+      "fill_ok": true,
+      "unique_minters": 1,
+      "minters_ok": false,
+      "secondary_transfers_48h": 0,
+      "secondary_ok": false,
+      "label": "low_value"
+    },
+    "note": "outcome is NEVER visible to the agent; shown here only for post-hoc scoring."
+  }
+}

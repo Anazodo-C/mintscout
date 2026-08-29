@@ -1,0 +1,77 @@
+{
+  "dataset": "/Users/mac/Documents/Claude/mintscout/data/drops_robinhood.jsonl",
+  "n": 201,
+  "label_policy": {
+    "min_fill_ratio": 0.8,
+    "min_unique_minters": 100,
+    "require_secondary": true,
+    "secondary_window_s": 172800
+  },
+  "labels": {
+    "n": 201,
+    "high_value": 6,
+    "low_value": 195,
+    "base_rate": 0.0299
+  },
+  "llm": {
+    "calls": 0,
+    "cache_hits": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "seconds": 0.0
+  },
+  "arms": [
+    {
+      "arm": "baseline_mint_all",
+      "n": 201,
+      "n_high_value": 6,
+      "base_rate": 0.0299,
+      "n_chosen": 201,
+      "precision_at_k": 0.0299,
+      "recall": 1.0,
+      "f1": 0.058,
+      "lift_over_base_rate": 1.0,
+      "false_positives": 195,
+      "true_positives": 6,
+      "tokens_acquired_from_high_value": 380,
+      "tokens_acquirable_from_all_high_value": 380,
+      "fill_efficiency": 1.0,
+      "raw_fill_vs_100_per_collection": 0.516,
+      "total_gas_wei": 53913252215130000,
+      "wasted_gas_wei_on_false_positives": 52375314750990000,
+      "wasted_spend_wei_on_false_positives": 0,
+      "wallet_slots_spent": 3155,
+      "wallet_slots_wasted": 3065,
+      "verifier_vetoes": 0,
+      "arm_errors": 0,
+      "median_decision_ms": 0.0,
+      "wall_seconds": 0.0
+    },
+    {
+      "arm": "deterministic",
+      "n": 201,
+      "n_high_value": 6,
+      "base_rate": 0.0299,
+      "n_chosen": 1,
+      "precision_at_k": 1.0,
+      "recall": 0.1667,
+      "f1": 0.2857,
+      "lift_over_base_rate": 33.5,
+      "false_positives": 0,
+      "true_positives": 1,
+      "tokens_acquired_from_high_value": 40,
+      "tokens_acquirable_from_all_high_value": 380,
+      "fill_efficiency": 0.1053,
+      "raw_fill_vs_100_per_collection": 0.4,
+      "total_gas_wei": 341763880920000,
+      "wasted_gas_wei_on_false_positives": 0,
+      "wasted_spend_wei_on_false_positives": 0,
+      "wallet_slots_spent": 20,
+      "wallet_slots_wasted": 0,
+      "verifier_vetoes": 0,
+      "arm_errors": 0,
+      "median_decision_ms": 0.0,
+      "wall_seconds": 0.0
+    }
+  ]
+}
