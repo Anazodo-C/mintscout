@@ -1,0 +1,92 @@
+{
+  "_note": "Captured from live mainnet logs. verify.py asserts that keccak(signature) equals topic0 of each sample log.",
+  "events": {
+    "PublicDropUpdated": {
+      "signature": "PublicDropUpdated(address,(uint80,uint48,uint48,uint16,uint16,bool))",
+      "topic0": "0x3e30d8e1f739ea4795c481b21c23f905e938b80339305f3508e43c558e5dead3",
+      "sample": {
+        "chain": "robinhood",
+        "address": "0x00005ea00ac477b1030ce78506496e8c2de24bf5",
+        "blockNumber": "0x2f28f52",
+        "transactionHash": "0x62f47748ff78842f085f1f67cd10c66b7e0bc1f397dc7e863dda6a906e86552b",
+        "topics": [
+          "0x3e30d8e1f739ea4795c481b21c23f905e938b80339305f3508e43c558e5dead3",
+          "0x0000000000000000000000001a122aa8bb03980f3295298a0e9ee4fd49b5b23f"
+        ],
+        "data": "0x000000000000000000000000000000000000000000000000000009184e72a000000000000000000000000000000000000000000000000000000000006a93541a000000000000000000000000000000000000000000000000000000006a93622a000000000000000000000000000000000000000000000000000000000000000400000000000000000000000000000000000000000000000000000000000003e80000000000000000000000000000000000000000000000000000000000000001"
+      }
+    },
+    "SeaDropMint": {
+      "signature": "SeaDropMint(address,address,address,address,uint256,uint256,uint256,uint256)",
+      "topic0": "0xe90cf9cc0a552cf52ea6ff74ece0f1c8ae8cc9ad630d3181f55ac43ca076b7d6",
+      "sample": {
+        "chain": "robinhood",
+        "address": "0x00005ea00ac477b1030ce78506496e8c2de24bf5",
+        "blockNumber": "0x2f28f40",
+        "transactionHash": "0x87c5d22604db3eafd0e17adc8929ae22408159ed9a7dd7064e7de36d472a0c20",
+        "topics": [
+          "0xe90cf9cc0a552cf52ea6ff74ece0f1c8ae8cc9ad630d3181f55ac43ca076b7d6",
+          "0x000000000000000000000000fedb9d8b3e07a8d4be05b1b3dc679b25ef7541ae",
+          "0x00000000000000000000000046fef6655c3890da69a9291f55198087d3d1157f",
+          "0x0000000000000000000000000000a26b00c1f0df003000390027140000faa719"
+        ],
+        "data": "0x00000000000000000000000046fef6655c3890da69a9291f55198087d3d1157f0000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000003e80000000000000000000000000000000000000000000000000000000000000003"
+      }
+    },
+    "DropURIUpdated": {
+      "signature": "DropURIUpdated(address,string)",
+      "topic0": "0xa0295608d25b3033c2e2c41cbac8746c2d08767bcfde6d47fae1ed7ba1d32150",
+      "sample": {
+        "chain": "robinhood",
+        "address": "0x00005ea00ac477b1030ce78506496e8c2de24bf5",
+        "blockNumber": "0x2f28f52",
+        "transactionHash": "0x62f47748ff78842f085f1f67cd10c66b7e0bc1f397dc7e863dda6a906e86552b",
+        "topics": [
+          "0xa0295608d25b3033c2e2c41cbac8746c2d08767bcfde6d47fae1ed7ba1d32150",
+          "0x0000000000000000000000001a122aa8bb03980f3295298a0e9ee4fd49b5b23f"
+        ],
+        "data": "0x00000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000042697066733a2f2f6261666b72656964683269727435753763736e62357376707a6d7532676c636c61326278336e78357a68736563753361736433627236696e647061000000000000000000000000000000000000000000000000000000000000"
+      }
+    },
+    "CreatorPayoutAddressUpdated": {
+      "signature": "CreatorPayoutAddressUpdated(address,address)",
+      "topic0": "0x0c69f21751e800ea5960436c9a94370c7adbf54c733a20a025293fbbe8f16252",
+      "sample": {
+        "chain": "robinhood",
+        "address": "0x00005ea00ac477b1030ce78506496e8c2de24bf5",
+        "blockNumber": "0x2f28f52",
+        "transactionHash": "0x62f47748ff78842f085f1f67cd10c66b7e0bc1f397dc7e863dda6a906e86552b",
+        "topics": [
+          "0x0c69f21751e800ea5960436c9a94370c7adbf54c733a20a025293fbbe8f16252",
+          "0x0000000000000000000000001a122aa8bb03980f3295298a0e9ee4fd49b5b23f",
+          "0x00000000000000000000000071dd150a6ccc9271d3b5a56096d9c237993dbf32"
+        ],
+        "data": "0x"
+      }
+    },
+    "Transfer": {
+      "signature": "Transfer(address,address,uint256)",
+      "topic0": "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+      "sample": {
+        "chain": "robinhood",
+        "address": "0x1df57a91ac47f3afe15c018676f81144392ad9ef",
+        "blockNumber": "0x2f32beb",
+        "transactionHash": "0x594c59d004f750b80a678d16de230741a1c9a0b62e45764b1072698dc6be5752",
+        "topics": [
+          "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+          "0x000000000000000000000000bfd15eb7234b32b10da1ceba82670d2981b2f4be",
+          "0x000000000000000000000000d79f3c5187cab6eaa76b0c028e07c1a93936e683",
+          "0x0000000000000000000000000000000000000000000000000000000000001809"
+        ],
+        "data": "0x"
+      }
+    }
+  },
+  "selectors": {
+    "mintPublic(address,address,address,uint256)": "0x161ac21f",
+    "getPublicDrop(address)": "0xbc6a629c"
+  },
+  "unidentified_topics": {
+    "0xcaeb4009c05208df426d15ff50b608287b05d21dee1f790552ea451a540a7be0": "Observed on SeaDrop (3 topics, 14 data words). Shaped like a token-gated drop stage. Not matched to a canonical signature and not decoded -- MintScout discovers public drops only. Recorded as a known-unknown rather than guessed at."
+  }
+}
