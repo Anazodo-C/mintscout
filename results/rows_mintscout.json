@@ -1,0 +1,1488 @@
+[
+ {
+  "collection": "0xdde2b256b7aaa4015b43e607202ee85d36db8467",
+  "chain": "robinhood",
+  "verdict": "WATCH",
+  "score": 15,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 22853.802792029455,
+  "error": null,
+  "reasons": [
+   "45-byte code_size indicates minimal proxy with no custom implementation",
+   "Only 1 config revision shows minimal operator preparation",
+   "Extremely low max_supply of 25 tokens suggests vanity/personal drop",
+   "Unknown deployer with no track record"
+  ],
+  "risk_flags": [
+   "Minimal proxy (45 bytes) with no positive signals to offset it",
+   "Max supply of 25 is far below the 200-20,000 range associated with legitimate drops",
+   "Single config revision indicates minimal operator effort",
+   "3-minute advance notice suggests hasty or low-effort launch"
+  ],
+  "triage_verdict": "SKIP",
+  "verifier": {
+   "agreed": false,
+   "objections": [
+    {
+     "target": "evidence item: collection.code_size = 45",
+     "problem": "Evidence fidelity violation. The dossier shows code_size is 45, but this is being read as 'negative'. A 45-byte code_size is NOT a minimal proxy - minimal proxies are typically 45-55 bytes for EIP-1167, but this is at the lower bound and the triage provides no verification that this is actually a proxy pattern rather than a small custom contract.",
+     "severity": "minor"
+    },
+    {
+     "target": "reason: 'Extremely low max_supply of 25 tokens suggests vanity/personal drop'",
+     "problem": "Prior discipline violation. While 25 is low, the triage provides no positive evidence standard. The absence of high supply is not itself disqualifying - many legitimate artist drops have small editions. This reason penalizes smallness without identifying actual negative signals.",
+     "severity": "major"
+    },
+    {
+     "target": "reason: 'Very short 200s advance notice indicates low planning'",
+     "problem": "This is not a universally-applicable negative signal. 200 seconds (3.3 minutes) of advance notice is short, but for a 25-edition free mint, this could be intentional to prevent bot sniping. The triage treats this as definitively negative without considering context.",
+     "severity": "minor"
+    },
+    {
+     "target": "overall reasoning",
+     "problem": "Prior discipline violation. The verdict is SKIP based entirely on absence of positives rather than presence of negatives. The dossier shows: (1) a real contract deployment with non-trivial code, (2) proper ERC721 standard compliance, (3) configured mint parameters with max_per_wallet limits, (4) pinned IPFS metadata, (5) fee restrictions enabled. These are positive signals. The triage conflates 'small/simple' with 'low-value' without identifying actual red flags like rug patterns, suspicious economics, or technical defects.",
+     "severity": "major"
+    }
+   ],
+   "final_verdict": "WATCH",
+   "confidence": 72,
+   "vetoed": true
+  }
+ },
+ {
+  "collection": "0x12cf2e02a50596ea72d9c24c4b9e76dfb73d4b0c",
+  "chain": "robinhood",
+  "verdict": "WATCH",
+  "score": 15,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 25115.33687496558,
+  "error": null,
+  "reasons": [
+   "Code size of 45 bytes indicates minimal proxy with no custom implementation",
+   "Only 1 config revision shows minimal operator preparation",
+   "No positive signals present to overcome base rate of ~4% high-value drops",
+   "Named stages suggest existing community but insufficient without other positives"
+  ],
+  "risk_flags": [
+   "Code size of 45 bytes is characteristic of minimal proxy with no custom logic (25\u00d7 negative lift)",
+   "Single config revision indicates minimal operator effort (vs 3+ for 5\u00d7 positive lift)",
+   "No costly positive signals present to justify wallet slot allocation"
+  ],
+  "triage_verdict": "SKIP",
+  "verifier": {
+   "agreed": false,
+   "objections": [
+    {
+     "target": "reason: 'Named stages suggest existing community but insufficient without other positives'",
+     "problem": "The triage agent acknowledges named stages as a positive signal (evidence item 6 marks stage_names as 'positive'), yet dismisses it without proper weight. The stage names reference specific tokens/communities: STONK, CASHCAT, Ibunny - these are concrete references suggesting cross-community collaboration, not generic placeholder text. This is a costly signal that requires deliberate configuration.",
+     "severity": "major"
+    },
+    {
+     "target": "reason: 'Only 1 config revision shows minimal operator preparation'",
+     "problem": "While technically accurate, this penalizes a drop that launched 57 seconds after deployment (advance_notice_s: 57). The operator had minimal time for revisions. The single revision shows deliberate configuration with 3 named stages, specific max_per_wallet (1), and a 6-hour duration. The lack of revisions may reflect confidence rather than lack of preparation.",
+     "severity": "major"
+    },
+    {
+     "target": "overall reasoning",
+     "problem": "The verdict applies universal negatives (minimal proxy, single revision) while dismissing the one concrete positive signal (named stages with specific community references). The stage names are not generic - they reference specific tokens/projects, which is a deliberate costly signal. The triage agent's own evidence list marks this as positive but then fails to give it weight in the final reasoning.",
+     "severity": "major"
+    },
+    {
+     "target": "risk assessment",
+     "problem": "The 'no costly positive signals' claim contradicts the evidence. Named stages referencing specific communities (STONK, CASHCAT, Ibunny) ARE costly signals - they require knowledge of those projects and deliberate configuration. This is not a generic 'Public Mint' placeholder.",
+     "severity": "major"
+    }
+   ],
+   "final_verdict": "WATCH",
+   "confidence": 72,
+   "vetoed": true
+  }
+ },
+ {
+  "collection": "0x1ce3e27bf3aec777104b415804a5f8a8e368a7e6",
+  "chain": "robinhood",
+  "verdict": "WATCH",
+  "score": 15,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 22712.865083944052,
+  "error": null,
+  "reasons": [
+   "No resolvable metadata (metadata.present: false) - effectively disqualifying",
+   "Code size of 45 bytes indicates minimal proxy with no custom implementation",
+   "Zero configuration revisions shows no operator effort or iteration",
+   "Unknown deployer with no prior collection history"
+  ],
+  "risk_flags": [
+   "No metadata resolved at all - strongest negative signal (P(f|high)=1.00 requires this)",
+   "Bare minimal proxy (45 bytes) with no other positive signals",
+   "Zero operator effort evidenced by no configuration history",
+   "Despite 'BEANZ Official' name, deployer is unknown with no track record"
+  ],
+  "triage_verdict": "SKIP",
+  "verifier": {
+   "agreed": false,
+   "objections": [
+    {
+     "target": "metadata.present: false",
+     "problem": "This is universally true at decision time for drops with shape=null. The dossier shows metadata.shape is null, meaning no drop stage config exists. Token metadata does not exist before minting begins. This penalizes what is absent for ALL drops at this decision point.",
+     "severity": "major"
+    },
+    {
+     "target": "collection.code_size: 45",
+     "problem": "While accurately cited, this is being treated as disqualifying when the collection name is 'BEANZ Official RH' - a reference to a known high-value Azuki ecosystem project. The minimal proxy pattern is standard for legitimate collections. Without checking if this is actually affiliated with the real BEANZ, dismissing on code size alone misses potential signal.",
+     "severity": "major"
+    },
+    {
+     "target": "config_history.n_revisions_before_cutoff: 0",
+     "problem": "Accurately cited from dossier, but the decision_cutoff_ts shows the mint starts in -10 seconds (already started). With 0.17 hour duration and 0 advance notice, there was no window for configuration. This isn't evidence of low effort - it's evidence of a snapshot taken at mint start.",
+     "severity": "major"
+    },
+    {
+     "target": "Overall reasoning",
+     "problem": "The verdict relies entirely on absence of signals rather than presence of negatives. The 'BEANZ Official RH' name on the 'robinhood' chain (a new chain where deployer history wouldn't exist) suggests this could be a legitimate brand migration. The triage failed to consider context: new chain = no deployer history is expected, not suspicious.",
+     "severity": "major"
+    }
+   ],
+   "final_verdict": "WATCH",
+   "confidence": 75,
+   "vetoed": true
+  }
+ },
+ {
+  "collection": "0xfb5cdefdad1dbf6bf17f757f1eeb7fe60347f396",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 5,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 29210.23129101377,
+  "error": null,
+  "reasons": [
+   "metadata.present is false - no resolvable drop configuration (necessary condition failed)",
+   "code_size is 45 bytes - bare minimal proxy with no custom implementation",
+   "zero config revisions - no operator effort demonstrated",
+   "unknown deployer with no prior collections"
+  ],
+  "risk_flags": [
+   "No metadata resolved - effectively necessary condition failed (P(f|high)=1.00)",
+   "45-byte code size indicates minimal proxy with no real implementation (25\u00d7 discriminator)",
+   "Symbol '8453' is a chain ID, not a meaningful token symbol",
+   "Zero configuration effort before mint open"
+  ],
+  "triage_verdict": "SKIP",
+  "verifier": {
+   "agreed": false,
+   "objections": [
+    {
+     "target": "metadata.present = false",
+     "problem": "This is cited as 'necessary condition failed' but metadata is universally absent at decision time for drops with shape=null. The dossier shows metadata.shape is null, not 'drop_stage_config'. Absence of metadata at this point is not discriminative - it applies to high-value drops too. This is penalising the universally-absent.",
+     "severity": "major"
+    },
+    {
+     "target": "code_size is 45 bytes",
+     "problem": "Evidence fidelity issue: the dossier states code_size is 45, which triage correctly reads. However, the interpretation '25\u00d7 discriminator' and 'bare minimal proxy' is accurate. This objection is about whether 45 bytes alone, without other context, justifies SKIP.",
+     "severity": "minor"
+    },
+    {
+     "target": "zero config revisions",
+     "problem": "Accurately cited from dossier (n_revisions_before_cutoff: 0). This is a valid negative signal.",
+     "severity": "minor"
+    },
+    {
+     "target": "Overall verdict logic",
+     "problem": "The verdict rests heavily on metadata.present=false as a 'necessary condition failed' with P(f|high)=1.00. But this is defective reasoning: metadata is absent for ALL drops at decision time when shape is null. The triage agent is treating a universal condition as if it were discriminative. The other signals (45-byte code, 0 revisions, gibberish symbol, 5-min duration) are genuinely negative, but the metadata objection is invalid and inflates the case for SKIP.",
+     "severity": "major"
+    }
+   ],
+   "final_verdict": "SKIP",
+   "confidence": 75,
+   "vetoed": true
+  }
+ },
+ {
+  "collection": "0x5a76d09a18e14cd6d990ce12aaa97b778faf83c3",
+  "chain": "robinhood",
+  "verdict": "WATCH",
+  "score": 5,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 22809.78429201059,
+  "error": null,
+  "reasons": [
+   "No resolvable metadata at decision point - hard disqualifier",
+   "Code size of 45 bytes indicates minimal proxy with no custom implementation",
+   "Zero configuration revisions shows no operator effort or iteration",
+   "Unknown deployer with no track record"
+  ],
+  "risk_flags": [
+   "metadata.present: false - nothing resolved, strongest negative signal",
+   "code_size of 45 bytes with no other positive signals indicates bare minimal proxy",
+   "Zero configuration history suggests no deliberate operator effort",
+   "No positive signals present to overcome the strong negatives"
+  ],
+  "triage_verdict": "SKIP",
+  "verifier": {
+   "agreed": false,
+   "objections": [
+    {
+     "target": "metadata.present: false",
+     "problem": "This is a universally-absent feature at decision point. The dossier shows decision_cutoff_ts is 1787657998 and economics.starts_in_s is -64, meaning we're only 64 seconds past mint start. Token metadata does not exist for ANY drop at this stage when metadata.shape is null - tokens haven't been minted yet. This reason penalizes something true of all drops including successful ones.",
+     "severity": "major"
+    },
+    {
+     "target": "Code size of 45 bytes indicates minimal proxy",
+     "problem": "Evidence fidelity issue - the dossier shows code_size: 45, which triage correctly reads, but this is being used as the primary negative signal. However, 45 bytes is actually within normal range for minimal proxies (typically 40-50 bytes). More importantly, this alone shouldn't be disqualifying without checking if there are other positive signals.",
+     "severity": "minor"
+    },
+    {
+     "target": "Zero configuration revisions",
+     "problem": "While factually correct (n_revisions_before_cutoff: 0), the dossier shows economics.advance_notice_s: 0, meaning the contract was deployed very close to mint time. Zero revisions in a zero-advance-notice scenario is not necessarily a negative signal - there was no time window for revisions.",
+     "severity": "major"
+    },
+    {
+     "target": "Overall verdict logic",
+     "problem": "The verdict relies entirely on absence of positives rather than presence of negatives. The drop has: (1) sane max_supply of 5555, (2) max_per_wallet limit of 2 (anti-bot measure), (3) restrict_fee_recipients: true (security measure), (4) proper ERC721 standard. These are neutral-to-positive signals being ignored. The 'no metadata' objection is defective as explained above.",
+     "severity": "major"
+    }
+   ],
+   "final_verdict": "WATCH",
+   "confidence": 72,
+   "vetoed": true
+  }
+ },
+ {
+  "collection": "0x383ae1330aed038d1fdab304cab1e961a73e9ca0",
+  "chain": "robinhood",
+  "verdict": "WATCH",
+  "score": 5,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 21823.95941694267,
+  "error": null,
+  "reasons": [
+   "metadata.present is false - nothing resolved, effectively disqualifying",
+   "code_size is 45 bytes - bare minimal proxy with no custom implementation",
+   "zero config revisions - no operator effort demonstrated",
+   "unknown deployer with no prior collections"
+  ],
+  "risk_flags": [
+   "No resolvable metadata - P(f|high) = 0.00 per calibration",
+   "45-byte code size indicates minimal proxy with no real implementation",
+   "Zero configuration effort - no revisions before cutoff",
+   "Collection name 'CARS' with symbol 'C' - minimal effort naming"
+  ],
+  "triage_verdict": "SKIP",
+  "verifier": {
+   "agreed": false,
+   "objections": [
+    {
+     "target": "metadata.present evidence item",
+     "problem": "Penalising universally-absent feature. At decision_cutoff_ts (72 seconds BEFORE mint start per economics.starts_in_s: -72), metadata does not exist for ANY drop. The dossier shows metadata.shape: null and metadata.provenance: 'absent' which is the expected state pre-mint. This is not a distinguishing feature.",
+     "severity": "major"
+    },
+    {
+     "target": "reason: 'metadata.present is false - nothing resolved, effectively disqualifying'",
+     "problem": "Defective reasoning. Metadata cannot resolve before the mint opens. This reason would disqualify every single drop including high-value ones, since all drops have absent metadata at t-72 seconds. This violates the 'penalising the universally-absent' principle.",
+     "severity": "major"
+    },
+    {
+     "target": "risk_flag: 'No resolvable metadata - P(f|high) = 0.00 per calibration'",
+     "problem": "Fabricated calibration claim. The dossier contains no calibration data, and the claim that absent metadata at decision point has 0% correlation with high-value drops is false - metadata is absent for ALL drops at this stage.",
+     "severity": "major"
+    },
+    {
+     "target": "overall verdict logic",
+     "problem": "The verdict rests primarily on metadata absence (first reason, first risk flag), which is a universal condition. While code_size of 45 bytes is legitimately concerning, the triage failed to weigh this appropriately against the neutral signals: reasonable max_supply (5555), free mint economics, and the fact that we're evaluating 72 seconds before mint start when configuration activity may not yet be visible.",
+     "severity": "major"
+    }
+   ],
+   "final_verdict": "WATCH",
+   "confidence": 72,
+   "vetoed": true
+  }
+ },
+ {
+  "collection": "0xf199cf7960a298c4721c754b00406338396d8add",
+  "chain": "robinhood",
+  "verdict": "WATCH",
+  "score": 5,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 22504.759500036016,
+  "error": null,
+  "reasons": [
+   "Gibberish collection name and symbol indicate low-effort or test deployment",
+   "Code size of 45 bytes is minimal proxy with no custom implementation",
+   "Very small max supply of 60 with high per-wallet limit suggests self-minting",
+   "Unknown deployer with no prior collections"
+  ],
+  "risk_flags": [
+   "Keyboard-mash collection name strongly suggests test or spam deployment",
+   "45-byte code size is bare minimal proxy with no positive signals to offset it",
+   "Max supply of 60 with 30 per wallet allows 2 wallets to mint entire supply",
+   "No evidence of existing community (single unnamed public stage)"
+  ],
+  "triage_verdict": "SKIP",
+  "verifier": {
+   "agreed": false,
+   "objections": [
+    {
+     "target": "evidence item: collection.max_supply",
+     "problem": "Max supply of 60 is marked as 'negative' but this is not inherently negative. The dossier shows max_supply_sane: true, indicating it passed sanity checks. Small supply can be legitimate for curated drops.",
+     "severity": "minor"
+    },
+    {
+     "target": "reason: 'Only 2 config revisions, below the 3+ threshold that indicates serious operator effort'",
+     "problem": "This fabricates a '3+ threshold' that does not exist in any documented criteria. The dossier shows 2 revisions with actual timing adjustments (start_time changed from 1787315059 to 1787315239, end_time from 1787315359 to 1787315539), which demonstrates deliberate configuration activity.",
+     "severity": "major"
+    },
+    {
+     "target": "reason: 'Very small max supply of 60 with high per-wallet limit suggests self-minting'",
+     "problem": "While the math is correct (2 wallets could mint entire supply), this reasoning pattern would flag many legitimate small-edition drops. The combination is suspicious but not definitively negative without other context.",
+     "severity": "minor"
+    },
+    {
+     "target": "overall verdict logic",
+     "problem": "The verdict relies heavily on the absence of positive signals rather than the presence of definitive negative signals. While the collection name/symbol are genuinely concerning, the 45-byte code size and 2 config revisions are being penalized against standards not established in the dossier. The drop shows: free mint (common for legitimate drops), sane supply, actual config adjustments, and proper metadata structure. This could be a low-effort drop OR a small legitimate project. The evidence doesn't definitively support SKIP over WATCH.",
+     "severity": "major"
+    }
+   ],
+   "final_verdict": "WATCH",
+   "confidence": 65,
+   "vetoed": true
+  }
+ },
+ {
+  "collection": "0xbaf7b3da9fe8803767cbdfb9bef08a1405f42608",
+  "chain": "robinhood",
+  "verdict": "WATCH",
+  "score": 5,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 20508.14329192508,
+  "error": null,
+  "reasons": [
+   "metadata.present is false - no resolvable drop configuration (necessary condition failed)",
+   "code_size is 45 bytes - bare minimal proxy with no custom implementation",
+   "zero config revisions - no operator effort demonstrated",
+   "symbol is single character '.' - placeholder/low-effort indicator"
+  ],
+  "risk_flags": [
+   "No metadata resolved - fails necessary condition per calibration (P(present|high)=1.00)",
+   "45-byte code size indicates ERC-1167 minimal proxy with no real implementation",
+   "Single-character symbol suggests placeholder or minimal effort",
+   "Zero configuration history - no demonstrated operator engagement"
+  ],
+  "triage_verdict": "SKIP",
+  "verifier": {
+   "agreed": false,
+   "objections": [
+    {
+     "target": "metadata.present reasoning",
+     "problem": "Penalises the universally-absent. The dossier shows metadata.shape is null and source is null, which per the verifier instructions indicates this is a drop_stage_config scenario where token metadata does not exist at decision time for ANY drop. The triage agent cited 'no resolvable drop configuration' and 'necessary condition failed' based on metadata.present=false, but this is true of every drop including high-value ones before mint opens. This is a defective reason.",
+     "severity": "major"
+    },
+    {
+     "target": "code_size interpretation",
+     "problem": "45 bytes is cited as 'bare minimal proxy with no custom implementation' and 'ERC-1167 minimal proxy with no real implementation'. While 45 bytes is indeed small, the triage agent provides no evidence that this specific bytecode is actually an ERC-1167 proxy. The dossier does not contain bytecode analysis. This may be overstating what the evidence shows.",
+     "severity": "major"
+    },
+    {
+     "target": "overall verdict logic",
+     "problem": "The verdict rests heavily on metadata.present=false (called a 'necessary condition') and minimal code size, but the first is universally absent at this decision point and the second may be overstated. The remaining signals (zero config revisions, single-char symbol, unknown deployer) are legitimately negative, but when the two primary reasons are defective, the SKIP verdict lacks sufficient support. The drop shows max_supply=10000 (coherent), is_free=true (common for legitimate drops), and has a named collection. Without fabricated negatives, this should be WATCH pending more data.",
+     "severity": "major"
+    }
+   ],
+   "final_verdict": "WATCH",
+   "confidence": 72,
+   "vetoed": true
+  }
+ },
+ {
+  "collection": "0xb7baf793fb2451ff2f6f7b5140a58fcd8ff2184d",
+  "chain": "robinhood",
+  "verdict": "WATCH",
+  "score": 15,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 19608.212209073827,
+  "error": null,
+  "reasons": [
+   "metadata.present is false - no resolvable drop configuration (effectively disqualifying)",
+   "code_size is 45 bytes - minimal proxy with no custom implementation",
+   "zero config revisions - no operator effort demonstrated",
+   "deployer has no prior collections or track record"
+  ],
+  "risk_flags": [
+   "No resolvable metadata - P(f|high) = 1.00 for metadata.present, its absence is effectively disqualifying",
+   "45-byte code size indicates bare minimal proxy with no real implementation",
+   "Zero configuration effort - no revisions before cutoff",
+   "Unknown deployer with no track record"
+  ],
+  "triage_verdict": "SKIP",
+  "verifier": {
+   "agreed": false,
+   "objections": [
+    {
+     "target": "metadata.present = false",
+     "problem": "This is universally absent at decision time for drops with shape=null. The dossier shows decision_cutoff_ts is BEFORE mint start (economics.starts_in_s = -71 means mint started 71s ago, but mint_velocity shows 'decision point is at/before startTime'). Metadata does not exist for ANY drop at this point. Penalizing its absence is defective reasoning that would reject all drops including successful ones.",
+     "severity": "major"
+    },
+    {
+     "target": "metadata.present reasoning",
+     "problem": "The claim 'P(f|high) = 1.00 for metadata.present' is backwards. If metadata.present=false appears in 100% of high-value drops at decision time (because none have minted yet), then its absence cannot be disqualifying. This is a logical error.",
+     "severity": "major"
+    },
+    {
+     "target": "code_size = 45 bytes",
+     "problem": "While 45 bytes is indeed minimal proxy territory, this is cited as 'effectively disqualifying' without considering that many successful drops use minimal proxies. The severity is overstated without evidence that this code_size correlates with failure.",
+     "severity": "minor"
+    },
+    {
+     "target": "overall reasoning",
+     "problem": "The verdict rests primarily on universally-absent features (metadata) rather than actual red flags. The dossier shows no fabricated claims, no outcome leakage, but also no positive signals. However, the SKIP is justified by penalizing the absence of something that doesn't exist for any drop at this stage, which is defective discipline.",
+     "severity": "major"
+    }
+   ],
+   "final_verdict": "WATCH",
+   "confidence": 72,
+   "vetoed": true
+  }
+ },
+ {
+  "collection": "0xde04c0b6c4ef9410711a392fc2b0b3214d13e430",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 5,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 22088.642165996134,
+  "error": null,
+  "reasons": [
+   "No resolvable metadata - metadata.present is false, which is effectively disqualifying",
+   "Minimal proxy contract (45 bytes) with no other positive signals",
+   "Placeholder name and symbol (single period and space)",
+   "Zero configuration revisions - no operator effort demonstrated"
+  ],
+  "risk_flags": [
+   "No resolvable drop configuration (metadata.present: false)",
+   "Bare minimal proxy (45 bytes) - typical spam pattern",
+   "Gibberish placeholder name/symbol",
+   "Zero operator effort (no config revisions)"
+  ],
+  "triage_verdict": "SKIP",
+  "verifier": {
+   "agreed": false,
+   "objections": [
+    {
+     "target": "metadata.present reason",
+     "problem": "Penalising the universally-absent. Token metadata does not exist at decision point for ANY drop when metadata.shape is null and the mint hasn't opened. The dossier shows starts_in_s: -79 (79 seconds after start) but mint_velocity.available is false with reason 'decision point is at/before startTime'. This means we're at the exact decision boundary. Metadata absence at this point is not disqualifying - it's universal. The triage agent is treating a timing artifact as a signal.",
+     "severity": "major"
+    },
+    {
+     "target": "minimal proxy reasoning",
+     "problem": "While code_size: 45 is correctly identified as a minimal proxy, the triage agent fails to apply prior discipline. The instruction states that 'Only about 4% of free drops are high value' and that a SKIP verdict must be backed by more than just 'absence of negatives'. However, a minimal proxy IS a negative signal (not merely neutral), and when combined with zero config revisions, placeholder name/symbol, and unknown deployer with no track record, this represents a coherent pattern of low-effort deployment. The objection here is not that the verdict is wrong, but that the reasoning undersells the strength of the negative evidence.",
+     "severity": "minor"
+    },
+    {
+     "target": "overall verdict logic",
+     "problem": "The triage agent correctly identifies multiple genuine negative signals (45-byte proxy, zero config revisions, placeholder name/symbol, unknown deployer), but then leads with the defective 'metadata.present' reason as if it were the primary disqualifier. When the defective reason is removed, the remaining evidence (minimal proxy + zero effort + placeholder identifiers + unknown deployer) still strongly supports SKIP. However, the verdict should stand on the legitimate negatives, not on the timing artifact.",
+     "severity": "major"
+    }
+   ],
+   "final_verdict": "SKIP",
+   "confidence": 85,
+   "vetoed": true
+  }
+ },
+ {
+  "collection": "0x94790f2b08ed755a2f73c37ac37a4bfbbbcbc582",
+  "chain": "robinhood",
+  "verdict": "WATCH",
+  "score": 72,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 21767.941124970093,
+  "error": null,
+  "reasons": [
+   "Large contract implementation (19,658 bytes) indicates real deployment effort, not spam proxy",
+   "Reasonable supply of 2,222 fits typical successful drop range",
+   "Named mint stage ('early') suggests structured community approach",
+   "Free mint with 24-hour window and reasonable per-wallet limit (10)"
+  ],
+  "risk_flags": [
+   "Only 1 config revision (lower than 3+ seen in strongest signals)",
+   "Unknown deployer with no prior collection history",
+   "Robinhood chain may have different dynamics than mainnet"
+  ],
+  "triage_verdict": "MINT",
+  "verifier": {
+   "agreed": false,
+   "objections": [
+    {
+     "target": "evidence item: metadata.present reads_as positive",
+     "problem": "The dossier explicitly states metadata.shape is 'drop_stage_config' and metadata.note says 'drop-stage configuration, not token art metadata'. This is mint configuration, not actual token metadata. Treating its presence as positive evidence mischaracterizes what exists.",
+     "severity": "minor"
+    },
+    {
+     "target": "evidence item: metadata.stage_names reads_as positive",
+     "problem": "A single generic stage name 'early' is weak signal. The dossier shows n_stages=1 with no allowlist or public stage flags. This is minimal configuration, not the 'multiple named phases' that would constitute costly signal.",
+     "severity": "major"
+    },
+    {
+     "target": "reason: 'Named mint stage (early) suggests structured community approach'",
+     "problem": "This overstates the evidence. A single stage called 'early' is not a structured approach - it's the minimum viable configuration. The dossier shows has_allowlist_stage=false and has_public_stage=false, indicating no actual phase structure.",
+     "severity": "major"
+    },
+    {
+     "target": "overall verdict logic",
+     "problem": "The MINT verdict relies heavily on the absence of negatives rather than presence of strong positive signals. With only 1 config revision (not the 3+ that indicates iteration), an unknown deployer, and minimal stage configuration, this does not meet the ~4% bar for high-value free drops. The large code_size is the only genuine costly signal, but alone it's insufficient.",
+     "severity": "major"
+    },
+    {
+     "target": "reason: 'Drop configuration properly resolved via IPFS'",
+     "problem": "The dossier shows drop_uri is pinned IPFS, which is standard. This is not a distinguishing positive - it's table stakes. Treating baseline functionality as positive evidence inflates the score.",
+     "severity": "minor"
+    }
+   ],
+   "final_verdict": "WATCH",
+   "confidence": 78,
+   "vetoed": true
+  }
+ },
+ {
+  "collection": "0x4c95edf23cbf9b34ec678bc777092e2c0716880c",
+  "chain": "robinhood",
+  "verdict": "WATCH",
+  "score": 5,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 22568.9090420492,
+  "error": null,
+  "reasons": [
+   "No resolvable metadata - metadata.present is false, which is effectively disqualifying",
+   "Code size of 45 bytes indicates minimal proxy with no custom implementation",
+   "Zero configuration revisions shows no operator effort or iteration",
+   "Unknown deployer with no prior collections"
+  ],
+  "risk_flags": [
+   "Metadata resolution failed completely - no drop configuration exists",
+   "Bare minimal proxy (45 bytes) with no evidence of real implementation",
+   "Zero operator effort - no configuration changes before mint",
+   "Mint already started (starts_in_s: -33) but metadata still absent"
+  ],
+  "triage_verdict": "SKIP",
+  "verifier": {
+   "agreed": false,
+   "objections": [
+    {
+     "target": "metadata.present reason",
+     "problem": "Penalizes universally-absent data. At decision_cutoff_ts (before/at mint start), token metadata does not exist for ANY drop. The dossier shows metadata.shape is null and metadata.provenance is 'absent' - this is the normal state pre-mint. Citing metadata.present=false as 'effectively disqualifying' when it's true of all drops at this timestamp is a defective reason.",
+     "severity": "major"
+    },
+    {
+     "target": "code_size interpretation",
+     "problem": "45 bytes is cited as 'minimal proxy with no custom implementation' and 'bare minimal proxy'. While small, this is stated as absolute fact without acknowledging that code_size alone doesn't definitively prove it's a minimal proxy vs. a compact custom contract. The reasoning overstates certainty.",
+     "severity": "minor"
+    },
+    {
+     "target": "risk_flag: 'Mint already started but metadata still absent'",
+     "problem": "This conflates two separate issues. The mint started 33 seconds ago (starts_in_s: -33), but metadata absence at this point is normal - tokens haven't been minted yet to have metadata. This risk flag incorrectly implies metadata should exist because minting began, when metadata only exists post-mint.",
+     "severity": "major"
+    },
+    {
+     "target": "overall verdict logic",
+     "problem": "The SKIP verdict rests primarily on metadata.present=false, which is a universally-absent feature at decision time. While code_size=45 and n_revisions=0 are legitimate negatives, the verdict lacks consideration that these might be offset by: max_supply=5555 (coherent, common supply number), is_free=true (lowers barrier), max_per_wallet=25 (reasonable limit). The absence of positives is treated as disqualifying when prior discipline requires positive costly signals to justify MINT, not their absence to justify SKIP.",
+     "severity": "major"
+    }
+   ],
+   "final_verdict": "WATCH",
+   "confidence": 72,
+   "vetoed": true
+  }
+ },
+ {
+  "collection": "0xe92641624df4e6ee6345867a8dcadb96d5dc4c57",
+  "chain": "robinhood",
+  "verdict": "WATCH",
+  "score": 5,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 24979.493582970463,
+  "error": null,
+  "reasons": [
+   "No resolvable metadata - metadata.present is false, which is effectively disqualifying",
+   "Code size of 45 bytes indicates minimal proxy with no custom implementation",
+   "Zero configuration revisions shows no operator effort or iteration",
+   "Unknown deployer with no prior collections"
+  ],
+  "risk_flags": [
+   "No resolvable drop configuration (metadata.present: false) - effectively necessary signal is absent",
+   "Minimal proxy contract (45 bytes) with no substantial implementation",
+   "Zero operator effort evidenced by no configuration revisions",
+   "Extremely short duration (0.07 hours / ~4 minutes) suggests low-effort drop"
+  ],
+  "triage_verdict": "SKIP",
+  "verifier": {
+   "agreed": false,
+   "objections": [
+    {
+     "target": "metadata.present reason",
+     "problem": "Penalising the universally-absent. Token metadata does not exist at decision point for ANY drop when metadata.shape is null and the mint hasn't opened (starts_in_s: -41 means we're 41 seconds AFTER start, but mint_velocity.available is false, indicating no mints yet). The dossier explicitly states metadata.provenance is 'absent' and metadata.shape is null - this is the pre-mint state for drops using drop_stage_config that populate metadata after minting begins. This is NOT a disqualifying signal.",
+     "severity": "major"
+    },
+    {
+     "target": "code_size reason",
+     "problem": "Misreading severity. While 45 bytes does indicate a minimal proxy, this is cited as 'effectively disqualifying' when it should be weighted as a negative signal but not automatically disqualifying. Many successful drops use minimal proxies. The triage overstates this evidence.",
+     "severity": "major"
+    },
+    {
+     "target": "configuration revisions reason",
+     "problem": "Valid evidence correctly read from dossier (config_history.n_revisions_before_cutoff: 0), but the interpretation lacks nuance. Zero revisions could indicate either low effort OR a well-planned drop deployed correctly on first attempt. Without other context, this is a weak negative, not a strong one.",
+     "severity": "minor"
+    },
+    {
+     "target": "overall reasoning",
+     "problem": "Prior discipline violation. The verdict is SKIP based primarily on absence of negatives rather than presence of disqualifying signals. The drop has: (1) sane max_supply of 10,000, (2) is ERC721 standard-compliant, (3) has a named collection 'THE FLOK', (4) has reasonable max_per_wallet of 33. The triage fails to recognize that metadata absence at this decision point is normal, not disqualifying. With no actual red flags beyond minimal proxy and zero revisions, this should be WATCH, not SKIP.",
+     "severity": "major"
+    }
+   ],
+   "final_verdict": "WATCH",
+   "confidence": 72,
+   "vetoed": true
+  }
+ },
+ {
+  "collection": "0x3dc93d93d5db9e3c490678ef94a0eb35b3dc2de8",
+  "chain": "robinhood",
+  "verdict": "WATCH",
+  "score": 15,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 18660.357917076908,
+  "error": null,
+  "reasons": [
+   "Minimal proxy contract (45 bytes) with no other positive signals",
+   "Only 1 config revision shows minimal operator preparation",
+   "No named community stages despite 3 stages present",
+   "Unknown deployer with no track record"
+  ],
+  "risk_flags": [
+   "Bare minimal proxy (45 bytes) indicates low deployment effort",
+   "Single config revision suggests rushed or low-effort setup",
+   "5 second advance notice is extremely short",
+   "Stage names are generic placeholders, not evidence of real community"
+  ],
+  "triage_verdict": "SKIP",
+  "verifier": {
+   "agreed": false,
+   "objections": [
+    {
+     "target": "reason: 'No named community stages despite 3 stages present'",
+     "problem": "The dossier shows stage_names=['Public stage', 'Community ', 'WL'] - these ARE named stages, not generic defaults. 'Community' and 'WL' (whitelist) are deliberate labels indicating structured access tiers. This reason contradicts the evidence.",
+     "severity": "major"
+    },
+    {
+     "target": "risk_flag: 'Stage names are generic placeholders, not evidence of real community'",
+     "problem": "This directly contradicts the previous objection. The stages ARE named ('Community', 'WL'), which is a positive signal of deliberate configuration. Calling them 'generic placeholders' misreads the evidence.",
+     "severity": "major"
+    },
+    {
+     "target": "evidence item: metadata.stage_names reads_as 'neutral'",
+     "problem": "Three named stages including 'Community' and 'WL' should read as positive, not neutral. Named stages are a costly signal of deliberate configuration, especially with 3 distinct access tiers.",
+     "severity": "major"
+    },
+    {
+     "target": "overall reasoning",
+     "problem": "The verdict focuses heavily on what's absent (large code_size, multiple revisions) rather than acknowledging positive signals present: (1) three deliberately-named mint stages with community/WL structure, (2) coherent 5555 supply, (3) proper ERC721 standard, (4) pinned metadata provenance. While the contract is minimal, the multi-stage configuration with named tiers suggests more preparation than a pure cash-grab.",
+     "severity": "major"
+    }
+   ],
+   "final_verdict": "WATCH",
+   "confidence": 75,
+   "vetoed": true
+  }
+ },
+ {
+  "collection": "0x0e1e92c656d83e1c92c0cd23fadb012fd5857544",
+  "chain": "robinhood",
+  "verdict": "WATCH",
+  "score": 15,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 23134.739791974425,
+  "error": null,
+  "reasons": [
+   "Code size of 45 bytes indicates minimal proxy with no custom implementation",
+   "Only 1 config revision shows minimal operator preparation",
+   "Extremely short 3-minute window with 6-second advance notice suggests low-effort drop",
+   "Unknown deployer with no prior collection history"
+  ],
+  "risk_flags": [
+   "Minimal proxy (45 bytes) with no substantial implementation",
+   "Single config revision indicates minimal preparation",
+   "3-minute mint window with 6-second notice is unusually rushed",
+   "No operator track record"
+  ],
+  "triage_verdict": "SKIP",
+  "verifier": {
+   "agreed": false,
+   "objections": [
+    {
+     "target": "evidence item: collection.code_size = 45",
+     "problem": "The dossier shows code_size is 45, which the triage correctly identifies as a minimal proxy. However, this is being treated as definitively negative when 45 bytes is actually ambiguous - it could be a minimal proxy OR a small custom contract. The evidence is accurate but the interpretation lacks nuance.",
+     "severity": "minor"
+    },
+    {
+     "target": "reason: 'Only 1 config revision shows minimal operator preparation'",
+     "problem": "This is a defective reason. With only 6 seconds of advance notice (advance_notice_s: 6), there was essentially NO time for additional revisions before the cutoff. The single revision is explained by the rushed timeline, not necessarily by lack of preparation. The triage is penalizing a consequence of the short notice rather than identifying an independent signal.",
+     "severity": "major"
+    },
+    {
+     "target": "reason: 'No positive signals present to overcome spam prior'",
+     "problem": "This reason applies the 4% prior correctly, but the triage missed examining whether the evidence actually supports SKIP versus WATCH. The drop has: (1) a real max_supply of 5000 (sane and coherent), (2) a named mint stage ('Public stage'), (3) max_per_wallet limit of 3 (deliberate configuration), and (4) pinned metadata provenance. These are weak positive signals, but they exist. The absence of strong positives might justify WATCH rather than SKIP.",
+     "severity": "major"
+    },
+    {
+     "target": "overall reasoning structure",
+     "problem": "The triage stacks multiple observations of the same underlying issue (rushed timeline) as if they were independent negative signals. The 6-second advance notice, 3-minute duration, and single config revision are all manifestations of one problem: extreme time compression. This inflates the apparent weight of evidence against the drop.",
+     "severity": "major"
+    }
+   ],
+   "final_verdict": "WATCH",
+   "confidence": 72,
+   "vetoed": true
+  }
+ },
+ {
+  "collection": "0xff773be6a954827cfd10ec85be948c0d84db2a62",
+  "chain": "robinhood",
+  "verdict": "WATCH",
+  "score": 15,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 23560.04270806443,
+  "error": null,
+  "reasons": [
+   "Code size of 45 bytes indicates minimal proxy with no custom implementation",
+   "Only 1 config revision shows minimal operator preparation",
+   "No named stages beyond generic 'Public stage' - no existing community signals",
+   "Extremely short 3-minute mint window suggests low-effort drop"
+  ],
+  "risk_flags": [
+   "Minimal proxy (45 bytes) with no costly positive signals",
+   "Single config revision indicates minimal preparation effort",
+   "3-minute mint window is extremely short and atypical",
+   "No community-building signals (named allowlist/holder stages)"
+  ],
+  "triage_verdict": "SKIP",
+  "verifier": {
+   "agreed": false,
+   "objections": [
+    {
+     "target": "evidence item: collection.code_size = 45",
+     "problem": "Marked as 'negative' when 45 bytes is actually a minimal proxy, which is standard practice on many chains. The dossier does not indicate this is inherently negative - it's a neutral implementation choice.",
+     "severity": "minor"
+    },
+    {
+     "target": "evidence item: config_history.n_revisions_before_cutoff = 1",
+     "problem": "Marked as 'negative' but 1 revision means the configuration was set deliberately before mint start. Zero revisions would be concerning; one revision is baseline acceptable.",
+     "severity": "major"
+    },
+    {
+     "target": "evidence item: metadata.stage_names = ['Public stage']",
+     "problem": "Marked as 'negative' when this is the default stage name for public mints. The dossier shows has_public_stage=true and n_stages=1, which is standard for straightforward public drops.",
+     "severity": "major"
+    },
+    {
+     "target": "reason: 'Code size of 45 bytes indicates minimal proxy with no custom implementation'",
+     "problem": "Minimal proxies are standard and efficient. Without evidence that custom implementation correlates with value, this is not a valid negative signal.",
+     "severity": "minor"
+    },
+    {
+     "target": "reason: 'Only 1 config revision shows minimal operator preparation'",
+     "problem": "One revision before cutoff demonstrates the operator configured the drop in advance. This is baseline competence, not a red flag.",
+     "severity": "major"
+    },
+    {
+     "target": "reason: 'No named stages beyond generic Public stage'",
+     "problem": "Penalizes a standard configuration. Most legitimate public drops have a single public stage. The absence of allowlist stages is not inherently negative.",
+     "severity": "major"
+    },
+    {
+     "target": "overall verdict logic",
+     "problem": "The verdict treats neutral/standard features (minimal proxy, single public stage, one config revision) as negatives. The drop shows: deliberate configuration (1 revision before cutoff), reasonable supply (5555), metadata present, standard public mint structure. No actual red flags exist - just absence of exceptional positive signals. This should be WATCH, not SKIP.",
+     "severity": "major"
+    }
+   ],
+   "final_verdict": "WATCH",
+   "confidence": 75,
+   "vetoed": true
+  }
+ },
+ {
+  "collection": "0x5c08ec288c5dde7c42e26d857098040a94f662b2",
+  "chain": "robinhood",
+  "verdict": "WATCH",
+  "score": 78,
+  "label": "high_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 22788.022458087653,
+  "error": null,
+  "reasons": [
+   "Large contract implementation (19805 bytes) indicates real deployment effort, not minimal proxy spam",
+   "Three configuration revisions before cutoff shows deliberate operator preparation",
+   "Reasonable supply of 5730 with sensible per-wallet limit of 30",
+   "Free mint with stable pricing (no flips)"
+  ],
+  "risk_flags": [
+   "Unknown deployer with no prior collections",
+   "Single public stage (no allowlist/holder phases suggesting existing community)",
+   "Short 1-hour mint window"
+  ],
+  "triage_verdict": "MINT",
+  "verifier": {
+   "agreed": false,
+   "objections": [
+    {
+     "target": "evidence item: metadata.present",
+     "problem": "Citing metadata.present as positive evidence is defective. The dossier explicitly states metadata.shape is 'drop_stage_config' and metadata.note says 'drop-stage configuration, not token art metadata'. This is configuration metadata, not token art metadata. Token art metadata (name, description, image, attributes) is universally absent at decision time for all drops.",
+     "severity": "major"
+    },
+    {
+     "target": "reason: 'Named collection with coherent theme'",
+     "problem": "This reason conflates collection-level naming (collection.name and collection.symbol, which ARE present) with token-level metadata (which is not). However, the evidence list includes metadata.present as supporting evidence, creating confusion about what is actually being cited.",
+     "severity": "minor"
+    },
+    {
+     "target": "overall reasoning",
+     "problem": "The verdict relies heavily on absence of negatives rather than strong positive costly signals. While code_size is substantial and there are 3 config revisions, the risk flags are significant: unknown deployer with zero prior collections, single generic 'Public' stage (no named phases suggesting real planning), and a very short 1-hour window. The positive signals present are real but modest. Given the 4% base rate for high-value free drops and the lack of strong differentiation, this does not clearly exceed the MINT threshold.",
+     "severity": "major"
+    },
+    {
+     "target": "evidence interpretation",
+     "problem": "The stage_names value of ['Public'] is marked neutral but should be recognized as weak/generic. A single stage named 'Public' is the default/minimal configuration, not evidence of deliberate planning. Named phases like 'Allowlist', 'Holder Mint', 'Public Sale' would be positive signals; 'Public' alone is not.",
+     "severity": "minor"
+    }
+   ],
+   "final_verdict": "WATCH",
+   "confidence": 72,
+   "vetoed": true
+  }
+ },
+ {
+  "collection": "0xe34ac37517607180c3e7a45c3beb2cf2eb37e7af",
+  "chain": "robinhood",
+  "verdict": "WATCH",
+  "score": 15,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 21974.826749996282,
+  "error": null,
+  "reasons": [
+   "45-byte code_size indicates minimal proxy with no custom implementation",
+   "Only 1 config revision shows minimal operator preparation",
+   "Unknown deployer with no track record",
+   "No advance notice (0 seconds) suggests rushed or low-effort launch"
+  ],
+  "risk_flags": [
+   "Minimal proxy (45 bytes) with no substantial implementation - strongest spam indicator",
+   "Single config revision indicates lack of deliberate preparation",
+   "Zero advance notice suggests unplanned or low-effort drop",
+   "Unknown deployer with no history on chain"
+  ],
+  "triage_verdict": "SKIP",
+  "verifier": {
+   "agreed": false,
+   "objections": [
+    {
+     "target": "metadata.shape evidence item",
+     "problem": "Triage lists metadata.shape as 'neutral' but this is actually a positive signal. The dossier explicitly notes this is 'drop-stage configuration, not token art metadata' and shows 2 named stages including 'Public stage' and 'Team'. This indicates deliberate configuration structure, not absence of metadata.",
+     "severity": "major"
+    },
+    {
+     "target": "metadata.stage_names evidence item",
+     "problem": "Stage names ['Public stage', 'Team'] are listed as 'neutral' but represent positive costly signals. Named stages (especially a team allocation) indicate intentional planning and structure beyond minimal effort.",
+     "severity": "major"
+    },
+    {
+     "target": "Overall reasoning",
+     "problem": "Triage penalizes the universally-absent. The dossier note explicitly states 'drop-stage configuration, not token art metadata' - meaning token art metadata does NOT exist at decision time for ANY drop. The absence of token attributes/image/description is not a valid negative signal when metadata.shape is 'drop_stage_config'. This is a defective reasoning pattern.",
+     "severity": "major"
+    },
+    {
+     "target": "Missed positive signals",
+     "problem": "Triage ignored that this drop has: (1) 2 distinct mint stages with meaningful names, (2) a 'Team' allocation suggesting professional setup, (3) metadata.provenance = 'pinned' indicating IPFS hosting, (4) max_supply of 5555 which is a coherent round number. These are costly signals that distinguish this from true spam.",
+     "severity": "major"
+    },
+    {
+     "target": "Prior discipline violation",
+     "problem": "The verdict relies primarily on absence of positives (small code, single revision, unknown deployer) rather than presence of actual red flags. With named stages, team allocation, and coherent supply, this clears the bar for WATCH at minimum. The 45-byte proxy is common for legitimate drops using factory patterns.",
+     "severity": "major"
+    }
+   ],
+   "final_verdict": "WATCH",
+   "confidence": 75,
+   "vetoed": true
+  }
+ },
+ {
+  "collection": "0x9c57fbb74bdd0102e58d87bf30d59f46341d61fd",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 0,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 21447.89683399722,
+  "error": "BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CeYTsvfGi5KgyLuLc4NZf'}",
+  "reasons": [
+   "arm error: BadRequestError"
+  ],
+  "risk_flags": [
+   "arm_error"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x24205925560f00af877f5267f396fe13eec30f88",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 0,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 16588.9837089926,
+  "error": "BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CeYTtL4h3DjiN3RRBr9xf'}",
+  "reasons": [
+   "arm error: BadRequestError"
+  ],
+  "risk_flags": [
+   "arm_error"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xa3e29d8a5a5ddb68734650052a9bbe61ae466a9d",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 0,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 17693.102208082564,
+  "error": "BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CeYTtNsrdynGaAmqCv4V9'}",
+  "reasons": [
+   "arm error: BadRequestError"
+  ],
+  "risk_flags": [
+   "arm_error"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xf7c0bb818ba62df17e998c1bea7078357062be82",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 0,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 16270.231041009538,
+  "error": "BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CeYTtSWswhkqmEid8CM7Y'}",
+  "reasons": [
+   "arm error: BadRequestError"
+  ],
+  "risk_flags": [
+   "arm_error"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x883bb707a4669ecff425aff3f32836fd1e3021ff",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 0,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 16043.01195894368,
+  "error": "BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CeYTtRS9RSF6emnMHSfwV'}",
+  "reasons": [
+   "arm error: BadRequestError"
+  ],
+  "risk_flags": [
+   "arm_error"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xa48bb641b40dfaebcee81c04b3fb0363a8ac4230",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 0,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 8508.635124890134,
+  "error": "BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CeYTtBQ3MfWbokjdhV6qd'}",
+  "reasons": [
+   "arm error: BadRequestError"
+  ],
+  "risk_flags": [
+   "arm_error"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x8d4c9d645ac95aaf5bb28ff50aae92d7f7daf74c",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 0,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 670.0682500377297,
+  "error": "BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CeYTtoyTwsPnAqErnTvvz'}",
+  "reasons": [
+   "arm error: BadRequestError"
+  ],
+  "risk_flags": [
+   "arm_error"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x18444fa1592a65240726116b061bc672468527f6",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 0,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 609.7838750574738,
+  "error": "BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CeYTtrjuSZXdPfK5RB4D5'}",
+  "reasons": [
+   "arm error: BadRequestError"
+  ],
+  "risk_flags": [
+   "arm_error"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x69912419d741892f2556b28352c76b7f179ddf4b",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 0,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 677.8974999906495,
+  "error": "BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CeYTttS6ztGuoJhUArdCt'}",
+  "reasons": [
+   "arm error: BadRequestError"
+  ],
+  "risk_flags": [
+   "arm_error"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x44ff03544b0da6258bdaa698caee879d969fe2ba",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 0,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 597.9032920440659,
+  "error": "BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CeYTtuLBP1ENkgqez88Ff'}",
+  "reasons": [
+   "arm error: BadRequestError"
+  ],
+  "risk_flags": [
+   "arm_error"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xedee0f12377159968cad3f004f34c24178afe700",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 0,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 672.5570829585195,
+  "error": "BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CeYTtwXeEZw3MibtdSnGz'}",
+  "reasons": [
+   "arm error: BadRequestError"
+  ],
+  "risk_flags": [
+   "arm_error"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x8dfd896fb627e45b121c9e2eb1e9a0f123a9af5e",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 0,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 646.2231669574976,
+  "error": "BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CeYTtwWebDK2wtjd2zyyF'}",
+  "reasons": [
+   "arm error: BadRequestError"
+  ],
+  "risk_flags": [
+   "arm_error"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x239b3193f6724f44f97095d3dcdb9ec5346a52e5",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 0,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 606.6265410045162,
+  "error": "BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CeYTtwyRp32ehvpE3rXrd'}",
+  "reasons": [
+   "arm error: BadRequestError"
+  ],
+  "risk_flags": [
+   "arm_error"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xf7ade6e679a1a62037cec816d3b12c962d605fdc",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 0,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 685.8742909971625,
+  "error": "BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CeYTtzF6ku6s21t9E7ihk'}",
+  "reasons": [
+   "arm error: BadRequestError"
+  ],
+  "risk_flags": [
+   "arm_error"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x5e2b9883836b37084ff54e37c0cd0487f73abd73",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 0,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 680.8544580126181,
+  "error": "BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CeYTtzG6eUKH3sNnSMkxm'}",
+  "reasons": [
+   "arm error: BadRequestError"
+  ],
+  "risk_flags": [
+   "arm_error"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x89c5fb852feda7be0a6aeff0a0528d56a9463806",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 0,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 593.9247499918565,
+  "error": "BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CeYTtzQmjyESUAMQHEPS7'}",
+  "reasons": [
+   "arm error: BadRequestError"
+  ],
+  "risk_flags": [
+   "arm_error"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x207c1193d6517dfbc483d07d589db2eb74845ee6",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 0,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 580.0645420094952,
+  "error": "BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CeYTtzUzJ5Abms6cXGJHH'}",
+  "reasons": [
+   "arm error: BadRequestError"
+  ],
+  "risk_flags": [
+   "arm_error"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x02230dba9412eae020c58907c4d8f148b5285a55",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 0,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 613.4049999527633,
+  "error": "BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CeYTu2HPHRhJQYMFfAvkX'}",
+  "reasons": [
+   "arm error: BadRequestError"
+  ],
+  "risk_flags": [
+   "arm_error"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x0ca8596426ba2321838dffe019b7623556b73617",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 0,
+  "label": "high_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 630.8926249621436,
+  "error": "BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CeYTu38ywaGav6Q6KuqWR'}",
+  "reasons": [
+   "arm error: BadRequestError"
+  ],
+  "risk_flags": [
+   "arm_error"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xa0a8efde6fa1122f516a27582f25cd7c4aab3d43",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 0,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 634.1642079642043,
+  "error": "BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CeYTu3CCyvMxeY8jfj8yg'}",
+  "reasons": [
+   "arm error: BadRequestError"
+  ],
+  "risk_flags": [
+   "arm_error"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x794e08caf50e629ec09991933454434e3a164114",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 0,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 637.469333014451,
+  "error": "BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CeYTu39j3umFsLSvBRAtU'}",
+  "reasons": [
+   "arm error: BadRequestError"
+  ],
+  "risk_flags": [
+   "arm_error"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xcfcea77d82d3a6fc14d70a7df761ac2c2ad48a17",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 0,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 622.0268750330433,
+  "error": "BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CeYTu3ChnqtqTrawuc7p7'}",
+  "reasons": [
+   "arm error: BadRequestError"
+  ],
+  "risk_flags": [
+   "arm_error"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ }
+]

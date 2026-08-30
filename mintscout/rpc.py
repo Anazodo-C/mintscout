@@ -310,27 +310,29 @@ class RpcClient:
                 flt["topics"] = topics
             try:
                 return self.raw("eth_getLogs", [flt], timeout=90, retries=4)
-            except RuntimeError as e:
-                # Retries exhausted on a transport-level failure. Ink's public RPC
-                # intermittently answers a large getLogs with HTTP 500 rather than
-                # a structured "too many results" error, so an oversized window
-                # and a genuinely broken node look identical from here. Halving is
-                # the safe response to both: it either fixes the size problem or
-                # costs one extra small request before failing honestly.
-                if isinstance(e, RpcError):
-                    raise
-                if hi > lo and depth < 40:
+            except RpcError as e:
+                # NOTE: RpcError subclasses RuntimeError, so this handler MUST
+                # come first -- otherwise the RuntimeError clause below catches
+                # structured RPC errors too and the range-reducing logic never
+                # runs. That ordering bug cost two failed Ink builds.
+                if is_range_reducible(e.message) and hi > lo and depth < 40:
+                    hint = parse_range_hint(e.message)
+                    if hint and lo <= hint[0] <= hint[1] < hi:
+                        # The node told us exactly what it can serve. Use it
+                        # rather than splitting blindly.
+                        return (fetch(hint[0], hint[1], depth + 1)
+                                + fetch(hint[1] + 1, hi, depth + 1))
                     mid = (lo + hi) // 2
                     return fetch(lo, mid, depth + 1) + fetch(mid + 1, hi, depth + 1)
                 raise
-            except RpcError as e:
-                if is_range_reducible(e.message) and hi > lo and depth < 40:
-                    hint = parse_range_hint(e.message)
-                    if hint and lo <= hint[0] <= hint[1] < hi and hint[1] >= lo:
-                        # Serve the range the node said it can handle, then
-                        # continue from just after it.
-                        return (fetch(hint[0], hint[1], depth + 1)
-                                + fetch(hint[1] + 1, hi, depth + 1))
+            except RuntimeError as e:
+                # Retries exhausted on a transport-level failure. Ink's public RPC
+                # intermittently answers a large getLogs with a bare HTTP 500
+                # instead of a structured error, so an oversized window and a sick
+                # node look identical from here. Halving is the safe response to
+                # both: it either fixes the size problem or costs one small extra
+                # request before failing honestly.
+                if hi > lo and depth < 40:
                     mid = (lo + hi) // 2
                     return fetch(lo, mid, depth + 1) + fetch(mid + 1, hi, depth + 1)
                 raise

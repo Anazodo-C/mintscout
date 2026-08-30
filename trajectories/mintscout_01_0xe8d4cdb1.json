@@ -1,0 +1,186 @@
+{
+  "arm": "mintscout",
+  "drop": {
+    "chain": "robinhood",
+    "collection": "0xe8d4cdb12ad3b5501e015da77ba89a1b42ea554f",
+    "start_time": 1787864659,
+    "cap": 10,
+    "mint_price_wei": 0,
+    "fixture_name": null
+  },
+  "decision_cutoff_ts": 1787864659,
+  "tool_calls": [
+    {
+      "tool": "erc165_probe",
+      "input": {
+        "collection": "0xe8d4cdb12ad3b5501e015da77ba89a1b42ea554f"
+      },
+      "output": {
+        "standard": "erc721",
+        "is_erc721": true,
+        "is_erc1155": false,
+        "answers_ownerof_and_balanceof": false,
+        "note": null
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "collection_stats",
+      "input": {
+        "collection": "0xe8d4cdb12ad3b5501e015da77ba89a1b42ea554f"
+      },
+      "output": {
+        "max_supply": 3333,
+        "owner": "0xe9cebba340d3498e0b012aedac383aa67f4cbdc2",
+        "name": "The Fallen",
+        "symbol": "The Fallen",
+        "code_size": 45,
+        "max_supply_sane": true
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "metadata_fetch",
+      "input": {
+        "allow_network": false
+      },
+      "output": {
+        "present": false,
+        "shape": null,
+        "name": null,
+        "description": null,
+        "n_attributes": 0,
+        "has_image": false,
+        "token_bound_account": false,
+        "n_stages": 0,
+        "drop_uri": null,
+        "contract_uri": "",
+        "source": null,
+        "on_chain_metadata": false,
+        "provenance": "absent",
+        "contract_uri_present": false
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "erc6551_probe",
+      "input": {},
+      "output": {
+        "token_bound_account": false,
+        "source": "metadata field"
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "economics",
+      "input": {},
+      "output": {
+        "mint_price_wei": 0,
+        "is_free": true,
+        "max_per_wallet": 10,
+        "fee_bps": 1000,
+        "restrict_fee_recipients": true,
+        "duration_hours": 0.03,
+        "starts_in_s": -26,
+        "advance_notice_s": 0
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "drop_config_history",
+      "input": {},
+      "output": {
+        "n_revisions_before_cutoff": 0,
+        "distinct_prices": [],
+        "price_flips": 0,
+        "revisions": []
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "mint_velocity",
+      "input": {},
+      "output": {
+        "available": false,
+        "mints_per_min": null,
+        "reason": "decision point is at/before startTime; no mint has occurred yet. Outcome signal, not a feature."
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "deployer_history",
+      "input": {},
+      "output": {
+        "deployer": "0xe9cebba340d3498e0b012aedac383aa67f4cbdc2",
+        "known": false,
+        "prior_collections": 0,
+        "prior_high_value": 0,
+        "note": "no memory store attached"
+      },
+      "ms": 0.0
+    }
+  ],
+  "triage": {
+    "verdict": "SKIP",
+    "score": 5,
+    "reasons": [
+      "No resolvable metadata at decision point - hard blocker",
+      "Code size of 45 bytes indicates minimal proxy with no custom implementation",
+      "Zero configuration revisions shows no operator effort or iteration",
+      "Unknown deployer with no track record"
+    ],
+    "risk_flags": [
+      "metadata.present: false is a hard blocker - P(f|high) = 1.00 for present metadata",
+      "45-byte code_size with no other positive signals indicates bare minimal proxy",
+      "Zero config revisions means no deliberate operator configuration effort",
+      "Extremely short 0.03 hour duration suggests low-effort drop"
+    ]
+  },
+  "verifier": {
+    "agreed": false,
+    "objections": [
+      {
+        "target": "metadata.present: false",
+        "problem": "This is universally absent at decision point for ALL drops when decision_cutoff_ts is at/before mint start. The dossier shows starts_in_s: -26, meaning we're 26 seconds AFTER mint start, but metadata.shape is null and metadata.provenance is 'absent'. This is true of every drop including high-value sellouts - token metadata doesn't exist until tokens are minted. Penalizing this is a defective reason.",
+        "severity": "major"
+      },
+      {
+        "target": "metadata.present cited as 'hard blocker'",
+        "problem": "Claiming 'P(f|high) = 1.00 for present metadata' is fabricated - this probability claim is not in the dossier and contradicts the reality that metadata doesn't exist at decision time for any drop. This is outcome leakage disguised as a feature.",
+        "severity": "major"
+      },
+      {
+        "target": "Overall reasoning pattern",
+        "problem": "The verdict relies entirely on absence of negatives rather than presence of positives. While code_size: 45 is legitimately concerning, the drop has a coherent max_supply (3333), is on a real chain (robinhood), and is ERC721 standard-compliant. The triage provides no analysis of whether these neutral factors combined with the free mint model could indicate a legitimate low-effort but valid drop versus a scam. The 'hard blocker' framing is too absolute.",
+        "severity": "major"
+      },
+      {
+        "target": "0.03 hour duration cited as risk flag",
+        "problem": "While legitimately short, this is characterized as 'extremely short' and 'low-effort' without acknowledging that some legitimate free mints use short windows to create urgency. This is editorializing rather than evidence-based reasoning.",
+        "severity": "minor"
+      }
+    ],
+    "final_verdict": "WATCH",
+    "confidence": 72,
+    "vetoed": true
+  },
+  "action": {
+    "mode": "dry_run",
+    "wallets": 0,
+    "achievable": 0,
+    "gas_wei": 0
+  },
+  "outcome": {
+    "label": "low_value",
+    "label_detail": {
+      "fill_ratio": 0.0027,
+      "fill_ok": false,
+      "unique_minters": 2,
+      "minters_ok": false,
+      "secondary_transfers_48h": 0,
+      "secondary_ok": false,
+      "label": "low_value"
+    },
+    "note": "outcome is NEVER visible to the agent; shown here only for post-hoc scoring."
+  }
+}

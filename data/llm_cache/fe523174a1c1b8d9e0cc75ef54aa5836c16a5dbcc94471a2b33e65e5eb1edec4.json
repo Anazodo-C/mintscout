@@ -1,0 +1,16 @@
+{
+ "model": "claude-sonnet-4-5-20250929",
+ "temperature": 0.0,
+ "system": "Reply with exactly: ok",
+ "messages": [
+  {
+   "role": "user",
+   "content": "ping"
+  }
+ ],
+ "text": "ok",
+ "usage": {
+  "input_tokens": 13,
+  "output_tokens": 4
+ }
+}

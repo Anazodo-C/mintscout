@@ -168,7 +168,20 @@ and the identical executor. **Only the triage decision differs.**
 Including the deterministic arm is deliberate: it answers the question a judge
 should ask — *how much of this actually needs an LLM?*
 
+### Cross-chain generalisation (the strongest test in here)
+
+The deterministic rubric's weights were chosen by looking at the **Robinhood
+calibration split only**. **Ink was never used to tune anything**, so the entire
+Ink dataset is out-of-distribution held-out data — a different chain, a different
+rollup stack (OP Stack vs Arbitrum Orbit), a 10× different block time, and a
+different drop population.
+
+If precision survives that, the signals describe *how a serious operator behaves*
+rather than one chain's quirks. If it collapses, that is worth knowing — and it is
+reported either way, without retuning.
+
 📊 **Results: [`results/comparison.md`](results/comparison.md)** ·
+**[`results/cross_chain.md`](results/cross_chain.md)** ·
 trajectories in [`trajectories/`](trajectories/).
 
 ---

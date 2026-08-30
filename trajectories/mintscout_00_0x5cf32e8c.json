@@ -1,0 +1,186 @@
+{
+  "arm": "mintscout",
+  "drop": {
+    "chain": "robinhood",
+    "collection": "0x5cf32e8cc45ee541ca49849b15824ad37486794d",
+    "start_time": 1787616633,
+    "cap": 7,
+    "mint_price_wei": 0,
+    "fixture_name": null
+  },
+  "decision_cutoff_ts": 1787616633,
+  "tool_calls": [
+    {
+      "tool": "erc165_probe",
+      "input": {
+        "collection": "0x5cf32e8cc45ee541ca49849b15824ad37486794d"
+      },
+      "output": {
+        "standard": "erc721",
+        "is_erc721": true,
+        "is_erc1155": false,
+        "answers_ownerof_and_balanceof": false,
+        "note": null
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "collection_stats",
+      "input": {
+        "collection": "0x5cf32e8cc45ee541ca49849b15824ad37486794d"
+      },
+      "output": {
+        "max_supply": 10000,
+        "owner": "0x72cab4496b6c4291f56c25a132a6af3b38ad4c77",
+        "name": "Doodads nfts",
+        "symbol": "Dn",
+        "code_size": 45,
+        "max_supply_sane": true
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "metadata_fetch",
+      "input": {
+        "allow_network": false
+      },
+      "output": {
+        "present": false,
+        "shape": null,
+        "name": null,
+        "description": null,
+        "n_attributes": 0,
+        "has_image": false,
+        "token_bound_account": false,
+        "n_stages": 0,
+        "drop_uri": null,
+        "contract_uri": "",
+        "source": null,
+        "on_chain_metadata": false,
+        "provenance": "absent",
+        "contract_uri_present": false
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "erc6551_probe",
+      "input": {},
+      "output": {
+        "token_bound_account": false,
+        "source": "metadata field"
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "economics",
+      "input": {},
+      "output": {
+        "mint_price_wei": 0,
+        "is_free": true,
+        "max_per_wallet": 7,
+        "fee_bps": 1000,
+        "restrict_fee_recipients": true,
+        "duration_hours": 0.25,
+        "starts_in_s": -33,
+        "advance_notice_s": 0
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "drop_config_history",
+      "input": {},
+      "output": {
+        "n_revisions_before_cutoff": 0,
+        "distinct_prices": [],
+        "price_flips": 0,
+        "revisions": []
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "mint_velocity",
+      "input": {},
+      "output": {
+        "available": false,
+        "mints_per_min": null,
+        "reason": "decision point is at/before startTime; no mint has occurred yet. Outcome signal, not a feature."
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "deployer_history",
+      "input": {},
+      "output": {
+        "deployer": "0x72cab4496b6c4291f56c25a132a6af3b38ad4c77",
+        "known": false,
+        "prior_collections": 0,
+        "prior_high_value": 0,
+        "note": "no memory store attached"
+      },
+      "ms": 0.0
+    }
+  ],
+  "triage": {
+    "verdict": "SKIP",
+    "score": 5,
+    "reasons": [
+      "No resolvable metadata at decision point - hard negative signal",
+      "Code size of 45 bytes indicates minimal proxy with no custom implementation",
+      "Zero configuration revisions shows no operator effort or iteration",
+      "Unknown deployer with no track record"
+    ],
+    "risk_flags": [
+      "Metadata resolution failed completely - P(high|absent) \u2248 0",
+      "45-byte code size is characteristic of bare minimal proxy spam",
+      "Zero config iterations indicates no deliberate operator preparation",
+      "Combination of absent metadata + minimal proxy + zero revisions has never produced a high-value drop in calibration"
+    ]
+  },
+  "verifier": {
+    "agreed": false,
+    "objections": [
+      {
+        "target": "metadata.present = false",
+        "problem": "This is universally true at decision point for drops with shape=null. The dossier shows metadata.shape is null and metadata.provenance is 'absent'. This is NOT a defect of this specific drop - it's the state of ALL drops before minting begins when using drop_stage_config. Penalizing this drop for lacking what no drop has at this timestamp is defective reasoning.",
+        "severity": "major"
+      },
+      {
+        "target": "Reason: 'No resolvable metadata at decision point - hard negative signal'",
+        "problem": "Contradicts the instruction that token art metadata does not exist at decision point for ANY drop. This reason treats a universal condition as if it were a drop-specific defect. Per verifier guidelines, this is 'penalising the universally-absent' and grounds for objection.",
+        "severity": "major"
+      },
+      {
+        "target": "Risk flag: 'Metadata resolution failed completely - P(high|absent) \u2248 0'",
+        "problem": "Metadata cannot 'fail' to resolve when it doesn't exist yet. This frames a timing artifact as a failure signal. The probability claim is unsupported - many high-value drops have absent metadata at decision point.",
+        "severity": "major"
+      },
+      {
+        "target": "Overall verdict logic",
+        "problem": "The SKIP verdict rests primarily on metadata absence (first reason, first risk flag) which is defective. While code_size=45 and n_revisions=0 are legitimate negatives, they are weak signals on their own. The drop has: (1) sane max_supply of 10,000, (2) max_per_wallet limit of 7 showing some configuration, (3) restrict_fee_recipients=true showing deliberate setup, (4) 0.25 hour duration (15 min) which is coherent for a free drop. These aren't strong positives, but the verdict overstates the negatives by treating universal conditions as drop-specific defects.",
+        "severity": "major"
+      }
+    ],
+    "final_verdict": "WATCH",
+    "confidence": 72,
+    "vetoed": true
+  },
+  "action": {
+    "mode": "dry_run",
+    "wallets": 0,
+    "achievable": 0,
+    "gas_wei": 0
+  },
+  "outcome": {
+    "label": "low_value",
+    "label_detail": {
+      "fill_ratio": 0.0271,
+      "fill_ok": false,
+      "unique_minters": 85,
+      "minters_ok": false,
+      "secondary_transfers_48h": 0,
+      "secondary_ok": false,
+      "label": "low_value"
+    },
+    "note": "outcome is NEVER visible to the agent; shown here only for post-hoc scoring."
+  }
+}

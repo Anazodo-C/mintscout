@@ -76,6 +76,18 @@ To re-run live instead (needs `ANTHROPIC_API_KEY`):
 python -m mintscout.eval.run --arms mintscout --no-cache
 ```
 
+## 3b. Cross-chain generalisation (~5s, offline)
+
+Scores the **Robinhood-calibrated** rubric against the Ink dataset, which was
+never used for tuning. No retuning is performed.
+
+```bash
+python -m mintscout.eval.run --data data/drops_ink.jsonl --split all \
+       --arms baseline_mint_all,deterministic --tag ink
+python scripts/cross_chain_report.py
+cat results/cross_chain.md
+```
+
 ## 4. Verify the leakage controls (~5s)
 
 The integrity of every number above depends on the agent never seeing
@@ -116,7 +128,10 @@ Not needed to reproduce anything; included so the dataset is not a black box.
 ```bash
 python -m mintscout.cli dataset --chains robinhood --days 9 --sample 700 \
        --out data/drops_robinhood.jsonl
-python scripts/refresh_statics.py --workers 4 --pin
+python -m mintscout.cli dataset --chains ink --days 14 --sample 300 \
+       --out data/drops_ink.jsonl
+python scripts/pin_metadata.py --data data/drops_robinhood.jsonl
+python scripts/pin_metadata.py --data data/drops_ink.jsonl
 python scripts/measure_gas.py
 python scripts/build_fixtures.py
 ```
