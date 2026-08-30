@@ -1,0 +1,6 @@
+# Pinned to the versions this was developed and measured against.
+eth-account==0.13.7      # EIP-7702: sign_authorization / SetCodeTransaction
+eth-abi==5.2.0
+eth-utils==6.0.0
+anthropic==0.112.0
+pytest==8.3.4
