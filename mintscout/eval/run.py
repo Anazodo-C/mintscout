@@ -258,6 +258,7 @@ def main(argv=None) -> int:
     ap.add_argument("--model", default=None)
     ap.add_argument("--workers", type=int, default=6)
     ap.add_argument("--trajectories", type=int, default=5)
+    ap.add_argument("--tag", default="", help="suffix for results/metrics_<tag>.json")
     ap.add_argument("--memory", action="store_true",
                     help="enable cross-run deployer memory (time-ordered replay)")
     ap.add_argument("--split", default="test", choices=["test", "calib", "all"],
@@ -303,7 +304,8 @@ def main(argv=None) -> int:
         print(f"    precision@K={m['precision_at_k']:.3f} recall={m['recall']:.3f} "
               f"chosen={m['n_chosen']}/{m['n']} lift={m['lift_over_base_rate']}x "
               f"vetoes={m['verifier_vetoes']} ({m['wall_seconds']}s)")
-        (RESULTS / f"rows_{arm}.json").write_text(json.dumps(res["rows"], indent=1))
+        suffix = f"_{a.tag}" if a.tag else ""
+        (RESULTS / f"rows_{arm}{suffix}.json").write_text(json.dumps(res["rows"], indent=1))
 
     from ..agent import llm as _llm
     payload = {"dataset": a.data, "n": len(recs), "split": a.split,
@@ -313,11 +315,13 @@ def main(argv=None) -> int:
                "labels": summarize(recs),
                "llm": _llm.STATS.as_dict(),
                "arms": all_metrics}
-    (RESULTS / "metrics.json").write_text(json.dumps(payload, indent=2) + "\n")
+    suffix = f"_{a.tag}" if a.tag else ""
+    (RESULTS / f"metrics{suffix}.json").write_text(json.dumps(payload, indent=2) + "\n")
     for i, t in enumerate(all_traj[:12]):
-        (TRAJ / f"{t['arm']}_{i:02d}_{t['drop']['collection'][:10]}.json").write_text(
+        (TRAJ / f"{t['arm']}{suffix}_{i:02d}_{t['drop']['collection'][:10]}.json").write_text(
             json.dumps(t, indent=2) + "\n")
-    print(f"\nwrote results/metrics.json and {min(len(all_traj), 12)} trajectories")
+    print(f"\nwrote results/metrics{suffix}.json and "
+          f"{min(len(all_traj), 12)} trajectories")
     return 0
 
 

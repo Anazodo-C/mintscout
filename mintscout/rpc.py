@@ -19,6 +19,7 @@ from __future__ import annotations
 
 import json
 import random
+import re
 import threading
 import time
 import urllib.error
@@ -52,11 +53,26 @@ class RpcError(RuntimeError):
 _RANGE_REDUCIBLE = (
     "timed out",
     "exceeds limit",
+    "exceeds max results",      # Ink: "query exceeds max results 20000"
+    "max results",
     "greater than",
     "too many",
     "query returned more than",
     "response size exceeded",
+    "retry with the range",     # Ink suggests a narrower range -- honour it
+    "limit exceeded",
 )
+
+# Ink returns the exact sub-range it can serve, e.g.
+#   "query exceeds max results 20000, retry with the range 54011362-54015249"
+# Splitting blindly wastes requests when the server has already told us where to
+# split, so the hint is parsed and used when present.
+_RANGE_HINT = re.compile(r"retry with the range\s+(\d+)\s*-\s*(\d+)", re.I)
+
+
+def parse_range_hint(msg: str) -> tuple[int, int] | None:
+    m = _RANGE_HINT.search(msg or "")
+    return (int(m.group(1)), int(m.group(2))) if m else None
 
 
 def is_range_reducible(msg: str) -> bool:
@@ -293,9 +309,28 @@ class RpcClient:
             if topics:
                 flt["topics"] = topics
             try:
-                return self.raw("eth_getLogs", [flt], timeout=90, retries=3)
+                return self.raw("eth_getLogs", [flt], timeout=90, retries=4)
+            except RuntimeError as e:
+                # Retries exhausted on a transport-level failure. Ink's public RPC
+                # intermittently answers a large getLogs with HTTP 500 rather than
+                # a structured "too many results" error, so an oversized window
+                # and a genuinely broken node look identical from here. Halving is
+                # the safe response to both: it either fixes the size problem or
+                # costs one extra small request before failing honestly.
+                if isinstance(e, RpcError):
+                    raise
+                if hi > lo and depth < 40:
+                    mid = (lo + hi) // 2
+                    return fetch(lo, mid, depth + 1) + fetch(mid + 1, hi, depth + 1)
+                raise
             except RpcError as e:
-                if is_range_reducible(e.message) and hi > lo and depth < 24:
+                if is_range_reducible(e.message) and hi > lo and depth < 40:
+                    hint = parse_range_hint(e.message)
+                    if hint and lo <= hint[0] <= hint[1] < hi and hint[1] >= lo:
+                        # Serve the range the node said it can handle, then
+                        # continue from just after it.
+                        return (fetch(hint[0], hint[1], depth + 1)
+                                + fetch(hint[1] + 1, hi, depth + 1))
                     mid = (lo + hi) // 2
                     return fetch(lo, mid, depth + 1) + fetch(mid + 1, hi, depth + 1)
                 raise

@@ -53,7 +53,9 @@ CHAINS: dict[str, dict] = {
         "rpc": "https://rpc-gel.inkonchain.com",
         "block_time": 1.0,
         "stack": "op-stack",
-        "max_concurrency": 6,
+        # Ink's public RPC is more fragile than Robinhood's under fan-out: it
+        # answers oversized queries with HTTP 500 and rate-limits sooner.
+        "max_concurrency": 4,
         # MEASURED: Ink enforces an exact cap -- 10001 blocks returns
         # -32602 "block range greater than 10000 max". 10000 is accepted.
         "max_log_range": 10_000,

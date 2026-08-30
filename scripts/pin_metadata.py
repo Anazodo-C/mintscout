@@ -13,7 +13,12 @@ ROOT = pathlib.Path(__file__).resolve().parents[1]
 
 
 def main():
-    recs = load(ROOT / "data/drops_robinhood.jsonl")
+    import argparse
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--data", default=str(ROOT / "data/drops_robinhood.jsonl"))
+    a = ap.parse_args()
+    recs = load(a.data)
+    print(f"dataset: {a.data}  n={len(recs)}")
     uris = collections.Counter()
     for r in recs:
         for d in r["features_at_cutoff"]["drop_uris_before_cutoff"]:
