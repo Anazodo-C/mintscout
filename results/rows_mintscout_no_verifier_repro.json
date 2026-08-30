@@ -1,0 +1,3894 @@
+[
+ {
+  "collection": "0xba8f609931efcbc2498de7129995c51f42039e9a",
+  "chain": "robinhood",
+  "verdict": "MINT",
+  "score": 78,
+  "label": "high_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 20,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 7.254625088535249,
+  "error": null,
+  "reasons": [
+   "Large contract implementation (19,658 bytes) indicates real development effort, not spam proxy",
+   "Seven configuration revisions show sustained operator engagement",
+   "Three named mint stages (Public, GTD, FCFS) suggest existing community structure"
+  ],
+  "risk_flags": [
+   "First-time deployer with no track record",
+   "Trailing space in collection name may indicate hasty setup"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xe1a65a7a3d8be9aab4ef81b76e35668b3facbe79",
+  "chain": "robinhood",
+  "verdict": "MINT",
+  "score": 78,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 10,
+  "achievable": 50,
+  "gas_wei": 170881940460000,
+  "spend_wei": 0,
+  "ms": 6.885709008201957,
+  "error": null,
+  "reasons": [
+   "Large contract implementation (19,658 bytes) indicates real deployment effort, not spam proxy",
+   "Two named mint stages including 'WL gtd' suggests existing community/allowlist holders",
+   "Reasonable supply cap (50) with 2 config revisions shows deliberate setup"
+  ],
+  "risk_flags": [
+   "First-time deployer with no track record",
+   "Very short mint window (0.17 hours)",
+   "Small supply (50) limits upside potential"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x39c3388c23985d3779f7a92df840507d2f3059f2",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 5,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 7.465541013516486,
+  "error": null,
+  "reasons": [
+   "No metadata resolved at all - metadata.present is false, which is a strong negative signal",
+   "Code size of 45 bytes indicates a minimal proxy with no custom implementation",
+   "Zero configuration revisions shows no operator effort or iteration"
+  ],
+  "risk_flags": [
+   "Metadata resolution failed entirely - no drop configuration exists",
+   "Minimal proxy contract (45 bytes) with no positive signals",
+   "Unknown deployer with no track record"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x04e70d00306e7418c21e8ffe3dd78d8ff1b22c68",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 15,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 7.2376669850200415,
+  "error": null,
+  "reasons": [
+   "Minimal proxy contract (45 bytes) with no substantial implementation",
+   "Single config revision shows minimal operator preparation",
+   "First-time deployer with no track record"
+  ],
+  "risk_flags": [
+   "45-byte minimal proxy indicates no real contract implementation",
+   "No evidence of operator effort or community building",
+   "Extremely short 2-minute mint window suggests low confidence"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xbcf3d20f2ba6db051042ae81685a08c875fefe18",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 5,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 6.724582985043526,
+  "error": null,
+  "reasons": [
+   "No metadata resolved at all - metadata.present is false, which is a strong negative signal",
+   "Code size of 45 bytes indicates a minimal proxy with no custom implementation",
+   "Zero configuration revisions shows no operator effort or iteration"
+  ],
+  "risk_flags": [
+   "Metadata resolution failed entirely - no drop configuration exists",
+   "Minimal proxy contract (45 bytes) with no positive signals",
+   "First-time deployer with zero prior collections"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xd661417ba9e1d9d5fcd0241b9938597bf4ccbee3",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 15,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 6.978208897635341,
+  "error": null,
+  "reasons": [
+   "Minimal proxy contract (45 bytes) with no other positive signals",
+   "Single config revision shows minimal operator effort",
+   "First-time deployer with no track record"
+  ],
+  "risk_flags": [
+   "Bare minimal proxy (45 bytes) typical of spam drops",
+   "No configuration iteration before launch",
+   "Unknown deployer with no history"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x5b503a3d297a8c8ff5e981318e031ba716e06e91",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 5,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.9342080447822809,
+  "error": null,
+  "reasons": [
+   "No metadata resolved at all - metadata.present is false, which is a strong negative signal",
+   "Code size of 45 bytes indicates a minimal proxy with no custom implementation",
+   "Zero configuration revisions shows no operator effort or iteration"
+  ],
+  "risk_flags": [
+   "Metadata completely absent - no drop configuration resolved",
+   "Minimal proxy contract (45 bytes) with no positive signals",
+   "First-time deployer with zero prior collections"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x685b355c476afc2ece268d33f2e0b608211b3b76",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 15,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 1.5133339911699295,
+  "error": null,
+  "reasons": [
+   "Minimal proxy contract (45 bytes) with no substantial implementation",
+   "Single config revision shows minimal operator preparation",
+   "No positive signals present to overcome spam prior"
+  ],
+  "risk_flags": [
+   "45-byte minimal proxy with no custom logic",
+   "First-time deployer (0 prior high-value drops)",
+   "Single configuration pass suggests low preparation"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xa21ff64de599819f2042ccee74c5912be8d7d0da",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 15,
+  "label": "high_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.8032920304685831,
+  "error": null,
+  "reasons": [
+   "No metadata resolved at all - metadata.present is false, which is a strong negative signal",
+   "Code size of 45 bytes indicates a minimal proxy with no custom implementation - strongest negative when combined with no other positives",
+   "Zero configuration revisions and unknown deployer with no track record"
+  ],
+  "risk_flags": [
+   "Bare minimal proxy (45 bytes) with no positive signals",
+   "No resolvable drop configuration",
+   "First-time deployer with no preparation effort"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xab158100ac6e67cf194d19f9eee0ee8315409211",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 15,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.9264999534934759,
+  "error": null,
+  "reasons": [
+   "No metadata resolved at all (present: false) - effectively disqualifying",
+   "Code size of 45 bytes indicates minimal proxy with no custom implementation",
+   "Zero configuration revisions shows no operator effort or iteration"
+  ],
+  "risk_flags": [
+   "Metadata resolution failed entirely - no drop configuration exists",
+   "Minimal proxy contract (45 bytes) with no positive signals to offset it",
+   "Deployer has 3 prior collections but 0 high-value outcomes"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xc0101a3fc3f3c93b47977e398f4d4c1bc371c168",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 15,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 1.415375038050115,
+  "error": null,
+  "reasons": [
+   "Gibberish name/symbol (dfas/fasdf) indicates low-effort or test deployment",
+   "Minimal proxy contract (45 bytes) with no other positive signals",
+   "Only 1 config revision shows minimal operator preparation"
+  ],
+  "risk_flags": [
+   "Keyboard-mash name/symbol strongly suggests placeholder or spam",
+   "45-byte minimal proxy with no substantial implementation",
+   "Deployer has 0 prior high-value drops from 2 collections"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x3d25ab3484aa07356dfb18c926babe75fa991e97",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 5,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 1.0936250910162926,
+  "error": null,
+  "reasons": [
+   "No metadata resolved at all - metadata.present is false, which is a strong negative signal",
+   "Code size of 45 bytes indicates a minimal proxy with no custom implementation",
+   "Zero configuration revisions shows no operator effort or iteration"
+  ],
+  "risk_flags": [
+   "Metadata resolution failed completely - no drop configuration exists",
+   "Minimal proxy contract (45 bytes) with no positive signals",
+   "First-time deployer with zero prior collections"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xdbe670c44a21577f73f4c3ab8cf378409834a087",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 5,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 1.233458984643221,
+  "error": null,
+  "reasons": [
+   "No metadata resolved at all - metadata.present is false, which is a strong negative signal",
+   "Code size of 45 bytes indicates a minimal proxy with no custom implementation",
+   "Zero configuration revisions shows no operator effort or iteration"
+  ],
+  "risk_flags": [
+   "Metadata completely absent - no drop configuration resolved",
+   "Minimal proxy contract (45 bytes) with no positive signals",
+   "First-time deployer with zero prior collections"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x13107c8c887bac1f6bcc8185c8bb0eb65e24a660",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 15,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 2.202708972617984,
+  "error": null,
+  "reasons": [
+   "Minimal proxy contract (45 bytes) with no substantial implementation",
+   "Only 2 config revisions, below the 3+ threshold that indicates serious operator effort",
+   "First-time deployer with no track record"
+  ],
+  "risk_flags": [
+   "45-byte minimal proxy indicates no real contract implementation",
+   "Unknown deployer with zero history",
+   "Very small supply (188) from unproven operator"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x3abc0f4736ad933c15e679d63e95e1e3df173962",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 5,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 1.728624920360744,
+  "error": null,
+  "reasons": [
+   "No metadata resolved at all - metadata.present is false, which is a strong negative signal",
+   "Code size of 45 bytes indicates a minimal proxy with no custom implementation",
+   "Zero configuration revisions shows no operator effort or iteration"
+  ],
+  "risk_flags": [
+   "Metadata resolution failed entirely - no drop configuration exists",
+   "Minimal proxy contract with no substantial implementation",
+   "First-time deployer with no track record"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x77f81c027ff1b9da8859d3f5f45fb77f1770128d",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 5,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.8381250081583858,
+  "error": null,
+  "reasons": [
+   "No metadata resolved at all - metadata.present is false, which is a strong negative signal",
+   "Code size of 45 bytes indicates a minimal proxy with no custom implementation",
+   "Placeholder name and symbol (single period and space) suggest no real project identity"
+  ],
+  "risk_flags": [
+   "Zero configuration revisions before cutoff indicates no operator effort",
+   "Mint already started 90 seconds ago with no resolvable metadata",
+   "Deployer has no prior high-value drops (0/1 rate)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xa0f40bfcf06061d59c028dd4009aefdce37f84e9",
+  "chain": "robinhood",
+  "verdict": "MINT",
+  "score": 78,
+  "label": "high_value",
+  "chose": true,
+  "wallets_used": 9,
+  "achievable": 100,
+  "gas_wei": 153793746414000,
+  "spend_wei": 0,
+  "ms": 2.8361660661175847,
+  "error": null,
+  "reasons": [
+   "Large contract implementation (19,805 bytes) indicates real development effort, not spam proxy",
+   "Four configuration revisions before cutoff shows deliberate operator engagement",
+   "Sane supply (7,500) with free mint and reasonable per-wallet limit"
+  ],
+  "risk_flags": [
+   "First-time deployer with no track record",
+   "Short 1-hour mint window may limit participation"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x7c79d89ef670356366709af9875187025efaa961",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 15,
+  "label": "high_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 1.6299579292535782,
+  "error": null,
+  "reasons": [
+   "Minimal proxy contract (45 bytes) with no substantial implementation",
+   "Single config revision shows minimal operator preparation",
+   "First-time deployer with no track record"
+  ],
+  "risk_flags": [
+   "45-byte minimal proxy indicates no real contract implementation",
+   "Zero prior collections from this deployer",
+   "Only 46 seconds advance notice before mint opens"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xc44d94b14c0177e085ff73be3b546d0fea90dd45",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 15,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.7302500307559967,
+  "error": null,
+  "reasons": [
+   "Minimal proxy (45 bytes) with no substantial implementation",
+   "Price flip from 0.0003 ETH to free 33 minutes before open signals instability",
+   "Only 2 config revisions, below the 3+ threshold associated with operator effort"
+  ],
+  "risk_flags": [
+   "Bare minimal proxy with no custom logic deployed",
+   "Operator changed from priced to free shortly before mint",
+   "Deployer has 1 prior collection, 0 high-value (untested track record)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x3a6579827daeb43d119bb25b989d38e633e8d31d",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 15,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 1.5460830181837082,
+  "error": null,
+  "reasons": [
+   "Minimal proxy contract (45 bytes) with no implementation substance",
+   "Max supply of 1 makes this a vanity/personal mint, not a collectible drop",
+   "Gibberish symbol 'zazaea' suggests low-effort configuration"
+  ],
+  "risk_flags": [
+   "Single-edition drop cannot meet 100-wallet threshold for high-value classification",
+   "45-byte minimal proxy with no positive signals",
+   "Deployer has no prior high-value drops (0/1)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xe1fd7f42e3074425c42e346c76feb1ce3282aadc",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 5,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 1.2510409578680992,
+  "error": null,
+  "reasons": [
+   "No metadata resolved at all - metadata.present is false, which is a strong negative signal",
+   "Code size of 45 bytes indicates a minimal proxy with no custom implementation",
+   "Zero configuration revisions shows no operator effort or iteration"
+  ],
+  "risk_flags": [
+   "Metadata resolution failed entirely - no drop configuration exists",
+   "Minimal proxy contract with no substantial implementation",
+   "Mint already started 45 seconds ago with zero advance notice"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xeff1fc2747c3089f553d47a82376d774b3bba22c",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 5,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 1.7559999832883477,
+  "error": null,
+  "reasons": [
+   "No metadata resolved at all - metadata.present is false, which is a strong negative signal",
+   "Code size of 45 bytes indicates a minimal proxy with no custom implementation",
+   "Zero configuration revisions shows no operator effort or iteration"
+  ],
+  "risk_flags": [
+   "Metadata resolution failed entirely - no drop configuration exists",
+   "Minimal proxy contract with no substantial implementation",
+   "First-time deployer with no configuration history"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xa8928be9ccbf0abd9e9ee78680185c82a3d67dd3",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 5,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.46200002543628216,
+  "error": null,
+  "reasons": [
+   "No metadata resolved at all - metadata.present is false, which is a strong negative signal",
+   "Code size of 45 bytes indicates a minimal proxy with no custom implementation",
+   "Zero configuration revisions shows no operator effort or iteration"
+  ],
+  "risk_flags": [
+   "Minimal proxy contract (45 bytes) with no positive signals",
+   "No drop configuration metadata resolved",
+   "First-time deployer with zero prior collections"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x154966a20d063d5f74f7b471a2d1069e6c0c85ed",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 15,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 2.351374947465956,
+  "error": null,
+  "reasons": [
+   "Minimal proxy contract (45 bytes) with no substantial implementation",
+   "Price flip from 2000000000000 wei to free shortly before open indicates unstable operator",
+   "Only 2 config revisions, below the 3+ threshold associated with operator effort"
+  ],
+  "risk_flags": [
+   "Bare minimal proxy with no real implementation code",
+   "Last-minute price change from paid to free (41s before open)",
+   "First-time deployer with no track record"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xaf2f903a3d329a37649060052d27e8b4b30894c9",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 15,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 1.833625021390617,
+  "error": null,
+  "reasons": [
+   "No metadata resolved at all (present: false) - effectively disqualifying",
+   "Code size of 45 bytes indicates minimal proxy with no custom implementation",
+   "Zero configuration revisions shows no operator effort or iteration"
+  ],
+  "risk_flags": [
+   "Metadata resolution failed entirely - no drop configuration exists",
+   "Minimal proxy contract (45 bytes) with no positive signals to offset it",
+   "Deployer has 6 prior collections but 0% high-value rate"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x493349b3ba4d1c651cdbf9c306cd388b7002bcde",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 5,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 2.5396249257028103,
+  "error": null,
+  "reasons": [
+   "Minimal proxy contract (45 bytes) with no implementation substance",
+   "Test placeholder name and symbol with max_supply of 1",
+   "First-time deployer with zero configuration effort (single revision)"
+  ],
+  "risk_flags": [
+   "Bare minimal proxy with no real implementation",
+   "Obvious test/placeholder naming",
+   "Single-token supply makes this a vanity mint, not a collection"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xc4055ef75311e7f305d6e3b51ab7e43cf3782ceb",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 5,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.27024990413337946,
+  "error": null,
+  "reasons": [
+   "No metadata resolved at all - metadata.present is false",
+   "Code size of 45 bytes indicates minimal proxy with no custom implementation",
+   "Zero configuration revisions shows no operator effort or iteration"
+  ],
+  "risk_flags": [
+   "Metadata completely absent - strong negative signal",
+   "Minimal proxy deployment (45 bytes) with no positive signals",
+   "First-time deployer with zero prior collections"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x770b86720d973a0b75fab1e07117d4c9ffb054e4",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 15,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.7379170274361968,
+  "error": null,
+  "reasons": [
+   "Minimal proxy contract (45 bytes) with no implementation substance",
+   "Single-token supply with max_per_wallet=1 makes this a vanity mint, not a collection",
+   "Gibberish name/symbol ('sasa') and first-time deployer with no track record"
+  ],
+  "risk_flags": [
+   "45-byte minimal proxy with no positive signals",
+   "Max supply of 1 cannot meet 100-wallet threshold for high-value classification",
+   "No configuration effort (1 revision only)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xc2420df425bfa18832459d5bd693c21b4fe65379",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 5,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 1.0462499922141433,
+  "error": null,
+  "reasons": [
+   "No metadata resolved at all - metadata.present is false, which is a strong negative signal",
+   "Code size of 45 bytes indicates a minimal proxy with no custom implementation",
+   "Zero configuration revisions shows no operator effort or iteration"
+  ],
+  "risk_flags": [
+   "Metadata resolution failed completely - no drop configuration exists",
+   "Minimal proxy contract (45 bytes) with no positive signals",
+   "Generic placeholder symbol 'Nft' suggests low effort"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x3ff9537587dd79c898b672c2e01fe2811da79a57",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 5,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.4184999270364642,
+  "error": null,
+  "reasons": [
+   "No metadata resolved at all - metadata.present is false",
+   "Code size of 45 bytes indicates minimal proxy with no custom implementation",
+   "Gibberish name 'REWQ44' suggests low-effort or test deployment"
+  ],
+  "risk_flags": [
+   "No resolvable drop configuration",
+   "Minimal proxy with no substantial contract code",
+   "Keyboard-mash name pattern"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x98e794f36a301330ce00f72cf96a86890deb34c1",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 15,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 2.9017499182373285,
+  "error": null,
+  "reasons": [
+   "Price flipped from free to priced 77 seconds before mint open - unstable operator",
+   "Minimal proxy contract (45 bytes) with no other positive signals",
+   "First-time deployer with no track record"
+  ],
+  "risk_flags": [
+   "Price changed from 0 to 0.00022 ETH at block 1787464776, only 24 seconds before start_time 1787464800",
+   "Bare minimal proxy with no custom implementation",
+   "Unknown deployer with zero history"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xc04535ad4a4568ffa26f4f85f7918128ca039fa1",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 5,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 1.2214171001687646,
+  "error": null,
+  "reasons": [
+   "No metadata resolved at all (present: false) - effectively disqualifying",
+   "Code size of 45 bytes indicates minimal proxy with no custom implementation",
+   "Zero configuration revisions shows no operator effort or iteration"
+  ],
+  "risk_flags": [
+   "Metadata completely absent - no drop configuration resolved",
+   "Bare minimal proxy (45 bytes) with no positive signals to offset it",
+   "Deployer has 6 prior collections but zero high-value outcomes"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x9514e756fadc305424448affa09d221c695c9e8e",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 15,
+  "label": "high_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.7373749976977706,
+  "error": null,
+  "reasons": [
+   "Code size of 45 bytes indicates minimal proxy with no custom implementation",
+   "Only 2 config revisions shows minimal operator preparation",
+   "No positive signals present to overcome spam prior"
+  ],
+  "risk_flags": [
+   "Minimal proxy deployment (45 bytes) with no substantial code",
+   "Below threshold for operator effort (2 vs 3+ revisions)",
+   "No costly positive signals present"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x05f82f4f21420dd149621ba33e3fdcdfe5632f9a",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 15,
+  "label": "high_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 1.045042066834867,
+  "error": null,
+  "reasons": [
+   "Minimal proxy contract (45 bytes) with no substantial implementation",
+   "First-time deployer with no track record",
+   "No positive signals present to overcome spam prior"
+  ],
+  "risk_flags": [
+   "45-byte minimal proxy indicates no custom implementation or deployment investment",
+   "Unknown deployer with zero history on this chain",
+   "Max supply 5555 is a vanity number but not disqualifying on its own"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xeea2dbecf6e472af388e6a604d5b5ff73333757f",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 5,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 1.4072919730097055,
+  "error": null,
+  "reasons": [
+   "No metadata resolved at all - metadata.present is false, which is a strong negative signal",
+   "Code size of 45 bytes indicates a minimal proxy with no custom implementation",
+   "Zero configuration revisions shows no operator effort or iteration"
+  ],
+  "risk_flags": [
+   "Metadata resolution failed entirely - no drop configuration exists",
+   "Minimal proxy contract (45 bytes) with no positive signals",
+   "Single-character symbol 'F' suggests low effort"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x195ecb0daad376ffe959f2426daf61f7f710e863",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 15,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 1.2647089315578341,
+  "error": null,
+  "reasons": [
+   "No metadata resolved at all (present: false) - effectively disqualifying",
+   "Code size of 45 bytes indicates minimal proxy with no custom implementation",
+   "Zero configuration revisions shows no operator effort or iteration"
+  ],
+  "risk_flags": [
+   "Metadata completely absent - no drop configuration resolved",
+   "Minimal proxy contract (45 bytes) with no positive signals to offset it",
+   "Already started (starts_in_s: -15) but still no resolvable config"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xb86844a1b65da4f4cbc1cdc2ca0119f5ca1b4dc8",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 15,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 1.2308330042287707,
+  "error": null,
+  "reasons": [
+   "Minimal proxy contract (45 bytes) with no substantial implementation",
+   "Single configuration revision shows minimal operator effort",
+   "No positive signals present to overcome spam prior"
+  ],
+  "risk_flags": [
+   "Bare minimal proxy (45 bytes) typical of spam deployments",
+   "Zero prior high-value collections from this deployer",
+   "Single unnamed public stage with no community phases"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x12597981be1e019ad713b43ee113917bdf48b866",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 25,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 2.4387910962104797,
+  "error": null,
+  "reasons": [
+   "Minimal proxy contract (45 bytes) with no substantial implementation",
+   "Multiple named stages suggest existing community structure",
+   "Three config revisions show operator engagement"
+  ],
+  "risk_flags": [
+   "45-byte minimal proxy with no custom implementation",
+   "Very small supply (50) makes 100-wallet threshold unlikely",
+   "Deployer has no prior high-value drops"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xc0a31fd7e2789376f88d8ddc624f93dbe8c98955",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 15,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 1.477832905948162,
+  "error": null,
+  "reasons": [
+   "Metadata completely absent (present: false) - effectively disqualifying",
+   "Code size of 45 bytes indicates minimal proxy with no custom implementation",
+   "Zero configuration revisions shows no operator effort or iteration"
+  ],
+  "risk_flags": [
+   "No resolvable drop configuration (P(present|high) = 1.00 in calibration)",
+   "Bare minimal proxy deployment (45 bytes) with no positive signals",
+   "Already started (starts_in_s: -29) but metadata still absent"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x2af13f1f139e31df21ae82c0853434f7b221b2e6",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 5,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.4601249238476157,
+  "error": null,
+  "reasons": [
+   "No metadata resolved at all (present: false) - effectively disqualifying",
+   "45-byte code_size indicates minimal proxy with no custom implementation",
+   "Zero configuration revisions shows no operator effort or iteration"
+  ],
+  "risk_flags": [
+   "Metadata resolution failed entirely - no drop config observable",
+   "Minimal proxy (45 bytes) with no positive signals to offset it",
+   "Deployer has 4 prior collections but 0 high-value outcomes"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xb4df3cacb84cfbc7d8243f6305d9fc0243bc8d01",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 5,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 2.2349590435624123,
+  "error": null,
+  "reasons": [
+   "No metadata resolved at all - metadata.present is false, which is a strong negative signal",
+   "Code size of 45 bytes indicates a minimal proxy with no custom implementation",
+   "Zero configuration revisions shows no operator effort or iteration"
+  ],
+  "risk_flags": [
+   "Metadata resolution failed entirely - no drop configuration exists",
+   "Minimal proxy contract (45 bytes) with no positive signals",
+   "First-time deployer with zero preparation"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x82431208bc7f993fa80ede819cacc11ea6b5fef0",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 25,
+  "label": "high_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 2.9119999380782247,
+  "error": null,
+  "reasons": [
+   "Minimal proxy contract (45 bytes) with no substantial implementation",
+   "Only 1 config revision shows minimal operator preparation",
+   "First-time deployer with no track record"
+  ],
+  "risk_flags": [
+   "45-byte minimal proxy indicates no real contract implementation",
+   "Single config revision suggests low operator effort",
+   "Unknown deployer with no history"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x347f624c7f9a87ee682699f984b0cb90ee755ed3",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 5,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.546540948562324,
+  "error": null,
+  "reasons": [
+   "No metadata resolved at all - metadata.present is false, which is a strong negative signal",
+   "Code size of 45 bytes indicates a minimal proxy with no custom implementation",
+   "Zero configuration revisions shows no operator effort or iteration"
+  ],
+  "risk_flags": [
+   "Metadata resolution failed entirely - necessary condition not met",
+   "Minimal proxy contract with no substantial implementation",
+   "Single-character whitespace symbol suggests placeholder or low-effort deployment"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xa4f2381d11b48072a40f2d589ad1fb4e0207c1d4",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 15,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.7347919745370746,
+  "error": null,
+  "reasons": [
+   "No metadata resolved at all - metadata.present is false",
+   "Code size of 45 bytes indicates minimal proxy with no custom implementation",
+   "Zero configuration revisions shows no operator effort or iteration"
+  ],
+  "risk_flags": [
+   "Absent metadata is effectively disqualifying (P=1.00 for high-value drops)",
+   "Minimal proxy pattern with no positive signals elsewhere",
+   "First-time deployer with no configuration effort"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x7082fe511f1bbb8513fc5540e66753b352bb37e1",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 5,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.27158402372151613,
+  "error": null,
+  "reasons": [
+   "No metadata resolved at all - metadata.present is false",
+   "Code size of 45 bytes indicates minimal proxy with no custom implementation",
+   "Zero configuration revisions shows no operator effort or iteration"
+  ],
+  "risk_flags": [
+   "Metadata completely absent - strong negative signal",
+   "Minimal proxy (45 bytes) with no positive signals",
+   "Single-character symbol suggests low effort"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xb7c657f76bd5b3f8be3d5761d209780d1255faff",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 15,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 2.8695419896394014,
+  "error": null,
+  "reasons": [
+   "Minimal proxy contract (45 bytes) with no substantial implementation",
+   "Price flip from paid to free suggests operator instability",
+   "No positive signals present beyond basic drop configuration"
+  ],
+  "risk_flags": [
+   "45-byte minimal proxy indicates no real contract implementation",
+   "Operator changed from paid (0.001 ETH) to free shortly before open",
+   "First-time deployer with no track record"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xeb18b8c6b0f37f9337ac57307535b515eff2435e",
+  "chain": "robinhood",
+  "verdict": "MINT",
+  "score": 72,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 20,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 1.2000410351902246,
+  "error": null,
+  "reasons": [
+   "Three named mint stages (Public, GTD, WL) indicate existing community structure",
+   "Sane supply of 5000 with 1-per-wallet limit suggests genuine distribution intent",
+   "Free mint with advance notice and reasonable 6-hour window"
+  ],
+  "risk_flags": [
+   "Code size of 45 bytes indicates minimal proxy (ERC-1167), not custom implementation",
+   "First-time deployer with no prior collection history",
+   "Only 1 config revision before cutoff shows minimal iteration"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xd60f8f944c8ceaaff1a4128e80b73f4fe16fd4b8",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 15,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 1.5292910393327475,
+  "error": null,
+  "reasons": [
+   "Minimal proxy contract (45 bytes) with no substantial implementation",
+   "Single config revision shows minimal operator preparation",
+   "First-time deployer with no track record"
+  ],
+  "risk_flags": [
+   "45-byte minimal proxy indicates no custom implementation",
+   "Zero advance notice (starts_in_s: -46) suggests rushed launch",
+   "No evidence of existing community (single public stage, first-time deployer)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x33a9d9280d8672fc8df3caccac1c3e40f6937a7d",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 15,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.3700839588418603,
+  "error": null,
+  "reasons": [
+   "No metadata resolved at all - metadata.present is false, which is a strong negative signal",
+   "Code size of 45 bytes indicates a minimal proxy with no custom implementation - strongest negative when combined with no other positives",
+   "Zero configuration revisions before cutoff shows no operator effort or iteration"
+  ],
+  "risk_flags": [
+   "Bare minimal proxy (45 bytes) with no positive signals",
+   "No resolvable drop configuration",
+   "Deployer has 4 prior collections but 0 high-value outcomes"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xdbef3b216315d50f866de3c51f34406197efd635",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 5,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.7639579707756639,
+  "error": null,
+  "reasons": [
+   "No metadata resolved at all - metadata.present is false, which is a strong negative signal",
+   "Code size of 45 bytes indicates a minimal proxy with no custom implementation",
+   "Zero configuration revisions shows no operator effort or iteration"
+  ],
+  "risk_flags": [
+   "Metadata resolution failed entirely - no drop configuration exists",
+   "Bare minimal proxy (45 bytes) with no positive signals",
+   "Single-character symbol 'R' suggests low effort"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x4d331cb42b00408095fc621ab546d2754e30eca8",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 15,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 1.3374999398365617,
+  "error": null,
+  "reasons": [
+   "Minimal proxy contract (45 bytes) with no substantial implementation",
+   "Single config revision shows minimal operator preparation",
+   "First-time deployer with no track record"
+  ],
+  "risk_flags": [
+   "45-byte minimal proxy indicates no real contract implementation",
+   "No evidence of operator effort or community building",
+   "Unknown deployer with zero history"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xdd2b35d2d7d778ba4ccb2facfdd1b3faf7f015d5",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 5,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 1.6431669937446713,
+  "error": null,
+  "reasons": [
+   "No metadata resolved at all - metadata.present is false",
+   "Code size of 45 bytes indicates minimal proxy with no custom implementation",
+   "Zero configuration revisions shows no operator effort or iteration"
+  ],
+  "risk_flags": [
+   "Metadata completely absent - strong negative signal",
+   "Minimal proxy deployment (45 bytes) with no positive signals",
+   "First-time deployer with zero prior collections"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x768d01ffd97907cccc690a62f960ab69de5b5516",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 5,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.272874953225255,
+  "error": null,
+  "reasons": [
+   "No metadata resolved at all - metadata.present is false, which is a strong negative signal",
+   "Code size of 45 bytes indicates a minimal proxy with no custom implementation - strongest negative when combined with no other positives",
+   "Zero configuration revisions and first-time deployer with no track record"
+  ],
+  "risk_flags": [
+   "Bare minimal proxy (45 bytes) with no positive signals",
+   "No resolvable drop configuration",
+   "Unknown deployer with no history"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xe14bf05f192e70a3165eb9e63ee5a11d0a494aa6",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 15,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 1.2508329236879945,
+  "error": null,
+  "reasons": [
+   "Code size of 45 bytes indicates minimal proxy with no custom implementation",
+   "Two named stages ('Public stage', 'wl1') suggest some community structure",
+   "Deployer has no prior high-value drops (0/1 rate)"
+  ],
+  "risk_flags": [
+   "45-byte code size is characteristic of bare minimal proxy with no real implementation",
+   "Deployer's only prior collection was not high-value",
+   "Max supply of 200 with 1-hour duration and 1 per wallet suggests limited organic demand potential"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x16bf4d327b094af894ce4f5a1f9b83ca00f96650",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 5,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 1.8678329652175307,
+  "error": null,
+  "reasons": [
+   "No metadata resolved at all - metadata.present is false, which is a strong negative signal",
+   "Code size of 45 bytes indicates a minimal proxy with no custom implementation",
+   "Gibberish name 'asbak345' and single-character symbol 'a' suggest low-effort deployment"
+  ],
+  "risk_flags": [
+   "First-time deployer with no track record",
+   "Zero configuration revisions before cutoff",
+   "Mint already started 56 seconds ago with no advance notice"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xafb63db77040a7cd239968e606729a82892c60c1",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 15,
+  "label": "high_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 1.473542070016265,
+  "error": null,
+  "reasons": [
+   "Minimal proxy contract (45 bytes) with no substantial implementation",
+   "Unstable pricing: flipped from paid (25\u219245 gwei) to free just before open",
+   "First-time deployer with no track record"
+  ],
+  "risk_flags": [
+   "Bare minimal proxy with no custom logic",
+   "Price increased 25\u219245 gwei then dropped to free 2h before mint",
+   "Zero operator history"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xc305ccaa25c3227e9949522c7de238ff38f6a2d8",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 5,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.6825419841334224,
+  "error": null,
+  "reasons": [
+   "No metadata resolved at all - metadata.present is false",
+   "Code size of 45 bytes indicates minimal proxy with no custom implementation",
+   "Zero configuration revisions shows no operator effort or iteration"
+  ],
+  "risk_flags": [
+   "Metadata resolution failed entirely - strong negative signal",
+   "Bare minimal proxy (45 bytes) with no positive signals to offset it",
+   "Deployer has 1 prior collection but 0 high-value outcomes"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xe18be6f74a6ab782019363bf77009198ff8c64e8",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 5,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 1.334875007160008,
+  "error": null,
+  "reasons": [
+   "No metadata resolved at all - metadata.present is false",
+   "Code size of 45 bytes indicates minimal proxy with no custom implementation",
+   "Zero configuration revisions shows no operator effort or iteration"
+  ],
+  "risk_flags": [
+   "Absent metadata is effectively disqualifying (P(present|high)=1.00)",
+   "45-byte code size is characteristic of spam minimal proxies",
+   "No evidence of operator effort or community building"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xb433123b8657dacf3b246b3e25f8952a0cd2f121",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 25,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 1.7342088976874948,
+  "error": null,
+  "reasons": [
+   "Minimal proxy contract (45 bytes) with no custom implementation",
+   "Six config revisions show operator effort, but no other positive signals present",
+   "Two named stages suggest some community structure"
+  ],
+  "risk_flags": [
+   "45-byte minimal proxy with no substantial implementation",
+   "First-time deployer with no track record"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x36b101b5b14f0b15eb32baf748d7b6d70803787a",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 5,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.33912493381649256,
+  "error": null,
+  "reasons": [
+   "No metadata resolved at all - metadata.present is false",
+   "Code size of 45 bytes indicates minimal proxy with no custom implementation",
+   "Zero configuration revisions shows no operator effort or iteration"
+  ],
+  "risk_flags": [
+   "Metadata completely absent - strong negative signal",
+   "Minimal proxy deployment (45 bytes) with no positive signals",
+   "First-time deployer with zero prior collections"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x48aa6f67e1fcac29090635ca35ee0120a69d3221",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 5,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.7702909642830491,
+  "error": null,
+  "reasons": [
+   "No metadata resolved at all - metadata.present is false",
+   "Code size of 45 bytes indicates minimal proxy with no custom implementation",
+   "Zero configuration revisions shows no operator effort or iteration"
+  ],
+  "risk_flags": [
+   "Metadata resolution failed entirely - strong negative signal",
+   "Minimal proxy deployment (45 bytes) with no positive signals",
+   "No configuration history suggests rushed or low-effort drop"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xdb8e14c13df1deb360f7399a4fae0ae9772f86ed",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 5,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 3.8438329938799143,
+  "error": null,
+  "reasons": [
+   "No metadata resolved at all - metadata.present is false, which is a strong negative signal",
+   "Code size of 45 bytes indicates a minimal proxy with no custom implementation",
+   "Placeholder name 'test mint tb' and symbol 'tmt' suggest this is not a serious production drop"
+  ],
+  "risk_flags": [
+   "Zero configuration revisions before cutoff indicates no operator effort",
+   "First-time deployer with no track record",
+   "Mint already started (starts_in_s: -40) but metadata still absent"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x57f2527c5fd87c667a8a774aba062ae7f7d56958",
+  "chain": "robinhood",
+  "verdict": "MINT",
+  "score": 78,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 7,
+  "achievable": 100,
+  "gas_wei": 119617358322000,
+  "spend_wei": 0,
+  "ms": 1.1685830540955067,
+  "error": null,
+  "reasons": [
+   "Large contract implementation (19,805 bytes) indicates real deployment effort, not minimal proxy spam",
+   "Five configuration revisions before cutoff shows active operator engagement",
+   "Sane supply (6,666) with free mint and reasonable per-wallet limit"
+  ],
+  "risk_flags": [
+   "First-time deployer with no prior collection history",
+   "Short advance notice (58 minutes) and 1-hour mint window"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xaba6f81d607ec08a39830fb97a9357f9ba304c9a",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 15,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 1.466333051212132,
+  "error": null,
+  "reasons": [
+   "Gibberish placeholder name 'testaaaaaaAsse' indicates test/spam drop",
+   "Minimal proxy (45 bytes) with no real implementation cost",
+   "Extremely low max_supply of 20 tokens suggests vanity/personal mint"
+  ],
+  "risk_flags": [
+   "Keyboard-mash name pattern typical of throwaway test contracts",
+   "Bare minimal proxy with no deployment investment",
+   "Supply of 20 far below viable collection threshold"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x542979e08c0511d509d5c3e1fcd347fffde38172",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 15,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 1.561832963488996,
+  "error": null,
+  "reasons": [
+   "Minimal proxy contract (45 bytes) with no implementation substance",
+   "Extremely low max_supply of 20 tokens makes this a vanity/personal mint",
+   "Priced mint (0.014 ETH) contradicts 'is_free: true' flag - configuration inconsistency"
+  ],
+  "risk_flags": [
+   "Max supply of 20 is far below the 200 minimum threshold for viable drops",
+   "45-byte code indicates bare minimal proxy with no custom logic",
+   "Price inconsistency between config history (0.014 ETH) and economics flag (free)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xf0e1bc05cf88be02d98a396d6d3c46dccfe7bd39",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 5,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.9313330519944429,
+  "error": null,
+  "reasons": [
+   "No metadata resolved at all - metadata.present is false",
+   "Code size of 45 bytes indicates minimal proxy with no custom implementation",
+   "Zero configuration revisions shows no operator effort or iteration"
+  ],
+  "risk_flags": [
+   "Metadata resolution failed entirely - strong negative signal",
+   "Bare minimal proxy (45 bytes) with no positive signals",
+   "Already started (starts_in_s: -92) but still no resolvable config"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x6816593db27b852409fd5abae897d8466862c0e6",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 15,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 1.7425830010324717,
+  "error": null,
+  "reasons": [
+   "Minimal proxy contract (45 bytes) with no substantial implementation",
+   "Single config revision shows minimal operator preparation",
+   "No positive signals present to overcome spam prior"
+  ],
+  "risk_flags": [
+   "Bare minimal proxy with no custom implementation",
+   "First-time deployer with no high-value track record",
+   "Only 15 seconds advance notice before mint opens"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x246f122e7ae56b91b2f3f8538a4fb4e936edfc41",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 15,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 2.2028330713510513,
+  "error": null,
+  "reasons": [
+   "Minimal proxy contract (45 bytes) with no substantial implementation",
+   "Only 1 config revision before cutoff indicates minimal operator preparation",
+   "First-time deployer with no track record"
+  ],
+  "risk_flags": [
+   "45-byte minimal proxy with no positive signals to offset it",
+   "Truncated stage name suggests hasty configuration",
+   "No evidence of operator effort or community"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x651bdff7822317a9b7366db46525ca7ef7a59f46",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 15,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 1.5719170914962888,
+  "error": null,
+  "reasons": [
+   "No metadata resolved at decision point - strong negative signal",
+   "Code size of 45 bytes indicates minimal proxy with no custom implementation",
+   "Zero configuration revisions shows no operator effort or iteration"
+  ],
+  "risk_flags": [
+   "Metadata resolution failed entirely - P(high|absent) \u2248 0",
+   "Bare minimal proxy (45 bytes) with no positive signals to offset it",
+   "Already started (starts_in_s: -27) but no configuration history"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xdb55f53baed03bcea963bfd3cf551b13bec56a7e",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 5,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.4943750100210309,
+  "error": null,
+  "reasons": [
+   "No metadata resolved at all - metadata.present is false, which is a strong negative signal",
+   "Code size of 45 bytes indicates a minimal proxy with no custom implementation",
+   "Zero configuration revisions shows no operator effort or iteration"
+  ],
+  "risk_flags": [
+   "Metadata completely absent - fails necessary condition",
+   "Minimal proxy contract with no custom logic",
+   "First-time deployer with no configuration history"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x6a7e8781d64015fd2cf4188812b2b6e48682205a",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 15,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.6815829547122121,
+  "error": null,
+  "reasons": [
+   "No metadata resolved at decision point - strong negative signal",
+   "Code size of 45 bytes indicates minimal proxy with no custom implementation",
+   "Zero config revisions shows no operator effort or iteration"
+  ],
+  "risk_flags": [
+   "Metadata resolution failed entirely - no drop configuration observable",
+   "Minimal proxy contract with no substantial implementation",
+   "Deployer has 6 prior collections but 0 high-value outcomes"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x94b45d043ba6421c0dec5b918a6ef294e44c6a43",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 5,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.32604194711893797,
+  "error": null,
+  "reasons": [
+   "No metadata resolved at all - metadata.present is false",
+   "Code size of 45 bytes indicates minimal proxy with no custom implementation",
+   "Zero configuration revisions shows no operator effort or iteration"
+  ],
+  "risk_flags": [
+   "Minimal proxy contract (45 bytes) with no positive signals",
+   "Placeholder symbol (single period)",
+   "Deployer has 4 prior collections but 0% high-value rate"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x54d3b8ef3d227782cbf43648fa859f363ac1285c",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 15,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.7284580497071147,
+  "error": null,
+  "reasons": [
+   "No metadata resolved at all (present: false) - effectively disqualifying",
+   "Code size of 45 bytes indicates minimal proxy with no custom implementation",
+   "Zero config revisions shows no operator effort in setup"
+  ],
+  "risk_flags": [
+   "Metadata completely absent - no drop configuration resolved",
+   "Minimal proxy deployment (45 bytes) with no positive signals",
+   "Already started (starts_in_s: -22) but still no metadata"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xee99794c0fb13057621014cfa54b7f7ef3089633",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 5,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 1.507541979663074,
+  "error": null,
+  "reasons": [
+   "No metadata resolved at all (present: false) - effectively disqualifying",
+   "Code size of 45 bytes indicates minimal proxy with no custom implementation",
+   "Zero configuration revisions shows no operator effort or iteration"
+  ],
+  "risk_flags": [
+   "Metadata completely absent - no drop configuration resolved",
+   "Minimal proxy contract (45 bytes) with no positive signals to offset it",
+   "Deployer has 1 prior collection with 0 high-value outcomes"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xe1b9140ee2e9577db213304385c9d39ccc7c19eb",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 5,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 1.6531669534742832,
+  "error": null,
+  "reasons": [
+   "No metadata resolved at all - metadata.present is false, which is a strong negative signal",
+   "Code size of 45 bytes indicates a minimal proxy with no custom implementation",
+   "Zero configuration revisions shows no operator effort or iteration"
+  ],
+  "risk_flags": [
+   "Metadata resolution failed entirely - no drop configuration exists",
+   "Minimal proxy contract (45 bytes) with no positive signals",
+   "First-time deployer with zero prior collections"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xac1d7796efb11e6fee44b5f31272855143e45855",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 15,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 1.73558306414634,
+  "error": null,
+  "reasons": [
+   "No metadata resolved at all (present: false) - effectively disqualifying",
+   "Code size of 45 bytes indicates minimal proxy with no custom implementation",
+   "Zero configuration revisions shows no operator effort or iteration"
+  ],
+  "risk_flags": [
+   "Metadata resolution failed entirely - no drop configuration observable",
+   "Minimal proxy deployment (45 bytes) with no positive signals to offset it",
+   "Deployer has 2 prior collections but 0 high-value outcomes"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xc52a8e9149e682ac007c2be859e14b24fa7cfced",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 5,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.27475005481392145,
+  "error": null,
+  "reasons": [
+   "No metadata resolved at all - metadata.present is false, which is a strong negative signal",
+   "Code size of 45 bytes indicates a minimal proxy with no custom implementation",
+   "Zero configuration revisions shows no operator effort or iteration"
+  ],
+  "risk_flags": [
+   "Metadata resolution failed entirely - necessary condition not met",
+   "Bare minimal proxy (45 bytes) with no positive signals",
+   "Single-space symbol suggests placeholder or low-effort deployment"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xf82fbee30495c2959d4e6e63d97d3c867fb1ba74",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 15,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 2.494167070835829,
+  "error": null,
+  "reasons": [
+   "Gibberish placeholder name 'testaaaaaaAsse' indicates test/spam drop",
+   "Minimal proxy contract (45 bytes) with no real implementation",
+   "Extremely low max_supply of 20 tokens suggests vanity/personal mint"
+  ],
+  "risk_flags": [
+   "Keyboard-mash name pattern typical of throwaway test contracts",
+   "45-byte minimal proxy with no positive signals to offset it",
+   "First-time deployer with max_supply below viable collection threshold"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xa5112e78c71bd0d6529bbcd0340531ec9e9d52d1",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 15,
+  "label": "high_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.5706670926883817,
+  "error": null,
+  "reasons": [
+   "Minimal proxy contract (45 bytes) with no substantial implementation",
+   "Single config revision shows minimal operator preparation",
+   "First-time deployer with no track record"
+  ],
+  "risk_flags": [
+   "45-byte minimal proxy indicates no custom implementation or deployment investment",
+   "Zero advance notice (starts_in_s: -155) suggests rushed or low-effort launch",
+   "No evidence of existing community (single unnamed public stage)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x3a48568409d0ac93cef8978347c9d1a62913fa6d",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 15,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 1.0193330235779285,
+  "error": null,
+  "reasons": [
+   "Minimal proxy contract (45 bytes) with no implementation substance",
+   "Single config revision shows minimal operator preparation",
+   "Extremely high max_supply (100k) with high per-wallet limit (50) suggests low scarcity intent"
+  ],
+  "risk_flags": [
+   "45-byte minimal proxy with no positive signals to offset it",
+   "First-time deployer with no track record",
+   "Max supply far outside typical range for successful drops"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x4f28c0ba83138849d0ccc9b6202a62add3282671",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 15,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 1.2099590385332704,
+  "error": null,
+  "reasons": [
+   "Minimal proxy contract (45 bytes) with no substantial implementation",
+   "Single config revision shows minimal operator preparation",
+   "First-time deployer with no track record"
+  ],
+  "risk_flags": [
+   "Bare minimal proxy with no custom logic deployed",
+   "No evidence of operator effort or community building",
+   "Extremely short mint window (3 minutes) suggests low confidence"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x8b4f12e2d0c4c54170e1a399a2d37c4b16859fdd",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 5,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.7910829735919833,
+  "error": null,
+  "reasons": [
+   "No metadata resolved at all - metadata.present is false, which is a strong negative signal",
+   "Code size of 45 bytes indicates a minimal proxy with no custom implementation",
+   "Zero configuration revisions shows no operator effort or iteration"
+  ],
+  "risk_flags": [
+   "Metadata completely absent - nothing resolved",
+   "Bare minimal proxy (45 bytes) with no positive signals",
+   "First-time deployer with zero prior collections"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xa111c890a9259a6c9a01730a691fdb8f32239ec3",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 5,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.9599169716238976,
+  "error": null,
+  "reasons": [
+   "No metadata resolved at all - metadata.present is false",
+   "Code size of 45 bytes indicates minimal proxy with no custom implementation",
+   "Zero configuration revisions shows no operator effort or iteration"
+  ],
+  "risk_flags": [
+   "Absent metadata is a strong disqualifier (P(present|high)=1.00)",
+   "45-byte code size is characteristic of spam minimal proxies",
+   "First-time deployer with no configuration history"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x2f3af981de1ffdcbb91aab1fbe3021072a9b5a50",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 15,
+  "label": "high_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 1.120624947361648,
+  "error": null,
+  "reasons": [
+   "Minimal proxy contract (45 bytes) with no substantial implementation",
+   "Price flip from free to 0.000088 ETH immediately before open indicates unstable operator",
+   "No positive signals present: unknown deployer, single generic stage, no community indicators"
+  ],
+  "risk_flags": [
+   "Bare minimal proxy with no real implementation (45 bytes vs 6000+ for legitimate drops)",
+   "Final config revision changed from free to priced 13 minutes before open",
+   "First-time deployer with no track record"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xce97ca2fdc1bfa703732460b94ab27ce9286b853",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 5,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.9368750033900142,
+  "error": null,
+  "reasons": [
+   "No metadata resolved at all - metadata.present is false",
+   "Code size of 45 bytes indicates minimal proxy with no custom implementation",
+   "Zero configuration revisions shows no operator effort or iteration"
+  ],
+  "risk_flags": [
+   "Bare minimal proxy (45 bytes) with no positive signals",
+   "Deployer has 6 prior collections but zero high-value outcomes",
+   "No drop configuration resolved - cannot verify legitimate setup"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x4f80c9bddc6131b86cc0d58f3a858f6ff9816602",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 5,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 1.070708967745304,
+  "error": null,
+  "reasons": [
+   "No metadata resolved at all - metadata.present is false, which is a strong negative signal",
+   "Code size of 45 bytes indicates a minimal proxy with no custom implementation",
+   "Zero configuration revisions shows no operator effort or iteration"
+  ],
+  "risk_flags": [
+   "Metadata resolution failed entirely - no drop configuration exists",
+   "Minimal proxy contract with no substantial implementation",
+   "First-time deployer with no configuration history"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x9cb19bb6688acc16ab3f291bebe604f5ad9888be",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 15,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.6657920312136412,
+  "error": null,
+  "reasons": [
+   "No metadata resolved at all (present: false) - effectively disqualifying",
+   "Code size of 45 bytes indicates minimal proxy with no custom implementation",
+   "Zero configuration revisions shows no operator effort or iteration"
+  ],
+  "risk_flags": [
+   "Metadata completely absent - no drop configuration resolved",
+   "Minimal proxy contract (45 bytes) with no positive signals to offset it",
+   "Deployer has 1 prior collection, 0 high-value (0% success rate)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xa766deb036a3c468501b4ca0a80d055461758255",
+  "chain": "robinhood",
+  "verdict": "MINT",
+  "score": 78,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 20,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 2.0392920123413205,
+  "error": null,
+  "reasons": [
+   "Deployer has 100% prior success rate (1/1 high-value drops)",
+   "Three named mint stages suggest structured community distribution",
+   "Standard drop configuration with reasonable supply and free mint"
+  ],
+  "risk_flags": [
+   "Minimal proxy (45 bytes) suggests low deployment effort",
+   "Only 1 config revision before cutoff shows limited iteration"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xb2b4c3a79fe819f5ec02e24f5e80b94bedaa5a0a",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 15,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 1.2233329471200705,
+  "error": null,
+  "reasons": [
+   "Minimal proxy contract (45 bytes) with no substantial implementation",
+   "Single config revision shows minimal operator preparation",
+   "First-time deployer with no track record"
+  ],
+  "risk_flags": [
+   "45-byte minimal proxy indicates no real contract implementation",
+   "Only 40 seconds advance notice suggests rushed or low-effort launch",
+   "No evidence of existing community (single unnamed public stage)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x41d647e6862c4fcc4a33e4ffb8ed84ed7226c266",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 5,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 3.8886660477146506,
+  "error": null,
+  "reasons": [
+   "Gibberish name/symbol (aefdwswde) indicates low-effort or test deployment",
+   "Implausibly large max_supply (111M) with max_supply_sane: false",
+   "Code size of 45 bytes is minimal proxy with no other positive signals"
+  ],
+  "risk_flags": [
+   "Keyboard-mash name/symbol suggests placeholder or spam",
+   "Max supply of 111M is implausible for legitimate drop",
+   "Minimal proxy with no configuration effort (1 revision only)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x1a59e75f7e16d4e723c02fea908af5ccd54ab8e9",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 15,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 3.4869579831138253,
+  "error": null,
+  "reasons": [
+   "Minimal proxy contract (45 bytes) with no substantial implementation",
+   "Only 1 config revision shows minimal operator preparation",
+   "Very small supply (64) with no evidence of community or prior success"
+  ],
+  "risk_flags": [
+   "45-byte minimal proxy indicates no real contract implementation",
+   "Deployer has 2 prior collections but 0 high-value outcomes",
+   "Single config revision suggests low preparation effort"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x10aacd50d283d860bcbdb30a76247bb6fc9895d2",
+  "chain": "robinhood",
+  "verdict": "MINT",
+  "score": 72,
+  "label": "high_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 40,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 1.1282499181106687,
+  "error": null,
+  "reasons": [
+   "Three named mint stages (Public, GTD, WL) indicate existing community structure to reward",
+   "Sane supply of 5000 with reasonable 2-per-wallet limit shows deliberate configuration",
+   "Free mint with 6-hour window and advance notice suggests organized drop"
+  ],
+  "risk_flags": [
+   "Minimal proxy (45 bytes) with no custom implementation",
+   "Only 1 config revision before cutoff shows limited iteration",
+   "Deployer has no prior high-value drops (0/1 rate)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x229589aa3f96af8678fdd5bb17e44caf2f9310c5",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 5,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.29850006103515625,
+  "error": null,
+  "reasons": [
+   "No metadata resolved at all - metadata.present is false",
+   "Code size of 45 bytes indicates minimal proxy with no custom implementation",
+   "Zero configuration revisions shows no operator effort or iteration"
+  ],
+  "risk_flags": [
+   "Metadata completely absent - strongest negative signal",
+   "Bare minimal proxy deployment with no real contract code",
+   "First-time deployer with zero configuration effort"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xe63d65d6dd35ccc2beb0c3edaae13c339429a0d9",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 15,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 1.2123750057071447,
+  "error": null,
+  "reasons": [
+   "Minimal proxy contract (45 bytes) with no substantial implementation",
+   "Single config revision shows minimal operator preparation",
+   "First-time deployer with no track record"
+  ],
+  "risk_flags": [
+   "45-byte minimal proxy indicates no real contract implementation",
+   "Zero operator history or demonstrated capability",
+   "Only 94 seconds advance notice suggests rushed deployment"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x1585f52bab0f87f53eab230de3e35496b012d5bd",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 5,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.7468750700354576,
+  "error": null,
+  "reasons": [
+   "No metadata resolved at all - metadata.present is false, which is a strong negative signal",
+   "Code size of 45 bytes indicates a minimal proxy with no custom implementation",
+   "Zero configuration revisions shows no operator effort or iteration"
+  ],
+  "risk_flags": [
+   "Metadata completely absent - no drop configuration resolved",
+   "Minimal proxy contract (45 bytes) with no positive signals",
+   "First-time deployer with no configuration history"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xc750adb293054950182ca72700f41fb648a68f04",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 5,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.2886250149458647,
+  "error": null,
+  "reasons": [
+   "No metadata resolved at all - metadata.present is false",
+   "Code size of 45 bytes indicates minimal proxy with no custom implementation",
+   "Zero configuration revisions shows no operator effort or iteration"
+  ],
+  "risk_flags": [
+   "Metadata completely absent - strongest negative signal",
+   "Bare minimal proxy deployment with no custom logic",
+   "First-time deployer with no configuration effort"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x9e1c6dd9119a1c2f53a75db6433aa398b59b274d",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 15,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 1.7380419885739684,
+  "error": null,
+  "reasons": [
+   "Placeholder name/symbol ('test'/'test') indicates no serious branding effort",
+   "Minimal proxy contract (45 bytes) with no custom implementation",
+   "Deployer has 10 prior collections but 0% high-value rate"
+  ],
+  "risk_flags": [
+   "Gibberish/placeholder naming suggests throwaway drop",
+   "45-byte minimal proxy with no positive signals",
+   "Deployer track record: 10 drops, zero high-value"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x48906ba069989afc414a48477d7bfbcf7b304894",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 5,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 1.4733750140294433,
+  "error": null,
+  "reasons": [
+   "Minimal proxy contract (45 bytes) with no real implementation",
+   "Max supply of 1 is a vanity/test mint, not a real drop",
+   "Placeholder name 'Test' and symbol 'TEST' indicate non-serious deployment"
+  ],
+  "risk_flags": [
+   "Deployer has 2 prior collections with 0 high-value outcomes",
+   "Single token supply cannot meet 100-wallet threshold for high-value classification",
+   "Only 1 config revision shows minimal operator effort"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x302c2e2721062dd3f821b5e5ddd758e0e968f21d",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 15,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.9474999969825149,
+  "error": null,
+  "reasons": [
+   "Minimal proxy contract (45 bytes) with no substantial implementation",
+   "Only 1 config revision shows minimal operator preparation",
+   "First-time deployer with no track record"
+  ],
+  "risk_flags": [
+   "45-byte minimal proxy indicates no real contract implementation",
+   "Single config revision suggests low operator effort",
+   "Unknown deployer with no history"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x261c210921f37bb9e2bbd9fde471b81ff20d58a6",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 5,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.569332973100245,
+  "error": null,
+  "reasons": [
+   "No metadata resolved at all - metadata.present is false, which is a strong negative signal",
+   "Code size of 45 bytes indicates a minimal proxy with no custom implementation",
+   "Zero configuration revisions shows no operator effort or iteration"
+  ],
+  "risk_flags": [
+   "Metadata completely absent - not even drop stage config resolved",
+   "Bare minimal proxy (45 bytes) with no positive signals to offset it",
+   "Already started (starts_in_s: -111) but still no resolvable metadata"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x97a7b70dd05794ffa86ffc14f1d3b661bbe64f0a",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 15,
+  "label": "high_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 1.888291910290718,
+  "error": null,
+  "reasons": [
+   "Code size of 45 bytes indicates minimal proxy with no custom implementation",
+   "Only 1 config revision shows minimal operator preparation",
+   "First-time deployer with no track record"
+  ],
+  "risk_flags": [
+   "Bare minimal proxy (45 bytes) with no positive signals to offset it",
+   "Single config revision indicates low operator effort",
+   "Extremely short 3-minute mint window suggests low confidence"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xe02cbce9bcac8c24195402c6df02130247b4860d",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 15,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.7228750037029386,
+  "error": null,
+  "reasons": [
+   "Gibberish name/symbol (tytytyty) indicates low-effort or test drop",
+   "Minimal proxy contract (45 bytes) with no substantial implementation",
+   "Deployer has no history of high-value drops (0/2 prior collections)"
+  ],
+  "risk_flags": [
+   "Placeholder/keyboard-mash name strongly suggests test or spam drop",
+   "45-byte code size is ERC-1167 minimal proxy with no custom logic",
+   "Only 2 config revisions and extremely short advance notice (10598s)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xd0edc945a9b7ee890351eb12deec906ea23336d6",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 5,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.7771250093355775,
+  "error": null,
+  "reasons": [
+   "No metadata resolved at all (present: false) - effectively disqualifying",
+   "Code size of 45 bytes indicates minimal proxy with no custom implementation",
+   "Zero configuration revisions shows no operator effort or iteration"
+  ],
+  "risk_flags": [
+   "Metadata completely absent - no drop configuration resolved",
+   "Minimal proxy contract (45 bytes) with no positive signals",
+   "Gibberish collection name suggests low-effort deployment"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xa4a3349204bea685d14c1dcdbba8cacec56979d1",
+  "chain": "robinhood",
+  "verdict": "MINT",
+  "score": 72,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 20,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 1.2927919160574675,
+  "error": null,
+  "reasons": [
+   "Large contract implementation (19658 bytes) indicates real deployment effort, not spam proxy",
+   "Multiple configuration revisions show deliberate operator preparation",
+   "Sane supply cap (200) with 24h duration and 1-per-wallet limit suggests controlled distribution"
+  ],
+  "risk_flags": [
+   "Deployer has no prior high-value drops (0/1)",
+   "Two named stages but both appear to be public (no clear community reward structure)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xe05616b961d9c33a34f74c1a7f602daa722d8e24",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 15,
+  "label": "high_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.9893329115584493,
+  "error": null,
+  "reasons": [
+   "Minimal proxy contract (45 bytes) with no implementation substance",
+   "First-time deployer with zero track record",
+   "Named stages suggest community but no allowlist to validate it"
+  ],
+  "risk_flags": [
+   "45-byte minimal proxy indicates no real contract implementation",
+   "Named stages imply existing community but no allowlist mechanism to gate access",
+   "Unknown deployer with no history of successful drops"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x8f5bab1299f50aab4f77cf68ec2b46349109890b",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 5,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 1.5532919205725193,
+  "error": null,
+  "reasons": [
+   "No metadata resolved at all - metadata.present is false, which is a strong negative signal",
+   "Code size of 45 bytes indicates a minimal proxy with no custom implementation",
+   "Zero configuration revisions shows no operator effort or iteration"
+  ],
+  "risk_flags": [
+   "Metadata completely absent - no drop configuration resolved",
+   "Minimal proxy contract (45 bytes) with no positive signals to offset it",
+   "First-time deployer with zero prior collections"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x5bd63502cf895d812e14b102db9349dc1f4d702f",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 15,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 1.6404169145971537,
+  "error": null,
+  "reasons": [
+   "Gibberish name/symbol (fasdf/sadfa) indicates low-effort or test deployment",
+   "Minimal proxy contract (45 bytes) with no other positive signals",
+   "Single config revision shows minimal operator preparation"
+  ],
+  "risk_flags": [
+   "Placeholder/gibberish naming typical of abandoned or test drops",
+   "Minimal proxy with no custom implementation (45 bytes)",
+   "Deployer has no prior high-value drops (0/1)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x712616f8b03c7f01f578a41769ea335aa17f36fc",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 5,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.798832974396646,
+  "error": null,
+  "reasons": [
+   "No metadata resolved at all - metadata.present is false, which is a strong negative signal",
+   "Code size of 45 bytes indicates a minimal proxy with no custom implementation",
+   "Zero configuration revisions shows no operator effort or iteration"
+  ],
+  "risk_flags": [
+   "Metadata resolution failed entirely - no drop configuration exists",
+   "Minimal proxy contract (45 bytes) with no positive signals",
+   "Single-character symbol '9' suggests low-effort deployment"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x49153aa0de7dc41151346b80786e2f66e31e1af7",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 15,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 2.145292004570365,
+  "error": null,
+  "reasons": [
+   "Minimal proxy contract (45 bytes) with no substantial implementation",
+   "Only 1 config revision indicates minimal operator preparation",
+   "First-time deployer with no track record"
+  ],
+  "risk_flags": [
+   "Bare minimal proxy (45 bytes) suggests low deployment effort",
+   "No configuration iteration before launch",
+   "Deployer has no history on this chain"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xbe7f49017106058b784f5b6cf024d9d75f082529",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 5,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.821624998934567,
+  "error": null,
+  "reasons": [
+   "No metadata resolved at all - metadata.present is false, which is a strong negative signal",
+   "Code size of 45 bytes indicates a minimal proxy with no custom implementation",
+   "Zero configuration revisions shows no operator effort or iteration"
+  ],
+  "risk_flags": [
+   "Metadata resolution failed entirely - no drop configuration exists",
+   "Minimal proxy contract with no custom logic",
+   "First-time deployer with no configuration history"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xe62a3a993dfda188d17d92a798247f6e44c86b2d",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 15,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 3.238250035792589,
+  "error": null,
+  "reasons": [
+   "Minimal proxy contract (45 bytes) with no substantial implementation",
+   "Only 1 config revision shows minimal operator preparation",
+   "No positive signals present to overcome spam prior"
+  ],
+  "risk_flags": [
+   "Bare minimal proxy (45 bytes) typical of spam deployments",
+   "Single config revision indicates low operator effort",
+   "Deployer has 4 prior collections but 0 high-value (0% success rate)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x0435dcb7a186a2a5f8edc7b406e383ab484cb8cf",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 15,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 1.5763749834150076,
+  "error": null,
+  "reasons": [
+   "Minimal proxy contract (45 bytes) with no substantial implementation",
+   "Only 2 config revisions - below the 3+ threshold that indicates serious operator effort",
+   "First-time deployer with no track record"
+  ],
+  "risk_flags": [
+   "45-byte minimal proxy indicates low deployment effort/cost",
+   "No operator history to validate quality",
+   "Max 50 per wallet allows single-wallet concentration"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x5620c5c2cba2d01656b11c072145b9898b3b78ac",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 5,
+  "label": "high_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.7968749850988388,
+  "error": null,
+  "reasons": [
+   "No metadata resolved at all - metadata.present is false",
+   "Code size of 45 bytes indicates minimal proxy with no custom implementation",
+   "Zero configuration revisions shows no operator effort or iteration"
+  ],
+  "risk_flags": [
+   "Absent metadata is effectively disqualifying (P=1.00 for high-value drops)",
+   "Minimal proxy pattern with no positive signals elsewhere",
+   "Deployer has 1 prior collection with 0 high-value outcomes"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xed74a2029ff2633f21260e097e451358c26a507d",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 25,
+  "label": "high_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 1.96899997536093,
+  "error": null,
+  "reasons": [
+   "Drop is priced at 0.0012 ETH, not free - outside scope for free mint evaluation",
+   "Only 2 config revisions shows minimal operator iteration",
+   "Large code_size (20565 bytes) is the only positive signal present"
+  ],
+  "risk_flags": [
+   "Conflicting price signals: economics shows free but config_history shows 0.0012 ETH price",
+   "Only 2 config revisions (below 3+ threshold for positive signal)",
+   "First-time deployer with no track record"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xc88783c09ceeed346738e9b54351a5c9a8ca3e39",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 15,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 1.4207499334588647,
+  "error": null,
+  "reasons": [
+   "Minimal proxy contract (45 bytes) with no substantial implementation",
+   "Only 2 config revisions, below the 3+ threshold that signals operator effort",
+   "Generic placeholder name/symbol ('Cat'/'cat') suggests low-effort drop"
+  ],
+  "risk_flags": [
+   "45-byte minimal proxy with no other positive signals",
+   "Generic single-word name suggests placeholder or low effort",
+   "Deployer has 2 prior collections but 0% high-value rate"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xdce21bdf2a5bdaa9faaf4c450d395b7c50e649be",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 15,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.7044589146971703,
+  "error": null,
+  "reasons": [
+   "Minimal proxy contract (45 bytes) with no substantial implementation",
+   "Placeholder name/symbol ('start') suggests low effort",
+   "Single config revision shows minimal operator preparation"
+  ],
+  "risk_flags": [
+   "45-byte minimal proxy with no positive signals",
+   "Generic placeholder naming",
+   "No evidence of operator effort or community"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xec9cb9fb2f6b38b1a3630ea0ffacdfe7d3a8feae",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 15,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 1.8809159519150853,
+  "error": null,
+  "reasons": [
+   "Minimal proxy contract (45 bytes) with no substantial implementation",
+   "Single config revision shows minimal operator preparation",
+   "No positive signals present to overcome spam prior"
+  ],
+  "risk_flags": [
+   "45-byte minimal proxy indicates no real contract implementation",
+   "Deployer has 2 prior collections but 0 high-value (0% success rate)",
+   "Only 45 seconds advance notice suggests low planning"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xe6e1749699e3d949866675389d6176e3663a7fb6",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 5,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 1.0084579698741436,
+  "error": null,
+  "reasons": [
+   "No metadata resolved at all - metadata.present is false, which is a strong negative signal",
+   "Code size of 45 bytes indicates a minimal proxy with no custom implementation",
+   "Gibberish collection name 'lenteraaaaa' suggests low-effort or test deployment"
+  ],
+  "risk_flags": [
+   "Zero configuration revisions before cutoff indicates no operator refinement",
+   "Deployer has 9 prior collections but 0 high-value outcomes (0% success rate)",
+   "Already started 25 seconds ago with no advance notice"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x7a157a7b3b8ee8ee4206e58a3555fb3c7868072c",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 5,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.5078749964013696,
+  "error": null,
+  "reasons": [
+   "No metadata resolved at all - metadata.present is false",
+   "Code size of 45 bytes indicates minimal proxy with no custom implementation",
+   "Zero configuration revisions shows no operator effort or iteration"
+  ],
+  "risk_flags": [
+   "Metadata resolution failed entirely - strong negative signal",
+   "Minimal proxy deployment (45 bytes) with no positive signals",
+   "First-time deployer with no configuration history"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xf15e60cf0bead2668a3655c7564a75ffb65471aa",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 5,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.45858300291001797,
+  "error": null,
+  "reasons": [
+   "No metadata resolved at all - metadata.present is false, which is a strong negative signal",
+   "Code size of 45 bytes indicates a minimal proxy with no custom implementation",
+   "Zero configuration revisions shows no operator effort or iteration"
+  ],
+  "risk_flags": [
+   "Metadata completely absent - no drop configuration resolved",
+   "Minimal proxy contract (45 bytes) with no positive signals",
+   "First-time deployer with zero prior collections"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x6920a34c5099c712f90ac41694d0831f0585e207",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 15,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 2.1857080282643437,
+  "error": null,
+  "reasons": [
+   "Minimal proxy contract (45 bytes) with no other positive signals",
+   "Single config revision shows minimal operator effort",
+   "First-time deployer with no track record"
+  ],
+  "risk_flags": [
+   "45-byte minimal proxy indicates low deployment effort",
+   "Only 20 seconds advance notice suggests rushed launch",
+   "No evidence of existing community (single unnamed public stage)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x9bfb2da19e480f75f985a71a3765a83495a4bc5e",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 5,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.7583328988403082,
+  "error": null,
+  "reasons": [
+   "No metadata resolved at all - metadata.present is false, which is a strong negative signal",
+   "Code size of 45 bytes indicates a minimal proxy with no custom implementation",
+   "Zero configuration revisions shows no operator effort or iteration"
+  ],
+  "risk_flags": [
+   "Metadata resolution failed completely - no drop configuration exists",
+   "Minimal proxy contract (45 bytes) with no positive signals",
+   "First-time deployer with zero prior collections"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x831a082b9cfe89fb61f737bc99a57dffcf5ca6be",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 15,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 1.1714579304680228,
+  "error": null,
+  "reasons": [
+   "Minimal proxy contract (45 bytes) with no substantial implementation",
+   "Single config revision shows minimal operator preparation",
+   "Generic placeholder name/symbol 'Lorem Ipsum' indicates low effort"
+  ],
+  "risk_flags": [
+   "Bare minimal proxy with no positive signals",
+   "Placeholder text as collection name/symbol",
+   "First-time deployer with no track record"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x4d40ee803d5e54951ac0fc3d4cdbf44e001be181",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 5,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.3034590044990182,
+  "error": null,
+  "reasons": [
+   "No metadata resolved at all (present: false) - effectively disqualifying",
+   "Code size of 45 bytes indicates minimal proxy with no custom implementation",
+   "Zero configuration revisions shows no operator effort or iteration"
+  ],
+  "risk_flags": [
+   "Metadata completely absent - no drop configuration resolved",
+   "Minimal proxy contract (45 bytes) with no positive signals to offset it",
+   "Already started (starts_in_s: -69) but still no resolvable metadata"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xae78609772fbfac0d25d6fc44367a97282e8c82b",
+  "chain": "robinhood",
+  "verdict": "MINT",
+  "score": 78,
+  "label": "high_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 40,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 1.6270829364657402,
+  "error": null,
+  "reasons": [
+   "Large contract implementation (19,658 bytes) indicates real deployment effort, not spam proxy",
+   "Three named mint stages including holder rewards suggests existing community",
+   "Price flip from paid to free shows operator commitment to accessibility"
+  ],
+  "risk_flags": [
+   "New deployer with no prior collection history",
+   "Only 2 config revisions (below the 3+ strong signal threshold)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x6bef7186bf4f5fa028f32e74669862d46338360b",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 5,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.5930420011281967,
+  "error": null,
+  "reasons": [
+   "No metadata resolved at all - metadata.present is false, which is a strong negative signal",
+   "Code size of 45 bytes indicates a minimal proxy with no custom implementation",
+   "Zero configuration revisions shows no operator effort or iteration"
+  ],
+  "risk_flags": [
+   "Metadata resolution failed entirely - no drop configuration exists",
+   "Minimal proxy contract (45 bytes) with no positive signals to offset it",
+   "Deployer has 8 prior collections but 0 high-value outcomes"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x810b1b8e7678ade521602678d4ce75fb9454cd52",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 5,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 1.0121669620275497,
+  "error": null,
+  "reasons": [
+   "No metadata resolved at all - metadata.present is false, which is a strong negative signal",
+   "Code size of 45 bytes indicates a minimal proxy with no custom implementation",
+   "Zero configuration revisions shows no operator effort or iteration"
+  ],
+  "risk_flags": [
+   "Metadata resolution failed completely - no drop configuration exists",
+   "Minimal proxy contract (45 bytes) with no positive signals",
+   "Single-character placeholder symbol suggests low effort"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x21dfab196294616d6b1ba40fe83cd4b30fd69725",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 15,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 3.5045830300077796,
+  "error": null,
+  "reasons": [
+   "Placeholder name/symbol ('test'/'test') indicates no serious project",
+   "Minimal proxy contract (45 bytes) with zero operator effort signals",
+   "First-time deployer with single config revision and no community indicators"
+  ],
+  "risk_flags": [
+   "Placeholder naming suggests throwaway test drop",
+   "Bare minimal proxy with no implementation effort",
+   "No evidence of existing community or deliberate configuration"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x0126234cc05141c04cc5508343967a1795999c1a",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 15,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.7034579757601023,
+  "error": null,
+  "reasons": [
+   "Minimal proxy contract (45 bytes) with no substantial implementation",
+   "Only 1 config revision shows minimal operator preparation",
+   "First-time deployer with no track record"
+  ],
+  "risk_flags": [
+   "45-byte minimal proxy indicates no real contract implementation",
+   "Single config revision suggests low operator effort",
+   "Unknown deployer with no history"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xdb9807c56e11b912d1169d7b8bd5149cfab9a157",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 5,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 1.5576250152662396,
+  "error": null,
+  "reasons": [
+   "No metadata resolved at all - metadata.present is false",
+   "Code size of 45 bytes indicates minimal proxy with no custom implementation",
+   "Zero configuration revisions shows no operator effort or iteration"
+  ],
+  "risk_flags": [
+   "Metadata completely absent - strong negative signal per calibration",
+   "Minimal proxy pattern (45 bytes) with no other positive signals",
+   "First-time deployer with zero prior collections"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x7debe77ad70d72ef604eedc7c4c55428d13c3a44",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 5,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 1.229124958626926,
+  "error": null,
+  "reasons": [
+   "No metadata resolved at all - metadata.present is false, which is a strong negative signal",
+   "Code size of 45 bytes indicates a minimal proxy with no custom implementation",
+   "Zero configuration revisions shows no operator effort or iteration"
+  ],
+  "risk_flags": [
+   "Metadata completely absent - nothing resolved",
+   "Bare minimal proxy (45 bytes) with no positive signals",
+   "No evidence of operator configuration or effort"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x60aeae9eafd458acff8040de9cafe93eba854635",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 5,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.3640840295702219,
+  "error": null,
+  "reasons": [
+   "No metadata resolved at all - metadata.present is false",
+   "Code size of 45 bytes indicates minimal proxy with no custom implementation",
+   "Max supply of only 10 tokens is implausibly small for a legitimate drop"
+  ],
+  "risk_flags": [
+   "Bare minimal proxy with no operator effort",
+   "No drop configuration exists",
+   "Supply of 10 cannot meet 100-wallet threshold for high-value classification"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x1c186b2c12415392ebf8a576f605e7b3c2792ad0",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 15,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.6079589948058128,
+  "error": null,
+  "reasons": [
+   "Minimal proxy contract (45 bytes) with no substantial implementation",
+   "Only 1 config revision shows minimal operator preparation",
+   "No positive signals present to overcome spam prior"
+  ],
+  "risk_flags": [
+   "Bare minimal proxy (45 bytes) typical of spam deployments",
+   "Single config revision indicates low operator effort",
+   "No advance notice (starts_in_s: -65) suggests rushed deployment"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x080252d658a1f7574e43919294d0a1c53e3545b7",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 15,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 1.4230000087991357,
+  "error": null,
+  "reasons": [
+   "Minimal proxy contract (45 bytes) with no implementation substance",
+   "Extremely low max_supply of 10 tokens suggests vanity/personal drop",
+   "Gibberish name/symbol ('limo'/'as') indicates low-effort configuration"
+  ],
+  "risk_flags": [
+   "45-byte minimal proxy with no positive signals",
+   "Max supply of 10 cannot meet 100-wallet threshold for high-value classification",
+   "Deployer has 2 prior collections but 0 high-value (0% success rate)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x8cf3ac733caa4a84a2fc0174ca920b327b14239d",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 15,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.8821670198813081,
+  "error": null,
+  "reasons": [
+   "Minimal proxy contract (45 bytes) with no substantial implementation",
+   "Only 1 config revision shows minimal operator preparation",
+   "Extremely low max_supply (25) suggests vanity project or test"
+  ],
+  "risk_flags": [
+   "Bare minimal proxy with no custom logic deployed",
+   "Deployer has 8 prior collections but 0 high-value outcomes",
+   "Supply of 25 is far below the 200-20,000 range associated with successful drops"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x3b7d7f6df7483975b7940ded79797b340ae0bfe8",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 5,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 1.4358339831233025,
+  "error": null,
+  "reasons": [
+   "Minimal proxy contract (45 bytes) with no real implementation",
+   "Test placeholder name and symbol with max_supply of 1",
+   "First-time deployer with zero prior collections"
+  ],
+  "risk_flags": [
+   "Bare minimal proxy with no substantial code deployment",
+   "Obvious test/placeholder naming convention",
+   "Single-token supply suggests experimental or vanity mint"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xee2387a4af6e762b97152ec833c8ba28398cc9e4",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 15,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 2.307332935743034,
+  "error": null,
+  "reasons": [
+   "Minimal proxy contract (45 bytes) with no substantial implementation",
+   "Price flip from free to paid 698s before open signals operator instability",
+   "First-time deployer with no track record"
+  ],
+  "risk_flags": [
+   "Bare minimal proxy with no custom logic deployed",
+   "Operator changed from free to paid 11 minutes before mint opens",
+   "No configuration effort (only 2 revisions, one being the price flip)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x8d495e0123163df4dd0bb5c423d1d424c44fef26",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 5,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 1.7530838958919048,
+  "error": null,
+  "reasons": [
+   "No metadata resolved at all - metadata.present is false, which is a strong negative signal",
+   "Code size of 45 bytes indicates a minimal proxy with no custom implementation",
+   "Zero configuration revisions shows no operator effort or iteration"
+  ],
+  "risk_flags": [
+   "Metadata resolution failed completely - no drop configuration exists",
+   "Minimal proxy contract with no substantial implementation",
+   "Already started (starts_in_s: -12) but no configuration was ever set up"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x9628871af99590c0e0fa1e1778acefda3d935a9f",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 15,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 2.660208032466471,
+  "error": null,
+  "reasons": [
+   "Minimal proxy contract (45 bytes) with no other positive signals",
+   "Single config revision shows minimal operator effort",
+   "First-time deployer with no track record"
+  ],
+  "risk_flags": [
+   "45-byte minimal proxy indicates low deployment effort",
+   "No configuration iteration before launch",
+   "Unknown deployer with no history"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x8e0e5a0e74ca4905a0162889cd6b6ab9206dc188",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 5,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.17245800700038671,
+  "error": null,
+  "reasons": [
+   "No metadata resolved at all - metadata.present is false, which is a strong negative signal",
+   "Code size of 45 bytes indicates a minimal proxy with no custom implementation",
+   "Zero configuration revisions shows no operator effort or iteration"
+  ],
+  "risk_flags": [
+   "Metadata resolution failed completely - no drop configuration exists",
+   "Minimal proxy contract (45 bytes) with no positive signals",
+   "First-time deployer with zero prior collections"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x897b0379d7c35cae5f658b10dcf5c74fc01e49da",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 5,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.5261250771582127,
+  "error": null,
+  "reasons": [
+   "No metadata resolved at all - metadata.present is false, which is a strong negative signal",
+   "Code size of 45 bytes indicates a minimal proxy with no custom implementation",
+   "Zero configuration revisions shows no operator effort or iteration"
+  ],
+  "risk_flags": [
+   "Metadata resolution failed entirely - no drop configuration exists",
+   "Minimal proxy contract (45 bytes) with no positive signals to offset it",
+   "Already started 48 seconds ago with zero advance notice"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xf97c2d991c959f6e485b94c637dd3d0056e06a6d",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 5,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.7649160688742995,
+  "error": null,
+  "reasons": [
+   "No metadata resolved at all - metadata.present is false, which is a strong negative signal",
+   "Code size of 45 bytes indicates a minimal proxy with no custom implementation",
+   "Zero configuration revisions shows no operator effort or iteration"
+  ],
+  "risk_flags": [
+   "Metadata resolution failed entirely - no drop configuration exists",
+   "Minimal proxy contract with no substantial implementation",
+   "First-time deployer with no track record"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x0d46d88b11765ad5483123d926a72ca8f179cc86",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 5,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 1.0287499753758311,
+  "error": null,
+  "reasons": [
+   "No metadata resolved at all - metadata.present is false",
+   "Code size of 45 bytes indicates minimal proxy with no custom implementation",
+   "Zero configuration revisions shows no operator effort or iteration"
+  ],
+  "risk_flags": [
+   "Metadata completely absent - effectively necessary signal missing",
+   "Bare minimal proxy (45 bytes) with no positive signals to offset it",
+   "First-time deployer with zero configuration effort"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x178004c8e21831e79ec234149e70d47c26db007a",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 15,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 1.0794169502332807,
+  "error": null,
+  "reasons": [
+   "No metadata resolved at all (present: false) - effectively disqualifying",
+   "Code size of 45 bytes indicates minimal proxy with no custom implementation",
+   "Zero configuration revisions shows no operator effort or iteration"
+  ],
+  "risk_flags": [
+   "Metadata resolution failed completely - no drop config available",
+   "Bare minimal proxy (45 bytes) with no positive signals to offset it",
+   "Deployer has 1 prior collection with 0% high-value rate"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xec51efeb1e70148ccf943541384ffe57e7d9ddfb",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 5,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 1.4201669255271554,
+  "error": null,
+  "reasons": [
+   "No metadata resolved at all - metadata.present is false",
+   "Code size of 45 bytes indicates minimal proxy with no custom implementation",
+   "Zero configuration revisions shows no operator effort or iteration"
+  ],
+  "risk_flags": [
+   "Metadata resolution failed entirely - no drop configuration exists",
+   "Minimal proxy contract (45 bytes) with no positive signals",
+   "First-time deployer with zero prior collections"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xdbc05a6a2d475c470c063b3b2e57d7850b983ed3",
+  "chain": "robinhood",
+  "verdict": "MINT",
+  "score": 72,
+  "label": "high_value",
+  "chose": true,
+  "wallets_used": 1,
+  "achievable": 100,
+  "gas_wei": 17088194046000,
+  "spend_wei": 0,
+  "ms": 1.133791054598987,
+  "error": null,
+  "reasons": [
+   "Large contract implementation (19,658 bytes) indicates real development effort, not spam proxy",
+   "Six configuration revisions show sustained operator engagement",
+   "Sane supply (8,888) with reasonable per-wallet limit suggests legitimate drop structure"
+  ],
+  "risk_flags": [
+   "Price flip from 0.01 ETH to 0.001 ETH shows configuration instability",
+   "New deployer with no prior track record"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xbaf46e301066d367a0fc9a26a66ae238cdc93b7b",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 5,
+  "label": "high_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.26174995582550764,
+  "error": null,
+  "reasons": [
+   "No metadata resolved at all (present: false) - effectively disqualifying",
+   "Code size of 45 bytes indicates minimal proxy with no custom implementation",
+   "Zero configuration revisions shows no operator effort or iteration"
+  ],
+  "risk_flags": [
+   "Metadata completely absent - no drop configuration resolved",
+   "Minimal proxy contract (45 bytes) with no positive signals",
+   "First-time deployer with zero prior collections"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x55e69c2db81b664a0fe5735651569a3172c14cc4",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 15,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.9518329752609134,
+  "error": null,
+  "reasons": [
+   "Minimal proxy contract (45 bytes) with no substantial implementation",
+   "Extremely low max supply (5 tokens) suggests vanity/personal mint",
+   "Single config revision shows minimal operator preparation"
+  ],
+  "risk_flags": [
+   "Code size of 45 bytes indicates bare minimal proxy with no real implementation",
+   "Max supply of 5 is far below viable range (200-20k) and suggests personal/test mint",
+   "Deployer has no prior high-value drops (0/1)"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xb39c105f1ddce90f801d78acd22b1d5a4dbcb7d4",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 5,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.782166956923902,
+  "error": null,
+  "reasons": [
+   "Placeholder name/symbol 'test' indicates no serious project",
+   "Max supply of 1 makes this a vanity mint, not a real drop",
+   "Minimal proxy (45 bytes) with zero prior high-value collections from deployer"
+  ],
+  "risk_flags": [
+   "Placeholder naming suggests test/throwaway drop",
+   "Supply of 1 cannot meet ground truth criteria (requires 100+ distinct minters)",
+   "Deployer has 14 prior collections but zero high-value outcomes"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x513d202ec28cb10e8bbf70320d835cb8d833f517",
+  "chain": "robinhood",
+  "verdict": "SKIP",
+  "score": 5,
+  "label": "low_value",
+  "chose": false,
+  "wallets_used": 0,
+  "achievable": 0,
+  "gas_wei": 0,
+  "spend_wei": 0,
+  "ms": 0.549082993529737,
+  "error": null,
+  "reasons": [
+   "No metadata resolved at all - metadata.present is false, which is a strong negative signal",
+   "Code size of 45 bytes indicates a minimal proxy with no custom implementation",
+   "Zero configuration revisions shows no operator effort or iteration"
+  ],
+  "risk_flags": [
+   "Metadata resolution failed entirely - no drop configuration exists",
+   "Minimal proxy contract with no substantial implementation",
+   "First-time deployer with no configuration history"
+  ],
+  "triage_verdict": null,
+  "verifier": null
+ }
+]

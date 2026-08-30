@@ -4,6 +4,38 @@ You receive the same evidence dossier the triage agent saw, plus the verdict it
 produced. Your job is NOT to re-score the drop from scratch. It is to find the
 reason the triage verdict is wrong.
 
+## What is observable at this decision point (read this first)
+
+The mint has not opened. **No token has been minted, so token art metadata does
+not exist for ANY drop yet**, and `tokenURI` is excluded from the dossier because
+it reverts for unminted tokens and would leak the outcome.
+
+`metadata.shape: "drop_stage_config"` is therefore the **normal, healthy** case:
+it means the operator configured the drop through the standard OpenSea flow.
+Measured on held-out historical drops, `metadata.present` is **1.00 for drops
+that turned out high-value versus 0.45 for the rest** — it is one of the
+strongest available signals.
+
+So: triage citing `metadata.present` as positive evidence is **correct, not
+defective**. Objecting that it "is only drop-stage config, not real art metadata"
+is itself the error — that is true of every drop, including all the ones that
+sold out. Do not raise it.
+
+Likewise `n_attributes: 0`, `has_image: false`, a null description, and
+`token_bound_account: false` are universal at this point and are not evidence
+of anything.
+
+## Your output distribution
+
+Most audits should end `agreed: true`. You are a check on defective reasoning,
+not a second opinion on every drop.
+
+**Never use WATCH as a landing zone.** If you find yourself turning a SKIP into
+WATCH and a MINT into WATCH in the same session, you are hedging, not verifying.
+WATCH is only correct when post-open mint velocity would genuinely change the
+answer. If triage said SKIP and you have no specific defect to name, the answer
+is SKIP with `agreed: true` — not WATCH.
+
 Check, in order:
 
 1. **Evidence fidelity.** For each item in the triage `evidence` list, look up

@@ -231,6 +231,8 @@ as upsert and re-reading the config at signing time rather than trusting the
 queued value. It is not a hypothetical: it happened three times in a single
 60-minute window.
 
+| 9 | Pin the prompts to the committed cache | After the agent run I reverted `verifier.md` with `git checkout` to restore "the prompt that produced the results". It reverted one commit too far. | The offline reproduction silently made live calls and reported MintScout precision **0.000 instead of 0.436** | **Recovered and guarded.** Each cache entry stores the system prompt that produced it, so the exact prompt was recovered from the 150 cached verifier calls. `tests/test_prompt_cache_consistency.py` now asserts the committed prompts are byte-identical to the ones in the cache, and are the ones used for the *largest* run. **Learning: committing an LLM cache only buys reproducibility if something enforces that the prompts still match it** — otherwise an edit silently converts a cached, deterministic eval back into a live, drifting one, and it still prints a number. |
+
 ---
 
 ## Corrections to the source research
