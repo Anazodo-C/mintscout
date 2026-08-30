@@ -10,7 +10,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.01783308107405901,
+  "ms": 0.020000035874545574,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -30,7 +30,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.014375080354511738,
+  "ms": 0.015874975360929966,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -50,7 +50,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.03841693978756666,
+  "ms": 0.03354193177074194,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -70,7 +70,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.01325004268437624,
+  "ms": 0.011791940778493881,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -90,7 +90,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.01158309169113636,
+  "ms": 0.011040945537388325,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -110,7 +110,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.010708929039537907,
+  "ms": 0.010666903108358383,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -130,7 +130,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.03787502646446228,
+  "ms": 0.024499953724443913,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -150,7 +150,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.01100008375942707,
+  "ms": 0.010875053703784943,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -170,7 +170,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.010500079952180386,
+  "ms": 0.009874929673969746,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -190,7 +190,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.022833002731204033,
+  "ms": 0.02220796886831522,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -210,7 +210,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.029999995604157448,
+  "ms": 0.020417035557329655,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -230,7 +230,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.010415911674499512,
+  "ms": 0.010750023648142815,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -250,7 +250,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.010041985660791397,
+  "ms": 0.009791925549507141,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -270,7 +270,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.03224995452910662,
+  "ms": 0.04158297087997198,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -290,7 +290,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.010041985660791397,
+  "ms": 0.010292045772075653,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -310,7 +310,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.0100000761449337,
+  "ms": 0.010333023965358734,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -330,7 +330,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.009833020158112049,
+  "ms": 0.009584007784724236,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -350,7 +350,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.028041889891028404,
+  "ms": 0.021124957129359245,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -370,7 +370,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.028000096790492535,
+  "ms": 0.051541952416300774,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -390,7 +390,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.030916999094188213,
+  "ms": 0.012582982890307903,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -410,7 +410,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.010665971785783768,
+  "ms": 0.011333031579852104,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -430,7 +430,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.010499963536858559,
+  "ms": 0.01025001984089613,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -450,7 +450,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.009999959729611874,
+  "ms": 0.009916955605149269,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -470,7 +470,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.030957977287471294,
+  "ms": 0.024875043891370296,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -490,7 +490,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.024458044208586216,
+  "ms": 0.03900006413459778,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -510,7 +510,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.08212495595216751,
+  "ms": 0.07870898116379976,
   "error": null,
   "reasons": [
    "drop metadata resolves (configured through the standard flow)",
@@ -535,7 +535,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.03633392043411732,
+  "ms": 0.026333960704505444,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -555,7 +555,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.011167023330926895,
+  "ms": 0.013416982255876064,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -575,7 +575,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.010082963854074478,
+  "ms": 0.010749907232820988,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -595,7 +595,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.009958050213754177,
+  "ms": 0.0100000761449337,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -615,7 +615,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.009874929673969746,
+  "ms": 0.010041985660791397,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -635,7 +635,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.06595801096409559,
+  "ms": 0.07345899939537048,
   "error": null,
   "reasons": [
    "drop metadata resolves (configured through the standard flow)",
@@ -658,7 +658,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.010999967344105244,
+  "ms": 0.012291944585740566,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -678,7 +678,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.01033395528793335,
+  "ms": 0.010791001841425896,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -698,7 +698,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.031125033274292946,
+  "ms": 0.026124995201826096,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -738,7 +738,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.02637505531311035,
+  "ms": 0.023250002413988113,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -758,7 +758,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.010166899301111698,
+  "ms": 0.010458054021000862,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -778,7 +778,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.025707995519042015,
+  "ms": 0.021041021682322025,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -798,7 +798,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.03279105294495821,
+  "ms": 0.027957954443991184,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -818,7 +818,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.010082963854074478,
+  "ms": 0.010624993592500687,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -838,7 +838,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.0100000761449337,
+  "ms": 0.009624985978007317,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -858,7 +858,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.06520794704556465,
+  "ms": 0.08925003930926323,
   "error": null,
   "reasons": [
    "drop metadata resolves (configured through the standard flow)",
@@ -881,7 +881,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.059333047829568386,
+  "ms": 0.05766702815890312,
   "error": null,
   "reasons": [
    "drop metadata resolves (configured through the standard flow)",
@@ -904,7 +904,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.06008404307067394,
+  "ms": 0.05095801316201687,
   "error": null,
   "reasons": [
    "drop metadata resolves (configured through the standard flow)",
@@ -928,7 +928,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.01083302777260542,
+  "ms": 0.01033395528793335,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -948,7 +948,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.05725002847611904,
+  "ms": 0.06545905489474535,
   "error": null,
   "reasons": [
    "drop metadata resolves (configured through the standard flow)",
@@ -971,7 +971,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.01033395528793335,
+  "ms": 0.011665979400277138,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -991,7 +991,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.009833020158112049,
+  "ms": 0.010665971785783768,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -1011,7 +1011,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.05945900920778513,
+  "ms": 0.06158393807709217,
   "error": null,
   "reasons": [
    "drop metadata resolves (configured through the standard flow)",
@@ -1035,7 +1035,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.011124997399747372,
+  "ms": 0.010041054338216782,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -1055,7 +1055,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.022499938495457172,
+  "ms": 0.022708089090883732,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -1075,7 +1075,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.023583066649734974,
+  "ms": 0.03708398435264826,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -1095,7 +1095,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.010750023648142815,
+  "ms": 0.011082971468567848,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -1115,7 +1115,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.06150000263005495,
+  "ms": 0.05991698708385229,
   "error": null,
   "reasons": [
    "drop metadata resolves (configured through the standard flow)",
@@ -1138,7 +1138,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.01033395528793335,
+  "ms": 0.011209049262106419,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -1158,7 +1158,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.010082963854074478,
+  "ms": 0.040375045500695705,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -1178,7 +1178,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.03716698847711086,
+  "ms": 0.010291929356753826,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -1198,7 +1198,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.010082963854074478,
+  "ms": 0.009499955922365189,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -1218,7 +1218,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.01025001984089613,
+  "ms": 0.009833020158112049,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -1238,7 +1238,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.010165967978537083,
+  "ms": 0.009792041964828968,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -1258,7 +1258,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.009999959729611874,
+  "ms": 0.009624985978007317,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -1278,7 +1278,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.009917072020471096,
+  "ms": 0.009749899618327618,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -1298,7 +1298,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.009750016033649445,
+  "ms": 0.009292038157582283,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -1318,7 +1318,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.02274999860674143,
+  "ms": 0.02462498378008604,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -1338,7 +1338,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.03691599704325199,
+  "ms": 0.038707978092134,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -1358,7 +1358,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.05404104012995958,
+  "ms": 0.06333307828754187,
   "error": null,
   "reasons": [
    "drop metadata resolves (configured through the standard flow)",
@@ -1381,7 +1381,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.011791940778493881,
+  "ms": 0.011832918971776962,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -1401,7 +1401,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.010916031897068024,
+  "ms": 0.010165967978537083,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -1421,7 +1421,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.010209041647613049,
+  "ms": 0.01025001984089613,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -1441,7 +1441,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.010249903425574303,
+  "ms": 0.0100000761449337,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -1461,7 +1461,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.010209041647613049,
+  "ms": 0.010042102076113224,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -1481,7 +1481,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.009875046089291573,
+  "ms": 0.009375042282044888,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -1501,7 +1501,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.03470794763416052,
+  "ms": 0.022666994482278824,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -1521,7 +1521,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.0553749268874526,
+  "ms": 0.06604194641113281,
   "error": null,
   "reasons": [
    "drop metadata resolves (configured through the standard flow)",
@@ -1544,7 +1544,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.011124997399747372,
+  "ms": 0.011541997082531452,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -1564,7 +1564,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.060999998822808266,
+  "ms": 0.0563750509172678,
   "error": null,
   "reasons": [
    "drop metadata resolves (configured through the standard flow)",
@@ -1587,7 +1587,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.05495804361999035,
+  "ms": 0.050875009037554264,
   "error": null,
   "reasons": [
    "drop metadata resolves (configured through the standard flow)",
@@ -1610,7 +1610,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.01083302777260542,
+  "ms": 0.01025001984089613,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -1630,7 +1630,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.05712499842047691,
+  "ms": 0.05179201252758503,
   "error": null,
   "reasons": [
    "drop metadata resolves (configured through the standard flow)",
@@ -1654,7 +1654,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.010124989785254002,
+  "ms": 0.009916955605149269,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -1674,7 +1674,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.009791925549507141,
+  "ms": 0.009541050530970097,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -1694,7 +1694,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.009916024282574654,
+  "ms": 0.010166899301111698,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -1714,7 +1714,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.061875092796981335,
+  "ms": 0.05979090929031372,
   "error": null,
   "reasons": [
    "drop metadata resolves (configured through the standard flow)",
@@ -1737,7 +1737,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.02787495031952858,
+  "ms": 0.023957923986017704,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -1757,7 +1757,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.024000066332519054,
+  "ms": 0.021249987185001373,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -1777,7 +1777,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.04908395931124687,
+  "ms": 0.06812496576458216,
   "error": null,
   "reasons": [
    "drop metadata resolves (configured through the standard flow)",
@@ -1800,7 +1800,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.010624993592500687,
+  "ms": 0.011333031579852104,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -1820,7 +1820,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.009750016033649445,
+  "ms": 0.010167015716433525,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -1840,7 +1840,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.027166097424924374,
+  "ms": 0.023916014470160007,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -1860,7 +1860,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.009833020158112049,
+  "ms": 0.01025001984089613,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -1880,7 +1880,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.009958050213754177,
+  "ms": 0.009999959729611874,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -1920,7 +1920,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.010041985660791397,
+  "ms": 0.034207943826913834,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -1940,7 +1940,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.028833048418164253,
+  "ms": 0.02150004729628563,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -1960,7 +1960,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.051875016652047634,
+  "ms": 0.0653750030323863,
   "error": null,
   "reasons": [
    "drop metadata resolves (configured through the standard flow)",
@@ -1983,7 +1983,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.02766598481684923,
+  "ms": 0.02274999860674143,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -2003,7 +2003,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.03762508276849985,
+  "ms": 0.010584015399217606,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -2023,7 +2023,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.021832995116710663,
+  "ms": 0.020707957446575165,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -2043,7 +2043,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.010041985660791397,
+  "ms": 0.01025001984089613,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -2063,7 +2063,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.00995793379843235,
+  "ms": 0.009917072020471096,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -2083,7 +2083,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.009792041964828968,
+  "ms": 0.00995793379843235,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -2103,7 +2103,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.02037500962615013,
+  "ms": 0.020709005184471607,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -2123,7 +2123,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.009875046089291573,
+  "ms": 0.009833951480686665,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -2163,7 +2163,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.009582960046827793,
+  "ms": 0.00966701190918684,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -2183,7 +2183,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.020458013750612736,
+  "ms": 0.020292005501687527,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -2203,7 +2203,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.01025001984089613,
+  "ms": 0.010041985660791397,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -2223,7 +2223,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.02066709566861391,
+  "ms": 0.02050003968179226,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -2243,7 +2243,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.06641598884016275,
+  "ms": 0.06183306686580181,
   "error": null,
   "reasons": [
    "drop metadata resolves (configured through the standard flow)",
@@ -2266,7 +2266,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.01025001984089613,
+  "ms": 0.0113749410957098,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -2286,7 +2286,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.009833951480686665,
+  "ms": 0.010416959412395954,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -2306,7 +2306,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.010082963854074478,
+  "ms": 0.01025001984089613,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -2326,7 +2326,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.009792041964828968,
+  "ms": 0.009750016033649445,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -2346,7 +2346,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.031125033274292946,
+  "ms": 0.02645794302225113,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -2366,7 +2366,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.009999959729611874,
+  "ms": 0.010249903425574303,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -2386,7 +2386,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.009999959729611874,
+  "ms": 0.009833020158112049,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -2406,7 +2406,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.01029099803417921,
+  "ms": 0.009958050213754177,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -2426,7 +2426,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.009750016033649445,
+  "ms": 0.009499955922365189,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -2446,7 +2446,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.05520798731595278,
+  "ms": 0.07079204078763723,
   "error": null,
   "reasons": [
    "drop metadata resolves (configured through the standard flow)",
@@ -2470,7 +2470,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.026833033189177513,
+  "ms": 0.026124995201826096,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -2490,7 +2490,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.02695806324481964,
+  "ms": 0.021666986867785454,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -2510,7 +2510,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.010041985660791397,
+  "ms": 0.010375049896538258,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -2530,7 +2530,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.009791925549507141,
+  "ms": 0.00966701190918684,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -2550,7 +2550,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.009999959729611874,
+  "ms": 0.009542098268866539,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -2570,7 +2570,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.02716702874749899,
+  "ms": 0.020249979570508003,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -2590,7 +2590,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.010416959412395954,
+  "ms": 0.010457937605679035,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -2610,7 +2610,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.010167015716433525,
+  "ms": 0.010041985660791397,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -2630,7 +2630,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.02050003968179226,
+  "ms": 0.020208884961903095,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -2650,7 +2650,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.010041985660791397,
+  "ms": 0.034624943509697914,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -2670,7 +2670,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.029291026294231415,
+  "ms": 0.023209024220705032,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -2690,7 +2690,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.019958941265940666,
+  "ms": 0.040624989196658134,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -2710,7 +2710,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.019584083929657936,
+  "ms": 0.01950003206729889,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -2730,7 +2730,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.05749997217208147,
+  "ms": 0.0553749268874526,
   "error": null,
   "reasons": [
    "drop metadata resolves (configured through the standard flow)",
@@ -2753,7 +2753,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.011166906915605068,
+  "ms": 0.011124997399747372,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -2773,7 +2773,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.05837506614625454,
+  "ms": 0.058165984228253365,
   "error": null,
   "reasons": [
    "drop metadata resolves (configured through the standard flow)"
@@ -2795,7 +2795,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.010792049579322338,
+  "ms": 0.011292053386569023,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -2815,7 +2815,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.034541008062660694,
+  "ms": 0.01016608439385891,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -2835,7 +2835,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.010292045772075653,
+  "ms": 0.010124989785254002,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -2855,7 +2855,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.010124989785254002,
+  "ms": 0.009541981853544712,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -2875,7 +2875,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.024374923668801785,
+  "ms": 0.02433406189084053,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -2895,7 +2895,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.009958981536328793,
+  "ms": 0.010124989785254002,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -2915,7 +2915,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.009749899618327618,
+  "ms": 0.010292045772075653,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -2935,7 +2935,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.05991710349917412,
+  "ms": 0.05212496034801006,
   "error": null,
   "reasons": [
    "drop metadata resolves (configured through the standard flow)",
@@ -2959,7 +2959,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.010624993592500687,
+  "ms": 0.010124989785254002,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -2979,7 +2979,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.010124989785254002,
+  "ms": 0.009750016033649445,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -2999,7 +2999,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.05579204298555851,
+  "ms": 0.04924996756017208,
   "error": null,
   "reasons": [
    "drop metadata resolves (configured through the standard flow)",
@@ -3023,7 +3023,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.010499963536858559,
+  "ms": 0.009792041964828968,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -3043,7 +3043,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.010124989785254002,
+  "ms": 0.009790994226932526,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -3063,7 +3063,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.009833020158112049,
+  "ms": 0.009457929991185665,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -3083,7 +3083,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.02174999099224806,
+  "ms": 0.021875021047890186,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -3103,7 +3103,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.010207993909716606,
+  "ms": 0.010124989785254002,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -3123,7 +3123,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.010040937922894955,
+  "ms": 0.010082963854074478,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -3143,7 +3143,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.029708025977015495,
+  "ms": 0.020666979253292084,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -3163,7 +3163,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.055999960750341415,
+  "ms": 0.07362500764429569,
   "error": null,
   "reasons": [
    "drop metadata resolves (configured through the standard flow)",
@@ -3187,7 +3187,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.010958989150822163,
+  "ms": 0.011625001206994057,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -3227,7 +3227,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.022666994482278824,
+  "ms": 0.022999942302703857,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -3247,7 +3247,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.04920794162899256,
+  "ms": 0.048749963752925396,
   "error": null,
   "reasons": [
    "drop metadata resolves (configured through the standard flow)",
@@ -3270,7 +3270,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.01033395528793335,
+  "ms": 0.01129100564867258,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -3290,7 +3290,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.027291011065244675,
+  "ms": 0.030542025342583656,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -3310,7 +3310,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.010499963536858559,
+  "ms": 0.010708929039537907,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -3330,7 +3330,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.010083080269396305,
+  "ms": 0.009875046089291573,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -3350,7 +3350,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.06333296187222004,
+  "ms": 0.05337502807378769,
   "error": null,
   "reasons": [
    "drop metadata resolves (configured through the standard flow)",
@@ -3373,7 +3373,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.011625001206994057,
+  "ms": 0.010791933164000511,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -3393,7 +3393,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.010292045772075653,
+  "ms": 0.009541981853544712,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -3413,7 +3413,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.01025001984089613,
+  "ms": 0.009791925549507141,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -3433,7 +3433,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.03258395008742809,
+  "ms": 0.047625042498111725,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -3453,7 +3453,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.02687494270503521,
+  "ms": 0.021666986867785454,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -3473,7 +3473,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.01025001984089613,
+  "ms": 0.010041985660791397,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -3493,7 +3493,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.009999959729611874,
+  "ms": 0.009875046089291573,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -3513,7 +3513,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.027708010748028755,
+  "ms": 0.0213750172406435,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -3533,7 +3533,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.010333023965358734,
+  "ms": 0.01008401159197092,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -3553,7 +3553,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.010333023965358734,
+  "ms": 0.010124989785254002,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -3573,7 +3573,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.05549995694309473,
+  "ms": 0.05016603972762823,
   "error": null,
   "reasons": [
    "drop metadata resolves (configured through the standard flow)",
@@ -3597,7 +3597,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.010707997716963291,
+  "ms": 0.010582967661321163,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -3617,7 +3617,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.03791693598031998,
+  "ms": 0.00937492586672306,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -3637,7 +3637,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.010707997716963291,
+  "ms": 0.009584007784724236,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -3657,7 +3657,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.030209077522158623,
+  "ms": 0.026540947146713734,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -3677,7 +3677,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.010541058145463467,
+  "ms": 0.009707990102469921,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -3697,7 +3697,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.010291929356753826,
+  "ms": 0.009875046089291573,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -3717,7 +3717,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.01037493348121643,
+  "ms": 0.00966701190918684,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -3737,7 +3737,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.03558304160833359,
+  "ms": 0.021959072910249233,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -3757,7 +3757,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.010332907550036907,
+  "ms": 0.010458054021000862,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -3777,7 +3777,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.02116698306053877,
+  "ms": 0.019999919459223747,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -3797,7 +3797,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.010249903425574303,
+  "ms": 0.01008401159197092,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -3817,7 +3817,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.020625069737434387,
+  "ms": 0.020209001377224922,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -3837,7 +3837,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.009833020158112049,
+  "ms": 0.010416028089821339,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -3857,7 +3857,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.05829194560647011,
+  "ms": 0.08287490345537663,
   "error": null,
   "reasons": [
    "drop metadata resolves (configured through the standard flow)",
@@ -3880,7 +3880,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.010458985343575478,
+  "ms": 0.011124997399747372,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -3900,7 +3900,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.02837507054209709,
+  "ms": 0.025541987270116806,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -3920,7 +3920,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.010292045772075653,
+  "ms": 0.010499963536858559,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -3940,7 +3940,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.010207993909716606,
+  "ms": 0.010167015716433525,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -3960,7 +3960,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.009750016033649445,
+  "ms": 0.009999959729611874,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -3980,7 +3980,7 @@
   "achievable": 60,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.05537504330277443,
+  "ms": 0.06137497257441282,
   "error": null,
   "reasons": [
    "drop metadata resolves (configured through the standard flow)",
@@ -4002,7 +4002,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.010791001841425896,
+  "ms": 0.009916955605149269,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -4022,7 +4022,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.021540909074246883,
+  "ms": 0.022583059035241604,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -4042,7 +4042,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.026541994884610176,
+  "ms": 0.019749975763261318,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -4062,7 +4062,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.010417075827717781,
+  "ms": 0.010375049896538258,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -4082,7 +4082,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.009875046089291573,
+  "ms": 0.00954093411564827,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -4102,7 +4102,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.060999998822808266,
+  "ms": 0.07474992889910936,
   "error": null,
   "reasons": [
    "drop metadata resolves (configured through the standard flow)",
@@ -4125,7 +4125,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.01058308407664299,
+  "ms": 0.011584023013710976,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -4145,7 +4145,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.03450002986937761,
+  "ms": 0.03158301115036011,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -4165,7 +4165,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.05304196383804083,
+  "ms": 0.05379098001867533,
   "error": null,
   "reasons": [
    "drop metadata resolves (configured through the standard flow)",
@@ -4188,7 +4188,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.010749907232820988,
+  "ms": 0.010083080269396305,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -4208,7 +4208,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.029542017728090286,
+  "ms": 0.02116698306053877,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -4228,7 +4228,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.05570799112319946,
+  "ms": 0.06758305244147778,
   "error": null,
   "reasons": [
    "drop metadata resolves (configured through the standard flow)",
@@ -4251,7 +4251,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.011208001524209976,
+  "ms": 0.011625001206994057,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -4271,7 +4271,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.029250048100948334,
+  "ms": 0.024875043891370296,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -4291,7 +4291,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.01037493348121643,
+  "ms": 0.03783300053328276,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -4311,7 +4311,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.010333023965358734,
+  "ms": 0.010041985660791397,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -4331,7 +4331,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.009875046089291573,
+  "ms": 0.009416020475327969,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -4351,7 +4351,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.0100000761449337,
+  "ms": 0.009624985978007317,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -4371,7 +4371,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.04495796747505665,
+  "ms": 0.024250010028481483,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -4391,7 +4391,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.010375049896538258,
+  "ms": 0.009750016033649445,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -4411,7 +4411,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.020834035240113735,
+  "ms": 0.020082923583686352,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -4431,7 +4431,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.020750099793076515,
+  "ms": 0.01850002445280552,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -4451,7 +4451,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.009707990102469921,
+  "ms": 0.009999959729611874,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -4471,7 +4471,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.009874929673969746,
+  "ms": 0.009833020158112049,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -4491,7 +4491,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.009458046406507492,
+  "ms": 0.009499955922365189,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -4511,7 +4511,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.07062510121613741,
+  "ms": 0.07837498560547829,
   "error": null,
   "reasons": [
    "drop metadata resolves (configured through the standard flow)"
@@ -4534,7 +4534,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.010665971785783768,
+  "ms": 0.011167023330926895,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -4554,7 +4554,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.028916983865201473,
+  "ms": 0.02362497616559267,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -4574,7 +4574,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.030249939300119877,
+  "ms": 0.02154102548956871,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -4594,7 +4594,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.028499984182417393,
+  "ms": 0.025125104002654552,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -4614,7 +4614,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.010124989785254002,
+  "ms": 0.010791001841425896,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -4634,7 +4634,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.055999960750341415,
+  "ms": 0.06862496957182884,
   "error": null,
   "reasons": [
    "drop metadata resolves (configured through the standard flow)",
@@ -4657,7 +4657,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.010624993592500687,
+  "ms": 0.011541997082531452,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -4677,7 +4677,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.010124989785254002,
+  "ms": 0.010041985660791397,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -4697,7 +4697,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.009916024282574654,
+  "ms": 0.01008401159197092,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -4717,7 +4717,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.009791110642254353,
+  "ms": 0.009333016350865364,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -4737,7 +4737,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.009749899618327618,
+  "ms": 0.011167023330926895,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -4757,7 +4757,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.02812489401549101,
+  "ms": 0.02766598481684923,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -4777,7 +4777,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.0653330935165286,
+  "ms": 0.05562498699873686,
   "error": null,
   "reasons": [
    "drop metadata resolves (configured through the standard flow)",
@@ -4822,7 +4822,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.009750016033649445,
+  "ms": 0.00958307646214962,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -4842,7 +4842,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.028875074349343777,
+  "ms": 0.021708081476390362,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -4862,7 +4862,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.009875046089291573,
+  "ms": 0.010166899301111698,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -4882,7 +4882,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.010041985660791397,
+  "ms": 0.010040937922894955,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -4902,7 +4902,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.009875046089291573,
+  "ms": 0.011332915164530277,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -4922,7 +4922,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.009833020158112049,
+  "ms": 0.009457929991185665,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -4942,7 +4942,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.009665964171290398,
+  "ms": 0.02870894968509674,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -4962,7 +4962,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.009750016033649445,
+  "ms": 0.009832903742790222,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -4982,7 +4982,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.00966701190918684,
+  "ms": 0.009208102710545063,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -5002,7 +5002,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.009541981853544712,
+  "ms": 0.009457929991185665,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -5022,7 +5022,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.0637079356238246,
+  "ms": 0.0540000619366765,
   "error": null,
   "reasons": [
    "drop metadata resolves (configured through the standard flow)",
@@ -5046,7 +5046,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.010207993909716606,
+  "ms": 0.009582960046827793,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -5066,7 +5066,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.029666000045835972,
+  "ms": 0.021499930880963802,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -5086,7 +5086,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.010458985343575478,
+  "ms": 0.010208110325038433,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -5106,7 +5106,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.02758402843028307,
+  "ms": 0.02274999860674143,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -5126,7 +5126,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.053582945838570595,
+  "ms": 0.06795907393097878,
   "error": null,
   "reasons": [
    "drop metadata resolves (configured through the standard flow)",
@@ -5149,7 +5149,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.010666088201105595,
+  "ms": 0.011041993275284767,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -5169,7 +5169,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.030291033908724785,
+  "ms": 0.02274999860674143,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -5189,7 +5189,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.009791110642254353,
+  "ms": 0.010041985660791397,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -5209,7 +5209,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.047915964387357235,
+  "ms": 0.019707949832081795,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -5229,7 +5229,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.010292045772075653,
+  "ms": 0.009999959729611874,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -5249,7 +5249,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.02237502485513687,
+  "ms": 0.01937500201165676,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -5269,7 +5269,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.02133403904736042,
+  "ms": 0.019749975763261318,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -5289,7 +5289,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.00995793379843235,
+  "ms": 0.009999959729611874,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -5309,7 +5309,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.02929195761680603,
+  "ms": 0.018999911844730377,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -5329,7 +5329,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.02916704397648573,
+  "ms": 0.018791062757372856,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -5349,7 +5349,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.027125002816319466,
+  "ms": 0.02054101787507534,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -5369,7 +5369,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.03324996214359999,
+  "ms": 0.026124995201826096,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -5389,7 +5389,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.02754107117652893,
+  "ms": 0.02287491224706173,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -5409,7 +5409,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.01091696321964264,
+  "ms": 0.010999967344105244,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -5429,7 +5429,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.055541982874274254,
+  "ms": 0.07687509059906006,
   "error": null,
   "reasons": [
    "drop metadata resolves (configured through the standard flow)",
@@ -5452,7 +5452,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.010916031897068024,
+  "ms": 0.011874944902956486,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -5472,7 +5472,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.02570892684161663,
+  "ms": 0.025124987587332726,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -5492,7 +5492,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.052749994210898876,
+  "ms": 0.050042057409882545,
   "error": null,
   "reasons": [
    "drop metadata resolves (configured through the standard flow)",
@@ -5515,7 +5515,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.029084039852023125,
+  "ms": 0.022332998923957348,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -5535,7 +5535,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.054750009439885616,
+  "ms": 0.049915979616343975,
   "error": null,
   "reasons": [
    "drop metadata resolves (configured through the standard flow)",
@@ -5558,7 +5558,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.026792054995894432,
+  "ms": 0.023083994165062904,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -5578,7 +5578,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.05508295726031065,
+  "ms": 0.05395791959017515,
   "error": null,
   "reasons": [
    "drop metadata resolves (configured through the standard flow)",
@@ -5601,7 +5601,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.027291011065244675,
+  "ms": 0.021292013116180897,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -5621,7 +5621,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.011041993275284767,
+  "ms": 0.010999967344105244,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -5641,7 +5641,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.01025001984089613,
+  "ms": 0.01037493348121643,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -5661,7 +5661,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.010499963536858559,
+  "ms": 0.009792041964828968,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -5681,7 +5681,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.030791969038546085,
+  "ms": 0.021708081476390362,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -5701,7 +5701,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.028540962375700474,
+  "ms": 0.03216695040464401,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -5721,7 +5721,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.010167015716433525,
+  "ms": 0.012582982890307903,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -5741,7 +5741,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.009833020158112049,
+  "ms": 0.010749907232820988,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -5761,7 +5761,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.009917072020471096,
+  "ms": 0.01091696321964264,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -5781,7 +5781,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.028082984499633312,
+  "ms": 0.02504093572497368,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -5801,7 +5801,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.009999959729611874,
+  "ms": 0.010208925232291222,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -5821,7 +5821,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.009874929673969746,
+  "ms": 0.010041985660791397,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -5841,7 +5841,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.020083971321582794,
+  "ms": 0.023333937861025333,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -5861,7 +5861,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.009875046089291573,
+  "ms": 0.01025001984089613,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -5881,7 +5881,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.009875046089291573,
+  "ms": 0.010375049896538258,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -5901,7 +5901,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.009875046089291573,
+  "ms": 0.01116609200835228,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -5921,7 +5921,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.021292013116180897,
+  "ms": 0.021583051420748234,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -5941,7 +5941,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.03158394247293472,
+  "ms": 0.010041985660791397,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -5961,7 +5961,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.021834042854607105,
+  "ms": 0.0226249685510993,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -5981,7 +5981,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.018749968148767948,
+  "ms": 0.018832972273230553,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -6001,7 +6001,7 @@
   "achievable": 40,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.06850005593150854,
+  "ms": 0.06550003308802843,
   "error": null,
   "reasons": [
    "drop metadata resolves (configured through the standard flow)",
@@ -6024,7 +6024,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.012874952517449856,
+  "ms": 0.011541997082531452,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -6044,7 +6044,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.05429191514849663,
+  "ms": 0.05616701673716307,
   "error": null,
   "reasons": [
    "drop metadata resolves (configured through the standard flow)",
@@ -6067,7 +6067,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.010416028089821339,
+  "ms": 0.010041985660791397,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -6087,7 +6087,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.02245896030217409,
+  "ms": 0.02216699067503214,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -6107,7 +6107,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.009875046089291573,
+  "ms": 0.010082963854074478,
   "error": null,
   "reasons": [],
   "risk_flags": [
@@ -6127,7 +6127,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 0.009916024282574654,
+  "ms": 0.00995793379843235,
   "error": null,
   "reasons": [],
   "risk_flags": [

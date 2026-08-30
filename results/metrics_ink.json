@@ -52,7 +52,7 @@
       "triage_verdict_changed_by_verifier": 0,
       "arm_errors": 0,
       "median_decision_ms": 0.0,
-      "wall_seconds": 0.0
+      "wall_seconds": 0.1
     },
     {
       "arm": "deterministic",

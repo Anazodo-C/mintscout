@@ -22,9 +22,9 @@ def load(tag=""):
 
 
 def main():
-    rh, ink = load("agent"), load("ink")
+    rh, ink = load(), load("ink")
     if not rh or not ink:
-        print("need results/metrics_agent.json and results/metrics_ink.json")
+        print("need results/metrics.json and results/metrics_ink.json")
         return 1
     L = ["# Cross-chain generalisation — Robinhood → Ink\n"]
     L.append("The deterministic rubric's weights were chosen by looking at the "

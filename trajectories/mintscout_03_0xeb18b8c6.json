@@ -1,0 +1,198 @@
+{
+  "arm": "mintscout",
+  "drop": {
+    "chain": "robinhood",
+    "collection": "0xeb18b8c6b0f37f9337ac57307535b515eff2435e",
+    "start_time": 1787495084,
+    "cap": 1,
+    "mint_price_wei": 0,
+    "fixture_name": null
+  },
+  "decision_cutoff_ts": 1787495084,
+  "tool_calls": [
+    {
+      "tool": "erc165_probe",
+      "input": {
+        "collection": "0xeb18b8c6b0f37f9337ac57307535b515eff2435e"
+      },
+      "output": {
+        "standard": "erc721",
+        "is_erc721": true,
+        "is_erc1155": false,
+        "answers_ownerof_and_balanceof": false,
+        "note": null
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "collection_stats",
+      "input": {
+        "collection": "0xeb18b8c6b0f37f9337ac57307535b515eff2435e"
+      },
+      "output": {
+        "max_supply": 5000,
+        "owner": "0xba9046954ab2fc280727b98ba9d2ee7c53676a6f",
+        "name": "Tokyo Misfits ",
+        "symbol": "Tokyomisfits",
+        "code_size": 45,
+        "max_supply_sane": true
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "metadata_fetch",
+      "input": {
+        "allow_network": false
+      },
+      "output": {
+        "present": true,
+        "shape": "drop_stage_config",
+        "name": null,
+        "description": null,
+        "n_attributes": 0,
+        "has_image": false,
+        "image_is_on_chain": false,
+        "token_bound_account": false,
+        "n_stages": 3,
+        "stage_names": [
+          "Public stage",
+          "GTD",
+          "WL"
+        ],
+        "has_allowlist_stage": false,
+        "has_public_stage": true,
+        "note": "operator configured this drop through the standard OpenSea flow. Token art metadata does not exist pre-open for ANY drop, so its absence here is not a negative.",
+        "drop_uri": "ipfs://bafkreif64m6d2v6pecgors7mrrivpxoz6mvc6mbhrsz4arshejiygoxs6m",
+        "contract_uri": "",
+        "source": "drop_uri",
+        "on_chain_metadata": false,
+        "provenance": "pinned",
+        "contract_uri_present": false
+      },
+      "ms": 0.3
+    },
+    {
+      "tool": "erc6551_probe",
+      "input": {},
+      "output": {
+        "token_bound_account": false,
+        "source": "metadata field"
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "economics",
+      "input": {},
+      "output": {
+        "mint_price_wei": 0,
+        "is_free": true,
+        "max_per_wallet": 1,
+        "fee_bps": 1000,
+        "restrict_fee_recipients": true,
+        "duration_hours": 6.0,
+        "starts_in_s": 58,
+        "advance_notice_s": 58
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "drop_config_history",
+      "input": {},
+      "output": {
+        "n_revisions_before_cutoff": 1,
+        "distinct_prices": [
+          0
+        ],
+        "price_flips": 0,
+        "revisions": [
+          {
+            "mint_price": 0,
+            "start_time": 1787495084,
+            "end_time": 1787516684,
+            "max_per_wallet": 1,
+            "block_timestamp": 1787495026
+          }
+        ]
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "mint_velocity",
+      "input": {},
+      "output": {
+        "available": false,
+        "mints_per_min": null,
+        "reason": "decision point is at/before startTime; no mint has occurred yet. Outcome signal, not a feature."
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "deployer_history",
+      "input": {},
+      "output": {
+        "deployer": "0xba9046954ab2fc280727b98ba9d2ee7c53676a6f",
+        "known": false,
+        "prior_collections": 0,
+        "prior_high_value": 0,
+        "note": "first time this deployer has been seen"
+      },
+      "ms": 0.0
+    }
+  ],
+  "triage": {
+    "verdict": "MINT",
+    "score": 72,
+    "reasons": [
+      "Three named mint stages (Public, GTD, WL) indicate existing community structure",
+      "Sane supply of 5000 with 1-per-wallet limit suggests genuine distribution intent",
+      "Free mint with advance notice and reasonable 6-hour window"
+    ],
+    "risk_flags": [
+      "Code size of 45 bytes indicates minimal proxy (ERC-1167), not custom implementation",
+      "First-time deployer with no prior collection history",
+      "Only 1 config revision before cutoff shows minimal iteration"
+    ]
+  },
+  "verifier": {
+    "agreed": false,
+    "objections": [
+      {
+        "target": "collection.code_size negative evidence",
+        "problem": "Triage lists code_size:45 as negative evidence but then issues a MINT verdict. A minimal proxy is a major red flag that should override the positive signals cited. The verdict is internally inconsistent.",
+        "severity": "major"
+      },
+      {
+        "target": "overall verdict",
+        "problem": "The positive evidence (named stages, sane supply, 1-per-wallet) is weak compared to the red flags: minimal proxy, first-time deployer, single config revision. With only ~4% of free drops being high-value, this does not clear the bar for MINT.",
+        "severity": "major"
+      },
+      {
+        "target": "n_revisions_before_cutoff interpretation",
+        "problem": "Triage cites 'only 1 config revision' as a risk flag, but 1 revision means the drop was configured once before cutoff - this is normal for a new drop and not evidence of lack of iteration.",
+        "severity": "minor"
+      }
+    ],
+    "final_verdict": "SKIP",
+    "confidence": 85,
+    "vetoed": true
+  },
+  "action": {
+    "mode": "dry_run",
+    "wallets": 0,
+    "achievable": 0,
+    "gas_wei": 0
+  },
+  "outcome": {
+    "label": "low_value",
+    "label_detail": {
+      "fill_ratio": 0.545,
+      "fill_ok": false,
+      "unique_minters": 2711,
+      "minters_ok": true,
+      "secondary_transfers_48h": 1,
+      "secondary_ok": true,
+      "label": "low_value"
+    },
+    "note": "outcome is NEVER visible to the agent; shown here only for post-hoc scoring."
+  }
+}

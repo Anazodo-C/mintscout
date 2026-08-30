@@ -182,7 +182,10 @@ reported either way, without retuning.
 
 📊 **Results: [`results/comparison.md`](results/comparison.md)** ·
 **[`results/cross_chain.md`](results/cross_chain.md)** ·
-trajectories in [`trajectories/`](trajectories/).
+trajectories in [`trajectories/`](trajectories/) — the five `mintscout_*` files are
+all **verdict-changing verifier vetoes**, including two where the verifier
+destroyed a correct MINT. Those failures are the point, not an oversight; see
+CHANGELOG "Removed experiment #3".
 
 ---
 
@@ -326,5 +329,7 @@ python -m mintscout.report        # writes results/comparison.md
 |---|---|
 | [CHANGELOG.md](CHANGELOG.md) | Deliverable 01 — iterations, **two removed experiments**, six corrections to the brief |
 | [REPRODUCE.md](REPRODUCE.md) | Deliverable 02 |
-| [results/comparison.md](results/comparison.md) | The comparison table |
+| [results/comparison.md](results/comparison.md) | The comparison table (Robinhood, held-out) |
+| [results/cross_chain.md](results/cross_chain.md) | Robinhood-calibrated rubric applied to Ink with zero retuning |
+| [results/preflight_demo.txt](results/preflight_demo.txt) | Live read-only pre-flight: 3 drops caught mid-reprice |
 | [trajectories/](trajectories/) | Deliverable 04 — including verifier vetoes |

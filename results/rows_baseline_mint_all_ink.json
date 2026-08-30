@@ -10,7 +10,7 @@
   "achievable": 100,
   "gas_wei": 170881940460000,
   "spend_wei": 0,
-  "ms": 0.04008400719612837,
+  "ms": 0.03941694740206003,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -30,7 +30,7 @@
   "achievable": 100,
   "gas_wei": 170881940460000,
   "spend_wei": 0,
-  "ms": 0.0314170029014349,
+  "ms": 0.027166912332177162,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -50,7 +50,7 @@
   "achievable": 20,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.07691595237702131,
+  "ms": 0.07233291398733854,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -70,7 +70,7 @@
   "achievable": 60,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.013833981938660145,
+  "ms": 0.01391698606312275,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -90,7 +90,7 @@
   "achievable": 100,
   "gas_wei": 170881940460000,
   "spend_wei": 0,
-  "ms": 0.016625039279460907,
+  "ms": 0.014291028492152691,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -110,7 +110,7 @@
   "achievable": 40,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.026499968953430653,
+  "ms": 0.025999965146183968,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -130,7 +130,7 @@
   "achievable": 100,
   "gas_wei": 85440970230000,
   "spend_wei": 0,
-  "ms": 0.048792106099426746,
+  "ms": 0.04183303099125624,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -150,7 +150,7 @@
   "achievable": 20,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.016915961168706417,
+  "ms": 0.01091696321964264,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -170,7 +170,7 @@
   "achievable": 20,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.013208948075771332,
+  "ms": 0.01183303538709879,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -190,7 +190,7 @@
   "achievable": 40,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.051709008403122425,
+  "ms": 0.031708041206002235,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -210,7 +210,7 @@
   "achievable": 100,
   "gas_wei": 205058328552000,
   "spend_wei": 0,
-  "ms": 0.03499991726130247,
+  "ms": 0.029708025977015495,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -230,7 +230,7 @@
   "achievable": 20,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.012542004697024822,
+  "ms": 0.011625001206994057,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -250,7 +250,7 @@
   "achievable": 100,
   "gas_wei": 170881940460000,
   "spend_wei": 0,
-  "ms": 0.010999967344105244,
+  "ms": 0.010124989785254002,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -270,7 +270,7 @@
   "achievable": 20,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.039458973333239555,
+  "ms": 0.03383297007530928,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -290,7 +290,7 @@
   "achievable": 40,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.011499971151351929,
+  "ms": 0.010416959412395954,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -310,7 +310,7 @@
   "achievable": 20,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.010582967661321163,
+  "ms": 0.009999959729611874,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -330,7 +330,7 @@
   "achievable": 20,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.010209041647613049,
+  "ms": 0.009874929673969746,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -350,7 +350,7 @@
   "achievable": 100,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.042082974687218666,
+  "ms": 0.03062502946704626,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -370,7 +370,7 @@
   "achievable": 40,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.035958015359938145,
+  "ms": 0.04200008697807789,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -390,7 +390,7 @@
   "achievable": 100,
   "gas_wei": 85440970230000,
   "spend_wei": 0,
-  "ms": 0.010875053703784943,
+  "ms": 0.015625031664967537,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -410,7 +410,7 @@
   "achievable": 20,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.010416959412395954,
+  "ms": 0.011333031579852104,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -430,7 +430,7 @@
   "achievable": 100,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.010249903425574303,
+  "ms": 0.010040937922894955,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -450,7 +450,7 @@
   "achievable": 20,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.010083080269396305,
+  "ms": 0.009916955605149269,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -470,7 +470,7 @@
   "achievable": 20,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.03204203676432371,
+  "ms": 0.046791043132543564,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -490,7 +490,7 @@
   "achievable": 40,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.029916060157120228,
+  "ms": 0.033374992199242115,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -510,7 +510,7 @@
   "achievable": 20,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.3371249185875058,
+  "ms": 1.408125041052699,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -530,7 +530,7 @@
   "achievable": 20,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.03566604573279619,
+  "ms": 0.03712496254593134,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -550,7 +550,7 @@
   "achievable": 40,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.011167023330926895,
+  "ms": 0.02037500962615013,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -570,7 +570,7 @@
   "achievable": 100,
   "gas_wei": 68352776184000,
   "spend_wei": 0,
-  "ms": 0.009792041964828968,
+  "ms": 0.009833020158112049,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -590,7 +590,7 @@
   "achievable": 20,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.009584007784724236,
+  "ms": 0.009708921425044537,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -610,7 +610,7 @@
   "achievable": 100,
   "gas_wei": 85440970230000,
   "spend_wei": 0,
-  "ms": 0.009790994226932526,
+  "ms": 0.009375042282044888,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -630,7 +630,7 @@
   "achievable": 100,
   "gas_wei": 170881940460000,
   "spend_wei": 0,
-  "ms": 0.16420800238847733,
+  "ms": 3.692875034175813,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -650,7 +650,7 @@
   "achievable": 100,
   "gas_wei": 170881940460000,
   "spend_wei": 0,
-  "ms": 0.01091696321964264,
+  "ms": 0.0112500274553895,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -670,7 +670,7 @@
   "achievable": 20,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.010125106200575829,
+  "ms": 0.010083080269396305,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -690,7 +690,7 @@
   "achievable": 100,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.032250070944428444,
+  "ms": 0.03445800393819809,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -710,7 +710,7 @@
   "achievable": 100,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.0100000761449337,
+  "ms": 0.009999959729611874,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -730,7 +730,7 @@
   "achievable": 20,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.03075005952268839,
+  "ms": 0.031832954846322536,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -750,7 +750,7 @@
   "achievable": 20,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.009999959729611874,
+  "ms": 0.009790994226932526,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -770,7 +770,7 @@
   "achievable": 100,
   "gas_wei": 170881940460000,
   "spend_wei": 0,
-  "ms": 0.026999972760677338,
+  "ms": 0.025667017325758934,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -790,7 +790,7 @@
   "achievable": 60,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.03358395770192146,
+  "ms": 0.03716710489243269,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -810,7 +810,7 @@
   "achievable": 100,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.010207993909716606,
+  "ms": 0.010041985660791397,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -830,7 +830,7 @@
   "achievable": 100,
   "gas_wei": 85440970230000,
   "spend_wei": 0,
-  "ms": 0.009875046089291573,
+  "ms": 0.009707990102469921,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -850,7 +850,7 @@
   "achievable": 100,
   "gas_wei": 68352776184000,
   "spend_wei": 0,
-  "ms": 0.16933400183916092,
+  "ms": 2.0791669376194477,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -870,7 +870,7 @@
   "achievable": 20,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.15045900363475084,
+  "ms": 1.5320839593186975,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -890,7 +890,7 @@
   "achievable": 60,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.16562500968575478,
+  "ms": 3.7126250099390745,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -910,7 +910,7 @@
   "achievable": 20,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.010624993592500687,
+  "ms": 0.011332915164530277,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -930,7 +930,7 @@
   "achievable": 100,
   "gas_wei": 222146522598000,
   "spend_wei": 0,
-  "ms": 0.14308292884379625,
+  "ms": 1.0956251062452793,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -950,7 +950,7 @@
   "achievable": 20,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.010416959412395954,
+  "ms": 0.011958996765315533,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -970,7 +970,7 @@
   "achievable": 40,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.009833020158112049,
+  "ms": 0.010874937288463116,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -990,7 +990,7 @@
   "achievable": 100,
   "gas_wei": 170881940460000,
   "spend_wei": 0,
-  "ms": 0.1478339545428753,
+  "ms": 1.1552911018952727,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -1010,7 +1010,7 @@
   "achievable": 20,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.010582967661321163,
+  "ms": 0.011833966709673405,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -1030,7 +1030,7 @@
   "achievable": 100,
   "gas_wei": 256322910690000,
   "spend_wei": 0,
-  "ms": 0.02504093572497368,
+  "ms": 0.027957954443991184,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -1050,7 +1050,7 @@
   "achievable": 20,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.02675002906471491,
+  "ms": 0.0285410787910223,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -1070,7 +1070,7 @@
   "achievable": 20,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.010375049896538258,
+  "ms": 0.010292045772075653,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -1090,7 +1090,7 @@
   "achievable": 20,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.21125003695487976,
+  "ms": 4.601959022693336,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -1110,7 +1110,7 @@
   "achievable": 60,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.010124989785254002,
+  "ms": 0.01779093872755766,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -1130,7 +1130,7 @@
   "achievable": 100,
   "gas_wei": 17088194046000,
   "spend_wei": 0,
-  "ms": 0.00995909795165062,
+  "ms": 0.010041985660791397,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -1150,7 +1150,7 @@
   "achievable": 20,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.01091696321964264,
+  "ms": 0.010707997716963291,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -1170,7 +1170,7 @@
   "achievable": 20,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.009958050213754177,
+  "ms": 0.009874929673969746,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -1190,7 +1190,7 @@
   "achievable": 20,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.009458046406507492,
+  "ms": 0.009207986295223236,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -1210,7 +1210,7 @@
   "achievable": 20,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.009707990102469921,
+  "ms": 0.009458046406507492,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -1230,7 +1230,7 @@
   "achievable": 100,
   "gas_wei": 205058328552000,
   "spend_wei": 0,
-  "ms": 0.009459094144403934,
+  "ms": 0.009207986295223236,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -1250,7 +1250,7 @@
   "achievable": 40,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.011167023330926895,
+  "ms": 0.010875053703784943,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -1270,7 +1270,7 @@
   "achievable": 20,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.009624985978007317,
+  "ms": 0.009167008101940155,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -1290,7 +1290,7 @@
   "achievable": 40,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.04237494431436062,
+  "ms": 0.029082992114126682,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -1310,7 +1310,7 @@
   "achievable": 20,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.026499968953430653,
+  "ms": 0.03958400338888168,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -1330,7 +1330,7 @@
   "achievable": 100,
   "gas_wei": 170881940460000,
   "spend_wei": 0,
-  "ms": 0.20112504716962576,
+  "ms": 3.8325830828398466,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -1350,7 +1350,7 @@
   "achievable": 20,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.010165967978537083,
+  "ms": 0.0113749410957098,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -1370,7 +1370,7 @@
   "achievable": 100,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.009832903742790222,
+  "ms": 0.009999959729611874,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -1390,7 +1390,7 @@
   "achievable": 20,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.0100000761449337,
+  "ms": 0.010541989468038082,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -1410,7 +1410,7 @@
   "achievable": 20,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.009707990102469921,
+  "ms": 0.010333023965358734,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -1430,7 +1430,7 @@
   "achievable": 100,
   "gas_wei": 170881940460000,
   "spend_wei": 0,
-  "ms": 0.010082963854074478,
+  "ms": 0.011416967026889324,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -1450,7 +1450,7 @@
   "achievable": 100,
   "gas_wei": 85440970230000,
   "spend_wei": 0,
-  "ms": 0.011125113815069199,
+  "ms": 0.010624993592500687,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -1470,7 +1470,7 @@
   "achievable": 40,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.03175006713718176,
+  "ms": 0.02791709266602993,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -1490,7 +1490,7 @@
   "achievable": 100,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 1.2018750421702862,
+  "ms": 1.7415409674867988,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -1510,7 +1510,7 @@
   "achievable": 100,
   "gas_wei": 170881940460000,
   "spend_wei": 0,
-  "ms": 0.012582982890307903,
+  "ms": 0.012042000889778137,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -1530,7 +1530,7 @@
   "achievable": 100,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.19462499767541885,
+  "ms": 4.341959021985531,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -1550,7 +1550,7 @@
   "achievable": 100,
   "gas_wei": 85440970230000,
   "spend_wei": 0,
-  "ms": 1.1864160187542439,
+  "ms": 3.5105410497635603,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -1570,7 +1570,7 @@
   "achievable": 100,
   "gas_wei": 170881940460000,
   "spend_wei": 0,
-  "ms": 0.011333031579852104,
+  "ms": 0.01554097980260849,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -1590,7 +1590,7 @@
   "achievable": 60,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.191416940651834,
+  "ms": 3.5576249938458204,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -1610,7 +1610,7 @@
   "achievable": 20,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.010624993592500687,
+  "ms": 0.011750031262636185,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -1630,7 +1630,7 @@
   "achievable": 100,
   "gas_wei": 170881940460000,
   "spend_wei": 0,
-  "ms": 0.011334079317748547,
+  "ms": 0.01108401920646429,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -1650,7 +1650,7 @@
   "achievable": 40,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.033374992199242115,
+  "ms": 0.03333389759063721,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -1670,7 +1670,7 @@
   "achievable": 60,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 1.8657080363482237,
+  "ms": 2.446416998282075,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -1690,7 +1690,7 @@
   "achievable": 100,
   "gas_wei": 170881940460000,
   "spend_wei": 0,
-  "ms": 0.032291049137711525,
+  "ms": 0.02616702113300562,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -1710,7 +1710,7 @@
   "achievable": 10,
   "gas_wei": 170881940460000,
   "spend_wei": 0,
-  "ms": 0.026082969270646572,
+  "ms": 0.022583059035241604,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -1730,7 +1730,7 @@
   "achievable": 100,
   "gas_wei": 205058328552000,
   "spend_wei": 0,
-  "ms": 0.15183398500084877,
+  "ms": 0.7727090269327164,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -1750,7 +1750,7 @@
   "achievable": 20,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.010792049579322338,
+  "ms": 0.01208402682095766,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -1770,7 +1770,7 @@
   "achievable": 100,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.010167015716433525,
+  "ms": 0.01008401159197092,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -1790,7 +1790,7 @@
   "achievable": 20,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.03587501123547554,
+  "ms": 0.029582995921373367,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -1810,7 +1810,7 @@
   "achievable": 100,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.010207993909716606,
+  "ms": 0.009958981536328793,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -1830,7 +1830,7 @@
   "achievable": 20,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.009958981536328793,
+  "ms": 0.009833020158112049,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -1850,7 +1850,7 @@
   "achievable": 100,
   "gas_wei": 170881940460000,
   "spend_wei": 0,
-  "ms": 0.009624985978007317,
+  "ms": 0.009750016033649445,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -1870,7 +1870,7 @@
   "achievable": 20,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.01108401920646429,
+  "ms": 0.00966701190918684,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -1890,7 +1890,7 @@
   "achievable": 20,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.03200001083314419,
+  "ms": 0.03291701432317495,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -1910,7 +1910,7 @@
   "achievable": 100,
   "gas_wei": 51264582138000,
   "spend_wei": 0,
-  "ms": 0.131291919387877,
+  "ms": 3.0139159644022584,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -1930,7 +1930,7 @@
   "achievable": 100,
   "gas_wei": 51264582138000,
   "spend_wei": 0,
-  "ms": 0.02504093572497368,
+  "ms": 0.023583066649734974,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -1950,7 +1950,7 @@
   "achievable": 100,
   "gas_wei": 170881940460000,
   "spend_wei": 0,
-  "ms": 0.010041985660791397,
+  "ms": 0.010416959412395954,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -1970,7 +1970,7 @@
   "achievable": 20,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.03454193938523531,
+  "ms": 0.024667009711265564,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -1990,7 +1990,7 @@
   "achievable": 100,
   "gas_wei": 170881940460000,
   "spend_wei": 0,
-  "ms": 0.009874929673969746,
+  "ms": 0.009624985978007317,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -2010,7 +2010,7 @@
   "achievable": 100,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.009624985978007317,
+  "ms": 0.00937492586672306,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -2030,7 +2030,7 @@
   "achievable": 20,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.009582960046827793,
+  "ms": 0.009500072337687016,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -2050,7 +2050,7 @@
   "achievable": 100,
   "gas_wei": 170881940460000,
   "spend_wei": 0,
-  "ms": 0.029208953492343426,
+  "ms": 0.0226249685510993,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -2070,7 +2070,7 @@
   "achievable": 100,
   "gas_wei": 170881940460000,
   "spend_wei": 0,
-  "ms": 0.010207993909716606,
+  "ms": 0.009999959729611874,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -2090,7 +2090,7 @@
   "achievable": 60,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.009541981853544712,
+  "ms": 0.009624985978007317,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -2110,7 +2110,7 @@
   "achievable": 100,
   "gas_wei": 85440970230000,
   "spend_wei": 0,
-  "ms": 0.00966701190918684,
+  "ms": 0.009417068213224411,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -2130,7 +2130,7 @@
   "achievable": 100,
   "gas_wei": 205058328552000,
   "spend_wei": 0,
-  "ms": 0.028792070224881172,
+  "ms": 0.020875013433396816,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -2150,7 +2150,7 @@
   "achievable": 20,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.009792041964828968,
+  "ms": 0.009750016033649445,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -2170,7 +2170,7 @@
   "achievable": 20,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.02420798409730196,
+  "ms": 0.021707965061068535,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -2190,7 +2190,7 @@
   "achievable": 100,
   "gas_wei": 51264582138000,
   "spend_wei": 0,
-  "ms": 0.18283294048160315,
+  "ms": 1.1414160253480077,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -2210,7 +2210,7 @@
   "achievable": 100,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.01033395528793335,
+  "ms": 0.010792049579322338,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -2230,7 +2230,7 @@
   "achievable": 20,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.00966701190918684,
+  "ms": 0.010082963854074478,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -2250,7 +2250,7 @@
   "achievable": 60,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.009790994226932526,
+  "ms": 0.009875046089291573,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -2270,7 +2270,7 @@
   "achievable": 100,
   "gas_wei": 170881940460000,
   "spend_wei": 0,
-  "ms": 0.010999967344105244,
+  "ms": 0.009833020158112049,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -2290,7 +2290,7 @@
   "achievable": 20,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.03504101186990738,
+  "ms": 0.02716702874749899,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -2310,7 +2310,7 @@
   "achievable": 20,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.010083080269396305,
+  "ms": 0.009958981536328793,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -2330,7 +2330,7 @@
   "achievable": 100,
   "gas_wei": 170881940460000,
   "spend_wei": 0,
-  "ms": 0.009999959729611874,
+  "ms": 0.010291929356753826,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -2350,7 +2350,7 @@
   "achievable": 100,
   "gas_wei": 85440970230000,
   "spend_wei": 0,
-  "ms": 0.011500087566673756,
+  "ms": 0.009584007784724236,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -2370,7 +2370,7 @@
   "achievable": 100,
   "gas_wei": 170881940460000,
   "spend_wei": 0,
-  "ms": 0.009624985978007317,
+  "ms": 0.009707990102469921,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -2390,7 +2390,7 @@
   "achievable": 20,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.19525003153830767,
+  "ms": 2.7672499418258667,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -2410,7 +2410,7 @@
   "achievable": 20,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.027542002499103546,
+  "ms": 0.029416987672448158,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -2430,7 +2430,7 @@
   "achievable": 40,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.023082946427166462,
+  "ms": 0.023999949917197227,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -2450,7 +2450,7 @@
   "achievable": 100,
   "gas_wei": 170881940460000,
   "spend_wei": 0,
-  "ms": 0.033374992199242115,
+  "ms": 0.01037493348121643,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -2470,7 +2470,7 @@
   "achievable": 60,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.01008401159197092,
+  "ms": 0.009999959729611874,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -2490,7 +2490,7 @@
   "achievable": 100,
   "gas_wei": 170881940460000,
   "spend_wei": 0,
-  "ms": 0.011458992958068848,
+  "ms": 0.013708020560443401,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -2510,7 +2510,7 @@
   "achievable": 100,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.028709066100418568,
+  "ms": 0.02820801455527544,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -2530,7 +2530,7 @@
   "achievable": 60,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.010791001841425896,
+  "ms": 0.010458054021000862,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -2570,7 +2570,7 @@
   "achievable": 20,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.02670893445611,
+  "ms": 0.022249994799494743,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -2590,7 +2590,7 @@
   "achievable": 20,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.009707990102469921,
+  "ms": 0.00966701190918684,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -2610,7 +2610,7 @@
   "achievable": 100,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.026582973077893257,
+  "ms": 0.024250010028481483,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -2630,7 +2630,7 @@
   "achievable": 60,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.025416025891900063,
+  "ms": 0.0189170241355896,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -2650,7 +2650,7 @@
   "achievable": 60,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.020584091544151306,
+  "ms": 0.019291997887194157,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -2670,7 +2670,7 @@
   "achievable": 100,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.24087505880743265,
+  "ms": 0.600458006374538,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -2690,7 +2690,7 @@
   "achievable": 60,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.010209041647613049,
+  "ms": 0.011165975593030453,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -2710,7 +2710,7 @@
   "achievable": 100,
   "gas_wei": 68352776184000,
   "spend_wei": 0,
-  "ms": 0.07795810233801603,
+  "ms": 0.11074997019022703,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -2730,7 +2730,7 @@
   "achievable": 20,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.010124989785254002,
+  "ms": 0.010292045772075653,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -2750,7 +2750,7 @@
   "achievable": 20,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.010833959095180035,
+  "ms": 0.010040937922894955,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -2770,7 +2770,7 @@
   "achievable": 100,
   "gas_wei": 17088194046000,
   "spend_wei": 0,
-  "ms": 0.010209041647613049,
+  "ms": 0.009832903742790222,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -2790,7 +2790,7 @@
   "achievable": 100,
   "gas_wei": 85440970230000,
   "spend_wei": 0,
-  "ms": 0.00958307646214962,
+  "ms": 0.009709037840366364,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -2810,7 +2810,7 @@
   "achievable": 20,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.03662507515400648,
+  "ms": 0.02662499900907278,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -2830,7 +2830,7 @@
   "achievable": 20,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.011209049262106419,
+  "ms": 0.010417075827717781,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -2850,7 +2850,7 @@
   "achievable": 40,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.010124989785254002,
+  "ms": 0.009999959729611874,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -2870,7 +2870,7 @@
   "achievable": 100,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.22954191081225872,
+  "ms": 2.6976249646395445,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -2890,7 +2890,7 @@
   "achievable": 20,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.013958080671727657,
+  "ms": 0.011209049262106419,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -2910,7 +2910,7 @@
   "achievable": 20,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.011416967026889324,
+  "ms": 0.01591700129210949,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -2930,7 +2930,7 @@
   "achievable": 20,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.14566699974238873,
+  "ms": 0.9681660449132323,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -2950,7 +2950,7 @@
   "achievable": 20,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.010124989785254002,
+  "ms": 0.010500079952180386,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -2970,7 +2970,7 @@
   "achievable": 60,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.009584007784724236,
+  "ms": 0.009833020158112049,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -2990,7 +2990,7 @@
   "achievable": 100,
   "gas_wei": 170881940460000,
   "spend_wei": 0,
-  "ms": 0.009582960046827793,
+  "ms": 0.00954093411564827,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -3010,7 +3010,7 @@
   "achievable": 40,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.03374996595084667,
+  "ms": 0.02379098441451788,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -3030,7 +3030,7 @@
   "achievable": 60,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.010833959095180035,
+  "ms": 0.009790994226932526,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -3050,7 +3050,7 @@
   "achievable": 60,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.010041985660791397,
+  "ms": 0.009624985978007317,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -3070,7 +3070,7 @@
   "achievable": 100,
   "gas_wei": 68352776184000,
   "spend_wei": 0,
-  "ms": 0.036415993236005306,
+  "ms": 0.02445792779326439,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -3090,7 +3090,7 @@
   "achievable": 100,
   "gas_wei": 170881940460000,
   "spend_wei": 0,
-  "ms": 0.20041700918227434,
+  "ms": 2.8106250101700425,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -3110,7 +3110,7 @@
   "achievable": 100,
   "gas_wei": 170881940460000,
   "spend_wei": 0,
-  "ms": 0.010457937605679035,
+  "ms": 0.01095794141292572,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -3130,7 +3130,7 @@
   "achievable": 20,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.009707990102469921,
+  "ms": 0.009958981536328793,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -3150,7 +3150,7 @@
   "achievable": 100,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.036291079595685005,
+  "ms": 0.02291705459356308,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -3170,7 +3170,7 @@
   "achievable": 40,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 1.1582920560613275,
+  "ms": 2.127791987732053,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -3190,7 +3190,7 @@
   "achievable": 40,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.0113749410957098,
+  "ms": 0.010875053703784943,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -3210,7 +3210,7 @@
   "achievable": 60,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.03254192415624857,
+  "ms": 0.020875013433396816,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -3230,7 +3230,7 @@
   "achievable": 60,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.04016596358269453,
+  "ms": 0.014499993994832039,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -3250,7 +3250,7 @@
   "achievable": 100,
   "gas_wei": 102529164276000,
   "spend_wei": 0,
-  "ms": 0.01229101326316595,
+  "ms": 0.012333039194345474,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -3270,7 +3270,7 @@
   "achievable": 100,
   "gas_wei": 290499298782000,
   "spend_wei": 0,
-  "ms": 0.13579207006841898,
+  "ms": 2.8947920072823763,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -3290,7 +3290,7 @@
   "achievable": 100,
   "gas_wei": 17088194046000,
   "spend_wei": 0,
-  "ms": 0.01083302777260542,
+  "ms": 0.01183303538709879,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -3310,7 +3310,7 @@
   "achievable": 20,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.00966701190918684,
+  "ms": 0.010167015716433525,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -3330,7 +3330,7 @@
   "achievable": 100,
   "gas_wei": 119617358322000,
   "spend_wei": 0,
-  "ms": 0.009583891369402409,
+  "ms": 0.009999959729611874,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -3350,7 +3350,7 @@
   "achievable": 20,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.03204098902642727,
+  "ms": 0.023083994165062904,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -3370,7 +3370,7 @@
   "achievable": 20,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.024667009711265564,
+  "ms": 0.03358302637934685,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -3390,7 +3390,7 @@
   "achievable": 60,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.0100000761449337,
+  "ms": 0.01637497916817665,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -3410,7 +3410,7 @@
   "achievable": 40,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.00966701190918684,
+  "ms": 0.010624993592500687,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -3430,7 +3430,7 @@
   "achievable": 20,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.027374946512281895,
+  "ms": 0.028999987989664078,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -3450,7 +3450,7 @@
   "achievable": 100,
   "gas_wei": 170881940460000,
   "spend_wei": 0,
-  "ms": 0.009999959729611874,
+  "ms": 0.014374963939189911,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -3470,7 +3470,7 @@
   "achievable": 40,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.009707990102469921,
+  "ms": 0.009999959729611874,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -3490,7 +3490,7 @@
   "achievable": 100,
   "gas_wei": 290499298782000,
   "spend_wei": 0,
-  "ms": 0.21612492855638266,
+  "ms": 0.6242500385269523,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -3510,7 +3510,7 @@
   "achievable": 20,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.010415911674499512,
+  "ms": 0.011082971468567848,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -3530,7 +3530,7 @@
   "achievable": 80,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.009458046406507492,
+  "ms": 0.010082963854074478,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -3550,7 +3550,7 @@
   "achievable": 20,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.009750016033649445,
+  "ms": 0.010083080269396305,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -3570,7 +3570,7 @@
   "achievable": 100,
   "gas_wei": 170881940460000,
   "spend_wei": 0,
-  "ms": 0.030667055398225784,
+  "ms": 0.024916022084653378,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -3590,7 +3590,7 @@
   "achievable": 20,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.009624985978007317,
+  "ms": 0.009875046089291573,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -3610,7 +3610,7 @@
   "achievable": 40,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.009750016033649445,
+  "ms": 0.009458977729082108,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -3630,7 +3630,7 @@
   "achievable": 100,
   "gas_wei": 170881940460000,
   "spend_wei": 0,
-  "ms": 0.010999967344105244,
+  "ms": 0.009458046406507492,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -3650,7 +3650,7 @@
   "achievable": 60,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.03075005952268839,
+  "ms": 0.0249580480158329,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -3670,7 +3670,7 @@
   "achievable": 20,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.010083080269396305,
+  "ms": 0.009834067896008492,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -3690,7 +3690,7 @@
   "achievable": 100,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.025999965146183968,
+  "ms": 0.019832979887723923,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -3710,7 +3710,7 @@
   "achievable": 100,
   "gas_wei": 17088194046000,
   "spend_wei": 0,
-  "ms": 0.010083080269396305,
+  "ms": 0.009792041964828968,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -3730,7 +3730,7 @@
   "achievable": 80,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.027540954761207104,
+  "ms": 0.019583036191761494,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -3750,7 +3750,7 @@
   "achievable": 40,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.009917072020471096,
+  "ms": 0.010167015716433525,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -3770,7 +3770,7 @@
   "achievable": 20,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.16429205425083637,
+  "ms": 2.6617500698193908,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -3790,7 +3790,7 @@
   "achievable": 100,
   "gas_wei": 170881940460000,
   "spend_wei": 0,
-  "ms": 0.010207993909716606,
+  "ms": 0.011292053386569023,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -3810,7 +3810,7 @@
   "achievable": 20,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.03129197284579277,
+  "ms": 0.02575002145022154,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -3830,7 +3830,7 @@
   "achievable": 20,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.012040953151881695,
+  "ms": 0.010416959412395954,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -3850,7 +3850,7 @@
   "achievable": 20,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.010040937922894955,
+  "ms": 0.010333023965358734,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -3870,7 +3870,7 @@
   "achievable": 100,
   "gas_wei": 85440970230000,
   "spend_wei": 0,
-  "ms": 0.009666080586612225,
+  "ms": 0.009875046089291573,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -3890,7 +3890,7 @@
   "achievable": 60,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.1635829685255885,
+  "ms": 1.0313750244677067,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -3910,7 +3910,7 @@
   "achievable": 40,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.010082963854074478,
+  "ms": 0.012499978765845299,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -3930,7 +3930,7 @@
   "achievable": 60,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.029916060157120228,
+  "ms": 0.03062502946704626,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -3950,7 +3950,7 @@
   "achievable": 100,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.024582957848906517,
+  "ms": 0.02437504008412361,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -3970,7 +3970,7 @@
   "achievable": 60,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.009958050213754177,
+  "ms": 0.010750023648142815,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -3990,7 +3990,7 @@
   "achievable": 40,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.00966701190918684,
+  "ms": 0.009624985978007317,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -4010,7 +4010,7 @@
   "achievable": 20,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.1771249808371067,
+  "ms": 2.8652079636231065,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -4030,7 +4030,7 @@
   "achievable": 100,
   "gas_wei": 170881940460000,
   "spend_wei": 0,
-  "ms": 0.010541989468038082,
+  "ms": 0.01579197123646736,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -4050,7 +4050,7 @@
   "achievable": 20,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.03362505231052637,
+  "ms": 0.07154210470616817,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -4070,7 +4070,7 @@
   "achievable": 60,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.14620809815824032,
+  "ms": 1.3483749935403466,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -4090,7 +4090,7 @@
   "achievable": 100,
   "gas_wei": 119617358322000,
   "spend_wei": 0,
-  "ms": 0.01029099803417921,
+  "ms": 0.012625008821487427,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -4110,7 +4110,7 @@
   "achievable": 100,
   "gas_wei": 17088194046000,
   "spend_wei": 0,
-  "ms": 0.028416980057954788,
+  "ms": 0.032082898542284966,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -4130,7 +4130,7 @@
   "achievable": 20,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.15304202679544687,
+  "ms": 2.936125034466386,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -4150,7 +4150,7 @@
   "achievable": 100,
   "gas_wei": 170881940460000,
   "spend_wei": 0,
-  "ms": 0.010499963536858559,
+  "ms": 0.012125005014240742,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -4170,7 +4170,7 @@
   "achievable": 20,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.031624920666217804,
+  "ms": 0.03987504169344902,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -4190,7 +4190,7 @@
   "achievable": 100,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.009832903742790222,
+  "ms": 0.012749922461807728,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -4210,7 +4210,7 @@
   "achievable": 40,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.00966701190918684,
+  "ms": 0.010124989785254002,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -4230,7 +4230,7 @@
   "achievable": 100,
   "gas_wei": 256322910690000,
   "spend_wei": 0,
-  "ms": 0.009707990102469921,
+  "ms": 0.010292045772075653,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -4250,7 +4250,7 @@
   "achievable": 20,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.009709037840366364,
+  "ms": 0.009958050213754177,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -4270,7 +4270,7 @@
   "achievable": 60,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.03316602669656277,
+  "ms": 0.027582980692386627,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -4290,7 +4290,7 @@
   "achievable": 40,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.009541981853544712,
+  "ms": 0.010041985660791397,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -4310,7 +4310,7 @@
   "achievable": 40,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.028583919629454613,
+  "ms": 0.02204196061939001,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -4330,7 +4330,7 @@
   "achievable": 100,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.025834073312580585,
+  "ms": 0.018625054508447647,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -4350,7 +4350,7 @@
   "achievable": 100,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.010541989468038082,
+  "ms": 0.010750023648142815,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -4370,7 +4370,7 @@
   "achievable": 20,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.01008401159197092,
+  "ms": 0.009416951797902584,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -4390,7 +4390,7 @@
   "achievable": 100,
   "gas_wei": 119617358322000,
   "spend_wei": 0,
-  "ms": 0.00954093411564827,
+  "ms": 0.009582960046827793,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -4410,7 +4410,7 @@
   "achievable": 100,
   "gas_wei": 17088194046000,
   "spend_wei": 0,
-  "ms": 0.24079205468297005,
+  "ms": 0.5452909972518682,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -4430,7 +4430,7 @@
   "achievable": 100,
   "gas_wei": 170881940460000,
   "spend_wei": 0,
-  "ms": 0.01758395228534937,
+  "ms": 0.011041993275284767,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -4450,7 +4450,7 @@
   "achievable": 40,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.07887498941272497,
+  "ms": 0.03554206341505051,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -4470,7 +4470,7 @@
   "achievable": 60,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.039792037568986416,
+  "ms": 0.02845900598913431,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -4490,7 +4490,7 @@
   "achievable": 100,
   "gas_wei": 17088194046000,
   "spend_wei": 0,
-  "ms": 0.05262496415525675,
+  "ms": 0.02970895729959011,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -4510,7 +4510,7 @@
   "achievable": 20,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.018208054825663567,
+  "ms": 0.010582967661321163,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -4530,7 +4530,7 @@
   "achievable": 100,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.5352080333977938,
+  "ms": 3.4857080318033695,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -4550,7 +4550,7 @@
   "achievable": 100,
   "gas_wei": 170881940460000,
   "spend_wei": 0,
-  "ms": 0.01100008375942707,
+  "ms": 0.01108401920646429,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -4570,7 +4570,7 @@
   "achievable": 100,
   "gas_wei": 17088194046000,
   "spend_wei": 0,
-  "ms": 0.0100000761449337,
+  "ms": 0.010041985660791397,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -4590,7 +4590,7 @@
   "achievable": 40,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.010165967978537083,
+  "ms": 0.009791925549507141,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -4610,7 +4610,7 @@
   "achievable": 100,
   "gas_wei": 170881940460000,
   "spend_wei": 0,
-  "ms": 0.010165967978537083,
+  "ms": 0.010167015716433525,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -4630,7 +4630,7 @@
   "achievable": 20,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.011124997399747372,
+  "ms": 0.015584053471684456,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -4650,7 +4650,7 @@
   "achievable": 100,
   "gas_wei": 170881940460000,
   "spend_wei": 0,
-  "ms": 0.0797909451648593,
+  "ms": 0.031832954846322536,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -4670,7 +4670,7 @@
   "achievable": 100,
   "gas_wei": 17088194046000,
   "spend_wei": 0,
-  "ms": 0.1830830005928874,
+  "ms": 1.0088750859722495,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -4690,7 +4690,7 @@
   "achievable": 60,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.010333023965358734,
+  "ms": 0.012333039194345474,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -4710,7 +4710,7 @@
   "achievable": 60,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.011208001524209976,
+  "ms": 0.01266703475266695,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -4730,7 +4730,7 @@
   "achievable": 20,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.0302919652312994,
+  "ms": 0.030291033908724785,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -4750,7 +4750,7 @@
   "achievable": 20,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.010500079952180386,
+  "ms": 0.010416028089821339,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -4770,7 +4770,7 @@
   "achievable": 20,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.03454193938523531,
+  "ms": 0.010333023965358734,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -4790,7 +4790,7 @@
   "achievable": 20,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.010082963854074478,
+  "ms": 0.010125106200575829,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -4810,7 +4810,7 @@
   "achievable": 20,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.00958307646214962,
+  "ms": 0.009833020158112049,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -4830,7 +4830,7 @@
   "achievable": 40,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.009541981853544712,
+  "ms": 0.009709037840366364,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -4850,7 +4850,7 @@
   "achievable": 40,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.009582960046827793,
+  "ms": 0.010124989785254002,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -4870,7 +4870,7 @@
   "achievable": 40,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.011416967026889324,
+  "ms": 0.01154094934463501,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -4890,7 +4890,7 @@
   "achievable": 20,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.012209056876599789,
+  "ms": 0.011416035704314709,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -4910,7 +4910,7 @@
   "achievable": 100,
   "gas_wei": 170881940460000,
   "spend_wei": 0,
-  "ms": 0.1372500555589795,
+  "ms": 2.610374940559268,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -4930,7 +4930,7 @@
   "achievable": 60,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.010332907550036907,
+  "ms": 0.012291944585740566,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -4950,7 +4950,7 @@
   "achievable": 20,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.030041905120015144,
+  "ms": 0.036415993236005306,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -4970,7 +4970,7 @@
   "achievable": 40,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.01054094173014164,
+  "ms": 0.0112500274553895,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -4990,7 +4990,7 @@
   "achievable": 100,
   "gas_wei": 170881940460000,
   "spend_wei": 0,
-  "ms": 0.027250032871961594,
+  "ms": 0.026041059754788876,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -5010,7 +5010,7 @@
   "achievable": 100,
   "gas_wei": 170881940460000,
   "spend_wei": 0,
-  "ms": 0.15208299737423658,
+  "ms": 0.9662910597398877,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -5030,7 +5030,7 @@
   "achievable": 40,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.010124989785254002,
+  "ms": 0.011291936971247196,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -5050,7 +5050,7 @@
   "achievable": 20,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.030666007660329342,
+  "ms": 0.025208923034369946,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -5070,7 +5070,7 @@
   "achievable": 20,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.010042102076113224,
+  "ms": 0.010541989468038082,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -5090,7 +5090,7 @@
   "achievable": 100,
   "gas_wei": 170881940460000,
   "spend_wei": 0,
-  "ms": 0.026374938897788525,
+  "ms": 0.02491706982254982,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -5110,7 +5110,7 @@
   "achievable": 100,
   "gas_wei": 170881940460000,
   "spend_wei": 0,
-  "ms": 0.009875046089291573,
+  "ms": 0.01266703475266695,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -5130,7 +5130,7 @@
   "achievable": 100,
   "gas_wei": 290499298782000,
   "spend_wei": 0,
-  "ms": 0.023833010345697403,
+  "ms": 0.020541949197649956,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -5150,7 +5150,7 @@
   "achievable": 20,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.025250017642974854,
+  "ms": 0.0212501036003232,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -5170,7 +5170,7 @@
   "achievable": 20,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.009999959729611874,
+  "ms": 0.010124989785254002,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -5190,7 +5190,7 @@
   "achievable": 100,
   "gas_wei": 290499298782000,
   "spend_wei": 0,
-  "ms": 0.029499991796910763,
+  "ms": 0.043874955736100674,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -5210,7 +5210,7 @@
   "achievable": 20,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.02295803278684616,
+  "ms": 0.02116698306053877,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -5230,7 +5230,7 @@
   "achievable": 20,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.023582950234413147,
+  "ms": 0.04354200791567564,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -5250,7 +5250,7 @@
   "achievable": 100,
   "gas_wei": 119617358322000,
   "spend_wei": 0,
-  "ms": 0.0301670515909791,
+  "ms": 0.039749895222485065,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -5270,7 +5270,7 @@
   "achievable": 20,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.026458059437572956,
+  "ms": 0.026957946829497814,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -5290,7 +5290,7 @@
   "achievable": 100,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.009917072020471096,
+  "ms": 0.010167015716433525,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -5310,7 +5310,7 @@
   "achievable": 100,
   "gas_wei": 222146522598000,
   "spend_wei": 0,
-  "ms": 0.15541596803814173,
+  "ms": 2.458833041600883,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -5330,7 +5330,7 @@
   "achievable": 100,
   "gas_wei": 17088194046000,
   "spend_wei": 0,
-  "ms": 0.010124989785254002,
+  "ms": 0.011541997082531452,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -5350,7 +5350,7 @@
   "achievable": 100,
   "gas_wei": 170881940460000,
   "spend_wei": 0,
-  "ms": 0.031542032957077026,
+  "ms": 0.02637505531311035,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -5370,7 +5370,7 @@
   "achievable": 20,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.1425830414518714,
+  "ms": 0.6282079266384244,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -5390,7 +5390,7 @@
   "achievable": 20,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.027125002816319466,
+  "ms": 0.02475001383572817,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -5410,7 +5410,7 @@
   "achievable": 100,
   "gas_wei": 222146522598000,
   "spend_wei": 0,
-  "ms": 0.1498329220339656,
+  "ms": 2.905124914832413,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -5430,7 +5430,7 @@
   "achievable": 20,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.025250017642974854,
+  "ms": 0.029959017410874367,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -5450,7 +5450,7 @@
   "achievable": 40,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.13583293184638023,
+  "ms": 0.7336670532822609,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -5470,7 +5470,7 @@
   "achievable": 100,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.025333021767437458,
+  "ms": 0.024250010028481483,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -5490,7 +5490,7 @@
   "achievable": 100,
   "gas_wei": 170881940460000,
   "spend_wei": 0,
-  "ms": 0.010750023648142815,
+  "ms": 0.011083902791142464,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -5510,7 +5510,7 @@
   "achievable": 100,
   "gas_wei": 170881940460000,
   "spend_wei": 0,
-  "ms": 0.009833951480686665,
+  "ms": 0.009792041964828968,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -5530,7 +5530,7 @@
   "achievable": 20,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.03224995452910662,
+  "ms": 0.0100000761449337,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -5550,7 +5550,7 @@
   "achievable": 100,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.030499999411404133,
+  "ms": 0.022292020730674267,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -5570,7 +5570,7 @@
   "achievable": 40,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.025333021767437458,
+  "ms": 0.030749943107366562,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -5590,7 +5590,7 @@
   "achievable": 20,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.009958981536328793,
+  "ms": 0.010874937288463116,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -5610,7 +5610,7 @@
   "achievable": 100,
   "gas_wei": 170881940460000,
   "spend_wei": 0,
-  "ms": 0.00966701190918684,
+  "ms": 0.010750023648142815,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -5630,7 +5630,7 @@
   "achievable": 20,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.009625102393329144,
+  "ms": 0.01029099803417921,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -5650,7 +5650,7 @@
   "achievable": 40,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.02833292819559574,
+  "ms": 0.026458059437572956,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -5670,7 +5670,7 @@
   "achievable": 100,
   "gas_wei": 17088194046000,
   "spend_wei": 0,
-  "ms": 0.009958050213754177,
+  "ms": 0.009750016033649445,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -5690,7 +5690,7 @@
   "achievable": 100,
   "gas_wei": 170881940460000,
   "spend_wei": 0,
-  "ms": 0.01166702713817358,
+  "ms": 0.01233397051692009,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -5710,7 +5710,7 @@
   "achievable": 20,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.029582995921373367,
+  "ms": 0.023416941985487938,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -5730,7 +5730,7 @@
   "achievable": 100,
   "gas_wei": 256322910690000,
   "spend_wei": 0,
-  "ms": 0.01025001984089613,
+  "ms": 0.010416959412395954,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -5750,7 +5750,7 @@
   "achievable": 100,
   "gas_wei": 170881940460000,
   "spend_wei": 0,
-  "ms": 0.009582960046827793,
+  "ms": 0.009790994226932526,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -5770,7 +5770,7 @@
   "achievable": 100,
   "gas_wei": 170881940460000,
   "spend_wei": 0,
-  "ms": 0.009457929991185665,
+  "ms": 0.00925001222640276,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -5790,7 +5790,7 @@
   "achievable": 60,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.028415932320058346,
+  "ms": 0.026499968953430653,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -5810,7 +5810,7 @@
   "achievable": 100,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.011875061318278313,
+  "ms": 0.009666895493865013,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -5830,7 +5830,7 @@
   "achievable": 40,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.030875089578330517,
+  "ms": 0.023707980290055275,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -5850,7 +5850,7 @@
   "achievable": 100,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.023916014470160007,
+  "ms": 0.04258390981703997,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -5870,7 +5870,7 @@
   "achievable": 40,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.16229203902184963,
+  "ms": 2.8488750103861094,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -5890,7 +5890,7 @@
   "achievable": 60,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.01025001984089613,
+  "ms": 0.011625001206994057,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -5910,7 +5910,7 @@
   "achievable": 100,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.19341707229614258,
+  "ms": 0.6884160684421659,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -5930,7 +5930,7 @@
   "achievable": 60,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.009917072020471096,
+  "ms": 0.0113749410957098,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -5950,7 +5950,7 @@
   "achievable": 100,
   "gas_wei": 102529164276000,
   "spend_wei": 0,
-  "ms": 0.02345896791666746,
+  "ms": 0.025082961656153202,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -5970,7 +5970,7 @@
   "achievable": 40,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.01116609200835228,
+  "ms": 0.013999990187585354,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"
@@ -5990,7 +5990,7 @@
   "achievable": 20,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 0.009958050213754177,
+  "ms": 0.009833020158112049,
   "error": null,
   "reasons": [
    "drop is free; baseline mints every free drop"

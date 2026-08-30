@@ -50,7 +50,8 @@ Expected: **22/22 checks pass**, covering
 ## 2. Reproduce the headline numbers (~2 min, offline, no key)
 
 ```bash
-python -m mintscout.eval.run --arms baseline_mint_all,deterministic
+python -m mintscout.eval.run --arms baseline_mint_all,deterministic \
+       --split test --subset 150 --memory
 python -m mintscout.report
 cat results/comparison.md
 ```
@@ -61,10 +62,16 @@ no flakiness, no drift.
 ## 3. Reproduce the agent arms (~5 min, offline via the committed cache)
 
 ```bash
-python -m mintscout.eval.run \
+python -m mintscout.eval.run --split test --subset 150 --memory --trajectories 5 \
   --arms baseline_mint_all,deterministic,single_prompt_llm,mintscout_no_verifier,mintscout
 python -m mintscout.report
 ```
+
+This is the exact command that produced `results/comparison.md`. It completes in
+**~0.1s making 0 live API calls** — every response comes from the committed
+cache. `tests/test_prompt_cache_consistency.py` asserts the committed prompts are
+byte-identical to the ones in that cache, so this cannot silently drift back into
+live calls.
 
 Every prompt is keyed by `sha256(model, temperature, system, messages)`, so a
 cache hit is **byte-identical** to the original live response. `temperature=0`
@@ -83,7 +90,7 @@ never used for tuning. No retuning is performed.
 
 ```bash
 python -m mintscout.eval.run --data data/drops_ink.jsonl --split all \
-       --arms baseline_mint_all,deterministic --tag ink
+       --arms baseline_mint_all,deterministic --memory --tag ink
 python scripts/cross_chain_report.py
 cat results/cross_chain.md
 ```

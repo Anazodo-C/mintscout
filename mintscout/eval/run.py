@@ -218,10 +218,17 @@ def evaluate_arm(name: str, recs: list[dict], *, use_cache: bool = True,
 
     # ---- trajectories (deliverable 04): prefer the interesting ones
     if collect_trajectories:
-        interesting = (vetoes
+        # A veto that CHANGED the verdict is the interesting artefact; a
+        # SKIP->WATCH hedge is not. Rank accordingly so the shipped trajectories
+        # show the verifier actually overruling triage.
+        changed = [r for r in vetoes
+                   if r.get("triage_verdict") and r["triage_verdict"] != r["verdict"]]
+        changed.sort(key=lambda r: 0 if r["triage_verdict"] == "MINT" else 1)
+        interesting = (changed
+                       + [r for r in rows if r["_rec"]["outcome"].get("is_regression_fixture")]
                        + [r for r in tp][:2]
                        + [r for r in fp][:2]
-                       + [r for r in rows if r["_rec"]["outcome"].get("is_regression_fixture")])
+                       + vetoes)
         seen, picked = set(), []
         for r in interesting:
             if r["collection"] in seen:
@@ -342,11 +349,21 @@ def main(argv=None) -> int:
                "arms": all_metrics}
     suffix = f"_{a.tag}" if a.tag else ""
     (RESULTS / f"metrics{suffix}.json").write_text(json.dumps(payload, indent=2) + "\n")
-    for i, t in enumerate(all_traj[:12]):
+    # Cap PER ARM, not globally. A global cap is consumed by whichever arms run
+    # first, which silently dropped every MintScout trajectory -- including the
+    # verifier vetoes that deliverable 04 specifically asks for.
+    per_arm: dict[str, int] = {}
+    written = 0
+    for t in all_traj:
+        k = t["arm"]
+        if per_arm.get(k, 0) >= 5:
+            continue
+        i = per_arm[k] = per_arm.get(k, 0) + 1
         (TRAJ / f"{t['arm']}{suffix}_{i:02d}_{t['drop']['collection'][:10]}.json").write_text(
             json.dumps(t, indent=2) + "\n")
-    print(f"\nwrote results/metrics{suffix}.json and "
-          f"{min(len(all_traj), 12)} trajectories")
+        written += 1
+    print(f"\nwrote results/metrics{suffix}.json and {written} trajectories "
+          f"({', '.join(f'{k}:{v}' for k, v in per_arm.items())})")
     return 0
 
 
