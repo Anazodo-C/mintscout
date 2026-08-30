@@ -93,7 +93,7 @@ def main() -> int:
                  f"{best['lift_over_base_rate']}× more precise. **The recall loss is real "
                  f"and is stated, not hidden.**")
     L.append("- `fill_efficiency` is graded against what was *achievable* given each "
-             "drop's per-wallet cap, not against a flat 100. 30% of Robinhood free drops "
+             "drop's per-wallet cap, not against a flat 100. 39.4% of the free drops in this dataset "
              "are cap=1 and hard-ceiling at 20 tokens with a 20-wallet fleet; grading "
              "against 100 would mostly measure the cap, not the agent.")
     L.append("- **The evaluation is counterfactual.** Taking 100 tokens of a "

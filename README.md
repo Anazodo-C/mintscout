@@ -242,8 +242,8 @@ python -m mintscout.cli preflight --chain robinhood --n 10
   the obvious failure mode of a fleet, and it is designed out.
 - **Multi-wallet policy, disclosed plainly.** Default **20** wallets, user-editable.
   Why 20: wallets 21+ only help the cap≤4 band, while each adds a key to manage,
-  a funding transaction and a sweep transaction. 30% of Robinhood free drops are
-  cap=1 and hard-ceiling at 20 tokens regardless of fleet size.
+  a funding transaction and a sweep transaction. **39.4%** of the free drops in this
+  dataset are cap=1 and hard-ceiling at 20 tokens regardless of fleet size.
 - Only publicly-offered permissionless mints, operator's own funds, no private
   data, no front-running of other users.
 
@@ -258,7 +258,7 @@ python -m mintscout.cli preflight --chain robinhood --n 10
   where 404 support would attach. A stated non-implementation beats a
   half-working detector.
 - **ERC-1155 — probe only.** Three lines of interface check; no separate
-  execution path, since none appeared in the dataset (201/201 were ERC-721).
+  execution path, since none appeared in the dataset — **701/701 were ERC-721**.
 - **Non-SeaDrop launchpads — cut**, extension point named (§5).
 - **Base (8453) — excluded**, documented: its public RPC rate-limits far too
   aggressively for a reproducible offline dataset build.

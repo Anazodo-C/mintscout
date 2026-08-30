@@ -38,6 +38,6 @@ Ground truth (measured strictly after each mint window closed): a drop is high-v
 
 - The baseline has **perfect recall by construction** — it mints everything, so it cannot miss a good drop. Its precision (0.050) is exactly the base rate, which is also a correctness check on the harness.
 - MintScout trades recall for precision: it finds 28% of the high-value drops while being 6.67× more precise. **The recall loss is real and is stated, not hidden.**
-- `fill_efficiency` is graded against what was *achievable* given each drop's per-wallet cap, not against a flat 100. 30% of Robinhood free drops are cap=1 and hard-ceiling at 20 tokens with a 20-wallet fleet; grading against 100 would mostly measure the cap, not the agent.
+- `fill_efficiency` is graded against what was *achievable* given each drop's per-wallet cap, not against a flat 100. 39.4% of the free drops in this dataset are cap=1 and hard-ceiling at 20 tokens with a 20-wallet fleet; grading against 100 would mostly measure the cap, not the agent.
 - **The evaluation is counterfactual.** Taking 100 tokens of a 1,105-supply collection would itself perturb the sellout and unique-minter signals the labels are built from. These numbers say "the agent picked the drops that did well", not "the agent would have obtained exactly this many tokens".
 - Coverage is partial and measured, not claimed: SeaDrop `PublicDropUpdated` misses both non-SeaDrop launches (StonkBrokers) and non-public SeaDrop phases (DUNLAPS's allowlist mints). See CHANGELOG.
