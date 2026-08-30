@@ -217,6 +217,15 @@ class RpcClient:
             except Exception as e:
                 last = e
                 self.stats.bump(errors=1, seconds=time.monotonic() - t0)
+                # DNS resolution failures ("nodename nor servname provided") and
+                # connection resets are transient and clear on their own within
+                # seconds. Back off harder than for a generic error rather than
+                # burning the retry budget in under a second.
+                if isinstance(e, (urllib.error.URLError, OSError)) and \
+                        any(k in str(e).lower() for k in
+                            ("nodename", "temporary failure", "name resolution",
+                             "connection reset", "timed out")):
+                    time.sleep(min(10.0, 1.5 * (attempt + 1)) * (0.7 + random.random() * 0.6))
             attempt += 1
             if attempt < retries:
                 self.stats.bump(retries=1)

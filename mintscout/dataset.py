@@ -282,8 +282,20 @@ def build(chains: list[str], days: float, out_path: str, sample: int = 200,
         supplies: dict[str, int | None] = {}
 
         def load(col: str) -> None:
-            statics[col] = _read_static(rpc, col)
-            supplies[col] = _read_total_supply(rpc, col)
+            # NEVER let one collection kill the build. The log backfill above is
+            # the expensive part (hours on a busy chain); static reads are cheap
+            # and re-runnable via scripts/refresh_statics.py. An Ink build once
+            # completed 315,807 mint events and 998,523 transfers, then discarded
+            # all of it because a single eth_call hit a transient DNS failure.
+            try:
+                statics[col] = _read_static(rpc, col)
+            except Exception as e:
+                statics[col] = {"_read_ok": False,
+                                "_read_errors": [f"{type(e).__name__}: {e}"[:200]]}
+            try:
+                supplies[col] = _read_total_supply(rpc, col)
+            except Exception:
+                supplies[col] = None
 
         with ThreadPoolExecutor(max_workers=rpc.cfg["max_concurrency"]) as ex:
             list(ex.map(load, cols))
