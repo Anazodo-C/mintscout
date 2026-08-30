@@ -1,0 +1,186 @@
+{
+  "arm": "deterministic",
+  "drop": {
+    "chain": "robinhood",
+    "collection": "0x39e07b0c3cec4b9829fc195d7c26564208b9b0e0",
+    "start_time": 1787410821,
+    "cap": 10,
+    "mint_price_wei": 0,
+    "fixture_name": null
+  },
+  "decision_cutoff_ts": 1787410821,
+  "tool_calls": [
+    {
+      "tool": "erc165_probe",
+      "input": {
+        "collection": "0x39e07b0c3cec4b9829fc195d7c26564208b9b0e0"
+      },
+      "output": {
+        "standard": "erc721",
+        "is_erc721": true,
+        "is_erc1155": false,
+        "answers_ownerof_and_balanceof": false,
+        "note": null
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "collection_stats",
+      "input": {
+        "collection": "0x39e07b0c3cec4b9829fc195d7c26564208b9b0e0"
+      },
+      "output": {
+        "max_supply": 7777,
+        "owner": "0x39f6e2d2909d031ecad64d269dda036212074b24",
+        "name": "Ethereum RH",
+        "symbol": "EthereumRH",
+        "code_size": 19658,
+        "max_supply_sane": true
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "metadata_fetch",
+      "input": {
+        "allow_network": false
+      },
+      "output": {
+        "present": true,
+        "shape": "drop_stage_config",
+        "name": null,
+        "description": null,
+        "n_attributes": 0,
+        "has_image": false,
+        "image_is_on_chain": false,
+        "token_bound_account": false,
+        "n_stages": 1,
+        "stage_names": [
+          "FCFS"
+        ],
+        "has_allowlist_stage": false,
+        "has_public_stage": false,
+        "note": "drop-stage configuration, not token art metadata",
+        "drop_uri": "ipfs://bafkreicre64iwczm66qv2un7rl57ulikxqf3rstrnrv4qtlvd6bdkmnauu",
+        "contract_uri": "",
+        "source": "drop_uri",
+        "on_chain_metadata": false,
+        "provenance": "pinned",
+        "contract_uri_present": false
+      },
+      "ms": 0.1
+    },
+    {
+      "tool": "erc6551_probe",
+      "input": {},
+      "output": {
+        "token_bound_account": false,
+        "source": "metadata field"
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "economics",
+      "input": {},
+      "output": {
+        "mint_price_wei": 0,
+        "is_free": true,
+        "max_per_wallet": 10,
+        "fee_bps": 1000,
+        "restrict_fee_recipients": true,
+        "duration_hours": 24.0,
+        "starts_in_s": 38043,
+        "advance_notice_s": 38043
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "drop_config_history",
+      "input": {},
+      "output": {
+        "n_revisions_before_cutoff": 3,
+        "distinct_prices": [
+          0,
+          280000000000000
+        ],
+        "price_flips": 1,
+        "revisions": [
+          {
+            "mint_price": 0,
+            "start_time": 1787410821,
+            "end_time": 1787497221,
+            "max_per_wallet": 10,
+            "block_timestamp": 1787372778
+          },
+          {
+            "mint_price": 0,
+            "start_time": 1787410821,
+            "end_time": 1787497221,
+            "max_per_wallet": 10,
+            "block_timestamp": 1787409029
+          },
+          {
+            "mint_price": 280000000000000,
+            "start_time": 1787410821,
+            "end_time": 1787497221,
+            "max_per_wallet": 10,
+            "block_timestamp": 1787410783
+          }
+        ]
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "mint_velocity",
+      "input": {},
+      "output": {
+        "available": false,
+        "mints_per_min": null,
+        "reason": "decision point is at/before startTime; no mint has occurred yet. Outcome signal, not a feature."
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "deployer_history",
+      "input": {},
+      "output": {
+        "deployer": "0x39f6e2d2909d031ecad64d269dda036212074b24",
+        "known": false,
+        "prior_collections": 0,
+        "prior_high_value": 0,
+        "note": "no memory store attached"
+      },
+      "ms": 0.0
+    }
+  ],
+  "triage": {
+    "verdict": "MINT",
+    "score": 100,
+    "reasons": [
+      "drop metadata resolves (configured through the standard flow)",
+      "contract is a full implementation (19,658 bytes), not a 45-byte minimal proxy",
+      "3 config revisions before open (operator effort)",
+      "supply 7,777 in the plausible band"
+    ],
+    "risk_flags": []
+  },
+  "verifier": null,
+  "action": {
+    "mode": "dry_run",
+    "wallets": 10,
+    "achievable": 100,
+    "gas_wei": 170881940460000
+  },
+  "outcome": {
+    "label": "low_value",
+    "label_detail": {
+      "fill_ratio": 0.2788,
+      "fill_ok": false,
+      "unique_minters": 476,
+      "minters_ok": true,
+      "secondary_transfers_48h": 27,
+      "secondary_ok": true,
+      "label": "low_value"
+    },
+    "note": "outcome is NEVER visible to the agent; shown here only for post-hoc scoring."
+  }
+}

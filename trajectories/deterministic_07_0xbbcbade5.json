@@ -1,0 +1,177 @@
+{
+  "arm": "deterministic",
+  "drop": {
+    "chain": "robinhood",
+    "collection": "0xbbcbade551f8f97fc50e03f689f55640a4eb9fef",
+    "start_time": 1787279844,
+    "cap": 6,
+    "mint_price_wei": 0,
+    "fixture_name": null
+  },
+  "decision_cutoff_ts": 1787279844,
+  "tool_calls": [
+    {
+      "tool": "erc165_probe",
+      "input": {
+        "collection": "0xbbcbade551f8f97fc50e03f689f55640a4eb9fef"
+      },
+      "output": {
+        "standard": "erc721",
+        "is_erc721": true,
+        "is_erc1155": false,
+        "answers_ownerof_and_balanceof": false,
+        "note": null
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "collection_stats",
+      "input": {
+        "collection": "0xbbcbade551f8f97fc50e03f689f55640a4eb9fef"
+      },
+      "output": {
+        "max_supply": 6666,
+        "owner": "0x92796f9942dccb1ab73d20c4122536a535ee7dad",
+        "name": "Pixelhood NFT",
+        "symbol": "PIXEL",
+        "code_size": 19805,
+        "max_supply_sane": true
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "metadata_fetch",
+      "input": {
+        "allow_network": false
+      },
+      "output": {
+        "present": true,
+        "shape": "drop_stage_config",
+        "name": null,
+        "description": null,
+        "n_attributes": 0,
+        "has_image": false,
+        "image_is_on_chain": false,
+        "token_bound_account": false,
+        "n_stages": 1,
+        "stage_names": [
+          "Public"
+        ],
+        "has_allowlist_stage": false,
+        "has_public_stage": true,
+        "note": "drop-stage configuration, not token art metadata",
+        "drop_uri": "ipfs://bafkreih63qj75e4qcwk7rra2s6sc3iiiskxthqx3qmmbgn3oo5v6ehfqt4",
+        "contract_uri": "ipfs://QmPgaZfDxVWkijhopy4REH5MJcRH6y8X9wuUkyAPNKgLz2",
+        "source": "drop_uri",
+        "on_chain_metadata": false,
+        "provenance": "pinned",
+        "contract_uri_present": true
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "erc6551_probe",
+      "input": {},
+      "output": {
+        "token_bound_account": false,
+        "source": "metadata field"
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "economics",
+      "input": {},
+      "output": {
+        "mint_price_wei": 0,
+        "is_free": true,
+        "max_per_wallet": 6,
+        "fee_bps": 1000,
+        "restrict_fee_recipients": true,
+        "duration_hours": 1.0,
+        "starts_in_s": 99,
+        "advance_notice_s": 99
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "drop_config_history",
+      "input": {},
+      "output": {
+        "n_revisions_before_cutoff": 2,
+        "distinct_prices": [
+          0
+        ],
+        "price_flips": 0,
+        "revisions": [
+          {
+            "mint_price": 0,
+            "start_time": 1787279844,
+            "end_time": 1787283444,
+            "max_per_wallet": 6,
+            "block_timestamp": 1787279745
+          },
+          {
+            "mint_price": 0,
+            "start_time": 1787279844,
+            "end_time": 1787283444,
+            "max_per_wallet": 6,
+            "block_timestamp": 1787279794
+          }
+        ]
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "mint_velocity",
+      "input": {},
+      "output": {
+        "available": false,
+        "mints_per_min": null,
+        "reason": "decision point is at/before startTime; no mint has occurred yet. Outcome signal, not a feature."
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "deployer_history",
+      "input": {},
+      "output": {
+        "deployer": "0x92796f9942dccb1ab73d20c4122536a535ee7dad",
+        "known": false,
+        "prior_collections": 0,
+        "prior_high_value": 0,
+        "note": "no memory store attached"
+      },
+      "ms": 0.0
+    }
+  ],
+  "triage": {
+    "verdict": "MINT",
+    "score": 80,
+    "reasons": [
+      "drop metadata resolves (configured through the standard flow)",
+      "contract is a full implementation (19,805 bytes), not a 45-byte minimal proxy",
+      "supply 6,666 in the plausible band"
+    ],
+    "risk_flags": []
+  },
+  "verifier": null,
+  "action": {
+    "mode": "dry_run",
+    "wallets": 17,
+    "achievable": 100,
+    "gas_wei": 290499298782000
+  },
+  "outcome": {
+    "label": "low_value",
+    "label_detail": {
+      "fill_ratio": 0.1733,
+      "fill_ok": false,
+      "unique_minters": 199,
+      "minters_ok": true,
+      "secondary_transfers_48h": 0,
+      "secondary_ok": false,
+      "label": "low_value"
+    },
+    "note": "outcome is NEVER visible to the agent; shown here only for post-hoc scoring."
+  }
+}

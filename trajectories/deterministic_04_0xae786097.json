@@ -1,0 +1,180 @@
+{
+  "arm": "deterministic",
+  "drop": {
+    "chain": "robinhood",
+    "collection": "0xae78609772fbfac0d25d6fc44367a97282e8c82b",
+    "start_time": 1787634003,
+    "cap": 2,
+    "mint_price_wei": 0,
+    "fixture_name": null
+  },
+  "decision_cutoff_ts": 1787634003,
+  "tool_calls": [
+    {
+      "tool": "erc165_probe",
+      "input": {
+        "collection": "0xae78609772fbfac0d25d6fc44367a97282e8c82b"
+      },
+      "output": {
+        "standard": "erc721",
+        "is_erc721": true,
+        "is_erc1155": false,
+        "answers_ownerof_and_balanceof": false,
+        "note": null
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "collection_stats",
+      "input": {
+        "collection": "0xae78609772fbfac0d25d6fc44367a97282e8c82b"
+      },
+      "output": {
+        "max_supply": 3333,
+        "owner": "0x4323a47993f2ad8b5c2827be22df00d957492491",
+        "name": "Tendies Tenders",
+        "symbol": "TEN",
+        "code_size": 19658,
+        "max_supply_sane": true
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "metadata_fetch",
+      "input": {
+        "allow_network": false
+      },
+      "output": {
+        "present": true,
+        "shape": "drop_stage_config",
+        "name": null,
+        "description": null,
+        "n_attributes": 0,
+        "has_image": false,
+        "image_is_on_chain": false,
+        "token_bound_account": false,
+        "n_stages": 3,
+        "stage_names": [
+          "Public stage",
+          "GTD Mint",
+          "TENDIES Holder Mint"
+        ],
+        "has_allowlist_stage": false,
+        "has_public_stage": true,
+        "note": "drop-stage configuration, not token art metadata",
+        "drop_uri": "ipfs://bafkreifgpjqqbblthcj5xl3qzvygboyhpii4fumtjyvndn5xa2rfuj35qe",
+        "contract_uri": "",
+        "source": "drop_uri",
+        "on_chain_metadata": false,
+        "provenance": "pinned",
+        "contract_uri_present": false
+      },
+      "ms": 0.1
+    },
+    {
+      "tool": "erc6551_probe",
+      "input": {},
+      "output": {
+        "token_bound_account": false,
+        "source": "metadata field"
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "economics",
+      "input": {},
+      "output": {
+        "mint_price_wei": 0,
+        "is_free": true,
+        "max_per_wallet": 2,
+        "fee_bps": 1000,
+        "restrict_fee_recipients": true,
+        "duration_hours": 2.0,
+        "starts_in_s": 6595,
+        "advance_notice_s": 6595
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "drop_config_history",
+      "input": {},
+      "output": {
+        "n_revisions_before_cutoff": 2,
+        "distinct_prices": [
+          0,
+          4200000000000000
+        ],
+        "price_flips": 1,
+        "revisions": [
+          {
+            "mint_price": 4200000000000000,
+            "start_time": 1787634003,
+            "end_time": 1787641203,
+            "max_per_wallet": 1,
+            "block_timestamp": 1787615671
+          },
+          {
+            "mint_price": 0,
+            "start_time": 1787634003,
+            "end_time": 1787641203,
+            "max_per_wallet": 2,
+            "block_timestamp": 1787627408
+          }
+        ]
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "mint_velocity",
+      "input": {},
+      "output": {
+        "available": false,
+        "mints_per_min": null,
+        "reason": "decision point is at/before startTime; no mint has occurred yet. Outcome signal, not a feature."
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "deployer_history",
+      "input": {},
+      "output": {
+        "deployer": "0x4323a47993f2ad8b5c2827be22df00d957492491",
+        "known": false,
+        "prior_collections": 0,
+        "prior_high_value": 0,
+        "note": "no memory store attached"
+      },
+      "ms": 0.0
+    }
+  ],
+  "triage": {
+    "verdict": "MINT",
+    "score": 80,
+    "reasons": [
+      "drop metadata resolves (configured through the standard flow)",
+      "contract is a full implementation (19,658 bytes), not a 45-byte minimal proxy",
+      "supply 3,333 in the plausible band"
+    ],
+    "risk_flags": []
+  },
+  "verifier": null,
+  "action": {
+    "mode": "dry_run",
+    "wallets": 20,
+    "achievable": 40,
+    "gas_wei": 341763880920000
+  },
+  "outcome": {
+    "label": "high_value",
+    "label_detail": {
+      "fill_ratio": 1.0,
+      "fill_ok": true,
+      "unique_minters": 1815,
+      "minters_ok": true,
+      "secondary_transfers_48h": 64,
+      "secondary_ok": true,
+      "label": "high_value"
+    },
+    "note": "outcome is NEVER visible to the agent; shown here only for post-hoc scoring."
+  }
+}

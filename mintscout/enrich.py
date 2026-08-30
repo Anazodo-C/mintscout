@@ -61,8 +61,7 @@ def collection_stats(ctx) -> dict:
     sane = ms is not None and 0 < ms <= 250_000
     return {"max_supply": ms, "owner": s.get("owner"), "name": s.get("name"),
             "symbol": s.get("symbol"), "code_size": s.get("code_size"),
-            "max_supply_sane": sane,
-            "note": "total_supply is an OUTCOME and is not available at decision time."}
+            "max_supply_sane": sane}
 
 
 def metadata_fetch(ctx, allow_network: bool = False) -> dict:
@@ -107,9 +106,6 @@ def metadata_fetch(ctx, allow_network: bool = False) -> dict:
         "on_chain_metadata": is_on_chain(drop_uri) or is_on_chain(contract_uri),
         "provenance": prov,
         "contract_uri_present": bool(contract_uri),
-        "_tokenuri_excluded": ("tokenURI(1) deliberately excluded: it reverts "
-                               "for never-minted tokens, so its availability "
-                               "leaks the outcome label."),
     })
     return out
 

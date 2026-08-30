@@ -1,0 +1,198 @@
+{
+  "arm": "baseline_mint_all",
+  "drop": {
+    "chain": "robinhood",
+    "collection": "0xafb63db77040a7cd239968e606729a82892c60c1",
+    "start_time": 1787325311,
+    "cap": 2,
+    "mint_price_wei": 0,
+    "fixture_name": null
+  },
+  "decision_cutoff_ts": 1787325311,
+  "tool_calls": [
+    {
+      "tool": "erc165_probe",
+      "input": {
+        "collection": "0xafb63db77040a7cd239968e606729a82892c60c1"
+      },
+      "output": {
+        "standard": "erc721",
+        "is_erc721": true,
+        "is_erc1155": false,
+        "answers_ownerof_and_balanceof": false,
+        "note": null
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "collection_stats",
+      "input": {
+        "collection": "0xafb63db77040a7cd239968e606729a82892c60c1"
+      },
+      "output": {
+        "max_supply": 6200,
+        "owner": "0xff1d647773dc41b5dba247bb8bbed97afa9b21cd",
+        "name": "Shredding Sassy - RH",
+        "symbol": "Shredding Sassy",
+        "code_size": 45,
+        "max_supply_sane": true
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "metadata_fetch",
+      "input": {
+        "allow_network": false
+      },
+      "output": {
+        "present": true,
+        "shape": "drop_stage_config",
+        "name": null,
+        "description": null,
+        "n_attributes": 0,
+        "has_image": false,
+        "image_is_on_chain": false,
+        "token_bound_account": false,
+        "n_stages": 1,
+        "stage_names": [
+          "Public stage"
+        ],
+        "has_allowlist_stage": false,
+        "has_public_stage": true,
+        "note": "drop-stage configuration, not token art metadata",
+        "drop_uri": "ipfs://bafkreih333tf2gakek2q7sphwtepz5epu52xbtwxixfqx34ev774vpfhfu",
+        "contract_uri": "",
+        "source": "drop_uri",
+        "on_chain_metadata": false,
+        "provenance": "pinned",
+        "contract_uri_present": false
+      },
+      "ms": 0.1
+    },
+    {
+      "tool": "erc6551_probe",
+      "input": {},
+      "output": {
+        "token_bound_account": false,
+        "source": "metadata field"
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "economics",
+      "input": {},
+      "output": {
+        "mint_price_wei": 0,
+        "is_free": true,
+        "max_per_wallet": 2,
+        "fee_bps": 1000,
+        "restrict_fee_recipients": true,
+        "duration_hours": 0.03,
+        "starts_in_s": 121,
+        "advance_notice_s": 121
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "drop_config_history",
+      "input": {},
+      "output": {
+        "n_revisions_before_cutoff": 5,
+        "distinct_prices": [
+          0,
+          25000000000000,
+          45000000000000
+        ],
+        "price_flips": 2,
+        "revisions": [
+          {
+            "mint_price": 25000000000000,
+            "start_time": 1787319011,
+            "end_time": 1787405411,
+            "max_per_wallet": 50,
+            "block_timestamp": 1787315432
+          },
+          {
+            "mint_price": 25000000000000,
+            "start_time": 1787319011,
+            "end_time": 1787405411,
+            "max_per_wallet": 50,
+            "block_timestamp": 1787315499
+          },
+          {
+            "mint_price": 45000000000000,
+            "start_time": 1787319011,
+            "end_time": 1787405411,
+            "max_per_wallet": 50,
+            "block_timestamp": 1787315944
+          },
+          {
+            "mint_price": 45000000000000,
+            "start_time": 1787319011,
+            "end_time": 1787405411,
+            "max_per_wallet": 50,
+            "block_timestamp": 1787316050
+          },
+          {
+            "mint_price": 0,
+            "start_time": 1787325311,
+            "end_time": 1787325431,
+            "max_per_wallet": 2,
+            "block_timestamp": 1787325190
+          }
+        ]
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "mint_velocity",
+      "input": {},
+      "output": {
+        "available": false,
+        "mints_per_min": null,
+        "reason": "decision point is at/before startTime; no mint has occurred yet. Outcome signal, not a feature."
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "deployer_history",
+      "input": {},
+      "output": {
+        "deployer": "0xff1d647773dc41b5dba247bb8bbed97afa9b21cd",
+        "known": false,
+        "prior_collections": 0,
+        "prior_high_value": 0,
+        "note": "no memory store attached"
+      },
+      "ms": 0.0
+    }
+  ],
+  "triage": {
+    "verdict": "MINT",
+    "score": 100,
+    "reasons": [
+      "drop is free; baseline mints every free drop"
+    ],
+    "risk_flags": []
+  },
+  "verifier": null,
+  "action": {
+    "mode": "dry_run",
+    "wallets": 20,
+    "achievable": 40,
+    "gas_wei": 341763880920000
+  },
+  "outcome": {
+    "label": "high_value",
+    "label_detail": {
+      "fill_ratio": 0.866,
+      "fill_ok": true,
+      "unique_minters": 2686,
+      "minters_ok": true,
+      "secondary_transfers_48h": 125,
+      "secondary_ok": true,
+      "label": "high_value"
+    },
+    "note": "outcome is NEVER visible to the agent; shown here only for post-hoc scoring."
+  }
+}

@@ -19,6 +19,28 @@ ROOT = pathlib.Path(__file__).resolve().parents[2]
 CACHE_DIR = ROOT / "data/llm_cache"
 DEFAULT_MODEL = "claude-sonnet-4-5-20250929"
 
+
+def _load_dotenv() -> None:
+    """Minimal .env loader so REPRODUCE.md's `cp .env.example .env` just works.
+
+    Deliberately does not overwrite variables already set in the environment,
+    and never logs a value.
+    """
+    f = ROOT / ".env"
+    if not f.exists():
+        return
+    for line in f.read_text().splitlines():
+        line = line.strip()
+        if not line or line.startswith("#") or "=" not in line:
+            continue
+        k, _, v = line.partition("=")
+        k, v = k.strip(), v.strip().strip("'\"")
+        if k and v and k not in os.environ:
+            os.environ[k] = v
+
+
+_load_dotenv()
+
 _lock = threading.Lock()
 
 

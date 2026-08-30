@@ -87,10 +87,44 @@ def resolve(uri: str | None, *, allow_network: bool = True,
 
 
 def summarize(meta: dict | None) -> dict:
-    """Flatten metadata into the handful of signals the rubric actually uses."""
+    """Flatten metadata into the handful of signals the rubric actually uses.
+
+    Two different documents show up behind these URIs and they are not
+    interchangeable -- measured across 553 pinned files:
+
+      * 546/553 are OpenSea DROP-STAGE config ({"stages": [...],
+        "erc1155TokenMintDetails": ...}). No art, no traits. What it tells you is
+        that the operator configured the drop through the standard OpenSea flow,
+        and how many phases they set up.
+      * 7/553 are true COLLECTION metadata (name/description/image/category),
+        which come from contractURI().
+
+    Treating the first kind as "metadata present, 0 attributes" would score a
+    properly-configured drop as though it had empty metadata. They are
+    distinguished explicitly instead.
+    """
     if not meta:
-        return {"present": False, "name": None, "description": None,
-                "n_attributes": 0, "has_image": False, "token_bound_account": False}
+        return {"present": False, "shape": None, "name": None, "description": None,
+                "n_attributes": 0, "has_image": False, "token_bound_account": False,
+                "n_stages": 0}
+
+    # --- OpenSea drop-stage config -------------------------------------------
+    if isinstance(meta.get("stages"), list):
+        stages = [s for s in meta["stages"] if isinstance(s, dict)]
+        names = [str(s.get("name") or "")[:40] for s in stages]
+        return {
+            "present": True,
+            "shape": "drop_stage_config",
+            "name": None, "description": None,
+            "n_attributes": 0, "has_image": False, "image_is_on_chain": False,
+            "token_bound_account": False,
+            "n_stages": len(stages),
+            "stage_names": names[:6],
+            "has_allowlist_stage": any(
+                ("allow" in n.lower() or "presale" in n.lower()) for n in names),
+            "has_public_stage": any("public" in n.lower() for n in names),
+            "note": "drop-stage configuration, not token art metadata",
+        }
     attrs = meta.get("attributes") or []
     if not isinstance(attrs, list):
         attrs = []
@@ -101,6 +135,8 @@ def summarize(meta: dict | None) -> dict:
             for a in attrs if isinstance(a, dict))
     return {
         "present": True,
+        "shape": "collection_metadata",
+        "n_stages": 0,
         "name": meta.get("name"),
         "description": (meta.get("description") or "")[:400] or None,
         "n_attributes": len(attrs),

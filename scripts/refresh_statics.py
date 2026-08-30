@@ -33,22 +33,27 @@ def main():
         by_chain.setdefault(r["chain"], []).append(r)
 
     for chain, rs in by_chain.items():
-        rpc = client(chain, rps=5.0)
+        rpc = client(chain, rps=14.0)
         print(f"{chain}: refreshing statics for {len(rs)} collections "
               f"(workers={a.workers})")
         done = [0]
 
         def one(r):
-            for attempt in range(3):
+            # Keep the BEST partial result rather than discarding everything when
+            # a single selector read fails. An earlier version replaced the whole
+            # record with {"_read_ok": False}, throwing away name/max_supply/owner
+            # that had actually been read successfully.
+            st = {"_read_ok": False, "_read_errors": ["not attempted"]}
+            for attempt in range(2):
                 try:
-                    st = _read_static(rpc, r["collection"])
-                    if st.get("_read_ok"):
+                    cand = _read_static(rpc, r["collection"])
+                    if len(cand.get("_read_errors") or []) < len(st.get("_read_errors") or [99]):
+                        st = cand
+                    if cand.get("_read_ok"):
                         break
-                except Exception:
-                    pass
-                time.sleep(1.5 * (attempt + 1))
-            else:
-                st = {"_read_ok": False, "_read_errors": ["exhausted"]}
+                except Exception as e:
+                    st.setdefault("_read_errors", []).append(type(e).__name__)
+                time.sleep(0.8 * (attempt + 1))
             # preserve provenance note, drop the leaky field from features
             st.pop("token_uri_1", None)
             r["features_at_cutoff"]["static"] = st
@@ -57,7 +62,7 @@ def main():
             except Exception:
                 pass
             done[0] += 1
-            if done[0] % 25 == 0:
+            if done[0] % 50 == 0:
                 print(f"    {done[0]}/{len(rs)}", flush=True)
 
         with ThreadPoolExecutor(max_workers=a.workers) as ex:

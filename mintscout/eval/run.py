@@ -203,12 +203,23 @@ def main(argv=None) -> int:
     ap.add_argument("--model", default=None)
     ap.add_argument("--workers", type=int, default=6)
     ap.add_argument("--trajectories", type=int, default=5)
+    ap.add_argument("--split", default="test", choices=["test", "calib", "all"],
+                    help="which split to score on. Default 'test': the "
+                         "deterministic rubric is hand-tuned on 'calib', so "
+                         "scoring every arm on held-out 'test' keeps the "
+                         "comparison fair.")
     a = ap.parse_args(argv)
 
-    recs = load(a.data)
+    from .split import split as _split
+    allrecs = load(a.data)
+    calib, test = _split(allrecs)
+    recs = {"test": test, "calib": calib, "all": allrecs}[a.split]
     if a.limit:
         recs = recs[:a.limit]
-    print(f"dataset: {a.data}  n={len(recs)}  {summarize(recs)}")
+    print(f"dataset: {a.data}")
+    print(f"  full={len(allrecs)}  calib={len(calib)}  test={len(test)}  "
+          f"-> scoring on '{a.split}' (n={len(recs)})")
+    print(f"  {summarize(recs)}")
     RESULTS.mkdir(exist_ok=True); TRAJ.mkdir(exist_ok=True)
 
     all_metrics, all_traj = [], []
@@ -230,7 +241,9 @@ def main(argv=None) -> int:
         (RESULTS / f"rows_{arm}.json").write_text(json.dumps(res["rows"], indent=1))
 
     from ..agent import llm as _llm
-    payload = {"dataset": a.data, "n": len(recs),
+    payload = {"dataset": a.data, "n": len(recs), "split": a.split,
+               "split_sizes": {"full": len(allrecs), "calib": len(calib),
+                               "test": len(test)},
                "label_policy": LABEL_POLICY.__dict__,
                "labels": summarize(recs),
                "llm": _llm.STATS.as_dict(),

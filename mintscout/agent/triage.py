@@ -13,9 +13,18 @@ BASELINE_SYSTEM = (PROMPTS / "single_prompt_baseline.md").read_text()
 VALID = {"MINT", "WATCH", "SKIP"}
 
 
-def _clean(d: dict) -> dict:
-    """Strip internal keys so the model sees only evidence."""
-    return {k: v for k, v in d.items() if not k.startswith("_")}
+def _clean(d):
+    """Strip internal keys at every level so the model sees only evidence.
+
+    Recursive on purpose: a note nested inside `metadata` is just as much
+    commentary-in-the-payload as a top-level one, and it costs tokens on every
+    call while telling the model nothing it can weigh.
+    """
+    if isinstance(d, dict):
+        return {k: _clean(v) for k, v in d.items() if not str(k).startswith("_")}
+    if isinstance(d, list):
+        return [_clean(v) for v in d]
+    return d
 
 
 def triage(dossier: dict, *, use_cache: bool = True,

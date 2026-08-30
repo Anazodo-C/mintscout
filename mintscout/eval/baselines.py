@@ -33,59 +33,80 @@ def deterministic_rubric(dossier: dict) -> dict:
     Included as its own arm because it answers the question a judge should ask:
     how much of the gain actually needs a language model? Reporting this honestly
     is worth more than a bigger headline number.
+
+    CALIBRATION DISCIPLINE: every weight below was chosen by looking ONLY at the
+    calibration split (`mintscout/eval/split.py`), and every arm is reported on
+    the held-out test split. A hand-tuned rubric scored on the drops it was tuned
+    against measures memorisation, not skill.
+
+    Measured on calibration (n=341, 13 high-value, base rate 3.8%):
+
+      feature                P(f|high)  P(f|low)   lift
+      resolvable drop meta     1.000     0.451     2.2   <- necessary condition
+      code_size > 6000         0.308     0.012    25.2   <- strongest positive
+      >= 3 config revisions    0.308     0.061     5.1
+      supply in 200..20000     1.000     0.799     1.3
+
+    Note what is NOT here. On-chain art, ERC-6551 and trait counts are all in the
+    published rubric and all measured 0.000 for BOTH classes on this dataset: the
+    DropURI resolves to OpenSea drop-stage config, not token art metadata, so
+    those signals are simply not observable at decision time here. Scoring them
+    would be scoring noise, so they are left out and the omission is stated.
     """
     col = dossier.get("collection", {}) or {}
     meta = dossier.get("metadata", {}) or {}
     econ = dossier.get("economics", {}) or {}
     hist = dossier.get("config_history", {}) or {}
-    tba = (dossier.get("erc6551") or {}).get("token_bound_account")
 
-    score, reasons, flags = 50, [], []
+    score, reasons, flags = 0, [], []
+
+    # Necessary condition: a resolvable drop configuration. Every high-value drop
+    # in calibration had one; 55% of low-value drops did not.
+    if not meta.get("present"):
+        return {"verdict": "SKIP", "score": 0, "reasons": [],
+                "evidence": [],
+                "risk_flags": [f"no resolvable drop metadata "
+                               f"(provenance={meta.get('provenance')})"]}
+    score += 30
+    reasons.append("drop metadata resolves (configured through the standard flow)")
+
+    cs = col.get("code_size") or 0
+    if cs > 6000:
+        score += 40
+        reasons.append(f"contract is a full implementation ({cs:,} bytes), "
+                       f"not a {45}-byte minimal proxy")
+    elif cs and cs <= 100:
+        score -= 5
+        flags.append(f"minimal-proxy-sized contract ({cs} bytes)")
+
+    revs = hist.get("n_revisions_before_cutoff") or 0
+    if revs >= 3:
+        score += 25
+        reasons.append(f"{revs} config revisions before open (operator effort)")
 
     ms = col.get("max_supply")
     if not col.get("max_supply_sane"):
-        score -= 30
+        score -= 25
         flags.append(f"max_supply not sane ({ms})")
     elif 200 <= (ms or 0) <= 20_000:
         score += 10
-        reasons.append(f"supply {ms} in the plausible band")
+        reasons.append(f"supply {ms:,} in the plausible band")
 
-    if not meta.get("present"):
+    if (econ.get("duration_hours") or 0) >= 24:
+        score += 8
+        reasons.append("mint window >= 24h")
+
+    nm = (meta.get("name") or col.get("name") or "").strip()
+    if PLACEHOLDER.match(nm):
         score -= 30
-        flags.append(f"no resolvable metadata (provenance={meta.get('provenance')})")
-    else:
-        if meta.get("on_chain_metadata"):
-            score += 25
-            reasons.append("fully on-chain metadata (costly signal)")
-        n = meta.get("n_attributes") or 0
-        if n >= 3:
-            score += 12
-            reasons.append(f"{n} structured attributes")
-        elif n == 0:
-            score -= 8
-            flags.append("no attributes")
-        if meta.get("has_image"):
-            score += 3
-        nm = (meta.get("name") or col.get("name") or "")
-        if PLACEHOLDER.match(nm.strip()):
-            score -= 25
-            flags.append(f"placeholder-looking name {nm!r}")
+        flags.append(f"placeholder-looking name {nm!r}")
 
-    if tba:
-        score += 15
-        reasons.append("ERC-6551 token-bound account")
-
-    flips = hist.get("price_flips") or 0
-    if flips >= 2:
-        score -= 10
-        flags.append(f"{flips} price flips before cutoff")
-
-    if (econ.get("duration_hours") or 0) <= 0:
-        score -= 10
-        flags.append("non-positive mint window")
+    if (hist.get("price_flips") or 0) >= 2:
+        score -= 15
+        flags.append(f"{hist['price_flips']} price flips before cutoff")
 
     score = max(0, min(100, score))
-    verdict = "MINT" if score >= 70 else ("WATCH" if score >= 55 else "SKIP")
+    verdict = "MINT" if score >= 70 else ("WATCH" if score >= 45 else "SKIP")
     return {"verdict": verdict, "score": score, "reasons": reasons,
             "evidence": [], "risk_flags": flags}
 
