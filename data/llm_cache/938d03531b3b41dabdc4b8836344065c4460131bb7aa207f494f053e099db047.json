@@ -1,0 +1,16 @@
+{
+ "model": "claude-sonnet-4-5-20250929",
+ "temperature": 0.0,
+ "system": "You are deciding whether to mint a free NFT drop. You will be shown the raw drop\nconfiguration. Answer MINT or SKIP.\n\nReturn ONLY JSON: {\"verdict\": \"MINT\" | \"SKIP\", \"score\": 0-100, \"reasons\": [\"...\"]}\n",
+ "messages": [
+  {
+   "role": "user",
+   "content": "Drop configuration:\n\n```json\n{\"chain\":\"robinhood\",\"collection\":{\"code_size\":45,\"max_supply\":1000,\"max_supply_sane\":true,\"name\":\"cat on showar\",\"owner\":\"0x74f474951710be2c58e8c2d7831b8e3e0a4b1bc3\",\"symbol\":\"cat\"},\"max_supply\":1000,\"name\":\"cat on showar\",\"public_drop\":{\"advance_notice_s\":0,\"duration_hours\":24.0,\"fee_bps\":1000,\"is_free\":true,\"max_per_wallet\":10,\"mint_price_wei\":0,\"restrict_fee_recipients\":true,\"starts_in_s\":-26}}\n```\n\nReturn JSON."
+  }
+ ],
+ "text": "```json\n{\n  \"verdict\": \"SKIP\",\n  \"score\": 15,\n  \"reasons\": [\n    \"Poor quality name with typo: 'cat on showar' (likely meant 'shower')\",\n    \"Very small code size (45 bytes) suggests minimal/potentially low-effort contract\",\n    \"Generic meme concept without clear utility or uniqueness\",\n    \"High max per wallet (10) relative to supply (1000) enables concentration\",\n    \"10% fee (1000 bps) is relatively high for a free mint\",\n    \"Drop already started 26 seconds ago, reducing exclusivity\",\n    \"No notable collection owner or established reputation\",\n    \"Overall appears to be low-effort meme NFT with limited value proposition\"\n  ]\n}\n```",
+ "usage": {
+  "input_tokens": 240,
+  "output_tokens": 184
+ }
+}

@@ -22,9 +22,9 @@ def load(tag=""):
 
 
 def main():
-    rh, ink = load(), load("ink")
+    rh, ink = load("agent"), load("ink")
     if not rh or not ink:
-        print("need results/metrics.json and results/metrics_ink.json")
+        print("need results/metrics_agent.json and results/metrics_ink.json")
         return 1
     L = ["# Cross-chain generalisation — Robinhood → Ink\n"]
     L.append("The deterministic rubric's weights were chosen by looking at the "
@@ -36,7 +36,7 @@ def main():
     L.append("| | Robinhood (held-out split) | Ink (entirely unseen) |")
     L.append("|---|---|---|")
     L.append(f"| Chain id / stack | 4663 · Arbitrum Orbit | 57073 · OP Stack |")
-    L.append(f"| Drops evaluated | {rh['n']} | {ink['n']} |")
+    L.append(f"| Drops evaluated | {rh['n']} (stratified subset) | {ink['n']} (all) |")
     L.append(f"| High-value | {rh['labels']['high_value']} | {ink['labels']['high_value']} |")
     L.append(f"| Base rate | {rh['labels']['base_rate']:.1%} | {ink['labels']['base_rate']:.1%} |")
     for arm in ("baseline_mint_all", "deterministic"):
@@ -67,8 +67,26 @@ def main():
                  f"**{d_rh['lift_over_base_rate']}×** on Robinhood held-out.")
         L.append("- The signals it uses (a resolvable drop configuration, a full "
                  "contract rather than a minimal proxy, multiple config revisions) "
-                 "describe **how a serious operator behaves**, which is why they "
-                 "are not chain-specific.")
+                 "describe **how a serious operator behaves**, which is why the "
+                 "ranking is not chain-specific.")
+        L.append(f"- **But recall does not transfer: {d_rh['recall']:.3f} on "
+                 f"Robinhood collapses to {d_ink['recall']:.3f} on Ink** "
+                 f"({d_ink['n_chosen']} of {d_ink['n']} drops selected). This is "
+                 f"the honest limit of the result. **What generalises is the "
+                 f"ordering of the signals; what does not generalise is the "
+                 f"threshold.** The score cutoff was fitted to Robinhood's "
+                 f"population and is far too strict for Ink's, so the rubric "
+                 f"finds few false positives and almost no true ones either.")
+        L.append("- Fixing that would mean re-fitting the cutoff per chain on a "
+                 "per-chain calibration split. That is a one-line change and it "
+                 "was deliberately NOT done here, because re-tuning on Ink would "
+                 "destroy the only genuinely out-of-distribution test in this "
+                 "submission.")
+        L.append(f"- Base rates are close enough for the comparison to be "
+                 f"meaningful ({rh['labels']['base_rate']:.1%} on the Robinhood "
+                 f"stratified subset vs {ink['labels']['base_rate']:.1%} on the "
+                 f"full Ink set), but note the Robinhood column is a stratified "
+                 f"subset while the Ink column is the entire dataset.")
     L.append(f"- Baseline precision on Ink is {b_ink['precision_at_k']:.3f}, "
              f"which again equals the base rate exactly — the same correctness "
              f"check on the harness, reproduced independently on a second chain.")

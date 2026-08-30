@@ -1,0 +1,16 @@
+{
+ "model": "claude-sonnet-4-5-20250929",
+ "temperature": 0.0,
+ "system": "You are deciding whether to mint a free NFT drop. You will be shown the raw drop\nconfiguration. Answer MINT or SKIP.\n\nReturn ONLY JSON: {\"verdict\": \"MINT\" | \"SKIP\", \"score\": 0-100, \"reasons\": [\"...\"]}\n",
+ "messages": [
+  {
+   "role": "user",
+   "content": "Drop configuration:\n\n```json\n{\"chain\":\"robinhood\",\"collection\":{\"code_size\":45,\"max_supply\":1,\"max_supply_sane\":true,\"name\":\"TEST\",\"owner\":\"0xc2a98ce3cb08c258977b7de0ef5085a82fb9097d\",\"symbol\":\"TEST\"},\"max_supply\":1,\"name\":\"TEST\",\"public_drop\":{\"advance_notice_s\":86554,\"duration_hours\":24.0,\"fee_bps\":1000,\"is_free\":true,\"max_per_wallet\":1,\"mint_price_wei\":0,\"restrict_fee_recipients\":true,\"starts_in_s\":86554}}\n```\n\nReturn JSON."
+  }
+ ],
+ "text": "```json\n{\n  \"verdict\": \"SKIP\",\n  \"score\": 15,\n  \"reasons\": [\n    \"Collection name 'TEST' and symbol 'TEST' indicate this is a test/dummy NFT with no real value\",\n    \"Max supply of only 1 makes this extremely limited with no practical collectibility\",\n    \"24 hour advance notice (~86554 seconds) suggests this may be expired or a test deployment\",\n    \"10% fee (1000 bps) with restricted fee recipients on a test collection is suspicious\",\n    \"No meaningful metadata or project information provided\",\n    \"Robinhood chain deployment of a test collection lacks credibility\",\n    \"Zero artistic, community, or utility value apparent\"\n  ]\n}\n```",
+ "usage": {
+  "input_tokens": 229,
+  "output_tokens": 175
+ }
+}

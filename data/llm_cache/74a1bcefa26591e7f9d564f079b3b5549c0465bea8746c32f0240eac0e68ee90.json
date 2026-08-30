@@ -1,0 +1,16 @@
+{
+ "model": "claude-sonnet-4-5-20250929",
+ "temperature": 0.0,
+ "system": "You are deciding whether to mint a free NFT drop. You will be shown the raw drop\nconfiguration. Answer MINT or SKIP.\n\nReturn ONLY JSON: {\"verdict\": \"MINT\" | \"SKIP\", \"score\": 0-100, \"reasons\": [\"...\"]}\n",
+ "messages": [
+  {
+   "role": "user",
+   "content": "Drop configuration:\n\n```json\n{\"chain\":\"robinhood\",\"collection\":{\"code_size\":45,\"max_supply\":8888,\"max_supply_sane\":true,\"name\":\"Feral hood\",\"owner\":\"0x41bc25ea8d8790c8c2d83636843a4c5446a5a8e2\",\"symbol\":\"MUSH\"},\"max_supply\":8888,\"name\":\"Feral hood\",\"public_drop\":{\"advance_notice_s\":0,\"duration_hours\":0.03,\"fee_bps\":1000,\"is_free\":true,\"max_per_wallet\":20,\"mint_price_wei\":0,\"restrict_fee_recipients\":true,\"starts_in_s\":-32}}\n```\n\nReturn JSON."
+  }
+ ],
+ "text": "```json\n{\n  \"verdict\": \"SKIP\",\n  \"score\": 25,\n  \"reasons\": [\n    \"Drop already started 32 seconds ago - likely missed opportunity\",\n    \"Very short 0.03 hour (1.8 minute) duration makes it nearly impossible to mint in time\",\n    \"High 10% fee (1000 bps) with restricted fee recipients suggests potential revenue extraction\",\n    \"Generic/low-effort name 'Feral hood' with symbol 'MUSH' lacks coherent branding\",\n    \"Extremely small code size (45 bytes) indicates minimal contract functionality\",\n    \"High max per wallet (20) combined with 8888 supply suggests potential for botting/manipulation\",\n    \"No advance notice (0s) indicates poor planning or intentional exclusivity\"\n  ]\n}\n```",
+ "usage": {
+  "input_tokens": 241,
+  "output_tokens": 197
+ }
+}

@@ -1,0 +1,16 @@
+{
+ "model": "claude-sonnet-4-5-20250929",
+ "temperature": 0.0,
+ "system": "You are deciding whether to mint a free NFT drop. You will be shown the raw drop\nconfiguration. Answer MINT or SKIP.\n\nReturn ONLY JSON: {\"verdict\": \"MINT\" | \"SKIP\", \"score\": 0-100, \"reasons\": [\"...\"]}\n",
+ "messages": [
+  {
+   "role": "user",
+   "content": "Drop configuration:\n\n```json\n{\"chain\":\"robinhood\",\"collection\":{\"code_size\":45,\"max_supply\":52,\"max_supply_sane\":true,\"name\":\"test\",\"owner\":\"0x0149ef656314a7b7df99a87381ea274744c6b8a7\",\"symbol\":\"test\"},\"max_supply\":52,\"name\":\"test\",\"public_drop\":{\"advance_notice_s\":242,\"duration_hours\":0.02,\"fee_bps\":1000,\"is_free\":true,\"max_per_wallet\":1,\"mint_price_wei\":0,\"restrict_fee_recipients\":true,\"starts_in_s\":242}}\n```\n\nReturn JSON."
+  }
+ ],
+ "text": "```json\n{\n  \"verdict\": \"SKIP\",\n  \"score\": 15,\n  \"reasons\": [\n    \"Collection name 'test' indicates this is a test/dummy NFT with no real value\",\n    \"Symbol 'test' confirms this is not a legitimate project\",\n    \"Extremely low max supply of only 52 NFTs suggests test deployment\",\n    \"Very short duration of 0.02 hours (72 seconds) is unusually brief for a real drop\",\n    \"10% fee (1000 bps) with restricted fee recipients reduces actual value\",\n    \"No meaningful project information or branding\",\n    \"High likelihood this is a developer test deployment on Robinhood chain\"\n  ]\n}\n```",
+ "usage": {
+  "input_tokens": 226,
+  "output_tokens": 172
+ }
+}

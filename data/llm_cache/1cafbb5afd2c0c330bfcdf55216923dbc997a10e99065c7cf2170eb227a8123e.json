@@ -1,0 +1,16 @@
+{
+ "model": "claude-sonnet-4-5-20250929",
+ "temperature": 0.0,
+ "system": "You are deciding whether to mint a free NFT drop. You will be shown the raw drop\nconfiguration. Answer MINT or SKIP.\n\nReturn ONLY JSON: {\"verdict\": \"MINT\" | \"SKIP\", \"score\": 0-100, \"reasons\": [\"...\"]}\n",
+ "messages": [
+  {
+   "role": "user",
+   "content": "Drop configuration:\n\n```json\n{\"chain\":\"robinhood\",\"collection\":{\"code_size\":45,\"max_supply\":4444,\"max_supply_sane\":true,\"name\":\"Hood Cash Cow\",\"owner\":\"0x58930afd160215bf804744fa8046b0192dd24933\",\"symbol\":\"Hood Cow\"},\"max_supply\":4444,\"name\":\"Hood Cash Cow\",\"public_drop\":{\"advance_notice_s\":0,\"duration_hours\":50.03,\"fee_bps\":1000,\"is_free\":true,\"max_per_wallet\":2,\"mint_price_wei\":0,\"restrict_fee_recipients\":true,\"starts_in_s\":-143}}\n```\n\nReturn JSON."
+  }
+ ],
+ "text": "```json\n{\n  \"verdict\": \"SKIP\",\n  \"score\": 25,\n  \"reasons\": [\n    \"Collection name 'Hood Cash Cow' appears to be a low-effort cash grab attempting to capitalize on Robinhood branding\",\n    \"Symbol 'Hood Cow' lacks originality and suggests minimal creative effort\",\n    \"Max supply of 4444 is relatively high for a free mint, increasing likelihood of low value\",\n    \"10% fee (1000 bps) with restricted fee recipients suggests extractive tokenomics\",\n    \"Drop already started 143 seconds ago, indicating rushed decision timeline\",\n    \"Owner address shows no notable reputation or previous successful projects\",\n    \"Overall presentation suggests a speculative, low-quality NFT project with minimal utility or artistic merit\"\n  ]\n}\n```",
+ "usage": {
+  "input_tokens": 232,
+  "output_tokens": 190
+ }
+}

@@ -1,0 +1,16 @@
+{
+ "model": "claude-sonnet-4-5-20250929",
+ "temperature": 0.0,
+ "system": "You are deciding whether to mint a free NFT drop. You will be shown the raw drop\nconfiguration. Answer MINT or SKIP.\n\nReturn ONLY JSON: {\"verdict\": \"MINT\" | \"SKIP\", \"score\": 0-100, \"reasons\": [\"...\"]}\n",
+ "messages": [
+  {
+   "role": "user",
+   "content": "Drop configuration:\n\n```json\n{\"chain\":\"robinhood\",\"collection\":{\"code_size\":45,\"max_supply\":10000,\"max_supply_sane\":true,\"name\":\"OxWizard\",\"owner\":\"0xe9060d86f488e580f2da8d77c19970129b8289c9\",\"symbol\":\"Nft\"},\"max_supply\":10000,\"name\":\"OxWizard\",\"public_drop\":{\"advance_notice_s\":0,\"duration_hours\":0.07,\"fee_bps\":1000,\"is_free\":true,\"max_per_wallet\":15,\"mint_price_wei\":0,\"restrict_fee_recipients\":true,\"starts_in_s\":-27}}\n```\n\nReturn JSON."
+  }
+ ],
+ "text": "```json\n{\n  \"verdict\": \"SKIP\",\n  \"score\": 25,\n  \"reasons\": [\n    \"Drop already started 27 seconds ago - likely missed opportunity\",\n    \"Very short duration of only 0.07 hours (~4 minutes) - extremely rushed\",\n    \"Generic/low-effort name 'OxWizard' with basic symbol 'Nft'\",\n    \"High max per wallet (15) suggests potential for botting/farming\",\n    \"10% fee (1000 bps) is quite high for a free mint\",\n    \"Chain 'robinhood' is non-standard/unfamiliar - potential risk\",\n    \"No advance notice (0s) indicates poor planning or potential spam\",\n    \"Collection owner address shows no notable reputation indicators\"\n  ]\n}\n```",
+ "usage": {
+  "input_tokens": 239,
+  "output_tokens": 193
+ }
+}

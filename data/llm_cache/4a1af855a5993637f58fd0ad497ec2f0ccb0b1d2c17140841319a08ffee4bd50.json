@@ -1,0 +1,16 @@
+{
+ "model": "claude-sonnet-4-5-20250929",
+ "temperature": 0.0,
+ "system": "You are deciding whether to mint a free NFT drop. You will be shown the raw drop\nconfiguration. Answer MINT or SKIP.\n\nReturn ONLY JSON: {\"verdict\": \"MINT\" | \"SKIP\", \"score\": 0-100, \"reasons\": [\"...\"]}\n",
+ "messages": [
+  {
+   "role": "user",
+   "content": "Drop configuration:\n\n```json\n{\"chain\":\"robinhood\",\"collection\":{\"code_size\":45,\"max_supply\":5555,\"max_supply_sane\":true,\"name\":\"FAST1\",\"owner\":\"0xbeb0a87be30521b60122d6cb649e18ec0429fdd5\",\"symbol\":\"F\"},\"max_supply\":5555,\"name\":\"FAST1\",\"public_drop\":{\"advance_notice_s\":0,\"duration_hours\":0.92,\"fee_bps\":1000,\"is_free\":true,\"max_per_wallet\":2,\"mint_price_wei\":0,\"restrict_fee_recipients\":true,\"starts_in_s\":-59}}\n```\n\nReturn JSON."
+  }
+ ],
+ "text": "```json\n{\n  \"verdict\": \"SKIP\",\n  \"score\": 25,\n  \"reasons\": [\n    \"Extremely suspicious collection name 'FAST1' with generic symbol 'F' suggests low-effort project\",\n    \"Very small code size (45 bytes) indicates minimal or potentially problematic smart contract\",\n    \"Short mint duration of 0.92 hours creates artificial urgency typical of cash grabs\",\n    \"10% fee (1000 bps) with restricted fee recipients raises concerns about creator intentions\",\n    \"Max 2 per wallet on 5555 supply suggests potential bot farming setup\",\n    \"Drop already started 59 seconds ago, indicating rushed decision pressure\",\n    \"No meaningful project information or utility evident from configuration\",\n    \"Overall profile matches common NFT scam/rug pull patterns\"\n  ]\n}\n```",
+ "usage": {
+  "input_tokens": 233,
+  "output_tokens": 199
+ }
+}

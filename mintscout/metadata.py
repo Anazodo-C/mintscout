@@ -123,7 +123,9 @@ def summarize(meta: dict | None) -> dict:
             "has_allowlist_stage": any(
                 ("allow" in n.lower() or "presale" in n.lower()) for n in names),
             "has_public_stage": any("public" in n.lower() for n in names),
-            "note": "drop-stage configuration, not token art metadata",
+            "note": ("operator configured this drop through the standard "
+                     "OpenSea flow. Token art metadata does not exist pre-open "
+                     "for ANY drop, so its absence here is not a negative."),
         }
     attrs = meta.get("attributes") or []
     if not isinstance(attrs, list):

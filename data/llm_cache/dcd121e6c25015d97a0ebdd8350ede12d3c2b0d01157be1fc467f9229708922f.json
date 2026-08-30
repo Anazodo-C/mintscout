@@ -1,0 +1,16 @@
+{
+ "model": "claude-sonnet-4-5-20250929",
+ "temperature": 0.0,
+ "system": "You are deciding whether to mint a free NFT drop. You will be shown the raw drop\nconfiguration. Answer MINT or SKIP.\n\nReturn ONLY JSON: {\"verdict\": \"MINT\" | \"SKIP\", \"score\": 0-100, \"reasons\": [\"...\"]}\n",
+ "messages": [
+  {
+   "role": "user",
+   "content": "Drop configuration:\n\n```json\n{\"chain\":\"robinhood\",\"collection\":{\"code_size\":45,\"max_supply\":4444,\"max_supply_sane\":true,\"name\":\"FlockFall\",\"owner\":\"0x18429efb2c282d6bc519d7f5df951020dacef07c\",\"symbol\":\"FlockFall\"},\"max_supply\":4444,\"name\":\"FlockFall\",\"public_drop\":{\"advance_notice_s\":0,\"duration_hours\":0.03,\"fee_bps\":1000,\"is_free\":true,\"max_per_wallet\":3,\"mint_price_wei\":0,\"restrict_fee_recipients\":true,\"starts_in_s\":-24}}\n```\n\nReturn JSON."
+  }
+ ],
+ "text": "```json\n{\n  \"verdict\": \"SKIP\",\n  \"score\": 25,\n  \"reasons\": [\n    \"Drop already started 24 seconds ago (starts_in_s: -24), likely missed opportunity\",\n    \"Extremely short duration of only 0.03 hours (~2 minutes), making it nearly impossible to mint\",\n    \"High fee of 10% (1000 bps) which is concerning even for a free mint\",\n    \"Max supply of 4444 with only 3 per wallet suggests high competition\",\n    \"Collection owner address shows no verification or notable reputation\",\n    \"Generic name 'FlockFall' with no clear brand recognition\",\n    \"Robinhood chain deployment is relatively new/unproven for NFT collections\",\n    \"No advance notice (0 seconds) indicates poor planning or potential cash grab\",\n    \"Restricted fee recipients flag suggests potential centralization concerns\"\n  ]\n}\n```",
+ "usage": {
+  "input_tokens": 237,
+  "output_tokens": 220
+ }
+}

@@ -1,0 +1,16 @@
+{
+ "model": "claude-sonnet-4-5-20250929",
+ "temperature": 0.0,
+ "system": "You are deciding whether to mint a free NFT drop. You will be shown the raw drop\nconfiguration. Answer MINT or SKIP.\n\nReturn ONLY JSON: {\"verdict\": \"MINT\" | \"SKIP\", \"score\": 0-100, \"reasons\": [\"...\"]}\n",
+ "messages": [
+  {
+   "role": "user",
+   "content": "Drop configuration:\n\n```json\n{\"chain\":\"robinhood\",\"collection\":{\"code_size\":19658,\"max_supply\":50,\"max_supply_sane\":true,\"name\":\"rook\",\"owner\":\"0x6d5b34735e18097357d10a92e48e924fc3a76b5a\",\"symbol\":\"rook\"},\"max_supply\":50,\"name\":\"rook\",\"public_drop\":{\"advance_notice_s\":1428,\"duration_hours\":0.17,\"fee_bps\":1000,\"is_free\":true,\"max_per_wallet\":5,\"mint_price_wei\":0,\"restrict_fee_recipients\":true,\"starts_in_s\":1428}}\n```\n\nReturn JSON."
+  }
+ ],
+ "text": "```json\n{\n  \"verdict\": \"SKIP\",\n  \"score\": 25,\n  \"reasons\": [\n    \"Extremely low max supply of only 50 NFTs makes this a very limited drop with low availability\",\n    \"Very short mint window of only 0.17 hours (~10 minutes) creates high pressure and low accessibility\",\n    \"Collection name 'rook' on Robinhood chain appears generic with no clear brand value or utility\",\n    \"10% fee (1000 bps) with restricted fee recipients suggests potential revenue extraction model\",\n    \"Max 5 per wallet with only 50 total supply means only 10 wallets could theoretically mint max allocation\",\n    \"No information about project utility, roadmap, or team credibility\",\n    \"Short advance notice of ~24 minutes provides insufficient time for proper evaluation\"\n  ]\n}\n```",
+ "usage": {
+  "input_tokens": 234,
+  "output_tokens": 203
+ }
+}

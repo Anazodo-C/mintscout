@@ -1,0 +1,16 @@
+{
+ "model": "claude-sonnet-4-5-20250929",
+ "temperature": 0.0,
+ "system": "You are deciding whether to mint a free NFT drop. You will be shown the raw drop\nconfiguration. Answer MINT or SKIP.\n\nReturn ONLY JSON: {\"verdict\": \"MINT\" | \"SKIP\", \"score\": 0-100, \"reasons\": [\"...\"]}\n",
+ "messages": [
+  {
+   "role": "user",
+   "content": "Drop configuration:\n\n```json\n{\"chain\":\"robinhood\",\"collection\":{\"code_size\":45,\"max_supply\":10000,\"max_supply_sane\":true,\"name\":\"Crocsd\",\"owner\":\"0x8cd44d6099b58f23bd2155cee11c3888e60a5fef\",\"symbol\":\"Crocsd\"},\"max_supply\":10000,\"name\":\"Crocsd\",\"public_drop\":{\"advance_notice_s\":0,\"duration_hours\":0.03,\"fee_bps\":1000,\"is_free\":true,\"max_per_wallet\":35,\"mint_price_wei\":0,\"restrict_fee_recipients\":true,\"starts_in_s\":-5}}\n```\n\nReturn JSON."
+  }
+ ],
+ "text": "```json\n{\n  \"verdict\": \"SKIP\",\n  \"score\": 25,\n  \"reasons\": [\n    \"Extremely short mint duration of only 0.03 hours (~2 minutes) with already started drop (starts_in_s: -5), indicating likely already ended\",\n    \"Very high max_per_wallet of 35 tokens suggests low quality/spam project trying to distribute quickly\",\n    \"Generic derivative name 'Crocsd' appears to be a low-effort copy of popular NFT projects\",\n    \"10% fee (1000 bps) is quite high for a free mint, reducing potential value\",\n    \"Small code size (45 bytes) suggests minimal smart contract functionality\",\n    \"No notable collection information or utility provided\",\n    \"Combination of high supply (10k), high per-wallet limit, and ultra-short duration indicates pump-and-dump characteristics\"\n  ]\n}\n```",
+ "usage": {
+  "input_tokens": 240,
+  "output_tokens": 214
+ }
+}

@@ -1,0 +1,16 @@
+{
+ "model": "claude-sonnet-4-5-20250929",
+ "temperature": 0.0,
+ "system": "You are deciding whether to mint a free NFT drop. You will be shown the raw drop\nconfiguration. Answer MINT or SKIP.\n\nReturn ONLY JSON: {\"verdict\": \"MINT\" | \"SKIP\", \"score\": 0-100, \"reasons\": [\"...\"]}\n",
+ "messages": [
+  {
+   "role": "user",
+   "content": "Drop configuration:\n\n```json\n{\"chain\":\"robinhood\",\"collection\":{\"code_size\":19658,\"max_supply\":200,\"max_supply_sane\":true,\"name\":\"glass\",\"owner\":\"0x8f63d68727c004eb6c0bb346241187edea0104e6\",\"symbol\":\"glasiyo\"},\"max_supply\":200,\"name\":\"glass\",\"public_drop\":{\"advance_notice_s\":18064,\"duration_hours\":24.0,\"fee_bps\":1000,\"is_free\":true,\"max_per_wallet\":1,\"mint_price_wei\":0,\"restrict_fee_recipients\":true,\"starts_in_s\":18064}}\n```\n\nReturn JSON."
+  }
+ ],
+ "text": "```json\n{\n  \"verdict\": \"SKIP\",\n  \"score\": 25,\n  \"reasons\": [\n    \"Generic and uninspiring name 'glass' with no clear artistic or cultural significance\",\n    \"Very small collection size of only 200 NFTs suggests limited community potential\",\n    \"Advance notice of ~5 hours is extremely short, indicating poor planning or rushed launch\",\n    \"10% fee (1000 bps) with restricted fee recipients raises concerns about creator monetization intent\",\n    \"No description, roadmap, or utility information provided in the configuration\",\n    \"Symbol 'glasiyo' appears random and doesn't align with any recognizable brand\",\n    \"Contract owner address shows no verification or established reputation\",\n    \"Max 1 per wallet severely limits engagement and trading potential\",\n    \"Overall presentation suggests low-effort project with minimal value proposition\"\n  ]\n}\n```",
+ "usage": {
+  "input_tokens": 230,
+  "output_tokens": 207
+ }
+}

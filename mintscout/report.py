@@ -20,8 +20,11 @@ def eth(wei) -> str:
     return f"{(wei or 0) / 1e18:.6f}"
 
 
-def main() -> int:
-    src = RESULTS / "metrics.json"
+def main(tag: str = "") -> int:
+    import sys
+    if not tag and len(sys.argv) > 1:
+        tag = sys.argv[1]
+    src = RESULTS / (f"metrics_{tag}.json" if tag else "metrics.json")
     if not src.exists():
         print("no results/metrics.json; run python -m mintscout.eval.run first")
         return 1
@@ -43,13 +46,24 @@ def main() -> int:
              "that differs is the triage decision.\n")
 
     L.append("\n## Headline\n")
-    L.append("| Arm | Precision@K | Recall | Lift vs base rate | Chose | Wallet slots wasted | Wasted gas (ETH) |")
-    L.append("|---|---|---|---|---|---|---|")
+    has_corr = any("precision_at_k_population_corrected" in a for a in arms)
+    hdr = ("| Arm | Precision@K | Precision (pop-corrected) | Recall | F1 | Chose | Vetoes |"
+           if has_corr else
+           "| Arm | Precision@K | Recall | Lift vs base rate | Chose | Wallet slots wasted |")
+    L.append(hdr)
+    L.append("|---" * (7 if has_corr else 6) + "|")
     for a in arms:
-        L.append(f"| {LABELS.get(a['arm'], a['arm'])} | **{a['precision_at_k']:.3f}** | "
-                 f"{a['recall']:.3f} | {a['lift_over_base_rate']}× | "
-                 f"{a['n_chosen']}/{a['n']} | {a['wallet_slots_wasted']} | "
-                 f"{eth(a['wasted_gas_wei_on_false_positives'])} |")
+        p_ = a.get("precision_at_k_population_corrected", a["precision_at_k"])
+        r_ = a["recall"]
+        f1 = (2 * p_ * r_ / (p_ + r_)) if (p_ + r_) else 0.0
+        if has_corr:
+            L.append(f"| {LABELS.get(a['arm'], a['arm'])} | {a['precision_at_k']:.3f} | "
+                     f"**{p_:.3f}** | {r_:.3f} | **{f1:.3f}** | "
+                     f"{a['n_chosen']}/{a['n']} | {a['verifier_vetoes']} |")
+        else:
+            L.append(f"| {LABELS.get(a['arm'], a['arm'])} | **{a['precision_at_k']:.3f}** | "
+                     f"{r_:.3f} | {a['lift_over_base_rate']}× | "
+                     f"{a['n_chosen']}/{a['n']} | {a['wallet_slots_wasted']} |")
 
     L.append("\n## Full metrics\n")
     keys = [("n_chosen", "Drops chosen to mint"), ("true_positives", "True positives"),
@@ -105,7 +119,26 @@ def main() -> int:
              "`PublicDropUpdated` misses both non-SeaDrop launches (StonkBrokers) "
              "and non-public SeaDrop phases (DUNLAPS's allowlist mints). See CHANGELOG.")
 
-    out = RESULTS / "comparison.md"
+    sub = arms[0].get("subset") if arms else None
+    if sub:
+        L.append("\n## Note on the evaluation set\n")
+        L.append(f"The LLM arms were run on a **stratified subset of "
+                 f"{sub['subset_n']} drops** drawn from the {sub['population_n']} "
+                 f"held-out drops, under a fixed API budget. **Every one of the "
+                 f"{sub['subset_high_value']} high-value drops is kept**; negatives "
+                 f"are sampled at {sub['negative_sampling_rate']:.3f}. A random "
+                 f"subset would have held ~7 positives, and recall measured on 7 "
+                 f"positives is noise.")
+        L.append(f"\nPrecision on that subset is therefore **inflated**, so both "
+                 f"numbers are reported: `Precision@K` as observed, and "
+                 f"`population-corrected` reweighted back to the true "
+                 f"{sub['population_base_rate']:.1%} prevalence. Recall is "
+                 f"unaffected by the reweighting.")
+        L.append("\n**The correction validates itself:** the mint-everything "
+                 "baseline scores its subset base rate and corrects to exactly "
+                 "the population base rate. All arms saw the identical subset, "
+                 "so parity between them holds.")
+    out = RESULTS / (f"comparison_{tag}.md" if tag else "comparison.md")
     out.write_text("\n".join(L) + "\n")
     print(f"wrote {out}")
     return 0

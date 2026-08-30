@@ -1,0 +1,16 @@
+{
+ "model": "claude-sonnet-4-5-20250929",
+ "temperature": 0.0,
+ "system": "You are deciding whether to mint a free NFT drop. You will be shown the raw drop\nconfiguration. Answer MINT or SKIP.\n\nReturn ONLY JSON: {\"verdict\": \"MINT\" | \"SKIP\", \"score\": 0-100, \"reasons\": [\"...\"]}\n",
+ "messages": [
+  {
+   "role": "user",
+   "content": "Drop configuration:\n\n```json\n{\"chain\":\"robinhood\",\"collection\":{\"code_size\":45,\"max_supply\":3333,\"max_supply_sane\":true,\"name\":\"RHOODD 2\",\"owner\":\"0xb8195f1e978773f06c35b37d5f20ccaaddb1543f\",\"symbol\":\"Rd\"},\"max_supply\":3333,\"name\":\"RHOODD 2\",\"public_drop\":{\"advance_notice_s\":0,\"duration_hours\":0.17,\"fee_bps\":1000,\"is_free\":true,\"max_per_wallet\":2,\"mint_price_wei\":0,\"restrict_fee_recipients\":true,\"starts_in_s\":-111}}\n```\n\nReturn JSON."
+  }
+ ],
+ "text": "```json\n{\n  \"verdict\": \"SKIP\",\n  \"score\": 25,\n  \"reasons\": [\n    \"Drop has already started 111 seconds ago and only lasts 10 minutes total (0.17 hours), likely already ended or nearly over\",\n    \"Very small code size (45 bytes) suggests potentially low-effort or suspicious contract\",\n    \"High fee of 10% (1000 bps) with restricted fee recipients raises concerns about creator intentions\",\n    \"Max 2 per wallet on a 3,333 supply is reasonable but combined with other red flags is insufficient\",\n    \"Generic/uninspired name 'RHOODD 2' suggests lack of originality or potential copycat project\",\n    \"No meaningful advance notice (0 seconds) indicates poor planning or rushed launch\"\n  ]\n}\n```",
+ "usage": {
+  "input_tokens": 242,
+  "output_tokens": 195
+ }
+}

@@ -1,0 +1,16 @@
+{
+ "model": "claude-sonnet-4-5-20250929",
+ "temperature": 0.0,
+ "system": "You are deciding whether to mint a free NFT drop. You will be shown the raw drop\nconfiguration. Answer MINT or SKIP.\n\nReturn ONLY JSON: {\"verdict\": \"MINT\" | \"SKIP\", \"score\": 0-100, \"reasons\": [\"...\"]}\n",
+ "messages": [
+  {
+   "role": "user",
+   "content": "Drop configuration:\n\n```json\n{\"chain\":\"robinhood\",\"collection\":{\"code_size\":45,\"max_supply\":10000,\"max_supply_sane\":true,\"name\":\"The Dreamers rh\",\"owner\":\"0x0a69fccbfca7992f2e0095e19e3e639e1a8ac48c\",\"symbol\":\"Rh\"},\"max_supply\":10000,\"name\":\"The Dreamers rh\",\"public_drop\":{\"advance_notice_s\":0,\"duration_hours\":72.0,\"fee_bps\":1000,\"is_free\":true,\"max_per_wallet\":3,\"mint_price_wei\":0,\"restrict_fee_recipients\":true,\"starts_in_s\":-24}}\n```\n\nReturn JSON."
+  }
+ ],
+ "text": "```json\n{\n  \"verdict\": \"SKIP\",\n  \"score\": 25,\n  \"reasons\": [\n    \"Collection name 'The Dreamers rh' appears generic and lacks distinctive branding\",\n    \"Very high max supply of 10,000 NFTs dilutes scarcity and potential value\",\n    \"10% fee (1000 bps) with restricted fee recipients suggests extractive tokenomics\",\n    \"Drop already started 24 hours ago, missing early minting opportunity\",\n    \"Max 3 per wallet is reasonable but combined with high supply reduces exclusivity\",\n    \"Unknown collection owner address with no reputation indicators\",\n    \"Robinhood chain deployment is unusual - less established ecosystem\",\n    \"No additional metadata or utility information provided\",\n    \"72-hour duration suggests potential oversupply and low demand\"\n  ]\n}\n```",
+ "usage": {
+  "input_tokens": 246,
+  "output_tokens": 200
+ }
+}

@@ -1,0 +1,16 @@
+{
+ "model": "claude-sonnet-4-5-20250929",
+ "temperature": 0.0,
+ "system": "You are deciding whether to mint a free NFT drop. You will be shown the raw drop\nconfiguration. Answer MINT or SKIP.\n\nReturn ONLY JSON: {\"verdict\": \"MINT\" | \"SKIP\", \"score\": 0-100, \"reasons\": [\"...\"]}\n",
+ "messages": [
+  {
+   "role": "user",
+   "content": "Drop configuration:\n\n```json\n{\"chain\":\"robinhood\",\"collection\":{\"code_size\":45,\"max_supply\":2500,\"max_supply_sane\":true,\"name\":\"Genesis Bugz\",\"owner\":\"0xbe4b3045832c0e3feb755a2cdb09bbd0737cd12c\",\"symbol\":\"Gs\"},\"max_supply\":2500,\"name\":\"Genesis Bugz\",\"public_drop\":{\"advance_notice_s\":0,\"duration_hours\":0.1,\"fee_bps\":1000,\"is_free\":true,\"max_per_wallet\":2,\"mint_price_wei\":0,\"restrict_fee_recipients\":true,\"starts_in_s\":-109}}\n```\n\nReturn JSON."
+  }
+ ],
+ "text": "```json\n{\n  \"verdict\": \"SKIP\",\n  \"score\": 25,\n  \"reasons\": [\n    \"Drop already started 109 seconds ago and only lasts 6 minutes (0.1 hours) - likely already ended or ending imminently\",\n    \"Very small code size (45 bytes) suggests potentially low-effort or suspicious contract\",\n    \"Max 2 per wallet with 2500 supply means limited upside even if valuable\",\n    \"10% fee (1000 bps) is relatively high for a free mint\",\n    \"Unknown collection 'Genesis Bugz' with no apparent brand recognition\",\n    \"Robinhood chain deployment is unusual - less established ecosystem\",\n    \"Timing makes successful minting highly unlikely\"\n  ]\n}\n```",
+ "usage": {
+  "input_tokens": 237,
+  "output_tokens": 184
+ }
+}

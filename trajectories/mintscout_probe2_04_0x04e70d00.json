@@ -1,0 +1,196 @@
+{
+  "arm": "mintscout",
+  "drop": {
+    "chain": "robinhood",
+    "collection": "0x04e70d00306e7418c21e8ffe3dd78d8ff1b22c68",
+    "start_time": 1787485317,
+    "cap": 10,
+    "mint_price_wei": 0,
+    "fixture_name": null
+  },
+  "decision_cutoff_ts": 1787485317,
+  "tool_calls": [
+    {
+      "tool": "erc165_probe",
+      "input": {
+        "collection": "0x04e70d00306e7418c21e8ffe3dd78d8ff1b22c68"
+      },
+      "output": {
+        "standard": "erc721",
+        "is_erc721": true,
+        "is_erc1155": false,
+        "answers_ownerof_and_balanceof": false,
+        "note": null
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "collection_stats",
+      "input": {
+        "collection": "0x04e70d00306e7418c21e8ffe3dd78d8ff1b22c68"
+      },
+      "output": {
+        "max_supply": 10000,
+        "owner": "0xc21bc5ed45616c4afbfc88c6ecb22f492dc1ce05",
+        "name": "0xSwan",
+        "symbol": "0xSwan",
+        "code_size": 45,
+        "max_supply_sane": true
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "metadata_fetch",
+      "input": {
+        "allow_network": false
+      },
+      "output": {
+        "present": true,
+        "shape": "drop_stage_config",
+        "name": null,
+        "description": null,
+        "n_attributes": 0,
+        "has_image": false,
+        "image_is_on_chain": false,
+        "token_bound_account": false,
+        "n_stages": 1,
+        "stage_names": [
+          "Public stage"
+        ],
+        "has_allowlist_stage": false,
+        "has_public_stage": true,
+        "note": "operator configured this drop through the standard OpenSea flow. Token art metadata does not exist pre-open for ANY drop, so its absence here is not a negative.",
+        "drop_uri": "ipfs://bafkreienpolxazu4ozdvtbcjnliqrrheujktjh2zzukppzqk6i5opn2zpm",
+        "contract_uri": "",
+        "source": "drop_uri",
+        "on_chain_metadata": false,
+        "provenance": "pinned",
+        "contract_uri_present": false
+      },
+      "ms": 2.7
+    },
+    {
+      "tool": "erc6551_probe",
+      "input": {},
+      "output": {
+        "token_bound_account": false,
+        "source": "metadata field"
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "economics",
+      "input": {},
+      "output": {
+        "mint_price_wei": 0,
+        "is_free": true,
+        "max_per_wallet": 10,
+        "fee_bps": 1000,
+        "restrict_fee_recipients": true,
+        "duration_hours": 0.03,
+        "starts_in_s": 56,
+        "advance_notice_s": 56
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "drop_config_history",
+      "input": {},
+      "output": {
+        "n_revisions_before_cutoff": 1,
+        "distinct_prices": [
+          0
+        ],
+        "price_flips": 0,
+        "revisions": [
+          {
+            "mint_price": 0,
+            "start_time": 1787485317,
+            "end_time": 1787485437,
+            "max_per_wallet": 10,
+            "block_timestamp": 1787485261
+          }
+        ]
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "mint_velocity",
+      "input": {},
+      "output": {
+        "available": false,
+        "mints_per_min": null,
+        "reason": "decision point is at/before startTime; no mint has occurred yet. Outcome signal, not a feature."
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "deployer_history",
+      "input": {},
+      "output": {
+        "deployer": "0xc21bc5ed45616c4afbfc88c6ecb22f492dc1ce05",
+        "known": false,
+        "prior_collections": 0,
+        "prior_high_value": 0,
+        "note": "first time this deployer has been seen"
+      },
+      "ms": 0.0
+    }
+  ],
+  "triage": {
+    "verdict": "SKIP",
+    "score": 15,
+    "reasons": [
+      "Minimal proxy contract (45 bytes) with no substantial implementation",
+      "Single config revision shows minimal operator preparation",
+      "First-time deployer with no track record"
+    ],
+    "risk_flags": [
+      "45-byte minimal proxy indicates no real contract implementation",
+      "No evidence of operator effort or community building",
+      "Extremely short 2-minute mint window suggests low confidence"
+    ]
+  },
+  "verifier": {
+    "agreed": false,
+    "objections": [
+      {
+        "target": "metadata.present as positive evidence",
+        "problem": "Triage lists metadata.present as positive evidence but then ignores it entirely in the reasons and risk_flags, treating the drop as if it has no positive signals. This is internally inconsistent.",
+        "severity": "major"
+      },
+      {
+        "target": "45-byte minimal proxy risk flag",
+        "problem": "While code_size=45 is correctly identified as negative, the characterization 'no real contract implementation' overstates it. Minimal proxies are standard for OpenSea drops and delegate to a shared implementation. This is weak evidence, not disqualifying evidence.",
+        "severity": "minor"
+      },
+      {
+        "target": "Overall verdict logic",
+        "problem": "The drop has metadata.present=true (strong positive per instructions), named stage ('Public stage'), coherent supply (10000), and standard OpenSea configuration. The negatives (small code, single revision, new deployer) are real but common. Score of 15 and SKIP verdict underweights the positive signals present.",
+        "severity": "major"
+      }
+    ],
+    "final_verdict": "WATCH",
+    "confidence": 70,
+    "vetoed": true
+  },
+  "action": {
+    "mode": "dry_run",
+    "wallets": 0,
+    "achievable": 0,
+    "gas_wei": 0
+  },
+  "outcome": {
+    "label": "low_value",
+    "label_detail": {
+      "fill_ratio": 0.0372,
+      "fill_ok": false,
+      "unique_minters": 39,
+      "minters_ok": false,
+      "secondary_transfers_48h": 0,
+      "secondary_ok": false,
+      "label": "low_value"
+    },
+    "note": "outcome is NEVER visible to the agent; shown here only for post-hoc scoring."
+  }
+}

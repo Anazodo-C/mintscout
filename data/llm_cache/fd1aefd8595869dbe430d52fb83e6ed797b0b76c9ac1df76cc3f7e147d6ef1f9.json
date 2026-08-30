@@ -1,0 +1,16 @@
+{
+ "model": "claude-sonnet-4-5-20250929",
+ "temperature": 0.0,
+ "system": "You are deciding whether to mint a free NFT drop. You will be shown the raw drop\nconfiguration. Answer MINT or SKIP.\n\nReturn ONLY JSON: {\"verdict\": \"MINT\" | \"SKIP\", \"score\": 0-100, \"reasons\": [\"...\"]}\n",
+ "messages": [
+  {
+   "role": "user",
+   "content": "Drop configuration:\n\n```json\n{\"chain\":\"robinhood\",\"collection\":{\"code_size\":45,\"max_supply\":6200,\"max_supply_sane\":true,\"name\":\"Shredding Sassy - RH\",\"owner\":\"0xff1d647773dc41b5dba247bb8bbed97afa9b21cd\",\"symbol\":\"Shredding Sassy\"},\"max_supply\":6200,\"name\":\"Shredding Sassy - RH\",\"public_drop\":{\"advance_notice_s\":121,\"duration_hours\":0.03,\"fee_bps\":1000,\"is_free\":true,\"max_per_wallet\":2,\"mint_price_wei\":0,\"restrict_fee_recipients\":true,\"starts_in_s\":121}}\n```\n\nReturn JSON."
+  }
+ ],
+ "text": "```json\n{\n  \"verdict\": \"SKIP\",\n  \"score\": 25,\n  \"reasons\": [\n    \"Extremely short mint duration of only 0.03 hours (~2 minutes) creates high pressure and FOMO tactics\",\n    \"Very limited max per wallet (2) combined with tiny time window suggests artificial scarcity manipulation\",\n    \"Collection name 'Shredding Sassy - RH' appears low-effort and lacks clear artistic or utility value proposition\",\n    \"10% fee (1000 bps) with restricted fee recipients raises concerns about creator intentions\",\n    \"Short 121 second advance notice doesn't allow proper evaluation time\",\n    \"Overall configuration suggests a quick cash-grab style drop rather than legitimate project\"\n  ]\n}\n```",
+ "usage": {
+  "input_tokens": 251,
+  "output_tokens": 179
+ }
+}

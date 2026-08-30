@@ -32,6 +32,75 @@ collection to mint, which is the entire question here.
 
 ---
 
+## Final results (held-out) — including a negative result
+
+**Robinhood, stratified subset of the held-out split (n=150, all 18 positives kept,
+negatives sampled at 0.386). Precision is reported both as observed and reweighted
+to the true 5.0% prevalence.**
+
+| Arm | Precision (pop-corrected) | Recall | F1 | Chose |
+|---|---|---|---|---|
+| Baseline A — mint every free drop | 0.050 | 1.000 | 0.095 | 150/150 |
+| Baseline B — single-prompt LLM | **0.000** | 0.000 | 0.000 | 1/150 |
+| **Deterministic rubric (no LLM)** | 0.392 | **0.278** | **0.325** | 8/150 |
+| MintScout, triage only | 0.279 | 0.278 | 0.278 | 10/150 |
+| MintScout, triage + verifier | **0.436** | 0.111 | 0.177 | 3/150 |
+
+Three things this says, two of which I would rather it did not:
+
+1. **The harness is sound.** The mint-everything baseline corrects to **0.0500**,
+   exactly the population base rate, on both chains independently. That is
+   arithmetic, not luck, and it is the check that makes the other rows meaningful.
+2. **The model alone is worthless here.** Baseline B — one LLM call on the raw
+   config, no tools, no rubric, no verifier — selected 1 drop out of 150 and got
+   it wrong: **precision 0.000**. Whatever value exists in this system comes from
+   the engineering around the model, not from the model.
+3. **The LLM agent did not beat a well-calibrated deterministic rubric.**
+   MintScout has the best precision (0.436, an **8.7× lift** over the 0.050 base
+   rate), but it buys that by choosing only 3 drops. On F1 the hand-written rubric
+   wins, **0.325 vs 0.177**. Reported as measured.
+
+### ❌ Removed experiment #3 — the adversarial verifier, as specified
+
+The verifier is the component the brief suggests earns Agent Engineering points,
+and it does do real work: it caught the triage agent **fabricating a threshold**
+("3+ revisions for 5× lift") that appears nowhere in its instructions, and caught
+it ignoring a 19,658-byte contract. Those are genuine catches and the trajectories
+are worth reading.
+
+But measured over 150 drops it **vetoed 114 of them (76%)**, which is not a check
+— that is a second, worse-calibrated decider. Specifically:
+
+- triage found **5 of the 18** high-value drops;
+- the verifier **downgraded 3 of those 5 correct MINTs**;
+- recall fell **0.278 → 0.111** while precision rose 0.279 → 0.436;
+- it converted **72 SKIPs into WATCH**, pure hedging with no effect on any metric.
+
+**Diagnosis — the near-universal-condition trap.** Its objections were dominated
+by properties shared by almost every candidate, e.g. *"first-time deployer with
+zero prior high-value drops is a major red flag"*. Deployer memory covers a
+minority of drops, so "unknown deployer" is the **default state of the
+population**, not a warning sign. An objection that is true of ~everything feels
+rigorous and carries **zero** information. This is the same error class as the
+`n_attributes: 0` mistake in Removed #2 — I fixed it in the rubric and it
+reappeared in the verifier.
+
+**Three prompt fixes were attempted and all three failed**, the last one measured
+directly on the 10 drops where triage said MINT (the only drops where the verifier
+can change the outcome): it recovered **0** of the 3 incorrectly-downgraded MINTs
+and cut MINTs from 3 to 1. The verifier prompt in this repo is reverted to the
+exact version that produced the numbers above, so they reproduce.
+
+**Learning: an adversarial critic needs base rates, not just evidence.** Told to
+"find the reason this is wrong", a capable model will always succeed — there is
+always *some* missing assurance. Without knowing how common a property is in the
+population, it cannot tell a discriminating red flag from a description of the
+average case. If I continued, the fix would not be more prompt engineering: it
+would be to compute each candidate objection's prevalence in the dataset and hand
+that to the verifier as evidence, or to gate the veto on a measured precision gain.
+
+---
+
 ## Removed experiments
 
 The brief asks for these explicitly. Both are real removals with measurements attached.

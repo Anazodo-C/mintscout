@@ -1,0 +1,16 @@
+{
+ "model": "claude-sonnet-4-5-20250929",
+ "temperature": 0.0,
+ "system": "You are deciding whether to mint a free NFT drop. You will be shown the raw drop\nconfiguration. Answer MINT or SKIP.\n\nReturn ONLY JSON: {\"verdict\": \"MINT\" | \"SKIP\", \"score\": 0-100, \"reasons\": [\"...\"]}\n",
+ "messages": [
+  {
+   "role": "user",
+   "content": "Drop configuration:\n\n```json\n{\"chain\":\"robinhood\",\"collection\":{\"code_size\":45,\"max_supply\":8888,\"max_supply_sane\":true,\"name\":\"HoodGoblins\",\"owner\":\"0x87ee571ff7670ac907adde2f5003d6f9a161a2e9\",\"symbol\":\"HoodGoblins\"},\"max_supply\":8888,\"name\":\"HoodGoblins\",\"public_drop\":{\"advance_notice_s\":0,\"duration_hours\":0.08,\"fee_bps\":1000,\"is_free\":true,\"max_per_wallet\":30,\"mint_price_wei\":0,\"restrict_fee_recipients\":true,\"starts_in_s\":-23}}\n```\n\nReturn JSON."
+  }
+ ],
+ "text": "```json\n{\n  \"verdict\": \"SKIP\",\n  \"score\": 25,\n  \"reasons\": [\n    \"Drop already started 23 seconds ago - likely missed optimal minting window\",\n    \"Extremely short duration of only 0.08 hours (~5 minutes) - high risk of missing it entirely\",\n    \"Very high max supply of 8,888 NFTs suggests low scarcity/value\",\n    \"High max per wallet (30) indicates potential for botting and uneven distribution\",\n    \"Generic 'Goblin' derivative name lacks originality in oversaturated NFT market\",\n    \"10% fee (1000 bps) on secondary sales is relatively high\",\n    \"No advance notice (0s) suggests poor planning or potential rug pull\",\n    \"Robinhood chain is less established for NFTs compared to major chains\"\n  ]\n}\n```",
+ "usage": {
+  "input_tokens": 242,
+  "output_tokens": 208
+ }
+}

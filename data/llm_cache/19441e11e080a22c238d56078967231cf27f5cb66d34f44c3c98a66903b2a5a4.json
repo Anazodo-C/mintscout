@@ -1,0 +1,16 @@
+{
+ "model": "claude-sonnet-4-5-20250929",
+ "temperature": 0.0,
+ "system": "You are deciding whether to mint a free NFT drop. You will be shown the raw drop\nconfiguration. Answer MINT or SKIP.\n\nReturn ONLY JSON: {\"verdict\": \"MINT\" | \"SKIP\", \"score\": 0-100, \"reasons\": [\"...\"]}\n",
+ "messages": [
+  {
+   "role": "user",
+   "content": "Drop configuration:\n\n```json\n{\"chain\":\"robinhood\",\"collection\":{\"code_size\":45,\"max_supply\":5555,\"max_supply_sane\":true,\"name\":\"GetWeeDhood\",\"owner\":\"0x20807d1c8140f19b75ceb6720407fa7382ee3cb4\",\"symbol\":\"weedhood\"},\"max_supply\":5555,\"name\":\"GetWeeDhood\",\"public_drop\":{\"advance_notice_s\":0,\"duration_hours\":2.0,\"fee_bps\":1000,\"is_free\":true,\"max_per_wallet\":1,\"mint_price_wei\":0,\"restrict_fee_recipients\":true,\"starts_in_s\":-213}}\n```\n\nReturn JSON."
+  }
+ ],
+ "text": "```json\n{\n  \"verdict\": \"SKIP\",\n  \"score\": 25,\n  \"reasons\": [\n    \"Cannabis/drug-themed NFT ('GetWeeDhood', 'weedhood') - typically low value and poor long-term prospects\",\n    \"Very small code size (45 bytes) suggests minimal or no actual contract functionality\",\n    \"Generic derivative name playing off 'Robinhood' platform name\",\n    \"Drop already started 213 seconds ago - late to mint\",\n    \"High fee (10% / 1000 bps) for a free mint suggests cash grab model\",\n    \"Max supply of 5555 is relatively high for a meme/themed collection\",\n    \"No notable collection owner or established reputation\",\n    \"Theme lacks originality and appears to be low-effort derivative content\"\n  ]\n}\n```",
+ "usage": {
+  "input_tokens": 237,
+  "output_tokens": 198
+ }
+}

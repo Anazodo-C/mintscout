@@ -1,0 +1,16 @@
+{
+ "model": "claude-sonnet-4-5-20250929",
+ "temperature": 0.0,
+ "system": "You are deciding whether to mint a free NFT drop. You will be shown the raw drop\nconfiguration. Answer MINT or SKIP.\n\nReturn ONLY JSON: {\"verdict\": \"MINT\" | \"SKIP\", \"score\": 0-100, \"reasons\": [\"...\"]}\n",
+ "messages": [
+  {
+   "role": "user",
+   "content": "Drop configuration:\n\n```json\n{\"chain\":\"robinhood\",\"collection\":{\"code_size\":45,\"max_supply\":10000,\"max_supply_sane\":true,\"name\":\"The ghosties\",\"owner\":\"0xc7280a0495777d3fd47966c26ce96c9a6e7de553\",\"symbol\":\"Ghosties\"},\"max_supply\":10000,\"name\":\"The ghosties\",\"public_drop\":{\"advance_notice_s\":40,\"duration_hours\":0.05,\"fee_bps\":1000,\"is_free\":true,\"max_per_wallet\":16,\"mint_price_wei\":0,\"restrict_fee_recipients\":true,\"starts_in_s\":40}}\n```\n\nReturn JSON."
+  }
+ ],
+ "text": "```json\n{\n  \"verdict\": \"SKIP\",\n  \"score\": 25,\n  \"reasons\": [\n    \"Extremely short mint duration of only 0.05 hours (3 minutes) creates high pressure and FOMO tactics\",\n    \"Very short 40 second advance notice is insufficient for informed decision-making\",\n    \"Generic 'ghosties' theme lacks originality and appears low-effort\",\n    \"10% fee (1000 bps) on secondary sales is high for a free mint\",\n    \"High max supply of 10,000 suggests potential oversaturation\",\n    \"Collection owner address shows no verification of legitimacy or track record\",\n    \"Combination of rushed timing and generic branding indicates potential low-quality cash grab\",\n    \"Robinhood chain deployment may indicate targeting of less experienced crypto users\"\n  ]\n}\n```",
+ "usage": {
+  "input_tokens": 235,
+  "output_tokens": 200
+ }
+}

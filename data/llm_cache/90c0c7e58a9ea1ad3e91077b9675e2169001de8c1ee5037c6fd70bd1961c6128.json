@@ -1,0 +1,16 @@
+{
+ "model": "claude-sonnet-4-5-20250929",
+ "temperature": 0.0,
+ "system": "You are deciding whether to mint a free NFT drop. You will be shown the raw drop\nconfiguration. Answer MINT or SKIP.\n\nReturn ONLY JSON: {\"verdict\": \"MINT\" | \"SKIP\", \"score\": 0-100, \"reasons\": [\"...\"]}\n",
+ "messages": [
+  {
+   "role": "user",
+   "content": "Drop configuration:\n\n```json\n{\"chain\":\"robinhood\",\"collection\":{\"code_size\":45,\"max_supply\":5555,\"max_supply_sane\":true,\"name\":\"REXX10\",\"owner\":\"0x77e7e4eda5022c6eb70fef779ffe5f8f53226457\",\"symbol\":\"R\"},\"max_supply\":5555,\"name\":\"REXX10\",\"public_drop\":{\"advance_notice_s\":0,\"duration_hours\":0.08,\"fee_bps\":1000,\"is_free\":true,\"max_per_wallet\":1,\"mint_price_wei\":0,\"restrict_fee_recipients\":true,\"starts_in_s\":-117}}\n```\n\nReturn JSON."
+  }
+ ],
+ "text": "```json\n{\n  \"verdict\": \"SKIP\",\n  \"score\": 25,\n  \"reasons\": [\n    \"Drop already started 117 seconds ago and only lasts 4.8 minutes total (0.08 hours) - likely already ended or nearly over\",\n    \"Very short mint window makes it impractical to participate\",\n    \"Max 1 per wallet with 5555 supply suggests high competition for limited individual value\",\n    \"10% fee (1000 bps) on a free mint is concerning - indicates potential secondary costs\",\n    \"Unknown collection 'REXX10' with no established reputation or utility\",\n    \"Robinhood chain deployment is relatively uncommon, limiting liquidity and market access\"\n  ]\n}\n```",
+ "usage": {
+  "input_tokens": 237,
+  "output_tokens": 177
+ }
+}

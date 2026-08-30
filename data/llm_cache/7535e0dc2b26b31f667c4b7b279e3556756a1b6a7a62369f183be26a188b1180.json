@@ -1,0 +1,16 @@
+{
+ "model": "claude-sonnet-4-5-20250929",
+ "temperature": 0.0,
+ "system": "You are deciding whether to mint a free NFT drop. You will be shown the raw drop\nconfiguration. Answer MINT or SKIP.\n\nReturn ONLY JSON: {\"verdict\": \"MINT\" | \"SKIP\", \"score\": 0-100, \"reasons\": [\"...\"]}\n",
+ "messages": [
+  {
+   "role": "user",
+   "content": "Drop configuration:\n\n```json\n{\"chain\":\"robinhood\",\"collection\":{\"code_size\":45,\"max_supply\":10000,\"max_supply_sane\":true,\"name\":\"Lorem Ipsum\",\"owner\":\"0x31019f456d27af2c1e2f4b0cb9638ac48fa7a3a6\",\"symbol\":\"Lorem Ipsum\"},\"max_supply\":10000,\"name\":\"Lorem Ipsum\",\"public_drop\":{\"advance_notice_s\":31,\"duration_hours\":0.05,\"fee_bps\":1000,\"is_free\":true,\"max_per_wallet\":10,\"mint_price_wei\":0,\"restrict_fee_recipients\":true,\"starts_in_s\":31}}\n```\n\nReturn JSON."
+  }
+ ],
+ "text": "```json\n{\n  \"verdict\": \"SKIP\",\n  \"score\": 15,\n  \"reasons\": [\n    \"Generic placeholder name 'Lorem Ipsum' indicates low-effort or test drop with no real brand/project identity\",\n    \"Extremely short 3-minute duration (0.05 hours) suggests potential bot farming or test deployment\",\n    \"10% fee (1000 bps) is very high for a free mint, reducing actual value proposition\",\n    \"No verified collection information or established project presence\",\n    \"Combination of placeholder branding + suspicious timing parameters indicates likely worthless drop\"\n  ]\n}\n```",
+ "usage": {
+  "input_tokens": 238,
+  "output_tokens": 147
+ }
+}

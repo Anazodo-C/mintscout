@@ -1,0 +1,182 @@
+{
+  "arm": "mintscout_no_verifier",
+  "drop": {
+    "chain": "robinhood",
+    "collection": "0xe1a65a7a3d8be9aab4ef81b76e35668b3facbe79",
+    "start_time": 1787619624,
+    "cap": 5,
+    "mint_price_wei": 0,
+    "fixture_name": null
+  },
+  "decision_cutoff_ts": 1787619624,
+  "tool_calls": [
+    {
+      "tool": "erc165_probe",
+      "input": {
+        "collection": "0xe1a65a7a3d8be9aab4ef81b76e35668b3facbe79"
+      },
+      "output": {
+        "standard": "erc721",
+        "is_erc721": true,
+        "is_erc1155": false,
+        "answers_ownerof_and_balanceof": false,
+        "note": null
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "collection_stats",
+      "input": {
+        "collection": "0xe1a65a7a3d8be9aab4ef81b76e35668b3facbe79"
+      },
+      "output": {
+        "max_supply": 50,
+        "owner": "0x6d5b34735e18097357d10a92e48e924fc3a76b5a",
+        "name": "rook",
+        "symbol": "rook",
+        "code_size": 19658,
+        "max_supply_sane": true
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "metadata_fetch",
+      "input": {
+        "allow_network": false
+      },
+      "output": {
+        "present": true,
+        "shape": "drop_stage_config",
+        "name": null,
+        "description": null,
+        "n_attributes": 0,
+        "has_image": false,
+        "image_is_on_chain": false,
+        "token_bound_account": false,
+        "n_stages": 2,
+        "stage_names": [
+          "Public stage",
+          "WL gtd "
+        ],
+        "has_allowlist_stage": false,
+        "has_public_stage": true,
+        "note": "operator configured this drop through the standard OpenSea flow. Token art metadata does not exist pre-open for ANY drop, so its absence here is not a negative.",
+        "drop_uri": "ipfs://bafkreidmboxpy4h3yandjzroojuqpwme5hzknvtpeudibetpaqjpvi67ka",
+        "contract_uri": "",
+        "source": "drop_uri",
+        "on_chain_metadata": false,
+        "provenance": "pinned",
+        "contract_uri_present": false
+      },
+      "ms": 0.6
+    },
+    {
+      "tool": "erc6551_probe",
+      "input": {},
+      "output": {
+        "token_bound_account": false,
+        "source": "metadata field"
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "economics",
+      "input": {},
+      "output": {
+        "mint_price_wei": 0,
+        "is_free": true,
+        "max_per_wallet": 5,
+        "fee_bps": 1000,
+        "restrict_fee_recipients": true,
+        "duration_hours": 0.17,
+        "starts_in_s": 1428,
+        "advance_notice_s": 1428
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "drop_config_history",
+      "input": {},
+      "output": {
+        "n_revisions_before_cutoff": 2,
+        "distinct_prices": [
+          0
+        ],
+        "price_flips": 0,
+        "revisions": [
+          {
+            "mint_price": 0,
+            "start_time": 1787619624,
+            "end_time": 1787620224,
+            "max_per_wallet": 5,
+            "block_timestamp": 1787618196
+          },
+          {
+            "mint_price": 0,
+            "start_time": 1787619624,
+            "end_time": 1787620224,
+            "max_per_wallet": 5,
+            "block_timestamp": 1787618210
+          }
+        ]
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "mint_velocity",
+      "input": {},
+      "output": {
+        "available": false,
+        "mints_per_min": null,
+        "reason": "decision point is at/before startTime; no mint has occurred yet. Outcome signal, not a feature."
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "deployer_history",
+      "input": {},
+      "output": {
+        "deployer": "0x6d5b34735e18097357d10a92e48e924fc3a76b5a",
+        "known": false,
+        "prior_collections": 0,
+        "prior_high_value": 0,
+        "note": "first time this deployer has been seen"
+      },
+      "ms": 0.0
+    }
+  ],
+  "triage": {
+    "verdict": "MINT",
+    "score": 78,
+    "reasons": [
+      "Large contract implementation (19,658 bytes) indicates real deployment effort, not spam proxy",
+      "Two named mint stages including 'WL gtd' suggests existing community/allowlist holders",
+      "Reasonable supply cap (50) with 2 config revisions shows deliberate setup"
+    ],
+    "risk_flags": [
+      "First-time deployer with no track record",
+      "Very short mint window (0.17 hours)",
+      "Small supply (50) limits upside potential"
+    ]
+  },
+  "verifier": null,
+  "action": {
+    "mode": "dry_run",
+    "wallets": 10,
+    "achievable": 50,
+    "gas_wei": 170881940460000
+  },
+  "outcome": {
+    "label": "low_value",
+    "label_detail": {
+      "fill_ratio": 1.0,
+      "fill_ok": true,
+      "unique_minters": 12,
+      "minters_ok": false,
+      "secondary_transfers_48h": 0,
+      "secondary_ok": false,
+      "label": "low_value"
+    },
+    "note": "outcome is NEVER visible to the agent; shown here only for post-hoc scoring."
+  }
+}

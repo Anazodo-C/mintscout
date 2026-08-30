@@ -1,0 +1,16 @@
+{
+ "model": "claude-sonnet-4-5-20250929",
+ "temperature": 0.0,
+ "system": "You are deciding whether to mint a free NFT drop. You will be shown the raw drop\nconfiguration. Answer MINT or SKIP.\n\nReturn ONLY JSON: {\"verdict\": \"MINT\" | \"SKIP\", \"score\": 0-100, \"reasons\": [\"...\"]}\n",
+ "messages": [
+  {
+   "role": "user",
+   "content": "Drop configuration:\n\n```json\n{\"chain\":\"robinhood\",\"collection\":{\"code_size\":20565,\"max_supply\":6969,\"max_supply_sane\":true,\"name\":\"UNDEADLINES\",\"owner\":\"0x3f516269ace53af3b8de38360cf7843b8e6e258c\",\"symbol\":\"UNDEADLINE\"},\"max_supply\":6969,\"name\":\"UNDEADLINES\",\"public_drop\":{\"advance_notice_s\":0,\"duration_hours\":48.0,\"fee_bps\":1000,\"is_free\":true,\"max_per_wallet\":2,\"mint_price_wei\":0,\"restrict_fee_recipients\":true,\"starts_in_s\":-11743}}\n```\n\nReturn JSON."
+  }
+ ],
+ "text": "```json\n{\n  \"verdict\": \"SKIP\",\n  \"score\": 35,\n  \"reasons\": [\n    \"Collection name 'UNDEADLINES' appears to be a generic/low-effort concept without clear brand value\",\n    \"Max supply of 6969 is a meme number suggesting lack of serious project planning\",\n    \"Max 2 per wallet with 6969 supply means limited exclusivity or value proposition\",\n    \"10% fee (1000 bps) is relatively high for a free mint, reducing secondary market appeal\",\n    \"Drop already started 3+ hours ago (-11743s), missing early minting opportunity\",\n    \"No notable collection owner address or established reputation indicators\",\n    \"Symbol 'UNDEADLINE' doesn't suggest strong brand recognition or utility\",\n    \"48-hour duration is standard but combined with other factors suggests low urgency/demand\"\n  ]\n}\n```",
+ "usage": {
+  "input_tokens": 243,
+  "output_tokens": 213
+ }
+}

@@ -1,0 +1,16 @@
+{
+ "model": "claude-sonnet-4-5-20250929",
+ "temperature": 0.0,
+ "system": "You are deciding whether to mint a free NFT drop. You will be shown the raw drop\nconfiguration. Answer MINT or SKIP.\n\nReturn ONLY JSON: {\"verdict\": \"MINT\" | \"SKIP\", \"score\": 0-100, \"reasons\": [\"...\"]}\n",
+ "messages": [
+  {
+   "role": "user",
+   "content": "Drop configuration:\n\n```json\n{\"chain\":\"robinhood\",\"collection\":{\"code_size\":45,\"max_supply\":1,\"max_supply_sane\":true,\"name\":\"test\",\"owner\":\"0x0149ef656314a7b7df99a87381ea274744c6b8a7\",\"symbol\":\"test\"},\"max_supply\":1,\"name\":\"test\",\"public_drop\":{\"advance_notice_s\":405,\"duration_hours\":0.02,\"fee_bps\":1000,\"is_free\":true,\"max_per_wallet\":1,\"mint_price_wei\":0,\"restrict_fee_recipients\":true,\"starts_in_s\":405}}\n```\n\nReturn JSON."
+  }
+ ],
+ "text": "```json\n{\n  \"verdict\": \"SKIP\",\n  \"score\": 15,\n  \"reasons\": [\n    \"Generic 'test' name and symbol indicates this is likely a test/dummy NFT with no real value\",\n    \"Max supply of only 1 makes this extremely limited with no community potential\",\n    \"Collection owner address appears to be a test/development address\",\n    \"Extremely short duration (0.02 hours = ~1 minute) suggests this is a technical test\",\n    \"10% fee (1000 bps) with restricted fee recipients on a test drop is suspicious\",\n    \"No meaningful metadata or project information provided\",\n    \"Overall characteristics strongly indicate this is a test deployment rather than a legitimate collectible\"\n  ]\n}\n```",
+ "usage": {
+  "input_tokens": 226,
+  "output_tokens": 177
+ }
+}

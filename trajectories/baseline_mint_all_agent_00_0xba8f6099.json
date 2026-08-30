@@ -1,0 +1,205 @@
+{
+  "arm": "baseline_mint_all",
+  "drop": {
+    "chain": "robinhood",
+    "collection": "0xba8f609931efcbc2498de7129995c51f42039e9a",
+    "start_time": 1787515214,
+    "cap": 1,
+    "mint_price_wei": 0,
+    "fixture_name": null
+  },
+  "decision_cutoff_ts": 1787515214,
+  "tool_calls": [
+    {
+      "tool": "erc165_probe",
+      "input": {
+        "collection": "0xba8f609931efcbc2498de7129995c51f42039e9a"
+      },
+      "output": {
+        "standard": "erc721",
+        "is_erc721": true,
+        "is_erc1155": false,
+        "answers_ownerof_and_balanceof": false,
+        "note": null
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "collection_stats",
+      "input": {
+        "collection": "0xba8f609931efcbc2498de7129995c51f42039e9a"
+      },
+      "output": {
+        "max_supply": 3000,
+        "owner": "0x410a42fe73c3185b2bca2ffa030221b28ae94979",
+        "name": "PepeWars ",
+        "symbol": "PWR",
+        "code_size": 19658,
+        "max_supply_sane": true
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "metadata_fetch",
+      "input": {
+        "allow_network": false
+      },
+      "output": {
+        "present": true,
+        "shape": "drop_stage_config",
+        "name": null,
+        "description": null,
+        "n_attributes": 0,
+        "has_image": false,
+        "image_is_on_chain": false,
+        "token_bound_account": false,
+        "n_stages": 3,
+        "stage_names": [
+          "Public stage",
+          "GTD",
+          "FCFS"
+        ],
+        "has_allowlist_stage": false,
+        "has_public_stage": true,
+        "note": "operator configured this drop through the standard OpenSea flow. Token art metadata does not exist pre-open for ANY drop, so its absence here is not a negative.",
+        "drop_uri": "ipfs://bafkreidujyueirsdlodkqbuz36iorf2kc4ynlixyibhsgycmozolfwusni",
+        "contract_uri": "",
+        "source": "drop_uri",
+        "on_chain_metadata": false,
+        "provenance": "pinned",
+        "contract_uri_present": false
+      },
+      "ms": 0.7
+    },
+    {
+      "tool": "erc6551_probe",
+      "input": {},
+      "output": {
+        "token_bound_account": false,
+        "source": "metadata field"
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "economics",
+      "input": {},
+      "output": {
+        "mint_price_wei": 0,
+        "is_free": true,
+        "max_per_wallet": 1,
+        "fee_bps": 1000,
+        "restrict_fee_recipients": true,
+        "duration_hours": 10.0,
+        "starts_in_s": 32932,
+        "advance_notice_s": 32932
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "drop_config_history",
+      "input": {},
+      "output": {
+        "n_revisions_before_cutoff": 7,
+        "distinct_prices": [
+          0
+        ],
+        "price_flips": 0,
+        "revisions": [
+          {
+            "mint_price": 0,
+            "start_time": 1787515214,
+            "end_time": 1787551214,
+            "max_per_wallet": 1,
+            "block_timestamp": 1787483193
+          },
+          {
+            "mint_price": 0,
+            "start_time": 1787515214,
+            "end_time": 1787551214,
+            "max_per_wallet": 1,
+            "block_timestamp": 1787486292
+          },
+          {
+            "mint_price": 0,
+            "start_time": 1787515214,
+            "end_time": 1787551214,
+            "max_per_wallet": 1,
+            "block_timestamp": 1787488081
+          },
+          {
+            "mint_price": 0,
+            "start_time": 1787515214,
+            "end_time": 1787551214,
+            "max_per_wallet": 1,
+            "block_timestamp": 1787488293
+          },
+          {
+            "mint_price": 0,
+            "start_time": 1787515214,
+            "end_time": 1787551214,
+            "max_per_wallet": 1,
+            "block_timestamp": 1787490954
+          },
+          {
+            "mint_price": 0,
+            "start_time": 1787515214,
+            "end_time": 1787551214,
+            "max_per_wallet": 1,
+            "block_timestamp": 1787495070
+          }
+        ]
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "mint_velocity",
+      "input": {},
+      "output": {
+        "available": false,
+        "mints_per_min": null,
+        "reason": "decision point is at/before startTime; no mint has occurred yet. Outcome signal, not a feature."
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "deployer_history",
+      "input": {},
+      "output": {
+        "deployer": "0x410a42fe73c3185b2bca2ffa030221b28ae94979",
+        "known": false,
+        "prior_collections": 0,
+        "prior_high_value": 0,
+        "note": "first time this deployer has been seen"
+      },
+      "ms": 0.0
+    }
+  ],
+  "triage": {
+    "verdict": "MINT",
+    "score": 100,
+    "reasons": [
+      "drop is free; baseline mints every free drop"
+    ],
+    "risk_flags": []
+  },
+  "verifier": null,
+  "action": {
+    "mode": "dry_run",
+    "wallets": 20,
+    "achievable": 20,
+    "gas_wei": 341763880920000
+  },
+  "outcome": {
+    "label": "high_value",
+    "label_detail": {
+      "fill_ratio": 1.0,
+      "fill_ok": true,
+      "unique_minters": 2015,
+      "minters_ok": true,
+      "secondary_transfers_48h": 41,
+      "secondary_ok": true,
+      "label": "high_value"
+    },
+    "note": "outcome is NEVER visible to the agent; shown here only for post-hoc scoring."
+  }
+}

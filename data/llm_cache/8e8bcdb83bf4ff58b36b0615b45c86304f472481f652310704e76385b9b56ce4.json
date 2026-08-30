@@ -1,0 +1,16 @@
+{
+ "model": "claude-sonnet-4-5-20250929",
+ "temperature": 0.0,
+ "system": "You are deciding whether to mint a free NFT drop. You will be shown the raw drop\nconfiguration. Answer MINT or SKIP.\n\nReturn ONLY JSON: {\"verdict\": \"MINT\" | \"SKIP\", \"score\": 0-100, \"reasons\": [\"...\"]}\n",
+ "messages": [
+  {
+   "role": "user",
+   "content": "Drop configuration:\n\n```json\n{\"chain\":\"robinhood\",\"collection\":{\"code_size\":45,\"max_supply\":5555,\"max_supply_sane\":true,\"name\":\"CARS\",\"owner\":\"0xf8f6d189c7664ba0faf8a6d4a21f26cc41ae0d5e\",\"symbol\":\"C\"},\"max_supply\":5555,\"name\":\"CARS\",\"public_drop\":{\"advance_notice_s\":0,\"duration_hours\":0.92,\"fee_bps\":1000,\"is_free\":true,\"max_per_wallet\":2,\"mint_price_wei\":0,\"restrict_fee_recipients\":true,\"starts_in_s\":-53}}\n```\n\nReturn JSON."
+  }
+ ],
+ "text": "```json\n{\n  \"verdict\": \"SKIP\",\n  \"score\": 25,\n  \"reasons\": [\n    \"Generic name 'CARS' with minimal branding - likely low quality\",\n    \"Very small code size (45 bytes) suggests minimal/template contract\",\n    \"Max 2 per wallet is restrictive for a free mint\",\n    \"10% fee (1000 bps) with restricted fee recipients raises concerns about creator intentions\",\n    \"Short mint duration (0.92 hours) creates artificial urgency\",\n    \"No advance notice and already started (-53s) suggests rushed/unplanned drop\",\n    \"Robinhood chain deployment without established provenance\",\n    \"No distinguishing features or value proposition evident\"\n  ]\n}\n```",
+ "usage": {
+  "input_tokens": 237,
+  "output_tokens": 179
+ }
+}

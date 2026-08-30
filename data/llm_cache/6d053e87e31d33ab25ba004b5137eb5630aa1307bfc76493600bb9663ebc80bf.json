@@ -1,0 +1,16 @@
+{
+ "model": "claude-sonnet-4-5-20250929",
+ "temperature": 0.0,
+ "system": "You are deciding whether to mint a free NFT drop. You will be shown the raw drop\nconfiguration. Answer MINT or SKIP.\n\nReturn ONLY JSON: {\"verdict\": \"MINT\" | \"SKIP\", \"score\": 0-100, \"reasons\": [\"...\"]}\n",
+ "messages": [
+  {
+   "role": "user",
+   "content": "Drop configuration:\n\n```json\n{\"chain\":\"robinhood\",\"collection\":{\"code_size\":45,\"max_supply\":2222,\"max_supply_sane\":true,\"name\":\"WWW\",\"owner\":\"0x635d09b44e314c7b43b1c6922b05ed61c9a29005\",\"symbol\":\"WWW\"},\"max_supply\":2222,\"name\":\"WWW\",\"public_drop\":{\"advance_notice_s\":64729,\"duration_hours\":12.0,\"fee_bps\":1000,\"is_free\":true,\"max_per_wallet\":22,\"mint_price_wei\":0,\"restrict_fee_recipients\":true,\"starts_in_s\":64729}}\n```\n\nReturn JSON."
+  }
+ ],
+ "text": "```json\n{\n  \"verdict\": \"SKIP\",\n  \"score\": 25,\n  \"reasons\": [\n    \"Extremely generic and uninformative name 'WWW' with no clear brand or concept\",\n    \"No metadata, description, or any information about what the NFT represents\",\n    \"Very small code size (45 bytes) suggests minimal or no actual contract functionality\",\n    \"High max per wallet (22 out of 2222 supply = ~1%) enables whale concentration\",\n    \"10% fee (1000 bps) with restricted fee recipients raises concerns about creator extraction\",\n    \"Owner address shows no verification or established reputation\",\n    \"Complete lack of any compelling artistic, utility, or community value proposition\",\n    \"Drop starts in ~18 hours with 12-hour duration - very short window suggests potential pump-and-dump mechanics\"\n  ]\n}\n```",
+ "usage": {
+  "input_tokens": 235,
+  "output_tokens": 204
+ }
+}

@@ -1,0 +1,16 @@
+{
+ "model": "claude-sonnet-4-5-20250929",
+ "temperature": 0.0,
+ "system": "You are deciding whether to mint a free NFT drop. You will be shown the raw drop\nconfiguration. Answer MINT or SKIP.\n\nReturn ONLY JSON: {\"verdict\": \"MINT\" | \"SKIP\", \"score\": 0-100, \"reasons\": [\"...\"]}\n",
+ "messages": [
+  {
+   "role": "user",
+   "content": "Drop configuration:\n\n```json\n{\"chain\":\"robinhood\",\"collection\":{\"code_size\":45,\"max_supply\":4444,\"max_supply_sane\":true,\"name\":\"UglyForms\",\"owner\":\"0x19173ed42dfef7739283aa87a970729b79f5eb00\",\"symbol\":\"UF\"},\"max_supply\":4444,\"name\":\"UglyForms\",\"public_drop\":{\"advance_notice_s\":0,\"duration_hours\":72.0,\"fee_bps\":1000,\"is_free\":true,\"max_per_wallet\":1,\"mint_price_wei\":0,\"restrict_fee_recipients\":true,\"starts_in_s\":-155}}\n```\n\nReturn JSON."
+  }
+ ],
+ "text": "```json\n{\n  \"verdict\": \"SKIP\",\n  \"score\": 25,\n  \"reasons\": [\n    \"Collection name 'UglyForms' suggests low aesthetic quality and limited appeal\",\n    \"Max 1 per wallet severely limits any potential upside or trading activity\",\n    \"10% fee (1000 bps) with restricted fee recipients reduces secondary market attractiveness\",\n    \"Small code size (45 bytes) indicates minimal smart contract functionality\",\n    \"Drop already started 155 seconds ago, missing early minting advantage\",\n    \"No notable brand recognition or established project reputation\",\n    \"Limited supply of 4444 with 1 per wallet means limited community growth potential\"\n  ]\n}\n```",
+ "usage": {
+  "input_tokens": 235,
+  "output_tokens": 169
+ }
+}

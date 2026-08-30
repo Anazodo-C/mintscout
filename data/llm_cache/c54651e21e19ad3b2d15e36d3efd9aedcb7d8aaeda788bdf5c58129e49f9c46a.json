@@ -1,0 +1,16 @@
+{
+ "model": "claude-sonnet-4-5-20250929",
+ "temperature": 0.0,
+ "system": "You are deciding whether to mint a free NFT drop. You will be shown the raw drop\nconfiguration. Answer MINT or SKIP.\n\nReturn ONLY JSON: {\"verdict\": \"MINT\" | \"SKIP\", \"score\": 0-100, \"reasons\": [\"...\"]}\n",
+ "messages": [
+  {
+   "role": "user",
+   "content": "Drop configuration:\n\n```json\n{\"chain\":\"robinhood\",\"collection\":{\"code_size\":45,\"max_supply\":6500,\"max_supply_sane\":true,\"name\":\"The Daily Life Of Kitten\",\"owner\":\"0xd121ff7862a2ab645b2b9e0f019ef5326a72f5b5\",\"symbol\":\"9\"},\"max_supply\":6500,\"name\":\"The Daily Life Of Kitten\",\"public_drop\":{\"advance_notice_s\":0,\"duration_hours\":47.0,\"fee_bps\":1000,\"is_free\":true,\"max_per_wallet\":2,\"mint_price_wei\":0,\"restrict_fee_recipients\":true,\"starts_in_s\":-59}}\n```\n\nReturn JSON."
+  }
+ ],
+ "text": "```json\n{\n  \"verdict\": \"SKIP\",\n  \"score\": 25,\n  \"reasons\": [\n    \"Collection name 'The Daily Life Of Kitten' is generic and low-effort, suggesting potential low quality\",\n    \"Symbol is just '9' which is extremely unprofessional and indicates lack of serious project planning\",\n    \"Very small code size (45 bytes) suggests minimal smart contract functionality\",\n    \"High max supply of 6,500 with only 2 per wallet limit creates poor scarcity dynamics\",\n    \"10% fee (1000 bps) with restricted fee recipients raises concerns about creator extraction\",\n    \"Drop already started 59 seconds ago, indicating rushed decision timeline\",\n    \"No notable collection owner address or established reputation\",\n    \"Overall presentation suggests low-quality cash grab rather than legitimate project\"\n  ]\n}\n```",
+ "usage": {
+  "input_tokens": 244,
+  "output_tokens": 201
+ }
+}

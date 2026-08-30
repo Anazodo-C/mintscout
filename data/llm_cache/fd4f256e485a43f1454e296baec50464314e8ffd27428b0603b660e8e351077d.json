@@ -1,0 +1,16 @@
+{
+ "model": "claude-sonnet-4-5-20250929",
+ "temperature": 0.0,
+ "system": "You are deciding whether to mint a free NFT drop. You will be shown the raw drop\nconfiguration. Answer MINT or SKIP.\n\nReturn ONLY JSON: {\"verdict\": \"MINT\" | \"SKIP\", \"score\": 0-100, \"reasons\": [\"...\"]}\n",
+ "messages": [
+  {
+   "role": "user",
+   "content": "Drop configuration:\n\n```json\n{\"chain\":\"robinhood\",\"collection\":{\"code_size\":45,\"max_supply\":3335,\"max_supply_sane\":true,\"name\":\"Robion \",\"owner\":\"0x18429efb2c282d6bc519d7f5df951020dacef07c\",\"symbol\":\"Robion\"},\"max_supply\":3335,\"name\":\"Robion \",\"public_drop\":{\"advance_notice_s\":0,\"duration_hours\":0.02,\"fee_bps\":1000,\"is_free\":true,\"max_per_wallet\":10,\"mint_price_wei\":0,\"restrict_fee_recipients\":true,\"starts_in_s\":-29}}\n```\n\nReturn JSON."
+  }
+ ],
+ "text": "```json\n{\n  \"verdict\": \"SKIP\",\n  \"score\": 25,\n  \"reasons\": [\n    \"Collection name 'Robion ' appears to be mimicking 'Robinhood' chain name - potential trademark issue\",\n    \"Very small code size (45 bytes) suggests minimal/suspicious contract functionality\",\n    \"Drop already started 29 seconds ago (starts_in_s: -29) - may have limited availability\",\n    \"Extremely short duration (0.02 hours = 1.2 minutes) creates artificial urgency\",\n    \"High fee (10% with 1000 bps) despite being 'free' - fees apply on secondary sales\",\n    \"Max 10 per wallet with 3335 supply suggests potential for botting/sniping\",\n    \"No clear value proposition or legitimate project indicators\",\n    \"Combination of factors suggests low-quality or potentially deceptive drop\"\n  ]\n}\n```",
+ "usage": {
+  "input_tokens": 236,
+  "output_tokens": 223
+ }
+}

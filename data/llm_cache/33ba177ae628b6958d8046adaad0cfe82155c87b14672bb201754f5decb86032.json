@@ -1,0 +1,16 @@
+{
+ "model": "claude-sonnet-4-5-20250929",
+ "temperature": 0.0,
+ "system": "You are deciding whether to mint a free NFT drop. You will be shown the raw drop\nconfiguration. Answer MINT or SKIP.\n\nReturn ONLY JSON: {\"verdict\": \"MINT\" | \"SKIP\", \"score\": 0-100, \"reasons\": [\"...\"]}\n",
+ "messages": [
+  {
+   "role": "user",
+   "content": "Drop configuration:\n\n```json\n{\"chain\":\"robinhood\",\"collection\":{\"code_size\":45,\"max_supply\":3000,\"max_supply_sane\":true,\"name\":\"HOOD DOLLS\",\"owner\":\"0x49a4bcdd0c9cdbb72861711a81e88fafc39a5473\",\"symbol\":\"HOODDOLLS\"},\"max_supply\":3000,\"name\":\"HOOD DOLLS\",\"public_drop\":{\"advance_notice_s\":28716,\"duration_hours\":8.0,\"fee_bps\":1000,\"is_free\":true,\"max_per_wallet\":3,\"mint_price_wei\":0,\"restrict_fee_recipients\":true,\"starts_in_s\":28716}}\n```\n\nReturn JSON."
+  }
+ ],
+ "text": "```json\n{\n  \"verdict\": \"SKIP\",\n  \"score\": 35,\n  \"reasons\": [\n    \"Generic collection name 'HOOD DOLLS' lacks uniqueness and appears low-effort\",\n    \"Very high 10% fee (1000 bps) with restricted fee recipients suggests extractive tokenomics\",\n    \"Max supply of 3000 is moderate but combined with 3 per wallet limit allows only 1000 unique holders maximum\",\n    \"8-hour mint window starting in ~8 hours provides limited urgency\",\n    \"No verified contract information or established provenance\",\n    \"Collection symbol 'HOODDOLLS' and name suggest potential trademark issues with Robinhood brand\",\n    \"Small code size (45 bytes) indicates minimal smart contract functionality\",\n    \"Overall appears to be a cash-grab project leveraging Robinhood chain launch hype\"\n  ]\n}\n```",
+ "usage": {
+  "input_tokens": 242,
+  "output_tokens": 215
+ }
+}

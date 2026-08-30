@@ -1,0 +1,16 @@
+{
+ "model": "claude-sonnet-4-5-20250929",
+ "temperature": 0.0,
+ "system": "You are deciding whether to mint a free NFT drop. You will be shown the raw drop\nconfiguration. Answer MINT or SKIP.\n\nReturn ONLY JSON: {\"verdict\": \"MINT\" | \"SKIP\", \"score\": 0-100, \"reasons\": [\"...\"]}\n",
+ "messages": [
+  {
+   "role": "user",
+   "content": "Drop configuration:\n\n```json\n{\"chain\":\"robinhood\",\"collection\":{\"code_size\":45,\"max_supply\":100000,\"max_supply_sane\":true,\"name\":\"Ant Brokers\",\"owner\":\"0x4c817b8be1ae09fc7c0a352c98c8312fc2a49a17\",\"symbol\":\"Ant Brokers\"},\"max_supply\":100000,\"name\":\"Ant Brokers\",\"public_drop\":{\"advance_notice_s\":40,\"duration_hours\":0.05,\"fee_bps\":1000,\"is_free\":true,\"max_per_wallet\":50,\"mint_price_wei\":0,\"restrict_fee_recipients\":true,\"starts_in_s\":40}}\n```\n\nReturn JSON."
+  }
+ ],
+ "text": "```json\n{\n  \"verdict\": \"SKIP\",\n  \"score\": 25,\n  \"reasons\": [\n    \"Extremely high max supply of 100,000 NFTs dilutes scarcity and value\",\n    \"Very high max per wallet (50) suggests low demand expectations and potential for dumping\",\n    \"Extremely short duration of 0.05 hours (3 minutes) is suspicious and creates FOMO pressure\",\n    \"10% fee (1000 bps) on secondary sales is high for a free mint\",\n    \"Generic name 'Ant Brokers' with no clear brand recognition or utility\",\n    \"Owner address shows no verification of legitimacy or project reputation\",\n    \"Combination of high supply + high per-wallet limit + ultra-short duration suggests potential low-quality cash grab\",\n    \"No information about art quality, roadmap, or community\"\n  ]\n}\n```",
+ "usage": {
+  "input_tokens": 243,
+  "output_tokens": 211
+ }
+}

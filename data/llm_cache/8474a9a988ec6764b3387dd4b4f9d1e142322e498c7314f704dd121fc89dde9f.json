@@ -1,0 +1,16 @@
+{
+ "model": "claude-sonnet-4-5-20250929",
+ "temperature": 0.0,
+ "system": "You are deciding whether to mint a free NFT drop. You will be shown the raw drop\nconfiguration. Answer MINT or SKIP.\n\nReturn ONLY JSON: {\"verdict\": \"MINT\" | \"SKIP\", \"score\": 0-100, \"reasons\": [\"...\"]}\n",
+ "messages": [
+  {
+   "role": "user",
+   "content": "Drop configuration:\n\n```json\n{\"chain\":\"robinhood\",\"collection\":{\"code_size\":45,\"max_supply\":2222,\"max_supply_sane\":true,\"name\":\"Titan Hood\",\"owner\":\"0x9b2d5eaffbfecb36f9208c34ab316bbce3016e0f\",\"symbol\":\"TITANSHOOD\"},\"max_supply\":2222,\"name\":\"Titan Hood\",\"public_drop\":{\"advance_notice_s\":0,\"duration_hours\":0.08,\"fee_bps\":1000,\"is_free\":true,\"max_per_wallet\":17,\"mint_price_wei\":0,\"restrict_fee_recipients\":true,\"starts_in_s\":-22}}\n```\n\nReturn JSON."
+  }
+ ],
+ "text": "```json\n{\n  \"verdict\": \"SKIP\",\n  \"score\": 25,\n  \"reasons\": [\n    \"Drop already started 22 seconds ago with only 0.08 hour (4.8 minute) duration - likely already ended or nearly over\",\n    \"Extremely short mint window makes it impractical to participate\",\n    \"High fee of 10% (1000 bps) with restricted fee recipients suggests potential revenue extraction\",\n    \"Collection on 'robinhood' chain which is non-standard and raises concerns about legitimacy\",\n    \"Generic derivative name 'Titan Hood' combining popular NFT terms without clear unique value proposition\",\n    \"Max 17 per wallet is unusually high for a quality project, suggesting low demand expectations\",\n    \"Small code size (45 bytes) indicates minimal smart contract functionality\"\n  ]\n}\n```",
+ "usage": {
+  "input_tokens": 239,
+  "output_tokens": 200
+ }
+}

@@ -1,0 +1,16 @@
+{
+ "model": "claude-sonnet-4-5-20250929",
+ "temperature": 0.0,
+ "system": "You are deciding whether to mint a free NFT drop. You will be shown the raw drop\nconfiguration. Answer MINT or SKIP.\n\nReturn ONLY JSON: {\"verdict\": \"MINT\" | \"SKIP\", \"score\": 0-100, \"reasons\": [\"...\"]}\n",
+ "messages": [
+  {
+   "role": "user",
+   "content": "Drop configuration:\n\n```json\n{\"chain\":\"robinhood\",\"collection\":{\"code_size\":45,\"max_supply\":5555,\"max_supply_sane\":true,\"name\":\"FAST1\",\"owner\":\"0xbeb0a87be30521b60122d6cb649e18ec0429fdd5\",\"symbol\":\"F\"},\"max_supply\":5555,\"name\":\"FAST1\",\"public_drop\":{\"advance_notice_s\":0,\"duration_hours\":0.92,\"fee_bps\":1000,\"is_free\":true,\"max_per_wallet\":2,\"mint_price_wei\":0,\"restrict_fee_recipients\":true,\"starts_in_s\":-64}}\n```\n\nReturn JSON."
+  }
+ ],
+ "text": "```json\n{\n  \"verdict\": \"SKIP\",\n  \"score\": 25,\n  \"reasons\": [\n    \"Collection name 'FAST1' and symbol 'F' are generic and low-effort, suggesting minimal project quality\",\n    \"Very small code size (45 bytes) indicates a basic/minimal contract with no unique functionality\",\n    \"Max 2 per wallet with 5555 supply means limited upside even if valuable\",\n    \"Drop already started 64 seconds ago, reducing opportunity window\",\n    \"Very short duration (0.92 hours/55 minutes) creates urgency but also suggests rushed launch\",\n    \"10% fee (1000 bps) with restricted fee recipients is concerning for a free mint\",\n    \"Robinhood chain is relatively new/unproven for NFT collections\",\n    \"No distinguishing features or compelling reasons to mint - appears to be a generic cash-grab project\"\n  ]\n}\n```",
+ "usage": {
+  "input_tokens": 233,
+  "output_tokens": 221
+ }
+}

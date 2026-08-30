@@ -1,0 +1,16 @@
+{
+ "model": "claude-sonnet-4-5-20250929",
+ "temperature": 0.0,
+ "system": "You are deciding whether to mint a free NFT drop. You will be shown the raw drop\nconfiguration. Answer MINT or SKIP.\n\nReturn ONLY JSON: {\"verdict\": \"MINT\" | \"SKIP\", \"score\": 0-100, \"reasons\": [\"...\"]}\n",
+ "messages": [
+  {
+   "role": "user",
+   "content": "Drop configuration:\n\n```json\n{\"chain\":\"robinhood\",\"collection\":{\"code_size\":45,\"max_supply\":10000,\"max_supply_sane\":true,\"name\":\"Chunky BH\",\"owner\":\"0xbe95e025a846983854d0dbeba70a68e22e1e11a1\",\"symbol\":\"CBH\"},\"max_supply\":10000,\"name\":\"Chunky BH\",\"public_drop\":{\"advance_notice_s\":0,\"duration_hours\":0.08,\"fee_bps\":1000,\"is_free\":true,\"max_per_wallet\":10,\"mint_price_wei\":0,\"restrict_fee_recipients\":true,\"starts_in_s\":-37}}\n```\n\nReturn JSON."
+  }
+ ],
+ "text": "```json\n{\n  \"verdict\": \"SKIP\",\n  \"score\": 25,\n  \"reasons\": [\n    \"Drop already started 37 seconds ago - likely missed optimal minting window\",\n    \"Extremely short duration of only 0.08 hours (4.8 minutes) - high risk of missing it entirely\",\n    \"High 10% fee (1000 bps) with restricted fee recipients reduces value proposition\",\n    \"Generic/low-effort name 'Chunky BH' suggests low quality project\",\n    \"Small code size (45 bytes) indicates minimal smart contract functionality\",\n    \"High max supply of 10,000 with 10 per wallet limit suggests potential oversupply\",\n    \"No advance notice (0 seconds) indicates poor planning or rushed launch\",\n    \"Robinhood chain deployment is relatively uncommon, limiting ecosystem exposure\"\n  ]\n}\n```",
+ "usage": {
+  "input_tokens": 238,
+  "output_tokens": 209
+ }
+}

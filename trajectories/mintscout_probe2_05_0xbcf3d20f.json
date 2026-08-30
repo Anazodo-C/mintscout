@@ -1,0 +1,179 @@
+{
+  "arm": "mintscout",
+  "drop": {
+    "chain": "robinhood",
+    "collection": "0xbcf3d20f2ba6db051042ae81685a08c875fefe18",
+    "start_time": 1787596733,
+    "cap": 21,
+    "mint_price_wei": 0,
+    "fixture_name": null
+  },
+  "decision_cutoff_ts": 1787596733,
+  "tool_calls": [
+    {
+      "tool": "erc165_probe",
+      "input": {
+        "collection": "0xbcf3d20f2ba6db051042ae81685a08c875fefe18"
+      },
+      "output": {
+        "standard": "erc721",
+        "is_erc721": true,
+        "is_erc1155": false,
+        "answers_ownerof_and_balanceof": false,
+        "note": null
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "collection_stats",
+      "input": {
+        "collection": "0xbcf3d20f2ba6db051042ae81685a08c875fefe18"
+      },
+      "output": {
+        "max_supply": 8888,
+        "owner": "0x99ed88e97d76dc7d6f1864e22bb73488a9d12080",
+        "name": "STATICSOULS",
+        "symbol": "Staticsouls",
+        "code_size": 45,
+        "max_supply_sane": true
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "metadata_fetch",
+      "input": {
+        "allow_network": false
+      },
+      "output": {
+        "present": false,
+        "shape": null,
+        "name": null,
+        "description": null,
+        "n_attributes": 0,
+        "has_image": false,
+        "token_bound_account": false,
+        "n_stages": 0,
+        "drop_uri": null,
+        "contract_uri": "",
+        "source": null,
+        "on_chain_metadata": false,
+        "provenance": "absent",
+        "contract_uri_present": false
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "erc6551_probe",
+      "input": {},
+      "output": {
+        "token_bound_account": false,
+        "source": "metadata field"
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "economics",
+      "input": {},
+      "output": {
+        "mint_price_wei": 0,
+        "is_free": true,
+        "max_per_wallet": 21,
+        "fee_bps": 1000,
+        "restrict_fee_recipients": true,
+        "duration_hours": 0.08,
+        "starts_in_s": -23,
+        "advance_notice_s": 0
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "drop_config_history",
+      "input": {},
+      "output": {
+        "n_revisions_before_cutoff": 0,
+        "distinct_prices": [],
+        "price_flips": 0,
+        "revisions": []
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "mint_velocity",
+      "input": {},
+      "output": {
+        "available": false,
+        "mints_per_min": null,
+        "reason": "decision point is at/before startTime; no mint has occurred yet. Outcome signal, not a feature."
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "deployer_history",
+      "input": {},
+      "output": {
+        "deployer": "0x99ed88e97d76dc7d6f1864e22bb73488a9d12080",
+        "known": false,
+        "prior_collections": 0,
+        "prior_high_value": 0,
+        "note": "first time this deployer has been seen"
+      },
+      "ms": 0.0
+    }
+  ],
+  "triage": {
+    "verdict": "SKIP",
+    "score": 5,
+    "reasons": [
+      "No metadata resolved at all - metadata.present is false, which is a strong negative signal",
+      "Code size of 45 bytes indicates a minimal proxy with no custom implementation",
+      "Zero configuration revisions shows no operator effort or iteration"
+    ],
+    "risk_flags": [
+      "Metadata resolution failed entirely - no drop configuration exists",
+      "Minimal proxy contract (45 bytes) with no positive signals",
+      "First-time deployer with zero prior collections"
+    ]
+  },
+  "verifier": {
+    "agreed": false,
+    "objections": [
+      {
+        "target": "metadata.present evidence",
+        "problem": "Triage cites metadata.present=false as 'strong negative signal' but the decision point is BEFORE mint open. Token art metadata does not exist yet for ANY drop at this stage. The dossier explicitly states metadata.provenance='absent' universally. This is penalising the universally-absent.",
+        "severity": "major"
+      },
+      {
+        "target": "risk flag about metadata resolution",
+        "problem": "Claims 'no drop configuration exists' but this is false - the drop exists on-chain with configured supply (8888), max_per_wallet (21), and fee structure. Metadata absence at pre-mint is normal, not evidence of non-existence.",
+        "severity": "major"
+      },
+      {
+        "target": "overall reasoning",
+        "problem": "The verdict rests primarily on metadata.present=false, which is true of every drop including high-value ones at this decision point. While code_size=45 and n_revisions=0 are genuine negatives, they alone don't override the fact that the main cited evidence is defective.",
+        "severity": "major"
+      }
+    ],
+    "final_verdict": "SKIP",
+    "confidence": 75,
+    "vetoed": true
+  },
+  "action": {
+    "mode": "dry_run",
+    "wallets": 0,
+    "achievable": 0,
+    "gas_wei": 0
+  },
+  "outcome": {
+    "label": "low_value",
+    "label_detail": {
+      "fill_ratio": 1.0,
+      "fill_ok": true,
+      "unique_minters": 990,
+      "minters_ok": true,
+      "secondary_transfers_48h": 0,
+      "secondary_ok": false,
+      "label": "low_value"
+    },
+    "note": "outcome is NEVER visible to the agent; shown here only for post-hoc scoring."
+  }
+}

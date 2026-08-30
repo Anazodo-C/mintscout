@@ -1,0 +1,16 @@
+{
+ "model": "claude-sonnet-4-5-20250929",
+ "temperature": 0.0,
+ "system": "You are deciding whether to mint a free NFT drop. You will be shown the raw drop\nconfiguration. Answer MINT or SKIP.\n\nReturn ONLY JSON: {\"verdict\": \"MINT\" | \"SKIP\", \"score\": 0-100, \"reasons\": [\"...\"]}\n",
+ "messages": [
+  {
+   "role": "user",
+   "content": "Drop configuration:\n\n```json\n{\"chain\":\"robinhood\",\"collection\":{\"code_size\":45,\"max_supply\":3330,\"max_supply_sane\":true,\"name\":\"RH CRACK CATZ\",\"owner\":\"0x504615024cd0f90601e0262acacd30ab38eadb49\",\"symbol\":\"CATZ\"},\"max_supply\":3330,\"name\":\"RH CRACK CATZ\",\"public_drop\":{\"advance_notice_s\":4721,\"duration_hours\":48.0,\"fee_bps\":1000,\"is_free\":true,\"max_per_wallet\":3,\"mint_price_wei\":0,\"restrict_fee_recipients\":true,\"starts_in_s\":4721}}\n```\n\nReturn JSON."
+  }
+ ],
+ "text": "```json\n{\n  \"verdict\": \"SKIP\",\n  \"score\": 25,\n  \"reasons\": [\n    \"Collection name 'RH CRACK CATZ' contains drug reference ('CRACK'), indicating low quality or inappropriate branding\",\n    \"Relatively high supply of 3,330 NFTs dilutes potential value\",\n    \"10% fee (1000 bps) is significant for a free mint\",\n    \"Unknown collection with no established reputation\",\n    \"Unprofessional naming suggests this is likely a low-effort project\",\n    \"Max 3 per wallet is reasonable but doesn't offset other red flags\"\n  ]\n}\n```",
+ "usage": {
+  "input_tokens": 242,
+  "output_tokens": 155
+ }
+}

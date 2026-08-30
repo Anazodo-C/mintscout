@@ -1,0 +1,16 @@
+{
+ "model": "claude-sonnet-4-5-20250929",
+ "temperature": 0.0,
+ "system": "You are deciding whether to mint a free NFT drop. You will be shown the raw drop\nconfiguration. Answer MINT or SKIP.\n\nReturn ONLY JSON: {\"verdict\": \"MINT\" | \"SKIP\", \"score\": 0-100, \"reasons\": [\"...\"]}\n",
+ "messages": [
+  {
+   "role": "user",
+   "content": "Drop configuration:\n\n```json\n{\"chain\":\"robinhood\",\"collection\":{\"code_size\":45,\"max_supply\":5555,\"max_supply_sane\":true,\"name\":\"Lauii\",\"owner\":\"0x312251d8b1e24682ac9cd4e4a33ee2d760d3f035\",\"symbol\":\"RH\"},\"max_supply\":5555,\"name\":\"Lauii\",\"public_drop\":{\"advance_notice_s\":0,\"duration_hours\":0.08,\"fee_bps\":1000,\"is_free\":true,\"max_per_wallet\":5,\"mint_price_wei\":0,\"restrict_fee_recipients\":true,\"starts_in_s\":-97}}\n```\n\nReturn JSON."
+  }
+ ],
+ "text": "```json\n{\n  \"verdict\": \"SKIP\",\n  \"score\": 25,\n  \"reasons\": [\n    \"Drop already started 97 seconds ago with only 4.8 minute duration (0.08 hours) - likely already ended or nearly over\",\n    \"Very short mint window makes it impractical to participate\",\n    \"Unknown collection 'Lauii' with no established reputation\",\n    \"10% fee (1000 bps) is high for a free mint\",\n    \"Small contract code size (45 bytes) suggests minimal functionality or potential red flag\",\n    \"No advance notice (0 seconds) indicates poor planning or rushed launch\"\n  ]\n}\n```",
+ "usage": {
+  "input_tokens": 238,
+  "output_tokens": 162
+ }
+}

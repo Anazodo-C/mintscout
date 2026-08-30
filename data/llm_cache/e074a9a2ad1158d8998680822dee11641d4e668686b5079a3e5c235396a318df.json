@@ -1,0 +1,16 @@
+{
+ "model": "claude-sonnet-4-5-20250929",
+ "temperature": 0.0,
+ "system": "You are deciding whether to mint a free NFT drop. You will be shown the raw drop\nconfiguration. Answer MINT or SKIP.\n\nReturn ONLY JSON: {\"verdict\": \"MINT\" | \"SKIP\", \"score\": 0-100, \"reasons\": [\"...\"]}\n",
+ "messages": [
+  {
+   "role": "user",
+   "content": "Drop configuration:\n\n```json\n{\"chain\":\"robinhood\",\"collection\":{\"code_size\":45,\"max_supply\":4444,\"max_supply_sane\":true,\"name\":\"Tee\",\"owner\":\"0xfc46b46dcda87ae7e9a3d2ffd5873d261bc25afe\",\"symbol\":\"Rh\"},\"max_supply\":4444,\"name\":\"Tee\",\"public_drop\":{\"advance_notice_s\":41,\"duration_hours\":0.08,\"fee_bps\":1000,\"is_free\":true,\"max_per_wallet\":1,\"mint_price_wei\":0,\"restrict_fee_recipients\":true,\"starts_in_s\":41}}\n```\n\nReturn JSON."
+  }
+ ],
+ "text": "```json\n{\n  \"verdict\": \"SKIP\",\n  \"score\": 25,\n  \"reasons\": [\n    \"Extremely short mint duration of only 0.08 hours (~5 minutes) creates high pressure and FOMO tactics\",\n    \"Very short 41 second advance notice is insufficient for informed decision-making\",\n    \"Generic name 'Tee' and symbol 'Rh' lack distinctiveness or brand identity\",\n    \"10% fee (1000 bps) with restricted fee recipients suggests potential revenue extraction model\",\n    \"Max supply of 4444 is arbitrary with no clear utility or value proposition\",\n    \"Contract code size of 45 bytes is suspiciously small, potentially indicating a minimal/proxy contract\",\n    \"No information about artwork, utility, team, or roadmap\",\n    \"Overall configuration suggests a low-effort cash-grab drop despite being 'free'\"\n  ]\n}\n```",
+ "usage": {
+  "input_tokens": 236,
+  "output_tokens": 216
+ }
+}

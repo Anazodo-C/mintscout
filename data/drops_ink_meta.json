@@ -1,0 +1,19 @@
+{
+  "chains": {
+    "ink": {
+      "from_block": 53379859,
+      "to_block": 54589470,
+      "public_drop_updated": 8750,
+      "drop_uri_updated": 8635,
+      "distinct_collections": 2730,
+      "eligible": 1299,
+      "clock_max_error_s": 0.0,
+      "sampled": 300
+    }
+  },
+  "built_at": 1788087870,
+  "days": 14.0,
+  "sample_target": 300,
+  "seed": 1337,
+  "dust_threshold_wei": 0
+}

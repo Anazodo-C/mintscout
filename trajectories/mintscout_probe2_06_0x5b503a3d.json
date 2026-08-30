@@ -1,0 +1,179 @@
+{
+  "arm": "mintscout",
+  "drop": {
+    "chain": "robinhood",
+    "collection": "0x5b503a3d297a8c8ff5e981318e031ba716e06e91",
+    "start_time": 1787652246,
+    "cap": 2,
+    "mint_price_wei": 0,
+    "fixture_name": null
+  },
+  "decision_cutoff_ts": 1787652246,
+  "tool_calls": [
+    {
+      "tool": "erc165_probe",
+      "input": {
+        "collection": "0x5b503a3d297a8c8ff5e981318e031ba716e06e91"
+      },
+      "output": {
+        "standard": "erc721",
+        "is_erc721": true,
+        "is_erc1155": false,
+        "answers_ownerof_and_balanceof": false,
+        "note": null
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "collection_stats",
+      "input": {
+        "collection": "0x5b503a3d297a8c8ff5e981318e031ba716e06e91"
+      },
+      "output": {
+        "max_supply": 5555,
+        "owner": "0xbb78853204350c6ba221260b0150a92f1aadb833",
+        "name": "Senter1",
+        "symbol": "S",
+        "code_size": 45,
+        "max_supply_sane": true
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "metadata_fetch",
+      "input": {
+        "allow_network": false
+      },
+      "output": {
+        "present": false,
+        "shape": null,
+        "name": null,
+        "description": null,
+        "n_attributes": 0,
+        "has_image": false,
+        "token_bound_account": false,
+        "n_stages": 0,
+        "drop_uri": null,
+        "contract_uri": "",
+        "source": null,
+        "on_chain_metadata": false,
+        "provenance": "absent",
+        "contract_uri_present": false
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "erc6551_probe",
+      "input": {},
+      "output": {
+        "token_bound_account": false,
+        "source": "metadata field"
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "economics",
+      "input": {},
+      "output": {
+        "mint_price_wei": 0,
+        "is_free": true,
+        "max_per_wallet": 2,
+        "fee_bps": 1000,
+        "restrict_fee_recipients": true,
+        "duration_hours": 0.92,
+        "starts_in_s": -70,
+        "advance_notice_s": 0
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "drop_config_history",
+      "input": {},
+      "output": {
+        "n_revisions_before_cutoff": 0,
+        "distinct_prices": [],
+        "price_flips": 0,
+        "revisions": []
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "mint_velocity",
+      "input": {},
+      "output": {
+        "available": false,
+        "mints_per_min": null,
+        "reason": "decision point is at/before startTime; no mint has occurred yet. Outcome signal, not a feature."
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "deployer_history",
+      "input": {},
+      "output": {
+        "deployer": "0xbb78853204350c6ba221260b0150a92f1aadb833",
+        "known": false,
+        "prior_collections": 0,
+        "prior_high_value": 0,
+        "note": "first time this deployer has been seen"
+      },
+      "ms": 0.0
+    }
+  ],
+  "triage": {
+    "verdict": "SKIP",
+    "score": 5,
+    "reasons": [
+      "No metadata resolved at all - metadata.present is false, which is a strong negative signal",
+      "Code size of 45 bytes indicates a minimal proxy with no custom implementation",
+      "Zero configuration revisions shows no operator effort or iteration"
+    ],
+    "risk_flags": [
+      "Metadata completely absent - no drop configuration resolved",
+      "Minimal proxy contract (45 bytes) with no positive signals",
+      "First-time deployer with zero prior collections"
+    ]
+  },
+  "verifier": {
+    "agreed": false,
+    "objections": [
+      {
+        "target": "metadata.present evidence",
+        "problem": "Triage cites metadata.present=false as 'strong negative signal' but the decision point is BEFORE mint open (starts_in_s=-70). Token metadata does not exist for ANY drop at this point. The dossier explicitly states metadata.provenance='absent' is universal pre-mint. This is penalising the universally-absent.",
+        "severity": "major"
+      },
+      {
+        "target": "risk_flags: 'Metadata completely absent'",
+        "problem": "Repeats the same defective reasoning - treating pre-mint metadata absence as a red flag when it applies to every drop including high-value ones. This is outcome leakage disguised as caution.",
+        "severity": "major"
+      },
+      {
+        "target": "overall reasoning",
+        "problem": "The verdict rests entirely on universal pre-mint conditions (no metadata, minimal proxy, no config changes) without checking if ANY positive signals exist. A 5555 supply with coherent economics deserves WATCH to see post-open velocity, not immediate SKIP.",
+        "severity": "major"
+      }
+    ],
+    "final_verdict": "WATCH",
+    "confidence": 75,
+    "vetoed": true
+  },
+  "action": {
+    "mode": "dry_run",
+    "wallets": 0,
+    "achievable": 0,
+    "gas_wei": 0
+  },
+  "outcome": {
+    "label": "low_value",
+    "label_detail": {
+      "fill_ratio": 0.4479,
+      "fill_ok": false,
+      "unique_minters": 1254,
+      "minters_ok": true,
+      "secondary_transfers_48h": 0,
+      "secondary_ok": false,
+      "label": "low_value"
+    },
+    "note": "outcome is NEVER visible to the agent; shown here only for post-hoc scoring."
+  }
+}

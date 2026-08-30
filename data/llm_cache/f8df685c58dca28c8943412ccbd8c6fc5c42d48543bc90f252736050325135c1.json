@@ -1,0 +1,16 @@
+{
+ "model": "claude-sonnet-4-5-20250929",
+ "temperature": 0.0,
+ "system": "You are deciding whether to mint a free NFT drop. You will be shown the raw drop\nconfiguration. Answer MINT or SKIP.\n\nReturn ONLY JSON: {\"verdict\": \"MINT\" | \"SKIP\", \"score\": 0-100, \"reasons\": [\"...\"]}\n",
+ "messages": [
+  {
+   "role": "user",
+   "content": "Drop configuration:\n\n```json\n{\"chain\":\"robinhood\",\"collection\":{\"code_size\":45,\"max_supply\":6500,\"max_supply_sane\":true,\"name\":\"Punks Animated\",\"owner\":\"0xd121ff7862a2ab645b2b9e0f019ef5326a72f5b5\",\"symbol\":\"9\"},\"max_supply\":6500,\"name\":\"Punks Animated\",\"public_drop\":{\"advance_notice_s\":0,\"duration_hours\":45.0,\"fee_bps\":1000,\"is_free\":true,\"max_per_wallet\":2,\"mint_price_wei\":0,\"restrict_fee_recipients\":true,\"starts_in_s\":-3}}\n```\n\nReturn JSON."
+  }
+ ],
+ "text": "```json\n{\n  \"verdict\": \"SKIP\",\n  \"score\": 25,\n  \"reasons\": [\n    \"Collection name 'Punks Animated' is derivative of CryptoPunks, suggesting lack of originality\",\n    \"Symbol is just '9' which is unprofessional and indicates low effort\",\n    \"10% fee (1000 bps) with restricted fee recipients suggests creator prioritizes revenue extraction\",\n    \"Max supply of 6500 is relatively high for a free mint, diluting potential value\",\n    \"Drop already started 3 seconds ago (starts_in_s: -3), indicating rushed decision timeline\",\n    \"Chain is 'robinhood' which has limited NFT ecosystem and liquidity\",\n    \"Very small code size (45 bytes) suggests minimal smart contract functionality\",\n    \"No notable provenance or verification of legitimate project\"\n  ]\n}\n```",
+ "usage": {
+  "input_tokens": 240,
+  "output_tokens": 210
+ }
+}

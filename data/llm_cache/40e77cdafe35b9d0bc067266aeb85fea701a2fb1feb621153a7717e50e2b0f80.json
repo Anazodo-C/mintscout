@@ -1,0 +1,16 @@
+{
+ "model": "claude-sonnet-4-5-20250929",
+ "temperature": 0.0,
+ "system": "You are deciding whether to mint a free NFT drop. You will be shown the raw drop\nconfiguration. Answer MINT or SKIP.\n\nReturn ONLY JSON: {\"verdict\": \"MINT\" | \"SKIP\", \"score\": 0-100, \"reasons\": [\"...\"]}\n",
+ "messages": [
+  {
+   "role": "user",
+   "content": "Drop configuration:\n\n```json\n{\"chain\":\"robinhood\",\"collection\":{\"code_size\":45,\"max_supply\":2222,\"max_supply_sane\":true,\"name\":\"DRONEPEPE HOOD\",\"owner\":\"0x706847a6ce60ef90cab4732cfac59e162289ae0f\",\"symbol\":\"8453\"},\"max_supply\":2222,\"name\":\"DRONEPEPE HOOD\",\"public_drop\":{\"advance_notice_s\":0,\"duration_hours\":0.17,\"fee_bps\":1000,\"is_free\":true,\"max_per_wallet\":1,\"mint_price_wei\":0,\"restrict_fee_recipients\":true,\"starts_in_s\":-48}}\n```\n\nReturn JSON."
+  }
+ ],
+ "text": "```json\n{\n  \"verdict\": \"SKIP\",\n  \"score\": 25,\n  \"reasons\": [\n    \"Drop already ended 48 seconds ago (starts_in_s: -48)\",\n    \"Extremely short duration of only 0.17 hours (~10 minutes) makes it likely already completed\",\n    \"Collection name 'DRONEPEPE HOOD' appears to be a derivative/copycat project combining trending memes\",\n    \"Symbol '8453' is just a chain ID number, showing low effort branding\",\n    \"10% fee (1000 bps) is relatively high for a free mint\",\n    \"Small collection size (2222) with no clear utility or value proposition\",\n    \"Overall appears to be a low-quality meme derivative that has already concluded\"\n  ]\n}\n```",
+ "usage": {
+  "input_tokens": 239,
+  "output_tokens": 192
+ }
+}

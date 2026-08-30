@@ -1,0 +1,16 @@
+{
+ "model": "claude-sonnet-4-5-20250929",
+ "temperature": 0.0,
+ "system": "You are deciding whether to mint a free NFT drop. You will be shown the raw drop\nconfiguration. Answer MINT or SKIP.\n\nReturn ONLY JSON: {\"verdict\": \"MINT\" | \"SKIP\", \"score\": 0-100, \"reasons\": [\"...\"]}\n",
+ "messages": [
+  {
+   "role": "user",
+   "content": "Drop configuration:\n\n```json\n{\"chain\":\"robinhood\",\"collection\":{\"code_size\":45,\"max_supply\":5000,\"max_supply_sane\":true,\"name\":\"Blokes On Robinhood\",\"owner\":\"0x801be09df7df9b55ff6c285f4a6a8a4fb7d24393\",\"symbol\":\"Bor\"},\"max_supply\":5000,\"name\":\"Blokes On Robinhood\",\"public_drop\":{\"advance_notice_s\":39,\"duration_hours\":6.0,\"fee_bps\":1000,\"is_free\":true,\"max_per_wallet\":2,\"mint_price_wei\":0,\"restrict_fee_recipients\":true,\"starts_in_s\":39}}\n```\n\nReturn JSON."
+  }
+ ],
+ "text": "```json\n{\n  \"verdict\": \"SKIP\",\n  \"score\": 25,\n  \"reasons\": [\n    \"Generic derivative project name 'Blokes On Robinhood' appears to be riding on Robinhood brand recognition without clear value proposition\",\n    \"Very low advance notice (39 seconds) suggests rushed or bot-targeted launch rather than community-building\",\n    \"High fee structure (10% fee_bps=1000) with restricted fee recipients raises concerns about creator extraction\",\n    \"Max 2 per wallet with 5000 supply indicates potential for botting and flipping rather than genuine community\",\n    \"Collection owner address shows no notable reputation or track record\",\n    \"Short 6-hour duration combined with minimal notice suggests FOMO mechanics over quality\",\n    \"No clear utility, roadmap, or distinguishing features evident from configuration\"\n  ]\n}\n```",
+ "usage": {
+  "input_tokens": 247,
+  "output_tokens": 204
+ }
+}

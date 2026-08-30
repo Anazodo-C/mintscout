@@ -1,0 +1,16 @@
+{
+ "model": "claude-sonnet-4-5-20250929",
+ "temperature": 0.0,
+ "system": "You are deciding whether to mint a free NFT drop. You will be shown the raw drop\nconfiguration. Answer MINT or SKIP.\n\nReturn ONLY JSON: {\"verdict\": \"MINT\" | \"SKIP\", \"score\": 0-100, \"reasons\": [\"...\"]}\n",
+ "messages": [
+  {
+   "role": "user",
+   "content": "Drop configuration:\n\n```json\n{\"chain\":\"robinhood\",\"collection\":{\"code_size\":45,\"max_supply\":5555,\"max_supply_sane\":true,\"name\":\"STAM\",\"owner\":\"0xbeb0a87be30521b60122d6cb649e18ec0429fdd5\",\"symbol\":\"S\"},\"max_supply\":5555,\"name\":\"STAM\",\"public_drop\":{\"advance_notice_s\":0,\"duration_hours\":0.92,\"fee_bps\":1000,\"is_free\":true,\"max_per_wallet\":2,\"mint_price_wei\":0,\"restrict_fee_recipients\":true,\"starts_in_s\":-59}}\n```\n\nReturn JSON."
+  }
+ ],
+ "text": "```json\n{\n  \"verdict\": \"SKIP\",\n  \"score\": 25,\n  \"reasons\": [\n    \"Collection name 'STAM' and symbol 'S' are generic/low-effort with no clear brand identity\",\n    \"Very small code size (45 bytes) suggests minimal smart contract functionality\",\n    \"Max 2 per wallet is restrictive for a 5555 supply collection, limiting participation\",\n    \"10% fee (1000 bps) with restricted fee recipients raises concerns about creator intentions\",\n    \"Short mint duration (0.92 hours/~55 minutes) creates unnecessary urgency pressure\",\n    \"Drop already started 59 seconds ago, reducing time to research properly\",\n    \"No additional metadata or context provided about the project's purpose or utility\",\n    \"Robinhood chain deployment is unusual - less established ecosystem for NFTs\"\n  ]\n}\n```",
+ "usage": {
+  "input_tokens": 233,
+  "output_tokens": 209
+ }
+}

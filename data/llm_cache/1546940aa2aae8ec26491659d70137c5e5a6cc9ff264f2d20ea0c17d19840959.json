@@ -1,0 +1,16 @@
+{
+ "model": "claude-sonnet-4-5-20250929",
+ "temperature": 0.0,
+ "system": "You are deciding whether to mint a free NFT drop. You will be shown the raw drop\nconfiguration. Answer MINT or SKIP.\n\nReturn ONLY JSON: {\"verdict\": \"MINT\" | \"SKIP\", \"score\": 0-100, \"reasons\": [\"...\"]}\n",
+ "messages": [
+  {
+   "role": "user",
+   "content": "Drop configuration:\n\n```json\n{\"chain\":\"robinhood\",\"collection\":{\"code_size\":45,\"max_supply\":111111111,\"max_supply_sane\":false,\"name\":\"aefdwswde\",\"owner\":\"0x0a6bda027886765c459ce3b87d15731f27e13979\",\"symbol\":\"aefdwswde\"},\"max_supply\":111111111,\"name\":\"aefdwswde\",\"public_drop\":{\"advance_notice_s\":22,\"duration_hours\":0.18,\"fee_bps\":1000,\"is_free\":true,\"max_per_wallet\":1,\"mint_price_wei\":0,\"restrict_fee_recipients\":true,\"starts_in_s\":22}}\n```\n\nReturn JSON."
+  }
+ ],
+ "text": "```json\n{\n  \"verdict\": \"SKIP\",\n  \"score\": 15,\n  \"reasons\": [\n    \"Collection name 'aefdwswde' appears to be random gibberish with no meaningful branding\",\n    \"Symbol 'aefdwswde' is identical to name and equally meaningless\",\n    \"Extremely high max supply of 111,111,111 tokens indicates low scarcity and potential spam\",\n    \"max_supply_sane flag is explicitly false, indicating unreasonable supply parameters\",\n    \"Very small code size (45 bytes) suggests minimal or potentially malicious contract functionality\",\n    \"Extremely short mint duration of 0.18 hours (~11 minutes) is suspicious\",\n    \"10% fee (1000 bps) with restricted fee recipients suggests potential rug pull mechanism\",\n    \"Overall profile matches characteristics of a low-effort spam or scam NFT drop\"\n  ]\n}\n```",
+ "usage": {
+  "input_tokens": 244,
+  "output_tokens": 221
+ }
+}

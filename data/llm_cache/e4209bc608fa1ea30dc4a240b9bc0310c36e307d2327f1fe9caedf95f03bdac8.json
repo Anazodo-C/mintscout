@@ -1,0 +1,16 @@
+{
+ "model": "claude-sonnet-4-5-20250929",
+ "temperature": 0.0,
+ "system": "You are deciding whether to mint a free NFT drop. You will be shown the raw drop\nconfiguration. Answer MINT or SKIP.\n\nReturn ONLY JSON: {\"verdict\": \"MINT\" | \"SKIP\", \"score\": 0-100, \"reasons\": [\"...\"]}\n",
+ "messages": [
+  {
+   "role": "user",
+   "content": "Drop configuration:\n\n```json\n{\"chain\":\"robinhood\",\"collection\":{\"code_size\":45,\"max_supply\":19999,\"max_supply_sane\":true,\"name\":\"GreenChainPunks\",\"owner\":\"0x519aabb0f5b63a559b2323d4f5dcce541bd937bd\",\"symbol\":\"GreenChainPunks\"},\"max_supply\":19999,\"name\":\"GreenChainPunks\",\"public_drop\":{\"advance_notice_s\":7,\"duration_hours\":0.05,\"fee_bps\":1000,\"is_free\":true,\"max_per_wallet\":33,\"mint_price_wei\":0,\"restrict_fee_recipients\":true,\"starts_in_s\":7}}\n```\n\nReturn JSON."
+  }
+ ],
+ "text": "```json\n{\n  \"verdict\": \"SKIP\",\n  \"score\": 15,\n  \"reasons\": [\n    \"Extremely short mint window (0.05 hours = 3 minutes) suggests a cash grab or bot-targeted drop\",\n    \"High max supply (19,999) with high per-wallet limit (33) indicates poor scarcity design\",\n    \"10% fee (1000 bps) with restricted fee recipients raises concerns about creator intentions\",\n    \"Generic derivative name 'GreenChainPunks' lacks originality and appears to be riding CryptoPunks coattails\",\n    \"Robinhood chain deployment is unusual and less established for NFT projects\",\n    \"Very short advance notice (7 seconds) makes this inaccessible to real users\",\n    \"Combination of factors suggests low-quality, potentially predatory drop design\"\n  ]\n}\n```",
+ "usage": {
+  "input_tokens": 246,
+  "output_tokens": 209
+ }
+}

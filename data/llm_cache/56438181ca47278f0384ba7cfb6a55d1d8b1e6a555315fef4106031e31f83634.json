@@ -1,0 +1,16 @@
+{
+ "model": "claude-sonnet-4-5-20250929",
+ "temperature": 0.0,
+ "system": "You are deciding whether to mint a free NFT drop. You will be shown the raw drop\nconfiguration. Answer MINT or SKIP.\n\nReturn ONLY JSON: {\"verdict\": \"MINT\" | \"SKIP\", \"score\": 0-100, \"reasons\": [\"...\"]}\n",
+ "messages": [
+  {
+   "role": "user",
+   "content": "Drop configuration:\n\n```json\n{\"chain\":\"robinhood\",\"collection\":{\"code_size\":45,\"max_supply\":10000,\"max_supply_sane\":true,\"name\":\"Trench Caps\",\"owner\":\"0xc6551e257a00de96d5b57824b8615777db29a9c9\",\"symbol\":\"t\"},\"max_supply\":10000,\"name\":\"Trench Caps\",\"public_drop\":{\"advance_notice_s\":0,\"duration_hours\":24.0,\"fee_bps\":1000,\"is_free\":true,\"max_per_wallet\":100,\"mint_price_wei\":0,\"restrict_fee_recipients\":true,\"starts_in_s\":-72}}\n```\n\nReturn JSON."
+  }
+ ],
+ "text": "```json\n{\n  \"verdict\": \"SKIP\",\n  \"score\": 25,\n  \"reasons\": [\n    \"Drop already started 72 seconds ago (-72s), missing the initial mint window\",\n    \"Very high max_per_wallet (100) suggests low demand/value per NFT\",\n    \"Extremely high max_supply (10,000) dilutes potential value\",\n    \"10% fee (1000 bps) is high for a free mint\",\n    \"Generic name 'Trench Caps' with minimal symbol 't' shows low effort branding\",\n    \"Very small code_size (45 bytes) indicates minimal smart contract functionality\",\n    \"Unknown/unverified collection owner address\",\n    \"Robinhood chain has limited NFT ecosystem and liquidity\"\n  ]\n}\n```",
+ "usage": {
+  "input_tokens": 238,
+  "output_tokens": 192
+ }
+}

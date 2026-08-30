@@ -1,0 +1,16 @@
+{
+ "model": "claude-sonnet-4-5-20250929",
+ "temperature": 0.0,
+ "system": "You are deciding whether to mint a free NFT drop. You will be shown the raw drop\nconfiguration. Answer MINT or SKIP.\n\nReturn ONLY JSON: {\"verdict\": \"MINT\" | \"SKIP\", \"score\": 0-100, \"reasons\": [\"...\"]}\n",
+ "messages": [
+  {
+   "role": "user",
+   "content": "Drop configuration:\n\n```json\n{\"chain\":\"robinhood\",\"collection\":{\"code_size\":45,\"max_supply\":9999,\"max_supply_sane\":true,\"name\":\"MoneyHeist\",\"owner\":\"0x2717581804924114162f0e5ea8808d3869f98cab\",\"symbol\":\"Heist\"},\"max_supply\":9999,\"name\":\"MoneyHeist\",\"public_drop\":{\"advance_notice_s\":46,\"duration_hours\":0.05,\"fee_bps\":1000,\"is_free\":true,\"max_per_wallet\":10,\"mint_price_wei\":0,\"restrict_fee_recipients\":true,\"starts_in_s\":46}}\n```\n\nReturn JSON."
+  }
+ ],
+ "text": "```json\n{\n  \"verdict\": \"SKIP\",\n  \"score\": 25,\n  \"reasons\": [\n    \"Extremely short mint duration of only 0.05 hours (3 minutes) creates high pressure and FOMO tactics\",\n    \"Very small code size (45 bytes) suggests minimal or potentially suspicious contract functionality\",\n    \"10% fee (1000 bps) is quite high for a free mint, indicating significant creator profit motive\",\n    \"Generic 'MoneyHeist' theme lacks originality and appears to capitalize on popular culture\",\n    \"Max supply of 9999 is relatively high for such a short mint window, suggesting artificial scarcity manipulation\",\n    \"Robinhood chain deployment is unusual and less established than major chains\",\n    \"Combination of high fees, short duration, and generic branding suggests low-quality cash grab\"\n  ]\n}\n```",
+ "usage": {
+  "input_tokens": 233,
+  "output_tokens": 206
+ }
+}

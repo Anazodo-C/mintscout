@@ -1,0 +1,16 @@
+{
+ "model": "claude-sonnet-4-5-20250929",
+ "temperature": 0.0,
+ "system": "You are deciding whether to mint a free NFT drop. You will be shown the raw drop\nconfiguration. Answer MINT or SKIP.\n\nReturn ONLY JSON: {\"verdict\": \"MINT\" | \"SKIP\", \"score\": 0-100, \"reasons\": [\"...\"]}\n",
+ "messages": [
+  {
+   "role": "user",
+   "content": "Drop configuration:\n\n```json\n{\"chain\":\"robinhood\",\"collection\":{\"code_size\":45,\"max_supply\":10000,\"max_supply_sane\":true,\"name\":\"ouulala\",\"owner\":\"0x3601508f2a20b12f3f18308fab210c75dd73b577\",\"symbol\":\"OULALA\"},\"max_supply\":10000,\"name\":\"ouulala\",\"public_drop\":{\"advance_notice_s\":0,\"duration_hours\":24.0,\"fee_bps\":1000,\"is_free\":true,\"max_per_wallet\":5,\"mint_price_wei\":0,\"restrict_fee_recipients\":true,\"starts_in_s\":-110}}\n```\n\nReturn JSON."
+  }
+ ],
+ "text": "```json\n{\n  \"verdict\": \"SKIP\",\n  \"score\": 25,\n  \"reasons\": [\n    \"Collection name 'ouulala' appears low-effort and unprofessional\",\n    \"Symbol 'OULALA' lacks clear branding or purpose\",\n    \"Very small code size (45 bytes) suggests minimal smart contract functionality\",\n    \"High max supply of 10,000 with max 5 per wallet indicates potential oversupply\",\n    \"10% fee (1000 bps) on secondary sales is relatively high for an unknown project\",\n    \"No advance notice (0s) and already started (-110s) suggests rushed or poorly planned launch\",\n    \"No verifiable project information, roadmap, or utility evident from configuration\",\n    \"Owner address shows no notable reputation or previous successful projects\"\n  ]\n}\n```",
+ "usage": {
+  "input_tokens": 235,
+  "output_tokens": 199
+ }
+}

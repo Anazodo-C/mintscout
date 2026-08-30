@@ -1,0 +1,16 @@
+{
+ "model": "claude-sonnet-4-5-20250929",
+ "temperature": 0.0,
+ "system": "You are deciding whether to mint a free NFT drop. You will be shown the raw drop\nconfiguration. Answer MINT or SKIP.\n\nReturn ONLY JSON: {\"verdict\": \"MINT\" | \"SKIP\", \"score\": 0-100, \"reasons\": [\"...\"]}\n",
+ "messages": [
+  {
+   "role": "user",
+   "content": "Drop configuration:\n\n```json\n{\"chain\":\"robinhood\",\"collection\":{\"code_size\":19658,\"max_supply\":3000,\"max_supply_sane\":true,\"name\":\"PepeWars \",\"owner\":\"0x410a42fe73c3185b2bca2ffa030221b28ae94979\",\"symbol\":\"PWR\"},\"max_supply\":3000,\"name\":\"PepeWars \",\"public_drop\":{\"advance_notice_s\":32932,\"duration_hours\":10.0,\"fee_bps\":1000,\"is_free\":true,\"max_per_wallet\":1,\"mint_price_wei\":0,\"restrict_fee_recipients\":true,\"starts_in_s\":32932}}\n```\n\nReturn JSON."
+  }
+ ],
+ "text": "```json\n{\n  \"verdict\": \"SKIP\",\n  \"score\": 25,\n  \"reasons\": [\n    \"Generic meme derivative name 'PepeWars' suggests low originality and potential copyright issues\",\n    \"Very high 10% fee (1000 bps) with restricted fee recipients indicates extractive tokenomics\",\n    \"Max supply of 3000 is relatively high for a free mint, diluting potential value\",\n    \"Limited to 1 per wallet suggests artificial scarcity without clear utility\",\n    \"No verified information about project legitimacy, team, or roadmap\",\n    \"Meme coin derivatives typically have poor long-term value retention\",\n    \"High code size (19658 bytes) could indicate complex/risky contract logic\"\n  ]\n}\n```",
+ "usage": {
+  "input_tokens": 241,
+  "output_tokens": 186
+ }
+}

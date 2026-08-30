@@ -1,0 +1,16 @@
+{
+ "model": "claude-sonnet-4-5-20250929",
+ "temperature": 0.0,
+ "system": "You are deciding whether to mint a free NFT drop. You will be shown the raw drop\nconfiguration. Answer MINT or SKIP.\n\nReturn ONLY JSON: {\"verdict\": \"MINT\" | \"SKIP\", \"score\": 0-100, \"reasons\": [\"...\"]}\n",
+ "messages": [
+  {
+   "role": "user",
+   "content": "Drop configuration:\n\n```json\n{\"chain\":\"robinhood\",\"collection\":{\"code_size\":45,\"max_supply\":5555,\"max_supply_sane\":true,\"name\":\"BALL13\",\"owner\":\"0xec42ffb1fec4a78b50a980f868dde9fa9fc739a9\",\"symbol\":\"B\"},\"max_supply\":5555,\"name\":\"BALL13\",\"public_drop\":{\"advance_notice_s\":0,\"duration_hours\":0.08,\"fee_bps\":1000,\"is_free\":true,\"max_per_wallet\":1,\"mint_price_wei\":0,\"restrict_fee_recipients\":true,\"starts_in_s\":-69}}\n```\n\nReturn JSON."
+  }
+ ],
+ "text": "```json\n{\n  \"verdict\": \"SKIP\",\n  \"score\": 25,\n  \"reasons\": [\n    \"Collection name 'BALL13' and symbol 'B' appear generic and low-effort\",\n    \"Very small code size (45 bytes) suggests minimal contract functionality\",\n    \"Drop already started 69 seconds ago, reducing opportunity\",\n    \"Extremely short duration (0.08 hours = ~5 minutes) creates urgency pressure\",\n    \"Max supply of 5,555 is moderate but not particularly notable\",\n    \"10% fee (1000 bps) with restricted fee recipients raises concerns about creator intentions\",\n    \"No advance notice (0 seconds) suggests rushed or poorly planned drop\",\n    \"Overall presentation lacks professionalism and clear value proposition\"\n  ]\n}\n```",
+ "usage": {
+  "input_tokens": 235,
+  "output_tokens": 190
+ }
+}

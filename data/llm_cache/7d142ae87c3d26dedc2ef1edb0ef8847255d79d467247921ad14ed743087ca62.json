@@ -1,0 +1,16 @@
+{
+ "model": "claude-sonnet-4-5-20250929",
+ "temperature": 0.0,
+ "system": "You are deciding whether to mint a free NFT drop. You will be shown the raw drop\nconfiguration. Answer MINT or SKIP.\n\nReturn ONLY JSON: {\"verdict\": \"MINT\" | \"SKIP\", \"score\": 0-100, \"reasons\": [\"...\"]}\n",
+ "messages": [
+  {
+   "role": "user",
+   "content": "Drop configuration:\n\n```json\n{\"chain\":\"robinhood\",\"collection\":{\"code_size\":45,\"max_supply\":7777,\"max_supply_sane\":true,\"name\":\"Ethereum Rh\",\"owner\":\"0xf7c93fda62c0d8770ea0056b4feb84e095a4acb1\",\"symbol\":\"8453\"},\"max_supply\":7777,\"name\":\"Ethereum Rh\",\"public_drop\":{\"advance_notice_s\":0,\"duration_hours\":0.5,\"fee_bps\":1000,\"is_free\":true,\"max_per_wallet\":1,\"mint_price_wei\":0,\"restrict_fee_recipients\":true,\"starts_in_s\":-36}}\n```\n\nReturn JSON."
+  }
+ ],
+ "text": "```json\n{\n  \"verdict\": \"SKIP\",\n  \"score\": 15,\n  \"reasons\": [\n    \"Suspicious collection name 'Ethereum Rh' appears to be impersonating Ethereum brand\",\n    \"Symbol '8453' is unusual and non-standard (appears to be a chain ID, not a proper token symbol)\",\n    \"Collection owner address 0xf7c93fda62c0d8770ea0056b4feb84e095a4acb1 is unverified\",\n    \"Very small code size (45 bytes) suggests minimal/potentially problematic contract\",\n    \"Drop already started 36 seconds ago (starts_in_s: -36), indicating rushed timing\",\n    \"High fee of 10% (1000 bps) with restrict_fee_recipients enabled raises concerns about fee extraction\",\n    \"Generic/derivative branding with no clear unique value proposition\",\n    \"Combination of impersonation attempt and fee structure suggests potential scam\"\n  ]\n}\n```",
+ "usage": {
+  "input_tokens": 241,
+  "output_tokens": 238
+ }
+}

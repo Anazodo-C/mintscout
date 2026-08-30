@@ -1,0 +1,16 @@
+{
+ "model": "claude-sonnet-4-5-20250929",
+ "temperature": 0.0,
+ "system": "You are deciding whether to mint a free NFT drop. You will be shown the raw drop\nconfiguration. Answer MINT or SKIP.\n\nReturn ONLY JSON: {\"verdict\": \"MINT\" | \"SKIP\", \"score\": 0-100, \"reasons\": [\"...\"]}\n",
+ "messages": [
+  {
+   "role": "user",
+   "content": "Drop configuration:\n\n```json\n{\"chain\":\"robinhood\",\"collection\":{\"code_size\":45,\"max_supply\":2500,\"max_supply_sane\":true,\"name\":\"StonkerApe\",\"owner\":\"0x706847a6ce60ef90cab4732cfac59e162289ae0f\",\"symbol\":\"8453\"},\"max_supply\":2500,\"name\":\"StonkerApe\",\"public_drop\":{\"advance_notice_s\":0,\"duration_hours\":1.0,\"fee_bps\":1000,\"is_free\":true,\"max_per_wallet\":1,\"mint_price_wei\":0,\"restrict_fee_recipients\":true,\"starts_in_s\":-35}}\n```\n\nReturn JSON."
+  }
+ ],
+ "text": "```json\n{\n  \"verdict\": \"SKIP\",\n  \"score\": 25,\n  \"reasons\": [\n    \"Collection name 'StonkerApe' is a derivative/copycat of established NFT projects, suggesting low originality\",\n    \"Very small code size (45 bytes) indicates minimal smart contract functionality\",\n    \"Symbol '8453' is just a number (Base chain ID), showing lack of branding effort\",\n    \"Max 1 per wallet with 2500 supply suggests potential for low secondary value\",\n    \"10% fee (1000 bps) with restricted fee recipients raises concerns about creator intentions\",\n    \"Drop already started 35 seconds ago with only 1 hour duration - very rushed timeline\",\n    \"Overall appears to be a low-effort derivative project with questionable tokenomics\"\n  ]\n}\n```",
+ "usage": {
+  "input_tokens": 235,
+  "output_tokens": 197
+ }
+}

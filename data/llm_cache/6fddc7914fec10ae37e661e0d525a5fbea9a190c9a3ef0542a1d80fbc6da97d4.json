@@ -1,0 +1,16 @@
+{
+ "model": "claude-sonnet-4-5-20250929",
+ "temperature": 0.0,
+ "system": "You are deciding whether to mint a free NFT drop. You will be shown the raw drop\nconfiguration. Answer MINT or SKIP.\n\nReturn ONLY JSON: {\"verdict\": \"MINT\" | \"SKIP\", \"score\": 0-100, \"reasons\": [\"...\"]}\n",
+ "messages": [
+  {
+   "role": "user",
+   "content": "Drop configuration:\n\n```json\n{\"chain\":\"robinhood\",\"collection\":{\"code_size\":45,\"max_supply\":10000,\"max_supply_sane\":true,\"name\":\"Phoenix hood\",\"owner\":\"0xf1b471f598ed4533238759bd31a49a1039c3440e\",\"symbol\":\"Ph\"},\"max_supply\":10000,\"name\":\"Phoenix hood\",\"public_drop\":{\"advance_notice_s\":0,\"duration_hours\":0.18,\"fee_bps\":1000,\"is_free\":true,\"max_per_wallet\":7,\"mint_price_wei\":0,\"restrict_fee_recipients\":true,\"starts_in_s\":-92}}\n```\n\nReturn JSON."
+  }
+ ],
+ "text": "```json\n{\n  \"verdict\": \"SKIP\",\n  \"score\": 25,\n  \"reasons\": [\n    \"Drop already started 92 seconds ago with only 10.8 minutes total duration - likely already minted out or nearly complete\",\n    \"Very short mint window (0.18 hours = ~11 minutes) creates high risk of missing the opportunity\",\n    \"High max supply of 10,000 NFTs suggests low scarcity/value potential\",\n    \"Generic name 'Phoenix hood' with minimal branding appeal\",\n    \"10% fee (1000 bps) on secondary sales is relatively high\",\n    \"Max 7 per wallet allows for significant dilution\",\n    \"Unknown collection owner with no reputation indicators\",\n    \"Timing makes this practically impossible to mint successfully\"\n  ]\n}\n```",
+ "usage": {
+  "input_tokens": 230,
+  "output_tokens": 193
+ }
+}

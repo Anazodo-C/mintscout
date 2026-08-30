@@ -1,0 +1,16 @@
+{
+ "model": "claude-sonnet-4-5-20250929",
+ "temperature": 0.0,
+ "system": "You are deciding whether to mint a free NFT drop. You will be shown the raw drop\nconfiguration. Answer MINT or SKIP.\n\nReturn ONLY JSON: {\"verdict\": \"MINT\" | \"SKIP\", \"score\": 0-100, \"reasons\": [\"...\"]}\n",
+ "messages": [
+  {
+   "role": "user",
+   "content": "Drop configuration:\n\n```json\n{\"chain\":\"robinhood\",\"collection\":{\"code_size\":45,\"max_supply\":1111,\"max_supply_sane\":true,\"name\":\"OrdinalFEP\",\"owner\":\"0xe9c967cec99f5e04ffbb30787bbfae399c889478\",\"symbol\":\"OFEP\"},\"max_supply\":1111,\"name\":\"OrdinalFEP\",\"public_drop\":{\"advance_notice_s\":75,\"duration_hours\":2.0,\"fee_bps\":1000,\"is_free\":true,\"max_per_wallet\":5,\"mint_price_wei\":0,\"restrict_fee_recipients\":true,\"starts_in_s\":75}}\n```\n\nReturn JSON."
+  }
+ ],
+ "text": "```json\n{\n  \"verdict\": \"SKIP\",\n  \"score\": 25,\n  \"reasons\": [\n    \"Chain is 'robinhood' - unproven/experimental blockchain with uncertain longevity and ecosystem\",\n    \"Collection name 'OrdinalFEP' appears to be derivative of Bitcoin Ordinals without clear unique value proposition\",\n    \"Very short advance notice (75 seconds) suggests rushed or low-effort launch\",\n    \"10% fee (1000 bps) with restricted fee recipients raises concerns about creator extraction\",\n    \"Max supply of 1111 is arbitrary with no clear reasoning\",\n    \"No verifiable information about collection utility, roadmap, or team credentials\",\n    \"Small code size (45 bytes) suggests minimal smart contract functionality\",\n    \"High risk of this being a low-quality cash grab on an emerging chain\"\n  ]\n}\n```",
+ "usage": {
+  "input_tokens": 238,
+  "output_tokens": 206
+ }
+}

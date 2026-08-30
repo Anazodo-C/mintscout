@@ -1,0 +1,16 @@
+{
+ "model": "claude-sonnet-4-5-20250929",
+ "temperature": 0.0,
+ "system": "You are deciding whether to mint a free NFT drop. You will be shown the raw drop\nconfiguration. Answer MINT or SKIP.\n\nReturn ONLY JSON: {\"verdict\": \"MINT\" | \"SKIP\", \"score\": 0-100, \"reasons\": [\"...\"]}\n",
+ "messages": [
+  {
+   "role": "user",
+   "content": "Drop configuration:\n\n```json\n{\"chain\":\"robinhood\",\"collection\":{\"code_size\":45,\"max_supply\":11111,\"max_supply_sane\":true,\"name\":\"tytytyty\",\"owner\":\"0xd14dea8b276d7bb8d8c61223e457393597800c72\",\"symbol\":\"tytytyty\"},\"max_supply\":11111,\"name\":\"tytytyty\",\"public_drop\":{\"advance_notice_s\":10598,\"duration_hours\":0.02,\"fee_bps\":1000,\"is_free\":true,\"max_per_wallet\":1,\"mint_price_wei\":0,\"restrict_fee_recipients\":true,\"starts_in_s\":10598}}\n```\n\nReturn JSON."
+  }
+ ],
+ "text": "```json\n{\n  \"verdict\": \"SKIP\",\n  \"score\": 15,\n  \"reasons\": [\n    \"Extremely low-effort collection with lazy naming: 'tytytyty' for both name and symbol suggests no thought or branding\",\n    \"Very short mint duration of only 0.02 hours (~1.2 minutes) creates artificial urgency without value\",\n    \"10% fee (1000 bps) with restricted fee recipients suggests potential revenue extraction scheme\",\n    \"No meaningful collection information or utility provided\",\n    \"Generic configuration with no distinguishing features or value proposition\",\n    \"Pattern suggests possible spam or low-quality drop farming\"\n  ]\n}\n```",
+ "usage": {
+  "input_tokens": 239,
+  "output_tokens": 160
+ }
+}

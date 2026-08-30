@@ -1,0 +1,16 @@
+{
+ "model": "claude-sonnet-4-5-20250929",
+ "temperature": 0.0,
+ "system": "You are deciding whether to mint a free NFT drop. You will be shown the raw drop\nconfiguration. Answer MINT or SKIP.\n\nReturn ONLY JSON: {\"verdict\": \"MINT\" | \"SKIP\", \"score\": 0-100, \"reasons\": [\"...\"]}\n",
+ "messages": [
+  {
+   "role": "user",
+   "content": "Drop configuration:\n\n```json\n{\"chain\":\"robinhood\",\"collection\":{\"code_size\":45,\"max_supply\":10000,\"max_supply_sane\":true,\"name\":\"BlackRobinHoodNFT\",\"owner\":\"0xbd4ab149c831d1d7b7c9672c2490212558cddbf7\",\"symbol\":\"black\"},\"max_supply\":10000,\"name\":\"BlackRobinHoodNFT\",\"public_drop\":{\"advance_notice_s\":0,\"duration_hours\":0.05,\"fee_bps\":1000,\"is_free\":true,\"max_per_wallet\":10,\"mint_price_wei\":0,\"restrict_fee_recipients\":true,\"starts_in_s\":-12}}\n```\n\nReturn JSON."
+  }
+ ],
+ "text": "```json\n{\n  \"verdict\": \"SKIP\",\n  \"score\": 15,\n  \"reasons\": [\n    \"Suspicious collection name 'BlackRobinHoodNFT' appears to be attempting to capitalize on Robinhood brand recognition without authorization\",\n    \"Very short mint duration of only 0.05 hours (3 minutes) suggests a rushed or low-effort drop\",\n    \"High supply of 10,000 NFTs with max 10 per wallet allows for significant concentration\",\n    \"10% fee (1000 bps) is unusually high for a 'free' mint, suggesting hidden costs\",\n    \"Drop has already started (starts_in_s: -12), indicating you're late to the mint\",\n    \"Unverified contract owner address with no reputation indicators\",\n    \"Overall appears to be a low-quality cash grab attempting brand confusion\"\n  ]\n}\n```",
+ "usage": {
+  "input_tokens": 246,
+  "output_tokens": 212
+ }
+}

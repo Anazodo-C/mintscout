@@ -1,0 +1,16 @@
+{
+ "model": "claude-sonnet-4-5-20250929",
+ "temperature": 0.0,
+ "system": "You are deciding whether to mint a free NFT drop. You will be shown the raw drop\nconfiguration. Answer MINT or SKIP.\n\nReturn ONLY JSON: {\"verdict\": \"MINT\" | \"SKIP\", \"score\": 0-100, \"reasons\": [\"...\"]}\n",
+ "messages": [
+  {
+   "role": "user",
+   "content": "Drop configuration:\n\n```json\n{\"chain\":\"robinhood\",\"collection\":{\"code_size\":45,\"max_supply\":6000,\"max_supply_sane\":true,\"name\":\"Weg\",\"owner\":\"0xd1b2ba1407e4e4fb72664c09b9b6ded78ddeb675\",\"symbol\":\"RH \"},\"max_supply\":6000,\"name\":\"Weg\",\"public_drop\":{\"advance_notice_s\":16,\"duration_hours\":0.02,\"fee_bps\":1000,\"is_free\":true,\"max_per_wallet\":5,\"mint_price_wei\":0,\"restrict_fee_recipients\":true,\"starts_in_s\":16}}\n```\n\nReturn JSON."
+  }
+ ],
+ "text": "```json\n{\n  \"verdict\": \"SKIP\",\n  \"score\": 15,\n  \"reasons\": [\n    \"Extremely short mint duration of only 0.02 hours (72 seconds) makes it nearly impossible to participate\",\n    \"Collection name 'Weg' and symbol 'RH ' lack meaningful branding or context\",\n    \"Very small code size (45 bytes) suggests minimal or potentially placeholder contract functionality\",\n    \"High 10% fee (1000 bps) with restricted fee recipients raises concerns about value extraction\",\n    \"16 second advance notice is insufficient for proper evaluation or preparation\",\n    \"No clear utility, community, or project information evident from the configuration\",\n    \"The combination of ultra-short duration and advance notice suggests potential bot-targeted or low-quality drop\"\n  ]\n}\n```",
+ "usage": {
+  "input_tokens": 237,
+  "output_tokens": 192
+ }
+}

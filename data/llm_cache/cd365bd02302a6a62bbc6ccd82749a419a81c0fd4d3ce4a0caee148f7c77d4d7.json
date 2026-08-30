@@ -1,0 +1,16 @@
+{
+ "model": "claude-sonnet-4-5-20250929",
+ "temperature": 0.0,
+ "system": "You are deciding whether to mint a free NFT drop. You will be shown the raw drop\nconfiguration. Answer MINT or SKIP.\n\nReturn ONLY JSON: {\"verdict\": \"MINT\" | \"SKIP\", \"score\": 0-100, \"reasons\": [\"...\"]}\n",
+ "messages": [
+  {
+   "role": "user",
+   "content": "Drop configuration:\n\n```json\n{\"chain\":\"robinhood\",\"collection\":{\"code_size\":45,\"max_supply\":8888,\"max_supply_sane\":true,\"name\":\"STATICSOULS\",\"owner\":\"0x99ed88e97d76dc7d6f1864e22bb73488a9d12080\",\"symbol\":\"Staticsouls\"},\"max_supply\":8888,\"name\":\"STATICSOULS\",\"public_drop\":{\"advance_notice_s\":0,\"duration_hours\":0.08,\"fee_bps\":1000,\"is_free\":true,\"max_per_wallet\":21,\"mint_price_wei\":0,\"restrict_fee_recipients\":true,\"starts_in_s\":-23}}\n```\n\nReturn JSON."
+  }
+ ],
+ "text": "```json\n{\n  \"verdict\": \"SKIP\",\n  \"score\": 25,\n  \"reasons\": [\n    \"Drop already started 23 seconds ago with only 4.8 minutes duration (0.08 hours) - likely already over or ending imminently\",\n    \"Suspicious max_per_wallet of 21 tokens is unusually high for a free mint, suggesting potential bot farming\",\n    \"Collection owner address 0x99ed88e97d76dc7d6f1864e22bb73488a9d12080 is not a known reputable deployer\",\n    \"Generic name 'STATICSOULS' with no clear brand recognition or utility\",\n    \"10% fee (1000 bps) with restricted fee recipients suggests extractive tokenomics\",\n    \"Extremely short mint window indicates rushed/low-effort launch rather than legitimate project\",\n    \"High risk of this being a completed or failed mint given negative starts_in_s value\"\n  ]\n}\n```",
+ "usage": {
+  "input_tokens": 239,
+  "output_tokens": 232
+ }
+}

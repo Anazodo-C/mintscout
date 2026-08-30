@@ -1,0 +1,16 @@
+{
+ "model": "claude-sonnet-4-5-20250929",
+ "temperature": 0.0,
+ "system": "You are deciding whether to mint a free NFT drop. You will be shown the raw drop\nconfiguration. Answer MINT or SKIP.\n\nReturn ONLY JSON: {\"verdict\": \"MINT\" | \"SKIP\", \"score\": 0-100, \"reasons\": [\"...\"]}\n",
+ "messages": [
+  {
+   "role": "user",
+   "content": "Drop configuration:\n\n```json\n{\"chain\":\"robinhood\",\"collection\":{\"code_size\":45,\"max_supply\":10000,\"max_supply_sane\":true,\"name\":\"ROWCATS\",\"owner\":\"0x946583922d7186ca4c5c764bde3c404b2dc94af4\",\"symbol\":\"8453\"},\"max_supply\":10000,\"name\":\"ROWCATS\",\"public_drop\":{\"advance_notice_s\":0,\"duration_hours\":0.17,\"fee_bps\":1000,\"is_free\":true,\"max_per_wallet\":1,\"mint_price_wei\":0,\"restrict_fee_recipients\":true,\"starts_in_s\":-32}}\n```\n\nReturn JSON."
+  }
+ ],
+ "text": "```json\n{\n  \"verdict\": \"SKIP\",\n  \"score\": 25,\n  \"reasons\": [\n    \"Drop has already started 32 seconds ago (starts_in_s: -32), likely missed opportunity\",\n    \"Very short 10 minute duration (0.17 hours) with drop already active means minimal time left\",\n    \"Generic/low-effort name 'ROWCATS' with mismatched symbol '8453' (appears to be chain ID) suggests poor quality\",\n    \"10% fee (1000 bps) with restrict_fee_recipients enabled reduces actual value of 'free' mint\",\n    \"Small code size (45 bytes) indicates minimal contract functionality\",\n    \"Max 1 per wallet severely limits any potential upside\",\n    \"No advance notice (0s) combined with already-started drop suggests rushed/spam project\"\n  ]\n}\n```",
+ "usage": {
+  "input_tokens": 236,
+  "output_tokens": 209
+ }
+}

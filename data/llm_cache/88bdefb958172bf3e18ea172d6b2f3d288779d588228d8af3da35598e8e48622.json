@@ -1,0 +1,16 @@
+{
+ "model": "claude-sonnet-4-5-20250929",
+ "temperature": 0.0,
+ "system": "You are deciding whether to mint a free NFT drop. You will be shown the raw drop\nconfiguration. Answer MINT or SKIP.\n\nReturn ONLY JSON: {\"verdict\": \"MINT\" | \"SKIP\", \"score\": 0-100, \"reasons\": [\"...\"]}\n",
+ "messages": [
+  {
+   "role": "user",
+   "content": "Drop configuration:\n\n```json\n{\"chain\":\"robinhood\",\"collection\":{\"code_size\":45,\"max_supply\":5555,\"max_supply_sane\":true,\"name\":\"The Numb Money\",\"owner\":\"0xf552cea529739e0f86fdf363e5a43a8042689b7b\",\"symbol\":\"TNM\"},\"max_supply\":5555,\"name\":\"The Numb Money\",\"public_drop\":{\"advance_notice_s\":0,\"duration_hours\":0.08,\"fee_bps\":1000,\"is_free\":true,\"max_per_wallet\":10,\"mint_price_wei\":0,\"restrict_fee_recipients\":true,\"starts_in_s\":-21}}\n```\n\nReturn JSON."
+  }
+ ],
+ "text": "```json\n{\n  \"verdict\": \"SKIP\",\n  \"score\": 25,\n  \"reasons\": [\n    \"Drop has already started 21 seconds ago (starts_in_s: -21), meaning you've likely missed optimal minting window\",\n    \"Extremely short duration of only 0.08 hours (~5 minutes), creating high time pressure and likely already ending\",\n    \"10% fee (1000 bps) is quite high for a free mint\",\n    \"Max supply of 5555 with max 10 per wallet suggests potential for quick sellout\",\n    \"Collection name 'The Numb Money' and symbol 'TNM' lack clear brand recognition or value proposition\",\n    \"No advance notice (0 seconds) indicates poor planning or potential low-quality project\",\n    \"Robinhood chain is less established than major chains, limiting liquidity and resale potential\"\n  ]\n}\n```",
+ "usage": {
+  "input_tokens": 238,
+  "output_tokens": 215
+ }
+}

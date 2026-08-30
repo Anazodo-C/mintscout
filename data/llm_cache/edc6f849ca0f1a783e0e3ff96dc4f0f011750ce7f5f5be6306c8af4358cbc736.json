@@ -1,0 +1,16 @@
+{
+ "model": "claude-sonnet-4-5-20250929",
+ "temperature": 0.0,
+ "system": "You are deciding whether to mint a free NFT drop. You will be shown the raw drop\nconfiguration. Answer MINT or SKIP.\n\nReturn ONLY JSON: {\"verdict\": \"MINT\" | \"SKIP\", \"score\": 0-100, \"reasons\": [\"...\"]}\n",
+ "messages": [
+  {
+   "role": "user",
+   "content": "Drop configuration:\n\n```json\n{\"chain\":\"robinhood\",\"collection\":{\"code_size\":45,\"max_supply\":200,\"max_supply_sane\":true,\"name\":\"pxless\",\"owner\":\"0x17025b028c341e512e54f175c65dcd96239bcdf0\",\"symbol\":\"pxl\"},\"max_supply\":200,\"name\":\"pxless\",\"public_drop\":{\"advance_notice_s\":353,\"duration_hours\":1.0,\"fee_bps\":1000,\"is_free\":true,\"max_per_wallet\":1,\"mint_price_wei\":0,\"restrict_fee_recipients\":true,\"starts_in_s\":353}}\n```\n\nReturn JSON."
+  }
+ ],
+ "text": "```json\n{\n  \"verdict\": \"SKIP\",\n  \"score\": 25,\n  \"reasons\": [\n    \"Very small collection size (200 max supply) limits potential value and liquidity\",\n    \"Generic name 'pxless' with minimal branding appeal\",\n    \"Extremely short mint window (1 hour duration) creates unnecessary urgency without clear value proposition\",\n    \"10% fee (1000 bps) on secondary sales is high for an unproven project\",\n    \"No notable collection owner or established reputation\",\n    \"Max 1 per wallet severely limits engagement and suggests artificial scarcity\",\n    \"Robinhood chain has limited NFT ecosystem and adoption\",\n    \"No compelling artistic or utility value evident from configuration alone\"\n  ]\n}\n```",
+ "usage": {
+  "input_tokens": 230,
+  "output_tokens": 182
+ }
+}

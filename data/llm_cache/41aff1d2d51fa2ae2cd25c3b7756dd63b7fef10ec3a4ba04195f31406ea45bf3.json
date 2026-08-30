@@ -1,0 +1,16 @@
+{
+ "model": "claude-sonnet-4-5-20250929",
+ "temperature": 0.0,
+ "system": "You are deciding whether to mint a free NFT drop. You will be shown the raw drop\nconfiguration. Answer MINT or SKIP.\n\nReturn ONLY JSON: {\"verdict\": \"MINT\" | \"SKIP\", \"score\": 0-100, \"reasons\": [\"...\"]}\n",
+ "messages": [
+  {
+   "role": "user",
+   "content": "Drop configuration:\n\n```json\n{\"chain\":\"robinhood\",\"collection\":{\"code_size\":45,\"max_supply\":20,\"max_supply_sane\":true,\"name\":\"RH Punks\",\"owner\":\"0xec46fc0aea0b50f55a364bab39ad20b344b5c9fa\",\"symbol\":\"RhPunks\"},\"max_supply\":20,\"name\":\"RH Punks\",\"public_drop\":{\"advance_notice_s\":0,\"duration_hours\":23.0,\"fee_bps\":1000,\"is_free\":true,\"max_per_wallet\":555,\"mint_price_wei\":0,\"restrict_fee_recipients\":true,\"starts_in_s\":-4788}}\n```\n\nReturn JSON."
+  }
+ ],
+ "text": "```json\n{\n  \"verdict\": \"SKIP\",\n  \"score\": 25,\n  \"reasons\": [\n    \"Extremely low max supply of only 20 NFTs makes this a very limited collection with questionable value\",\n    \"Suspicious max_per_wallet of 555 when total supply is only 20 - configuration doesn't make logical sense\",\n    \"10% fee (1000 bps) with restrict_fee_recipients enabled suggests creator takes significant cut on secondary sales\",\n    \"Generic derivative name 'RH Punks' appears to be copying CryptoPunks without clear differentiation\",\n    \"Very small code_size of 45 bytes indicates minimal smart contract functionality\",\n    \"Drop already started 1.3 hours ago (starts_in_s: -4788) and nearly over (23 hour duration), likely already minted out given tiny supply\",\n    \"Robinhood chain deployment is relatively new/unproven for NFT collections\"\n  ]\n}\n```",
+ "usage": {
+  "input_tokens": 242,
+  "output_tokens": 232
+ }
+}

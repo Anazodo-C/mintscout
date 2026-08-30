@@ -1,0 +1,6002 @@
+[
+ {
+  "collection": "0x12d3908fbffa0695adbb027eff93a22e721c42ba",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 10,
+  "achievable": 100,
+  "gas_wei": 170881940460000,
+  "spend_wei": 0,
+  "ms": 0.04008400719612837,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xa68e9af17d876075f40da74872971dbe3996c909",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 10,
+  "achievable": 100,
+  "gas_wei": 170881940460000,
+  "spend_wei": 0,
+  "ms": 0.0314170029014349,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xf53e4514bbe28f2c219ddaba6ba1b0db7a1ad3f9",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 20,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.07691595237702131,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xa2173e0a11d211b17dc147f54a77b6b81b0060ce",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 60,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.013833981938660145,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xccdef7e2457bbf77f553bcae3418733b5ed8f989",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 10,
+  "achievable": 100,
+  "gas_wei": 170881940460000,
+  "spend_wei": 0,
+  "ms": 0.016625039279460907,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xd25e46f039040747cc359ee18e6be0f90c03d7e1",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 40,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.026499968953430653,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xfcfa43a35225e1e14ef9a7691956ad43cd0e6083",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 5,
+  "achievable": 100,
+  "gas_wei": 85440970230000,
+  "spend_wei": 0,
+  "ms": 0.048792106099426746,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x6e7f2eba3fbae7d1efb2ea0345728ada94cad8e6",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 20,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.016915961168706417,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x8218259c54778165b8aba331913ab3d8ef33d4a0",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 20,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.013208948075771332,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x7383f14482567310cde915e9ea879b90479ec78d",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 40,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.051709008403122425,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xe913f3a7a14baa71cf3fade80b7e6da8870aabe9",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 12,
+  "achievable": 100,
+  "gas_wei": 205058328552000,
+  "spend_wei": 0,
+  "ms": 0.03499991726130247,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x071c2b1c770d313cd382a153146e323b101c2860",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 20,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.012542004697024822,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xfc5cdcd7a546482fdfff2bd5186101744f94dc73",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "high_value",
+  "chose": true,
+  "wallets_used": 10,
+  "achievable": 100,
+  "gas_wei": 170881940460000,
+  "spend_wei": 0,
+  "ms": 0.010999967344105244,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x589ce0acd40491106cc8041df30c3e19a4b364c4",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 20,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.039458973333239555,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x0b955d4bcb0cd019b866b84af138288eee901feb",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 40,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.011499971151351929,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xce9a6c9a486fde097e175ffcc90d6059b1d818b0",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 20,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.010582967661321163,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xd1f7bac9bccbd934946f16e2532886ba69900e07",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "high_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 20,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.010209041647613049,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x55491e79942fe5f13404c04afb60662c07b666ca",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 100,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.042082974687218666,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xb6c0c0757fb975ef6cb6616b27b3f7f015779891",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 40,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.035958015359938145,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xfd979b98cd2c259e75d00c0e47e39ca9a57f521b",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 5,
+  "achievable": 100,
+  "gas_wei": 85440970230000,
+  "spend_wei": 0,
+  "ms": 0.010875053703784943,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x368c7476fe19ac8d07c3431928ddb4480c08c736",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 20,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.010416959412395954,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x3669e2efd1da47126ed0967890282f90e6e59fdc",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 100,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.010249903425574303,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xb9d7bb36e256edeb45ece148cf4d9cb1d14deca0",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 20,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.010083080269396305,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x540d3805281a38daeccf89625d982e6637379111",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 20,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.03204203676432371,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x749329b6fe6d622977b63245aab2e3dd546c3cfd",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 40,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.029916060157120228,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x665c92da9eac8fd94a30916c1edd70e9337aca7e",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 20,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.3371249185875058,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xf9552fc80a5ec7a2a61a8e720a6f814ebba0f686",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 20,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.03566604573279619,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x3076dbcafeafd7e7e5b1a37de2379196c006fa3f",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 40,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.011167023330926895,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x6501125383e5fe9a779ed119e8fbbd366f8043ae",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "high_value",
+  "chose": true,
+  "wallets_used": 4,
+  "achievable": 100,
+  "gas_wei": 68352776184000,
+  "spend_wei": 0,
+  "ms": 0.009792041964828968,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x47bb17c4c5345fd49923203ecd8e2e027d5a0250",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 20,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.009584007784724236,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x476a0bca974edc9524ff0b7d094505a50ef0917b",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 5,
+  "achievable": 100,
+  "gas_wei": 85440970230000,
+  "spend_wei": 0,
+  "ms": 0.009790994226932526,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xcb6e9a44bf26ef3c48cb3f1844623db74edbd0ca",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 10,
+  "achievable": 100,
+  "gas_wei": 170881940460000,
+  "spend_wei": 0,
+  "ms": 0.16420800238847733,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x10ade1e38c173c84d3dc00485e492753da165e6c",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 10,
+  "achievable": 100,
+  "gas_wei": 170881940460000,
+  "spend_wei": 0,
+  "ms": 0.01091696321964264,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x33110c198f868f7c6f6ce7d1497d06039bd8b0b1",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 20,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.010125106200575829,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x20114dab4e38eceed5222d2c5f619dba8c828e37",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 100,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.032250070944428444,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xc75b2be7067be934351099766080535e12c191e7",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 100,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.0100000761449337,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xa08e916f1452cedccd3477f8068f39e03154bcb6",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 20,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.03075005952268839,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xcc86d4d0a04f759ee1c5137f118c29a7cb5e5c9a",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 20,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.009999959729611874,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x06445b017e7e3c585a1ba11998979e7529dd312e",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 10,
+  "achievable": 100,
+  "gas_wei": 170881940460000,
+  "spend_wei": 0,
+  "ms": 0.026999972760677338,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x01a61700b47153fc559914ec7abd538e470c4531",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 60,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.03358395770192146,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xdb378105120c16ed23539665616c14a62a2f9881",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 100,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.010207993909716606,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xd5389de6fdceb8f5ea2d7d03e3add62ab4f45dc6",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 5,
+  "achievable": 100,
+  "gas_wei": 85440970230000,
+  "spend_wei": 0,
+  "ms": 0.009875046089291573,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x83abfebd404c6aafd0f62bcad81633ac2133d191",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 4,
+  "achievable": 100,
+  "gas_wei": 68352776184000,
+  "spend_wei": 0,
+  "ms": 0.16933400183916092,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x35b75e850d92b28434e8dc9e5c10a623639c42f1",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 20,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.15045900363475084,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x0dd49ede59ea8f472f7f91a556b61eba2709b6a3",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 60,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.16562500968575478,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x8525c3f579222db061c479b90af2bdd93e4d0bce",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 20,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.010624993592500687,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xfc9fc307d2ff695587dc189a970301d2a8ddf97e",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 13,
+  "achievable": 100,
+  "gas_wei": 222146522598000,
+  "spend_wei": 0,
+  "ms": 0.14308292884379625,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xed86c03e5db4be19c0b4de5f4c60cff8d6f95aee",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 20,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.010416959412395954,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x74c02961882764c1d7f66f28d88d97c5b53344c5",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 40,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.009833020158112049,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x7ea16a5c1fa74e00a593817bcc26f2e28111c0b9",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 10,
+  "achievable": 100,
+  "gas_wei": 170881940460000,
+  "spend_wei": 0,
+  "ms": 0.1478339545428753,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x50c188353657aea0127932f7e1b92683b6788cca",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 20,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.010582967661321163,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x7efd4232f74855be4bba699028c2e3b0fd4aab1a",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 15,
+  "achievable": 100,
+  "gas_wei": 256322910690000,
+  "spend_wei": 0,
+  "ms": 0.02504093572497368,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x51143f68630d428c07385cba93853c8674f0ed1e",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 20,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.02675002906471491,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x31cb0038cd1011b25fad71ebf1f3dd67985ca25b",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 20,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.010375049896538258,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x6297bc670abafc6ae0715f71cef7e1c9f518a424",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 20,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.21125003695487976,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xbe18f572d4b3f910f1149d5a9d82f258e41968e1",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "high_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 60,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.010124989785254002,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x9c9203e9e59c933f55753d6eedd04a27bc27d3f3",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 1,
+  "achievable": 100,
+  "gas_wei": 17088194046000,
+  "spend_wei": 0,
+  "ms": 0.00995909795165062,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x703a13af95a893d2a79a08a1fcf57b0091cb4ea0",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 20,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.01091696321964264,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x34e00a1d6acb9372bade895a1e8f260cf409fbe1",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 20,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.009958050213754177,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xcabe7d9e7509f57ef7a8873e97086924b4296fed",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 20,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.009458046406507492,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xad2db6697f9ff2f16dbe29f4322e1356ab035444",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 20,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.009707990102469921,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xf3c971c79efd2cb3bcdcd707ade875dbef9a160e",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 12,
+  "achievable": 100,
+  "gas_wei": 205058328552000,
+  "spend_wei": 0,
+  "ms": 0.009459094144403934,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x131f69914c46d5755bae3f493a577505c22aee0f",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 40,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.011167023330926895,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xab14505208af92c44246965e70e17380a569e58a",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 20,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.009624985978007317,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x9f47dee24cf0378db6aa2865d9b6761c951d92c2",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 40,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.04237494431436062,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xfc2ede9527a5fa01871006f5c385ee1514079b6a",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 20,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.026499968953430653,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xcbb26d4c0a858f002d35f77ba6393acc4e8e6cc6",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 10,
+  "achievable": 100,
+  "gas_wei": 170881940460000,
+  "spend_wei": 0,
+  "ms": 0.20112504716962576,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xce462fd320fe54bddca9ce93e221626ad092c122",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 20,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.010165967978537083,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xd3f5437477be63423501a8b859a71a4792898a2a",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 100,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.009832903742790222,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xd94228be21592aa520579bf8dfef11ec669379c7",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 20,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.0100000761449337,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xa093c35a29abbedb3b5c116ec7089db8e6b5d8a5",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 20,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.009707990102469921,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xa673eb6eec704e39320a569afffdf1e27060e6df",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 10,
+  "achievable": 100,
+  "gas_wei": 170881940460000,
+  "spend_wei": 0,
+  "ms": 0.010082963854074478,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x951a65ed2dc75ef9bb24a9a4583533aa7a368638",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 5,
+  "achievable": 100,
+  "gas_wei": 85440970230000,
+  "spend_wei": 0,
+  "ms": 0.011125113815069199,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xba558ce3a5b223b5fb814dc8e71bd4ce8633f5e1",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 40,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.03175006713718176,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x5ea3df252599df44d982b8605e648a8235b1753f",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 100,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 1.2018750421702862,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xd449ec2e0c1545ad1c52ea97218eb264210664b2",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 10,
+  "achievable": 100,
+  "gas_wei": 170881940460000,
+  "spend_wei": 0,
+  "ms": 0.012582982890307903,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xe8c3d8c41e2e9cd408b3705dc9f1b5e7229983a1",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 100,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.19462499767541885,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x198c0d7733eb2e0df1ea1f660a7eb6be9b775d0d",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 5,
+  "achievable": 100,
+  "gas_wei": 85440970230000,
+  "spend_wei": 0,
+  "ms": 1.1864160187542439,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x139b250b09bc4cbc0dc241d322eeed26dce372f7",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 10,
+  "achievable": 100,
+  "gas_wei": 170881940460000,
+  "spend_wei": 0,
+  "ms": 0.011333031579852104,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xad0bf92558447dc334ed439dc4d8f7a31df9f4d8",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 60,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.191416940651834,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xd0bd2ffb404b3d4ba6f79948a8f2218638ef201a",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 20,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.010624993592500687,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xee11a5bee258fcff703fdc7638eecd61e9b47870",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 10,
+  "achievable": 100,
+  "gas_wei": 170881940460000,
+  "spend_wei": 0,
+  "ms": 0.011334079317748547,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x6e22deb3fa102eb6634852c0d88ab2ea142895cc",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 40,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.033374992199242115,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x0a6d76e531f4b9126c0f5f52ea48da6bde031943",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "high_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 60,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 1.8657080363482237,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x28a770cbfcffbe15f5c45599cb3403737166ac99",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 10,
+  "achievable": 100,
+  "gas_wei": 170881940460000,
+  "spend_wei": 0,
+  "ms": 0.032291049137711525,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x9b631efa73d87cc8ee98c947d8d1b31db230968a",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 10,
+  "achievable": 10,
+  "gas_wei": 170881940460000,
+  "spend_wei": 0,
+  "ms": 0.026082969270646572,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x2c5e776d38ec91548191930b3c97b456c210ac50",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 12,
+  "achievable": 100,
+  "gas_wei": 205058328552000,
+  "spend_wei": 0,
+  "ms": 0.15183398500084877,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xb8235c2e7d2fadbce25f77613ebd79d5333e6989",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 20,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.010792049579322338,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x5df12057c35d00fd4d4b8828f81e6d0216c7f228",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 100,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.010167015716433525,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xa1a91f8797685a52d6fb37bbb7ec54b19cf8cd5c",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 20,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.03587501123547554,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x1a5a7ac1fd59716391fbb08ccfd4e1b475ea64c1",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 100,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.010207993909716606,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xf700956a93c3ec0a28fe662dc73d6b09b760056c",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 20,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.009958981536328793,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x448a67741695e301365428c27655fe2233967366",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 10,
+  "achievable": 100,
+  "gas_wei": 170881940460000,
+  "spend_wei": 0,
+  "ms": 0.009624985978007317,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x0c215615ceea3fd6f2afeeb4891bd0ea10e1fbc8",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 20,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.01108401920646429,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x2e7d88b1aaadee8d991631c6b8fffd9059a508a8",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 20,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.03200001083314419,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x6cdd742edaf8e86a58f9997559ba5f53725fa0a6",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 3,
+  "achievable": 100,
+  "gas_wei": 51264582138000,
+  "spend_wei": 0,
+  "ms": 0.131291919387877,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xdbb8ff7e7849a76c163803807fdae4b727a2ff19",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 3,
+  "achievable": 100,
+  "gas_wei": 51264582138000,
+  "spend_wei": 0,
+  "ms": 0.02504093572497368,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xa19ab23259b196bfd8372f8b1d69a26034405803",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 10,
+  "achievable": 100,
+  "gas_wei": 170881940460000,
+  "spend_wei": 0,
+  "ms": 0.010041985660791397,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xe421a097aae59e757eaa3b8f3c2852b54f2339a0",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 20,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.03454193938523531,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x99e975102c2777373d7111bade1e9cf327174f8f",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "high_value",
+  "chose": true,
+  "wallets_used": 10,
+  "achievable": 100,
+  "gas_wei": 170881940460000,
+  "spend_wei": 0,
+  "ms": 0.009874929673969746,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x536a824307d40e351aee820ec405fd24d5fd418a",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 100,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.009624985978007317,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x16c9ae85a2cfbe65adf23c1108aea119500c7b7e",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 20,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.009582960046827793,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xc6995b90a66285db701fce57010d9b0f47909195",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 10,
+  "achievable": 100,
+  "gas_wei": 170881940460000,
+  "spend_wei": 0,
+  "ms": 0.029208953492343426,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x8ec6f2285849107be80b7b42451fa8a34f01575a",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 10,
+  "achievable": 100,
+  "gas_wei": 170881940460000,
+  "spend_wei": 0,
+  "ms": 0.010207993909716606,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x917754ccf130df952beebfa3e1bbfc03d7dd0055",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 60,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.009541981853544712,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x541c8f6f291ab94da983cd77b25cbb050c9b6c98",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "high_value",
+  "chose": true,
+  "wallets_used": 5,
+  "achievable": 100,
+  "gas_wei": 85440970230000,
+  "spend_wei": 0,
+  "ms": 0.00966701190918684,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x3ada6050498a91a0fa4836a4ea77bc1da8070d20",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 12,
+  "achievable": 100,
+  "gas_wei": 205058328552000,
+  "spend_wei": 0,
+  "ms": 0.028792070224881172,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xa79af21f93bb8ca99e63ba9d04a05ed6b1ef2fb7",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 20,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.009792041964828968,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x5c165a245c61896f443bb75fcf160bfc947314f7",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 20,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.02420798409730196,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xad7c133a32800dc94c75ab271357f8a862fc8126",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 3,
+  "achievable": 100,
+  "gas_wei": 51264582138000,
+  "spend_wei": 0,
+  "ms": 0.18283294048160315,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x87a8a93dcbaaa30b8b4f08039823f89f725116e1",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 100,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.01033395528793335,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x462814df63f645130abdc89dd36211eb973e43cf",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 20,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.00966701190918684,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xfaa5bcd29b8121cd97c8165f865540b392ee92d8",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "high_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 60,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.009790994226932526,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xcf7ff4195c3fe46eaac8516ff42390c818305d27",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 10,
+  "achievable": 100,
+  "gas_wei": 170881940460000,
+  "spend_wei": 0,
+  "ms": 0.010999967344105244,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x3a83d97d64476c13596ce2ae55a06282c92dccb9",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "high_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 20,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.03504101186990738,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x90102711345d296f5cedfc277a8f20f08c5c5578",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 20,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.010083080269396305,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xa40a30df276539f5862c9ae28f5f95ccb51b6100",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 10,
+  "achievable": 100,
+  "gas_wei": 170881940460000,
+  "spend_wei": 0,
+  "ms": 0.009999959729611874,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xaa1ca1e6815890718ca38f60834b78f9641428f5",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 5,
+  "achievable": 100,
+  "gas_wei": 85440970230000,
+  "spend_wei": 0,
+  "ms": 0.011500087566673756,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x3ff85840461c4ced1221b101dd4b511c39cdce87",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "high_value",
+  "chose": true,
+  "wallets_used": 10,
+  "achievable": 100,
+  "gas_wei": 170881940460000,
+  "spend_wei": 0,
+  "ms": 0.009624985978007317,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x44756b6ef008c64eb3ade42785e261ae78b02eb1",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "high_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 20,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.19525003153830767,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x6adba2ae9e4b4dd3428a634b5cc41d1143a36ff8",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 20,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.027542002499103546,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xecc3d6fba3e03fd55219d76d8b9635a04692b0b0",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 40,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.023082946427166462,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xd879df2f967b2861acf735263a5886fa88d4a1fd",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 10,
+  "achievable": 100,
+  "gas_wei": 170881940460000,
+  "spend_wei": 0,
+  "ms": 0.033374992199242115,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xb66da12fb4b0c650f8478872eeadbb5d8f63dc5b",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 60,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.01008401159197092,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x698d6153c7322d613fcd82cfe0ca5e76b74c5c9a",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 10,
+  "achievable": 100,
+  "gas_wei": 170881940460000,
+  "spend_wei": 0,
+  "ms": 0.011458992958068848,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x4a747bffc6af4d8e920fa339b3a12cf9dbd73762",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 100,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.028709066100418568,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x009b13edf6aed8e26388f3327913b57f2ec64fc0",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 60,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.010791001841425896,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xf73982838183f158c186c4f6cde0e56697523e6c",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 10,
+  "achievable": 100,
+  "gas_wei": 170881940460000,
+  "spend_wei": 0,
+  "ms": 0.009541981853544712,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x69c63854f632a1e84ed8d514927bc9833d5db447",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 20,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.02670893445611,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x980abc279754f9a00281116ef72685964f439da1",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 20,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.009707990102469921,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xce4f4ee5571a338f3192324fbcaaf365032323a8",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 100,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.026582973077893257,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x7738d42be6a564839affa3549cadc082e824d330",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 60,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.025416025891900063,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x3dde9152454342ce3e84676bde3cf43e3cfa4c0b",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 60,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.020584091544151306,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xbe0f3082dfcb8871fc649052119e7451a2955b25",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 100,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.24087505880743265,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x0c1b45ed865d9ae4a4dbdf97e72f27c6caed4ce7",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 60,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.010209041647613049,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xa504f6fa1525988ca674a69e436100c4a7c90515",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 4,
+  "achievable": 100,
+  "gas_wei": 68352776184000,
+  "spend_wei": 0,
+  "ms": 0.07795810233801603,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x239f837421f891f665ce035c4575da6d072122d0",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 20,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.010124989785254002,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x43df7fcde9c1966e9c55b5ee2a029340b324063c",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 20,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.010833959095180035,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xc87e229da844e4105a0d47117f76fcc19c27773a",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 1,
+  "achievable": 100,
+  "gas_wei": 17088194046000,
+  "spend_wei": 0,
+  "ms": 0.010209041647613049,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x545b7db7acc625ce56ccbc10f00917933b510de3",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "high_value",
+  "chose": true,
+  "wallets_used": 5,
+  "achievable": 100,
+  "gas_wei": 85440970230000,
+  "spend_wei": 0,
+  "ms": 0.00958307646214962,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x1db1035c52d1ae4cd654839b2321a3ce5532b8c0",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 20,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.03662507515400648,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x86adb36fcbb81df5daf3a386fdd6fdf9e93e9ff8",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 20,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.011209049262106419,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x2881c8b3d0048f4e14c2865ffaa9120c6b1d28ba",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 40,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.010124989785254002,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x5f4543d4621ad4a3d85d6c803e2fe05d86c700ba",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 100,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.22954191081225872,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x56166a4bbd21cda43d2242002664b9fce13b7ee8",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 20,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.013958080671727657,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xf9109dc44436c06159800561fb4b7469204280b5",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 20,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.011416967026889324,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xf89051a2917a6442181941c3725205885edb8539",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 20,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.14566699974238873,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xfef343e295b6307da05e1d03f9a254573a574092",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 20,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.010124989785254002,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x125360ef81ae0658bbe2cdffc6048ca46b415f5e",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "high_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 60,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.009584007784724236,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x4d03847bcf16b525b84b9bc9ebbc4f80f0b4ffa1",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 10,
+  "achievable": 100,
+  "gas_wei": 170881940460000,
+  "spend_wei": 0,
+  "ms": 0.009582960046827793,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xbd96bc8b9dac39405df06a1704ca938a0effab1e",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 40,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.03374996595084667,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x2cc6c07f310f88f53180fe6b38f56bca0b04083d",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "high_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 60,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.010833959095180035,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xa2bdb26daaf8c8c061f7e0ff6384fa7fb704cc29",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 60,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.010041985660791397,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x983d0cd1f7e2ae5e2443eb7ba200b2ffa5e1b75c",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 4,
+  "achievable": 100,
+  "gas_wei": 68352776184000,
+  "spend_wei": 0,
+  "ms": 0.036415993236005306,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x89298f00ba4b6f1f13431aa5c49a933d20ded295",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 10,
+  "achievable": 100,
+  "gas_wei": 170881940460000,
+  "spend_wei": 0,
+  "ms": 0.20041700918227434,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x548ef03e94cb2cb6756dc76cd172b838c7d698b7",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 10,
+  "achievable": 100,
+  "gas_wei": 170881940460000,
+  "spend_wei": 0,
+  "ms": 0.010457937605679035,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xed0c6a2fa5bac05ddc486c5a3d1faec155977a4d",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 20,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.009707990102469921,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x5fa943e052a23a18f43d8bdb5195218acb0555db",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 100,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.036291079595685005,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xd0e903f364315423c4d87f5b3950ebc6011479fc",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 40,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 1.1582920560613275,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x361034b8a3f38b1cdb77f6d8dcab726e78847ed7",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 40,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.0113749410957098,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xfee68bfa409a2de9323bd71ee23a95024a207672",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 60,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.03254192415624857,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x3e38053f4a6ee746d09cc8f5616b9e401dfb61f0",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "high_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 60,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.04016596358269453,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x3743182633e56a3cdf0ba2fab766d37ee30f04bd",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 6,
+  "achievable": 100,
+  "gas_wei": 102529164276000,
+  "spend_wei": 0,
+  "ms": 0.01229101326316595,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x1e6a603b1862e94f82b1446caa14625fdbd70117",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 17,
+  "achievable": 100,
+  "gas_wei": 290499298782000,
+  "spend_wei": 0,
+  "ms": 0.13579207006841898,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xd9a58d098f1849b5918f6d92b131d902cc2bdc99",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 1,
+  "achievable": 100,
+  "gas_wei": 17088194046000,
+  "spend_wei": 0,
+  "ms": 0.01083302777260542,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x90338228a26e31ea412807a4f9b91c5b41934743",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 20,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.00966701190918684,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xef670968f3ccfd86b1ee2f3215241cee7bcaf3f5",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 7,
+  "achievable": 100,
+  "gas_wei": 119617358322000,
+  "spend_wei": 0,
+  "ms": 0.009583891369402409,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x1cf83653fa58a7864029afb5122069fced9e6be6",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 20,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.03204098902642727,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x1d695e755ace6d6469afc8a01e87daac0ebcd54d",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 20,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.024667009711265564,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xeaad00bef5b9266d78f30ad31d98cb484f642228",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "high_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 60,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.0100000761449337,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xdfe7ba318ac7da09b471d54841fd07bd2880ac37",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 40,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.00966701190918684,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xaf2bfe4047894550f266a3f2065fe534bf8510e7",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 20,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.027374946512281895,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x6b536be44aa11c96e02642f493d0efad897cdf71",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 10,
+  "achievable": 100,
+  "gas_wei": 170881940460000,
+  "spend_wei": 0,
+  "ms": 0.009999959729611874,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xbe19ffe50320ccd123a3de80ee8202e39ea94a45",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 40,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.009707990102469921,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x4360911985f59077c70a61df3dd617daf00dba9c",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 17,
+  "achievable": 100,
+  "gas_wei": 290499298782000,
+  "spend_wei": 0,
+  "ms": 0.21612492855638266,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xce28f6ebb9196dc05a72d4569adf3e6223f05b5b",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 20,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.010415911674499512,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xcf8e0c0460531295bf9f24f291e98094ed2c60b1",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 80,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.009458046406507492,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x3116496627b0219e07979c144c895583d899ff68",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 20,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.009750016033649445,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xee5741111f253d39223691eb781714511799a29e",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 10,
+  "achievable": 100,
+  "gas_wei": 170881940460000,
+  "spend_wei": 0,
+  "ms": 0.030667055398225784,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x345023e6d3fb9575e19dec54f8245fe9022c9077",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 20,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.009624985978007317,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xa6788632c3902db619c2f5a66a2e11ccdaf05a18",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 40,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.009750016033649445,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x6d50685d11e11061bc76f993149913ea7f3cc78e",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 10,
+  "achievable": 100,
+  "gas_wei": 170881940460000,
+  "spend_wei": 0,
+  "ms": 0.010999967344105244,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xe034e5328a397594f3aaa0162496fa19c41d780c",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 60,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.03075005952268839,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x687254153ec23fe7cdaa16063d8f1ae27adc0a4c",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 20,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.010083080269396305,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xcc7ba1a5a06c4d437fdee4d720055d1b8f89196d",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 100,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.025999965146183968,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x9478b4c89e7e444bcc1be1f32fb86a919ae9760e",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 1,
+  "achievable": 100,
+  "gas_wei": 17088194046000,
+  "spend_wei": 0,
+  "ms": 0.010083080269396305,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xc52e61c00f0c1639f8d392b7d1cdb80b64a9af70",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 80,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.027540954761207104,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x54f4ea1818b9740d789f58292bf47b0fc6207868",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 40,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.009917072020471096,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x03903992406cd3a447af2ffc0c5829238f3a579a",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 20,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.16429205425083637,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xfb4d9501c8021d4323d92a0a6ba7f1f1a84e441a",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 10,
+  "achievable": 100,
+  "gas_wei": 170881940460000,
+  "spend_wei": 0,
+  "ms": 0.010207993909716606,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xdc3ac7d638f33d33df93b16fe1c0bf2611691f07",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 20,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.03129197284579277,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xb697f33bd612df285de33e0bc4519a9de2e95b78",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 20,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.012040953151881695,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x693e8d3bfd623ef01ac434331d8e76cd5366fba6",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 20,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.010040937922894955,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x2661eec7e8edb74590889750a551818715790d0b",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "high_value",
+  "chose": true,
+  "wallets_used": 5,
+  "achievable": 100,
+  "gas_wei": 85440970230000,
+  "spend_wei": 0,
+  "ms": 0.009666080586612225,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x2100812f85f68e1374e14faf54c4a35909bbea04",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 60,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.1635829685255885,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xc1366b1cbc7c8aa2cad67178b7cda7e42d9c762e",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 40,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.010082963854074478,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x446dee513734b50ce108cd28a560783b189f5a6f",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 60,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.029916060157120228,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x367de2bd2d65209a81bc0386721bd5895d544357",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 100,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.024582957848906517,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x3d0ed33c788a56363437a730347a92c1553d8296",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "high_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 60,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.009958050213754177,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x11e8b69b613f7858c5f928dcc57145628288ccb3",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 40,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.00966701190918684,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x599d6b4c4af7fb47216bb776835663f7039a5c96",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 20,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.1771249808371067,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xf3b5a6bbfa7afde299aed191178f880bef1033fe",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 10,
+  "achievable": 100,
+  "gas_wei": 170881940460000,
+  "spend_wei": 0,
+  "ms": 0.010541989468038082,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x336920fd05dc6a304f0c84906f17c33bfd1cbcac",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "high_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 20,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.03362505231052637,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xb81b6f507d6e21fa82bdcb342703d55002d56d4b",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 60,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.14620809815824032,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x5e93c140d27de4e3dda209966183c39a6ae7a08f",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 7,
+  "achievable": 100,
+  "gas_wei": 119617358322000,
+  "spend_wei": 0,
+  "ms": 0.01029099803417921,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xadb12300649a73b97ee11c58cd41b56dfd4f85e0",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 1,
+  "achievable": 100,
+  "gas_wei": 17088194046000,
+  "spend_wei": 0,
+  "ms": 0.028416980057954788,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xb63a4edeb733a1669319f146c98b3548f07141f3",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 20,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.15304202679544687,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x46123cc44f38f1b598618b6306df346430e5d009",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 10,
+  "achievable": 100,
+  "gas_wei": 170881940460000,
+  "spend_wei": 0,
+  "ms": 0.010499963536858559,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x8485d46b2e90c00aabe231bede4609e840c488cc",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 20,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.031624920666217804,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x27c0ec1f664bb5d850f4fe21313bb4a0e3b73013",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 100,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.009832903742790222,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xfcc27b75ff07df5fb29422bc7f609356fcd12b68",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "high_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 40,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.00966701190918684,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x4968aaac1484acfdc750e4badd5c16e63b6e62ba",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 15,
+  "achievable": 100,
+  "gas_wei": 256322910690000,
+  "spend_wei": 0,
+  "ms": 0.009707990102469921,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xa19901454a812582b4d04dfe998ed6a7b620a6ed",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 20,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.009709037840366364,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x74ae23a3d9e514157d1d290e7c70612b0390762b",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 60,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.03316602669656277,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x14a1ce49bb9076bb96a43c1649b30dbc6157306d",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "high_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 40,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.009541981853544712,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xb29e2badbbb324f73871c81de17180aacf84ef59",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "high_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 40,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.028583919629454613,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x9efd1f8963df9dc466499133e92742d4c194c761",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 100,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.025834073312580585,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xae275b60d2cff0d0c1fba6114ed530dcd6045430",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 100,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.010541989468038082,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xff316fc52fc6ea07648fd1b8b66da00150b4f693",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 20,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.01008401159197092,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x74327f40359f79a97320db3442f1f1c8b2967f31",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 7,
+  "achievable": 100,
+  "gas_wei": 119617358322000,
+  "spend_wei": 0,
+  "ms": 0.00954093411564827,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x6ac9c8414eeae36d662618850201ee56bbb9d609",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 1,
+  "achievable": 100,
+  "gas_wei": 17088194046000,
+  "spend_wei": 0,
+  "ms": 0.24079205468297005,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x4ef1960a643152a73c9b7a613f1cc62beb732184",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "high_value",
+  "chose": true,
+  "wallets_used": 10,
+  "achievable": 100,
+  "gas_wei": 170881940460000,
+  "spend_wei": 0,
+  "ms": 0.01758395228534937,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xdc1894f0e52de8021ed1997b40dc652a477d48b5",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 40,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.07887498941272497,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xfe0a3d3ec21b382b782a3b8ddcfd2edfa29c015a",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 60,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.039792037568986416,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x37a586da514e1ee6d4f83183bbf94b5ecff2c723",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 1,
+  "achievable": 100,
+  "gas_wei": 17088194046000,
+  "spend_wei": 0,
+  "ms": 0.05262496415525675,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xb89eff5192ddf06388e2f2366cfb200749d0543a",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 20,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.018208054825663567,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xf8eb0acbf020785bf08a2a942a5df2c0251739d9",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 100,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.5352080333977938,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xd2041dd4744a84e8404acbdd1d436d3720c257a9",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 10,
+  "achievable": 100,
+  "gas_wei": 170881940460000,
+  "spend_wei": 0,
+  "ms": 0.01100008375942707,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x63b845e71324917f81a1ab5941b8d73f4a5be0a8",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 1,
+  "achievable": 100,
+  "gas_wei": 17088194046000,
+  "spend_wei": 0,
+  "ms": 0.0100000761449337,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x5987c33c20152fea05b92badb8591d1fbd51ff3a",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "high_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 40,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.010165967978537083,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x2d0cfb414d3b4e315d3c390267a144013241c7b9",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 10,
+  "achievable": 100,
+  "gas_wei": 170881940460000,
+  "spend_wei": 0,
+  "ms": 0.010165967978537083,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x7598fbdca49022156ca1e0cca0f61f57f8fe5d64",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 20,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.011124997399747372,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xbceefa58eeabd082116ff56efff9185aa60a0d22",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 10,
+  "achievable": 100,
+  "gas_wei": 170881940460000,
+  "spend_wei": 0,
+  "ms": 0.0797909451648593,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x00f0643f8bf7625593f3b82516b294baf8f14809",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 1,
+  "achievable": 100,
+  "gas_wei": 17088194046000,
+  "spend_wei": 0,
+  "ms": 0.1830830005928874,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xdf35bdd5dd6986453f1c4508c1afae01973f35c1",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "high_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 60,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.010333023965358734,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x479340ba155e45b67c162a795cf474c3f5b77885",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 60,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.011208001524209976,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xf791302d9a9f27de7c58960d098a6b332c5e9848",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "high_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 20,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.0302919652312994,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xb8b769bdad793a823a2c926967c26d466a366480",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 20,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.010500079952180386,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x68c1f815548445bcc8fe187759fc7f7c716546f5",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 20,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.03454193938523531,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x2e69b7da7b24370a005fb014979d2dd6302453fe",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 20,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.010082963854074478,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x8586b5c71b95425b9863b74d59b0cff10fb42b0f",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 20,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.00958307646214962,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x02d95dee67a40d43566a335ed551fe501f0f5eb1",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "high_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 40,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.009541981853544712,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x66e8107022f0a1b41e9f028d7503578b4cc9ec7e",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 40,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.009582960046827793,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xb9cbde7fe7eb7b0a3b05d4593ece79d891492c5c",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 40,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.011416967026889324,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x75e25da09a263c0101ea900d7771c197c36e34e4",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 20,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.012209056876599789,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xafafabcd81f40f1467693c155e8f75d6afb4141d",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 10,
+  "achievable": 100,
+  "gas_wei": 170881940460000,
+  "spend_wei": 0,
+  "ms": 0.1372500555589795,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x0890f8fb3596afc0d94b81f760063f40e734d239",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 60,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.010332907550036907,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x7676ab80595cf5994b9319c3605d1241dae7730b",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 20,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.030041905120015144,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x78b7633710302a5878dba78993b4051f5fa9bb6d",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 40,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.01054094173014164,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x38d7a6d670565f03b5cd3edf38ce4313204e620a",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 10,
+  "achievable": 100,
+  "gas_wei": 170881940460000,
+  "spend_wei": 0,
+  "ms": 0.027250032871961594,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x34b499d595d85ed1a793bb718a2728c154549603",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 10,
+  "achievable": 100,
+  "gas_wei": 170881940460000,
+  "spend_wei": 0,
+  "ms": 0.15208299737423658,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xc6f1f2159fced0bd383313227027509446acf5fe",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 40,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.010124989785254002,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x8af37f36a22ed3ca06c702f3d7bc7facaa7bd777",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 20,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.030666007660329342,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xf937f0e820ad42c107e648f56f55a824f8f55489",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 20,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.010042102076113224,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x070c21fce43c288bdb4e5c26a0514e45465bbc51",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 10,
+  "achievable": 100,
+  "gas_wei": 170881940460000,
+  "spend_wei": 0,
+  "ms": 0.026374938897788525,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xc130cfaddb99fcff436f1f3ff000e404f42b8cb4",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 10,
+  "achievable": 100,
+  "gas_wei": 170881940460000,
+  "spend_wei": 0,
+  "ms": 0.009875046089291573,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x4ba4b7133a049484b51a07f99f7694f342d3ae5f",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 17,
+  "achievable": 100,
+  "gas_wei": 290499298782000,
+  "spend_wei": 0,
+  "ms": 0.023833010345697403,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xd3dc05cdf7bf7541132ebf5e42c3983fe338644f",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 20,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.025250017642974854,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x3279700af8755baf4b644e2afe471a805e9f78e9",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 20,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.009999959729611874,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xb26dee14fd5433e82ce8940ae41721f79429905e",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 17,
+  "achievable": 100,
+  "gas_wei": 290499298782000,
+  "spend_wei": 0,
+  "ms": 0.029499991796910763,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xe0b2f336011667155043fdc63d02e7ac6c91cbe3",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 20,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.02295803278684616,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x9f10a47062758d3d791d244757c5fa2a71f9f46b",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "high_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 20,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.023582950234413147,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x6a6bcd97f3f93c3f6803958aef847f78a00fe469",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 7,
+  "achievable": 100,
+  "gas_wei": 119617358322000,
+  "spend_wei": 0,
+  "ms": 0.0301670515909791,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x062f0ac48ce7820cbe30b0a897b424130a4394fa",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 20,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.026458059437572956,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x8c2e76548c1711f40329138d9b232ea097b4b78c",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 100,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.009917072020471096,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xf3bb5a4c474fb2683e28dc5e4c920ad5538e4db2",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 13,
+  "achievable": 100,
+  "gas_wei": 222146522598000,
+  "spend_wei": 0,
+  "ms": 0.15541596803814173,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xa870a7d818c460158136a28b367710271eafaeaa",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 1,
+  "achievable": 100,
+  "gas_wei": 17088194046000,
+  "spend_wei": 0,
+  "ms": 0.010124989785254002,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x058b86dcf32d09c5674e1687df640adb6bd47899",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 10,
+  "achievable": 100,
+  "gas_wei": 170881940460000,
+  "spend_wei": 0,
+  "ms": 0.031542032957077026,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xdc76d5ca7ed5a738403625822bd66d894d6c32f4",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 20,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.1425830414518714,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xc8715e9aa1dc0d95e986ae419939db0d6f2e8c85",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 20,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.027125002816319466,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xea9f34c63966723cd172a444532f1a51436136d1",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "high_value",
+  "chose": true,
+  "wallets_used": 13,
+  "achievable": 100,
+  "gas_wei": 222146522598000,
+  "spend_wei": 0,
+  "ms": 0.1498329220339656,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xcd3205bdca87ab55e07918aba5fe5330c1835aba",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 20,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.025250017642974854,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xa3b3d24469d6c5425f91871fee23ab1a65e691d2",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 40,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.13583293184638023,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x8cdaa9bc3ac64fc71adc029616219a2697e64795",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 100,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.025333021767437458,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x0bbab9a17106e58dd7a0f58a129ab3bb956c752c",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 10,
+  "achievable": 100,
+  "gas_wei": 170881940460000,
+  "spend_wei": 0,
+  "ms": 0.010750023648142815,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x59664a5f088ff9067124860e59a1784ed111e347",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 10,
+  "achievable": 100,
+  "gas_wei": 170881940460000,
+  "spend_wei": 0,
+  "ms": 0.009833951480686665,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xc22e6e3e1f6eaaf93a06d11e4708fe9ef2fcada1",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 20,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.03224995452910662,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x6566acee86da9511d5e754213a04ce4c7f7181f7",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 100,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.030499999411404133,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x07dfb02766209da7242976e41f4b8ae76c7ca0e5",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 40,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.025333021767437458,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x405c04f0f4ac049f705832d21551da24486ed882",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 20,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.009958981536328793,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x8282fc8f784086044cf08872691b707210c328bf",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 10,
+  "achievable": 100,
+  "gas_wei": 170881940460000,
+  "spend_wei": 0,
+  "ms": 0.00966701190918684,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xd3f89eecd4c10b2b87e60991eaa0046c6e1563a4",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 20,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.009625102393329144,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xbb11f784133eb1609c0ee1f861a07ef6565aeb76",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 40,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.02833292819559574,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x71fb5644c1eeec3a60d356dc8424b91b3beefd7e",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 1,
+  "achievable": 100,
+  "gas_wei": 17088194046000,
+  "spend_wei": 0,
+  "ms": 0.009958050213754177,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x92b7cf97065898ee6ea88ac94a49a34e8c698229",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 10,
+  "achievable": 100,
+  "gas_wei": 170881940460000,
+  "spend_wei": 0,
+  "ms": 0.01166702713817358,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x6658260fa5eb870b36d8465619065907f84e41ad",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "high_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 20,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.029582995921373367,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xbc368719c9c7bc852db0b14242532886f60e48b1",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 15,
+  "achievable": 100,
+  "gas_wei": 256322910690000,
+  "spend_wei": 0,
+  "ms": 0.01025001984089613,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xcfd3ac2fc91a5610ddd798cf8c771a5d96c8c12f",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 10,
+  "achievable": 100,
+  "gas_wei": 170881940460000,
+  "spend_wei": 0,
+  "ms": 0.009582960046827793,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x8071de7a5b00011ef2992b5967fc02f383a02082",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 10,
+  "achievable": 100,
+  "gas_wei": 170881940460000,
+  "spend_wei": 0,
+  "ms": 0.009457929991185665,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xb8860eb6230fdf75b85ce6b946732daf782faad3",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 60,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.028415932320058346,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x0d3fdc84cbd70b800d45032ef2b0a53a01be9ffd",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 100,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.011875061318278313,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xb3c10f6f8b4bfac156455cc76c0c905ff6001916",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 40,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.030875089578330517,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x91a91b6858dedaf5aa305ac7af00d282f55fe076",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 100,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.023916014470160007,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x8877888f125e9b59b9bca7c96bcbe5bad5bfbd07",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "high_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 40,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.16229203902184963,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xd7074c24026cbbe40577fbff9b188a05edf3c695",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 60,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.01025001984089613,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xc17b7e1b0831c8051dc45551c445d54e33a36056",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 100,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.19341707229614258,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x093c550dc6c89de5d7b5c57512e89e02977a5f07",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 60,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.009917072020471096,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xb710811a0aafc8f63d11cdbbe1e175313ff4d782",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 6,
+  "achievable": 100,
+  "gas_wei": 102529164276000,
+  "spend_wei": 0,
+  "ms": 0.02345896791666746,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0xc38e1a05765ceeb187cd3fa7b0aea508c260173d",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 40,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.01116609200835228,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ },
+ {
+  "collection": "0x3115febc497d4da70181811cdff81f076670acd7",
+  "chain": "ink",
+  "verdict": "MINT",
+  "score": 100,
+  "label": "low_value",
+  "chose": true,
+  "wallets_used": 20,
+  "achievable": 20,
+  "gas_wei": 341763880920000,
+  "spend_wei": 0,
+  "ms": 0.009958050213754177,
+  "error": null,
+  "reasons": [
+   "drop is free; baseline mints every free drop"
+  ],
+  "risk_flags": [],
+  "triage_verdict": null,
+  "verifier": null
+ }
+]

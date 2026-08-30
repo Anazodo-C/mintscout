@@ -1,0 +1,16 @@
+{
+ "model": "claude-sonnet-4-5-20250929",
+ "temperature": 0.0,
+ "system": "You are deciding whether to mint a free NFT drop. You will be shown the raw drop\nconfiguration. Answer MINT or SKIP.\n\nReturn ONLY JSON: {\"verdict\": \"MINT\" | \"SKIP\", \"score\": 0-100, \"reasons\": [\"...\"]}\n",
+ "messages": [
+  {
+   "role": "user",
+   "content": "Drop configuration:\n\n```json\n{\"chain\":\"robinhood\",\"collection\":{\"code_size\":45,\"max_supply\":9999,\"max_supply_sane\":true,\"name\":\"RH MACHINES by PAPOTOSHI\",\"owner\":\"0x39605a307674645ba8db66cbc5fdb7cf8b1d586f\",\"symbol\":\".\"},\"max_supply\":9999,\"name\":\"RH MACHINES by PAPOTOSHI\",\"public_drop\":{\"advance_notice_s\":0,\"duration_hours\":0.08,\"fee_bps\":1000,\"is_free\":true,\"max_per_wallet\":1,\"mint_price_wei\":0,\"restrict_fee_recipients\":true,\"starts_in_s\":-37}}\n```\n\nReturn JSON."
+  }
+ ],
+ "text": "```json\n{\n  \"verdict\": \"SKIP\",\n  \"score\": 25,\n  \"reasons\": [\n    \"Extremely short mint duration of only 0.08 hours (~5 minutes) suggests a rushed or low-effort drop\",\n    \"Drop has already started 37 seconds ago, leaving minimal time to participate\",\n    \"Generic/unclear collection name 'RH MACHINES by PAPOTOSHI' with no established reputation\",\n    \"Symbol is just a period '.' which indicates low effort or placeholder configuration\",\n    \"High supply of 9,999 NFTs for a free mint suggests potential oversaturation\",\n    \"10% fee (1000 bps) is relatively high for a free mint\",\n    \"No advance notice (0 seconds) indicates poor planning or potential spam\",\n    \"Contract code size of 45 bytes is suspiciously small, possibly indicating a minimal/unverified contract\",\n    \"Unknown artist/creator 'PAPOTOSHI' with no verifiable track record\"\n  ]\n}\n```",
+ "usage": {
+  "input_tokens": 245,
+  "output_tokens": 239
+ }
+}

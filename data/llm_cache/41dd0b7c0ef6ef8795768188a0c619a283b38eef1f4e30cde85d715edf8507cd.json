@@ -1,0 +1,16 @@
+{
+ "model": "claude-sonnet-4-5-20250929",
+ "temperature": 0.0,
+ "system": "You are deciding whether to mint a free NFT drop. You will be shown the raw drop\nconfiguration. Answer MINT or SKIP.\n\nReturn ONLY JSON: {\"verdict\": \"MINT\" | \"SKIP\", \"score\": 0-100, \"reasons\": [\"...\"]}\n",
+ "messages": [
+  {
+   "role": "user",
+   "content": "Drop configuration:\n\n```json\n{\"chain\":\"robinhood\",\"collection\":{\"code_size\":45,\"max_supply\":19999,\"max_supply_sane\":true,\"name\":\"FurNadsNFTs\",\"owner\":\"0x519aabb0f5b63a559b2323d4f5dcce541bd937bd\",\"symbol\":\"FurNadsNFTs\"},\"max_supply\":19999,\"name\":\"FurNadsNFTs\",\"public_drop\":{\"advance_notice_s\":42,\"duration_hours\":0.05,\"fee_bps\":1000,\"is_free\":true,\"max_per_wallet\":33,\"mint_price_wei\":0,\"restrict_fee_recipients\":true,\"starts_in_s\":42}}\n```\n\nReturn JSON."
+  }
+ ],
+ "text": "```json\n{\n  \"verdict\": \"SKIP\",\n  \"score\": 15,\n  \"reasons\": [\n    \"Unprofessional name 'FurNadsNFTs' suggests low-quality or joke project\",\n    \"Extremely short mint duration of 0.05 hours (3 minutes) indicates potential bot farming setup\",\n    \"Very high max_per_wallet of 33 tokens allows single wallets to accumulate large portions\",\n    \"High supply of 19,999 NFTs with generous per-wallet limits dilutes scarcity\",\n    \"10% fee (1000 bps) on a 'free' mint means there are still costs involved\",\n    \"Robinhood chain deployment is unusual and less established\",\n    \"42 second advance notice is extremely short, suggesting rushed or suspicious launch\",\n    \"No apparent value proposition or legitimate use case from the configuration\",\n    \"Combination of factors suggests potential airdrop farming or low-effort cash grab\"\n  ]\n}\n```",
+ "usage": {
+  "input_tokens": 246,
+  "output_tokens": 235
+ }
+}

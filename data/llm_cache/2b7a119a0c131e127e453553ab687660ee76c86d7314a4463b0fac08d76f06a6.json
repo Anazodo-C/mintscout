@@ -1,0 +1,16 @@
+{
+ "model": "claude-sonnet-4-5-20250929",
+ "temperature": 0.0,
+ "system": "You are deciding whether to mint a free NFT drop. You will be shown the raw drop\nconfiguration. Answer MINT or SKIP.\n\nReturn ONLY JSON: {\"verdict\": \"MINT\" | \"SKIP\", \"score\": 0-100, \"reasons\": [\"...\"]}\n",
+ "messages": [
+  {
+   "role": "user",
+   "content": "Drop configuration:\n\n```json\n{\"chain\":\"robinhood\",\"collection\":{\"code_size\":45,\"max_supply\":18999,\"max_supply_sane\":true,\"name\":\"FlameBound\",\"owner\":\"0x785070a6f74cb4f37080b84137638af889516c66\",\"symbol\":\"FLAMEBOUND\"},\"max_supply\":18999,\"name\":\"FlameBound\",\"public_drop\":{\"advance_notice_s\":0,\"duration_hours\":0.07,\"fee_bps\":1000,\"is_free\":true,\"max_per_wallet\":16,\"mint_price_wei\":0,\"restrict_fee_recipients\":true,\"starts_in_s\":-12}}\n```\n\nReturn JSON."
+  }
+ ],
+ "text": "```json\n{\n  \"verdict\": \"SKIP\",\n  \"score\": 25,\n  \"reasons\": [\n    \"Mint already started 12 seconds ago with only 4.2 minute duration - likely already over or ending imminently\",\n    \"Very high max_per_wallet (16) suggests low quality/spam drop designed for farming\",\n    \"Large supply (18,999) combined with high per-wallet limit indicates poor scarcity\",\n    \"10% fee (1000 bps) on a 'free' mint is concerning - hidden costs\",\n    \"Zero advance notice and extremely short duration (0.07 hours = 4.2 minutes) suggests rushed/low-effort drop\",\n    \"Unknown chain 'robinhood' adds uncertainty\",\n    \"Generic fantasy name 'FlameBound' with no distinguishing characteristics\"\n  ]\n}\n```",
+ "usage": {
+  "input_tokens": 235,
+  "output_tokens": 205
+ }
+}

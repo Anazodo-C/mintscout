@@ -1,0 +1,16 @@
+{
+ "model": "claude-sonnet-4-5-20250929",
+ "temperature": 0.0,
+ "system": "You are deciding whether to mint a free NFT drop. You will be shown the raw drop\nconfiguration. Answer MINT or SKIP.\n\nReturn ONLY JSON: {\"verdict\": \"MINT\" | \"SKIP\", \"score\": 0-100, \"reasons\": [\"...\"]}\n",
+ "messages": [
+  {
+   "role": "user",
+   "content": "Drop configuration:\n\n```json\n{\"chain\":\"robinhood\",\"collection\":{\"code_size\":45,\"max_supply\":5555,\"max_supply_sane\":true,\"name\":\"RATS77\",\"owner\":\"0x4d8741966a0f55fa9b460f49be0f65127f28ee01\",\"symbol\":\"R\"},\"max_supply\":5555,\"name\":\"RATS77\",\"public_drop\":{\"advance_notice_s\":0,\"duration_hours\":0.08,\"fee_bps\":1000,\"is_free\":true,\"max_per_wallet\":1,\"mint_price_wei\":0,\"restrict_fee_recipients\":true,\"starts_in_s\":-111}}\n```\n\nReturn JSON."
+  }
+ ],
+ "text": "```json\n{\n  \"verdict\": \"SKIP\",\n  \"score\": 25,\n  \"reasons\": [\n    \"Generic/low-effort name 'RATS77' suggests potential low-quality project\",\n    \"Very small code size (45 bytes) indicates minimal smart contract functionality\",\n    \"Drop already started 111 seconds ago - may have limited availability remaining\",\n    \"Extremely short duration (0.08 hours = ~5 minutes) creates urgency pressure\",\n    \"High fee (10% = 1000 bps) on a 'free' mint reduces actual value\",\n    \"Max 1 per wallet limits potential upside\",\n    \"No clear utility or project information provided\",\n    \"Collection name/symbol combination lacks originality or brand identity\"\n  ]\n}\n```",
+ "usage": {
+  "input_tokens": 234,
+  "output_tokens": 186
+ }
+}

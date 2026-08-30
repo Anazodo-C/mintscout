@@ -1,0 +1,16 @@
+{
+ "model": "claude-sonnet-4-5-20250929",
+ "temperature": 0.0,
+ "system": "You are deciding whether to mint a free NFT drop. You will be shown the raw drop\nconfiguration. Answer MINT or SKIP.\n\nReturn ONLY JSON: {\"verdict\": \"MINT\" | \"SKIP\", \"score\": 0-100, \"reasons\": [\"...\"]}\n",
+ "messages": [
+  {
+   "role": "user",
+   "content": "Drop configuration:\n\n```json\n{\"chain\":\"robinhood\",\"collection\":{\"code_size\":45,\"max_supply\":10000,\"max_supply_sane\":true,\"name\":\"Robinhood VeeVibrations SABET\",\"owner\":\"0x62b609f00c55428398b53321c1ecc033381ec60a\",\"symbol\":\"RHVVS\"},\"max_supply\":10000,\"name\":\"Robinhood VeeVibrations SABET\",\"public_drop\":{\"advance_notice_s\":0,\"duration_hours\":24.0,\"fee_bps\":1000,\"is_free\":true,\"max_per_wallet\":10,\"mint_price_wei\":0,\"restrict_fee_recipients\":true,\"starts_in_s\":-76}}\n```\n\nReturn JSON."
+  }
+ ],
+ "text": "```json\n{\n  \"verdict\": \"SKIP\",\n  \"score\": 25,\n  \"reasons\": [\n    \"Collection name 'Robinhood VeeVibrations SABET' appears to be attempting to leverage Robinhood brand without clear authorization\",\n    \"Very small code size (45 bytes) suggests minimal or potentially problematic contract implementation\",\n    \"High max supply of 10,000 with 10 per wallet limit indicates potential for low value/oversaturation\",\n    \"10% fee (1000 bps) with restricted fee recipients raises concerns about creator extraction\",\n    \"Drop already started 76 seconds ago with no advance notice, suggesting rushed or poorly planned launch\",\n    \"Generic/derivative naming pattern suggests low effort project\",\n    \"No clear utility or unique value proposition evident from configuration\"\n  ]\n}\n```",
+ "usage": {
+  "input_tokens": 253,
+  "output_tokens": 195
+ }
+}

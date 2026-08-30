@@ -1,0 +1,16 @@
+{
+ "model": "claude-sonnet-4-5-20250929",
+ "temperature": 0.0,
+ "system": "You are deciding whether to mint a free NFT drop. You will be shown the raw drop\nconfiguration. Answer MINT or SKIP.\n\nReturn ONLY JSON: {\"verdict\": \"MINT\" | \"SKIP\", \"score\": 0-100, \"reasons\": [\"...\"]}\n",
+ "messages": [
+  {
+   "role": "user",
+   "content": "Drop configuration:\n\n```json\n{\"chain\":\"robinhood\",\"collection\":{\"code_size\":45,\"max_supply\":5555,\"max_supply_sane\":true,\"name\":\"asbak345\",\"owner\":\"0xd22c622fe96ef918fd57faa013bf47fabbc8c2ca\",\"symbol\":\"a\"},\"max_supply\":5555,\"name\":\"asbak345\",\"public_drop\":{\"advance_notice_s\":0,\"duration_hours\":0.92,\"fee_bps\":1000,\"is_free\":true,\"max_per_wallet\":2,\"mint_price_wei\":0,\"restrict_fee_recipients\":true,\"starts_in_s\":-56}}\n```\n\nReturn JSON."
+  }
+ ],
+ "text": "```json\n{\n  \"verdict\": \"SKIP\",\n  \"score\": 15,\n  \"reasons\": [\n    \"Collection name 'asbak345' appears to be random/low-effort with no clear brand or purpose\",\n    \"Symbol 'a' is extremely generic and unprofessional\",\n    \"Very small code size (45 bytes) suggests minimal/potentially suspicious contract functionality\",\n    \"Drop already started 56 seconds ago, missing optimal mint timing\",\n    \"Short duration of 0.92 hours (~55 minutes) creates artificial urgency typical of low-quality drops\",\n    \"10% fee (1000 bps) with restricted fee recipients raises concerns about creator intentions\",\n    \"Max 2 per wallet is restrictive for a free mint\",\n    \"No notable collection metadata or utility indicators\",\n    \"Overall presentation suggests hastily created, low-value NFT project\"\n  ]\n}\n```",
+ "usage": {
+  "input_tokens": 233,
+  "output_tokens": 214
+ }
+}

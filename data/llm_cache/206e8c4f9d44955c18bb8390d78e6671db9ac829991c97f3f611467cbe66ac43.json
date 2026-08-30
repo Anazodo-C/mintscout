@@ -1,0 +1,16 @@
+{
+ "model": "claude-sonnet-4-5-20250929",
+ "temperature": 0.0,
+ "system": "You are deciding whether to mint a free NFT drop. You will be shown the raw drop\nconfiguration. Answer MINT or SKIP.\n\nReturn ONLY JSON: {\"verdict\": \"MINT\" | \"SKIP\", \"score\": 0-100, \"reasons\": [\"...\"]}\n",
+ "messages": [
+  {
+   "role": "user",
+   "content": "Drop configuration:\n\n```json\n{\"chain\":\"robinhood\",\"collection\":{\"code_size\":45,\"max_supply\":25,\"max_supply_sane\":true,\"name\":\"fasdf\",\"owner\":\"0x0746f0faea4662aca75f831650e2aa2d063fffcd\",\"symbol\":\"sadfa\"},\"max_supply\":25,\"name\":\"fasdf\",\"public_drop\":{\"advance_notice_s\":286,\"duration_hours\":3.0,\"fee_bps\":1000,\"is_free\":true,\"max_per_wallet\":1,\"mint_price_wei\":0,\"restrict_fee_recipients\":true,\"starts_in_s\":286}}\n```\n\nReturn JSON."
+  }
+ ],
+ "text": "```json\n{\n  \"verdict\": \"SKIP\",\n  \"score\": 15,\n  \"reasons\": [\n    \"Collection name 'fasdf' and symbol 'sadfa' are gibberish/keyboard mashing - indicates low effort or test project\",\n    \"Extremely small max supply of only 25 NFTs suggests this is not a serious collection\",\n    \"10% fee (1000 bps) with restricted fee recipients is relatively high for such a small drop\",\n    \"No meaningful branding or identity - appears to be a test or spam collection\",\n    \"Owner address shows no signs of being a reputable creator\",\n    \"Very short 3 hour mint window combined with tiny supply suggests artificial scarcity without value\",\n    \"Overall presentation lacks any professional qualities or legitimate project indicators\"\n  ]\n}\n```",
+ "usage": {
+  "input_tokens": 229,
+  "output_tokens": 190
+ }
+}

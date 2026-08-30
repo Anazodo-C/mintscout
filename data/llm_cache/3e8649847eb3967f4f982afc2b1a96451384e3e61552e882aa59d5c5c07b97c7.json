@@ -1,0 +1,16 @@
+{
+ "model": "claude-sonnet-4-5-20250929",
+ "temperature": 0.0,
+ "system": "You are deciding whether to mint a free NFT drop. You will be shown the raw drop\nconfiguration. Answer MINT or SKIP.\n\nReturn ONLY JSON: {\"verdict\": \"MINT\" | \"SKIP\", \"score\": 0-100, \"reasons\": [\"...\"]}\n",
+ "messages": [
+  {
+   "role": "user",
+   "content": "Drop configuration:\n\n```json\n{\"chain\":\"robinhood\",\"collection\":{\"code_size\":45,\"max_supply\":5432,\"max_supply_sane\":true,\"name\":\"AlphaRekt\",\"owner\":\"0x57dd4459158bb5aba72cc90507429474361d6870\",\"symbol\":\"Arekt\"},\"max_supply\":5432,\"name\":\"AlphaRekt\",\"public_drop\":{\"advance_notice_s\":37,\"duration_hours\":0.05,\"fee_bps\":1000,\"is_free\":true,\"max_per_wallet\":3,\"mint_price_wei\":0,\"restrict_fee_recipients\":true,\"starts_in_s\":37}}\n```\n\nReturn JSON."
+  }
+ ],
+ "text": "```json\n{\n  \"verdict\": \"SKIP\",\n  \"score\": 25,\n  \"reasons\": [\n    \"Extremely short mint duration of only 0.05 hours (3 minutes) creates high pressure and FOMO tactics\",\n    \"Very short advance notice of only 37 seconds before mint starts - insufficient time for informed decision\",\n    \"Collection name 'AlphaRekt' suggests high-risk degen culture and potential for losses\",\n    \"10% fee (1000 bps) on a 'free' mint is contradictory and concerning\",\n    \"Low max supply of 5,432 combined with 3-minute window suggests artificial scarcity manipulation\",\n    \"Owner address shows no verification or established reputation\",\n    \"Robinhood chain deployment may indicate attempt to capitalize on brand confusion\",\n    \"Overall configuration designed to create urgency rather than provide value\"\n  ]\n}\n```",
+ "usage": {
+  "input_tokens": 234,
+  "output_tokens": 213
+ }
+}

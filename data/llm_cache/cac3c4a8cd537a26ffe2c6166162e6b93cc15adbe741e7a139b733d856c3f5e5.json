@@ -1,0 +1,16 @@
+{
+ "model": "claude-sonnet-4-5-20250929",
+ "temperature": 0.0,
+ "system": "You are deciding whether to mint a free NFT drop. You will be shown the raw drop\nconfiguration. Answer MINT or SKIP.\n\nReturn ONLY JSON: {\"verdict\": \"MINT\" | \"SKIP\", \"score\": 0-100, \"reasons\": [\"...\"]}\n",
+ "messages": [
+  {
+   "role": "user",
+   "content": "Drop configuration:\n\n```json\n{\"chain\":\"robinhood\",\"collection\":{\"code_size\":45,\"max_supply\":6666,\"max_supply_sane\":true,\"name\":\"Orangutan NFT\",\"owner\":\"0x710ce809e6c47ef779b01b4a7b88b795b502442e\",\"symbol\":\"9\"},\"max_supply\":6666,\"name\":\"Orangutan NFT\",\"public_drop\":{\"advance_notice_s\":13710,\"duration_hours\":48.0,\"fee_bps\":1000,\"is_free\":true,\"max_per_wallet\":5,\"mint_price_wei\":0,\"restrict_fee_recipients\":true,\"starts_in_s\":13710}}\n```\n\nReturn JSON."
+  }
+ ],
+ "text": "```json\n{\n  \"verdict\": \"SKIP\",\n  \"score\": 25,\n  \"reasons\": [\n    \"Suspicious collection name 'Orangutan NFT' with generic symbol '9' suggests low effort/potential scam\",\n    \"Very small code size (45 bytes) indicates minimal smart contract functionality\",\n    \"Large supply of 6,666 NFTs dilutes potential value\",\n    \"10% fee (1000 bps) with restricted fee recipients raises concerns about creator intentions\",\n    \"Chain 'robinhood' is non-standard/unfamiliar, increasing risk\",\n    \"No notable brand recognition or established project indicators\",\n    \"Generic animal-themed NFT pattern commonly associated with low-quality drops\"\n  ]\n}\n```",
+ "usage": {
+  "input_tokens": 238,
+  "output_tokens": 177
+ }
+}

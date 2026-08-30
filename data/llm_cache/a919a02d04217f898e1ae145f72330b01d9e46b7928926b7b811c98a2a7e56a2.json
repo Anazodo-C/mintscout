@@ -1,0 +1,16 @@
+{
+ "model": "claude-sonnet-4-5-20250929",
+ "temperature": 0.0,
+ "system": "You are deciding whether to mint a free NFT drop. You will be shown the raw drop\nconfiguration. Answer MINT or SKIP.\n\nReturn ONLY JSON: {\"verdict\": \"MINT\" | \"SKIP\", \"score\": 0-100, \"reasons\": [\"...\"]}\n",
+ "messages": [
+  {
+   "role": "user",
+   "content": "Drop configuration:\n\n```json\n{\"chain\":\"robinhood\",\"collection\":{\"code_size\":45,\"max_supply\":7486,\"max_supply_sane\":true,\"name\":\"Crocklets NFT\",\"owner\":\"0xde0ac992f6f6844e072ee0ac9ffb56ba10c67d5c\",\"symbol\":\".\"},\"max_supply\":7486,\"name\":\"Crocklets NFT\",\"public_drop\":{\"advance_notice_s\":0,\"duration_hours\":0.12,\"fee_bps\":1000,\"is_free\":true,\"max_per_wallet\":3,\"mint_price_wei\":0,\"restrict_fee_recipients\":true,\"starts_in_s\":-25}}\n```\n\nReturn JSON."
+  }
+ ],
+ "text": "```json\n{\n  \"verdict\": \"SKIP\",\n  \"score\": 25,\n  \"reasons\": [\n    \"Drop already started 25 seconds ago - may have limited availability remaining\",\n    \"Extremely short duration of only 0.12 hours (7.2 minutes) - likely already mostly over\",\n    \"Symbol is just a period '.' which suggests low effort/quality project\",\n    \"10% fee (1000 bps) is relatively high for a free mint\",\n    \"Chain 'robinhood' has limited NFT ecosystem and liquidity\",\n    \"Max 3 per wallet with 7486 supply suggests potential for quick sellout given short window\",\n    \"Collection owner address shows no notable reputation indicators\",\n    \"Name 'Crocklets NFT' appears generic with no clear brand value\"\n  ]\n}\n```",
+ "usage": {
+  "input_tokens": 241,
+  "output_tokens": 199
+ }
+}

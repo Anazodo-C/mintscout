@@ -1,0 +1,16 @@
+{
+ "model": "claude-sonnet-4-5-20250929",
+ "temperature": 0.0,
+ "system": "You are deciding whether to mint a free NFT drop. You will be shown the raw drop\nconfiguration. Answer MINT or SKIP.\n\nReturn ONLY JSON: {\"verdict\": \"MINT\" | \"SKIP\", \"score\": 0-100, \"reasons\": [\"...\"]}\n",
+ "messages": [
+  {
+   "role": "user",
+   "content": "Drop configuration:\n\n```json\n{\"chain\":\"robinhood\",\"collection\":{\"code_size\":45,\"max_supply\":5555,\"max_supply_sane\":true,\"name\":\"Frensters\",\"owner\":\"0x785070a6f74cb4f37080b84137638af889516c66\",\"symbol\":\"FRENSTERS\"},\"max_supply\":5555,\"name\":\"Frensters\",\"public_drop\":{\"advance_notice_s\":0,\"duration_hours\":0.1,\"fee_bps\":1000,\"is_free\":true,\"max_per_wallet\":15,\"mint_price_wei\":0,\"restrict_fee_recipients\":true,\"starts_in_s\":-27}}\n```\n\nReturn JSON."
+  }
+ ],
+ "text": "```json\n{\n  \"verdict\": \"SKIP\",\n  \"score\": 25,\n  \"reasons\": [\n    \"Drop already started 27 seconds ago (starts_in_s: -27), likely missed optimal minting window\",\n    \"Very short 0.1 hour (6 minute) duration creates extreme time pressure and FOMO tactics\",\n    \"High max_per_wallet of 15 suggests potential for botting and unfair distribution\",\n    \"10% fee (1000 bps) on a 'free' mint means there are still costs involved\",\n    \"Collection name 'Frensters' and high supply (5555) suggest low-effort derivative project\",\n    \"Robinhood chain is relatively new/unproven for NFT collections\",\n    \"No clear utility or value proposition evident from configuration alone\",\n    \"Combination of already-started + ultra-short duration indicates poor planning or cash grab\"\n  ]\n}\n```",
+ "usage": {
+  "input_tokens": 235,
+  "output_tokens": 223
+ }
+}

@@ -1,0 +1,16 @@
+{
+ "model": "claude-sonnet-4-5-20250929",
+ "temperature": 0.0,
+ "system": "You are deciding whether to mint a free NFT drop. You will be shown the raw drop\nconfiguration. Answer MINT or SKIP.\n\nReturn ONLY JSON: {\"verdict\": \"MINT\" | \"SKIP\", \"score\": 0-100, \"reasons\": [\"...\"]}\n",
+ "messages": [
+  {
+   "role": "user",
+   "content": "Drop configuration:\n\n```json\n{\"chain\":\"robinhood\",\"collection\":{\"code_size\":45,\"max_supply\":20,\"max_supply_sane\":true,\"name\":\"testaaaaaaAsse\",\"owner\":\"0x59d17d9b2baaafd194858af221f0bb4b9692a1d5\",\"symbol\":\"TT\"},\"max_supply\":20,\"name\":\"testaaaaaaAsse\",\"public_drop\":{\"advance_notice_s\":2415,\"duration_hours\":0.5,\"fee_bps\":1000,\"is_free\":true,\"max_per_wallet\":20,\"mint_price_wei\":0,\"restrict_fee_recipients\":true,\"starts_in_s\":2415}}\n```\n\nReturn JSON."
+  }
+ ],
+ "text": "```json\n{\n  \"verdict\": \"SKIP\",\n  \"score\": 15,\n  \"reasons\": [\n    \"Extremely low collection name quality - 'testaaaaaaAsse' appears to be a test/spam collection with random characters\",\n    \"Very small max supply of only 20 NFTs suggests this is not a serious project\",\n    \"High max_per_wallet (20) means single wallet can mint entire supply - red flag for manipulation\",\n    \"Very short mint duration of only 0.5 hours indicates rushed/low-effort drop\",\n    \"10% fee (1000 bps) with restricted fee recipients suggests potential fee extraction scheme\",\n    \"Collection name and symbol 'TT' show no branding effort or legitimacy\",\n    \"Overall characteristics strongly indicate test/spam drop with no real value\"\n  ]\n}\n```",
+ "usage": {
+  "input_tokens": 239,
+  "output_tokens": 197
+ }
+}

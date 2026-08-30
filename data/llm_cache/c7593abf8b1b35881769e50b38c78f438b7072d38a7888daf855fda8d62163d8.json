@@ -1,0 +1,16 @@
+{
+ "model": "claude-sonnet-4-5-20250929",
+ "temperature": 0.0,
+ "system": "You are deciding whether to mint a free NFT drop. You will be shown the raw drop\nconfiguration. Answer MINT or SKIP.\n\nReturn ONLY JSON: {\"verdict\": \"MINT\" | \"SKIP\", \"score\": 0-100, \"reasons\": [\"...\"]}\n",
+ "messages": [
+  {
+   "role": "user",
+   "content": "Drop configuration:\n\n```json\n{\"chain\":\"robinhood\",\"collection\":{\"code_size\":45,\"max_supply\":1000,\"max_supply_sane\":true,\"name\":\"Cat\",\"owner\":\"0x07dce3e7f14da54f6e3b5fc78e57a27bfae5070f\",\"symbol\":\"cat\"},\"max_supply\":1000,\"name\":\"Cat\",\"public_drop\":{\"advance_notice_s\":3279,\"duration_hours\":0.5,\"fee_bps\":1000,\"is_free\":true,\"max_per_wallet\":1,\"mint_price_wei\":0,\"restrict_fee_recipients\":true,\"starts_in_s\":3279}}\n```\n\nReturn JSON."
+  }
+ ],
+ "text": "```json\n{\n  \"verdict\": \"SKIP\",\n  \"score\": 25,\n  \"reasons\": [\n    \"Generic name 'Cat' with no unique branding or identity\",\n    \"Very small code size (45 bytes) suggests minimal or no actual contract functionality\",\n    \"Owner address 0x07dce3e7f14da54f6e3b5fc78e57a27bfae5070f is not a known reputable creator\",\n    \"Extremely short mint duration (0.5 hours) creates artificial urgency\",\n    \"10% fee (1000 bps) with restricted fee recipients suggests potential revenue extraction\",\n    \"Low max supply (1000) combined with max 1 per wallet indicates possible bot farming setup\",\n    \"No distinguishing features or value proposition evident from configuration\",\n    \"Generic symbol 'cat' matches generic name, showing lack of effort in branding\"\n  ]\n}\n```",
+ "usage": {
+  "input_tokens": 235,
+  "output_tokens": 219
+ }
+}

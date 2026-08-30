@@ -1,0 +1,16 @@
+{
+ "model": "claude-sonnet-4-5-20250929",
+ "temperature": 0.0,
+ "system": "You are deciding whether to mint a free NFT drop. You will be shown the raw drop\nconfiguration. Answer MINT or SKIP.\n\nReturn ONLY JSON: {\"verdict\": \"MINT\" | \"SKIP\", \"score\": 0-100, \"reasons\": [\"...\"]}\n",
+ "messages": [
+  {
+   "role": "user",
+   "content": "Drop configuration:\n\n```json\n{\"chain\":\"robinhood\",\"collection\":{\"code_size\":45,\"max_supply\":1500,\"max_supply_sane\":true,\"name\":\"Robo Hood\",\"owner\":\"0xb15dd8ffbc122dd837dc9f952ca0660f89ad5e6b\",\"symbol\":\"Robohood\"},\"max_supply\":1500,\"name\":\"Robo Hood\",\"public_drop\":{\"advance_notice_s\":0,\"duration_hours\":6.02,\"fee_bps\":1000,\"is_free\":true,\"max_per_wallet\":1,\"mint_price_wei\":0,\"restrict_fee_recipients\":true,\"starts_in_s\":-1443}}\n```\n\nReturn JSON."
+  }
+ ],
+ "text": "```json\n{\n  \"verdict\": \"SKIP\",\n  \"score\": 25,\n  \"reasons\": [\n    \"Collection name 'Robo Hood' appears to be derivative/copycat of Robinhood brand\",\n    \"Very small code size (45 bytes) suggests minimal/potentially low-effort contract\",\n    \"Low max supply of 1500 indicates limited collection size\",\n    \"Drop already started 24 minutes ago (starts_in_s: -1443), missing early mint window\",\n    \"10% fee (1000 bps) is relatively high for a free mint\",\n    \"No clear value proposition or unique characteristics evident from configuration\",\n    \"Robinhood chain is less established, limiting secondary market liquidity\"\n  ]\n}\n```",
+ "usage": {
+  "input_tokens": 239,
+  "output_tokens": 180
+ }
+}

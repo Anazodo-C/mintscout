@@ -1,0 +1,16 @@
+{
+ "model": "claude-sonnet-4-5-20250929",
+ "temperature": 0.0,
+ "system": "You are deciding whether to mint a free NFT drop. You will be shown the raw drop\nconfiguration. Answer MINT or SKIP.\n\nReturn ONLY JSON: {\"verdict\": \"MINT\" | \"SKIP\", \"score\": 0-100, \"reasons\": [\"...\"]}\n",
+ "messages": [
+  {
+   "role": "user",
+   "content": "Drop configuration:\n\n```json\n{\"chain\":\"robinhood\",\"collection\":{\"code_size\":45,\"max_supply\":1111,\"max_supply_sane\":true,\"name\":\"start\",\"owner\":\"0x0a6bda027886765c459ce3b87d15731f27e13979\",\"symbol\":\"start\"},\"max_supply\":1111,\"name\":\"start\",\"public_drop\":{\"advance_notice_s\":142,\"duration_hours\":0.18,\"fee_bps\":1000,\"is_free\":true,\"max_per_wallet\":1,\"mint_price_wei\":0,\"restrict_fee_recipients\":true,\"starts_in_s\":142}}\n```\n\nReturn JSON."
+  }
+ ],
+ "text": "```json\n{\n  \"verdict\": \"SKIP\",\n  \"score\": 15,\n  \"reasons\": [\n    \"Extremely generic and low-effort name 'start' with no branding or identity\",\n    \"Very small code size (45 bytes) suggests minimal or no actual contract functionality\",\n    \"Suspicious owner address (0x0a6b...) with no verification of legitimacy\",\n    \"10% fee (1000 bps) with restricted fee recipients is concerning for a free mint\",\n    \"Very short mint duration (0.18 hours = ~11 minutes) creates artificial urgency\",\n    \"Max 1 per wallet with 1111 supply suggests potential bot farming setup\",\n    \"No metadata, description, or utility provided\",\n    \"Collection appears to be a low-quality cash grab exploiting free mint hype\"\n  ]\n}\n```",
+ "usage": {
+  "input_tokens": 227,
+  "output_tokens": 203
+ }
+}

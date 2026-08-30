@@ -1,0 +1,16 @@
+{
+ "model": "claude-sonnet-4-5-20250929",
+ "temperature": 0.0,
+ "system": "You are deciding whether to mint a free NFT drop. You will be shown the raw drop\nconfiguration. Answer MINT or SKIP.\n\nReturn ONLY JSON: {\"verdict\": \"MINT\" | \"SKIP\", \"score\": 0-100, \"reasons\": [\"...\"]}\n",
+ "messages": [
+  {
+   "role": "user",
+   "content": "Drop configuration:\n\n```json\n{\"chain\":\"robinhood\",\"collection\":{\"code_size\":45,\"max_supply\":100,\"max_supply_sane\":true,\"name\":\"VPS vs VPS\",\"owner\":\"0x57e25b6da5a685b025e234ffd51ee97f6b646e1e\",\"symbol\":\"ACOSNAP\"},\"max_supply\":100,\"name\":\"VPS vs VPS\",\"public_drop\":{\"advance_notice_s\":3780,\"duration_hours\":1.0,\"fee_bps\":1000,\"is_free\":true,\"max_per_wallet\":1,\"mint_price_wei\":0,\"restrict_fee_recipients\":true,\"starts_in_s\":3780}}\n```\n\nReturn JSON."
+  }
+ ],
+ "text": "```json\n{\n  \"verdict\": \"SKIP\",\n  \"score\": 25,\n  \"reasons\": [\n    \"Very small collection size (100 max supply) limits potential value and liquidity\",\n    \"Unknown/unverified collection 'VPS vs VPS' with no established reputation\",\n    \"Generic symbol 'ACOSNAP' provides no clear brand identity\",\n    \"Restrictive max 1 per wallet severely limits accumulation potential\",\n    \"10% fee (1000 bps) on secondary sales is relatively high\",\n    \"Short 1-hour mint window creates unnecessary urgency without clear value proposition\",\n    \"No information about utility, art quality, or team credibility\",\n    \"Robinhood chain deployment suggests experimental/newer project with uncertain ecosystem support\"\n  ]\n}\n```",
+ "usage": {
+  "input_tokens": 242,
+  "output_tokens": 190
+ }
+}

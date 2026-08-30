@@ -1,0 +1,16 @@
+{
+ "model": "claude-sonnet-4-5-20250929",
+ "temperature": 0.0,
+ "system": "You are deciding whether to mint a free NFT drop. You will be shown the raw drop\nconfiguration. Answer MINT or SKIP.\n\nReturn ONLY JSON: {\"verdict\": \"MINT\" | \"SKIP\", \"score\": 0-100, \"reasons\": [\"...\"]}\n",
+ "messages": [
+  {
+   "role": "user",
+   "content": "Drop configuration:\n\n```json\n{\"chain\":\"robinhood\",\"collection\":{\"code_size\":45,\"max_supply\":5000,\"max_supply_sane\":true,\"name\":\"Tokyo Misfits \",\"owner\":\"0xba9046954ab2fc280727b98ba9d2ee7c53676a6f\",\"symbol\":\"Tokyomisfits\"},\"max_supply\":5000,\"name\":\"Tokyo Misfits \",\"public_drop\":{\"advance_notice_s\":58,\"duration_hours\":6.0,\"fee_bps\":1000,\"is_free\":true,\"max_per_wallet\":1,\"mint_price_wei\":0,\"restrict_fee_recipients\":true,\"starts_in_s\":58}}\n```\n\nReturn JSON."
+  }
+ ],
+ "text": "```json\n{\n  \"verdict\": \"SKIP\",\n  \"score\": 25,\n  \"reasons\": [\n    \"Collection name 'Tokyo Misfits ' has trailing space indicating poor attention to detail\",\n    \"Symbol 'Tokyomisfits' lacks proper formatting/capitalization\",\n    \"High 10% fee (1000 bps) with restrict_fee_recipients enabled suggests creator-focused monetization\",\n    \"Max supply of 5000 is relatively high for a free mint\",\n    \"Very short advance notice (58 seconds) indicates rushed or bot-targeted launch\",\n    \"Short 6-hour duration creates artificial urgency\",\n    \"Generic anime/culture reference name lacks originality\",\n    \"No verified information about project utility or roadmap in configuration\",\n    \"Contract owner address shows no notable reputation indicators\",\n    \"Overall appears to be low-effort cash-grab project despite being 'free'\"\n  ]\n}\n```",
+ "usage": {
+  "input_tokens": 243,
+  "output_tokens": 220
+ }
+}

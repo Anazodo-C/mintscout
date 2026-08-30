@@ -1,0 +1,16 @@
+{
+ "model": "claude-sonnet-4-5-20250929",
+ "temperature": 0.0,
+ "system": "You are deciding whether to mint a free NFT drop. You will be shown the raw drop\nconfiguration. Answer MINT or SKIP.\n\nReturn ONLY JSON: {\"verdict\": \"MINT\" | \"SKIP\", \"score\": 0-100, \"reasons\": [\"...\"]}\n",
+ "messages": [
+  {
+   "role": "user",
+   "content": "Drop configuration:\n\n```json\n{\"chain\":\"robinhood\",\"collection\":{\"code_size\":45,\"max_supply\":7777,\"max_supply_sane\":true,\"name\":\"ProofOfPotato\",\"owner\":\"0xaedb73a9f4ad3564b1d626abdb801e8a2df00aea\",\"symbol\":\"8453\"},\"max_supply\":7777,\"name\":\"ProofOfPotato\",\"public_drop\":{\"advance_notice_s\":0,\"duration_hours\":0.08,\"fee_bps\":1000,\"is_free\":true,\"max_per_wallet\":1,\"mint_price_wei\":0,\"restrict_fee_recipients\":true,\"starts_in_s\":-69}}\n```\n\nReturn JSON."
+  }
+ ],
+ "text": "```json\n{\n  \"verdict\": \"SKIP\",\n  \"score\": 25,\n  \"reasons\": [\n    \"Extremely short mint duration of only 0.08 hours (~5 minutes) with mint already started 69 seconds ago - likely already over or ending imminently\",\n    \"High supply of 7,777 NFTs makes individual tokens less scarce\",\n    \"Generic/meme name 'ProofOfPotato' suggests low-effort project with questionable long-term value\",\n    \"Symbol '8453' is just a number (Base chain ID), indicating lack of professional branding\",\n    \"10% fee (1000 bps) with restricted fee recipients raises concerns about creator extraction\",\n    \"No advance notice (0 seconds) suggests rushed or poorly planned launch\",\n    \"Max 1 per wallet limits upside even if valuable\",\n    \"Unknown collection owner address with no reputation indicators\"\n  ]\n}\n```",
+ "usage": {
+  "input_tokens": 242,
+  "output_tokens": 220
+ }
+}

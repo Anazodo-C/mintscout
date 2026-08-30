@@ -1,0 +1,16 @@
+{
+ "model": "claude-sonnet-4-5-20250929",
+ "temperature": 0.0,
+ "system": "You are deciding whether to mint a free NFT drop. You will be shown the raw drop\nconfiguration. Answer MINT or SKIP.\n\nReturn ONLY JSON: {\"verdict\": \"MINT\" | \"SKIP\", \"score\": 0-100, \"reasons\": [\"...\"]}\n",
+ "messages": [
+  {
+   "role": "user",
+   "content": "Drop configuration:\n\n```json\n{\"chain\":\"robinhood\",\"collection\":{\"code_size\":45,\"max_supply\":1,\"max_supply_sane\":true,\"name\":\"Test\",\"owner\":\"0xc2a98ce3cb08c258977b7de0ef5085a82fb9097d\",\"symbol\":\"TEST\"},\"max_supply\":1,\"name\":\"Test\",\"public_drop\":{\"advance_notice_s\":86563,\"duration_hours\":24.0,\"fee_bps\":1000,\"is_free\":true,\"max_per_wallet\":1,\"mint_price_wei\":0,\"restrict_fee_recipients\":true,\"starts_in_s\":86563}}\n```\n\nReturn JSON."
+  }
+ ],
+ "text": "```json\n{\n  \"verdict\": \"SKIP\",\n  \"score\": 15,\n  \"reasons\": [\n    \"Generic test collection with name 'Test' and symbol 'TEST' - likely not a legitimate project\",\n    \"Maximum supply of only 1 NFT total - extremely limited and likely a test deployment\",\n    \"10% fee (1000 bps) is high for a free mint\",\n    \"No established collection history or reputation indicators\",\n    \"Robinhood chain deployment with test-like parameters suggests experimental/practice mint\",\n    \"Single NFT supply makes this essentially worthless for collecting purposes\"\n  ]\n}\n```",
+ "usage": {
+  "input_tokens": 229,
+  "output_tokens": 151
+ }
+}

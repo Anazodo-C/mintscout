@@ -1,0 +1,16 @@
+{
+ "model": "claude-sonnet-4-5-20250929",
+ "temperature": 0.0,
+ "system": "You are deciding whether to mint a free NFT drop. You will be shown the raw drop\nconfiguration. Answer MINT or SKIP.\n\nReturn ONLY JSON: {\"verdict\": \"MINT\" | \"SKIP\", \"score\": 0-100, \"reasons\": [\"...\"]}\n",
+ "messages": [
+  {
+   "role": "user",
+   "content": "Drop configuration:\n\n```json\n{\"chain\":\"robinhood\",\"collection\":{\"code_size\":45,\"max_supply\":4200,\"max_supply_sane\":true,\"name\":\"Deadchains\",\"owner\":\"0xaedb73a9f4ad3564b1d626abdb801e8a2df00aea\",\"symbol\":\"8453\"},\"max_supply\":4200,\"name\":\"Deadchains\",\"public_drop\":{\"advance_notice_s\":0,\"duration_hours\":0.08,\"fee_bps\":1000,\"is_free\":true,\"max_per_wallet\":1,\"mint_price_wei\":0,\"restrict_fee_recipients\":true,\"starts_in_s\":-45}}\n```\n\nReturn JSON."
+  }
+ ],
+ "text": "```json\n{\n  \"verdict\": \"SKIP\",\n  \"score\": 25,\n  \"reasons\": [\n    \"Drop has already ended (starts_in_s: -45, duration: 0.08 hours = ~5 minutes)\",\n    \"Extremely short mint window of only 4.8 minutes makes this practically impossible to mint\",\n    \"Collection name 'Deadchains' has negative connotations suggesting failed/dead projects\",\n    \"Symbol '8453' is just a number (Base chain ID), showing low effort branding\",\n    \"10% fee (1000 bps) is high for a free mint\",\n    \"Very small code size (45 bytes) suggests minimal contract functionality\",\n    \"Max supply of 4,200 is moderate but unremarkable\",\n    \"No advance notice (0 seconds) indicates poor planning or bot-targeted drop\",\n    \"Overall appears to be a low-quality, already-expired drop with poor execution\"\n  ]\n}\n```",
+ "usage": {
+  "input_tokens": 238,
+  "output_tokens": 232
+ }
+}

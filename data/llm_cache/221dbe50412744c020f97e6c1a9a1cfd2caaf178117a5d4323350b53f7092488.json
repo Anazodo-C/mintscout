@@ -1,0 +1,16 @@
+{
+ "model": "claude-sonnet-4-5-20250929",
+ "temperature": 0.0,
+ "system": "You are deciding whether to mint a free NFT drop. You will be shown the raw drop\nconfiguration. Answer MINT or SKIP.\n\nReturn ONLY JSON: {\"verdict\": \"MINT\" | \"SKIP\", \"score\": 0-100, \"reasons\": [\"...\"]}\n",
+ "messages": [
+  {
+   "role": "user",
+   "content": "Drop configuration:\n\n```json\n{\"chain\":\"robinhood\",\"collection\":{\"code_size\":45,\"max_supply\":5555,\"max_supply_sane\":true,\"name\":\"REWQ44\",\"owner\":\"0x88a619e516bf9ecd7216af02418a3b67fd108438\",\"symbol\":\"R\"},\"max_supply\":5555,\"name\":\"REWQ44\",\"public_drop\":{\"advance_notice_s\":0,\"duration_hours\":0.08,\"fee_bps\":1000,\"is_free\":true,\"max_per_wallet\":1,\"mint_price_wei\":0,\"restrict_fee_recipients\":true,\"starts_in_s\":-126}}\n```\n\nReturn JSON."
+  }
+ ],
+ "text": "```json\n{\n  \"verdict\": \"SKIP\",\n  \"score\": 15,\n  \"reasons\": [\n    \"Suspicious collection name 'REWQ44' appears random/low-effort with no clear brand identity\",\n    \"Very small mint window of only 0.08 hours (~5 minutes) suggests potential bot-focused drop\",\n    \"Drop already started 126 seconds ago, likely already minted out or heavily botted\",\n    \"Max supply of 5,555 is relatively high for a free mint with such short duration\",\n    \"10% fee (1000 bps) with restricted fee recipients raises concerns about creator intentions\",\n    \"No meaningful metadata or project information to assess legitimacy or value\",\n    \"Contract code size of 45 bytes is extremely small, suggesting minimal/questionable functionality\",\n    \"Overall profile matches common characteristics of low-quality or spam NFT drops\"\n  ]\n}\n```",
+ "usage": {
+  "input_tokens": 233,
+  "output_tokens": 214
+ }
+}

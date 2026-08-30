@@ -1,0 +1,16 @@
+{
+ "model": "claude-sonnet-4-5-20250929",
+ "temperature": 0.0,
+ "system": "You are deciding whether to mint a free NFT drop. You will be shown the raw drop\nconfiguration. Answer MINT or SKIP.\n\nReturn ONLY JSON: {\"verdict\": \"MINT\" | \"SKIP\", \"score\": 0-100, \"reasons\": [\"...\"]}\n",
+ "messages": [
+  {
+   "role": "user",
+   "content": "Drop configuration:\n\n```json\n{\"chain\":\"robinhood\",\"collection\":{\"code_size\":45,\"max_supply\":3000,\"max_supply_sane\":true,\"name\":\"TheRebelKin\",\"owner\":\"0x2bc4b033931dc449ddbbd220dddc8473f543230d\",\"symbol\":\"RK\"},\"max_supply\":3000,\"name\":\"TheRebelKin\",\"public_drop\":{\"advance_notice_s\":0,\"duration_hours\":0.05,\"fee_bps\":1000,\"is_free\":true,\"max_per_wallet\":2,\"mint_price_wei\":0,\"restrict_fee_recipients\":true,\"starts_in_s\":-72}}\n```\n\nReturn JSON."
+  }
+ ],
+ "text": "```json\n{\n  \"verdict\": \"SKIP\",\n  \"score\": 25,\n  \"reasons\": [\n    \"Drop already ended 72 seconds ago (starts_in_s: -72)\",\n    \"Extremely short duration of only 0.05 hours (3 minutes)\",\n    \"Unknown collection 'TheRebelKin' with no established reputation\",\n    \"Low max supply of 3000 with max 2 per wallet suggests limited availability\",\n    \"10% fee (1000 bps) on a free mint is concerning\",\n    \"Drop is on Robinhood chain which has less established NFT ecosystem\",\n    \"No time to evaluate - mint window has already passed\"\n  ]\n}\n```",
+ "usage": {
+  "input_tokens": 235,
+  "output_tokens": 171
+ }
+}

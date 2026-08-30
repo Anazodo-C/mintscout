@@ -1,0 +1,16 @@
+{
+ "model": "claude-sonnet-4-5-20250929",
+ "temperature": 0.0,
+ "system": "You are deciding whether to mint a free NFT drop. You will be shown the raw drop\nconfiguration. Answer MINT or SKIP.\n\nReturn ONLY JSON: {\"verdict\": \"MINT\" | \"SKIP\", \"score\": 0-100, \"reasons\": [\"...\"]}\n",
+ "messages": [
+  {
+   "role": "user",
+   "content": "Drop configuration:\n\n```json\n{\"chain\":\"robinhood\",\"collection\":{\"code_size\":45,\"max_supply\":5000,\"max_supply_sane\":true,\"name\":\"Crystal Cats\",\"owner\":\"0x83afe4718defed9b92bcb1729bdf1cd83d168eee\",\"symbol\":\"CCAT\"},\"max_supply\":5000,\"name\":\"Crystal Cats\",\"public_drop\":{\"advance_notice_s\":0,\"duration_hours\":96.0,\"fee_bps\":1000,\"is_free\":true,\"max_per_wallet\":6,\"mint_price_wei\":0,\"restrict_fee_recipients\":true,\"starts_in_s\":-433}}\n```\n\nReturn JSON."
+  }
+ ],
+ "text": "```json\n{\n  \"verdict\": \"SKIP\",\n  \"score\": 35,\n  \"reasons\": [\n    \"Generic collection name 'Crystal Cats' suggests low originality\",\n    \"Very high max supply of 5000 NFTs dilutes scarcity and value\",\n    \"High max per wallet (6) indicates potential oversupply per holder\",\n    \"10% fee (1000 bps) is relatively high for a free mint\",\n    \"Drop already started 433 seconds ago, missing early minting advantage\",\n    \"Small code size (45 bytes) may indicate minimal smart contract functionality\",\n    \"No notable brand recognition or established project reputation\",\n    \"Cat-themed NFTs are oversaturated in the market\"\n  ]\n}\n```",
+ "usage": {
+  "input_tokens": 235,
+  "output_tokens": 179
+ }
+}

@@ -1,0 +1,16 @@
+{
+ "model": "claude-sonnet-4-5-20250929",
+ "temperature": 0.0,
+ "system": "You are deciding whether to mint a free NFT drop. You will be shown the raw drop\nconfiguration. Answer MINT or SKIP.\n\nReturn ONLY JSON: {\"verdict\": \"MINT\" | \"SKIP\", \"score\": 0-100, \"reasons\": [\"...\"]}\n",
+ "messages": [
+  {
+   "role": "user",
+   "content": "Drop configuration:\n\n```json\n{\"chain\":\"robinhood\",\"collection\":{\"code_size\":45,\"max_supply\":2222,\"max_supply_sane\":true,\"name\":\"BidPunks\",\"owner\":\"0xdad2559113a841c4f0e6b9f947f1e1acb83a8396\",\"symbol\":\"BidPunks\"},\"max_supply\":2222,\"name\":\"BidPunks\",\"public_drop\":{\"advance_notice_s\":94,\"duration_hours\":0.05,\"fee_bps\":1000,\"is_free\":true,\"max_per_wallet\":1,\"mint_price_wei\":0,\"restrict_fee_recipients\":true,\"starts_in_s\":94}}\n```\n\nReturn JSON."
+  }
+ ],
+ "text": "```json\n{\n  \"verdict\": \"SKIP\",\n  \"score\": 25,\n  \"reasons\": [\n    \"Extremely short mint duration of only 0.05 hours (3 minutes) creates high pressure and FOMO tactics\",\n    \"High fee of 10% (1000 bps) with restricted fee recipients suggests potential revenue extraction scheme\",\n    \"Max supply of 2,222 with only 1 per wallet means this requires massive coordination to mint out\",\n    \"Collection name 'BidPunks' appears derivative of CryptoPunks, lacking originality\",\n    \"Very short advance notice of 94 seconds gives no time for proper evaluation\",\n    \"Contract owner address shows no verification of legitimacy or reputation\",\n    \"Robinhood chain deployment is unusual and less established for NFT projects\",\n    \"The combination of artificial scarcity, time pressure, and high fees are red flags for a cash grab\"\n  ]\n}\n```",
+ "usage": {
+  "input_tokens": 244,
+  "output_tokens": 224
+ }
+}

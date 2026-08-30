@@ -1,0 +1,16 @@
+{
+ "model": "claude-sonnet-4-5-20250929",
+ "temperature": 0.0,
+ "system": "You are deciding whether to mint a free NFT drop. You will be shown the raw drop\nconfiguration. Answer MINT or SKIP.\n\nReturn ONLY JSON: {\"verdict\": \"MINT\" | \"SKIP\", \"score\": 0-100, \"reasons\": [\"...\"]}\n",
+ "messages": [
+  {
+   "role": "user",
+   "content": "Drop configuration:\n\n```json\n{\"chain\":\"robinhood\",\"collection\":{\"code_size\":45,\"max_supply\":5555,\"max_supply_sane\":true,\"name\":\".\",\"owner\":\"0xfbb2d89bac6a5a196579da1e758d27b28f6479da\",\"symbol\":\" \"},\"max_supply\":5555,\"name\":\".\",\"public_drop\":{\"advance_notice_s\":0,\"duration_hours\":0.08,\"fee_bps\":1000,\"is_free\":true,\"max_per_wallet\":2,\"mint_price_wei\":0,\"restrict_fee_recipients\":true,\"starts_in_s\":-90}}\n```\n\nReturn JSON."
+  }
+ ],
+ "text": "```json\n{\n  \"verdict\": \"SKIP\",\n  \"score\": 15,\n  \"reasons\": [\n    \"Extremely suspicious collection name (single dot '.') and symbol (single space ' ') - classic signs of a low-effort or scam project\",\n    \"Very small code size (45 bytes) suggests minimal or no actual smart contract functionality\",\n    \"Drop already started 90 seconds ago with only 4.8 minute duration - extremely short window indicates potential bot farming operation\",\n    \"10% fee (1000 bps) with restricted fee recipients on a free mint is unusual and concerning\",\n    \"Max supply of 5555 is a common number for low-quality NFT projects\",\n    \"No meaningful project identity or branding evident from the configuration\",\n    \"Overall configuration pattern matches typical spam/farming NFT drops\"\n  ]\n}\n```",
+ "usage": {
+  "input_tokens": 232,
+  "output_tokens": 200
+ }
+}

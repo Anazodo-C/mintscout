@@ -1,0 +1,16 @@
+{
+ "model": "claude-sonnet-4-5-20250929",
+ "temperature": 0.0,
+ "system": "You are deciding whether to mint a free NFT drop. You will be shown the raw drop\nconfiguration. Answer MINT or SKIP.\n\nReturn ONLY JSON: {\"verdict\": \"MINT\" | \"SKIP\", \"score\": 0-100, \"reasons\": [\"...\"]}\n",
+ "messages": [
+  {
+   "role": "user",
+   "content": "Drop configuration:\n\n```json\n{\"chain\":\"robinhood\",\"collection\":{\"code_size\":45,\"max_supply\":6666,\"max_supply_sane\":true,\"name\":\"MFERHOOD\",\"owner\":\"0xffe4e3e4d46af43ab8aa8c61218f9399e512eb68\",\"symbol\":\"MFERHOOD\"},\"max_supply\":6666,\"name\":\"MFERHOOD\",\"public_drop\":{\"advance_notice_s\":45,\"duration_hours\":0.05,\"fee_bps\":1000,\"is_free\":true,\"max_per_wallet\":10,\"mint_price_wei\":0,\"restrict_fee_recipients\":true,\"starts_in_s\":45}}\n```\n\nReturn JSON."
+  }
+ ],
+ "text": "```json\n{\n  \"verdict\": \"SKIP\",\n  \"score\": 25,\n  \"reasons\": [\n    \"Extremely short mint window of only 0.05 hours (3 minutes) makes it nearly impossible to participate\",\n    \"High fee of 10% (1000 bps) despite being advertised as 'free' - fees will apply on secondary sales\",\n    \"Max supply of 6666 with 10 per wallet suggests potential for bot farming\",\n    \"Unknown collection 'MFERHOOD' with no established reputation or utility\",\n    \"Very short 45 second advance notice provides no time for due diligence\",\n    \"Contract owner address shows no notable history or credibility markers\",\n    \"The combination of short duration + high supply suggests a cash grab setup\"\n  ]\n}\n```",
+ "usage": {
+  "input_tokens": 238,
+  "output_tokens": 191
+ }
+}

@@ -1,0 +1,16 @@
+{
+ "model": "claude-sonnet-4-5-20250929",
+ "temperature": 0.0,
+ "system": "You are deciding whether to mint a free NFT drop. You will be shown the raw drop\nconfiguration. Answer MINT or SKIP.\n\nReturn ONLY JSON: {\"verdict\": \"MINT\" | \"SKIP\", \"score\": 0-100, \"reasons\": [\"...\"]}\n",
+ "messages": [
+  {
+   "role": "user",
+   "content": "Drop configuration:\n\n```json\n{\"chain\":\"robinhood\",\"collection\":{\"code_size\":19658,\"max_supply\":8888,\"max_supply_sane\":true,\"name\":\"Univerxe Earthland\",\"owner\":\"0xecb0f6cf969e79b56c6495c34a752259093ff60a\",\"symbol\":\"UEARTH\"},\"max_supply\":8888,\"name\":\"Univerxe Earthland\",\"public_drop\":{\"advance_notice_s\":0,\"duration_hours\":24.0,\"fee_bps\":1000,\"is_free\":true,\"max_per_wallet\":100,\"mint_price_wei\":0,\"restrict_fee_recipients\":true,\"starts_in_s\":-439}}\n```\n\nReturn JSON."
+  }
+ ],
+ "text": "```json\n{\n  \"verdict\": \"SKIP\",\n  \"score\": 25,\n  \"reasons\": [\n    \"Very high max supply (8,888) dilutes potential value\",\n    \"Extremely high max per wallet (100) suggests low demand expectations and potential for bot farming\",\n    \"10% fee (1000 bps) is quite high for a free mint\",\n    \"Unknown/unverified project 'Univerxe Earthland' with no clear utility or brand recognition\",\n    \"Robinhood chain is relatively new with limited ecosystem maturity\",\n    \"Already started 439 seconds ago, missing early minting opportunity\",\n    \"No information about art quality, team, roadmap, or community\"\n  ]\n}\n```",
+ "usage": {
+  "input_tokens": 245,
+  "output_tokens": 175
+ }
+}

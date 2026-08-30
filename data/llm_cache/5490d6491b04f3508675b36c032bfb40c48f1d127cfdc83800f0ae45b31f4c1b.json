@@ -1,0 +1,16 @@
+{
+ "model": "claude-sonnet-4-5-20250929",
+ "temperature": 0.0,
+ "system": "You are deciding whether to mint a free NFT drop. You will be shown the raw drop\nconfiguration. Answer MINT or SKIP.\n\nReturn ONLY JSON: {\"verdict\": \"MINT\" | \"SKIP\", \"score\": 0-100, \"reasons\": [\"...\"]}\n",
+ "messages": [
+  {
+   "role": "user",
+   "content": "Drop configuration:\n\n```json\n{\"chain\":\"robinhood\",\"collection\":{\"code_size\":45,\"max_supply\":10000,\"max_supply_sane\":true,\"name\":\"Iron Legion -Mint Pass\",\"owner\":\"0xc01256783a7a7065c5a6f48643e589229447470a\",\"symbol\":\"8453\"},\"max_supply\":10000,\"name\":\"Iron Legion -Mint Pass\",\"public_drop\":{\"advance_notice_s\":0,\"duration_hours\":0.08,\"fee_bps\":1000,\"is_free\":true,\"max_per_wallet\":1,\"mint_price_wei\":0,\"restrict_fee_recipients\":true,\"starts_in_s\":-35}}\n```\n\nReturn JSON."
+  }
+ ],
+ "text": "```json\n{\n  \"verdict\": \"SKIP\",\n  \"score\": 25,\n  \"reasons\": [\n    \"Drop already started 35 seconds ago with only 4.8 minute duration (0.08 hours) - likely already ended or nearly over\",\n    \"Extremely short mint window makes it practically impossible to participate\",\n    \"High creator fee of 10% (1000 bps) on secondary sales\",\n    \"Generic 'Mint Pass' naming suggests potential low-effort project\",\n    \"Robinhood chain deployment is unusual and less established\",\n    \"Max 1 per wallet with 10k supply indicates this may be widely distributed already\",\n    \"No time to research project legitimacy given the expired/ending status\"\n  ]\n}\n```",
+ "usage": {
+  "input_tokens": 239,
+  "output_tokens": 180
+ }
+}

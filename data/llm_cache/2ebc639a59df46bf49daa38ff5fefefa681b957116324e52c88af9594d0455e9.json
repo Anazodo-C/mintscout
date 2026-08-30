@@ -1,0 +1,16 @@
+{
+ "model": "claude-sonnet-4-5-20250929",
+ "temperature": 0.0,
+ "system": "You are deciding whether to mint a free NFT drop. You will be shown the raw drop\nconfiguration. Answer MINT or SKIP.\n\nReturn ONLY JSON: {\"verdict\": \"MINT\" | \"SKIP\", \"score\": 0-100, \"reasons\": [\"...\"]}\n",
+ "messages": [
+  {
+   "role": "user",
+   "content": "Drop configuration:\n\n```json\n{\"chain\":\"robinhood\",\"collection\":{\"code_size\":45,\"max_supply\":5555,\"max_supply_sane\":true,\"name\":\"STORY32\",\"owner\":\"0x92d311fee80c95ec7365ab96e077b7e367a17f66\",\"symbol\":\"S\"},\"max_supply\":5555,\"name\":\"STORY32\",\"public_drop\":{\"advance_notice_s\":0,\"duration_hours\":0.92,\"fee_bps\":1000,\"is_free\":true,\"max_per_wallet\":2,\"mint_price_wei\":0,\"restrict_fee_recipients\":true,\"starts_in_s\":-82}}\n```\n\nReturn JSON."
+  }
+ ],
+ "text": "```json\n{\n  \"verdict\": \"SKIP\",\n  \"score\": 25,\n  \"reasons\": [\n    \"Drop already started 82 seconds ago with very short 0.92 hour duration - likely already heavily minted\",\n    \"High 10% fee (1000 bps) with restricted fee recipients suggests extractive tokenomics\",\n    \"Generic name 'STORY32' with minimal branding (symbol just 'S')\",\n    \"Max 2 per wallet on 5555 supply indicates likely oversaturated mint\",\n    \"Robinhood chain deployment is non-standard and limits composability\",\n    \"No advance notice (0s) suggests rushed or low-quality drop\",\n    \"Contract owner address shows no notable reputation signals\"\n  ]\n}\n```",
+ "usage": {
+  "input_tokens": 232,
+  "output_tokens": 184
+ }
+}

@@ -1,0 +1,16 @@
+{
+ "model": "claude-sonnet-4-5-20250929",
+ "temperature": 0.0,
+ "system": "You are deciding whether to mint a free NFT drop. You will be shown the raw drop\nconfiguration. Answer MINT or SKIP.\n\nReturn ONLY JSON: {\"verdict\": \"MINT\" | \"SKIP\", \"score\": 0-100, \"reasons\": [\"...\"]}\n",
+ "messages": [
+  {
+   "role": "user",
+   "content": "Drop configuration:\n\n```json\n{\"chain\":\"robinhood\",\"collection\":{\"code_size\":45,\"max_supply\":5555,\"max_supply_sane\":true,\"name\":\"Xee\",\"owner\":\"0x14266071f7e8346445b0ad8bcc0566fb699c6d2a\",\"symbol\":\"Rh\"},\"max_supply\":5555,\"name\":\"Xee\",\"public_drop\":{\"advance_notice_s\":0,\"duration_hours\":0.08,\"fee_bps\":1000,\"is_free\":true,\"max_per_wallet\":2,\"mint_price_wei\":0,\"restrict_fee_recipients\":true,\"starts_in_s\":-46}}\n```\n\nReturn JSON."
+  }
+ ],
+ "text": "```json\n{\n  \"verdict\": \"SKIP\",\n  \"score\": 25,\n  \"reasons\": [\n    \"Drop has already started 46 seconds ago - likely missed opportunity\",\n    \"Very short 0.08 hour (4.8 minute) duration makes it nearly impossible to mint in time\",\n    \"10% fee (1000 bps) is high for a free mint\",\n    \"Generic single-word name 'Xee' with no clear brand or utility\",\n    \"Max 2 per wallet is restrictive for a 5555 supply collection\",\n    \"No advance notice (0 seconds) suggests poor planning or potential low quality\",\n    \"Contract owner address shows no verification of legitimacy\",\n    \"Robinhood chain deployment is unusual - less established than major chains\"\n  ]\n}\n```",
+ "usage": {
+  "input_tokens": 236,
+  "output_tokens": 194
+ }
+}

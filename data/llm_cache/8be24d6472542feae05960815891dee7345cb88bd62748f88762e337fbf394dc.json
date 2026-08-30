@@ -1,0 +1,16 @@
+{
+ "model": "claude-sonnet-4-5-20250929",
+ "temperature": 0.0,
+ "system": "You are deciding whether to mint a free NFT drop. You will be shown the raw drop\nconfiguration. Answer MINT or SKIP.\n\nReturn ONLY JSON: {\"verdict\": \"MINT\" | \"SKIP\", \"score\": 0-100, \"reasons\": [\"...\"]}\n",
+ "messages": [
+  {
+   "role": "user",
+   "content": "Drop configuration:\n\n```json\n{\"chain\":\"robinhood\",\"collection\":{\"code_size\":45,\"max_supply\":9999,\"max_supply_sane\":true,\"name\":\"Crypto Gamez Hood\",\"owner\":\"0x603d2ef0f30ce850e2bf752df5477e180b427072\",\"symbol\":\"Cryptogamezhood\"},\"max_supply\":9999,\"name\":\"Crypto Gamez Hood\",\"public_drop\":{\"advance_notice_s\":0,\"duration_hours\":6.02,\"fee_bps\":1000,\"is_free\":true,\"max_per_wallet\":1,\"mint_price_wei\":0,\"restrict_fee_recipients\":true,\"starts_in_s\":-38}}\n```\n\nReturn JSON."
+  }
+ ],
+ "text": "```json\n{\n  \"verdict\": \"SKIP\",\n  \"score\": 25,\n  \"reasons\": [\n    \"Collection name 'Crypto Gamez Hood' appears low-effort with intentional misspelling\",\n    \"Very high max supply of 9,999 NFTs dilutes potential value\",\n    \"10% fee (1000 bps) with restricted fee recipients suggests extractive tokenomics\",\n    \"Generic 'crypto gaming' theme without clear utility or differentiation\",\n    \"Drop already started 38 seconds ago, indicating possible bot/insider advantage\",\n    \"Limited to 1 per wallet but high supply means low scarcity\",\n    \"No evidence of established project, community, or roadmap from configuration alone\"\n  ]\n}\n```",
+ "usage": {
+  "input_tokens": 242,
+  "output_tokens": 179
+ }
+}
