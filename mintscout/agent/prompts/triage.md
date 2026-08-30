@@ -108,6 +108,10 @@ in the section above.
 
 ## Output format
 
+Be concise. **At most 3 `reasons`, at most 4 `evidence` items, at most 3
+`risk_flags`, each one short.** Reasoning quality is judged on whether each claim
+is traceable to a dossier field, not on length.
+
 Return ONLY a JSON object, no prose, no code fence:
 
 {

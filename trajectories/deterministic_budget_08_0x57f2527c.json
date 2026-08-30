@@ -1,0 +1,199 @@
+{
+  "arm": "deterministic",
+  "drop": {
+    "chain": "robinhood",
+    "collection": "0x57f2527c5fd87c667a8a774aba062ae7f7d56958",
+    "start_time": 1787353980,
+    "cap": 15,
+    "mint_price_wei": 0,
+    "fixture_name": null
+  },
+  "decision_cutoff_ts": 1787353980,
+  "tool_calls": [
+    {
+      "tool": "erc165_probe",
+      "input": {
+        "collection": "0x57f2527c5fd87c667a8a774aba062ae7f7d56958"
+      },
+      "output": {
+        "standard": "erc721",
+        "is_erc721": true,
+        "is_erc1155": false,
+        "answers_ownerof_and_balanceof": false,
+        "note": null
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "collection_stats",
+      "input": {
+        "collection": "0x57f2527c5fd87c667a8a774aba062ae7f7d56958"
+      },
+      "output": {
+        "max_supply": 6666,
+        "owner": "0xf741c2d65d1b2ad84f4493fe6b19493b919b58a3",
+        "name": "Monks on Robinnhood",
+        "symbol": "MONK",
+        "code_size": 19805,
+        "max_supply_sane": true
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "metadata_fetch",
+      "input": {
+        "allow_network": false
+      },
+      "output": {
+        "present": true,
+        "shape": "drop_stage_config",
+        "name": null,
+        "description": null,
+        "n_attributes": 0,
+        "has_image": false,
+        "image_is_on_chain": false,
+        "token_bound_account": false,
+        "n_stages": 1,
+        "stage_names": [
+          "Public"
+        ],
+        "has_allowlist_stage": false,
+        "has_public_stage": true,
+        "note": "drop-stage configuration, not token art metadata",
+        "drop_uri": "ipfs://bafkreie32xy77lfp7ik2w6omdjxbvdb5r7rbvrh2rqsnjwsxddy2bufcdm",
+        "contract_uri": "ipfs://QmZFBEBjx5KvNjrxsbxSfn5iozaPYmwMwYUkVUgzEMyFv3",
+        "source": "drop_uri",
+        "on_chain_metadata": false,
+        "provenance": "pinned",
+        "contract_uri_present": true
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "erc6551_probe",
+      "input": {},
+      "output": {
+        "token_bound_account": false,
+        "source": "metadata field"
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "economics",
+      "input": {},
+      "output": {
+        "mint_price_wei": 0,
+        "is_free": true,
+        "max_per_wallet": 15,
+        "fee_bps": 1000,
+        "restrict_fee_recipients": true,
+        "duration_hours": 1.0,
+        "starts_in_s": 3491,
+        "advance_notice_s": 3491
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "drop_config_history",
+      "input": {},
+      "output": {
+        "n_revisions_before_cutoff": 5,
+        "distinct_prices": [
+          0
+        ],
+        "price_flips": 0,
+        "revisions": [
+          {
+            "mint_price": 0,
+            "start_time": 1787353980,
+            "end_time": 1787357580,
+            "max_per_wallet": 15,
+            "block_timestamp": 1787350489
+          },
+          {
+            "mint_price": 0,
+            "start_time": 1787350680,
+            "end_time": 1787354280,
+            "max_per_wallet": 15,
+            "block_timestamp": 1787350597
+          },
+          {
+            "mint_price": 0,
+            "start_time": 1787350680,
+            "end_time": 1787354280,
+            "max_per_wallet": 15,
+            "block_timestamp": 1787350643
+          },
+          {
+            "mint_price": 0,
+            "start_time": 1787350680,
+            "end_time": 1787354280,
+            "max_per_wallet": 15,
+            "block_timestamp": 1787350659
+          },
+          {
+            "mint_price": 0,
+            "start_time": 1787350680,
+            "end_time": 1787354280,
+            "max_per_wallet": 20,
+            "block_timestamp": 1787351580
+          }
+        ]
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "mint_velocity",
+      "input": {},
+      "output": {
+        "available": false,
+        "mints_per_min": null,
+        "reason": "decision point is at/before startTime; no mint has occurred yet. Outcome signal, not a feature."
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "deployer_history",
+      "input": {},
+      "output": {
+        "deployer": "0xf741c2d65d1b2ad84f4493fe6b19493b919b58a3",
+        "known": false,
+        "prior_collections": 0,
+        "prior_high_value": 0,
+        "note": "first time this deployer has been seen"
+      },
+      "ms": 0.0
+    }
+  ],
+  "triage": {
+    "verdict": "MINT",
+    "score": 100,
+    "reasons": [
+      "drop metadata resolves (configured through the standard flow)",
+      "contract is a full implementation (19,805 bytes), not a 45-byte minimal proxy",
+      "5 config revisions before open (operator effort)",
+      "supply 6,666 in the plausible band"
+    ],
+    "risk_flags": []
+  },
+  "verifier": null,
+  "action": {
+    "mode": "dry_run",
+    "wallets": 7,
+    "achievable": 100,
+    "gas_wei": 119617358322000
+  },
+  "outcome": {
+    "label": "low_value",
+    "label_detail": {
+      "fill_ratio": 0.0,
+      "fill_ok": false,
+      "unique_minters": 0,
+      "minters_ok": false,
+      "secondary_transfers_48h": 0,
+      "secondary_ok": false,
+      "label": "low_value"
+    },
+    "note": "outcome is NEVER visible to the agent; shown here only for post-hoc scoring."
+  }
+}

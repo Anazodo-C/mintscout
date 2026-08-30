@@ -57,6 +57,9 @@ Do not veto over style, or to substitute an equally-supported judgement — only
 when the reasoning is actually defective or the evidence does not carry the
 conclusion.
 
+Be concise: **at most 3 objections**, each one short. Only objections that
+matter — do not pad.
+
 Return ONLY JSON:
 
 {

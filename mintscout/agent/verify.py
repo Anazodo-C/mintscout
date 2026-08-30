@@ -9,7 +9,7 @@ import json
 import pathlib
 
 from . import llm
-from .triage import _clean
+from .triage import _clean, _prune
 
 PROMPTS = pathlib.Path(__file__).parent / "prompts"
 SYSTEM = (PROMPTS / "verifier.md").read_text()
@@ -20,12 +20,15 @@ VALID = {"MINT", "WATCH", "SKIP"}
 def verify(dossier: dict, verdict: dict, *, use_cache: bool = True,
            model: str = llm.DEFAULT_MODEL) -> dict:
     user = ("Evidence dossier:\n\n```json\n"
-            + json.dumps(_clean(dossier), indent=2, sort_keys=True)
+            + json.dumps(_prune(_clean(dossier)), sort_keys=True,
+                         separators=(",", ":"))
             + "\n```\n\nTriage verdict to audit:\n\n```json\n"
-            + json.dumps({k: v for k, v in verdict.items() if not k.startswith("_")},
-                         indent=2, sort_keys=True)
+            + json.dumps(_prune({k: v for k, v in verdict.items()
+                                 if not k.startswith("_")}),
+                         sort_keys=True, separators=(",", ":"))
             + "\n```\n\nReturn your audit as JSON.")
-    raw = llm.complete(SYSTEM, user, model=model, use_cache=use_cache)
+    raw = llm.complete(SYSTEM, user, model=model, use_cache=use_cache,
+                       max_tokens=700)
     try:
         out = llm.parse_json(raw)
     except ValueError:

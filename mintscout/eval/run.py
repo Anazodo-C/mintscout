@@ -114,7 +114,8 @@ class _FrozenMemory:
 
 def evaluate_arm(name: str, recs: list[dict], *, use_cache: bool = True,
                  model: str | None = None, workers: int = 6,
-                 collect_trajectories: int = 0, memory=None) -> dict:
+                 collect_trajectories: int = 0, memory=None,
+                 subset_meta: dict | None = None) -> dict:
     fn = B.ARMS[name]
     needs_llm = name in B.NEEDS_LLM
     gas_used, gas_price = _gas()
@@ -202,9 +203,18 @@ def evaluate_arm(name: str, recs: list[dict], *, use_cache: bool = True,
         "wallet_slots_spent": sum(r["wallets_used"] for r in rows),
         "wallet_slots_wasted": sum(r["wallets_used"] for r in fp),
         "verifier_vetoes": len(vetoes),
+        "triage_verdict_changed_by_verifier": sum(
+            1 for r in rows if r.get("triage_verdict")
+            and r["triage_verdict"] != r["verdict"]),
         "arm_errors": sum(1 for r in rows if r["error"]),
         "median_decision_ms": round(sorted(r["ms"] for r in rows)[n // 2], 1) if n else 0,
     }
+    if subset_meta:
+        from .subset import correct_precision
+        metrics["precision_observed_on_subset"] = metrics["precision_at_k"]
+        metrics["precision_at_k_population_corrected"] = correct_precision(
+            len(tp), len(fp), subset_meta["negative_sampling_rate"])
+        metrics["subset"] = subset_meta
 
     # ---- trajectories (deliverable 04): prefer the interesting ones
     if collect_trajectories:
@@ -259,6 +269,11 @@ def main(argv=None) -> int:
     ap.add_argument("--workers", type=int, default=6)
     ap.add_argument("--trajectories", type=int, default=5)
     ap.add_argument("--tag", default="", help="suffix for results/metrics_<tag>.json")
+    ap.add_argument("--subset", type=int, default=0,
+                    help="stratified subset size: keeps EVERY high-value drop and "
+                         "downsamples negatives, so a fixed LLM budget is spent on "
+                         "the drops that carry information. Precision is reported "
+                         "both as observed and reweighted to true prevalence.")
     ap.add_argument("--memory", action="store_true",
                     help="enable cross-run deployer memory (time-ordered replay)")
     ap.add_argument("--split", default="test", choices=["test", "calib", "all"],
@@ -272,12 +287,20 @@ def main(argv=None) -> int:
     allrecs = load(a.data)
     calib, test = _split(allrecs)
     recs = {"test": test, "calib": calib, "all": allrecs}[a.split]
+    subset_meta = None
+    if a.subset:
+        from .subset import stratified
+        recs, subset_meta = stratified(recs, a.subset)
     if a.limit:
         recs = recs[:a.limit]
     print(f"dataset: {a.data}")
     print(f"  full={len(allrecs)}  calib={len(calib)}  test={len(test)}  "
           f"-> scoring on '{a.split}' (n={len(recs)})")
     print(f"  {summarize(recs)}")
+    if subset_meta:
+        print(f"  STRATIFIED subset: {subset_meta['subset_n']} drops, all "
+              f"{subset_meta['subset_high_value']} positives kept, negatives "
+              f"sampled at {subset_meta['negative_sampling_rate']:.3f}")
     RESULTS.mkdir(exist_ok=True); TRAJ.mkdir(exist_ok=True)
 
     memory = None
@@ -296,12 +319,14 @@ def main(argv=None) -> int:
         t0 = time.time()
         res = evaluate_arm(arm, recs, use_cache=not a.no_cache, model=a.model,
                            workers=a.workers, collect_trajectories=a.trajectories,
-                           memory=memory)
+                           memory=memory, subset_meta=subset_meta)
         m = res["metrics"]
         m["wall_seconds"] = round(time.time() - t0, 1)
         all_metrics.append(m)
         all_traj += res["trajectories"]
-        print(f"    precision@K={m['precision_at_k']:.3f} recall={m['recall']:.3f} "
+        corr = m.get("precision_at_k_population_corrected")
+        extra = f" (pop-corrected {corr:.3f})" if corr is not None else ""
+        print(f"    precision@K={m['precision_at_k']:.3f}{extra} recall={m['recall']:.3f} "
               f"chosen={m['n_chosen']}/{m['n']} lift={m['lift_over_base_rate']}x "
               f"vetoes={m['verifier_vetoes']} ({m['wall_seconds']}s)")
         suffix = f"_{a.tag}" if a.tag else ""
