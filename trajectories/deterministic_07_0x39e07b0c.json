@@ -147,7 +147,7 @@
         "known": false,
         "prior_collections": 0,
         "prior_high_value": 0,
-        "note": "no memory store attached"
+        "note": "first time this deployer has been seen"
       },
       "ms": 0.0
     }

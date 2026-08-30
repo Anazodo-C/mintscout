@@ -167,6 +167,12 @@ class RpcClient:
                     raise
                 if e.code == -32602:
                     raise
+                # An execution revert is a DETERMINISTIC answer, not a transient
+                # failure: the call will revert identically every time. Retrying
+                # it five times turned a fast pre-flight into a slow one for no
+                # information. Raise immediately so callers see the revert.
+                if e.code == 3 or "revert" in e.message.lower():
+                    raise
                 self.stats.bump(errors=1)
             except urllib.error.HTTPError as e:
                 last = e

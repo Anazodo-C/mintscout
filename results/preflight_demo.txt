@@ -1,0 +1,25 @@
+pre-flight over 12 recently-configured free drops on robinhood
+  fee recipient (read from a recent SeaDropMint log): 0x0000a26b00c1f0df003000390027140000faa719
+  simulated minter: 0x000000000000000000000000000000000000dEaD
+
+  DROP 0x568d7a70d6795f82dc36b844961b036d57d04d2f  [eth_call] [3] execution reverted
+  DROP 0x9b3ccf545b7c44248f825c2c1fc3a46a796d562a  [eth_call] [3] execution reverted
+  DROP 0xdc5913c32ca75822cfbfe76d81fa50ac4549c76e  [eth_call] [3] execution reverted
+  DROP 0x38a6c913157105177ddd78f0ac80b6b7c67a1f5d  [eth_call] [3] execution reverted
+  DROP 0x22ceb29073ff353b1dd0be024de649e98b7e3162  [eth_call] [3] execution reverted
+  DROP 0x82801b75dd19b0e7c0f55bde408841535b18f7fa  [eth_call] [3] execution reverted
+  DROP 0x35b3cb2fca42f056ed30653948be267dd3ebf34b  [eth_call] [3] execution reverted
+  DROP 0xdc928dca963614eebe47bfee60d6ffeaf9b239d4  [config_reread] repriced above threshold: 1600000000000000 wei (was free at queue time)
+  DROP 0x8d463d8e62940920e6db704aeba222898c30a447  [config_reread] repriced above threshold: 10000000000000000 wei (was free at queue time)
+  DROP 0xbc3d1f70f60c4da380a2c26dccdf06b262392bcc  [eth_call] [3] execution reverted
+  DROP 0xc8499e9d58a05f3ab813b425bcf8a34063e1acd0  [eth_call] [3] execution reverted
+  DROP 0x1de076a2a6f6dc71d201c85896c8ad44642465a9  [eth_call] [3] execution reverted
+
+  kept 0 / 12
+  wasted gas avoided: 1,203,048 gas = 0.00020506 ETH
+
+  (read-only: eth_call only. Nothing signed, nothing sent.)
+
+real	0m13.660s
+user	0m0.561s
+sys	0m0.118s

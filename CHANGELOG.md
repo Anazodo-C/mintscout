@@ -22,9 +22,12 @@ collection to mint, which is the entire question here.
 | 1 | Derive every topic/selector with keccak at import, assert against a real log | The guide itself supplies `PublicDropUpdated = 0x1c4c8b9b…` "compute at build time, do not hardcode". | Derived `0x3e30d8e1f739…`; matched topic0 of a real log at block 49450834. The documented value is wrong. | Kept. `data/fixtures/topics.json` pins a real log per event; `tests/test_constants.py` fails if any drifts. |
 | 2 | Adaptive per-chain `getLogs` windowing | Spec says "10,000 block cap on both chains". Measured: that is true only for Ink. | Ink: `-32602 block range greater than 10000 max` at exactly 10,001. Robinhood: 200k blocks fine, 1M → `-32000 log query timed out`, and a *separate* result cap of 10,000 logs. | Kept. Robinhood windows raised 10k→120k, cutting a 9-day backfill from ~1,300 requests to 65. Errors are classified as range-reducible (halve the window) vs transient (retry), because retrying an oversized query can never succeed. |
 | 3 | Time-localised chunking in the dataset builder | First build fetched every collection's logs across the whole scan window. | Transfer volume for 201 collections: 192,841 logs. | Kept. Sorting collections by drop window before chunking means each query covers only the blocks that can contain its events. ~10x less data fetched for identical information. |
-| 4 | Baseline A — mint every free drop | The fair baseline: what a naive script, and the Minipengs bot generalised, does. | Precision@K = **0.030**, recall = **1.000** over 201 drops | Established. Precision equals the base rate exactly, as it must — a useful correctness check on the harness itself. |
+| 4 | Baseline A — mint every free drop | The fair baseline: what a naive script, and the Minipengs bot generalised, does. | Precision@K = **0.050**, recall = **1.000** on 360 held-out drops | Established. Precision equals the base rate exactly, as it must — a useful correctness check on the harness itself. |
 | 5 | Ground-truth labels from logs only | No archive state on the public RPCs, so labels must be computable from logs, transactions and receipts alone. | 3 criteria (≥80% fill, ≥100 unique minters, ≥1 secondary transfer in 48h). UNDEADLINES: fill 1.00, **2,734 unique minters** — matching the research doc exactly. | Kept. Labels are a pure function of committed data, so the eval runs offline. |
-| 6 | Deterministic rubric (no LLM) | Before adding a model, find out how far hand-written rules get. Reporting this honestly is worth more than a bigger headline number. | See `results/comparison.md` | Kept as its own arm — it isolates how much of any gain actually needs a language model. |
+| 5b | **Held-out calibration/test split** | The deterministic rubric is hand-tuned. Scoring it on the drops it was tuned against measures memorisation, not skill. | Stable hash split on collection address: calib n=341 (3.8% base rate), test n=360 (5.0%) | Kept. Rubric tuned on `calib` only; **every arm reported on `test`**. The gap this exposed is real and is published: precision **0.571 on calibration → 0.333 on held-out**. Without the split I would have reported the 0.571. |
+| 6 | Deterministic rubric (no LLM) | Before adding a model, find out how far hand-written rules get. Reporting this honestly is worth more than a bigger headline number. | Held-out precision **0.333** vs baseline **0.050** — **6.7× lift**, recall 0.278 | Kept as its own arm — it isolates how much of any gain actually needs a language model. |
+| 6b | Pinned metadata, then *measured* which rubric signals actually exist | The published rubric leans on on-chain art, ERC-6551 and trait counts. I pinned all 553 off-chain metadata documents and measured those signals. | **546/553 DropURIs resolve to OpenSea drop-stage config, not token art metadata.** On-chain-art, ERC-6551 and ≥3-attributes each measured **0.000 for BOTH classes** | **Removed those three signals from the deterministic rubric.** They are unobservable at decision time on this dataset, so scoring them is scoring noise. What replaced them: presence of a resolvable drop config (P=1.00 high vs 0.45 low), `code_size > 6000` (25× lift — most spam is a 45-byte ERC-1167 minimal proxy), and ≥3 config revisions (5× lift). |
+| 6c | Cross-run deployer memory, replayed in time order | Memory is only honest if a deployer's record contains solely drops that had *closed* before the drop being judged opened. | 137/360 held-out drops have a prior deployer record | Kept. Outcomes are replayed in `end_time` order and interleaved with decisions in `cutoff` order, exactly as they would have arrived live — a naive backfill would let a deployer's record include the very drop being judged. |
 | 7 | LLM triage + adversarial verifier | Two separate calls: the verifier sees the dossier and the finished verdict and is instructed to find the reason it is wrong. Separate call, not a second turn, so it cannot be anchored by triage's reasoning. | See `results/comparison.md`, `trajectories/` | Verifier disagreements are the most interesting artefact the system produces and are surfaced, not buried. |
 
 ---
@@ -133,6 +136,30 @@ otherwise.** The admissibility rule now applied throughout: a feature qualifies
 only if it is log-derived with a timestamp, or provably fixed at deploy time.
 `tests/test_no_leakage.py` plants a post-cutoff record and asserts it never
 comes back.
+
+| 8 | Pre-flight: stop retrying reverts | The live pre-flight demo took over two minutes for twelve simulations. | An `execution reverted` (code 3) was being retried 5× with backoff | **Fixed.** A revert is a deterministic answer, not a transient failure — it will revert identically every time. Raising immediately took the same demo from **2m+ to 13.6s**. Three distinct failure classes are now handled distinctly: range-reducible (shrink the window), transient (retry), deterministic (raise at once). |
+
+---
+
+## The pre-flight number, measured live
+
+`python -m mintscout.cli preflight --chain robinhood --n 12` — read-only, nothing signed:
+
+```
+kept 0 / 12
+wasted gas avoided: 1,203,048 gas = 0.00020506 ETH
+```
+
+Of twelve drops that were **free when configured**, pre-flight dropped all twelve:
+
+- **9** would have reverted (phase not open, sold out, cap hit) — caught by `eth_call`.
+- **3 had been repriced between configuration and mint** — caught by re-reading
+  `getPublicDrop()` immediately before signing: **0.0016, 0.01 and 0.025 ETH**.
+
+That third category is the entire justification for treating `PublicDropUpdated`
+as upsert and re-reading the config at signing time rather than trusting the
+queued value. It is not a hypothetical: it happened three times in a single
+60-minute window.
 
 ---
 

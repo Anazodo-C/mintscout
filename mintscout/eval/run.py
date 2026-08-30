@@ -58,9 +58,63 @@ def fill_plan(cap: int, max_supply: int | None, max_wallets: int = C.MAX_WALLETS
 
 
 # ------------------------------------------------------------------ evaluate
+def build_memory_timeline(all_recs: list[dict], eval_recs: list[dict]):
+    """Deployer memory that is correct in TIME, not just in content.
+
+    A deployer's track record may only contain drops that had already CLOSED
+    when the drop under judgement opened. Backfilling naively -- writing every
+    outcome and then evaluating -- would let a deployer's record include the very
+    drop being judged, or drops that had not happened yet. Either leaks the label.
+
+    So outcomes are replayed in end_time order and interleaved with decisions in
+    cutoff order, exactly as they would have arrived in a live run.
+    """
+    from ..memory import Memory
+    import tempfile
+    from ..eval.labels import label as _label
+
+    db = pathlib.Path(tempfile.mkdtemp()) / "eval_memory.sqlite"
+    mem = Memory(db)
+    closed = sorted(all_recs,
+                    key=lambda r: r["features_at_cutoff"]["public_drop"]["end_time"])
+    order = sorted(eval_recs, key=lambda r: r["decision_cutoff_ts"])
+    snapshots: dict[str, dict] = {}
+    i = 0
+    for rec in order:
+        cutoff = rec["decision_cutoff_ts"]
+        while i < len(closed) and \
+                closed[i]["features_at_cutoff"]["public_drop"]["end_time"] < cutoff:
+            c = closed[i]
+            owner = (c["features_at_cutoff"].get("static") or {}).get("owner")
+            mem.record_outcome(c["chain"], c["collection"], owner, _label(c),
+                               c["features_at_cutoff"]["public_drop"]["end_time"])
+            i += 1
+        owner = (rec["features_at_cutoff"].get("static") or {}).get("owner")
+        snapshots[rec["collection"]] = mem.deployer_stats(rec["chain"], owner or "")
+    return snapshots
+
+
+class _FrozenMemory:
+    """Serves the per-drop memory snapshot captured at that drop's cutoff."""
+
+    def __init__(self, snapshots: dict[str, dict]):
+        self._s = snapshots
+        self._cur: str | None = None
+
+    def for_drop(self, collection: str):
+        m = _FrozenMemory(self._s)
+        m._cur = collection
+        return m
+
+    def deployer_stats(self, chain: str, address: str) -> dict:
+        return self._s.get(self._cur or "", {"deployer": address, "known": False,
+                                             "prior_collections": 0,
+                                             "prior_high_value": 0})
+
+
 def evaluate_arm(name: str, recs: list[dict], *, use_cache: bool = True,
                  model: str | None = None, workers: int = 6,
-                 collect_trajectories: int = 0) -> dict:
+                 collect_trajectories: int = 0, memory=None) -> dict:
     fn = B.ARMS[name]
     needs_llm = name in B.NEEDS_LLM
     gas_used, gas_price = _gas()
@@ -71,7 +125,8 @@ def evaluate_arm(name: str, recs: list[dict], *, use_cache: bool = True,
         ctx = ReplayContext(rec)
         recorder = ToolRecorder()
         t0 = time.perf_counter()
-        dossier = build_dossier(ctx, memory=None, allow_network=False,
+        mem = memory.for_drop(rec["collection"]) if memory is not None else None
+        dossier = build_dossier(ctx, memory=mem, allow_network=False,
                                 recorder=recorder)
         kw = {}
         if needs_llm:
@@ -203,6 +258,8 @@ def main(argv=None) -> int:
     ap.add_argument("--model", default=None)
     ap.add_argument("--workers", type=int, default=6)
     ap.add_argument("--trajectories", type=int, default=5)
+    ap.add_argument("--memory", action="store_true",
+                    help="enable cross-run deployer memory (time-ordered replay)")
     ap.add_argument("--split", default="test", choices=["test", "calib", "all"],
                     help="which split to score on. Default 'test': the "
                          "deterministic rubric is hand-tuned on 'calib', so "
@@ -222,6 +279,13 @@ def main(argv=None) -> int:
     print(f"  {summarize(recs)}")
     RESULTS.mkdir(exist_ok=True); TRAJ.mkdir(exist_ok=True)
 
+    memory = None
+    if a.memory:
+        snaps = build_memory_timeline(allrecs, recs)
+        known = sum(1 for v in snaps.values() if v.get("known"))
+        print(f"  memory: {known}/{len(snaps)} drops have a prior deployer record")
+        memory = _FrozenMemory(snaps)
+
     all_metrics, all_traj = [], []
     for arm in a.arms.split(","):
         arm = arm.strip()
@@ -230,7 +294,8 @@ def main(argv=None) -> int:
         print(f"\n--- arm: {arm}")
         t0 = time.time()
         res = evaluate_arm(arm, recs, use_cache=not a.no_cache, model=a.model,
-                           workers=a.workers, collect_trajectories=a.trajectories)
+                           workers=a.workers, collect_trajectories=a.trajectories,
+                           memory=memory)
         m = res["metrics"]
         m["wall_seconds"] = round(time.time() - t0, 1)
         all_metrics.append(m)
