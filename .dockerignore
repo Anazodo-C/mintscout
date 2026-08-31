@@ -5,10 +5,18 @@
 data/llm_cache
 data/metadata
 data/drops_*.jsonl
+data/*_meta.json
 data/spend_state.json
+data/watcher_state.json
 results
 trajectories
 tests
 __pycache__
 *.pyc
-*.md
+*.pyo
+
+# Keep the repo's documentation out of the image, but NOT the agent prompts --
+# `mintscout/agent/prompts/*.md` are read at import time, so excluding them
+# crashes the container on startup.
+/*.md
+!mintscout/agent/prompts/*.md

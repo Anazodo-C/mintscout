@@ -16,9 +16,13 @@ COPY scripts/ ./scripts/
 
 # Spend state must survive restarts. Without a persistent volume a crash-loop
 # would reset the budget counter on every restart and the caps would mean
-# nothing. Mount a Railway volume at /data.
+# nothing.
+#
+# Do NOT add a Docker `VOLUME` instruction here -- Railway rejects the build
+# ("docker VOLUME is not supported, use Railway Volumes"). The mount is declared
+# in the Railway UI instead: Service -> Settings -> Volumes -> mount path /data.
+# This only creates the directory so the app still runs if no volume is attached.
 RUN mkdir -p /data
-VOLUME ["/data"]
 
 # Fails closed: BOTH switches must be flipped in Railway variables to spend.
 ENV DRY_RUN=true LIVE_EXECUTION=false

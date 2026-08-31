@@ -64,6 +64,18 @@ def fmt_eth(wei: int | None) -> str:
     return "FREE" if wei == 0 else f"{wei / 1e18:.6f} ETH"
 
 
+def fmt_limit(wei: int | None) -> str:
+    """Format a LIMIT, where 0 means 'no limit' -- never 'FREE'.
+
+    fmt_eth renders 0 as "FREE", which is right for a mint price and actively
+    dangerous for a cap: an operator checking the startup banner before going
+    live would read an unset per-mint ceiling as a zero-cost one.
+    """
+    if not wei:
+        return "NOT SET (no limit enforced)"
+    return f"{wei / 1e18:.6f} ETH"
+
+
 def fmt_in(seconds: int) -> str:
     if seconds < 0:
         return f"OPEN (started {-seconds // 60}m ago)"
@@ -191,11 +203,17 @@ class Runner:
         log(f"max lead time   : {self.max_lead_s}s (ignore drops opening later than this)")
         lim = self.guard.limits
         log("limits          :")
-        log(f"  total spend     {fmt_eth(lim.max_total_spend_wei)}", indent=1)
-        log(f"  per-mint max    {fmt_eth(lim.max_spend_per_mint_wei)}", indent=1)
-        log(f"  max mints       {lim.max_mints_total} total, {lim.max_mints_per_hour}/hour", indent=1)
+        log(f"  total spend     {fmt_limit(lim.max_total_spend_wei)}", indent=1)
+        log(f"  per-mint max    {fmt_limit(lim.max_spend_per_mint_wei)}", indent=1)
+        log(f"  max mints       {lim.max_mints_total or 'NOT SET'} total, "
+            f"{lim.max_mints_per_hour or 'unlimited'}/hour", indent=1)
         log(f"  max gas price   {lim.max_gas_price_wei / 1e9:.2f} gwei", indent=1)
-        log(f"  gas reserve     {fmt_eth(lim.gas_reserve_wei)}", indent=1)
+        log(f"  gas reserve     {fmt_limit(lim.gas_reserve_wei)}", indent=1)
+        for warn in (("MAX_SPEND_PER_MINT_WEI", lim.max_spend_per_mint_wei),
+                     ("MAX_MINTS_PER_HOUR", lim.max_mints_per_hour)):
+            if not warn[1]:
+                log(f"  WARNING {warn[0]} is not set — that limit is NOT enforced",
+                    indent=1)
         self.load_wallet()
         if self.live:
             if not self._key:
