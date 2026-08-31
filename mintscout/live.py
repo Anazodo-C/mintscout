@@ -29,6 +29,8 @@ from datetime import datetime, timezone
 from . import constants as C
 from .budget import Denied, SpendGuard, is_live
 from .enrich import ToolRecorder, build_dossier
+from .agent.social_gate import (auto_flag_enabled, evaluate_social,
+                                format_social_line, social_enabled)
 from .eval.baselines import deterministic_rubric
 from .eval.replay import ReplayContext
 from .executor import (DEFAULT_MINT_GAS, build_mint_tx, estimate_cost_wei,
@@ -151,6 +153,14 @@ class Runner:
         #       Choose this if you want an LLM outage to halt spending.
         self.on_llm_failure = (os.environ.get("ON_LLM_FAILURE", "deterministic")
                                .strip().lower())
+        # Social runs BEFORE the deterministic pre-filter, not after. It has to:
+        # the whole point of auto-flag is that a strong social presence can
+        # rescue a project the rubric would otherwise reject, and a check that
+        # only ran on rubric survivors could never do that. The cost is one
+        # OpenSea page fetch per NEW collection (cached forever after), bounded
+        # per cycle by SOCIAL_MAX_PER_CYCLE.
+        self.social_max_per_cycle = int(os.environ.get("SOCIAL_MAX_PER_CYCLE", "25"))
+        self._social_this_cycle = 0
         self.max_lead_s = int(os.environ.get("MAX_LEAD_SECONDS", "7200"))
         self.guard = SpendGuard()
         self.live = is_live()
@@ -198,6 +208,14 @@ class Runner:
         log(f"chains          : {', '.join(self.chains)}")
         log(f"poll interval   : {self.poll_s:.0f}s   lookback {self.lookback_min:.0f}m")
         log(f"pre-filter      : deterministic score >= {self.prefilter_min} before LLM")
+        if social_enabled():
+            from .agent.social_gate import min_followers, min_posts
+            log(f"social gate     : >= {min_followers():,} followers and "
+                f">= {min_posts()} posts   mode="
+                f"{'AUTO-FLAG (sufficient on its own)' if auto_flag_enabled() else 'gate (confirms only)'}")
+            log(f"                  max {self.social_max_per_cycle} lookups/cycle")
+        else:
+            log("social gate     : disabled")
         log(f"LLM triage      : {'on' if self.use_llm else 'OFF (deterministic only)'}"
             + (f"   on failure -> {self.on_llm_failure}" if self.use_llm else ""))
         log(f"max lead time   : {self.max_lead_s}s (ignore drops opening later than this)")
@@ -266,6 +284,20 @@ class Runner:
             log(f"       stages: {', '.join(str(s) for s in meta['stage_names'][:4])}",
                 indent=1)
 
+        # ---- social gate (runs before the pre-filter so it can rescue)
+        social = None
+        if social_enabled() and self._social_this_cycle < self.social_max_per_cycle:
+            self._social_this_cycle += 1
+            try:
+                social = evaluate_social(chain, cand.collection)
+                log(format_social_line(chain, cand.collection, social), indent=1)
+            except Exception as e:
+                log(f"SOCIAL  lookup error ({type(e).__name__}) — ignored", indent=1)
+                social = None
+        elif social_enabled():
+            log(f"SOCIAL  skipped (SOCIAL_MAX_PER_CYCLE="
+                f"{self.social_max_per_cycle} reached this cycle)", indent=1)
+
         # ---- stage 1: deterministic pre-filter (free)
         det = deterministic_rubric(dossier)
         log(f"FILTER deterministic score={det['score']} verdict={det['verdict']}", indent=1)
@@ -274,7 +306,18 @@ class Runner:
         for r in det.get("risk_flags", [])[:3]:
             log(f"       ! {r}", indent=1)
 
-        if det["score"] < self.prefilter_min:
+        # An auto-flag overrides the pre-filter. Absence of social data never
+        # forces a SKIP -- UNRESOLVED and NO_SOCIAL fall through untouched.
+        social_mint = bool(social and social.get("flag") == "MINT")
+        if social_mint:
+            self.stats["social_autoflag"] = self.stats.get("social_autoflag", 0) + 1
+            log(f"SOCIAL  AUTO-FLAG MINT — @{social['handle']} "
+                f"{social['followers']:,} followers, {social['posts']} posts "
+                f"(thresholds {social['thresholds']['followers']}/"
+                f"{social['thresholds']['posts']}); bypasses pre-filter "
+                f"and cannot be downgraded", indent=1)
+
+        if det["score"] < self.prefilter_min and not social_mint:
             self.stats["prefiltered"] += 1
             self.stats["skip"] += 1
             log(f"DECISION SKIP — below pre-filter threshold "
@@ -317,6 +360,12 @@ class Runner:
                 log(f"       falling back to DETERMINISTIC verdict "
                     f"{det['verdict']} (score {det['score']}). Set "
                     f"ON_LLM_FAILURE=skip to halt instead.", indent=1)
+
+        if social_mint and verdict != "MINT":
+            # SOCIAL_AUTO_FLAG=true means a passing social check is sufficient.
+            log(f"OVERRIDE triage said {verdict}; social auto-flag holds -> MINT "
+                f"(set SOCIAL_AUTO_FLAG=false to let the rubric decide)", indent=1)
+            verdict = "MINT"
 
         self.stats[verdict.lower()] = self.stats.get(verdict.lower(), 0) + 1
         if verdict != "MINT":
@@ -446,6 +495,7 @@ class Runner:
             if time.time() - last_hb > 300:
                 self.heartbeat()
                 last_hb = time.time()
+            self._social_this_cycle = 0
             for _ in range(int(self.poll_s)):
                 if self._stop:
                     break

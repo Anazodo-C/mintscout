@@ -235,6 +235,44 @@ queued value. It is not a hypothetical: it happened three times in a single
 
 ---
 
+## ❌ Removed experiment #4 — X follower count as a backtested feature
+
+**What I tried.** Score drops on their linked X account's follower and post
+counts, inside the backtest, alongside the other features.
+
+**Evidence that killed it.** Two independent problems:
+
+1. **It is unbacktestable in principle.** No source returns a follower count as
+   of a past date. And the causality runs backwards: an account gains followers
+   *because* its mint sold out, so a model scoring followers against the sellout
+   label predicts an outcome from a number that outcome produced.
+2. **It does not even discriminate.** Measured against the 31 known high-value
+   Robinhood collections using counts read *today* — already inflated by the
+   success being predicted — **0 of 31 clear 1,000 followers.** UNDEADLINES
+   (6,969 sold out in 4.2h, 2,734 minters) has **283**; Tendies Tenders
+   (3,333 sold out, 1,815 minters) has **355**.
+
+**Decision.** Cut from the backtest entirely; it appears in **no** number in
+`results/`. It ships instead as a **forward-validated live-mode gate** with
+`fetched_at` on every record, defaulting to auto-flag as the operator requested,
+with `SOCIAL_AUTO_FLAG=false` available to demote it to a confirming signal.
+
+**Learning: third instance of this build's core lesson.** With no archive state,
+every present-tense read is a leak until proven otherwise — `tokenURI` (#2),
+OpenSea's live `total_supply` (excluded by design here), and now follower counts.
+The new wrinkle is that this one is also *adversarial*: unlike bytecode size, a
+follower count can be bought for a few dollars by anyone who knows the threshold.
+
+**Bug found while building it.** The first implementation returned early when
+OpenSea's contract API failed, which made the HTML fallback unreachable and
+reported **68 of 74 real collections as having no social account** when the
+request had simply returned HTTP 401. Same shape as the `try_call` bug in
+Removed #2: a failure being recorded as a data value. `UNRESOLVED` (lookup
+failed) and `NO_SOCIAL` (page answered, no account) are now distinct flags, and
+`tests/test_social_gate.py` pins the distinction.
+
+---
+
 ## Corrections to the source research
 
 Found by measurement; each would have caused a real failure.
@@ -246,6 +284,7 @@ Found by measurement; each would have caused a real failure.
 | `PublicDropUpdated` topic0 ≈ `0x1c4c8b9b…` | `0x3e30d8e1f739ea4795c481b21c23f905e938b80339305f3508e43c558e5dead3` | Watcher silently returns zero logs forever — the #1 indexer failure mode, which the guide itself warns about |
 | `eth_getLogs` capped at 10,000 blocks **on both chains** | **Three different limits, none of them the documented one.** Ink: a 10,000-*block* cap AND a separate 20,000-*result* cap (`-32602 query exceeds max results 20000, retry with the range X-Y`). Robinhood: **no block cap at all**, but a 10,000-*result* cap and a query timeout. Ink additionally answers some oversized queries with a bare **HTTP 500** rather than a structured error | 12x more requests than necessary on Robinhood; and on Ink the result cap and the 500s both crash a build that only handles block-range errors. Handling them cost three failed Ink builds |
 | **DUNLAPS** "ran a free phase then repriced to 0.002 ETH" | **No free public phase exists.** All **14** `PublicDropUpdated` revisions are priced: 0.005 → 0.0035 → 0.002 ETH. The observed 0.0-value mints came from an allowlist/signed phase, which `PublicDropUpdated` does not cover | DUNLAPS is legitimately *not* a free-drop candidate. More importantly this exposes a **second discovery gap** (see coverage below) |
+| OpenSea `/api/v2/collections/{slug}` needs no API key (SOCIAL-GATE.md §1.2) | **HTTP 401 `"Missing an API Key"`.** So does `/chain/{chain}/contract/{address}`, intermittently. The public collection page embeds `"twitterUsername":"…"` and needs no credentials — that is the route actually used | The documented two-call chain yields no handle at all, and the whole gate silently reports "no socials" for every project |
 | Public RPCs are openly queryable | Both **403 any request without a `User-Agent`** (curl's default passes, python-urllib's does not) | Every request fails with an error that looks like a network problem |
 
 ---

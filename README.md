@@ -337,6 +337,36 @@ relationship is conceptual: Minipengs is the manual, single-collection version o
 the problem MintScout generalises — it cannot answer *which* collection to mint,
 which is the entire question here.
 
+## 9b. Social gate (live mode only, NOT in any reported number)
+
+Live mode resolves each candidate's OpenSea profile, reads its linked X account,
+and can auto-approve a mint when the account clears **1,000 followers and 10
+posts**. Every check prints one greppable line with a clickable OpenSea link.
+
+**This signal is excluded from every number in `results/`, deliberately.** It is
+validated *forward*, not backtested. No source returns a follower count as of a
+past date, and an account grows *because* its mint succeeded — scoring it against
+a historical outcome would predict the outcome from a number that outcome caused.
+That is the `tokenURI` leak of CHANGELOG "Removed #2" wearing a different hat.
+Every record carries `fetched_at` to show the reading was taken at decision time.
+
+**Calibration warning, measured.** Checked against the 31 known high-value
+Robinhood collections, using counts read *today* — i.e. already inflated by the
+success being predicted — **not one of them clears 1,000 followers**:
+
+| Collection | Outcome | Followers today |
+|---|---|---|
+| UNDEADLINES | 6,969 sold out in 4.2h, 2,734 minters | **283** |
+| Tendies Tenders | 3,333 sold out, 1,815 minters | **355** |
+
+So on this population the threshold does not select winners; it selects projects
+with a marketing budget. `SOCIAL_AUTO_FLAG=true` makes a passing check sufficient
+on its own, and **follower counts are purchasable** — 1,000 followers costs a few
+dollars. Set `SOCIAL_AUTO_FLAG=false` to run the identical signal as a confirming
+gate where the rubric still decides. Both modes ship; the default is one env var.
+
+---
+
 ## 10. Hot take
 
 > The instinct is to put the model in the hot path: see the drop, ask the LLM,
