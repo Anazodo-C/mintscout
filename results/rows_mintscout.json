@@ -10,7 +10,7 @@
   "achievable": 20,
   "gas_wei": 341763880920000,
   "spend_wei": 0,
-  "ms": 2.5104170199483633,
+  "ms": 2.8622079407796264,
   "error": null,
   "reasons": [
    "Large contract implementation (19,658 bytes) indicates real development effort, not spam proxy",
@@ -47,7 +47,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 2.8513750294223428,
+  "ms": 2.5469170650467277,
   "error": null,
   "reasons": [
    "Large contract implementation (19,658 bytes) indicates real deployment effort, not spam proxy",
@@ -90,7 +90,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 2.168291015550494,
+  "ms": 2.0390419522300363,
   "error": null,
   "reasons": [
    "No metadata resolved at all - metadata.present is false, which is a strong negative signal",
@@ -138,7 +138,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 2.7553329709917307,
+  "ms": 3.2679589930921793,
   "error": null,
   "reasons": [
    "Minimal proxy contract (45 bytes) with no substantial implementation",
@@ -186,7 +186,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 2.854499965906143,
+  "ms": 3.3327500568702817,
   "error": null,
   "reasons": [
    "No metadata resolved at all - metadata.present is false, which is a strong negative signal",
@@ -234,7 +234,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 3.0744170071557164,
+  "ms": 2.1487920312210917,
   "error": null,
   "reasons": [
    "Minimal proxy contract (45 bytes) with no other positive signals",
@@ -266,7 +266,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 1.34170800447464,
+  "ms": 1.6826250357553363,
   "error": null,
   "reasons": [
    "No metadata resolved at all - metadata.present is false, which is a strong negative signal",
@@ -314,7 +314,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 2.9805840458720922,
+  "ms": 2.208749996498227,
   "error": null,
   "reasons": [
    "Minimal proxy contract (45 bytes) with no substantial implementation",
@@ -362,7 +362,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 2.793292049318552,
+  "ms": 1.6239579999819398,
   "error": null,
   "reasons": [
    "No metadata resolved at all - metadata.present is false, which is a strong negative signal",
@@ -410,7 +410,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 1.6502499347552657,
+  "ms": 1.746542053297162,
   "error": null,
   "reasons": [
    "No metadata resolved at all (present: false) - effectively disqualifying",
@@ -458,7 +458,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 2.259999979287386,
+  "ms": 4.366415902040899,
   "error": null,
   "reasons": [
    "Gibberish name/symbol (dfas/fasdf) indicates low-effort or test deployment",
@@ -490,7 +490,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 1.7072079936042428,
+  "ms": 2.1512910025194287,
   "error": null,
   "reasons": [
    "No metadata resolved at all - metadata.present is false, which is a strong negative signal",
@@ -538,7 +538,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 1.5389170730486512,
+  "ms": 2.307582995854318,
   "error": null,
   "reasons": [
    "No metadata resolved at all - metadata.present is false, which is a strong negative signal",
@@ -586,7 +586,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 2.422999939881265,
+  "ms": 3.3125419868156314,
   "error": null,
   "reasons": [
    "Minimal proxy contract (45 bytes) with no substantial implementation",
@@ -634,7 +634,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 1.8150840187445283,
+  "ms": 0.7950830040499568,
   "error": null,
   "reasons": [
    "No metadata resolved at all - metadata.present is false, which is a strong negative signal",
@@ -682,7 +682,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 2.0467910217121243,
+  "ms": 1.7118749674409628,
   "error": null,
   "reasons": [
    "No metadata resolved at all - metadata.present is false, which is a strong negative signal",
@@ -730,7 +730,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 2.14695802424103,
+  "ms": 2.4828329915180802,
   "error": null,
   "reasons": [
    "Large contract implementation (19,805 bytes) indicates real development effort, not spam proxy",
@@ -772,7 +772,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 2.3342081112787127,
+  "ms": 3.6066670436412096,
   "error": null,
   "reasons": [
    "Minimal proxy contract (45 bytes) with no substantial implementation",
@@ -820,7 +820,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 2.607917063869536,
+  "ms": 4.508541082032025,
   "error": null,
   "reasons": [
    "Minimal proxy (45 bytes) with no substantial implementation",
@@ -868,7 +868,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 2.7549159713089466,
+  "ms": 1.5501249581575394,
   "error": null,
   "reasons": [
    "Minimal proxy contract (45 bytes) with no implementation substance",
@@ -911,7 +911,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 2.05258303321898,
+  "ms": 1.2380420230329037,
   "error": null,
   "reasons": [
    "No metadata resolved at all - metadata.present is false, which is a strong negative signal",
@@ -959,7 +959,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 2.3057080106809735,
+  "ms": 3.3982080640271306,
   "error": null,
   "reasons": [
    "No metadata resolved at all - metadata.present is false, which is a strong negative signal",
@@ -1007,7 +1007,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 1.3953750021755695,
+  "ms": 0.953375012613833,
   "error": null,
   "reasons": [
    "No metadata resolved at all - metadata.present is false, which is a strong negative signal",
@@ -1055,7 +1055,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 2.88770894985646,
+  "ms": 2.2199589293450117,
   "error": null,
   "reasons": [
    "Minimal proxy contract (45 bytes) with no substantial implementation",
@@ -1103,7 +1103,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 1.7950829351320863,
+  "ms": 1.710540964268148,
   "error": null,
   "reasons": [
    "No metadata resolved at all (present: false) - effectively disqualifying",
@@ -1146,7 +1146,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 1.6624159179627895,
+  "ms": 2.4344169069081545,
   "error": null,
   "reasons": [
    "Minimal proxy contract (45 bytes) with no implementation substance",
@@ -1178,7 +1178,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 1.8132919212803245,
+  "ms": 1.1259170714765787,
   "error": null,
   "reasons": [
    "No metadata resolved at all - metadata.present is false",
@@ -1221,7 +1221,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 2.634666976518929,
+  "ms": 3.144417074508965,
   "error": null,
   "reasons": [
    "Minimal proxy contract (45 bytes) with no implementation substance",
@@ -1259,7 +1259,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 3.0642920173704624,
+  "ms": 2.907708054408431,
   "error": null,
   "reasons": [
    "No metadata resolved at all - metadata.present is false, which is a strong negative signal",
@@ -1307,7 +1307,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 1.6654999926686287,
+  "ms": 1.547791063785553,
   "error": null,
   "reasons": [
    "No metadata resolved at all - metadata.present is false",
@@ -1355,7 +1355,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 2.0298330346122384,
+  "ms": 2.4183749919757247,
   "error": null,
   "reasons": [
    "Price flipped from free to priced 77 seconds before mint open - unstable operator",
@@ -1393,7 +1393,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 2.170959021896124,
+  "ms": 1.2048749485984445,
   "error": null,
   "reasons": [
    "No metadata resolved at all (present: false) - effectively disqualifying",
@@ -1441,7 +1441,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 2.524707932025194,
+  "ms": 1.7226659692823887,
   "error": null,
   "reasons": [
    "Code size of 45 bytes indicates minimal proxy with no custom implementation",
@@ -1489,7 +1489,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 1.5977079747244716,
+  "ms": 1.8226669635623693,
   "error": null,
   "reasons": [
    "Minimal proxy contract (45 bytes) with no substantial implementation",
@@ -1532,7 +1532,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 2.26191699039191,
+  "ms": 3.07879108004272,
   "error": null,
   "reasons": [
    "No metadata resolved at all - metadata.present is false, which is a strong negative signal",
@@ -1580,7 +1580,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 1.572291017509997,
+  "ms": 1.3847500085830688,
   "error": null,
   "reasons": [
    "No metadata resolved at all (present: false) - effectively disqualifying",
@@ -1628,7 +1628,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 2.2781670559197664,
+  "ms": 3.5852500004693866,
   "error": null,
   "reasons": [
    "Minimal proxy contract (45 bytes) with no substantial implementation",
@@ -1666,7 +1666,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 2.550082979723811,
+  "ms": 2.324292086996138,
   "error": null,
   "reasons": [
    "Minimal proxy contract (45 bytes) with no substantial implementation",
@@ -1714,7 +1714,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 2.651417045854032,
+  "ms": 1.7177499830722809,
   "error": null,
   "reasons": [
    "Metadata completely absent (present: false) - effectively disqualifying",
@@ -1762,7 +1762,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 1.795249991118908,
+  "ms": 2.4775000056251884,
   "error": null,
   "reasons": [
    "No metadata resolved at all (present: false) - effectively disqualifying",
@@ -1810,7 +1810,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 1.928540994413197,
+  "ms": 3.358457935974002,
   "error": null,
   "reasons": [
    "No metadata resolved at all - metadata.present is false, which is a strong negative signal",
@@ -1858,7 +1858,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 1.5375830698758364,
+  "ms": 1.9350419752299786,
   "error": null,
   "reasons": [
    "Minimal proxy contract (45 bytes) with no substantial implementation",
@@ -1906,7 +1906,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 1.5975419664755464,
+  "ms": 1.7658750293776393,
   "error": null,
   "reasons": [
    "No metadata resolved at all - metadata.present is false, which is a strong negative signal",
@@ -1954,7 +1954,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 2.4327909341081977,
+  "ms": 1.9609170267358422,
   "error": null,
   "reasons": [
    "No metadata resolved at all - metadata.present is false",
@@ -2002,7 +2002,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 2.613042015582323,
+  "ms": 2.0904579432681203,
   "error": null,
   "reasons": [
    "No metadata resolved at all - metadata.present is false",
@@ -2050,7 +2050,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 2.3438750067725778,
+  "ms": 1.8405840964987874,
   "error": null,
   "reasons": [
    "Minimal proxy contract (45 bytes) with no substantial implementation",
@@ -2093,7 +2093,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 2.4060419527813792,
+  "ms": 2.7531669475138187,
   "error": null,
   "reasons": [
    "Three named mint stages (Public, GTD, WL) indicate existing community structure",
@@ -2141,7 +2141,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 2.409124979749322,
+  "ms": 3.848874941468239,
   "error": null,
   "reasons": [
    "Minimal proxy contract (45 bytes) with no substantial implementation",
@@ -2189,7 +2189,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 1.3193750055506825,
+  "ms": 3.313958994112909,
   "error": null,
   "reasons": [
    "No metadata resolved at all - metadata.present is false, which is a strong negative signal",
@@ -2232,7 +2232,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 2.190957893617451,
+  "ms": 1.942915958352387,
   "error": null,
   "reasons": [
    "No metadata resolved at all - metadata.present is false, which is a strong negative signal",
@@ -2280,7 +2280,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 2.6471669552847743,
+  "ms": 1.7468748847022653,
   "error": null,
   "reasons": [
    "Minimal proxy contract (45 bytes) with no substantial implementation",
@@ -2328,7 +2328,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 1.562541932798922,
+  "ms": 1.9424170022830367,
   "error": null,
   "reasons": [
    "No metadata resolved at all - metadata.present is false",
@@ -2376,7 +2376,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 1.7481669783592224,
+  "ms": 1.702499925158918,
   "error": null,
   "reasons": [
    "No metadata resolved at all - metadata.present is false, which is a strong negative signal",
@@ -2424,7 +2424,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 2.810125006362796,
+  "ms": 2.318166894838214,
   "error": null,
   "reasons": [
    "Code size of 45 bytes indicates minimal proxy with no custom implementation",
@@ -2472,7 +2472,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 1.8134580459445715,
+  "ms": 2.748124999925494,
   "error": null,
   "reasons": [
    "No metadata resolved at all - metadata.present is false, which is a strong negative signal",
@@ -2520,7 +2520,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 1.9901670748367906,
+  "ms": 3.503125044517219,
   "error": null,
   "reasons": [
    "Minimal proxy contract (45 bytes) with no substantial implementation",
@@ -2552,7 +2552,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 2.2249160101637244,
+  "ms": 2.6048750150948763,
   "error": null,
   "reasons": [
    "No metadata resolved at all - metadata.present is false",
@@ -2600,7 +2600,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 2.786208991892636,
+  "ms": 1.626000041142106,
   "error": null,
   "reasons": [
    "No metadata resolved at all - metadata.present is false",
@@ -2643,7 +2643,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 2.351291012018919,
+  "ms": 3.300083102658391,
   "error": null,
   "reasons": [
    "Minimal proxy contract (45 bytes) with no custom implementation",
@@ -2690,7 +2690,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 1.9953330047428608,
+  "ms": 1.0539579670876265,
   "error": null,
   "reasons": [
    "No metadata resolved at all - metadata.present is false",
@@ -2738,7 +2738,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 1.8708750139921904,
+  "ms": 1.720417058095336,
   "error": null,
   "reasons": [
    "No metadata resolved at all - metadata.present is false",
@@ -2786,7 +2786,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 1.971874968148768,
+  "ms": 1.8915410619229078,
   "error": null,
   "reasons": [
    "No metadata resolved at all - metadata.present is false, which is a strong negative signal",
@@ -2834,7 +2834,7 @@
   "achievable": 100,
   "gas_wei": 119617358322000,
   "spend_wei": 0,
-  "ms": 2.106791944243014,
+  "ms": 3.2873329473659396,
   "error": null,
   "reasons": [
    "Large contract implementation (19,805 bytes) indicates real deployment effort, not minimal proxy spam",
@@ -2871,7 +2871,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 3.854083945043385,
+  "ms": 1.4799580676481128,
   "error": null,
   "reasons": [
    "Gibberish placeholder name 'testaaaaaaAsse' indicates test/spam drop",
@@ -2903,7 +2903,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 2.452374901622534,
+  "ms": 3.2382080098614097,
   "error": null,
   "reasons": [
    "Minimal proxy contract (45 bytes) with no implementation substance",
@@ -2951,7 +2951,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 1.952041988261044,
+  "ms": 1.2569170212373137,
   "error": null,
   "reasons": [
    "No metadata resolved at all - metadata.present is false",
@@ -2999,7 +2999,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 2.367125009186566,
+  "ms": 3.340209019370377,
   "error": null,
   "reasons": [
    "Minimal proxy contract (45 bytes) with no substantial implementation",
@@ -3037,7 +3037,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 2.119125099852681,
+  "ms": 1.9166669808328152,
   "error": null,
   "reasons": [
    "Minimal proxy contract (45 bytes) with no substantial implementation",
@@ -3075,7 +3075,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 1.668750075623393,
+  "ms": 1.2435830431059003,
   "error": null,
   "reasons": [
    "No metadata resolved at decision point - strong negative signal",
@@ -3123,7 +3123,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 1.4449580339714885,
+  "ms": 2.9143329011276364,
   "error": null,
   "reasons": [
    "No metadata resolved at all - metadata.present is false, which is a strong negative signal",
@@ -3171,7 +3171,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 1.5492499805986881,
+  "ms": 0.8801250951364636,
   "error": null,
   "reasons": [
    "No metadata resolved at decision point - strong negative signal",
@@ -3219,7 +3219,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 1.8287920393049717,
+  "ms": 3.2343330094590783,
   "error": null,
   "reasons": [
    "No metadata resolved at all - metadata.present is false",
@@ -3267,7 +3267,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 2.266000024974346,
+  "ms": 2.524874988012016,
   "error": null,
   "reasons": [
    "No metadata resolved at all (present: false) - effectively disqualifying",
@@ -3315,7 +3315,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 1.8567090155556798,
+  "ms": 1.8674590392038226,
   "error": null,
   "reasons": [
    "No metadata resolved at all (present: false) - effectively disqualifying",
@@ -3363,7 +3363,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 1.435540965758264,
+  "ms": 0.948249944485724,
   "error": null,
   "reasons": [
    "No metadata resolved at all - metadata.present is false, which is a strong negative signal",
@@ -3411,7 +3411,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 2.1301250671967864,
+  "ms": 2.3029999574646354,
   "error": null,
   "reasons": [
    "No metadata resolved at all (present: false) - effectively disqualifying",
@@ -3459,7 +3459,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 1.5254169702529907,
+  "ms": 1.9560829969123006,
   "error": null,
   "reasons": [
    "No metadata resolved at all - metadata.present is false, which is a strong negative signal",
@@ -3502,7 +3502,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 2.204374992288649,
+  "ms": 2.97645793762058,
   "error": null,
   "reasons": [
    "Gibberish placeholder name 'testaaaaaaAsse' indicates test/spam drop",
@@ -3534,7 +3534,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 1.9955419702455401,
+  "ms": 1.6969579737633467,
   "error": null,
   "reasons": [
    "Minimal proxy contract (45 bytes) with no substantial implementation",
@@ -3582,7 +3582,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 3.012166009284556,
+  "ms": 1.5724159311503172,
   "error": null,
   "reasons": [
    "Minimal proxy contract (45 bytes) with no implementation substance",
@@ -3620,7 +3620,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 2.467834041453898,
+  "ms": 4.219957976602018,
   "error": null,
   "reasons": [
    "Minimal proxy contract (45 bytes) with no substantial implementation",
@@ -3663,7 +3663,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 2.0228340290486813,
+  "ms": 1.6828329535201192,
   "error": null,
   "reasons": [
    "No metadata resolved at all - metadata.present is false, which is a strong negative signal",
@@ -3711,7 +3711,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 2.7999579906463623,
+  "ms": 2.35533295199275,
   "error": null,
   "reasons": [
    "No metadata resolved at all - metadata.present is false",
@@ -3759,7 +3759,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 1.5826669987291098,
+  "ms": 2.1248330594971776,
   "error": null,
   "reasons": [
    "Minimal proxy contract (45 bytes) with no substantial implementation",
@@ -3807,7 +3807,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 1.68208300601691,
+  "ms": 2.0163750741630793,
   "error": null,
   "reasons": [
    "No metadata resolved at all - metadata.present is false",
@@ -3855,7 +3855,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 1.8443749286234379,
+  "ms": 2.275334089063108,
   "error": null,
   "reasons": [
    "No metadata resolved at all - metadata.present is false, which is a strong negative signal",
@@ -3903,7 +3903,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 1.984375063329935,
+  "ms": 2.425708924420178,
   "error": null,
   "reasons": [
    "No metadata resolved at all (present: false) - effectively disqualifying",
@@ -3951,7 +3951,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 2.3135420633479953,
+  "ms": 2.352750045247376,
   "error": null,
   "reasons": [
    "Deployer has 100% prior success rate (1/1 high-value drops)",
@@ -3998,7 +3998,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 2.160417032428086,
+  "ms": 2.691041911020875,
   "error": null,
   "reasons": [
    "Minimal proxy contract (45 bytes) with no substantial implementation",
@@ -4046,7 +4046,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 2.7946250047534704,
+  "ms": 1.532584079541266,
   "error": null,
   "reasons": [
    "Gibberish name/symbol (aefdwswde) indicates low-effort or test deployment",
@@ -4078,7 +4078,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 2.261082991026342,
+  "ms": 3.1331670470535755,
   "error": null,
   "reasons": [
    "Minimal proxy contract (45 bytes) with no substantial implementation",
@@ -4126,7 +4126,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 2.289708936586976,
+  "ms": 2.2251670015975833,
   "error": null,
   "reasons": [
    "Three named mint stages (Public, GTD, WL) indicate existing community structure to reward",
@@ -4174,7 +4174,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 1.7953339265659451,
+  "ms": 0.9003330487757921,
   "error": null,
   "reasons": [
    "No metadata resolved at all - metadata.present is false",
@@ -4222,7 +4222,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 2.3634580429643393,
+  "ms": 2.568500000052154,
   "error": null,
   "reasons": [
    "Minimal proxy contract (45 bytes) with no substantial implementation",
@@ -4260,7 +4260,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 1.3384169433265924,
+  "ms": 2.452374901622534,
   "error": null,
   "reasons": [
    "No metadata resolved at all - metadata.present is false, which is a strong negative signal",
@@ -4303,7 +4303,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 1.4376250328496099,
+  "ms": 2.3773330030962825,
   "error": null,
   "reasons": [
    "No metadata resolved at all - metadata.present is false",
@@ -4351,7 +4351,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 2.3733749985694885,
+  "ms": 1.8270410364493728,
   "error": null,
   "reasons": [
    "Placeholder name/symbol ('test'/'test') indicates no serious branding effort",
@@ -4383,7 +4383,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 2.5992910377681255,
+  "ms": 2.6266250060871243,
   "error": null,
   "reasons": [
    "Minimal proxy contract (45 bytes) with no real implementation",
@@ -4415,7 +4415,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 3.0552499229088426,
+  "ms": 3.430917044170201,
   "error": null,
   "reasons": [
    "Minimal proxy contract (45 bytes) with no substantial implementation",
@@ -4463,7 +4463,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 1.7089589964598417,
+  "ms": 2.786958939395845,
   "error": null,
   "reasons": [
    "No metadata resolved at all - metadata.present is false, which is a strong negative signal",
@@ -4511,7 +4511,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 2.2275839000940323,
+  "ms": 2.619790961034596,
   "error": null,
   "reasons": [
    "Code size of 45 bytes indicates minimal proxy with no custom implementation",
@@ -4559,7 +4559,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 2.7372499462217093,
+  "ms": 2.1726670674979687,
   "error": null,
   "reasons": [
    "Gibberish name/symbol (tytytyty) indicates low-effort or test drop",
@@ -4602,7 +4602,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 1.6574999317526817,
+  "ms": 1.521916943602264,
   "error": null,
   "reasons": [
    "No metadata resolved at all (present: false) - effectively disqualifying",
@@ -4650,7 +4650,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 2.0793749717995524,
+  "ms": 1.6900000628083944,
   "error": null,
   "reasons": [
    "Large contract implementation (19658 bytes) indicates real deployment effort, not spam proxy",
@@ -4697,7 +4697,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 2.9467500280588865,
+  "ms": 2.2405829513445497,
   "error": null,
   "reasons": [
    "Minimal proxy contract (45 bytes) with no implementation substance",
@@ -4745,7 +4745,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 2.0429580472409725,
+  "ms": 2.0115410443395376,
   "error": null,
   "reasons": [
    "No metadata resolved at all - metadata.present is false, which is a strong negative signal",
@@ -4793,7 +4793,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 2.559207961894572,
+  "ms": 2.8417500434443355,
   "error": null,
   "reasons": [
    "Gibberish name/symbol (fasdf/sadfa) indicates low-effort or test deployment",
@@ -4825,7 +4825,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 1.6735000535845757,
+  "ms": 1.6196670476347208,
   "error": null,
   "reasons": [
    "No metadata resolved at all - metadata.present is false, which is a strong negative signal",
@@ -4873,7 +4873,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 2.513042069040239,
+  "ms": 4.156499984674156,
   "error": null,
   "reasons": [
    "Minimal proxy contract (45 bytes) with no substantial implementation",
@@ -4916,7 +4916,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 1.9793750252574682,
+  "ms": 2.284957910887897,
   "error": null,
   "reasons": [
    "No metadata resolved at all - metadata.present is false, which is a strong negative signal",
@@ -4964,7 +4964,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 1.574208028614521,
+  "ms": 2.8462919872254133,
   "error": null,
   "reasons": [
    "Minimal proxy contract (45 bytes) with no substantial implementation",
@@ -5002,7 +5002,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 2.72529199719429,
+  "ms": 0.7717909757047892,
   "error": null,
   "reasons": [
    "Minimal proxy contract (45 bytes) with no substantial implementation",
@@ -5050,7 +5050,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 1.8095840932801366,
+  "ms": 1.9726669415831566,
   "error": null,
   "reasons": [
    "No metadata resolved at all - metadata.present is false",
@@ -5098,7 +5098,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 2.877917024306953,
+  "ms": 2.015791949816048,
   "error": null,
   "reasons": [
    "Drop is priced at 0.0012 ETH, not free - outside scope for free mint evaluation",
@@ -5146,7 +5146,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 2.613459015265107,
+  "ms": 4.468958941288292,
   "error": null,
   "reasons": [
    "Minimal proxy contract (45 bytes) with no substantial implementation",
@@ -5194,7 +5194,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 2.810999983921647,
+  "ms": 2.8077499009668827,
   "error": null,
   "reasons": [
    "Minimal proxy contract (45 bytes) with no substantial implementation",
@@ -5232,7 +5232,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 2.1086670458316803,
+  "ms": 2.626791945658624,
   "error": null,
   "reasons": [
    "Minimal proxy contract (45 bytes) with no substantial implementation",
@@ -5275,7 +5275,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 2.5435839779675007,
+  "ms": 3.207041067071259,
   "error": null,
   "reasons": [
    "No metadata resolved at all - metadata.present is false, which is a strong negative signal",
@@ -5323,7 +5323,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 1.5214999439194798,
+  "ms": 1.0883749928325415,
   "error": null,
   "reasons": [
    "No metadata resolved at all - metadata.present is false",
@@ -5371,7 +5371,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 1.766333938576281,
+  "ms": 0.8137499680742621,
   "error": null,
   "reasons": [
    "No metadata resolved at all - metadata.present is false, which is a strong negative signal",
@@ -5419,7 +5419,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 2.4904171004891396,
+  "ms": 2.976709045469761,
   "error": null,
   "reasons": [
    "Minimal proxy contract (45 bytes) with no other positive signals",
@@ -5451,7 +5451,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 2.197665977291763,
+  "ms": 1.3231670018285513,
   "error": null,
   "reasons": [
    "No metadata resolved at all - metadata.present is false, which is a strong negative signal",
@@ -5494,7 +5494,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 3.0107919592410326,
+  "ms": 2.096459036692977,
   "error": null,
   "reasons": [
    "Minimal proxy contract (45 bytes) with no substantial implementation",
@@ -5532,7 +5532,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 1.257167081348598,
+  "ms": 2.4177500745281577,
   "error": null,
   "reasons": [
    "No metadata resolved at all (present: false) - effectively disqualifying",
@@ -5580,7 +5580,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 1.911959028802812,
+  "ms": 2.0875419722869992,
   "error": null,
   "reasons": [
    "Large contract implementation (19,658 bytes) indicates real deployment effort, not spam proxy",
@@ -5627,7 +5627,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 2.2524589439854026,
+  "ms": 2.76320893317461,
   "error": null,
   "reasons": [
    "No metadata resolved at all - metadata.present is false, which is a strong negative signal",
@@ -5675,7 +5675,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 1.5723330434411764,
+  "ms": 1.8195839365944266,
   "error": null,
   "reasons": [
    "No metadata resolved at all - metadata.present is false, which is a strong negative signal",
@@ -5723,7 +5723,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 2.044458989985287,
+  "ms": 1.339290989562869,
   "error": null,
   "reasons": [
    "Placeholder name/symbol ('test'/'test') indicates no serious project",
@@ -5755,7 +5755,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 2.829000004567206,
+  "ms": 2.9474589973688126,
   "error": null,
   "reasons": [
    "Minimal proxy contract (45 bytes) with no substantial implementation",
@@ -5798,7 +5798,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 1.5616250457242131,
+  "ms": 2.3436660412698984,
   "error": null,
   "reasons": [
    "No metadata resolved at all - metadata.present is false",
@@ -5846,7 +5846,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 1.7644159961491823,
+  "ms": 0.9224580135196447,
   "error": null,
   "reasons": [
    "No metadata resolved at all - metadata.present is false, which is a strong negative signal",
@@ -5894,7 +5894,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 1.537499949336052,
+  "ms": 1.682416070252657,
   "error": null,
   "reasons": [
    "No metadata resolved at all - metadata.present is false",
@@ -5942,7 +5942,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 2.127791987732053,
+  "ms": 1.7457910580560565,
   "error": null,
   "reasons": [
    "Minimal proxy contract (45 bytes) with no substantial implementation",
@@ -5990,7 +5990,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 3.2355840085074306,
+  "ms": 2.4944159667938948,
   "error": null,
   "reasons": [
    "Minimal proxy contract (45 bytes) with no implementation substance",
@@ -6028,7 +6028,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 2.5288750184699893,
+  "ms": 2.539458917453885,
   "error": null,
   "reasons": [
    "Minimal proxy contract (45 bytes) with no substantial implementation",
@@ -6071,7 +6071,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 2.0284579368308187,
+  "ms": 2.9079170199111104,
   "error": null,
   "reasons": [
    "Minimal proxy contract (45 bytes) with no real implementation",
@@ -6103,7 +6103,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 2.4774589110165834,
+  "ms": 3.819708013907075,
   "error": null,
   "reasons": [
    "Minimal proxy contract (45 bytes) with no substantial implementation",
@@ -6151,7 +6151,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 2.0192910451442003,
+  "ms": 1.6005419893190265,
   "error": null,
   "reasons": [
    "No metadata resolved at all - metadata.present is false, which is a strong negative signal",
@@ -6199,7 +6199,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 1.4947090530768037,
+  "ms": 2.879000036045909,
   "error": null,
   "reasons": [
    "Minimal proxy contract (45 bytes) with no other positive signals",
@@ -6231,7 +6231,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 1.6486670356243849,
+  "ms": 2.056292025372386,
   "error": null,
   "reasons": [
    "No metadata resolved at all - metadata.present is false, which is a strong negative signal",
@@ -6279,7 +6279,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 2.1078329300507903,
+  "ms": 2.1600000327453017,
   "error": null,
   "reasons": [
    "No metadata resolved at all - metadata.present is false, which is a strong negative signal",
@@ -6327,7 +6327,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 2.753457985818386,
+  "ms": 1.2961250031366944,
   "error": null,
   "reasons": [
    "No metadata resolved at all - metadata.present is false, which is a strong negative signal",
@@ -6375,7 +6375,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 2.679083961993456,
+  "ms": 3.1155420001596212,
   "error": null,
   "reasons": [
    "No metadata resolved at all - metadata.present is false",
@@ -6423,7 +6423,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 2.751499996520579,
+  "ms": 3.0488750198855996,
   "error": null,
   "reasons": [
    "No metadata resolved at all (present: false) - effectively disqualifying",
@@ -6471,7 +6471,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 1.737333950586617,
+  "ms": 1.9767910707741976,
   "error": null,
   "reasons": [
    "No metadata resolved at all - metadata.present is false",
@@ -6519,7 +6519,7 @@
   "achievable": 100,
   "gas_wei": 17088194046000,
   "spend_wei": 0,
-  "ms": 1.8718329956755042,
+  "ms": 2.845084061846137,
   "error": null,
   "reasons": [
    "Large contract implementation (19,658 bytes) indicates real development effort, not spam proxy",
@@ -6561,7 +6561,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 2.062916988506913,
+  "ms": 1.9009578973054886,
   "error": null,
   "reasons": [
    "No metadata resolved at all (present: false) - effectively disqualifying",
@@ -6609,7 +6609,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 2.0271670073270798,
+  "ms": 1.8910830840468407,
   "error": null,
   "reasons": [
    "Minimal proxy contract (45 bytes) with no substantial implementation",
@@ -6652,7 +6652,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 1.1896250071004033,
+  "ms": 1.173791941255331,
   "error": null,
   "reasons": [
    "Placeholder name/symbol 'test' indicates no serious project",
@@ -6684,7 +6684,7 @@
   "achievable": 0,
   "gas_wei": 0,
   "spend_wei": 0,
-  "ms": 1.2785830767825246,
+  "ms": 0.7430840050801635,
   "error": null,
   "reasons": [
    "No metadata resolved at all - metadata.present is false, which is a strong negative signal",

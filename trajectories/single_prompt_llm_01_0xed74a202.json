@@ -68,7 +68,7 @@
         "provenance": "pinned",
         "contract_uri_present": false
       },
-      "ms": 0.4
+      "ms": 0.1
     },
     {
       "tool": "erc6551_probe",

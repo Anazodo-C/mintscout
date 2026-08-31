@@ -131,7 +131,7 @@
       "verifier_vetoes": 0,
       "triage_verdict_changed_by_verifier": 0,
       "arm_errors": 0,
-      "median_decision_ms": 1.2,
+      "median_decision_ms": 0.7,
       "precision_observed_on_subset": 0.0,
       "precision_at_k_population_corrected": 0.0,
       "subset": {
@@ -211,7 +211,7 @@
       "verifier_vetoes": 114,
       "triage_verdict_changed_by_verifier": 79,
       "arm_errors": 0,
-      "median_decision_ms": 2.1,
+      "median_decision_ms": 2.2,
       "precision_observed_on_subset": 0.6667,
       "precision_at_k_population_corrected": 0.4357,
       "subset": {
