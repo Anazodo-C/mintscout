@@ -1,0 +1,14 @@
+.git
+.env
+.env.*
+!.env.example
+data/llm_cache
+data/metadata
+data/drops_*.jsonl
+data/spend_state.json
+results
+trajectories
+tests
+__pycache__
+*.pyc
+*.md

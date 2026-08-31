@@ -131,7 +131,7 @@
       "verifier_vetoes": 0,
       "triage_verdict_changed_by_verifier": 0,
       "arm_errors": 0,
-      "median_decision_ms": 0.7,
+      "median_decision_ms": 1.3,
       "precision_observed_on_subset": 0.0,
       "precision_at_k_population_corrected": 0.0,
       "subset": {

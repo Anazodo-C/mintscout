@@ -174,3 +174,74 @@ def build_type4_transaction(chain_id: int, sender_key: str, delegate: str,
 
 def is_dry_run() -> bool:
     return os.environ.get("DRY_RUN", "true").strip().lower() != "false"
+
+
+# ---------------------------------------------------------------- live send
+# Confirmed against live Robinhood mints: senders use plain type-2 transactions
+# with `minterIfNotPayer` set to their OWN address (not the zero address), the
+# OpenSea fee recipient, and ~205k gas. Single-collection minting therefore
+# needs no delegate contract at all -- EIP-7702 is only required to batch across
+# several collections in one transaction.
+OPENSEA_FEE_RECIPIENT = "0x0000a26b00c1F0DF003000390027140000fAa719"
+DEFAULT_MINT_GAS = 260_000
+
+
+def build_mint_tx(rpc: RpcClient, collection: str, minter: str, quantity: int,
+                  value_wei: int, nonce: int, *, fee_recipient: str | None = None,
+                  gas: int = DEFAULT_MINT_GAS,
+                  max_fee_per_gas: int | None = None,
+                  max_priority_fee_per_gas: int | None = None) -> dict:
+    call = MintCall(rpc.chain, collection, fee_recipient or OPENSEA_FEE_RECIPIENT,
+                    minter, quantity, value_wei)
+    base = max_fee_per_gas or int(rpc.raw("eth_gasPrice", []), 16)
+    return {
+        "type": 2,
+        "chainId": rpc.chain_id,
+        "to": C.SEADROP,
+        "from": minter,
+        "value": value_wei,
+        "data": call.calldata(),
+        "nonce": nonce,
+        "gas": gas,
+        "maxFeePerGas": int(base * 2),
+        "maxPriorityFeePerGas": max_priority_fee_per_gas if max_priority_fee_per_gas
+                                is not None else min(base, 1_000_000_000),
+    }
+
+
+def estimate_cost_wei(tx: dict) -> int:
+    """Worst-case cost of this transaction: value plus gas at the fee ceiling."""
+    return int(tx["value"]) + int(tx["gas"]) * int(tx["maxFeePerGas"])
+
+
+def send_mint(rpc: RpcClient, tx: dict, private_key: str) -> str:
+    """Sign and BROADCAST. The only function in the codebase that spends money.
+
+    Callers must have cleared a SpendGuard first; this does not check limits
+    itself, so that authorisation lives in exactly one place.
+    """
+    from eth_account import Account
+    acct = Account.from_key(private_key)
+    if acct.address.lower() != str(tx.get("from", "")).lower():
+        raise ValueError("signing key does not match tx 'from' address")
+    payload = {k: v for k, v in tx.items() if k != "from"}
+    signed = acct.sign_transaction(payload)
+    raw = signed.raw_transaction.hex()
+    if not raw.startswith("0x"):
+        raw = "0x" + raw
+    return rpc.raw("eth_sendRawTransaction", [raw])
+
+
+def wait_for_receipt(rpc: RpcClient, tx_hash: str, timeout_s: float = 90.0,
+                     poll_s: float = 1.0) -> dict | None:
+    import time as _t
+    deadline = _t.monotonic() + timeout_s
+    while _t.monotonic() < deadline:
+        try:
+            r = rpc.get_receipt(tx_hash)
+            if r:
+                return r
+        except Exception:
+            pass
+        _t.sleep(poll_s)
+    return None

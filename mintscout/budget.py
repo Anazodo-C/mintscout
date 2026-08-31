@@ -1,0 +1,161 @@
+"""Hard spend limits for live execution.
+
+This is the component that stands between a bug and an emptied wallet, so it is
+deliberately boring and fails closed:
+
+* Every limit must be set explicitly. A missing or unparseable limit is treated
+  as zero, not as unlimited.
+* Spend is committed to disk BEFORE the transaction is broadcast, never after.
+  A crash mid-send must over-count, never under-count -- the failure mode of
+  under-counting is spending past the cap.
+* The guard is the only thing that authorises a send; the runner cannot bypass it.
+"""
+from __future__ import annotations
+
+import json
+import os
+import pathlib
+import threading
+import time
+from dataclasses import dataclass, asdict
+
+STATE = pathlib.Path(os.environ.get("MINTSCOUT_STATE_DIR", "data")) / "spend_state.json"
+
+
+def _env_int(name: str, default: int = 0) -> int:
+    raw = (os.environ.get(name) or "").strip()
+    if not raw:
+        return default
+    try:
+        return int(float(raw))
+    except ValueError:
+        # An unparseable limit is a configuration error. Fail CLOSED.
+        return 0
+
+
+@dataclass
+class Limits:
+    max_total_spend_wei: int = 0      # total value + gas across the whole run
+    max_spend_per_mint_wei: int = 0   # per-transaction ceiling
+    max_mints_total: int = 0          # hard count cap
+    max_mints_per_hour: int = 0
+    # These two carry SAFE defaults rather than 0. A zero default here would
+    # mean "no ceiling" / "no reserve", so a caller constructing Limits()
+    # directly would silently get weaker protection than one using from_env().
+    # Safety defaults must not depend on which constructor you happened to use.
+    max_gas_price_wei: int = 5_000_000_000
+    gas_reserve_wei: int = 400_000 * 2_000_000_000
+
+    @classmethod
+    def from_env(cls) -> "Limits":
+        return cls(
+            max_total_spend_wei=_env_int("MAX_TOTAL_SPEND_WEI"),
+            max_spend_per_mint_wei=_env_int("MAX_SPEND_PER_MINT_WEI"),
+            max_mints_total=_env_int("MAX_MINTS_TOTAL"),
+            max_mints_per_hour=_env_int("MAX_MINTS_PER_HOUR"),
+            max_gas_price_wei=_env_int("MAX_GAS_PRICE_WEI", 5_000_000_000),
+            gas_reserve_wei=_env_int("GAS_RESERVE_WEI", 400_000 * 2_000_000_000),
+        )
+
+    def as_dict(self) -> dict:
+        return asdict(self)
+
+
+class Denied(Exception):
+    """Raised when a spend is refused. Carries the human-readable reason."""
+
+
+class SpendGuard:
+    def __init__(self, limits: Limits | None = None, state_path=STATE):
+        self.limits = limits or Limits.from_env()
+        self.state_path = pathlib.Path(state_path)
+        self._lock = threading.Lock()
+        self._state = self._load()
+
+    def _load(self) -> dict:
+        if self.state_path.exists():
+            try:
+                return json.loads(self.state_path.read_text())
+            except ValueError:
+                pass
+        return {"spent_wei": 0, "mints": 0, "recent": [], "started_at": int(time.time())}
+
+    def _save(self) -> None:
+        self.state_path.parent.mkdir(parents=True, exist_ok=True)
+        tmp = self.state_path.with_suffix(".tmp")
+        tmp.write_text(json.dumps(self._state, indent=2))
+        tmp.replace(self.state_path)
+
+    # ------------------------------------------------------------------ checks
+    def check(self, cost_wei: int, gas_price_wei: int,
+              wallet_balance_wei: int | None = None) -> None:
+        """Raise Denied if this spend is not permitted. Does not commit."""
+        L = self.limits
+        with self._lock:
+            if L.max_total_spend_wei <= 0:
+                raise Denied("MAX_TOTAL_SPEND_WEI is not set (or is 0). Live "
+                             "execution refuses to run without an explicit cap.")
+            if L.max_mints_total <= 0:
+                raise Denied("MAX_MINTS_TOTAL is not set (or is 0).")
+            if cost_wei > L.max_spend_per_mint_wei > 0:
+                raise Denied(f"per-mint cost {cost_wei} exceeds "
+                             f"MAX_SPEND_PER_MINT_WEI {L.max_spend_per_mint_wei}")
+            if self._state["spent_wei"] + cost_wei > L.max_total_spend_wei:
+                raise Denied(f"would exceed MAX_TOTAL_SPEND_WEI: spent "
+                             f"{self._state['spent_wei']} + {cost_wei} > "
+                             f"{L.max_total_spend_wei}")
+            if self._state["mints"] + 1 > L.max_mints_total:
+                raise Denied(f"MAX_MINTS_TOTAL reached ({L.max_mints_total})")
+            if gas_price_wei > L.max_gas_price_wei > 0:
+                raise Denied(f"gas price {gas_price_wei} exceeds "
+                             f"MAX_GAS_PRICE_WEI {L.max_gas_price_wei}")
+            if L.max_mints_per_hour > 0:
+                cutoff = time.time() - 3600
+                recent = [t for t in self._state["recent"] if t > cutoff]
+                if len(recent) >= L.max_mints_per_hour:
+                    raise Denied(f"MAX_MINTS_PER_HOUR reached "
+                                 f"({L.max_mints_per_hour} in the last hour)")
+            if wallet_balance_wei is not None:
+                if wallet_balance_wei - cost_wei < L.gas_reserve_wei:
+                    raise Denied(
+                        f"would leave wallet below GAS_RESERVE_WEI "
+                        f"({L.gas_reserve_wei}); balance {wallet_balance_wei}, "
+                        f"cost {cost_wei}. Reserve exists so the wallet can "
+                        f"always pay for its own sweep.")
+
+    def commit(self, cost_wei: int) -> None:
+        """Record a spend. Called BEFORE broadcasting, so a crash over-counts."""
+        with self._lock:
+            self._state["spent_wei"] += cost_wei
+            self._state["mints"] += 1
+            self._state["recent"] = ([t for t in self._state["recent"]
+                                      if t > time.time() - 3600] + [time.time()])
+            self._save()
+
+    def refund(self, cost_wei: int) -> None:
+        """Give budget back when a send provably never happened."""
+        with self._lock:
+            self._state["spent_wei"] = max(0, self._state["spent_wei"] - cost_wei)
+            self._state["mints"] = max(0, self._state["mints"] - 1)
+            self._save()
+
+    @property
+    def summary(self) -> dict:
+        L = self.limits
+        return {
+            "spent_wei": self._state["spent_wei"],
+            "spent_eth": round(self._state["spent_wei"] / 1e18, 8),
+            "budget_wei": L.max_total_spend_wei,
+            "budget_eth": round(L.max_total_spend_wei / 1e18, 8),
+            "remaining_eth": round(
+                max(0, L.max_total_spend_wei - self._state["spent_wei"]) / 1e18, 8),
+            "mints": self._state["mints"],
+            "max_mints": L.max_mints_total,
+        }
+
+
+def is_live() -> bool:
+    """Live execution requires BOTH switches. Default is always dry-run."""
+    dry = (os.environ.get("DRY_RUN", "true") or "true").strip().lower()
+    live = (os.environ.get("LIVE_EXECUTION", "false") or "false").strip().lower()
+    return dry in ("false", "0", "no") and live in ("true", "1", "yes")
