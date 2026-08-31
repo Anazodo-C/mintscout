@@ -8,6 +8,13 @@ micro1 Frontier Engineering Challenge 2026 · single-entrant submission
 > about 20 seconds. Where my measurements contradict the project brief, the
 > measurement wins and the discrepancy is documented in [CHANGELOG.md](CHANGELOG.md).
 
+> **AI assistance disclosure.** This project was built with
+> [Claude Code](https://claude.com/claude-code) (Anthropic) as an AI pair
+> programmer, which wrote the bulk of the implementation. See
+> [§9 Attribution](#9-attribution-and-pre-existing-work) for the full split of
+> what was directed by the author versus produced by the model, and how to check
+> it independently.
+
 ---
 
 ## 1. The problem
@@ -21,10 +28,10 @@ chain that launched July 1 2026 and has almost no tooling.
 |---|---|---|
 | New public drop configurations | **24,587 in 9 days ≈ 2,732/day** | `data/drops_robinhood_meta.json` |
 | Of those, free (price = 0) | **~53%** (616/1,170 in an 11h sample) | topic-filtered scan |
-| Free drops that turn out to be worth minting | **~3%** | ground-truth labels, §4 |
+| Free drops that turn out to be worth minting | **5.0%** (Robinhood) · **10.3%** (Ink) | ground-truth labels, §4 |
 
-That is the problem in one line: **roughly 1,400 free drops a day, and about 97%
-of them are not worth minting.** Triage today means watching Discord, clicking
+That is the problem in one line: **roughly 1,400 free drops a day, and 95% of
+them are not worth minting.** Triage today means watching Discord, clicking
 through a block explorer, and eyeballing the art — and the good ones close fast
 (UNDEADLINES sold 6,969 tokens in 4.2 hours). The collector either mints
 indiscriminately and accumulates a wallet full of spam, or misses the ones that
@@ -60,7 +67,7 @@ Two consequences:
    false positives.
 2. **This is a scheduling problem, not a latency race.** `startTime` is in the
    future when the config is published, which is what makes an agent viable at
-   all — see the hot take in §9.
+   all — see the hot take in §10.
 
 And the same SeaDrop contract is deployed at the **same address on both chains**:
 
@@ -284,15 +291,53 @@ python -m mintscout.cli preflight --chain robinhood --n 10
   `SignedSetCodeAuthorization` and `SetCodeTransaction`. Dropping it removes an
   entire toolchain from the reproduction steps.
 
-**Pre-existing work (ground rule 02).** The `minipengs-bot` (TypeScript, one
-hardcoded collection, five wallets, fixed quantity) and its build spec predate
-this competition. **No file from it is used here.** MintScout is new code. The
-relationship is conceptual: Minipengs is the manual, single-collection version of
-the problem MintScout generalises — it cannot answer *which* collection to mint.
-
 ---
 
-## 9. Hot take
+## 9. Attribution and pre-existing work
+
+### AI assistance (stated plainly)
+
+This project was built with **Claude Code (Anthropic) as an AI pair programmer**,
+and it wrote most of the code in this repository. Being specific about the split,
+because a vague disclosure is worth less than an accurate one:
+
+| Directed by the author | Produced by the model |
+|---|---|
+| Problem selection and framing | Implementation of every module in `mintscout/` |
+| The prior research and build spec (`guide.md`, `BUILD.md`) that seeded the work | The measurement scripts, eval harness and tests |
+| Scope decisions: Robinhood-first, Ink as an add-on, what to cut | The dataset builder and the analyses that follow from it |
+| Budget and operating constraints on the evaluation | Diagnosis of the failures recorded in `CHANGELOG.md` |
+| Review and acceptance of each result | The prose in these documents |
+
+**Why this does not weaken the submission's claims.** Nothing here rests on
+trusting either the author or the model. Every headline number is produced by
+committed code over committed data:
+
+- `python -m mintscout.verify` re-derives every constant against live mainnet and
+  fails loudly if any drifted — it already caught **six errors in the source brief**.
+- The eval is a pure function over a committed dataset and a committed LLM cache;
+  it reproduces in ~0.1s with **zero** network calls.
+- `tests/test_no_leakage.py` plants a post-cutoff record and asserts it never
+  reaches the agent.
+- `tests/test_prompt_cache_consistency.py` asserts the committed prompts are the
+  ones that produced the committed numbers.
+
+The results include findings that are **unflattering to the system** — the
+single-prompt LLM baseline scores 0.000, the hand-written rubric beats the LLM
+agent on F1, and the adversarial verifier destroyed 3 of 5 correct decisions
+before being documented as a removed experiment. Those were reported as measured
+rather than tuned away.
+
+### Pre-existing work (ground rule 02)
+
+The `minipengs-bot` (TypeScript, one hardcoded collection, five wallets, fixed
+quantity) and its build spec **predate this competition**. **No file from it is
+used here.** MintScout is new code written from scratch in this repository. The
+relationship is conceptual: Minipengs is the manual, single-collection version of
+the problem MintScout generalises — it cannot answer *which* collection to mint,
+which is the entire question here.
+
+## 10. Hot take
 
 > The instinct is to put the model in the hot path: see the drop, ask the LLM,
 > mint. That cannot work — the competitive window at a mint open is seconds and
@@ -312,7 +357,7 @@ the problem MintScout generalises — it cannot answer *which* collection to min
 
 ---
 
-## 10. Reproduce
+## 11. Reproduce
 
 See **[REPRODUCE.md](REPRODUCE.md)**. Short version — no API key needed for the
 headline numbers, because the LLM cache is committed:
