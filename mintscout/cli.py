@@ -231,7 +231,7 @@ def cmd_sweep(a):
 
     # Which collections to look in: the mint ledger, unless overridden.
     if a.collection:
-        cols = [a.collection.lower()]
+        cols = [c.strip().lower() for c in a.collection.split(",") if c.strip()]
     else:
         st = State()
         cols = sorted({v["collection"] for v in st.recent(200)
@@ -365,7 +365,10 @@ def main(argv=None) -> int:
     sw.add_argument("--chain", default="robinhood")
     sw.add_argument("--wallets", type=int, default=C.MAX_WALLETS_DEFAULT)
     sw.add_argument("--collection", default=None,
-                    help="sweep only this collection (default: all in the ledger)")
+                    help="comma-separated collection address(es) to sweep. "
+                         "Defaults to the local mint ledger, which may be "
+                         "INCOMPLETE if the bot minted elsewhere (e.g. on "
+                         "Railway, whose ledger lives on its own volume).")
     sw.add_argument("--live", action="store_true",
                     help="actually broadcast (default is dry-run)")
     sw.set_defaults(fn=cmd_sweep)
