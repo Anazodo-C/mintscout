@@ -168,6 +168,7 @@ class Runner:
         self.rpcs = {c: self.watchers[c].rpc for c in self.chains}
         self.wallet = None
         self._key = None
+        self.blocked_reason: str | None = None
         self.seen: set[str] = set()
         self.stats = {"candidates": 0, "prefiltered": 0, "triaged": 0,
                       "mint": 0, "watch": 0, "skip": 0, "executed": 0, "failed": 0}
@@ -226,7 +227,9 @@ class Runner:
         log(f"  max mints       {lim.max_mints_total or 'NOT SET'} total, "
             f"{lim.max_mints_per_hour or 'unlimited'}/hour", indent=1)
         log(f"  max gas price   {lim.max_gas_price_wei / 1e9:.2f} gwei", indent=1)
-        log(f"  gas reserve     {fmt_limit(lim.gas_reserve_wei)}", indent=1)
+        log(f"  gas reserve     {fmt_limit(lim.gas_reserve_wei)}"
+            + ("  (disabled — wallets may be spent to empty)"
+               if not lim.gas_reserve_wei else ""), indent=1)
         for warn in (("MAX_SPEND_PER_MINT_WEI", lim.max_spend_per_mint_wei),
                      ("MAX_MINTS_PER_HOUR", lim.max_mints_per_hour)):
             if not warn[1]:
@@ -259,15 +262,34 @@ class Runner:
                     f"steady, not a restart loop.")
         self.load_wallet()
         if self.live:
+            # NOTE: none of these conditions exits the process any more.
+            #
+            # They used to `return False`, which exited non-zero, which Railway's
+            # ON_FAILURE policy restarted, which hit the same condition, which
+            # exited again -- an infinite crash loop. And the most likely trigger
+            # was the most ordinary event in the system: simply reaching
+            # MAX_MINTS_TOTAL. Spending your allowance is a SUCCESS, not a
+            # failure, and it must never look like a crash.
+            #
+            # So a blocked live mode degrades to observation: the process stays
+            # up, the logs keep flowing, /status reports why, and nothing spends.
             if not self._key:
-                log("\n[FATAL] LIVE_EXECUTION is on but MINT_SEED is not set.")
-                return False
-            try:
-                self.guard.check(0, 0)
-            except Denied as e:
-                log(f"\n[FATAL] live execution refused: {e}")
-                return False
-            log("\n*** LIVE MODE — this process will spend real funds ***")
+                log("\n[BLOCKED] LIVE_EXECUTION is on but MINT_SEED is not set.")
+                log("          Running in OBSERVATION mode — watching and logging, "
+                    "not spending.")
+                self.live = False
+                self.blocked_reason = "MINT_SEED not set"
+            else:
+                try:
+                    self.guard.check(0, 0)
+                    log("\n*** LIVE MODE — this process will spend real funds ***")
+                except Denied as e:
+                    log(f"\n[BLOCKED] live execution not permitted: {e}")
+                    log("          Running in OBSERVATION mode — watching and "
+                        "logging, not spending. Raise the cap (or clear "
+                        "/data/spend_state.json) and redeploy to resume.")
+                    self.live = False
+                    self.blocked_reason = str(e)
         rule()
         return True
 

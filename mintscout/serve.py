@@ -48,6 +48,7 @@ class Handler(BaseHTTPRequestHandler):
                 "ok": True,
                 "uptime_s": int(time.time() - _started),
                 "mode": "live" if r.live else "dry_run",
+                "blocked_reason": r.blocked_reason,   # why live was refused, if it was
                 "chains": r.chains,
                 "wallet": r.wallet,
                 "llm_triage": r.use_llm,

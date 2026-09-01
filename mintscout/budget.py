@@ -44,7 +44,13 @@ class Limits:
     # directly would silently get weaker protection than one using from_env().
     # Safety defaults must not depend on which constructor you happened to use.
     max_gas_price_wei: int = 5_000_000_000
-    gas_reserve_wei: int = 400_000 * 2_000_000_000
+    # Gas reserve defaults to 0 = NOT enforced.
+    # Reserving ~0.0008 ETH per wallet costs ~0.015 ETH idle across a 20-wallet
+    # fleet, which the operator judged too capital-intensive for the benefit.
+    # The trade-off being accepted: a wallet can now be spent down to empty, and
+    # an empty wallet cannot pay to transfer its own NFTs out, so a sweep may
+    # need topping the wallet up first. Set GAS_RESERVE_WEI to re-enable.
+    gas_reserve_wei: int = 0
 
     @classmethod
     def from_env(cls) -> "Limits":
@@ -54,7 +60,7 @@ class Limits:
             max_mints_total=_env_int("MAX_MINTS_TOTAL"),
             max_mints_per_hour=_env_int("MAX_MINTS_PER_HOUR"),
             max_gas_price_wei=_env_int("MAX_GAS_PRICE_WEI", 5_000_000_000),
-            gas_reserve_wei=_env_int("GAS_RESERVE_WEI", 400_000 * 2_000_000_000),
+            gas_reserve_wei=_env_int("GAS_RESERVE_WEI", 0),
         )
 
     def as_dict(self) -> dict:
