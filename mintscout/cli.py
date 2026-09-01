@@ -3,10 +3,36 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
+import pathlib
 import sys
 import time
 
 from . import constants as C
+
+
+def _load_dotenv() -> None:
+    """Read .env so commands do not need shell gymnastics to pass secrets.
+
+    MINT_SEED is a 12-word mnemonic, so extracting it with grep/cut and
+    re-quoting it through the shell is fragile -- and getting it wrong means a
+    confusing failure while holding a funded wallet. Existing environment
+    variables always win, so `MINT_SEED=... python -m mintscout.cli` still works.
+    """
+    f = pathlib.Path(__file__).resolve().parents[1] / ".env"
+    if not f.exists():
+        return
+    for line in f.read_text().splitlines():
+        line = line.strip()
+        if not line or line.startswith("#") or "=" not in line:
+            continue
+        k, _, v = line.partition("=")
+        k, v = k.strip(), v.strip().strip('"').strip("'")
+        if k and v and k not in os.environ:
+            os.environ[k] = v
+
+
+_load_dotenv()
 
 
 def cmd_verify(a):
