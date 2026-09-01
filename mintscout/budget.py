@@ -200,6 +200,9 @@ def volume_check() -> dict:
                 prev = {}
         out["boots"] = int(prev.get("boots", 0)) + 1
         out["first_boot"] = prev.get("first_boot") or int(time.time())
+        if prev.get("last_boot"):
+            out["seconds_since_last_boot"] = max(0, int(time.time())
+                                                 - int(prev["last_boot"]))
         out["persisted"] = out["boots"] > 1
         marker.write_text(json.dumps({"boots": out["boots"],
                                       "first_boot": out["first_boot"],

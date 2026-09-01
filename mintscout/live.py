@@ -236,12 +236,27 @@ class Runner:
         icon = "OK " if v["persisted"] else ("!! " if not v["writable"] else "?? ")
         log(f"state volume    : {icon}{v['state_dir']}  boots={v['boots']}  "
             f"writable={v['writable']}")
-        log(f"                  {v['detail']}")
         if not v["writable"]:
             log("                  SPEND STATE CANNOT BE SAVED — caps will not "
                 "survive a restart. Mount a Railway volume at this path.")
-        elif not v["persisted"]:
-            log("                  (expected on a genuinely first deploy)")
+
+        # Restart-loop detection. Nothing in this process restarts itself: the
+        # poll loop is exception-guarded and only exits on SIGTERM. So if boots
+        # is climbing quickly, something OUTSIDE the app is cycling the
+        # container, and the operator needs to see that rather than mistake a
+        # repeated startup banner for normal behaviour.
+        gap = v.get("seconds_since_last_boot")
+        if gap is not None:
+            if gap < 300:
+                log(f"                  WARNING last boot was only {int(gap)}s ago "
+                    f"— this looks like a RESTART LOOP, not a normal start.")
+                log("                  Likely causes: Railway healthcheck timing "
+                    "out, the container being OOM-killed, or a redeploy. Check "
+                    "the Railway deploy log for the exit reason.")
+            else:
+                mins = gap / 60
+                log(f"                  previous boot {mins:.0f}m ago — "
+                    f"steady, not a restart loop.")
         self.load_wallet()
         if self.live:
             if not self._key:
@@ -476,8 +491,11 @@ class Runner:
     def heartbeat(self) -> None:
         s = self.stats
         b = self.guard.summary
+        up = int(time.time() - _START)
         rule()
-        log(f"[{_ts()}] HEARTBEAT  up {int(time.time() - _START) // 60}m")
+        log(f"[{_ts()}] HEARTBEAT  up {up // 3600}h{(up % 3600) // 60:02d}m "
+            f"(single continuous process — a rising uptime here means it is "
+            f"NOT restarting)")
         log(f"seen={s['candidates']}  prefiltered_out={s['prefiltered']}  "
             f"llm_calls={s['triaged']}  MINT={s['mint']} WATCH={s['watch']} "
             f"SKIP={s['skip']}", indent=1)
