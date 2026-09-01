@@ -108,6 +108,67 @@ def cmd_preflight(a):
     return 0
 
 
+def cmd_fund(a):
+    """Top up the fleet to a target balance. Dry-run unless --live is passed."""
+    import os
+    from .funding import execute_funding, plan_funding, wait_for_funding
+    from .rpc import client
+
+    seed = (os.environ.get("MINT_SEED") or "").strip()
+    if not seed:
+        print("MINT_SEED is not set. It is env-only by design; export it or put "
+              "it in .env (which is gitignored).")
+        return 2
+
+    rpc = client(a.chain)
+    target = int(a.target_eth * 1e18)
+    print(f"funding plan — {a.chain}, top up to {a.target_eth} ETH per wallet")
+    plan = plan_funding(rpc, seed, target, a.wallets, a.funder_index)
+
+    print(f"  funder      [{a.funder_index}] {plan.funder}")
+    print(f"  balance     {plan.funder_balance / 1e18:.6f} ETH")
+    print(f"  gas price   {plan.gas_price / 1e9:.4f} gwei")
+    print(f"  fleet       {a.wallets} wallets "
+          f"(indices 0..{a.wallets - 1})")
+    print()
+    if not plan.transfers:
+        print("  nothing to do — every wallet is already at or above target.")
+        return 0
+    for t in plan.transfers:
+        print(f"  [{t['index']:>2}] {t['address']}  "
+              f"has {t['balance'] / 1e18:.6f}  ->  send "
+              f"{t['deficit'] / 1e18:.6f} ETH")
+    print()
+    print(f"  transfers   {len(plan.transfers)}")
+    print(f"  value       {plan.total_value / 1e18:.6f} ETH")
+    print(f"  gas         {plan.total_gas_cost / 1e18:.6f} ETH")
+    print(f"  TOTAL       {plan.total_cost / 1e18:.6f} ETH")
+    if not plan.affordable:
+        print(f"\n  INSUFFICIENT FUNDS — funder is short "
+              f"{plan.shortfall / 1e18:.6f} ETH. Nothing sent.")
+        return 1
+    print(f"  remaining   {(plan.funder_balance - plan.total_cost) / 1e18:.6f} "
+          f"ETH in funder afterwards")
+
+    if a.max_total_eth and plan.total_cost > a.max_total_eth * 1e18:
+        print(f"\n  BLOCKED — total {plan.total_cost / 1e18:.6f} ETH exceeds "
+              f"--max-total {a.max_total_eth} ETH. Nothing sent.")
+        return 1
+
+    if not a.live:
+        print("\n  DRY RUN — nothing broadcast. Re-run with --live to send.")
+        return 0
+
+    print("\n  LIVE — broadcasting…")
+    res = execute_funding(rpc, seed, plan, a.funder_index)
+    if res["sent"]:
+        print("\n  waiting for receipts…")
+        wait_for_funding(rpc, res)
+    print(f"\n  sent={len(res['sent'])} failed={len(res['failed'])} "
+          f"value={res['total_value'] / 1e18:.6f} ETH")
+    return 0 if not res["failed"] else 1
+
+
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(prog="mintscout")
     sub = ap.add_subparsers(dest="cmd", required=True)
@@ -136,6 +197,18 @@ def main(argv=None) -> int:
     p.add_argument("--cap", type=int, required=True); p.add_argument("--supply", type=int, default=0)
     p.add_argument("--wallets", type=int, default=C.MAX_WALLETS_DEFAULT)
     p.add_argument("--target", type=int, default=C.TARGET_PER_COLLECTION); p.set_defaults(fn=cmd_plan)
+
+    fu = sub.add_parser("fund", help="top up the wallet fleet to a target balance")
+    fu.add_argument("--chain", default="robinhood")
+    fu.add_argument("--target-eth", type=float, required=True,
+                    help="desired balance PER WALLET; only the deficit is sent")
+    fu.add_argument("--wallets", type=int, default=C.MAX_WALLETS_DEFAULT)
+    fu.add_argument("--funder-index", type=int, default=0)
+    fu.add_argument("--max-total-eth", type=float, default=0.0,
+                    dest="max_total_eth", help="refuse if the plan exceeds this")
+    fu.add_argument("--live", action="store_true",
+                    help="actually broadcast (default is dry-run)")
+    fu.set_defaults(fn=cmd_fund)
 
     f = sub.add_parser("preflight", help="live pre-flight demo (read-only)")
     f.add_argument("--chain", default="robinhood"); f.add_argument("--minutes", type=float, default=45)
