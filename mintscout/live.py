@@ -39,6 +39,7 @@ from .executor import (DEFAULT_MINT_GAS, build_mint_tx, decode_revert,
                        expected_cost_wei, read_public_drop, send_mint,
                        wait_for_receipt)
 from .rpc import client
+from .state import State, is_terminal
 from .watcher import Watcher
 
 # ------------------------------------------------------------------ logging
@@ -204,9 +205,7 @@ class Runner:
         # present-tense data about a present-tense decision, so it cannot leak.
         self.stale_hours = float(os.environ.get("STALE_DROP_HOURS", "24"))
         self.stale_min_fill = float(os.environ.get("STALE_DROP_MIN_FILL", "0.5"))
-        self._handles_path = pathlib.Path(
-            os.environ.get("MINTSCOUT_STATE_DIR", "data")) / "minted_handles.json"
-        self.minted_handles: set[str] = self._load_handles()
+        self.state = State()
         self._social_this_cycle = 0
         self.max_lead_s = int(os.environ.get("MAX_LEAD_SECONDS", "7200"))
         self.guard = SpendGuard()
@@ -312,23 +311,6 @@ class Runner:
                 pass
         return armed, total
 
-    def _load_handles(self) -> set:
-        try:
-            return {h.lower() for h in json.loads(self._handles_path.read_text())}
-        except Exception:
-            return set()
-
-    def _remember_handle(self, handle: str | None) -> None:
-        if not handle:
-            return
-        self.minted_handles.add(handle.lower())
-        try:
-            self._handles_path.parent.mkdir(parents=True, exist_ok=True)
-            self._handles_path.write_text(
-                json.dumps(sorted(self.minted_handles), indent=1))
-        except OSError:
-            pass
-
     def fill_ratio(self, chain: str, collection: str) -> tuple[float | None, int, int]:
         """Current fill of a collection: (ratio, total, max). Live read."""
         rpc = self.rpcs[chain]
@@ -372,8 +354,12 @@ class Runner:
             log(f"                  max {self.social_max_per_cycle} lookups/cycle")
             log(f"approval policy : social signal is "
                 f"{'THE ONLY green flag (rubric cannot approve)' if self.require_social else 'one of several signals'}")
+            st = self.state.summary()
             log(f"repeat handles  : {'skipped' if self.skip_repeat_handles else 'allowed'}"
-                f"   ({len(self.minted_handles)} handle(s) already minted)")
+                f"   ({st['handles_used']} handle(s) already minted)")
+            log(f"mint ledger     : {st['collections_minted']} collection(s), "
+                f"{st['tokens_held']} token(s), "
+                f"{st['terminal_cached']} terminal skip(s)  @ {st['path']}")
             log(f"stale drops     : skip if open >= {self.stale_hours:.0f}h and "
                 f"fill < {self.stale_min_fill:.0%}")
         else:
@@ -463,6 +449,14 @@ class Runner:
             return
         if key in self.seen:
             return
+        term = self.state.terminal_reason(chain, cand.collection)
+        if term:
+            # Permanently unmintable -- supply exhausted, or our fleet is capped
+            # out. Re-checking costs an OpenSea fetch and N eth_calls per cycle
+            # for an answer that cannot change.
+            self.stats["skipped_terminal"] = self.stats.get("skipped_terminal", 0) + 1
+            return
+
         self.seen.add(key)
         self.stats["candidates"] += 1
 
@@ -510,8 +504,7 @@ class Runner:
         # mill, not a brand. TheMerchantt_ had already sold out on a previous
         # drop when a second appeared under the same account.
         handle = (social or {}).get("handle")
-        if (self.skip_repeat_handles and handle
-                and handle.lower() in self.minted_handles):
+        if self.skip_repeat_handles and self.state.has_handle(handle):
             self.stats["skip"] += 1
             self.stats["skipped_repeat_handle"] = \
                 self.stats.get("skipped_repeat_handle", 0) + 1
@@ -722,8 +715,13 @@ class Runner:
             b.add(f"        [{idx:>2}] pre-flight revert: {why}", indent=1)
         if not ok_wallets:
             reasons = {w for _, w in blocked}
+            joined = "; ".join(list(reasons)[:2])
             b.add(f"DECISION ABORT — {cand.collection} all {len(armed)} wallet(s) "
-                  f"would revert: {'; '.join(list(reasons)[:2])}", indent=1)
+                  f"would revert: {joined}", indent=1)
+            if any(is_terminal(r) for r in reasons):
+                self.state.mark_terminal(chain, cand.collection, joined[:120])
+                b.add("        cached as permanently unmintable; will not be "
+                      "re-checked", indent=1)
             b.flush()
             # Wasted gas avoided is the whole point of pre-flight; count it.
             self.stats["gas_saved_wei"] = self.stats.get("gas_saved_wei", 0) + \
@@ -749,6 +747,7 @@ class Runner:
         b.flush()
 
         sent = 0
+        sent_txs: list[str] = []
         for w in armed:
             try:
                 nonce = int(rpc.raw("eth_getTransactionCount",
@@ -772,6 +771,7 @@ class Runner:
             try:
                 h = send_mint(rpc, tx, w["key"])
                 sent += 1
+                sent_txs.append(h)
                 log(f"  [{w['index']:>2}] SENT {w['address'][:10]}… tx={h}",
                     indent=1)
                 r = wait_for_receipt(rpc, h, timeout_s=45)
@@ -799,9 +799,12 @@ class Runner:
                     f"{str(e)[:110]}", indent=1)
 
         if sent:
-            h = (getattr(cand, "_social_handle", None)
-                 or (self.pending.get(f"{chain}:{cand.collection}", {}) or {}).get("handle"))
-            self._remember_handle(h)
+            h = getattr(cand, "_social_handle", None)
+            self.state.record_mint(
+                chain, cand.collection, handle=h,
+                name=(dossier.get("collection") or {}).get("name")
+                     if isinstance(dossier, dict) else None,
+                tokens=sent * qty, txs=sent_txs)
         log(f"DECISION fleet complete — {sent}/{len(armed)} transactions sent, "
             f"{sent * qty} token(s) attempted", indent=1)
 

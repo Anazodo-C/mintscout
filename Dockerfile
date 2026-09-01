@@ -12,6 +12,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY mintscout/ ./mintscout/
 COPY data/fixtures/ ./data/fixtures/
+COPY data/seed_state.json ./data/seed_state.json
 COPY scripts/ ./scripts/
 
 # Spend state must survive restarts. Without a persistent volume a crash-loop

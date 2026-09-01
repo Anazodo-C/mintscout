@@ -25,6 +25,10 @@ def runner(tmp_path, monkeypatch):
     monkeypatch.setenv("MAX_TOTAL_SPEND_WEI", "10000000000000000")
     monkeypatch.setenv("MAX_MINTS_TOTAL", "50")
     monkeypatch.delenv("MINT_SEED", raising=False)
+    # Neutralise the shipped seed: these tests assert on an empty ledger, and a
+    # committed seed file must not silently populate it.
+    from mintscout import state as _state
+    monkeypatch.setattr(_state.State, "_SEED", tmp_path / "no-such-seed.json")
     from mintscout.live import Runner
     return Runner()
 
@@ -54,22 +58,64 @@ def test_stale_thresholds_match_operator_policy(runner):
 
 # ------------------------------------------------ rule 2: handle memory
 def test_minted_handle_persists_across_restarts(runner, tmp_path, monkeypatch):
-    runner._remember_handle("TheMerchantt_")
+    """Pushing to main auto-deploys, so state MUST outlive a restart -- otherwise
+    the one-account-one-mint rule silently resets to allowing everything."""
+    runner.state.record_mint("robinhood", "0x" + "ab" * 20,
+                             handle="TheMerchantt_", name="X", tokens=5,
+                             txs=["0xdead"])
     monkeypatch.setenv("MINTSCOUT_STATE_DIR", str(tmp_path))
     from mintscout.live import Runner
     fresh = Runner()
-    assert "themerchantt_" in fresh.minted_handles, (
-        "a handle we already minted must survive a restart")
+    assert fresh.state.has_handle("TheMerchantt_")
+    assert fresh.state.summary()["tokens_held"] == 5
 
 
-def test_handle_matching_is_case_insensitive(runner):
-    runner._remember_handle("PinieNFT")
-    assert "pinienft" in runner.minted_handles
+def test_handle_matching_is_case_insensitive_and_strips_at(runner):
+    runner.state.seed_handle("PinieNFT")
+    assert runner.state.has_handle("pinienft")
+    assert runner.state.has_handle("@PINIENFT")
 
 
-def test_remember_handle_tolerates_none(runner):
-    runner._remember_handle(None)
-    assert runner.minted_handles == set()
+def test_seed_handle_tolerates_none(runner):
+    assert runner.state.seed_handle("") is False
+    assert runner.state.handles == set()
+
+
+def test_seeding_twice_is_idempotent(runner):
+    assert runner.state.seed_handle("dup") is True
+    assert runner.state.seed_handle("dup") is False
+    assert len(runner.state.handles) == 1
+
+
+# ------------------------------------------------ terminal revert caching
+def test_sold_out_is_terminal_but_not_active_is_not():
+    from mintscout.state import is_terminal
+    assert is_terminal("SOLD OUT — max supply reached  [MintQuantityExceedsMaxSupply(2501, 2500)]")
+    assert is_terminal("WALLET CAP already reached  [MintQuantityExceedsMaxMintedPerWallet(4, 2)]")
+    # a closed phase can open later -- caching it would lose real mints
+    assert not is_terminal("phase NOT OPEN at this timestamp  [NotActive(1, 2, 3)]")
+    assert not is_terminal("fee recipient rejected by this drop")
+    assert not is_terminal(None)
+
+
+def test_terminal_mark_round_trips_and_can_be_cleared(runner):
+    col = "0x" + "ef" * 20
+    assert runner.state.terminal_reason("robinhood", col) is None
+    runner.state.mark_terminal("robinhood", col, "SOLD OUT")
+    assert runner.state.terminal_reason("robinhood", col) == "SOLD OUT"
+    runner.state.forget("robinhood", col)
+    assert runner.state.terminal_reason("robinhood", col) is None
+
+
+def test_mint_ledger_accumulates_tokens_and_txs(runner):
+    col = "0x" + "12" * 20
+    runner.state.record_mint("robinhood", col, handle="h", name="N",
+                             tokens=5, txs=["0xa"])
+    runner.state.record_mint("robinhood", col, handle="h", name="N",
+                             tokens=10, txs=["0xb"])
+    rec = runner.state.recent(1)[0]
+    assert rec["tokens"] == 15
+    assert rec["txs"] == ["0xa", "0xb"]
 
 
 # ------------------------------------------------ rule 3: stale drop fill

@@ -1,0 +1,48 @@
+{
+ "handles": [
+  "duckling_nft",
+  "themerchantt_",
+  "pinienft"
+ ],
+ "minted": {
+  "robinhood:0x710de91dd1f1d23fadb3b6aebb0e9f9220fc3c85": {
+   "chain": "robinhood",
+   "collection": "0x710de91dd1f1d23fadb3b6aebb0e9f9220fc3c85",
+   "first_minted_at": 1788360000,
+   "handle": null,
+   "last_minted_at": 1788360000,
+   "name": "Rat - The Brokers",
+   "tokens": 5,
+   "txs": [
+    "0xb2811c52b7d3a30fc1519e2cb21738aef89aac0c0ee4eb89d2777d2bcea89a2b"
+   ]
+  },
+  "robinhood:0xf0f14a801fee54e79d4d9552b8cf6fa9ca1cba1a": {
+   "chain": "robinhood",
+   "collection": "0xf0f14a801fee54e79d4d9552b8cf6fa9ca1cba1a",
+   "first_minted_at": 1788361232,
+   "handle": "pinienft",
+   "last_minted_at": 1788361232,
+   "name": "PxPinies",
+   "tokens": 10,
+   "txs": [
+    "0xa8e3977a333ad6240eafd6f3f324f9604ad092522f08e37e99378f62ef8f33ed"
+   ]
+  }
+ },
+ "seeded": {
+  "duckling_nft": {
+   "at": 1788276934,
+   "note": "operator: do not mint @Duckling_nft"
+  },
+  "pinienft": {
+   "at": 1788276934,
+   "note": "PxPinies minted 2026-09-01 before the rule existed"
+  },
+  "themerchantt_": {
+   "at": 1788276934,
+   "note": "operator: sold out on a prior drop; reused handle"
+  }
+ },
+ "terminal": {}
+}
