@@ -55,3 +55,37 @@ def test_spend_is_committed_before_broadcast(tmp_path):
     reloaded = _guard(tmp_path, max_total_spend_wei=10 ** 15, max_mints_total=3)
     assert reloaded.summary["spent_wei"] == 10 ** 13
     assert reloaded.summary["mints"] == 1
+
+
+# ---------------------------------------------------------------- revert decoding
+def test_decode_sold_out():
+    from mintscout.executor import decode_revert
+    # MintQuantityExceedsMaxSupply(2501, 2500) as returned by a live SeaDrop call
+    data = ("0xe12d2314"
+            + f"{2501:064x}" + f"{2500:064x}")
+    out = decode_revert(data)
+    assert "SOLD OUT" in out
+    assert "2501" in out
+
+
+def test_decode_standard_error_string():
+    from mintscout.executor import decode_revert
+    msg = b"boom"
+    data = ("0x08c379a0" + f"{32:064x}" + f"{len(msg):064x}"
+            + msg.hex() + "00" * 28)
+    assert decode_revert(data) == "boom"
+
+
+def test_decode_returns_none_for_unknown():
+    from mintscout.executor import decode_revert
+    assert decode_revert(None) is None
+    assert decode_revert("0x") is None
+    assert decode_revert("0xdeadbeef" + "00" * 32) is None
+
+
+def test_rpc_error_carries_revert_data():
+    """RpcError must preserve error['data'] or the reason is unrecoverable."""
+    from mintscout.rpc import RpcError
+    e = RpcError(3, "execution reverted", "0xe12d2314")
+    assert e.data == "0xe12d2314"
+    assert RpcError(3, "x").data is None

@@ -172,6 +172,68 @@ def build_type4_transaction(chain_id: int, sender_key: str, delegate: str,
                               "nonce": nonce + 1}}
 
 
+# SeaDrop reverts with typed custom errors. Decoding them turns "execution
+# reverted" into an actionable reason -- sold out vs cap hit vs phase closed are
+# completely different operator problems and must not look identical in a log.
+_SEADROP_ERRORS = [
+    "NotActive(uint256,uint256,uint256)",
+    "MintQuantityExceedsMaxSupply(uint256,uint256)",
+    "MintQuantityExceedsMaxMintedPerWallet(uint256,uint256)",
+    "MintQuantityExceedsMaxTokenSupplyForStage(uint256,uint256)",
+    "MintQuantityCannotBeZero()",
+    "FeeRecipientNotAllowed()",
+    "InvalidFeeRecipient()",
+    "CreatorPayoutAddressCannotBeZeroAddress()",
+    "PayerNotAllowed(address)",
+    "IncorrectPayment(uint256,uint256)",
+    "OnlyINonFungibleSeaDropToken(address)",
+    "TokenGatedNotTokenOwner(address,address,uint256)",
+    "SignerNotPresent(address,address)",
+]
+
+_HUMAN = {
+    "MintQuantityExceedsMaxSupply": "SOLD OUT — max supply reached",
+    "MintQuantityExceedsMaxMintedPerWallet": "WALLET CAP already reached",
+    "MintQuantityExceedsMaxTokenSupplyForStage": "this drop STAGE is sold out",
+    "NotActive": "phase NOT OPEN at this timestamp",
+    "FeeRecipientNotAllowed": "fee recipient rejected by this drop",
+    "InvalidFeeRecipient": "fee recipient invalid",
+    "IncorrectPayment": "wrong msg.value for the current price",
+    "PayerNotAllowed": "payer != minter is not permitted by this drop",
+}
+
+
+def decode_revert(data: str | None) -> str | None:
+    """Turn raw revert data into a human reason. None if unrecognisable."""
+    if not data or not isinstance(data, str) or len(data) < 10:
+        return None
+    from eth_utils import keccak
+    sel = data[:10].lower()
+    # Error(string) -- the standard require() revert
+    if sel == "0x08c379a0":
+        try:
+            raw = data[10:]
+            off = int(raw[0:64], 16) * 2
+            ln = int(raw[off:off + 64], 16)
+            return bytes.fromhex(raw[off + 64: off + 64 + ln * 2]).decode(
+                "utf8", "replace")
+        except Exception:
+            return None
+    for sig in _SEADROP_ERRORS:
+        if "0x" + keccak(text=sig).hex()[:8] == sel:
+            name = sig.split("(")[0]
+            args = []
+            body = data[10:]
+            for i in range(len(body) // 64):
+                try:
+                    args.append(int(body[i * 64:(i + 1) * 64], 16))
+                except ValueError:
+                    break
+            detail = _HUMAN.get(name, name)
+            return f"{detail}  [{name}{tuple(args) if args else ''}]"
+    return None
+
+
 def is_dry_run() -> bool:
     return os.environ.get("DRY_RUN", "true").strip().lower() != "false"
 

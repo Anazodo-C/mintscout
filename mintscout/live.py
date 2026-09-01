@@ -33,8 +33,9 @@ from .agent.social_gate import (auto_flag_enabled, evaluate_social,
                                 format_social_line, social_enabled)
 from .eval.baselines import deterministic_rubric
 from .eval.replay import ReplayContext
-from .executor import (DEFAULT_MINT_GAS, build_mint_tx, estimate_cost_wei,
-                       read_public_drop, send_mint, wait_for_receipt)
+from .executor import (DEFAULT_MINT_GAS, build_mint_tx, decode_revert,
+                       estimate_cost_wei, read_public_drop, send_mint,
+                       wait_for_receipt)
 from .rpc import client
 from .watcher import Watcher
 
@@ -596,8 +597,9 @@ class Runner:
             rpc.call(C.SEADROP, probe["data"])
             b.add("        pre-flight simulation: OK", indent=1)
         except Exception as e:
-            b.add(f"DECISION ABORT — pre-flight would revert: {str(e)[:110]}",
-                  indent=1)
+            why = decode_revert(getattr(e, "data", None))
+            b.add(f"DECISION ABORT — {cand.collection} pre-flight would revert: "
+                  f"{why or str(e)[:110]}", indent=1)
             b.flush()
             return
 

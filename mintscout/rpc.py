@@ -36,10 +36,14 @@ class ArchiveStateError(RuntimeError):
 
 
 class RpcError(RuntimeError):
-    def __init__(self, code: int, message: str):
+    def __init__(self, code: int, message: str, data: str | None = None):
         super().__init__(f"[{code}] {message}")
         self.code = code
         self.message = message
+        # Revert payload, when the node returns one. Without it a failed mint
+        # reports only "execution reverted", which is true and useless -- it
+        # cannot distinguish a sold-out drop from a wrong fee recipient.
+        self.data = data
 
 
 # Errors that mean "this query asked for too much" rather than "try again".
@@ -172,7 +176,9 @@ class RpcClient:
                 self.stats.bump(requests=1, seconds=time.monotonic() - t0)
                 if "error" in body:
                     err = body["error"]
-                    raise RpcError(err.get("code", 0), str(err.get("message", err)))
+                    raise RpcError(err.get("code", 0), str(err.get("message", err)),
+                                   err.get("data") if isinstance(err.get("data"), str)
+                                   else None)
                 return body["result"]
             except RpcError as e:
                 last = e
