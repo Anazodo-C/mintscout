@@ -179,6 +179,103 @@ def cmd_fund(a):
     return 0 if not res["failed"] else 1
 
 
+def cmd_sweep(a):
+    """Move minted NFTs out of the hot fleet into a vault you control.
+
+    Dry-run unless --live. Each wallet signs its own transfers: an NFT can only
+    be moved by its owner, so this is one transaction per token per wallet.
+    """
+    import os
+    from .funding import derive_fleet
+    from .rpc import client
+    from .state import State
+    from .sweep import (TRANSFER_GAS_LIMIT, build_transfer_tx, find_holdings,
+                        plan_sweep)
+
+    seed = (os.environ.get("MINT_SEED") or "").strip()
+    if not seed:
+        print("MINT_SEED is not set (env-only by design).")
+        return 2
+    if not a.to or not a.to.startswith("0x") or len(a.to) != 42:
+        print("--to must be a 0x-prefixed 20-byte address")
+        return 2
+
+    rpc = client(a.chain)
+    gas_price = int(rpc.raw("eth_gasPrice", []), 16)
+
+    # Which collections to look in: the mint ledger, unless overridden.
+    if a.collection:
+        cols = [a.collection.lower()]
+    else:
+        st = State()
+        cols = sorted({v["collection"] for v in st.recent(200)
+                       if v.get("chain") == a.chain})
+    if not cols:
+        print("no minted collections on record; pass --collection to sweep one "
+              "explicitly")
+        return 1
+    print(f"sweeping {a.chain} -> {a.to}")
+    print(f"  collections: {len(cols)}")
+
+    fleet = derive_fleet(seed, a.wallets)
+    total_tokens = 0
+    plans = []
+    for idx, addr, key in fleet:
+        holdings = find_holdings(rpc, addr, cols)
+        n = sum(len(v) for v in holdings.values())
+        if not n:
+            continue
+        total_tokens += n
+        plans.append((idx, addr, key, holdings))
+        for col, ids in holdings.items():
+            print(f"  [{idx:>2}] {addr[:12]}…  {col[:12]}…  "
+                  f"{len(ids)} token(s): {ids[:8]}{'…' if len(ids) > 8 else ''}")
+
+    if not total_tokens:
+        print("  nothing to sweep — no tokens found in the fleet.")
+        return 0
+    cost = total_tokens * TRANSFER_GAS_LIMIT * gas_price * 2
+    print(f"\n  {total_tokens} token(s) across {len(plans)} wallet(s)")
+    print(f"  gas at {gas_price / 1e9:.3f} gwei: ~{cost / 1e18:.6f} ETH total")
+    print("\n  NOTE: transferring an ERC-6551 token also transfers whatever its")
+    print("  token-bound account holds. Check before sweeping such collections.")
+
+    if not a.live:
+        print("\n  DRY RUN — nothing broadcast. Re-run with --live to send.")
+        return 0
+
+    print("\n  LIVE — broadcasting…")
+    sent = failed = 0
+    for idx, addr, key, holdings in plans:
+        try:
+            nonce = int(rpc.raw("eth_getTransactionCount", [addr, "pending"]), 16)
+        except Exception as e:
+            print(f"  [{idx:>2}] nonce read failed: {type(e).__name__}")
+            continue
+        i = 0
+        for col, ids in holdings.items():
+            for tid in ids:
+                tx = build_transfer_tx(rpc, addr, col, tid, a.to, nonce + i,
+                                       gas_price)
+                i += 1
+                try:
+                    from eth_account import Account
+                    acct = Account.from_key(key)
+                    payload = {k: v for k, v in tx.items() if k != "from"}
+                    signed = acct.sign_transaction(payload)
+                    raw = signed.raw_transaction.hex()
+                    h = rpc.raw("eth_sendRawTransaction",
+                                [raw if raw.startswith("0x") else "0x" + raw])
+                    sent += 1
+                    print(f"  [{idx:>2}] token {tid} -> {a.to[:10]}…  tx={h}")
+                except Exception as e:
+                    failed += 1
+                    print(f"  [{idx:>2}] token {tid} FAILED: "
+                          f"{type(e).__name__}: {str(e)[:90]}")
+    print(f"\n  sent={sent} failed={failed}")
+    return 0 if not failed else 1
+
+
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(prog="mintscout")
     sub = ap.add_subparsers(dest="cmd", required=True)
@@ -222,6 +319,16 @@ def main(argv=None) -> int:
     fu.add_argument("--live", action="store_true",
                     help="actually broadcast (default is dry-run)")
     fu.set_defaults(fn=cmd_fund)
+
+    sw = sub.add_parser("sweep", help="move minted NFTs to a vault address")
+    sw.add_argument("--to", required=True, help="destination vault address")
+    sw.add_argument("--chain", default="robinhood")
+    sw.add_argument("--wallets", type=int, default=C.MAX_WALLETS_DEFAULT)
+    sw.add_argument("--collection", default=None,
+                    help="sweep only this collection (default: all in the ledger)")
+    sw.add_argument("--live", action="store_true",
+                    help="actually broadcast (default is dry-run)")
+    sw.set_defaults(fn=cmd_sweep)
 
     f = sub.add_parser("preflight", help="live pre-flight demo (read-only)")
     f.add_argument("--chain", default="robinhood"); f.add_argument("--minutes", type=float, default=45)

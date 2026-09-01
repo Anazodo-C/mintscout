@@ -60,3 +60,51 @@ def redact(obj):
     if isinstance(obj, list):
         return [redact(v) for v in obj]
     return obj
+
+
+# --------------------------------------------------------------- discovery
+TRANSFER_GAS_LIMIT = 120_000
+
+
+def find_holdings(rpc, wallet: str, collections: list[str],
+                  lookback_blocks: int = 3_000_000) -> dict[str, list[int]]:
+    """Token IDs currently held by `wallet`, per collection.
+
+    Derived from Transfer logs rather than ERC721Enumerable: `tokenOfOwnerByIndex`
+    is optional and most of these collections are minimal proxies that do not
+    implement it. Every candidate id is then confirmed with `ownerOf`, so a token
+    that was received and later moved on is not offered for sweeping.
+    """
+    from . import constants as C
+    padded = "0x" + "0" * 24 + wallet[2:].lower()
+    tip = rpc.block_number()
+    frm = max(1, tip - lookback_blocks)
+    out: dict[str, list[int]] = {}
+    for col in collections:
+        try:
+            logs = rpc.get_logs_chunked(col, [C.TOPIC_TRANSFER, None, padded],
+                                        frm, tip)
+        except Exception:
+            continue
+        ids = sorted({int(l["topics"][3], 16) for l in logs
+                      if len(l.get("topics", [])) == 4})
+        held = []
+        for tid in ids:
+            owner = rpc.try_call(col, C.SEL_OWNER_OF + f"{tid:064x}")
+            if owner and ("0x" + owner[-40:]).lower() == wallet.lower():
+                held.append(tid)
+        if held:
+            out[col] = held
+    return out
+
+
+def build_transfer_tx(rpc, wallet: str, collection: str, token_id: int,
+                      to: str, nonce: int, gas_price: int) -> dict:
+    from . import constants as C
+    from eth_abi import encode as abi_encode
+    data = C.SEL_TRANSFER_FROM + abi_encode(
+        ["address", "address", "uint256"], [wallet, to, token_id]).hex()
+    return {"type": 2, "chainId": rpc.chain_id, "to": collection,
+            "from": wallet, "value": 0, "data": data, "nonce": nonce,
+            "gas": TRANSFER_GAS_LIMIT, "maxFeePerGas": gas_price * 2,
+            "maxPriorityFeePerGas": min(gas_price, 1_000_000_000)}

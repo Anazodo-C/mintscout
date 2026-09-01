@@ -139,3 +139,52 @@ def test_funding_and_runner_derive_identical_addresses(monkeypatch):
     funding_addrs = [a for _, a, _ in derive_fleet(SEED, 6)]
     assert runner_addrs == funding_addrs, (
         "funding and the runner must derive the same fleet")
+
+
+# ------------------------------------------------------------------ sweep
+def test_transfer_tx_is_well_formed():
+    """transferFrom(from,to,tokenId) on the COLLECTION, not on SeaDrop."""
+    from mintscout import constants as C
+    from mintscout.sweep import TRANSFER_GAS_LIMIT, build_transfer_tx
+
+    rpc = FakeRpc({})
+    w = "0x" + "11" * 20
+    col = "0x" + "22" * 20
+    to = "0x" + "33" * 20
+    tx = build_transfer_tx(rpc, w, col, 42, to, nonce=7, gas_price=GAS)
+    assert tx["to"] == col, "must call the collection, not SeaDrop"
+    assert tx["from"] == w, "only the owner can move its own token"
+    assert tx["data"].startswith(C.SEL_TRANSFER_FROM)
+    assert f"{42:064x}" in tx["data"], "tokenId must be encoded"
+    assert to[2:].lower() in tx["data"].lower()
+    assert tx["value"] == 0
+    assert tx["gas"] == TRANSFER_GAS_LIMIT
+    assert tx["nonce"] == 7
+
+
+def test_holdings_confirm_ownership_before_offering_to_sweep(monkeypatch):
+    """A token received and later moved on must NOT be offered for sweeping."""
+    from mintscout import constants as C
+    from mintscout.sweep import find_holdings
+
+    wallet = "0x" + "11" * 20
+    other = "0x" + "99" * 20
+    col = "0x" + "22" * 20
+
+    class R(FakeRpc):
+        def block_number(self):
+            return 1_000
+
+        def get_logs_chunked(self, address, topics, a, b, **kw):
+            # two tokens were received at some point
+            return [{"topics": [C.TOPIC_TRANSFER, "0x0", "0x0", f"0x{i:064x}"]}
+                    for i in (1, 2)]
+
+        def try_call(self, to, data, *a, **k):
+            # token 1 still ours, token 2 has moved on
+            tid = int(data[-64:], 16)
+            owner = wallet if tid == 1 else other
+            return "0x" + "0" * 24 + owner[2:]
+
+    held = find_holdings(R({}), wallet, [col])
+    assert held == {col: [1]}, "only still-owned tokens may be swept"
