@@ -194,6 +194,13 @@ class Runner:
         self._key = None
         self.fleet: list[dict] = []
         self._last_armed: dict[str, int] = {}
+        # Approved drops whose window has not opened yet, keyed "chain:collection".
+        # This is the scheduler the architecture describes: judge once, early,
+        # then hold a cached verdict and let a dumb fast loop fire at startTime.
+        # Without it, widening the lead window means re-enriching every pending
+        # drop on every poll -- 40+ dossiers a minute for one answer that does
+        # not change.
+        self.pending: dict[str, dict] = {}
         self.blocked_reason: str | None = None
         self.seen: set[str] = set()
         self.stats = {"candidates": 0, "prefiltered": 0, "triaged": 0,
@@ -508,6 +515,15 @@ class Runner:
             log(f"DECISION {verdict} — not minting", indent=1)
             return
 
+        now = int(time.time())
+        if cand.start_time > now:
+            self.pending[key] = {"chain": chain, "cand": cand,
+                                 "queued_at": now, "score": score}
+            log(f"DECISION QUEUED — approved, opens {fmt_in(cand.start_time - now)} "
+                f"at {datetime.fromtimestamp(cand.start_time, timezone.utc):%H:%M UTC}. "
+                f"Verdict is cached; no re-analysis until it fires.", indent=1)
+            return
+
         self.execute(chain, cand, dossier)
 
     # ------------------------------------------------------------ execute
@@ -647,6 +663,36 @@ class Runner:
             f"{sent * qty} token(s) attempted", indent=1)
 
     # --------------------------------------------------------------- loop
+    def fire_due(self) -> None:
+        """Execute queued drops whose window has opened. No re-analysis.
+
+        The verdict was decided when the drop was discovered, minutes to hours
+        early. This loop is deliberately dumb and fast -- it re-reads the config
+        (which is mutable) and simulates, but it never re-runs enrichment or the
+        model. That is the whole point of scheduling on startTime.
+        """
+        now = int(time.time())
+        for key, item in list(self.pending.items()):
+            cand = item["cand"]
+            if cand.end_time <= now:
+                del self.pending[key]
+                log(f"[{_ts()}] EXPIRED  {cand.collection} — window closed "
+                    f"before it could be minted")
+                continue
+            if cand.start_time > now:
+                continue
+            del self.pending[key]
+            log("")
+            rule()
+            log(f"[{_ts()}] FIRING QUEUED DROP  {cand.collection}  "
+                f"(approved {fmt_in(-(now - item['queued_at']))} ago, "
+                f"score {item['score']})")
+            try:
+                self.execute(item["chain"], cand, {})
+            except Exception:
+                log("[error] queued execution failed:")
+                traceback.print_exc()
+
     def heartbeat(self) -> None:
         s = self.stats
         b = self.guard.summary
@@ -661,6 +707,11 @@ class Runner:
         log(f"executed={s['executed']}  failed={s['failed']}  "
             f"spent={b['spent_eth']} / {b['budget_eth']} ETH  "
             f"mints={b['mints']}/{b['max_mints']}", indent=1)
+        if self.pending:
+            nxt = min(self.pending.values(), key=lambda i: i["cand"].start_time)
+            log(f"queued={len(self.pending)} approved drop(s) awaiting their "
+                f"window; next {nxt['cand'].collection[:12]} in "
+                f"{fmt_in(nxt['cand'].start_time - int(time.time()))}", indent=1)
         rule()
 
     def run(self) -> int:
@@ -668,6 +719,7 @@ class Runner:
             return 2
         last_hb = 0.0
         while not self._stop:
+            self.fire_due()
             for chain in self.chains:
                 try:
                     if self.fleet:
