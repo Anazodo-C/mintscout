@@ -252,12 +252,21 @@ class RpcClient:
         return bytes.fromhex(self.raw("eth_getCode", [address, block])[2:])
 
     def call(self, to: str, data: str, block: str = "latest",
-             *, allow_historical: bool = False) -> str:
+             *, allow_historical: bool = False,
+             from_address: str | None = None) -> str:
         if block != "latest" and not allow_historical:
             raise ArchiveStateError(
                 f"eth_call at block={block!r} is not served (no archive state). "
                 "This is the constraint that forces the log-derived replay harness.")
-        return self.raw("eth_call", [{"to": to, "data": data}, block])
+        # `from` matters. SeaDrop's per-wallet accounting and its allowed-payer
+        # checks are all relative to msg.sender, so simulating without it
+        # simulates address(0) and answers a question nobody asked. Measured on
+        # a live sold-out drop: without `from` the node returned an unmapped
+        # 0x1fe7da08; with it, the true MintQuantityExceedsMaxSupply.
+        params: dict = {"to": to, "data": data}
+        if from_address:
+            params["from"] = from_address
+        return self.raw("eth_call", [params, block])
 
     # Revert-ish JSON-RPC signatures. Anything NOT matching these is a transport
     # or rate-limit failure and must NOT be reported as "the contract has no
@@ -265,7 +274,7 @@ class RpcClient:
     _REVERT_HINTS = ("execution reverted", "revert", "invalid opcode",
                      "out of gas", "call exception", "no data")
 
-    def try_call(self, to: str, data: str) -> str | None:
+    def try_call(self, to: str, data: str, from_address: str | None = None) -> str | None:
         """eth_call returning None ONLY when the contract genuinely has no value.
 
         This distinction matters more than it looks. The first version swallowed
@@ -280,7 +289,7 @@ class RpcClient:
         inheriting a wrong feature.
         """
         try:
-            r = self.call(to, data)
+            r = self.call(to, data, from_address=from_address)
             return r if r and r != "0x" else None
         except RpcError as e:
             if any(h in e.message.lower() for h in self._REVERT_HINTS):

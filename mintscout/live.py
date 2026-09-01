@@ -588,20 +588,44 @@ class Runner:
             b.flush()
             return
 
-        # One pre-flight simulation covers the whole fleet: the call is
-        # identical apart from the sender, so simulating per wallet would be N
-        # RPC round-trips for the same answer.
-        try:
-            probe = build_mint_tx(rpc, cand.collection, armed[0]["address"],
-                                  qty, value_each, nonce=0)
-            rpc.call(C.SEADROP, probe["data"])
-            b.add("        pre-flight simulation: OK", indent=1)
-        except Exception as e:
-            why = decode_revert(getattr(e, "data", None))
-            b.add(f"DECISION ABORT — {cand.collection} pre-flight would revert: "
-                  f"{why or str(e)[:110]}", indent=1)
+        # Pre-flight EACH wallet, not one representative.
+        # `from` changes the answer: SeaDrop's per-wallet cap accounting is
+        # relative to msg.sender, so a fleet-wide simulation cannot see that
+        # wallet 3 already holds one and will revert. Simulating per wallet is N
+        # cheap eth_calls and it turns a whole-fleet abort into "skip the two
+        # wallets that would fail, mint from the other three".
+        ok_wallets, blocked = [], []
+        for w in armed:
+            try:
+                probe = build_mint_tx(rpc, cand.collection, w["address"], qty,
+                                      value_each, nonce=0)
+                rpc.call(C.SEADROP, probe["data"], from_address=w["address"])
+                ok_wallets.append(w)
+            except Exception as e:
+                why = decode_revert(getattr(e, "data", None)) or str(e)[:70]
+                blocked.append((w["index"], why))
+
+        for idx, why in blocked[:5]:
+            b.add(f"        [{idx:>2}] pre-flight revert: {why}", indent=1)
+        if not ok_wallets:
+            reasons = {w for _, w in blocked}
+            b.add(f"DECISION ABORT — {cand.collection} all {len(armed)} wallet(s) "
+                  f"would revert: {'; '.join(list(reasons)[:2])}", indent=1)
             b.flush()
+            # Wasted gas avoided is the whole point of pre-flight; count it.
+            self.stats["gas_saved_wei"] = self.stats.get("gas_saved_wei", 0) + \
+                len(armed) * DEFAULT_MINT_GAS * probe["maxFeePerGas"]
             return
+        if blocked:
+            b.add(f"        pre-flight: {len(ok_wallets)}/{len(armed)} wallets "
+                  f"can mint; {len(blocked)} would revert and are skipped",
+                  indent=1)
+            self.stats["gas_saved_wei"] = self.stats.get("gas_saved_wei", 0) + \
+                len(blocked) * DEFAULT_MINT_GAS * probe["maxFeePerGas"]
+        else:
+            b.add(f"        pre-flight simulation: OK for all "
+                  f"{len(ok_wallets)} wallet(s)", indent=1)
+        armed = ok_wallets
 
         if not self.live:
             b.add(f"DECISION DRY RUN — would mint from {len(armed)} wallet(s), "
@@ -709,6 +733,9 @@ class Runner:
         log(f"executed={s['executed']}  failed={s['failed']}  "
             f"spent={b['spent_eth']} / {b['budget_eth']} ETH  "
             f"mints={b['mints']}/{b['max_mints']}", indent=1)
+        if s.get("gas_saved_wei"):
+            log(f"wasted gas avoided by pre-flight: "
+                f"{s['gas_saved_wei'] / 1e18:.8f} ETH", indent=1)
         if self.pending:
             nxt = min(self.pending.values(), key=lambda i: i["cand"].start_time)
             log(f"queued={len(self.pending)} approved drop(s) awaiting their "
