@@ -121,8 +121,18 @@ def cmd_fund(a):
         return 2
 
     rpc = client(a.chain)
-    target = int(a.target_eth * 1e18)
-    print(f"funding plan — {a.chain}, top up to {a.target_eth} ETH per wallet")
+    if a.split_even:
+        from .funding import even_split_target
+        target = even_split_target(rpc, seed, a.wallets, a.funder_index)
+        print(f"even split across {a.wallets} wallets "
+              f"-> {target / 1e18:.8f} ETH each (gas reserved)")
+    else:
+        if not a.target_eth:
+            print("pass --target-eth, or --split-even to divide the funder's "
+                  "balance evenly across the fleet")
+            return 2
+        target = int(a.target_eth * 1e18)
+    print(f"funding plan — {a.chain}")
     plan = plan_funding(rpc, seed, target, a.wallets, a.funder_index)
 
     print(f"  funder      [{a.funder_index}] {plan.funder}")
@@ -200,8 +210,11 @@ def main(argv=None) -> int:
 
     fu = sub.add_parser("fund", help="top up the wallet fleet to a target balance")
     fu.add_argument("--chain", default="robinhood")
-    fu.add_argument("--target-eth", type=float, required=True,
+    fu.add_argument("--target-eth", type=float, default=0.0,
                     help="desired balance PER WALLET; only the deficit is sent")
+    fu.add_argument("--split-even", action="store_true",
+                    help="split the funder's current balance evenly across the "
+                         "fleet (reserves transfer gas first)")
     fu.add_argument("--wallets", type=int, default=C.MAX_WALLETS_DEFAULT)
     fu.add_argument("--funder-index", type=int, default=0)
     fu.add_argument("--max-total-eth", type=float, default=0.0,

@@ -55,6 +55,26 @@ def derive_fleet(seed: str, n: int, start: int = 0) -> list[tuple[int, str, str]
     return out
 
 
+def even_split_target(rpc: RpcClient, seed: str, n_wallets: int,
+                     funder_index: int = 0) -> int:
+    """Target balance that splits the funder's ETH evenly across the fleet.
+
+    Reserves the gas for the transfers themselves before dividing, so the funder
+    is not left short and the final balances actually land even. Returns a
+    per-wallet target suitable for plan_funding().
+    """
+    from eth_account import Account
+    Account.enable_unaudited_hdwallet_features()
+    funder = Account.from_mnemonic(
+        seed, account_path=f"m/44'/60'/0'/0/{funder_index}")
+    balance = int(rpc.raw("eth_getBalance", [funder.address, "latest"]), 16)
+    gas_price = int(rpc.raw("eth_gasPrice", []), 16)
+    # n-1 transfers (the funder keeps its own share), budgeted at the 2x ceiling.
+    gas_total = max(0, n_wallets - 1) * TRANSFER_GAS * gas_price * 2
+    spendable = max(0, balance - gas_total)
+    return spendable // max(1, n_wallets)
+
+
 def plan_funding(rpc: RpcClient, seed: str, target_wei: int, n_wallets: int,
                  funder_index: int = 0) -> FundingPlan:
     """Read balances and compute per-wallet deficits. Read-only."""

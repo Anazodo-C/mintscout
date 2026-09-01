@@ -529,10 +529,11 @@ class Runner:
 
         # Which wallets can actually participate.
         min_bal = self._min_balance_to_mint()
-        per_drop = int(os.environ.get("MAX_WALLETS_PER_DROP",
-                                      str(len(self.fleet))))
-        armed = [w for w in self.fleet
-                 if w["balance"].get(chain, 0) >= min_bal][:max(1, per_drop)]
+        # MAX_WALLETS is the single fleet knob: it sizes the fleet AND bounds how
+        # many wallets mint one collection. A separate per-drop limit was
+        # redundant -- with a fleet of N you would always set both to N -- and two
+        # variables that must agree is a configuration trap, not a feature.
+        armed = [w for w in self.fleet if w["balance"].get(chain, 0) >= min_bal]
         value_each = live_cfg["mint_price"] * qty
 
         b = Block()
