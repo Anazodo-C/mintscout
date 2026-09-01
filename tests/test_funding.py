@@ -110,3 +110,32 @@ def test_bad_funder_index_raises():
     rpc = FakeRpc({a: 0 for a in addrs})
     with pytest.raises(ValueError, match="funder index"):
         plan_funding(rpc, SEED, target_wei=ETH, n_wallets=2, funder_index=9)
+
+
+def test_funding_and_runner_derive_identical_addresses(monkeypatch):
+    """The funder must top up exactly the wallets the runner mints from.
+
+    Both derive from MINT_SEED at m/44'/60'/0'/0/{i}, but in different modules.
+    If those paths ever drift, funding would credit addresses the runner never
+    uses -- the ETH would be sound but the fleet would sit unarmed, and the only
+    symptom would be '0/20 armed' with a funded-looking wallet somewhere else.
+    """
+    monkeypatch.setenv("MINT_SEED", SEED)
+    monkeypatch.setenv("MAX_WALLETS", "6")
+    monkeypatch.setenv("WALLET_INDEX", "0")
+    monkeypatch.setenv("CHAINS", "robinhood")
+    monkeypatch.setenv("SOCIAL_ENABLED", "false")
+
+    from mintscout.live import Runner
+
+    r = Runner()
+    # Avoid network: stub the balance/gas reads the fleet loader performs.
+    for rpc in r.rpcs.values():
+        monkeypatch.setattr(rpc, "raw",
+                            lambda m, p=None, **k: hex(10 ** 16))
+    r.load_wallet()
+
+    runner_addrs = [w["address"] for w in r.fleet]
+    funding_addrs = [a for _, a, _ in derive_fleet(SEED, 6)]
+    assert runner_addrs == funding_addrs, (
+        "funding and the runner must derive the same fleet")

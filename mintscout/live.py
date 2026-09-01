@@ -50,6 +50,30 @@ def log(msg: str = "", *, indent: int = 0) -> None:
     print(("  " * indent) + msg, flush=True)
 
 
+class Block:
+    """Buffer a candidate's lines and emit them as ONE print.
+
+    Railway orders log lines by timestamp, so a block written as 15 separate
+    prints can interleave with another block written in the same millisecond --
+    which is exactly what happened in production, producing candidate blocks
+    with each other's NAME and DECISION lines spliced in. One write per
+    candidate keeps each block contiguous, and it matters far more once 20
+    wallets are reporting concurrently.
+    """
+
+    def __init__(self) -> None:
+        self._lines: list[str] = []
+
+    def add(self, msg: str = "", *, indent: int = 0) -> "Block":
+        self._lines.append(("  " * indent) + msg)
+        return self
+
+    def flush(self) -> None:
+        if self._lines:
+            print("\n".join(self._lines), flush=True)
+            self._lines.clear()
+
+
 def rule(char: str = "─", n: int = 78) -> None:
     print(char * n, flush=True)
 
@@ -168,6 +192,7 @@ class Runner:
         self.rpcs = {c: self.watchers[c].rpc for c in self.chains}
         self.wallet = None
         self._key = None
+        self.fleet: list[dict] = []
         self.blocked_reason: str | None = None
         self.seen: set[str] = set()
         self.stats = {"candidates": 0, "prefiltered": 0, "triaged": 0,
@@ -182,25 +207,64 @@ class Runner:
 
     # ------------------------------------------------------------ wallet
     def load_wallet(self) -> None:
+        """Derive the fleet and report which wallets are actually armed.
+
+        `payer == minter` in 98.5% of live SeaDrop mints, so a wallet can only
+        mint for itself: every wallet in the fleet must hold its own gas and
+        sign its own transaction. A wallet with no balance is dead weight, so
+        the banner reports armed-vs-total rather than just listing addresses.
+        """
         seed = (os.environ.get("MINT_SEED") or "").strip()
         if not seed:
             log("[wallet] MINT_SEED not set -> observation only, cannot execute")
             return
         from eth_account import Account
         Account.enable_unaudited_hdwallet_features()
-        idx = int(os.environ.get("WALLET_INDEX", "0"))
-        acct = Account.from_mnemonic(seed, account_path=f"m/44'/60'/0'/0/{idx}")
-        self.wallet = acct.address
-        self._key = acct.key.hex()          # never logged, never serialised
-        log(f"[wallet] {self.wallet}  (derivation index {idx})")
+        start = int(os.environ.get("WALLET_INDEX", "0"))
+        n = max(1, int(os.environ.get("MAX_WALLETS", str(C.MAX_WALLETS_DEFAULT))))
+        self.fleet = []
+        for i in range(start, start + n):
+            a = Account.from_mnemonic(seed, account_path=f"m/44'/60'/0'/0/{i}")
+            self.fleet.append({"index": i, "address": a.address,
+                               "key": a.key.hex(), "balance": {}})
+        # index 0 of the fleet stays the primary for single-wallet code paths
+        self.wallet = self.fleet[0]["address"]
+        self._key = self.fleet[0]["key"]
+
+        min_bal = self._min_balance_to_mint()
         for ch, rpc in self.rpcs.items():
-            try:
-                bal = int(rpc.raw("eth_getBalance", [self.wallet, "latest"]), 16)
-                log(f"[wallet] {ch}: {bal / 1e18:.6f} ETH")
-                if bal == 0:
-                    log(f"[wallet] WARNING {ch} balance is zero — cannot mint")
-            except Exception as e:
-                log(f"[wallet] {ch}: balance read failed ({type(e).__name__})")
+            armed = 0
+            total = 0
+            for w in self.fleet:
+                try:
+                    b = int(rpc.raw("eth_getBalance", [w["address"], "latest"]), 16)
+                except Exception:
+                    b = 0
+                w["balance"][ch] = b
+                total += b
+                if b >= min_bal:
+                    armed += 1
+            log(f"[wallet] {ch}: {armed}/{len(self.fleet)} armed  "
+                f"(>= {min_bal / 1e18:.6f} ETH each)  "
+                f"fleet total {total / 1e18:.6f} ETH")
+            for w in self.fleet[:3]:
+                log(f"         [{w['index']:>2}] {w['address']}  "
+                    f"{w['balance'][ch] / 1e18:.6f} ETH", indent=0)
+            if len(self.fleet) > 3:
+                log(f"         … {len(self.fleet) - 3} more", indent=0)
+            if armed == 0:
+                log(f"[wallet] WARNING {ch}: no wallet holds enough to mint. "
+                    f"Run:  mintscout fund --chain {ch} --target-eth 0.002 "
+                    f"--wallets {len(self.fleet)} --live")
+
+    def _min_balance_to_mint(self) -> int:
+        """Worst-case cost of one mint, used to decide if a wallet is armed."""
+        try:
+            rpc = next(iter(self.rpcs.values()))
+            gp = int(rpc.raw("eth_gasPrice", []), 16)
+        except Exception:
+            gp = 1_000_000_000
+        return DEFAULT_MINT_GAS * gp * 2
 
     # ----------------------------------------------------------- startup
     def preflight_config(self) -> bool:
@@ -273,7 +337,7 @@ class Runner:
             #
             # So a blocked live mode degrades to observation: the process stays
             # up, the logs keep flowing, /status reports why, and nothing spends.
-            if not self._key:
+            if not self.fleet:
                 log("\n[BLOCKED] LIVE_EXECUTION is on but MINT_SEED is not set.")
                 log("          Running in OBSERVATION mode — watching and logging, "
                     "not spending.")
@@ -423,6 +487,18 @@ class Runner:
 
     # ------------------------------------------------------------ execute
     def execute(self, chain: str, cand, dossier: dict) -> None:
+        """Mint from every armed wallet in the fleet.
+
+        One transaction per wallet, never a batch. `payer == minter` means a
+        wallet can only mint for itself, so 20 wallets is 20 transactions and
+        EIP-7702 cannot compress that -- it batches across COLLECTIONS within
+        one wallet, not across wallets.
+
+        The spend guard is global and is consulted per transaction, so
+        MAX_MINTS_TOTAL bounds the whole fleet rather than each wallet. That is
+        deliberate: a per-wallet cap of 5 across 20 wallets would silently mean
+        100 mints of exposure.
+        """
         rpc = self.rpcs[chain]
         cap = max(1, int(cand.max_per_wallet or 1))
         qty = min(cap, int(os.environ.get("MAX_QUANTITY_PER_MINT", "2")))
@@ -446,68 +522,103 @@ class Runner:
             self.seen.discard(f"{chain}:{cand.collection}")   # revisit next cycle
             return
 
-        if not self._key:
-            log("DECISION DRY RUN — would mint, but no MINT_SEED configured", indent=1)
+        if not self.fleet:
+            log("DECISION DRY RUN — would mint, but no MINT_SEED configured",
+                indent=1)
             return
 
-        value = live_cfg["mint_price"] * qty
-        nonce = int(rpc.raw("eth_getTransactionCount", [self.wallet, "pending"]), 16)
-        tx = build_mint_tx(rpc, cand.collection, self.wallet, qty, value, nonce)
-        cost = estimate_cost_wei(tx)
-        try:
-            bal = int(rpc.raw("eth_getBalance", [self.wallet, "latest"]), 16)
-        except Exception:
-            bal = None
+        # Which wallets can actually participate.
+        min_bal = self._min_balance_to_mint()
+        per_drop = int(os.environ.get("MAX_WALLETS_PER_DROP",
+                                      str(len(self.fleet))))
+        armed = [w for w in self.fleet
+                 if w["balance"].get(chain, 0) >= min_bal][:max(1, per_drop)]
+        value_each = live_cfg["mint_price"] * qty
 
-        log(f"EXECUTE quantity={qty}  value={fmt_eth(value)}  "
-            f"max_cost={fmt_eth(cost)}  gas={tx['gas']}  "
-            f"maxFee={tx['maxFeePerGas'] / 1e9:.3f} gwei", indent=1)
+        b = Block()
+        b.add(f"EXECUTE fleet={len(armed)}/{len(self.fleet)} armed  "
+              f"qty={qty}/wallet (cap {cap})  value={fmt_eth(value_each)} each",
+              indent=1)
+        if not armed:
+            b.add(f"DECISION SKIP — no wallet holds the "
+                  f"{min_bal / 1e18:.6f} ETH needed to mint", indent=1)
+            b.flush()
+            return
 
-        # eth_call the exact transaction. Cheaper to find out now than on-chain.
+        # One pre-flight simulation covers the whole fleet: the call is
+        # identical apart from the sender, so simulating per wallet would be N
+        # RPC round-trips for the same answer.
         try:
-            rpc.call(C.SEADROP, tx["data"])
-            log("       pre-flight simulation: OK", indent=1)
+            probe = build_mint_tx(rpc, cand.collection, armed[0]["address"],
+                                  qty, value_each, nonce=0)
+            rpc.call(C.SEADROP, probe["data"])
+            b.add("        pre-flight simulation: OK", indent=1)
         except Exception as e:
-            log(f"DECISION ABORT — pre-flight would revert: {str(e)[:110]}", indent=1)
-            return
-
-        try:
-            self.guard.check(cost, tx["maxFeePerGas"], wallet_balance_wei=bal)
-        except Denied as e:
-            log(f"DECISION BLOCKED by spend guard — {e}", indent=1)
+            b.add(f"DECISION ABORT — pre-flight would revert: {str(e)[:110]}",
+                  indent=1)
+            b.flush()
             return
 
         if not self.live:
-            log("DECISION DRY RUN — all checks passed; would broadcast now. "
-                "Set DRY_RUN=false and LIVE_EXECUTION=true to send.", indent=1)
+            b.add(f"DECISION DRY RUN — would mint from {len(armed)} wallet(s), "
+                  f"{qty * len(armed)} token(s) total. Set DRY_RUN=false and "
+                  f"LIVE_EXECUTION=true to send.", indent=1)
+            b.flush()
             return
+        b.flush()
 
-        # Commit budget BEFORE broadcasting: a crash must over-count, not under.
-        self.guard.commit(cost)
-        try:
-            h = send_mint(rpc, tx, self._key)
-            log(f"DECISION SENT  tx={h}", indent=1)
-            r = wait_for_receipt(rpc, h)
-            if r is None:
-                log("       receipt not seen within timeout (tx may still land)", indent=1)
-                self.stats["executed"] += 1
-                return
-            ok = int(r.get("status", "0x0"), 16) == 1
-            used = int(r.get("gasUsed", "0x0"), 16)
-            price = int(r.get("effectiveGasPrice", "0x0"), 16)
-            actual = value + used * price
-            log(f"       {'CONFIRMED' if ok else 'REVERTED'}  gasUsed={used:,}  "
-                f"actual_cost={fmt_eth(actual)}  block={int(r['blockNumber'], 16)}",
-                indent=1)
-            self.stats["executed" if ok else "failed"] += 1
-            if cost > actual:
-                self.guard.refund(cost - actual)   # give back the over-estimate
-                self.guard._state["mints"] += 1    # refund() decremented the count
-                self.guard._save()
-        except Exception as e:
-            self.guard.refund(cost)
-            self.stats["failed"] += 1
-            log(f"DECISION SEND FAILED — {type(e).__name__}: {str(e)[:140]}", indent=1)
+        sent = 0
+        for w in armed:
+            try:
+                nonce = int(rpc.raw("eth_getTransactionCount",
+                                    [w["address"], "pending"]), 16)
+                tx = build_mint_tx(rpc, cand.collection, w["address"], qty,
+                                   value_each, nonce)
+                cost = estimate_cost_wei(tx)
+                self.guard.check(cost, tx["maxFeePerGas"],
+                                 wallet_balance_wei=w["balance"].get(chain))
+            except Denied as e:
+                # A global cap stopping the fleet is expected, not an error.
+                log(f"  [{w['index']:>2}] stopped by spend guard — {e}", indent=1)
+                break
+            except Exception as e:
+                log(f"  [{w['index']:>2}] skipped ({type(e).__name__}: "
+                    f"{str(e)[:70]})", indent=1)
+                continue
+
+            # Commit BEFORE broadcasting: a crash must over-count, not under.
+            self.guard.commit(cost)
+            try:
+                h = send_mint(rpc, tx, w["key"])
+                sent += 1
+                log(f"  [{w['index']:>2}] SENT {w['address'][:10]}… tx={h}",
+                    indent=1)
+                r = wait_for_receipt(rpc, h, timeout_s=45)
+                if r is None:
+                    log(f"  [{w['index']:>2}] receipt not seen yet "
+                        f"(may still land)", indent=1)
+                    self.stats["executed"] += 1
+                    continue
+                ok = int(r.get("status", "0x0"), 16) == 1
+                used = int(r.get("gasUsed", "0x0"), 16)
+                price = int(r.get("effectiveGasPrice", "0x0"), 16)
+                actual = value_each + used * price
+                log(f"  [{w['index']:>2}] {'CONFIRMED' if ok else 'REVERTED'}  "
+                    f"gas={used:,}  cost={fmt_eth(actual)}", indent=1)
+                self.stats["executed" if ok else "failed"] += 1
+                w["balance"][chain] = max(0, w["balance"].get(chain, 0) - actual)
+                if cost > actual:
+                    self.guard.refund(cost - actual)
+                    self.guard._state["mints"] += 1   # refund() decremented it
+                    self.guard._save()
+            except Exception as e:
+                self.guard.refund(cost)
+                self.stats["failed"] += 1
+                log(f"  [{w['index']:>2}] SEND FAILED — {type(e).__name__}: "
+                    f"{str(e)[:110]}", indent=1)
+
+        log(f"DECISION fleet complete — {sent}/{len(armed)} transactions sent, "
+            f"{sent * qty} token(s) attempted", indent=1)
 
     # --------------------------------------------------------------- loop
     def heartbeat(self) -> None:
