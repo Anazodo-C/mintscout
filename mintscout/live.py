@@ -20,6 +20,8 @@ plausible candidates, not discarding spam.
 from __future__ import annotations
 
 import os
+import json
+import pathlib
 import signal
 import sys
 import time
@@ -185,6 +187,26 @@ class Runner:
         # OpenSea page fetch per NEW collection (cached forever after), bounded
         # per cycle by SOCIAL_MAX_PER_CYCLE.
         self.social_max_per_cycle = int(os.environ.get("SOCIAL_MAX_PER_CYCLE", "25"))
+        # OPERATOR POLICY (set 2026-09-01): the social signal is the ONLY thing
+        # that may approve a mint. The rubric still runs and is still logged --
+        # it is useful evidence and it gates what is worth a social lookup -- but
+        # a high rubric score alone can no longer authorise spending. This
+        # followed "Rat - The Brokers": rubric 88, NO_SOCIAL, 6.9% filled after
+        # 67 hours.
+        self.require_social = (os.environ.get("REQUIRE_SOCIAL_APPROVAL", "true")
+                               .strip().lower() in ("1", "true", "yes"))
+        # A project reusing one X account across several drops reads as a mill,
+        # not a brand. Once we have minted for a handle we do not mint for it
+        # again.
+        self.skip_repeat_handles = (os.environ.get("SKIP_REPEAT_HANDLES", "true")
+                                    .strip().lower() in ("1", "true", "yes"))
+        # An already-open drop that is not selling is failing in public. This is
+        # present-tense data about a present-tense decision, so it cannot leak.
+        self.stale_hours = float(os.environ.get("STALE_DROP_HOURS", "24"))
+        self.stale_min_fill = float(os.environ.get("STALE_DROP_MIN_FILL", "0.5"))
+        self._handles_path = pathlib.Path(
+            os.environ.get("MINTSCOUT_STATE_DIR", "data")) / "minted_handles.json"
+        self.minted_handles: set[str] = self._load_handles()
         self._social_this_cycle = 0
         self.max_lead_s = int(os.environ.get("MAX_LEAD_SECONDS", "7200"))
         self.guard = SpendGuard()
@@ -290,6 +312,35 @@ class Runner:
                 pass
         return armed, total
 
+    def _load_handles(self) -> set:
+        try:
+            return {h.lower() for h in json.loads(self._handles_path.read_text())}
+        except Exception:
+            return set()
+
+    def _remember_handle(self, handle: str | None) -> None:
+        if not handle:
+            return
+        self.minted_handles.add(handle.lower())
+        try:
+            self._handles_path.parent.mkdir(parents=True, exist_ok=True)
+            self._handles_path.write_text(
+                json.dumps(sorted(self.minted_handles), indent=1))
+        except OSError:
+            pass
+
+    def fill_ratio(self, chain: str, collection: str) -> tuple[float | None, int, int]:
+        """Current fill of a collection: (ratio, total, max). Live read."""
+        rpc = self.rpcs[chain]
+        try:
+            ts = rpc.try_call(collection, C.SEL_TOTAL_SUPPLY)
+            ms = rpc.try_call(collection, C.SEL_MAX_SUPPLY)
+            t = int(ts[:66], 16) if ts else 0
+            m = int(ms[:66], 16) if ms else 0
+            return ((t / m) if m else None), t, m
+        except Exception:
+            return None, 0, 0
+
     def _min_balance_to_mint(self) -> int:
         """Balance a wallet needs to be considered armed.
 
@@ -319,6 +370,12 @@ class Runner:
                 f">= {min_posts()} posts   mode="
                 f"{'AUTO-FLAG (sufficient on its own)' if auto_flag_enabled() else 'gate (confirms only)'}")
             log(f"                  max {self.social_max_per_cycle} lookups/cycle")
+            log(f"approval policy : social signal is "
+                f"{'THE ONLY green flag (rubric cannot approve)' if self.require_social else 'one of several signals'}")
+            log(f"repeat handles  : {'skipped' if self.skip_repeat_handles else 'allowed'}"
+                f"   ({len(self.minted_handles)} handle(s) already minted)")
+            log(f"stale drops     : skip if open >= {self.stale_hours:.0f}h and "
+                f"fill < {self.stale_min_fill:.0%}")
         else:
             log("social gate     : disabled")
         log(f"LLM triage      : {'on' if self.use_llm else 'OFF (deterministic only)'}"
@@ -449,6 +506,37 @@ class Runner:
             log(f"SOCIAL  skipped (SOCIAL_MAX_PER_CYCLE="
                 f"{self.social_max_per_cycle} reached this cycle)", indent=1)
 
+        # ---- rule: one X account, one mint. A handle reused across drops is a
+        # mill, not a brand. TheMerchantt_ had already sold out on a previous
+        # drop when a second appeared under the same account.
+        handle = (social or {}).get("handle")
+        if (self.skip_repeat_handles and handle
+                and handle.lower() in self.minted_handles):
+            self.stats["skip"] += 1
+            self.stats["skipped_repeat_handle"] = \
+                self.stats.get("skipped_repeat_handle", 0) + 1
+            log(f"DECISION SKIP — @{handle} already minted for a previous drop; "
+                f"one X account, one mint", indent=1)
+            return
+
+        # ---- rule: an already-open drop that is not selling is failing in public.
+        # Only applies once the window has opened, so there is nothing to leak:
+        # a future drop has no elapsed time and no fill to measure.
+        if cand.start_time <= int(time.time()):
+            open_h = (int(time.time()) - cand.start_time) / 3600
+            if open_h >= self.stale_hours:
+                ratio, tot, mx = self.fill_ratio(chain, cand.collection)
+                if ratio is not None and ratio < self.stale_min_fill:
+                    self.stats["skip"] += 1
+                    self.stats["skipped_stale"] = \
+                        self.stats.get("skipped_stale", 0) + 1
+                    log(f"DECISION SKIP — open {open_h:.0f}h and only "
+                        f"{tot:,}/{mx:,} = {ratio:.1%} filled "
+                        f"(needs >= {self.stale_min_fill:.0%} after "
+                        f"{self.stale_hours:.0f}h). Demand is not there.",
+                        indent=1)
+                    return
+
         # ---- stage 1: deterministic pre-filter (free)
         det = deterministic_rubric(dossier)
         log(f"FILTER deterministic score={det['score']} verdict={det['verdict']}", indent=1)
@@ -518,15 +606,33 @@ class Runner:
                 f"(set SOCIAL_AUTO_FLAG=false to let the rubric decide)", indent=1)
             verdict = "MINT"
 
+        # The social signal is the only green flag. A strong rubric score is
+        # evidence, not authorisation: it is kept in the log because it is
+        # genuinely informative, but on its own it no longer spends money.
+        if self.require_social and verdict == "MINT" and not social_mint:
+            sflag = (social or {}).get("flag", "NO_SOCIAL")
+            log(f"DECISION SKIP — rubric said MINT (score {score}) but the social "
+                f"signal did not approve [{sflag}]. Social approval is required "
+                f"(REQUIRE_SOCIAL_APPROVAL=true).", indent=1)
+            self.stats["skip"] += 1
+            self.stats["skipped_no_social_approval"] = \
+                self.stats.get("skipped_no_social_approval", 0) + 1
+            return
+
         self.stats[verdict.lower()] = self.stats.get(verdict.lower(), 0) + 1
         if verdict != "MINT":
             log(f"DECISION {verdict} — not minting", indent=1)
             return
 
         now = int(time.time())
+        try:
+            cand._social_handle = handle
+        except Exception:
+            pass
         if cand.start_time > now:
             self.pending[key] = {"chain": chain, "cand": cand,
-                                 "queued_at": now, "score": score}
+                                 "queued_at": now, "score": score,
+                                 "handle": handle}
             log(f"DECISION QUEUED — approved, opens {fmt_in(cand.start_time - now)} "
                 f"at {datetime.fromtimestamp(cand.start_time, timezone.utc):%H:%M UTC}. "
                 f"Verdict is cached; no re-analysis until it fires.", indent=1)
@@ -692,6 +798,10 @@ class Runner:
                 log(f"  [{w['index']:>2}] SEND FAILED — {type(e).__name__}: "
                     f"{str(e)[:110]}", indent=1)
 
+        if sent:
+            h = (getattr(cand, "_social_handle", None)
+                 or (self.pending.get(f"{chain}:{cand.collection}", {}) or {}).get("handle"))
+            self._remember_handle(h)
         log(f"DECISION fleet complete — {sent}/{len(armed)} transactions sent, "
             f"{sent * qty} token(s) attempted", indent=1)
 
