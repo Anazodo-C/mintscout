@@ -326,18 +326,26 @@ class Runner:
     def _min_balance_to_mint(self) -> int:
         """Balance a wallet needs to be considered armed.
 
-        Uses the same expected-cost basis as the spend guard (measured gas x
-        safety margin), not the 260k gas ceiling. Using the ceiling here marked
-        wallets unarmed that could comfortably afford several mints -- the same
-        confusion between a gas LIMIT and a gas PRICE that blocked a live mint.
+        This must match what the NODE requires to accept the transaction, which
+        is the full gas LIMIT times maxFeePerGas -- not the expected cost.
+        Ethereum checks `balance >= gas_limit * maxFeePerGas + value` up front,
+        regardless of how much gas is actually consumed.
+
+        Getting this wrong cost four mints in production: after fixing the spend
+        guard to budget EXPECTED cost (correct -- you are billed for gas used), I
+        wrongly applied the same basis here. Wallets holding 0.000283 ETH passed
+        an armed threshold of 0.000190 and were then rejected by the node, which
+        wanted 0.000329. Two different questions:
+          "what will this cost?"        -> expected gas   (spend guard)
+          "can this wallet send it?"    -> gas LIMIT      (here)
         """
-        from .executor import BUDGET_SAFETY_MARGIN, MEASURED_MINT_GAS
+        from .executor import DEFAULT_MINT_GAS
         try:
             rpc = next(iter(self.rpcs.values()))
             gp = int(rpc.raw("eth_gasPrice", []), 16)
         except Exception:
             gp = 1_000_000_000
-        return int(MEASURED_MINT_GAS * BUDGET_SAFETY_MARGIN) * gp * 2
+        return DEFAULT_MINT_GAS * gp * 2
 
     # ----------------------------------------------------------- startup
     def preflight_config(self) -> bool:

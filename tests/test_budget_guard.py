@@ -141,3 +141,26 @@ def test_expected_cost_includes_mint_value():
     from mintscout.executor import expected_cost_wei
     tx = _tx(value=5 * 10 ** 14)
     assert expected_cost_wei(_GasRpc(est=100_000), tx) > 5 * 10 ** 14
+
+
+def test_armed_threshold_matches_node_requirement(monkeypatch, tmp_path):
+    """A wallet marked armed must actually be able to send.
+
+    Nodes check `balance >= gas_limit * maxFeePerGas + value` up front. Using
+    expected gas here (rather than the limit) marked four wallets armed that the
+    node then rejected with 'insufficient funds', losing four live mints.
+    """
+    monkeypatch.setenv("MINTSCOUT_STATE_DIR", str(tmp_path))
+    monkeypatch.setenv("CHAINS", "robinhood")
+    monkeypatch.setenv("SOCIAL_ENABLED", "false")
+    monkeypatch.delenv("MINT_SEED", raising=False)
+    from mintscout import state as _state
+    monkeypatch.setattr(_state.State, "_SEED", tmp_path / "none.json")
+    from mintscout.executor import DEFAULT_MINT_GAS
+    from mintscout.live import Runner
+
+    r = Runner()
+    gp = 600_000_000
+    for rpc in r.rpcs.values():
+        monkeypatch.setattr(rpc, "raw", lambda m, p=None, **k: hex(gp))
+    assert r._min_balance_to_mint() == DEFAULT_MINT_GAS * gp * 2

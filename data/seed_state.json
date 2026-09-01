@@ -1,6 +1,5 @@
 {
  "handles": [
-  "duckling_nft",
   "themerchantt_",
   "pinienft"
  ],
@@ -31,17 +30,13 @@
   }
  },
  "seeded": {
-  "duckling_nft": {
-   "at": 1788276934,
-   "note": "operator: do not mint @Duckling_nft"
-  },
   "pinienft": {
    "at": 1788276934,
    "note": "PxPinies minted 2026-09-01 before the rule existed"
   },
   "themerchantt_": {
    "at": 1788276934,
-   "note": "operator: sold out on a prior drop; reused handle"
+   "note": "operator: never mint this account again -- reused across drops after selling out"
   }
  },
  "terminal": {}
