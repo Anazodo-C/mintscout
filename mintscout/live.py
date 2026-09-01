@@ -193,6 +193,7 @@ class Runner:
         self.wallet = None
         self._key = None
         self.fleet: list[dict] = []
+        self._last_armed: dict[str, int] = {}
         self.blocked_reason: str | None = None
         self.seen: set[str] = set()
         self.stats = {"candidates": 0, "prefiltered": 0, "triaged": 0,
@@ -256,6 +257,30 @@ class Runner:
                 log(f"[wallet] WARNING {ch}: no wallet holds enough to mint. "
                     f"Run:  mintscout fund --chain {ch} --target-eth 0.002 "
                     f"--wallets {len(self.fleet)} --live")
+
+    def refresh_balances(self, chain: str) -> tuple[int, int]:
+        """Re-read fleet balances. Returns (armed, total_wei).
+
+        Balances were previously read ONCE at startup, so a fleet funded after
+        boot stayed invisible until the next redeploy -- the running process
+        reported '1/5 armed' while four wallets sat funded on-chain. Wallets
+        also drain as they mint, now that no gas reserve is enforced. Five
+        eth_getBalance calls per cycle is a negligible cost for not having to
+        redeploy to notice your own money.
+        """
+        rpc = self.rpcs[chain]
+        min_bal = self._min_balance_to_mint()
+        armed = total = 0
+        for w in self.fleet:
+            try:
+                b = int(rpc.raw("eth_getBalance", [w["address"], "latest"]), 16)
+                w["balance"][chain] = b
+                total += b
+                if b >= min_bal:
+                    armed += 1
+            except Exception:
+                pass
+        return armed, total
 
     def _min_balance_to_mint(self) -> int:
         """Worst-case cost of one mint, used to decide if a wallet is armed."""
@@ -645,6 +670,13 @@ class Runner:
         while not self._stop:
             for chain in self.chains:
                 try:
+                    if self.fleet:
+                        armed, total = self.refresh_balances(chain)
+                        if armed != self._last_armed.get(chain):
+                            log(f"[{_ts()}] [wallet] {chain}: {armed}/"
+                                f"{len(self.fleet)} armed  "
+                                f"fleet total {total / 1e18:.6f} ETH")
+                            self._last_armed[chain] = armed
                     cands = self.watchers[chain].poll(
                         lookback_minutes=self.lookback_min, save=True)
                     for c in cands:
