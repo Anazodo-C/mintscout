@@ -189,8 +189,8 @@ def cmd_sweep(a):
     from .funding import derive_fleet
     from .rpc import client
     from .state import State
-    from .sweep import (TRANSFER_GAS_LIMIT, build_transfer_tx, find_holdings,
-                        plan_sweep)
+    from .sweep import (TRANSFER_GAS_LIMIT, build_transfer_tx,
+                        find_fleet_holdings, plan_sweep)
 
     seed = (os.environ.get("MINT_SEED") or "").strip()
     if not seed:
@@ -218,21 +218,24 @@ def cmd_sweep(a):
     print(f"  collections: {len(cols)}")
 
     fleet = derive_fleet(seed, a.wallets)
+    print(f"  scanning {len(fleet)} wallet(s) x {len(cols)} collection(s) "
+          f"in one pass…")
+    all_held = find_fleet_holdings(rpc, [w[1] for w in fleet], cols)
+
     total_tokens = 0
     plans = []
     skipped_self = 0
     for idx, addr, key in fleet:
-        if addr.lower() == a.to.lower():
-            # Consolidating INTO one of the fleet wallets. Its own tokens are
-            # already at the destination -- a self-transfer would burn gas and
-            # most ERC-721s revert on from == to.
-            held = find_holdings(rpc, addr, cols)
-            skipped_self = sum(len(v) for v in held.values())
-            print(f"  [{idx:>2}] {addr[:12]}… is the DESTINATION — "
-                  f"{skipped_self} token(s) already here, skipped")
-            continue
-        holdings = find_holdings(rpc, addr, cols)
+        holdings = all_held.get(addr.lower(), {})
         n = sum(len(v) for v in holdings.values())
+        if addr.lower() == a.to.lower():
+            # Consolidating INTO one of the fleet wallets: its tokens are
+            # already at the destination. A self-transfer burns gas and most
+            # ERC-721s revert on from == to.
+            skipped_self = n
+            print(f"  [{idx:>2}] {addr[:12]}… is the DESTINATION — "
+                  f"{n} token(s) already here, skipped")
+            continue
         if not n:
             continue
         total_tokens += n

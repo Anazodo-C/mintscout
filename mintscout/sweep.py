@@ -66,6 +66,53 @@ def redact(obj):
 TRANSFER_GAS_LIMIT = 120_000
 
 
+def find_fleet_holdings(rpc, wallets: list[str], collections: list[str],
+                        lookback_blocks: int = 3_000_000
+                        ) -> dict[str, dict[str, list[int]]]:
+    """All holdings for the whole fleet in ONE log scan.
+
+    The per-wallet, per-collection version issued
+    len(wallets) x len(collections) chunked scans -- ~500 requests for a
+    5-wallet, 4-collection fleet, which took minutes. eth_getLogs accepts an
+    address ARRAY and an OR-array on an indexed topic, so every collection and
+    every recipient can be queried together and split client-side.
+
+    Returns {wallet_lower: {collection: [token_ids]}}.
+    """
+    from . import constants as C
+    padded = ["0x" + "0" * 24 + w[2:].lower() for w in wallets]
+    tip = rpc.block_number()
+    frm = max(1, tip - lookback_blocks)
+    try:
+        logs = rpc.get_logs_chunked(list(collections),
+                                    [C.TOPIC_TRANSFER, None, padded], frm, tip)
+    except Exception:
+        return {}
+
+    seen: dict[str, dict[str, set]] = {}
+    for l in logs:
+        if len(l.get("topics", [])) != 4:
+            continue
+        to = "0x" + l["topics"][2][-40:]
+        col = l["address"].lower()
+        seen.setdefault(to.lower(), {}).setdefault(col, set()).add(
+            int(l["topics"][3], 16))
+
+    # Confirm current ownership: a token received and later moved on must not be
+    # offered for sweeping.
+    out: dict[str, dict[str, list[int]]] = {}
+    for w, cols in seen.items():
+        for col, ids in cols.items():
+            held = []
+            for tid in sorted(ids):
+                owner = rpc.try_call(col, C.SEL_OWNER_OF + f"{tid:064x}")
+                if owner and ("0x" + owner[-40:]).lower() == w:
+                    held.append(tid)
+            if held:
+                out.setdefault(w, {})[col] = held
+    return out
+
+
 def find_holdings(rpc, wallet: str, collections: list[str],
                   lookback_blocks: int = 3_000_000) -> dict[str, list[int]]:
     """Token IDs currently held by `wallet`, per collection.
