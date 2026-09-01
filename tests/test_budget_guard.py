@@ -89,3 +89,55 @@ def test_rpc_error_carries_revert_data():
     e = RpcError(3, "execution reverted", "0xe12d2314")
     assert e.data == "0xe12d2314"
     assert RpcError(3, "x").data is None
+
+
+# ------------------------------------------------- expected vs worst-case cost
+class _GasRpc:
+    chain = "robinhood"
+    chain_id = 4663
+
+    def __init__(self, est=None):
+        self._est = est
+
+    def raw(self, method, params, **kw):
+        if method == "eth_estimateGas":
+            if self._est is None:
+                raise RuntimeError("estimateGas unsupported")
+            return hex(self._est)
+        raise AssertionError(method)
+
+
+def _tx(gas_limit=260_000, max_fee=10 ** 9, value=0):
+    return {"to": "0x" + "11" * 20, "from": "0x" + "22" * 20, "data": "0x",
+            "value": value, "gas": gas_limit, "maxFeePerGas": max_fee}
+
+
+def test_expected_cost_is_far_below_the_gas_ceiling():
+    """The bug that blocked a live mint: charging the LIMIT, not the usage."""
+    from mintscout.executor import estimate_cost_wei, expected_cost_wei
+    tx = _tx()
+    worst = estimate_cost_wei(tx)
+    expected = expected_cost_wei(_GasRpc(est=100_254), tx)
+    assert expected < worst
+    assert worst / expected > 1.5, "ceiling should be materially above expected"
+
+
+def test_expected_cost_falls_back_to_measured_median():
+    from mintscout.executor import MEASURED_MINT_GAS, expected_cost_wei
+    tx = _tx()
+    got = expected_cost_wei(_GasRpc(est=None), tx)   # estimateGas unavailable
+    assert got == int(MEASURED_MINT_GAS * 1.5) * tx["maxFeePerGas"]
+
+
+def test_expected_cost_never_exceeds_the_gas_limit():
+    """A wild estimate must not let the budget exceed what the tx can spend."""
+    from mintscout.executor import expected_cost_wei
+    tx = _tx(gas_limit=120_000)
+    got = expected_cost_wei(_GasRpc(est=10 ** 7), tx)
+    assert got <= int(tx["gas"] * 1.5) * tx["maxFeePerGas"]
+
+
+def test_expected_cost_includes_mint_value():
+    from mintscout.executor import expected_cost_wei
+    tx = _tx(value=5 * 10 ** 14)
+    assert expected_cost_wei(_GasRpc(est=100_000), tx) > 5 * 10 ** 14

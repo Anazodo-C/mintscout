@@ -34,7 +34,7 @@ from .agent.social_gate import (auto_flag_enabled, evaluate_social,
 from .eval.baselines import deterministic_rubric
 from .eval.replay import ReplayContext
 from .executor import (DEFAULT_MINT_GAS, build_mint_tx, decode_revert,
-                       estimate_cost_wei, read_public_drop, send_mint,
+                       expected_cost_wei, read_public_drop, send_mint,
                        wait_for_receipt)
 from .rpc import client
 from .watcher import Watcher
@@ -291,13 +291,20 @@ class Runner:
         return armed, total
 
     def _min_balance_to_mint(self) -> int:
-        """Worst-case cost of one mint, used to decide if a wallet is armed."""
+        """Balance a wallet needs to be considered armed.
+
+        Uses the same expected-cost basis as the spend guard (measured gas x
+        safety margin), not the 260k gas ceiling. Using the ceiling here marked
+        wallets unarmed that could comfortably afford several mints -- the same
+        confusion between a gas LIMIT and a gas PRICE that blocked a live mint.
+        """
+        from .executor import BUDGET_SAFETY_MARGIN, MEASURED_MINT_GAS
         try:
             rpc = next(iter(self.rpcs.values()))
             gp = int(rpc.raw("eth_gasPrice", []), 16)
         except Exception:
             gp = 1_000_000_000
-        return DEFAULT_MINT_GAS * gp * 2
+        return int(MEASURED_MINT_GAS * BUDGET_SAFETY_MARGIN) * gp * 2
 
     # ----------------------------------------------------------- startup
     def preflight_config(self) -> bool:
@@ -642,7 +649,7 @@ class Runner:
                                     [w["address"], "pending"]), 16)
                 tx = build_mint_tx(rpc, cand.collection, w["address"], qty,
                                    value_each, nonce)
-                cost = estimate_cost_wei(tx)
+                cost = expected_cost_wei(rpc, tx)
                 self.guard.check(cost, tx["maxFeePerGas"],
                                  wallet_balance_wei=w["balance"].get(chain))
             except Denied as e:

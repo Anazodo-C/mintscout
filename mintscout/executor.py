@@ -272,8 +272,43 @@ def build_mint_tx(rpc: RpcClient, collection: str, minter: str, quantity: int,
 
 
 def estimate_cost_wei(tx: dict) -> int:
-    """Worst-case cost of this transaction: value plus gas at the fee ceiling."""
+    """Absolute worst case: value plus the full gas LIMIT at the fee ceiling.
+
+    Kept for reference, but this is NOT what the spend guard should charge --
+    see expected_cost_wei. `tx["gas"]` is a ceiling on consumption, not a price:
+    you are billed for gas USED. Charging the limit reserves ~5x the real cost
+    and blocks mints that would comfortably fit the budget.
+    """
     return int(tx["value"]) + int(tx["gas"]) * int(tx["maxFeePerGas"])
+
+
+# Measured median across 60 live SeaDrop mint receipts on Robinhood. Used when
+# eth_estimateGas is unavailable -- far closer to reality than the gas limit.
+MEASURED_MINT_GAS = 100_254
+BUDGET_SAFETY_MARGIN = 1.5
+
+
+def expected_cost_wei(rpc: RpcClient, tx: dict) -> int:
+    """What this transaction will realistically cost, for budget accounting.
+
+    Uses eth_estimateGas (with `from`, so the estimate is for the real sender),
+    falls back to the measured median, and applies a 1.5x margin.
+
+    Why not the gas limit: a mint uses ~100k gas but carries a 260k limit for
+    safety. Charging the limit at the 2x fee ceiling reserves ~5x the true cost,
+    and in production that blocked a genuine approved mint for exceeding a
+    per-mint cap by 5% -- on money that would never have been spent. The limit
+    still protects the transaction; it just should not masquerade as a price.
+    """
+    try:
+        est = int(rpc.raw("eth_estimateGas", [{
+            "to": tx["to"], "from": tx["from"], "data": tx["data"],
+            "value": hex(int(tx["value"])),
+        }]), 16)
+    except Exception:
+        est = MEASURED_MINT_GAS
+    est = min(est, int(tx["gas"]))          # never budget above the ceiling
+    return int(tx["value"]) + int(est * BUDGET_SAFETY_MARGIN) * int(tx["maxFeePerGas"])
 
 
 def send_mint(rpc: RpcClient, tx: dict, private_key: str) -> str:
