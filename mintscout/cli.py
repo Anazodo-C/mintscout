@@ -220,7 +220,17 @@ def cmd_sweep(a):
     fleet = derive_fleet(seed, a.wallets)
     total_tokens = 0
     plans = []
+    skipped_self = 0
     for idx, addr, key in fleet:
+        if addr.lower() == a.to.lower():
+            # Consolidating INTO one of the fleet wallets. Its own tokens are
+            # already at the destination -- a self-transfer would burn gas and
+            # most ERC-721s revert on from == to.
+            held = find_holdings(rpc, addr, cols)
+            skipped_self = sum(len(v) for v in held.values())
+            print(f"  [{idx:>2}] {addr[:12]}… is the DESTINATION — "
+                  f"{skipped_self} token(s) already here, skipped")
+            continue
         holdings = find_holdings(rpc, addr, cols)
         n = sum(len(v) for v in holdings.values())
         if not n:
@@ -232,7 +242,8 @@ def cmd_sweep(a):
                   f"{len(ids)} token(s): {ids[:8]}{'…' if len(ids) > 8 else ''}")
 
     if not total_tokens:
-        print("  nothing to sweep — no tokens found in the fleet.")
+        print(f"  nothing to move — no tokens outside the destination"
+              + (f" ({skipped_self} already there)" if skipped_self else "") + ".")
         return 0
     cost = total_tokens * TRANSFER_GAS_LIMIT * gas_price * 2
     print(f"\n  {total_tokens} token(s) across {len(plans)} wallet(s)")
