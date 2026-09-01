@@ -27,7 +27,7 @@ import traceback
 from datetime import datetime, timezone
 
 from . import constants as C
-from .budget import Denied, SpendGuard, is_live
+from .budget import Denied, SpendGuard, is_live, volume_check
 from .enrich import ToolRecorder, build_dossier
 from .agent.social_gate import (auto_flag_enabled, evaluate_social,
                                 format_social_line, social_enabled)
@@ -232,6 +232,16 @@ class Runner:
             if not warn[1]:
                 log(f"  WARNING {warn[0]} is not set — that limit is NOT enforced",
                     indent=1)
+        v = volume_check()
+        icon = "OK " if v["persisted"] else ("!! " if not v["writable"] else "?? ")
+        log(f"state volume    : {icon}{v['state_dir']}  boots={v['boots']}  "
+            f"writable={v['writable']}")
+        log(f"                  {v['detail']}")
+        if not v["writable"]:
+            log("                  SPEND STATE CANNOT BE SAVED — caps will not "
+                "survive a restart. Mount a Railway volume at this path.")
+        elif not v["persisted"]:
+            log("                  (expected on a genuinely first deploy)")
         self.load_wallet()
         if self.live:
             if not self._key:

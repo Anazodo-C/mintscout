@@ -1,0 +1,211 @@
+{
+  "arm": "mintscout",
+  "drop": {
+    "chain": "robinhood",
+    "collection": "0xa0f40bfcf06061d59c028dd4009aefdce37f84e9",
+    "start_time": 1787436660,
+    "cap": 12,
+    "mint_price_wei": 0,
+    "fixture_name": null
+  },
+  "decision_cutoff_ts": 1787436660,
+  "tool_calls": [
+    {
+      "tool": "erc165_probe",
+      "input": {
+        "collection": "0xa0f40bfcf06061d59c028dd4009aefdce37f84e9"
+      },
+      "output": {
+        "standard": "erc721",
+        "is_erc721": true,
+        "is_erc1155": false,
+        "answers_ownerof_and_balanceof": false,
+        "note": null
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "collection_stats",
+      "input": {
+        "collection": "0xa0f40bfcf06061d59c028dd4009aefdce37f84e9"
+      },
+      "output": {
+        "max_supply": 7500,
+        "owner": "0xfc40855ab6ee5eef204f86d09c83be588e002523",
+        "name": "DeepDivers",
+        "symbol": "DEEPDIVERS",
+        "code_size": 19805,
+        "max_supply_sane": true
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "metadata_fetch",
+      "input": {
+        "allow_network": false
+      },
+      "output": {
+        "present": true,
+        "shape": "drop_stage_config",
+        "name": null,
+        "description": null,
+        "n_attributes": 0,
+        "has_image": false,
+        "image_is_on_chain": false,
+        "token_bound_account": false,
+        "n_stages": 1,
+        "stage_names": [
+          "PUBLIC"
+        ],
+        "has_allowlist_stage": false,
+        "has_public_stage": true,
+        "note": "operator configured this drop through the standard OpenSea flow. Token art metadata does not exist pre-open for ANY drop, so its absence here is not a negative.",
+        "drop_uri": "ipfs://bafkreiatoqekdlpvcthpfy74cwrue2p3y6qmrglivsfskzzcuxphwwn3sy",
+        "contract_uri": "ipfs://QmSfcV2AYKZTh8TWDXkMoNVmSY2uWtbWsavY2wgyGS2LMH",
+        "source": "drop_uri",
+        "on_chain_metadata": false,
+        "provenance": "pinned",
+        "contract_uri_present": true
+      },
+      "ms": 0.4
+    },
+    {
+      "tool": "erc6551_probe",
+      "input": {},
+      "output": {
+        "token_bound_account": false,
+        "source": "metadata field"
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "economics",
+      "input": {},
+      "output": {
+        "mint_price_wei": 0,
+        "is_free": true,
+        "max_per_wallet": 12,
+        "fee_bps": 1000,
+        "restrict_fee_recipients": true,
+        "duration_hours": 1.0,
+        "starts_in_s": 3437,
+        "advance_notice_s": 3437
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "drop_config_history",
+      "input": {},
+      "output": {
+        "n_revisions_before_cutoff": 4,
+        "distinct_prices": [
+          0
+        ],
+        "price_flips": 0,
+        "revisions": [
+          {
+            "mint_price": 0,
+            "start_time": 1787436660,
+            "end_time": 1787440260,
+            "max_per_wallet": 12,
+            "block_timestamp": 1787433223
+          },
+          {
+            "mint_price": 0,
+            "start_time": 1787520060,
+            "end_time": 1787523660,
+            "max_per_wallet": 7,
+            "block_timestamp": 1787433532
+          },
+          {
+            "mint_price": 0,
+            "start_time": 1787520060,
+            "end_time": 1787523660,
+            "max_per_wallet": 7,
+            "block_timestamp": 1787433561
+          },
+          {
+            "mint_price": 0,
+            "start_time": 1787433660,
+            "end_time": 1787437260,
+            "max_per_wallet": 7,
+            "block_timestamp": 1787433949
+          }
+        ]
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "mint_velocity",
+      "input": {},
+      "output": {
+        "available": false,
+        "mints_per_min": null,
+        "reason": "decision point is at/before startTime; no mint has occurred yet. Outcome signal, not a feature."
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "deployer_history",
+      "input": {},
+      "output": {
+        "deployer": "0xfc40855ab6ee5eef204f86d09c83be588e002523",
+        "known": false,
+        "prior_collections": 0,
+        "prior_high_value": 0,
+        "note": "first time this deployer has been seen"
+      },
+      "ms": 0.0
+    }
+  ],
+  "triage": {
+    "verdict": "MINT",
+    "score": 78,
+    "reasons": [
+      "Large contract implementation (19,805 bytes) indicates real development effort, not spam proxy",
+      "Four configuration revisions before cutoff shows deliberate operator engagement",
+      "Sane supply (7,500) with free mint and reasonable per-wallet limit"
+    ],
+    "risk_flags": [
+      "First-time deployer with no track record",
+      "Short 1-hour mint window may limit participation"
+    ]
+  },
+  "verifier": {
+    "agreed": false,
+    "objections": [
+      {
+        "target": "verdict: MINT",
+        "problem": "First-time deployer with zero prior high-value drops is a major red flag that outweighs the positive signals. The 4% base rate for high-value free drops means MINT requires exceptionally strong evidence. While code_size and config revisions are positive, they don't overcome the complete absence of operator track record. This should be WATCH to see if post-open velocity validates the technical signals.",
+        "severity": "major"
+      },
+      {
+        "target": "evidence item: metadata.shape as neutral",
+        "problem": "Metadata.shape: drop_stage_config is actually positive evidence (present in 100% of high-value drops vs 45% of others per instructions), not neutral. Triage correctly didn't penalize its absence but mislabeled its significance.",
+        "severity": "minor"
+      }
+    ],
+    "final_verdict": "WATCH",
+    "confidence": 72,
+    "vetoed": true
+  },
+  "action": {
+    "mode": "dry_run",
+    "wallets": 0,
+    "achievable": 0,
+    "gas_wei": 0
+  },
+  "outcome": {
+    "label": "high_value",
+    "label_detail": {
+      "fill_ratio": 1.0,
+      "fill_ok": true,
+      "unique_minters": 1103,
+      "minters_ok": true,
+      "secondary_transfers_48h": 8,
+      "secondary_ok": true,
+      "label": "high_value"
+    },
+    "note": "outcome is NEVER visible to the agent; shown here only for post-hoc scoring."
+  }
+}

@@ -1,0 +1,155 @@
+{
+  "arm": "single_prompt_llm",
+  "drop": {
+    "chain": "robinhood",
+    "collection": "0x178004c8e21831e79ec234149e70d47c26db007a",
+    "start_time": 1787308882,
+    "cap": 1,
+    "mint_price_wei": 0,
+    "fixture_name": null
+  },
+  "decision_cutoff_ts": 1787308882,
+  "tool_calls": [
+    {
+      "tool": "erc165_probe",
+      "input": {
+        "collection": "0x178004c8e21831e79ec234149e70d47c26db007a"
+      },
+      "output": {
+        "standard": "erc721",
+        "is_erc721": true,
+        "is_erc1155": false,
+        "answers_ownerof_and_balanceof": false,
+        "note": null
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "collection_stats",
+      "input": {
+        "collection": "0x178004c8e21831e79ec234149e70d47c26db007a"
+      },
+      "output": {
+        "max_supply": 10000,
+        "owner": "0xaedb73a9f4ad3564b1d626abdb801e8a2df00aea",
+        "name": "Rekt Tradooor by rektguy",
+        "symbol": "8453",
+        "code_size": 45,
+        "max_supply_sane": true
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "metadata_fetch",
+      "input": {
+        "allow_network": false
+      },
+      "output": {
+        "present": false,
+        "shape": null,
+        "name": null,
+        "description": null,
+        "n_attributes": 0,
+        "has_image": false,
+        "token_bound_account": false,
+        "n_stages": 0,
+        "drop_uri": null,
+        "contract_uri": "",
+        "source": null,
+        "on_chain_metadata": false,
+        "provenance": "absent",
+        "contract_uri_present": false
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "erc6551_probe",
+      "input": {},
+      "output": {
+        "token_bound_account": false,
+        "source": "metadata field"
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "economics",
+      "input": {},
+      "output": {
+        "mint_price_wei": 0,
+        "is_free": true,
+        "max_per_wallet": 1,
+        "fee_bps": 1000,
+        "restrict_fee_recipients": true,
+        "duration_hours": 0.08,
+        "starts_in_s": -45,
+        "advance_notice_s": 0
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "drop_config_history",
+      "input": {},
+      "output": {
+        "n_revisions_before_cutoff": 0,
+        "distinct_prices": [],
+        "price_flips": 0,
+        "revisions": []
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "mint_velocity",
+      "input": {},
+      "output": {
+        "available": false,
+        "mints_per_min": null,
+        "reason": "decision point is at/before startTime; no mint has occurred yet. Outcome signal, not a feature."
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "deployer_history",
+      "input": {},
+      "output": {
+        "deployer": "0xaedb73a9f4ad3564b1d626abdb801e8a2df00aea",
+        "known": true,
+        "prior_collections": 1,
+        "prior_high_value": 0,
+        "prior_high_value_rate": 0.0,
+        "last_seen_ts": 1787308587
+      },
+      "ms": 0.0
+    }
+  ],
+  "triage": {
+    "verdict": "MINT",
+    "score": 85,
+    "reasons": [
+      "Created by rektguy - a well-known and respected NFT artist/brand in the space",
+      "Free mint with only gas costs (0 wei mint price)",
+      "Limited to 1 per wallet, preventing botting and ensuring fair distribution",
+      "Reasonable supply of 10,000 items"
+    ],
+    "risk_flags": []
+  },
+  "verifier": null,
+  "action": {
+    "mode": "dry_run",
+    "wallets": 20,
+    "achievable": 20,
+    "gas_wei": 341763880920000
+  },
+  "outcome": {
+    "label": "low_value",
+    "label_detail": {
+      "fill_ratio": 0.0027,
+      "fill_ok": false,
+      "unique_minters": 23,
+      "minters_ok": false,
+      "secondary_transfers_48h": 0,
+      "secondary_ok": false,
+      "label": "low_value"
+    },
+    "note": "outcome is NEVER visible to the agent; shown here only for post-hoc scoring."
+  }
+}

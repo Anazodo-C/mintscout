@@ -154,6 +154,68 @@ class SpendGuard:
         }
 
 
+def volume_status() -> dict:
+    """Read-only view of the volume marker. Safe to call on every request.
+
+    Kept separate from volume_check() because that one INCREMENTS the boot
+    counter -- wiring the incrementing version into the /status endpoint would
+    have added a "boot" per HTTP request and made the number meaningless.
+    """
+    d = pathlib.Path(os.environ.get("MINTSCOUT_STATE_DIR", "data"))
+    marker = d / ".volume_check.json"
+    out = {"state_dir": str(d), "writable": os.access(d, os.W_OK),
+           "boots": 0, "persisted": False, "first_boot": None}
+    try:
+        if marker.exists():
+            prev = json.loads(marker.read_text())
+            out["boots"] = int(prev.get("boots", 0))
+            out["first_boot"] = prev.get("first_boot")
+            out["last_boot"] = prev.get("last_boot")
+            out["persisted"] = out["boots"] > 1
+    except Exception:
+        pass
+    return out
+
+
+def volume_check() -> dict:
+    """Prove whether the state directory actually persists across restarts.
+
+    Checking that /data is *writable* is not enough -- an unmounted container
+    path is writable too, it just evaporates on restart. The only definitive
+    test is a boot counter: if it survives a redeploy and increments, the volume
+    is real. If it reads 1 on every boot, you are writing to ephemeral container
+    storage and MAX_TOTAL_SPEND_WEI stops meaning anything across a crash-loop.
+    """
+    d = pathlib.Path(os.environ.get("MINTSCOUT_STATE_DIR", "data"))
+    marker = d / ".volume_check.json"
+    out = {"state_dir": str(d), "writable": False, "boots": 0,
+           "persisted": False, "first_boot": None, "detail": ""}
+    try:
+        d.mkdir(parents=True, exist_ok=True)
+        prev = {}
+        if marker.exists():
+            try:
+                prev = json.loads(marker.read_text())
+            except ValueError:
+                prev = {}
+        out["boots"] = int(prev.get("boots", 0)) + 1
+        out["first_boot"] = prev.get("first_boot") or int(time.time())
+        out["persisted"] = out["boots"] > 1
+        marker.write_text(json.dumps({"boots": out["boots"],
+                                      "first_boot": out["first_boot"],
+                                      "last_boot": int(time.time())}, indent=1))
+        out["writable"] = True
+        if out["persisted"]:
+            out["detail"] = (f"state survived {out['boots'] - 1} restart(s) — "
+                             f"volume is mounted and persisting")
+        else:
+            out["detail"] = ("first boot at this path. Restart once and re-check: "
+                             "if boots stays 1, the volume is NOT mounted")
+    except Exception as e:
+        out["detail"] = f"NOT WRITABLE ({type(e).__name__}: {e})"
+    return out
+
+
 def is_live() -> bool:
     """Live execution requires BOTH switches. Default is always dry-run."""
     dry = (os.environ.get("DRY_RUN", "true") or "true").strip().lower()

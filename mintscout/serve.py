@@ -17,6 +17,7 @@ import threading
 import time
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 
+from .budget import volume_status
 from .live import Runner, log
 
 _started = time.time()
@@ -53,6 +54,7 @@ class Handler(BaseHTTPRequestHandler):
                 "prefilter_min_score": r.prefilter_min,
                 "stats": r.stats,
                 "budget": r.guard.summary,
+                "volume": volume_status(),   # read-only: must NOT increment
                 "limits": r.guard.limits.as_dict(),
             })
         return self._send(404, {"ok": False})

@@ -51,6 +51,33 @@ design: it would rather skip ten mediocre drops than mint them. Judge it on
 > and your total-spend cap silently stops meaning anything. A crash-loop could
 > then spend your cap repeatedly.
 
+#### Confirming the volume is actually mounted
+
+Checking that `/data` is *writable* proves nothing — an unmounted container path
+is writable too, it just evaporates on restart. So the runner keeps a boot
+counter at `/data/.volume_check.json` and prints it at startup:
+
+```
+state volume    : OK /data  boots=4  writable=True
+                  state survived 3 restart(s) — volume is mounted and persisting
+```
+
+**How to read it:**
+
+| Startup line | Meaning |
+|---|---|
+| `boots=1` … *first boot at this path* | Expected on a genuinely first deploy. **Restart once and look again.** |
+| `boots` increments across restarts | ✅ The volume is real and persisting. |
+| `boots` stays at **1** after a restart | ❌ **Not mounted.** You are writing to ephemeral storage — the spend cap will reset on every restart. Fix before going live. |
+| `!!` … `NOT WRITABLE` | ❌ The path cannot be written at all; spend state is never saved. |
+
+The same data is on `GET /status` under `volume` (read-only there — it does not
+increment the counter).
+
+So the full check is: **deploy, note `boots`, hit Restart in Railway, and confirm
+`boots` went up.** In the Railway UI it should also appear under
+Service → Settings → Volumes with mount path `/data`.
+
 ### 1.2 Variables
 
 Set these in Railway → Variables. **Start in dry-run** (the defaults) and only

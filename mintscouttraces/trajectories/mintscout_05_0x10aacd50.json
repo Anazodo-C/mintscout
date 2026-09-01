@@ -1,0 +1,199 @@
+{
+  "arm": "mintscout",
+  "drop": {
+    "chain": "robinhood",
+    "collection": "0x10aacd50d283d860bcbdb30a76247bb6fc9895d2",
+    "start_time": 1787503646,
+    "cap": 2,
+    "mint_price_wei": 0,
+    "fixture_name": null
+  },
+  "decision_cutoff_ts": 1787503646,
+  "tool_calls": [
+    {
+      "tool": "erc165_probe",
+      "input": {
+        "collection": "0x10aacd50d283d860bcbdb30a76247bb6fc9895d2"
+      },
+      "output": {
+        "standard": "erc721",
+        "is_erc721": true,
+        "is_erc1155": false,
+        "answers_ownerof_and_balanceof": false,
+        "note": null
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "collection_stats",
+      "input": {
+        "collection": "0x10aacd50d283d860bcbdb30a76247bb6fc9895d2"
+      },
+      "output": {
+        "max_supply": 5000,
+        "owner": "0x801be09df7df9b55ff6c285f4a6a8a4fb7d24393",
+        "name": "Blokes On Robinhood",
+        "symbol": "Bor",
+        "code_size": 45,
+        "max_supply_sane": true
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "metadata_fetch",
+      "input": {
+        "allow_network": false
+      },
+      "output": {
+        "present": true,
+        "shape": "drop_stage_config",
+        "name": null,
+        "description": null,
+        "n_attributes": 0,
+        "has_image": false,
+        "image_is_on_chain": false,
+        "token_bound_account": false,
+        "n_stages": 3,
+        "stage_names": [
+          "Public stage",
+          "GTD",
+          "WL"
+        ],
+        "has_allowlist_stage": false,
+        "has_public_stage": true,
+        "note": "operator configured this drop through the standard OpenSea flow. Token art metadata does not exist pre-open for ANY drop, so its absence here is not a negative.",
+        "drop_uri": "ipfs://bafkreiahidehhxrvej7b6mw52jlk746abrlez7crph6r56a2f7afs3r24a",
+        "contract_uri": "",
+        "source": "drop_uri",
+        "on_chain_metadata": false,
+        "provenance": "pinned",
+        "contract_uri_present": false
+      },
+      "ms": 0.8
+    },
+    {
+      "tool": "erc6551_probe",
+      "input": {},
+      "output": {
+        "token_bound_account": false,
+        "source": "metadata field"
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "economics",
+      "input": {},
+      "output": {
+        "mint_price_wei": 0,
+        "is_free": true,
+        "max_per_wallet": 2,
+        "fee_bps": 1000,
+        "restrict_fee_recipients": true,
+        "duration_hours": 6.0,
+        "starts_in_s": 39,
+        "advance_notice_s": 39
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "drop_config_history",
+      "input": {},
+      "output": {
+        "n_revisions_before_cutoff": 1,
+        "distinct_prices": [
+          0
+        ],
+        "price_flips": 0,
+        "revisions": [
+          {
+            "mint_price": 0,
+            "start_time": 1787503646,
+            "end_time": 1787525246,
+            "max_per_wallet": 2,
+            "block_timestamp": 1787503607
+          }
+        ]
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "mint_velocity",
+      "input": {},
+      "output": {
+        "available": false,
+        "mints_per_min": null,
+        "reason": "decision point is at/before startTime; no mint has occurred yet. Outcome signal, not a feature."
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "deployer_history",
+      "input": {},
+      "output": {
+        "deployer": "0x801be09df7df9b55ff6c285f4a6a8a4fb7d24393",
+        "known": true,
+        "prior_collections": 1,
+        "prior_high_value": 0,
+        "prior_high_value_rate": 0.0,
+        "last_seen_ts": 1787381769
+      },
+      "ms": 0.0
+    }
+  ],
+  "triage": {
+    "verdict": "MINT",
+    "score": 72,
+    "reasons": [
+      "Three named mint stages (Public, GTD, WL) indicate existing community structure to reward",
+      "Sane supply of 5000 with reasonable 2-per-wallet limit shows deliberate configuration",
+      "Free mint with 6-hour window and advance notice suggests organized drop"
+    ],
+    "risk_flags": [
+      "Minimal proxy (45 bytes) with no custom implementation",
+      "Only 1 config revision before cutoff shows limited iteration",
+      "Deployer has no prior high-value drops (0/1 rate)"
+    ]
+  },
+  "verifier": {
+    "agreed": false,
+    "objections": [
+      {
+        "target": "verdict: MINT",
+        "problem": "The positive evidence does not overcome the red flags. A minimal proxy (45 bytes) is the strongest available negative signal\u2014it means no custom logic, just a clone. The deployer has zero prior high-value drops (0/1). Named stages and sane supply are good, but they are configuration choices that cost nothing to make. Against a minimal proxy and an unproven deployer, they do not clear the ~4% base rate bar for MINT.",
+        "severity": "major"
+      },
+      {
+        "target": "evidence: collection.code_size as negative",
+        "problem": "Correctly identified as negative, but then underweighted in the verdict. A 45-byte minimal proxy is not just 'limited'\u2014it is the floor. It means this is a clone with zero custom implementation. That should be disqualifying for MINT absent extraordinary compensating evidence (which is not present here).",
+        "severity": "major"
+      },
+      {
+        "target": "score: 72",
+        "problem": "A score of 72 (solidly MINT territory) is inconsistent with the risk flags cited. If the contract is a minimal proxy and the deployer is unproven, the score should reflect that uncertainty\u2014likely WATCH range (50-69), not MINT.",
+        "severity": "major"
+      }
+    ],
+    "final_verdict": "WATCH",
+    "confidence": 78,
+    "vetoed": true
+  },
+  "action": {
+    "mode": "dry_run",
+    "wallets": 0,
+    "achievable": 0,
+    "gas_wei": 0
+  },
+  "outcome": {
+    "label": "high_value",
+    "label_detail": {
+      "fill_ratio": 1.0,
+      "fill_ok": true,
+      "unique_minters": 1138,
+      "minters_ok": true,
+      "secondary_transfers_48h": 5,
+      "secondary_ok": true,
+      "label": "high_value"
+    },
+    "note": "outcome is NEVER visible to the agent; shown here only for post-hoc scoring."
+  }
+}

@@ -1,0 +1,198 @@
+{
+  "arm": "mintscout",
+  "drop": {
+    "chain": "robinhood",
+    "collection": "0xa766deb036a3c468501b4ca0a80d055461758255",
+    "start_time": 1787542943,
+    "cap": 1,
+    "mint_price_wei": 0,
+    "fixture_name": null
+  },
+  "decision_cutoff_ts": 1787542943,
+  "tool_calls": [
+    {
+      "tool": "erc165_probe",
+      "input": {
+        "collection": "0xa766deb036a3c468501b4ca0a80d055461758255"
+      },
+      "output": {
+        "standard": "erc721",
+        "is_erc721": true,
+        "is_erc1155": false,
+        "answers_ownerof_and_balanceof": false,
+        "note": null
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "collection_stats",
+      "input": {
+        "collection": "0xa766deb036a3c468501b4ca0a80d055461758255"
+      },
+      "output": {
+        "max_supply": 999,
+        "owner": "0xcef36a5df7986c280949d35ac1b9762bb1a7c7b2",
+        "name": "Juan The Horse",
+        "symbol": "juanthehorse",
+        "code_size": 45,
+        "max_supply_sane": true
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "metadata_fetch",
+      "input": {
+        "allow_network": false
+      },
+      "output": {
+        "present": true,
+        "shape": "drop_stage_config",
+        "name": null,
+        "description": null,
+        "n_attributes": 0,
+        "has_image": false,
+        "image_is_on_chain": false,
+        "token_bound_account": false,
+        "n_stages": 3,
+        "stage_names": [
+          "Public stage",
+          "Horses",
+          "Cows"
+        ],
+        "has_allowlist_stage": false,
+        "has_public_stage": true,
+        "note": "operator configured this drop through the standard OpenSea flow. Token art metadata does not exist pre-open for ANY drop, so its absence here is not a negative.",
+        "drop_uri": "ipfs://bafkreifpnrhlqdiznhuhsfxztticja6tk53nhviheer2gcjnwdnzvrd2zm",
+        "contract_uri": "",
+        "source": "drop_uri",
+        "on_chain_metadata": false,
+        "provenance": "pinned",
+        "contract_uri_present": false
+      },
+      "ms": 0.2
+    },
+    {
+      "tool": "erc6551_probe",
+      "input": {},
+      "output": {
+        "token_bound_account": false,
+        "source": "metadata field"
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "economics",
+      "input": {},
+      "output": {
+        "mint_price_wei": 0,
+        "is_free": true,
+        "max_per_wallet": 1,
+        "fee_bps": 1000,
+        "restrict_fee_recipients": true,
+        "duration_hours": 0.5,
+        "starts_in_s": 2013,
+        "advance_notice_s": 2013
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "drop_config_history",
+      "input": {},
+      "output": {
+        "n_revisions_before_cutoff": 1,
+        "distinct_prices": [
+          0
+        ],
+        "price_flips": 0,
+        "revisions": [
+          {
+            "mint_price": 0,
+            "start_time": 1787542943,
+            "end_time": 1787544743,
+            "max_per_wallet": 1,
+            "block_timestamp": 1787540930
+          }
+        ]
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "mint_velocity",
+      "input": {},
+      "output": {
+        "available": false,
+        "mints_per_min": null,
+        "reason": "decision point is at/before startTime; no mint has occurred yet. Outcome signal, not a feature."
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "deployer_history",
+      "input": {},
+      "output": {
+        "deployer": "0xcef36a5df7986c280949d35ac1b9762bb1a7c7b2",
+        "known": true,
+        "prior_collections": 1,
+        "prior_high_value": 1,
+        "prior_high_value_rate": 1.0,
+        "last_seen_ts": 1787498943
+      },
+      "ms": 0.0
+    }
+  ],
+  "triage": {
+    "verdict": "MINT",
+    "score": 78,
+    "reasons": [
+      "Deployer has 100% prior success rate (1/1 high-value drops)",
+      "Three named mint stages suggest structured community distribution",
+      "Standard drop configuration with reasonable supply and free mint"
+    ],
+    "risk_flags": [
+      "Minimal proxy (45 bytes) suggests low deployment effort",
+      "Only 1 config revision before cutoff shows limited iteration"
+    ]
+  },
+  "verifier": {
+    "agreed": false,
+    "objections": [
+      {
+        "target": "evidence item: collection.code_size as negative",
+        "problem": "Code size of 45 bytes is cited as negative evidence ('minimal proxy suggests low deployment effort'), but this is the standard OpenSea Shared Storefront proxy pattern used by virtually all drops on this platform. It is not a signal of low effort\u2014it is the normal deployment method. This is a misinterpretation of what code_size means in this context.",
+        "severity": "major"
+      },
+      {
+        "target": "risk_flag: only 1 config revision",
+        "problem": "Penalizing 1 revision is inconsistent with the evidence. The drop was configured with 3 named stages (Public/Horses/Cows), which demonstrates deliberate planning. A single comprehensive configuration is not evidence of 'limited iteration'\u2014it may simply mean the operator got it right the first time.",
+        "severity": "minor"
+      },
+      {
+        "target": "overall verdict logic",
+        "problem": "The score of 78 and MINT verdict rest primarily on deployer track record (1.0 rate from 1 prior drop) and named stages. While these are real signals, a 100% rate from n=1 is extremely thin evidence\u2014it could easily be noise. The verdict overstates confidence given the small sample size.",
+        "severity": "major"
+      }
+    ],
+    "final_verdict": "WATCH",
+    "confidence": 65,
+    "vetoed": true
+  },
+  "action": {
+    "mode": "dry_run",
+    "wallets": 0,
+    "achievable": 0,
+    "gas_wei": 0
+  },
+  "outcome": {
+    "label": "low_value",
+    "label_detail": {
+      "fill_ratio": 0.996,
+      "fill_ok": true,
+      "unique_minters": 995,
+      "minters_ok": true,
+      "secondary_transfers_48h": 0,
+      "secondary_ok": false,
+      "label": "low_value"
+    },
+    "note": "outcome is NEVER visible to the agent; shown here only for post-hoc scoring."
+  }
+}

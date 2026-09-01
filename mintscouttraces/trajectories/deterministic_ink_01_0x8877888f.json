@@ -1,0 +1,188 @@
+{
+  "arm": "deterministic",
+  "drop": {
+    "chain": "ink",
+    "collection": "0x8877888f125e9b59b9bca7c96bcbe5bad5bfbd07",
+    "start_time": 1787512549,
+    "cap": 2,
+    "mint_price_wei": 0,
+    "fixture_name": null
+  },
+  "decision_cutoff_ts": 1787512549,
+  "tool_calls": [
+    {
+      "tool": "erc165_probe",
+      "input": {
+        "collection": "0x8877888f125e9b59b9bca7c96bcbe5bad5bfbd07"
+      },
+      "output": {
+        "standard": "erc721",
+        "is_erc721": true,
+        "is_erc1155": false,
+        "answers_ownerof_and_balanceof": false,
+        "note": null
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "collection_stats",
+      "input": {
+        "collection": "0x8877888f125e9b59b9bca7c96bcbe5bad5bfbd07"
+      },
+      "output": {
+        "max_supply": 5353,
+        "owner": "0x54dd164f6f5a683176c2ec6de98d48588dd6b62f",
+        "name": "Weird Ink",
+        "symbol": "WINK",
+        "code_size": 19658,
+        "max_supply_sane": true
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "metadata_fetch",
+      "input": {
+        "allow_network": false
+      },
+      "output": {
+        "present": true,
+        "shape": "drop_stage_config",
+        "name": null,
+        "description": null,
+        "n_attributes": 0,
+        "has_image": false,
+        "image_is_on_chain": false,
+        "token_bound_account": false,
+        "n_stages": 3,
+        "stage_names": [
+          "A-Z",
+          "Weird",
+          "X-Z"
+        ],
+        "has_allowlist_stage": false,
+        "has_public_stage": false,
+        "note": "operator configured this drop through the standard OpenSea flow. Token art metadata does not exist pre-open for ANY drop, so its absence here is not a negative.",
+        "drop_uri": "ipfs://bafkreif44dusomdejoskxnvht7xvk4gaaxjti5n6hcn7elhydwr3gvsh5i",
+        "contract_uri": "",
+        "source": "drop_uri",
+        "on_chain_metadata": false,
+        "provenance": "pinned",
+        "contract_uri_present": false
+      },
+      "ms": 0.1
+    },
+    {
+      "tool": "erc6551_probe",
+      "input": {},
+      "output": {
+        "token_bound_account": false,
+        "source": "metadata field"
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "economics",
+      "input": {},
+      "output": {
+        "mint_price_wei": 0,
+        "is_free": true,
+        "max_per_wallet": 2,
+        "fee_bps": 1000,
+        "restrict_fee_recipients": true,
+        "duration_hours": 24.0,
+        "starts_in_s": 2163,
+        "advance_notice_s": 2163
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "drop_config_history",
+      "input": {},
+      "output": {
+        "n_revisions_before_cutoff": 3,
+        "distinct_prices": [
+          0,
+          200000000000000
+        ],
+        "price_flips": 1,
+        "revisions": [
+          {
+            "mint_price": 200000000000000,
+            "start_time": 1787512549,
+            "end_time": 1787598949,
+            "max_per_wallet": 2,
+            "block_timestamp": 1787505923
+          },
+          {
+            "mint_price": 200000000000000,
+            "start_time": 1787512549,
+            "end_time": 1787598949,
+            "max_per_wallet": 2,
+            "block_timestamp": 1787505971
+          },
+          {
+            "mint_price": 0,
+            "start_time": 1787512549,
+            "end_time": 1787598949,
+            "max_per_wallet": 2,
+            "block_timestamp": 1787510386
+          }
+        ]
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "mint_velocity",
+      "input": {},
+      "output": {
+        "available": false,
+        "mints_per_min": null,
+        "reason": "decision point is at/before startTime; no mint has occurred yet. Outcome signal, not a feature."
+      },
+      "ms": 0.0
+    },
+    {
+      "tool": "deployer_history",
+      "input": {},
+      "output": {
+        "deployer": "0x54dd164f6f5a683176c2ec6de98d48588dd6b62f",
+        "known": false,
+        "prior_collections": 0,
+        "prior_high_value": 0,
+        "note": "first time this deployer has been seen"
+      },
+      "ms": 0.0
+    }
+  ],
+  "triage": {
+    "verdict": "MINT",
+    "score": 100,
+    "reasons": [
+      "drop metadata resolves (configured through the standard flow)",
+      "contract is a full implementation (19,658 bytes), not a 45-byte minimal proxy",
+      "3 config revisions before open (operator effort)",
+      "supply 5,353 in the plausible band"
+    ],
+    "risk_flags": []
+  },
+  "verifier": null,
+  "action": {
+    "mode": "dry_run",
+    "wallets": 20,
+    "achievable": 40,
+    "gas_wei": 341763880920000
+  },
+  "outcome": {
+    "label": "high_value",
+    "label_detail": {
+      "fill_ratio": 1.0,
+      "fill_ok": true,
+      "unique_minters": 2616,
+      "minters_ok": true,
+      "secondary_transfers_48h": 295,
+      "secondary_ok": true,
+      "label": "high_value"
+    },
+    "note": "outcome is NEVER visible to the agent; shown here only for post-hoc scoring."
+  }
+}
