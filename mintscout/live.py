@@ -356,8 +356,14 @@ class Runner:
         log(f"pre-filter      : deterministic score >= {self.prefilter_min} before LLM")
         if social_enabled():
             from .agent.social_gate import min_followers, min_posts
-            log(f"social gate     : >= {min_followers():,} followers and "
-                f">= {min_posts()} posts   mode="
+            from .agent.social_gate import min_code_size, verified_path_enabled
+            log(f"social gate     : TWO green flags, either approves —")
+            log(f"                  A) >= {min_followers():,} followers AND "
+                f">= {min_posts()} posts")
+            log(f"                  B) VERIFIED account AND code_size > "
+                f"{min_code_size():,}"
+                + ("" if verified_path_enabled() else "   [B DISABLED]"))
+            log(f"                  mode="
                 f"{'AUTO-FLAG (sufficient on its own)' if auto_flag_enabled() else 'gate (confirms only)'}")
             log(f"                  max {self.social_max_per_cycle} lookups/cycle")
             log(f"approval policy : social signal is "
@@ -499,7 +505,10 @@ class Runner:
         if social_enabled() and self._social_this_cycle < self.social_max_per_cycle:
             self._social_this_cycle += 1
             try:
-                social = evaluate_social(chain, cand.collection)
+                # code_size feeds the verified+contract gate; it comes from the
+                # dossier already built above, so this costs no extra RPC.
+                _cs = (dossier.get("collection") or {}).get("code_size")
+                social = evaluate_social(chain, cand.collection, code_size=_cs)
                 log(format_social_line(chain, cand.collection, social), indent=1)
             except Exception as e:
                 log(f"SOCIAL  lookup error ({type(e).__name__}) — ignored", indent=1)
@@ -551,10 +560,23 @@ class Runner:
         social_mint = bool(social and social.get("flag") == "MINT")
         if social_mint:
             self.stats["social_autoflag"] = self.stats.get("social_autoflag", 0) + 1
-            log(f"SOCIAL  AUTO-FLAG MINT — @{social['handle']} "
-                f"{social['followers']:,} followers, {social['posts']} posts "
-                f"(thresholds {social['thresholds']['followers']}/"
-                f"{social['thresholds']['posts']}); bypasses pre-filter "
+            _p = social.get("approval_path") or "reach"
+            _why = {
+                "reach": (f"@{social['handle']} {(social['followers'] or 0):,} "
+                          f"followers, {social['posts']} posts "
+                          f"(>= {social['thresholds']['followers']}/"
+                          f"{social['thresholds']['posts']})"),
+                "verified+contract": (
+                    f"@{social['handle']} VERIFIED and code_size "
+                    f"{(social.get('code_size') or 0):,} > "
+                    f"{social['thresholds']['code_size']:,}"),
+                "reach+verified": (
+                    f"@{social['handle']} passes BOTH gates: "
+                    f"{(social['followers'] or 0):,} followers/"
+                    f"{social['posts']} posts AND verified with code_size "
+                    f"{(social.get('code_size') or 0):,}"),
+            }.get(_p, "")
+            log(f"SOCIAL  AUTO-FLAG MINT [{_p}] — {_why}; bypasses pre-filter "
                 f"and cannot be downgraded", indent=1)
 
         if det["score"] < self.prefilter_min and not social_mint:

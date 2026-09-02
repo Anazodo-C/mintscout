@@ -5,6 +5,8 @@ with no credentials and no external calls.
 """
 from __future__ import annotations
 
+import json
+
 import pytest
 
 from mintscout import social
@@ -148,4 +150,68 @@ def test_evaluate_social_never_raises(monkeypatch):
     monkeypatch.setattr(social, "_http_get", explode)
     s = social_gate.evaluate_social(CHAIN, ADDR)
     assert s["flag"] in social_gate.FLAGS
+    assert s["meets_thresholds"] is False
+
+
+# ---------------------------------------- two independent approval gates
+def _profile(monkeypatch, followers, posts, verified):
+    monkeypatch.setattr(social, "_http_get", _fake_http([
+        (200, '<html>"twitterUsername":"proj"</html>'),
+        (200, json.dumps({"followers": followers, "posts": posts,
+                          "verified": verified, "fetchedAt": "now"})),
+    ]))
+
+
+def test_gate_A_reach_alone_approves(monkeypatch):
+    _profile(monkeypatch, 1000, 10, False)
+    s = social_gate.evaluate_social(CHAIN, ADDR, code_size=45)
+    assert s["meets_thresholds"] is True
+    assert s["approval_path"] == "reach"
+
+
+def test_gate_B_verified_plus_contract_approves(monkeypatch):
+    """UNDEADLINES shape: only 283 followers, verified, real contract.
+
+    Gate A rejects it; it carried 98% of all secondary volume measured.
+    """
+    _profile(monkeypatch, 283, 86, True)
+    s = social_gate.evaluate_social(CHAIN, ADDR, code_size=20565)
+    assert s["meets_thresholds"] is True
+    assert s["approval_path"] == "verified+contract"
+    assert s["meets_reach"] is False
+
+
+def test_verified_without_a_real_contract_is_rejected(monkeypatch):
+    """Verification alone must not approve a 45-byte minimal proxy."""
+    _profile(monkeypatch, 100, 5, True)
+    s = social_gate.evaluate_social(CHAIN, ADDR, code_size=45)
+    assert s["meets_thresholds"] is False
+    assert s["flag"] == "BELOW"
+
+
+def test_big_contract_without_verification_is_rejected(monkeypatch):
+    """code_size alone is not a green flag -- it must pair with verification."""
+    _profile(monkeypatch, 100, 5, False)
+    s = social_gate.evaluate_social(CHAIN, ADDR, code_size=20000)
+    assert s["meets_thresholds"] is False
+
+
+def test_both_gates_together_reported(monkeypatch):
+    _profile(monkeypatch, 5000, 50, True)
+    s = social_gate.evaluate_social(CHAIN, ADDR, code_size=19658)
+    assert s["approval_path"] == "reach+verified"
+
+
+def test_verified_path_can_be_disabled(monkeypatch):
+    monkeypatch.setenv("SOCIAL_VERIFIED_PATH", "false")
+    _profile(monkeypatch, 283, 86, True)
+    s = social_gate.evaluate_social(CHAIN, ADDR, code_size=20565)
+    assert s["meets_thresholds"] is False, "gate B must be switchable off"
+
+
+def test_missing_code_size_falls_back_to_reach_only(monkeypatch):
+    """If code_size is unknown, gate B cannot fire -- it must not assume."""
+    _profile(monkeypatch, 283, 86, True)
+    s = social_gate.evaluate_social(CHAIN, ADDR, code_size=None)
+    assert s["meets_verified"] is False
     assert s["meets_thresholds"] is False
