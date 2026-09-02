@@ -117,6 +117,9 @@ def _http_get(url: str, params: dict | None = None, timeout: int = 15,
 
 
 _TW_RE = re.compile(r'"twitterUsername"\s*:\s*"([A-Za-z0-9_]{1,15})"')
+# The collection slug is needed for the (unauthenticated) stats endpoint. The
+# v2 API returns it but needs a key, so it is also read from the public page.
+_SLUG_RE = re.compile(r'"slug"\s*:\s*"([a-z0-9][a-z0-9-]{1,80})"')
 _NAME_RE = re.compile(r'"collectionName"\s*:\s*"([^"]{1,60})"')
 
 
@@ -187,6 +190,10 @@ def opensea_profile(chain: str, address: str) -> dict:
             code3, html = _http_get(out["opensea_url"],
                                     headers={"accept": "text/html"}, timeout=25)
             if code3 == 200 and html:
+                if not out.get("slug"):
+                    sm = _SLUG_RE.search(html)
+                    if sm:
+                        out["slug"] = sm.group(1)
                 m = _TW_RE.search(html)
                 if m:
                     out["twitter_username"] = m.group(1)
