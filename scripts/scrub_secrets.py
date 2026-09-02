@@ -32,6 +32,9 @@ def main() -> int:
         for i, line in enumerate(text.splitlines(), 1):
             if "MINT_SEED=" in line and line.split("=", 1)[1].strip():
                 bad.append((f, str(i), "MINT_SEED has a value"))
+            for var in ("OPENSEA_API_KEY", "ANTHROPIC_API_KEY", "TWITTERAPI_IO_KEY"):
+                if f"{var}=" in line and line.split("=", 1)[1].strip():
+                    bad.append((f, str(i), f"{var} has a value"))
             if MNEMONIC.search(line.lower()) and "seed" in line.lower():
                 bad.append((f, str(i), "looks like a BIP-39 mnemonic"))
             for m in HEX_KEY.finditer(line):

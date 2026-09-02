@@ -22,7 +22,10 @@ import argparse, json, os, pathlib, sys
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1]))
 from concurrent.futures import ThreadPoolExecutor
 
+from mintscout.cli import _load_dotenv   # so OPENSEA_API_KEY in .env just works
 from mintscout.social import _http_get
+
+_load_dotenv()
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 BASE = "https://api.opensea.io/api/v2"
