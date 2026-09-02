@@ -223,6 +223,8 @@ class Runner:
         # drop on every poll -- 40+ dossiers a minute for one answer that does
         # not change.
         self.pending: dict[str, dict] = {}
+        self._queue_path = pathlib.Path(
+            os.environ.get("MINTSCOUT_STATE_DIR", "data")) / "pending_queue.json"
         self.blocked_reason: str | None = None
         self.seen: set[str] = set()
         self.stats = {"candidates": 0, "prefiltered": 0, "triaged": 0,
@@ -421,6 +423,7 @@ class Runner:
                 mins = gap / 60
                 log(f"                  previous boot {mins:.0f}m ago — "
                     f"steady, not a restart loop.")
+        self._load_queue()
         self.load_wallet()
         if self.live:
             # NOTE: none of these conditions exits the process any more.
@@ -656,6 +659,7 @@ class Runner:
             self.pending[key] = {"chain": chain, "cand": cand,
                                  "queued_at": now, "score": score,
                                  "handle": handle}
+            self._save_queue()
             log(f"DECISION QUEUED — approved, opens {fmt_in(cand.start_time - now)} "
                 f"at {datetime.fromtimestamp(cand.start_time, timezone.utc):%H:%M UTC}. "
                 f"Verdict is cached; no re-analysis until it fires.", indent=1)
@@ -839,6 +843,58 @@ class Runner:
             f"{sent * qty} token(s) attempted", indent=1)
 
     # --------------------------------------------------------------- loop
+    def _save_queue(self) -> None:
+        """Persist approved-but-unopened drops so a redeploy keeps them.
+
+        Verdicts are cached precisely so they need not be recomputed; losing the
+        queue on every push threw that away and forced a full rescan to
+        rediscover drops already judged.
+        """
+        try:
+            self._queue_path.parent.mkdir(parents=True, exist_ok=True)
+            out = {}
+            for k, v in self.pending.items():
+                c = v["cand"]
+                out[k] = {"chain": v["chain"], "queued_at": v["queued_at"],
+                          "score": v.get("score"), "handle": v.get("handle"),
+                          "cand": {"collection": c.collection,
+                                   "mint_price": c.mint_price,
+                                   "start_time": c.start_time,
+                                   "end_time": c.end_time,
+                                   "max_per_wallet": c.max_per_wallet,
+                                   "fee_bps": c.fee_bps,
+                                   "restrict_fee_recipients":
+                                       c.restrict_fee_recipients,
+                                   "drop_uri": c.drop_uri}}
+            tmp = self._queue_path.with_suffix(".tmp")
+            tmp.write_text(json.dumps(out, indent=1))
+            tmp.replace(self._queue_path)
+        except OSError:
+            pass
+
+    def _load_queue(self) -> None:
+        """Restore the queue, dropping anything whose window already closed."""
+        from .watcher import DropCandidate
+        try:
+            raw = json.loads(self._queue_path.read_text())
+        except Exception:
+            return
+        now = int(time.time())
+        kept = 0
+        for k, v in raw.items():
+            c = v.get("cand") or {}
+            if (c.get("end_time") or 0) <= now:
+                continue                       # window closed while we were down
+            self.pending[k] = {
+                "chain": v["chain"], "queued_at": v.get("queued_at", now),
+                "score": v.get("score"), "handle": v.get("handle"),
+                "cand": DropCandidate(chain=v["chain"], **c)}
+            self.seen.add(k)                   # do not re-analyse it
+            kept += 1
+        if kept:
+            log(f"[queue] restored {kept} approved drop(s) from the volume — "
+                f"no re-analysis needed")
+
     def fire_due(self) -> None:
         """Execute queued drops whose window has opened. No re-analysis.
 
@@ -852,12 +908,14 @@ class Runner:
             cand = item["cand"]
             if cand.end_time <= now:
                 del self.pending[key]
+                self._save_queue()
                 log(f"[{_ts()}] EXPIRED  {cand.collection} — window closed "
                     f"before it could be minted")
                 continue
             if cand.start_time > now:
                 continue
             del self.pending[key]
+            self._save_queue()
             log("")
             rule()
             log(f"[{_ts()}] FIRING QUEUED DROP  {cand.collection}  "

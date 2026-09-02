@@ -10,6 +10,7 @@ history is retained, because repeated price flips are themselves a risk signal.
 from __future__ import annotations
 
 import json
+import os
 import pathlib
 import time
 from dataclasses import asdict, dataclass
@@ -19,7 +20,12 @@ from .decode import decode_drop_uri_updated, decode_public_drop_updated
 from .rpc import RpcClient, client
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
-STATE = ROOT / "data/watcher_state.json"
+# The cursor MUST live on the persistent volume. Kept under the repo's data/
+# directory it sat inside the container image, so every redeploy forgot where
+# the tail had reached and re-scanned the whole LOOKBACK_MINUTES window -- 60+
+# candidates and several minutes of work to rediscover drops already judged.
+STATE = pathlib.Path(os.environ.get("MINTSCOUT_STATE_DIR",
+                                    str(ROOT / "data"))) / "watcher_state.json"
 
 
 @dataclass

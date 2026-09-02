@@ -154,3 +154,59 @@ def test_fill_ratio_computes_correctly(runner, monkeypatch):
     ratio, tot, mx = runner.fill_ratio("robinhood", "0x" + "cd" * 20)
     assert (tot, mx) == (154, 2222)
     assert abs(ratio - 0.0693) < 0.001, "the Rat - The Brokers case"
+
+
+# ------------------------------------------ queue and cursor persistence
+def test_queue_survives_a_restart(runner, tmp_path, monkeypatch):
+    """A push auto-deploys, so an approved drop must not need re-analysis."""
+    import time as _t
+    from mintscout.watcher import DropCandidate
+    now = int(_t.time())
+    c = DropCandidate(chain="robinhood", collection="0x" + "ab" * 20,
+                      mint_price=0, start_time=now + 3600, end_time=now + 7200,
+                      max_per_wallet=2, fee_bps=1000,
+                      restrict_fee_recipients=True)
+    runner.pending["robinhood:" + c.collection] = {
+        "chain": "robinhood", "cand": c, "queued_at": now, "score": 88,
+        "handle": "someproj"}
+    runner._save_queue()
+
+    monkeypatch.setenv("MINTSCOUT_STATE_DIR", str(tmp_path))
+    from mintscout.live import Runner
+    fresh = Runner()
+    fresh._load_queue()
+    assert len(fresh.pending) == 1
+    restored = next(iter(fresh.pending.values()))
+    assert restored["score"] == 88
+    assert restored["cand"].max_per_wallet == 2
+    # and it must not be re-analysed
+    assert "robinhood:" + c.collection in fresh.seen
+
+
+def test_expired_drops_are_not_restored(runner, tmp_path, monkeypatch):
+    import time as _t
+    from mintscout.watcher import DropCandidate
+    now = int(_t.time())
+    c = DropCandidate(chain="robinhood", collection="0x" + "cd" * 20,
+                      mint_price=0, start_time=now - 7200, end_time=now - 3600,
+                      max_per_wallet=1, fee_bps=1000,
+                      restrict_fee_recipients=True)
+    runner.pending["robinhood:" + c.collection] = {
+        "chain": "robinhood", "cand": c, "queued_at": now, "score": 50,
+        "handle": None}
+    runner._save_queue()
+
+    monkeypatch.setenv("MINTSCOUT_STATE_DIR", str(tmp_path))
+    from mintscout.live import Runner
+    fresh = Runner()
+    fresh._load_queue()
+    assert fresh.pending == {}, "a window that closed while down must be dropped"
+
+
+def test_watcher_cursor_lives_on_the_volume(tmp_path, monkeypatch):
+    """Kept in the image, the cursor reset on every deploy and forced a rescan."""
+    monkeypatch.setenv("MINTSCOUT_STATE_DIR", str(tmp_path))
+    import importlib
+    from mintscout import watcher as w
+    importlib.reload(w)
+    assert str(w.STATE).startswith(str(tmp_path))
