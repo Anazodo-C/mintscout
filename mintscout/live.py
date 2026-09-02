@@ -106,6 +106,17 @@ def fmt_limit(wei: int | None) -> str:
     return f"{wei / 1e18:.6f} ETH"
 
 
+def fmt_dur(seconds: float) -> str:
+    """A bare duration. fmt_in() renders a whole phrase ("OPEN (started 22m
+    ago)"), so reusing it mid-sentence produced "…started 22m ago) ago"."""
+    seconds = abs(seconds)
+    if seconds < 90:
+        return f"{seconds:.0f}s"
+    if seconds < 5400:
+        return f"{seconds / 60:.0f}m"
+    return f"{seconds / 3600:.1f}h"
+
+
 def fmt_in(seconds: int) -> str:
     if seconds < 0:
         return f"OPEN (started {-seconds // 60}m ago)"
@@ -167,6 +178,11 @@ class Runner:
         self.chains = [c.strip() for c in
                        (os.environ.get("CHAINS") or "robinhood").split(",") if c.strip()]
         self.poll_s = float(os.environ.get("POLL_INTERVAL_S", "60"))
+        # Wake this far before a queued drop opens. startTime is known minutes
+        # ahead, so firing must be scheduled against it -- not rounded up to the
+        # next poll tick. pxgators opened 16:00:00, fire_due() next ran at
+        # 16:00:49, and all 5,555 were gone by then.
+        self.fire_lead_s = float(os.environ.get("FIRE_LEAD_S", "1.5"))
         self.lookback_min = float(os.environ.get("LOOKBACK_MINUTES", "20"))
         self.prefilter_min = int(os.environ.get("PREFILTER_MIN_SCORE", "45"))
         self.use_llm = (os.environ.get("USE_LLM", "true").lower()
@@ -228,7 +244,8 @@ class Runner:
         self.blocked_reason: str | None = None
         self.seen: set[str] = set()
         self.stats = {"candidates": 0, "prefiltered": 0, "triaged": 0,
-                      "mint": 0, "watch": 0, "skip": 0, "executed": 0, "failed": 0}
+                      "mint": 0, "watch": 0, "skip": 0, "executed": 0, "failed": 0,
+                      "worst_late_s": 0.0}
         self._stop = False
         signal.signal(signal.SIGTERM, self._sig)
         signal.signal(signal.SIGINT, self._sig)
@@ -912,15 +929,22 @@ class Runner:
                 log(f"[{_ts()}] EXPIRED  {cand.collection} — window closed "
                     f"before it could be minted")
                 continue
-            if cand.start_time > now:
-                continue
+            wait = cand.start_time - time.time()
+            if wait > self.fire_lead_s:
+                continue                       # not this cycle
+            if wait > 0:
+                # Woken deliberately early: sleep out the remainder so the
+                # first RPC lands on the open, not up to a poll late.
+                time.sleep(wait)
             del self.pending[key]
             self._save_queue()
             log("")
             rule()
+            late = time.time() - cand.start_time
+            self.stats["worst_late_s"] = max(self.stats["worst_late_s"], late)
             log(f"[{_ts()}] FIRING QUEUED DROP  {cand.collection}  "
-                f"(approved {fmt_in(-(now - item['queued_at']))} ago, "
-                f"score {item['score']})")
+                f"(approved {fmt_dur(time.time() - item['queued_at'])} earlier, "
+                f"firing {late:+.2f}s vs open, score {item['score']})")
             try:
                 self.execute(item["chain"], cand, {})
             except Exception:
@@ -941,6 +965,9 @@ class Runner:
         log(f"executed={s['executed']}  failed={s['failed']}  "
             f"spent={b['spent_eth']} / {b['budget_eth']} ETH  "
             f"mints={b['mints']}/{b['max_mints']}", indent=1)
+        if s.get("worst_late_s"):
+            log(f"worst fire lateness vs startTime: "
+                f"{s['worst_late_s']:+.2f}s", indent=1)
         if s.get("gas_saved_wei"):
             log(f"wasted gas avoided by pre-flight: "
                 f"{s['gas_saved_wei'] / 1e18:.8f} ETH", indent=1)
@@ -950,6 +977,26 @@ class Runner:
                 f"window; next {nxt['cand'].collection[:12]} in "
                 f"{fmt_in(nxt['cand'].start_time - int(time.time()))}", indent=1)
         rule()
+
+    def _next_wake_at(self) -> float:
+        """When to wake: the poll interval, or the next drop's open if sooner.
+
+        A flat sleep quantises every known startTime up to the next tick, which
+        is the latency the startTime scheduling exists to remove.
+        """
+        now = time.time()
+        wake = now + self.poll_s
+        for item in self.pending.values():
+            wake = min(wake, float(item["cand"].start_time) - self.fire_lead_s)
+        return max(now, wake)
+
+    def _sleep_until(self, deadline: float) -> None:
+        """Interruptible sleep; SIGTERM must still stop us within ~a second."""
+        while not self._stop:
+            left = deadline - time.time()
+            if left <= 0:
+                return
+            time.sleep(min(1.0, left))
 
     def run(self) -> int:
         if not self.preflight_config():
@@ -979,10 +1026,7 @@ class Runner:
                 self.heartbeat()
                 last_hb = time.time()
             self._social_this_cycle = 0
-            for _ in range(int(self.poll_s)):
-                if self._stop:
-                    break
-                time.sleep(1)
+            self._sleep_until(self._next_wake_at())
         self.heartbeat()
         log("stopped cleanly.")
         return 0

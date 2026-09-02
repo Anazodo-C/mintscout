@@ -210,3 +210,61 @@ def test_watcher_cursor_lives_on_the_volume(tmp_path, monkeypatch):
     from mintscout import watcher as w
     importlib.reload(w)
     assert str(w.STATE).startswith(str(tmp_path))
+
+
+# ------------------------------------------ firing on startTime, not the tick
+def _queued(runner, start_in: float, key="k"):
+    import time as _t
+    from mintscout.watcher import DropCandidate
+    now = _t.time()
+    c = DropCandidate(chain="robinhood", collection="0x" + "ef" * 20,
+                      mint_price=0, start_time=int(now + start_in),
+                      end_time=int(now + 86400), max_per_wallet=2,
+                      fee_bps=1000, restrict_fee_recipients=True)
+    runner.pending[key] = {"chain": "robinhood", "cand": c,
+                           "queued_at": int(now), "score": 88, "handle": "h"}
+    return c
+
+
+def test_wake_is_scheduled_on_the_next_open_not_the_poll_interval(runner):
+    """A flat sleep rounded every known startTime up to the next tick.
+
+    pxgators opened at 16:00:00; fire_due() next ran at 16:00:49 and all 5,555
+    were already gone.
+    """
+    import time as _t
+    runner.poll_s = 60.0
+    runner.fire_lead_s = 1.5
+    _queued(runner, start_in=10.0)
+    sleep_for = runner._next_wake_at() - _t.time()
+    assert sleep_for < 12, f"would sleep {sleep_for:.0f}s past a drop opening"
+    assert 8 < sleep_for <= 9.0 or sleep_for <= 10
+
+
+def test_far_off_drops_do_not_shorten_the_poll(runner):
+    import time as _t
+    runner.poll_s = 60.0
+    _queued(runner, start_in=7200.0)
+    assert runner._next_wake_at() - _t.time() > 55
+
+
+def test_no_pending_means_a_plain_poll(runner):
+    import time as _t
+    runner.poll_s = 60.0
+    assert runner._next_wake_at() - _t.time() > 55
+
+
+def test_fire_due_skips_a_drop_outside_the_lead_window(runner):
+    runner.fire_lead_s = 1.5
+    _queued(runner, start_in=30.0)
+    runner.fire_due()
+    assert len(runner.pending) == 1, "fired before its window opened"
+
+
+def test_fmt_dur_is_a_bare_duration(runner):
+    """fmt_in renders a phrase, so mid-sentence it produced '…22m ago) ago'."""
+    from mintscout.live import fmt_dur, fmt_in
+    assert fmt_dur(-1320) == "22m"
+    assert "ago" not in fmt_dur(-1320)
+    assert fmt_dur(45) == "45s"
+    assert "ago)" in fmt_in(-1320)      # unchanged for its own use
