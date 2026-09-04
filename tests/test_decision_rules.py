@@ -343,3 +343,75 @@ def test_balance_of_returns_none_on_failure_not_zero():
 def test_supply_headroom_reads_both_values():
     from mintscout.executor import supply_headroom
     assert supply_headroom(_FakeRpc([3333, 3333], []), "0xc") == (3333, 3333)
+
+
+# ------------------------------------------ pre-open checks and nonce stagger
+def _q(runner, key, start_in, col_byte="aa"):
+    import time as _t
+    from mintscout.watcher import DropCandidate
+    now = _t.time()
+    c = DropCandidate(chain="robinhood", collection="0x" + col_byte * 20,
+                      mint_price=0, start_time=int(now + start_in),
+                      end_time=int(now + 86400), max_per_wallet=1,
+                      fee_bps=1000, restrict_fee_recipients=True)
+    runner.pending[key] = {"chain": "robinhood", "cand": c,
+                           "queued_at": int(now), "score": 0, "handle": None}
+    return c
+
+
+def test_sold_out_drop_is_disarmed_before_the_open(runner, monkeypatch):
+    """Kenji Origins: all 3,333 gone via whitelist before the public phase."""
+    import mintscout.live as L
+    c = _q(runner, "k1", start_in=2)
+    monkeypatch.setattr(L, "supply_headroom", lambda rpc, col: (3333, 3333))
+    assert runner.preopen_ok("robinhood", "k1", c) is False
+    assert "k1" not in runner.pending, "must not stay queued"
+
+
+def test_drop_with_headroom_is_armed(runner, monkeypatch):
+    import mintscout.live as L
+    c = _q(runner, "k2", start_in=2)
+    monkeypatch.setattr(L, "supply_headroom", lambda rpc, col: (10, 10000))
+    monkeypatch.setattr(type(runner), "refresh_balances",
+                        lambda self, ch: (5, 5 * 10**15))
+    assert runner.preopen_ok("robinhood", "k2", c) is True
+    assert "k2" in runner.pending
+
+
+def test_unfunded_fleet_is_disarmed_at_the_open(runner, monkeypatch):
+    """Balances are otherwise only as fresh as the last poll cycle."""
+    import mintscout.live as L
+    c = _q(runner, "k3", start_in=2)
+    monkeypatch.setattr(L, "supply_headroom", lambda rpc, col: (10, 10000))
+    monkeypatch.setattr(type(runner), "refresh_balances",
+                        lambda self, ch: (0, 0))
+    assert runner.preopen_ok("robinhood", "k3", c) is False
+    assert "k3" not in runner.pending
+
+
+def test_contract_without_supply_getters_still_arms(runner, monkeypatch):
+    import mintscout.live as L
+    c = _q(runner, "k4", start_in=2)
+    monkeypatch.setattr(L, "supply_headroom", lambda rpc, col: (None, None))
+    monkeypatch.setattr(type(runner), "refresh_balances",
+                        lambda self, ch: (5, 5 * 10**15))
+    assert runner.preopen_ok("robinhood", "k4", c) is True
+
+
+def test_colliding_start_times_are_staggered(runner, monkeypatch):
+    """Same start time = same pending nonce read per wallet = collision."""
+    import time as _t
+    runner.fire_stagger_s = 0.25
+    runner.preopen_check_s = 0
+    now = _t.time()
+    a = _q(runner, "d1", start_in=0.05, col_byte="a1")
+    b = _q(runner, "d2", start_in=0.05, col_byte="b2")
+    b.start_time = a.start_time            # exact collision
+    fired = []
+    monkeypatch.setattr(type(runner), "execute",
+                        lambda self, ch, cand, d: fired.append(_t.time()))
+    _t.sleep(0.1)
+    runner.fire_due()
+    assert len(fired) == 2, "both drops must still fire"
+    gap = fired[1] - fired[0]
+    assert gap >= 0.2, f"fired {gap:.3f}s apart; nonces could collide"

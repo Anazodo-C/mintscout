@@ -193,6 +193,9 @@ class Runner:
         # public-stage fire at 19:30 hit an empty collection. Read supply just
         # before the open so an exhausted drop is disarmed, not armed.
         self.preopen_check_s = float(os.environ.get("PREOPEN_CHECK_S", "5"))
+        # Two drops sharing a start time would read the same pending nonce for
+        # each wallet and collide. Fire them this far apart instead.
+        self.fire_stagger_s = float(os.environ.get("FIRE_STAGGER_S", "0.4"))
         self.lookback_min = float(os.environ.get("LOOKBACK_MINUTES", "20"))
         self.prefilter_min = int(os.environ.get("PREFILTER_MIN_SCORE", "45"))
         self.use_llm = (os.environ.get("USE_LLM", "true").lower()
@@ -1027,8 +1030,12 @@ class Runner:
         model. That is the whole point of scheduling on startTime.
         """
         now = int(time.time())
-        for key, item in list(self.pending.items()):
+        # Fire in start-time order so a stagger is applied to the later drop.
+        due = sorted(self.pending.items(), key=lambda kv: kv[1]["cand"].start_time)
+        fired_this_pass = 0
+        for key, item in due:
             cand = item["cand"]
+            chain = item["chain"]
             if cand.end_time <= now:
                 del self.pending[key]
                 self._save_queue()
@@ -1039,35 +1046,27 @@ class Runner:
             if wait > self.fire_lead_s:
                 continue                       # not this cycle
 
-            # Just before the open, ask whether anything is left. A staged drop
-            # can be fully distributed through its whitelist stages before the
-            # public phase starts, in which case arming the fleet is pointless.
-            if self.preopen_check_s > 0:
-                ts, ms = supply_headroom(self.rpcs[chain], cand.collection)
-                if ts is not None and ms:
-                    if ts >= ms:
-                        del self.pending[key]
-                        self._save_queue()
-                        self.state.mark_terminal(
-                            chain, cand.collection,
-                            "MintQuantityExceedsMaxSupply (pre-open check)")
-                        log("")
-                        rule()
-                        log(f"[{_ts()}] DISARMED  {cand.collection}")
-                        log(f"sold out before its public phase opened — "
-                            f"{ts:,}/{ms:,} minted. Fleet not armed, no gas "
-                            f"spent.", indent=1)
-                        rule()
-                        continue
-                    log(f"[{_ts()}] pre-open supply check {cand.collection[:12]}…"
-                        f" {ts:,}/{ms:,} minted — {ms - ts:,} left, arming",
-                        indent=1)
+            if self.preopen_check_s > 0 and not self.preopen_ok(chain, key, cand):
+                continue
+
             if wait > 0:
                 # Woken deliberately early: sleep out the remainder so the
                 # first RPC lands on the open, not up to a poll late.
                 time.sleep(wait)
+
+            # Two drops sharing a start time would have their fleets read the
+            # same pending nonce for each wallet and collide. Space them so
+            # every wallet's second transaction sees the first already in the
+            # mempool and takes the next nonce.
+            if fired_this_pass:
+                log(f"[{_ts()}] staggering {self.fire_stagger_s:.2f}s — another "
+                    f"drop fired this pass; separate nonces per wallet",
+                    indent=1)
+                time.sleep(self.fire_stagger_s)
+
             del self.pending[key]
             self._save_queue()
+            fired_this_pass += 1
             log("")
             rule()
             late = time.time() - cand.start_time
@@ -1076,10 +1075,60 @@ class Runner:
                 f"(approved {fmt_dur(time.time() - item['queued_at'])} earlier, "
                 f"firing {late:+.2f}s vs open, score {item['score']})")
             try:
-                self.execute(item["chain"], cand, {})
+                self.execute(chain, cand, {})
             except Exception:
                 log("[error] queued execution failed:")
                 traceback.print_exc()
+
+    def preopen_ok(self, chain: str, key: str, cand) -> bool:
+        """Checks run seconds before the open. False disarms the drop.
+
+        Two questions, both cheap and both answered against live state rather
+        than what was true when the drop was queued:
+
+          * is there any supply left? A staged drop can be fully distributed
+            through its whitelist stages before the public phase opens. Kenji
+            Origins sold all 3,333 between 16:02 and 18:30 and we armed five
+            wallets into an empty collection at 19:30.
+          * can the wallets actually pay? Balances are otherwise only refreshed
+            on the poll cycle, so the guard could be comparing against a number
+            up to a minute stale.
+        """
+        rpc = self.rpcs[chain]
+        ts, ms = supply_headroom(rpc, cand.collection)
+        if ts is not None and ms:
+            if ts >= ms:
+                del self.pending[key]
+                self._save_queue()
+                self.state.mark_terminal(
+                    chain, cand.collection,
+                    "MintQuantityExceedsMaxSupply (pre-open check)")
+                log("")
+                rule()
+                log(f"[{_ts()}] DISARMED  {cand.collection}")
+                log(f"sold out before its public phase opened — {ts:,}/{ms:,} "
+                    f"minted. Fleet not armed, no gas spent.", indent=1)
+                rule()
+                return False
+            log(f"[{_ts()}] pre-open supply  {cand.collection[:12]}… "
+                f"{ts:,}/{ms:,} minted — {ms - ts:,} left", indent=1)
+
+        # Live balance read, not the cached poll-cycle value.
+        armed, total = self.refresh_balances(chain)
+        if armed == 0:
+            del self.pending[key]
+            self._save_queue()
+            log("")
+            rule()
+            log(f"[{_ts()}] DISARMED  {cand.collection}")
+            log(f"no wallet can pay at the open — fleet total "
+                f"{total / 1e18:.6f} ETH, 0/{len(self.fleet)} above the node's "
+                f"minimum. Nothing sent.", indent=1)
+            rule()
+            return False
+        log(f"[{_ts()}] pre-open wallets {armed}/{len(self.fleet)} armed, "
+            f"{total / 1e18:.6f} ETH", indent=1)
+        return True
 
     def heartbeat(self) -> None:
         s = self.stats
