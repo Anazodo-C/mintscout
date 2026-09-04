@@ -1,0 +1,9 @@
+[
+  {
+    "chain": "robinhood",
+    "collection": "0xc94be9267c4e1e08ae3d312f2557a39fe201f23e",
+    "handle": "Arc_Broker",
+    "score": 0,
+    "reason": "gate B: @Arc_Broker VERIFIED, code_size 19,658 (>6,000). Missed live because the social lookup failed at discovery and read as NO_SOCIAL."
+  }
+]

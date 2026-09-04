@@ -36,6 +36,7 @@ from .agent.social_gate import (auto_flag_enabled, evaluate_social,
 from .eval.baselines import deterministic_rubric
 from .eval.replay import ReplayContext
 from .executor import (DEFAULT_MINT_GAS, build_mint_tx, decode_revert,
+                       read_public_drop,
                        expected_cost_wei, read_public_drop, send_mint,
                        wait_for_receipt, balance_of, confirm_landed,
                        rpc_receipt_or_none, supply_headroom,
@@ -450,6 +451,7 @@ class Runner:
                 log(f"                  previous boot {mins:.0f}m ago — "
                     f"steady, not a restart loop.")
         self._load_queue()
+        self._seed_queue()
         self.load_wallet()
         if self.live:
             # NOTE: none of these conditions exits the process any more.
@@ -958,6 +960,63 @@ class Runner:
         if kept:
             log(f"[queue] restored {kept} approved drop(s) from the volume — "
                 f"no re-analysis needed")
+
+    def _seed_queue(self) -> None:
+        """Force-queue drops listed in data/seed_queue.json.
+
+        For drops the live pipeline missed through no fault of the rubric --
+        Arc Brokers passed gate B (verified @Arc_Broker, 19,658-byte contract)
+        but its social lookup failed transiently at discovery and read as
+        NO_SOCIAL, so it was never queued.
+
+        The file names a collection and why; it never carries the drop terms.
+        Those are re-read from chain here and again at fire time, so a drop
+        that has stopped being free, sold out, or closed is not queued on the
+        strength of a stale note.
+        """
+        path = (pathlib.Path(__file__).resolve().parents[1]
+                / "data/seed_queue.json")
+        try:
+            entries = json.loads(path.read_text())
+        except Exception:
+            return
+        now = int(time.time())
+        for e in entries:
+            chain = e.get("chain") or self.chains[0]
+            col = (e.get("collection") or "").lower()
+            key = f"{chain}:{col}"
+            if not col or chain not in self.rpcs or key in self.pending:
+                continue
+            if self.state.terminal_reason(chain, col):
+                log(f"[seed] {col[:12]}… terminal "
+                    f"({self.state.terminal_reason(chain, col)}) — not queued")
+                continue
+            try:
+                d = read_public_drop(self.rpcs[chain], col)
+            except Exception as ex:
+                log(f"[seed] {col[:12]}… config unreadable ({type(ex).__name__})")
+                continue
+            if d["mint_price"] != 0:
+                log(f"[seed] {col[:12]}… SKIPPED — no longer free "
+                    f"({d['mint_price'] / 1e18} ETH)")
+                continue
+            if d["end_time"] <= now:
+                log(f"[seed] {col[:12]}… SKIPPED — window already closed")
+                continue
+            ts, ms = supply_headroom(self.rpcs[chain], col)
+            if ts is not None and ms and ts >= ms:
+                log(f"[seed] {col[:12]}… SKIPPED — sold out {ts:,}/{ms:,}")
+                continue
+            from .watcher import DropCandidate
+            cand = DropCandidate(chain=chain, collection=col, **d)
+            self.pending[key] = {"chain": chain, "cand": cand,
+                                 "queued_at": now, "score": e.get("score", 0),
+                                 "handle": e.get("handle")}
+            self.seen.add(key)
+            log(f"[seed] QUEUED {col[:12]}… opens "
+                f"{fmt_in(cand.start_time - now)} — {e.get('reason', 'manual')}")
+        if self.pending:
+            self._save_queue()
 
     def fire_due(self) -> None:
         """Execute queued drops whose window has opened. No re-analysis.
