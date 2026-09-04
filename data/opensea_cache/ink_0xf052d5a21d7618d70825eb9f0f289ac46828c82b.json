@@ -1,0 +1,20 @@
+{
+ "available": true,
+ "lookup_failed": false,
+ "opensea_url": "https://opensea.io/contract/ink/0xf052d5a21d7618d70825eb9f0f289ac46828c82b",
+ "twitter_username": null,
+ "source": "api",
+ "slug": "suited-apes-society-113155141",
+ "name": "Suited Apes Society",
+ "contract_standard": "erc721",
+ "description": "",
+ "discord_url": null,
+ "project_url": null,
+ "telegram_url": null,
+ "instagram_username": null,
+ "created_date": "2026-09-02",
+ "safelist_status": "not_requested",
+ "is_nsfw": false,
+ "has_twitter": false,
+ "social_link_count": 0
+}

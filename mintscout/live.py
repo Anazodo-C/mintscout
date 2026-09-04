@@ -37,7 +37,9 @@ from .eval.baselines import deterministic_rubric
 from .eval.replay import ReplayContext
 from .executor import (DEFAULT_MINT_GAS, build_mint_tx, decode_revert,
                        expected_cost_wei, read_public_drop, send_mint,
-                       wait_for_receipt)
+                       wait_for_receipt, balance_of, confirm_landed,
+                       rpc_receipt_or_none, supply_headroom,
+                       LAND_TIMEOUT_S)
 from .rpc import client
 from .state import State, is_terminal
 from .watcher import Watcher
@@ -183,6 +185,13 @@ class Runner:
         # next poll tick. pxgators opened 16:00:00, fire_due() next ran at
         # 16:00:49, and all 5,555 were gone by then.
         self.fire_lead_s = float(os.environ.get("FIRE_LEAD_S", "1.5"))
+        # Retries for a wallet whose mint reverted with nothing in the wallet.
+        self.mint_retries = int(os.environ.get("MINT_RETRIES", "2"))
+        # Staged drops distribute through whitelists before the public phase
+        # opens. Kenji Origins sold all 3,333 between 16:02 and 18:30 and our
+        # public-stage fire at 19:30 hit an empty collection. Read supply just
+        # before the open so an exhausted drop is disarmed, not armed.
+        self.preopen_check_s = float(os.environ.get("PREOPEN_CHECK_S", "5"))
         self.lookback_min = float(os.environ.get("LOOKBACK_MINUTES", "20"))
         self.prefilter_min = int(os.environ.get("PREFILTER_MIN_SCORE", "45"))
         self.use_llm = (os.environ.get("USE_LLM", "true").lower()
@@ -798,56 +807,93 @@ class Runner:
         b.flush()
 
         sent = 0
+        landed = 0
         sent_txs: list[str] = []
         for w in armed:
-            try:
-                nonce = int(rpc.raw("eth_getTransactionCount",
-                                    [w["address"], "pending"]), 16)
-                tx = build_mint_tx(rpc, cand.collection, w["address"], qty,
-                                   value_each, nonce)
-                cost = expected_cost_wei(rpc, tx)
-                self.guard.check(cost, tx["maxFeePerGas"],
-                                 wallet_balance_wei=w["balance"].get(chain))
-            except Denied as e:
-                # A global cap stopping the fleet is expected, not an error.
-                log(f"  [{w['index']:>2}] stopped by spend guard — {e}", indent=1)
-                break
-            except Exception as e:
-                log(f"  [{w['index']:>2}] skipped ({type(e).__name__}: "
-                    f"{str(e)[:70]})", indent=1)
-                continue
+            # Retry a wallet only when its mint provably did NOT land. The
+            # wallet balance decides, not the receipt: retrying a token the
+            # wallet already holds is a double mint, which is worse than a miss.
+            before = balance_of(rpc, cand.collection, w["address"])
+            for attempt in range(1, self.mint_retries + 2):
+                if attempt > 1:
+                    log(f"  [{w['index']:>2}] RETRY {attempt - 1}/"
+                        f"{self.mint_retries} — previous attempt reverted and "
+                        f"no token landed", indent=1)
+                try:
+                    nonce = int(rpc.raw("eth_getTransactionCount",
+                                        [w["address"], "pending"]), 16)
+                    tx = build_mint_tx(rpc, cand.collection, w["address"], qty,
+                                       value_each, nonce)
+                    cost = expected_cost_wei(rpc, tx)
+                    self.guard.check(cost, tx["maxFeePerGas"],
+                                     wallet_balance_wei=w["balance"].get(chain))
+                except Denied as e:
+                    # A global cap stopping the fleet is expected, not an error.
+                    log(f"  [{w['index']:>2}] stopped by spend guard — {e}",
+                        indent=1)
+                    break
+                except Exception as e:
+                    log(f"  [{w['index']:>2}] skipped ({type(e).__name__}: "
+                        f"{str(e)[:70]})", indent=1)
+                    break
 
-            # Commit BEFORE broadcasting: a crash must over-count, not under.
-            self.guard.commit(cost)
-            try:
-                h = send_mint(rpc, tx, w["key"])
-                sent += 1
-                sent_txs.append(h)
-                log(f"  [{w['index']:>2}] SENT {w['address'][:10]}… tx={h}",
-                    indent=1)
-                r = wait_for_receipt(rpc, h, timeout_s=45)
-                if r is None:
-                    log(f"  [{w['index']:>2}] receipt not seen yet "
-                        f"(may still land)", indent=1)
-                    self.stats["executed"] += 1
-                    continue
-                ok = int(r.get("status", "0x0"), 16) == 1
-                used = int(r.get("gasUsed", "0x0"), 16)
-                price = int(r.get("effectiveGasPrice", "0x0"), 16)
+                # Commit BEFORE broadcasting: a crash must over-count, not under.
+                self.guard.commit(cost)
+                try:
+                    h = send_mint(rpc, tx, w["key"])
+                    sent += 1
+                    sent_txs.append(h)
+                    log(f"  [{w['index']:>2}] SENT {w['address'][:10]}… tx={h}",
+                        indent=1)
+                except Exception as e:
+                    self.guard.refund(cost)
+                    self.stats["failed"] += 1
+                    log(f"  [{w['index']:>2}] SEND FAILED — {type(e).__name__}: "
+                        f"{str(e)[:110]}", indent=1)
+                    break
+
+                verdict, got = confirm_landed(rpc, cand.collection,
+                                              w["address"], h, before)
+                r = rpc_receipt_or_none(rpc, h)
+                used = int((r or {}).get("gasUsed", "0x0"), 16)
+                price = int((r or {}).get("effectiveGasPrice", "0x0"), 16)
                 actual = value_each + used * price
-                log(f"  [{w['index']:>2}] {'CONFIRMED' if ok else 'REVERTED'}  "
-                    f"gas={used:,}  cost={fmt_eth(actual)}", indent=1)
-                self.stats["executed" if ok else "failed"] += 1
-                w["balance"][chain] = max(0, w["balance"].get(chain, 0) - actual)
-                if cost > actual:
-                    self.guard.refund(cost - actual)
-                    self.guard._state["mints"] += 1   # refund() decremented it
-                    self.guard._save()
-            except Exception as e:
-                self.guard.refund(cost)
+                if actual:
+                    w["balance"][chain] = max(
+                        0, w["balance"].get(chain, 0) - actual)
+                    if cost > actual:
+                        self.guard.refund(cost - actual)
+                        self.guard._state["mints"] += 1  # refund() decremented
+                        self.guard._save()
+
+                if verdict == "landed":
+                    landed += got or qty
+                    self.stats["executed"] += 1
+                    log(f"  [{w['index']:>2}] CONFIRMED IN WALLET  "
+                        f"+{got or qty} token(s)  gas={used:,}  "
+                        f"cost={fmt_eth(actual)}", indent=1)
+                    break
+
+                if verdict == "unknown":
+                    # Neither a balance rise nor a failed receipt. The mint may
+                    # still be in flight; retrying could double it.
+                    self.stats["executed"] += 1
+                    log(f"  [{w['index']:>2}] UNVERIFIED — no receipt and no "
+                        f"balance change within {LAND_TIMEOUT_S:.0f}s; NOT "
+                        f"retried (a second send could double-mint)", indent=1)
+                    break
+
+                # verdict == "reverted": nothing landed, safe to try again.
                 self.stats["failed"] += 1
-                log(f"  [{w['index']:>2}] SEND FAILED — {type(e).__name__}: "
-                    f"{str(e)[:110]}", indent=1)
+                reason = decode_revert((r or {}).get("revertReason"))
+                log(f"  [{w['index']:>2}] REVERTED — nothing landed  "
+                    f"gas={used:,}  cost={fmt_eth(actual)}"
+                    + (f"  [{reason}]" if reason else ""), indent=1)
+                if is_terminal(reason):
+                    log(f"  [{w['index']:>2}] terminal revert — not retrying",
+                        indent=1)
+                    break
+                before = balance_of(rpc, cand.collection, w["address"])
 
         if sent:
             h = getattr(cand, "_social_handle", None)
@@ -855,9 +901,10 @@ class Runner:
                 chain, cand.collection, handle=h,
                 name=(dossier.get("collection") or {}).get("name")
                      if isinstance(dossier, dict) else None,
-                tokens=sent * qty, txs=sent_txs)
-        log(f"DECISION fleet complete — {sent}/{len(armed)} transactions sent, "
-            f"{sent * qty} token(s) attempted", indent=1)
+                tokens=landed, txs=sent_txs)
+        # Report what is verifiably in the wallets, not what was broadcast.
+        log(f"DECISION fleet complete — {sent} transaction(s) sent, "
+            f"{landed} token(s) CONFIRMED IN WALLET", indent=1)
 
     # --------------------------------------------------------------- loop
     def _save_queue(self) -> None:
@@ -932,6 +979,30 @@ class Runner:
             wait = cand.start_time - time.time()
             if wait > self.fire_lead_s:
                 continue                       # not this cycle
+
+            # Just before the open, ask whether anything is left. A staged drop
+            # can be fully distributed through its whitelist stages before the
+            # public phase starts, in which case arming the fleet is pointless.
+            if self.preopen_check_s > 0:
+                ts, ms = supply_headroom(self.rpcs[chain], cand.collection)
+                if ts is not None and ms:
+                    if ts >= ms:
+                        del self.pending[key]
+                        self._save_queue()
+                        self.state.mark_terminal(
+                            chain, cand.collection,
+                            "MintQuantityExceedsMaxSupply (pre-open check)")
+                        log("")
+                        rule()
+                        log(f"[{_ts()}] DISARMED  {cand.collection}")
+                        log(f"sold out before its public phase opened — "
+                            f"{ts:,}/{ms:,} minted. Fleet not armed, no gas "
+                            f"spent.", indent=1)
+                        rule()
+                        continue
+                    log(f"[{_ts()}] pre-open supply check {cand.collection[:12]}…"
+                        f" {ts:,}/{ms:,} minted — {ms - ts:,} left, arming",
+                        indent=1)
             if wait > 0:
                 # Woken deliberately early: sleep out the remainder so the
                 # first RPC lands on the open, not up to a poll late.

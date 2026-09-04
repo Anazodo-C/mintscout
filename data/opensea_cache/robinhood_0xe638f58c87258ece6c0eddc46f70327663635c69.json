@@ -1,0 +1,20 @@
+{
+ "available": true,
+ "lookup_failed": false,
+ "opensea_url": "https://opensea.io/contract/robinhood/0xe638f58c87258ece6c0eddc46f70327663635c69",
+ "twitter_username": "TheSuitedApes",
+ "source": "api",
+ "slug": "suited-ape-society",
+ "name": "Suited Ape Society",
+ "contract_standard": "erc721",
+ "description": "The jungle is waking up. \ud83c\udf34\ud83e\udd8d\n\nAnd this is only the beginning.\n\n\ud83c\udfae Playable NFT Utility\n\u2660\ufe0f Poker Revenue Sharing\n\ud83d\udcb0 Royalties Sharing\n\ud83c\udf34 Suited Ape City\n\ud83d\udc40 More utility still under wraps...\n\nThe Apes know.\n\nThe zookeepers don\u2019t.",
+ "discord_url": "https://discord.gg/zwjcPmNnc6",
+ "project_url": "https://suitedapes.com",
+ "telegram_url": null,
+ "instagram_username": null,
+ "created_date": "2026-08-13",
+ "safelist_status": "approved",
+ "is_nsfw": false,
+ "has_twitter": true,
+ "social_link_count": 3
+}

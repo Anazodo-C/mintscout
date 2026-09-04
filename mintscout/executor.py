@@ -11,6 +11,7 @@ from __future__ import annotations
 
 import json
 import os
+import time
 from dataclasses import dataclass, field
 
 from eth_abi import encode as abi_encode
@@ -342,3 +343,97 @@ def wait_for_receipt(rpc: RpcClient, tx_hash: str, timeout_s: float = 90.0,
             pass
         _t.sleep(poll_s)
     return None
+
+
+# --------------------------------------------------------------- verification
+# Measured from our own 19 broadcasts: a transaction is included 1-2s after
+# broadcast, and every wallet in a serial fleet lands 1-4s after the one before
+# it (7,8,10,12,13s and 6,9,13,16,20s across two fleets). 12s is therefore
+# generous for one wallet without being so long that a retry misses the window.
+LAND_TIMEOUT_S = float(os.environ.get("MINT_LAND_TIMEOUT_S", "12"))
+LAND_POLL_S = float(os.environ.get("MINT_LAND_POLL_S", "0.5"))
+
+SEL_BALANCE_OF = "0x70a08231"          # balanceOf(address)
+
+
+def balance_of(rpc: RpcClient, collection: str, owner: str) -> int | None:
+    """ERC-721 balanceOf. None if the call fails -- never 0, which would read
+    as 'definitely nothing landed' and trigger a wrong retry."""
+    try:
+        raw = rpc.call(collection, SEL_BALANCE_OF + owner[2:].rjust(64, "0"))
+        return int(raw, 16)
+    except Exception:
+        return None
+
+
+def confirm_landed(rpc: RpcClient, collection: str, owner: str, tx_hash: str,
+                   balance_before: int | None, *,
+                   timeout_s: float = LAND_TIMEOUT_S) -> tuple[str, int]:
+    """Did the token actually arrive? -> (verdict, tokens_gained).
+
+    The wallet balance is the ground truth; the receipt only explains it. A
+    receipt saying "reverted" while the balance rose means this wallet already
+    holds the token (a duplicate broadcast, a re-org, a mint routed through
+    another path) and MUST NOT be retried -- that is how a retry turns into a
+    double mint.
+
+    Verdicts:
+      landed   -- balance rose. Done, never retry.
+      reverted -- receipt says failed AND balance did not move. Safe to retry.
+      unknown  -- no receipt and no balance change within the window, or the
+                  balance could not be read. NOT safe to retry: the mint may
+                  still be in flight.
+    """
+    if balance_before is None:
+        # Could not read the pre-state, so a rise cannot be proven. Fall back
+        # to the receipt alone and never claim a retry is safe.
+        r = wait_for_receipt(rpc, tx_hash, timeout_s=timeout_s)
+        if r is None:
+            return "unknown", 0
+        return ("landed", 0) if int(r.get("status", "0x0"), 16) == 1 \
+            else ("unknown", 0)
+
+    deadline = time.time() + timeout_s
+    receipt = None
+    while time.time() < deadline:
+        bal = balance_of(rpc, collection, owner)
+        if bal is not None and bal > balance_before:
+            return "landed", bal - balance_before
+        if receipt is None:
+            receipt = rpc_receipt_or_none(rpc, tx_hash)
+        if receipt is not None:
+            if int(receipt.get("status", "0x0"), 16) == 1:
+                # Receipt says success: let the balance catch up, do not retry.
+                bal = balance_of(rpc, collection, owner)
+                return "landed", max(0, (bal or balance_before) - balance_before)
+            # Reverted. Re-read the balance once more before declaring it safe
+            # to retry -- the read above may predate inclusion.
+            bal = balance_of(rpc, collection, owner)
+            if bal is None:
+                return "unknown", 0
+            if bal > balance_before:
+                return "landed", bal - balance_before
+            return "reverted", 0
+        time.sleep(LAND_POLL_S)
+
+    bal = balance_of(rpc, collection, owner)
+    if bal is not None and bal > balance_before:
+        return "landed", bal - balance_before
+    return "unknown", 0
+
+
+def rpc_receipt_or_none(rpc: RpcClient, tx_hash: str) -> dict | None:
+    try:
+        return rpc.get_receipt(tx_hash) or None
+    except Exception:
+        return None
+
+
+def supply_headroom(rpc: RpcClient, collection: str) -> tuple[int | None, int | None]:
+    """(totalSupply, maxSupply). Either may be None if the contract omits it."""
+    def u(sig_selector: str) -> int | None:
+        try:
+            return int(rpc.call(collection, sig_selector), 16)
+        except Exception:
+            return None
+    return u("0x18160ddd"), u("0xd5abeb01")     # totalSupply(), maxSupply()

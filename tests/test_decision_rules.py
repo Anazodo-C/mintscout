@@ -268,3 +268,78 @@ def test_fmt_dur_is_a_bare_duration(runner):
     assert "ago" not in fmt_dur(-1320)
     assert fmt_dur(45) == "45s"
     assert "ago)" in fmt_in(-1320)      # unchanged for its own use
+
+
+# ------------------------------------------ landed-verification and retry
+class _FakeRpc:
+    """Scripted balanceOf / receipt responses."""
+    def __init__(self, balances, receipts):
+        self.balances = list(balances)      # popped per balanceOf call
+        self.receipts = receipts
+        self.calls = 0
+    def call(self, to, data, **kw):
+        self.calls += 1
+        v = self.balances.pop(0) if self.balances else 0
+        if v is None:
+            raise RuntimeError("rpc down")
+        return hex(v)
+    def get_receipt(self, h):
+        r = self.receipts.pop(0) if self.receipts else None
+        if r is None:
+            return None
+        return r
+
+
+def _ok(): return {"status": "0x1", "gasUsed": "0x1", "effectiveGasPrice": "0x1"}
+def _bad(): return {"status": "0x0", "gasUsed": "0x1", "effectiveGasPrice": "0x1"}
+
+
+def test_balance_rise_means_landed():
+    from mintscout.executor import confirm_landed
+    rpc = _FakeRpc(balances=[1], receipts=[])
+    assert confirm_landed(rpc, "0xc", "0xw", "0xh", 0, timeout_s=2) == ("landed", 1)
+
+
+def test_revert_with_no_balance_change_is_retryable():
+    from mintscout.executor import confirm_landed
+    rpc = _FakeRpc(balances=[0, 0, 0], receipts=[_bad()])
+    v, got = confirm_landed(rpc, "0xc", "0xw", "0xh", 0, timeout_s=2)
+    assert (v, got) == ("reverted", 0)
+
+
+def test_reverted_receipt_but_token_present_is_never_retried():
+    """The failure mode worse than missing a mint: minting it twice.
+
+    A receipt can say failed while the wallet holds the token (duplicate
+    broadcast, re-org). The balance is the ground truth.
+    """
+    from mintscout.executor import confirm_landed
+    rpc = _FakeRpc(balances=[0, 2], receipts=[_bad()])
+    v, got = confirm_landed(rpc, "0xc", "0xw", "0xh", 0, timeout_s=2)
+    assert v == "landed" and got == 2, "would have double-minted"
+
+
+def test_no_receipt_and_no_change_is_unknown_not_retryable():
+    """In flight is not the same as failed; retrying it could double-mint."""
+    from mintscout.executor import confirm_landed
+    rpc = _FakeRpc(balances=[0] * 40, receipts=[])
+    v, _ = confirm_landed(rpc, "0xc", "0xw", "0xh", 0, timeout_s=1)
+    assert v == "unknown"
+
+
+def test_unreadable_balance_never_reports_retryable():
+    from mintscout.executor import confirm_landed
+    rpc = _FakeRpc(balances=[None] * 40, receipts=[_bad()])
+    v, _ = confirm_landed(rpc, "0xc", "0xw", "0xh", 0, timeout_s=1)
+    assert v != "reverted", "a failed read must not authorise a retry"
+
+
+def test_balance_of_returns_none_on_failure_not_zero():
+    """Zero would read as 'nothing landed' and trigger a wrong retry."""
+    from mintscout.executor import balance_of
+    assert balance_of(_FakeRpc([None], []), "0xc", "0xw") is None
+
+
+def test_supply_headroom_reads_both_values():
+    from mintscout.executor import supply_headroom
+    assert supply_headroom(_FakeRpc([3333, 3333], []), "0xc") == (3333, 3333)

@@ -1,0 +1,20 @@
+{
+ "available": true,
+ "lookup_failed": false,
+ "opensea_url": "https://opensea.io/contract/robinhood/0xa1461ede11a4822e811654f107e1d67c9abb465e",
+ "twitter_username": null,
+ "source": "api",
+ "slug": "thesuitedapes",
+ "name": "TheSuitedApes",
+ "contract_standard": "erc721",
+ "description": "",
+ "discord_url": null,
+ "project_url": null,
+ "telegram_url": null,
+ "instagram_username": null,
+ "created_date": "2026-09-01",
+ "safelist_status": "not_requested",
+ "is_nsfw": false,
+ "has_twitter": false,
+ "social_link_count": 0
+}
